@@ -1,8 +1,13 @@
 package conekta.io.client;
 
 import conekta.io.config.ConektaAuthenticator;
+import conekta.io.config.Headers;
+import conekta.io.error.IOConektaRequestorException;
+import conekta.io.error.InterruptedConektaRequestorException;
+import conekta.io.model.ConektaObject;
 
 import java.io.IOException;
+import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -10,7 +15,7 @@ import java.time.Duration;
 
 public class ConektaRequestor {
 
-    public HttpResponse<String> send(HttpRequest request){
+    private HttpResponse<String> send(HttpRequest request){
         try {
             return HttpClient.newBuilder()
                     .authenticator(ConektaAuthenticator.getBasicAuthenticator())
@@ -18,10 +23,21 @@ public class ConektaRequestor {
                     .build()
                     .send(request, HttpResponse.BodyHandlers.ofString());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new IOConektaRequestorException(e);
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            throw new InterruptedConektaRequestorException(e);
         }
     }
+
+    public HttpResponse<String> doRequest(ConektaObject conektaObject, Headers headers, String url , String method){
+        HttpRequest request = HttpRequest.newBuilder()
+                .method(method, HttpRequest.BodyPublishers.ofString(conektaObject.parseToString()))
+                .uri(URI.create(url))
+                .headers(headers.getListed())
+                .build();
+
+        return send(request);
+    }
+
 
 }

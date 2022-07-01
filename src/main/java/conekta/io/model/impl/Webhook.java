@@ -1,4 +1,6 @@
 package conekta.io.model.impl;
 
-public class Webhook {
+import conekta.io.model.ConektaObject;
+
+public class Webhook extends ConektaObject {
 }

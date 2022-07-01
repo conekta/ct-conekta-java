@@ -1,4 +1,6 @@
 package conekta.io.model.impl;
 
-public class Balance {
+import conekta.io.model.ConektaObject;
+
+public class Balance extends ConektaObject {
 }

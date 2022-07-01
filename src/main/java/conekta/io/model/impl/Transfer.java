@@ -1,4 +1,6 @@
 package conekta.io.model.impl;
 
-public class Transfer {
+import conekta.io.model.ConektaObject;
+
+public class Transfer extends ConektaObject {
 }

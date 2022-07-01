@@ -1,4 +1,6 @@
 package conekta.io.model.impl;
 
-public class Log {
+import conekta.io.model.ConektaObject;
+
+public class Log extends ConektaObject {
 }
