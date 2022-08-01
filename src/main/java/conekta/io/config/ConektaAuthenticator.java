@@ -4,35 +4,32 @@ import java.net.Authenticator;
 import java.net.PasswordAuthentication;
 
 public class ConektaAuthenticator {
-    private static String username;
-    private static String password;
 
-    private ConektaAuthenticator() {
-        // The only wait to create user and password is to set manually before using the library.
+    private static ConektaAuthenticator conektaAuthenticator = null;
+    private static String username = null;
+    private static String password = null;
+
+    private ConektaAuthenticator(){
     }
 
-    public static Authenticator getBasicAuthenticator(){
-        return new Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(getUsername(), getPassword().toCharArray());
-            }
-        };
+    public static ConektaAuthenticator getInstance() {
+        if (conektaAuthenticator == null) {
+            conektaAuthenticator = new ConektaAuthenticator();
+        }
+        return conektaAuthenticator;
     }
 
-    public static void setUsername(String username) {
+    public static void setCredentials(String username, String password) {
         ConektaAuthenticator.username = username;
-    }
-
-    public static void setPassword(String password) {
         ConektaAuthenticator.password = password;
     }
 
-    public static String getUsername() {
-        return username;
-    }
-
-    public static String getPassword() {
-        return password;
+    public static Authenticator getBasicAuthenticator() {
+        return new Authenticator() {
+            @Override
+            public PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password.toCharArray());
+            }
+        };
     }
 }

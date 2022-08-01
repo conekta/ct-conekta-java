@@ -8,6 +8,7 @@ import java.util.List;
 
 @Data
 public class Order extends ConektaObject {
+
     private String createdAt;
     private String updatedAt;
     private String currency;

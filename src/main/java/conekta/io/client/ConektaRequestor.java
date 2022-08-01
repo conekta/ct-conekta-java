@@ -13,7 +13,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
 
-public class ConektaRequestor {
+public interface ConektaRequestor {
 
     private HttpResponse<String> send(HttpRequest request){
         try {
@@ -29,7 +29,7 @@ public class ConektaRequestor {
         }
     }
 
-    public HttpResponse<String> doRequest(ConektaObject conektaObject, Headers headers, String url , String method){
+    default HttpResponse<String> doRequest(ConektaObject conektaObject, Headers headers, String url, String method){
         HttpRequest request = HttpRequest.newBuilder()
                 .method(method, HttpRequest.BodyPublishers.ofString(conektaObject.parseToString()))
                 .uri(URI.create(url))

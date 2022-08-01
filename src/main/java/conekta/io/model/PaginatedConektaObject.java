@@ -1,4 +1,4 @@
-package conekta.io.model.submodel;
+package conekta.io.model;
 
 import conekta.io.model.ConektaObject;
 import lombok.Data;
