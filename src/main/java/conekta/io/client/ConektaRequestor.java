@@ -32,9 +32,9 @@ public interface ConektaRequestor {
         HttpRequest request = HttpRequest.newBuilder()
                 .method(method, HttpRequest.BodyPublishers.ofString(conektaObject.parseToString()))
                 .uri(URI.create(url))
-                .headers(headers.getListed())
+                .setHeader("Content-Type", "application/json; charset=utf-8")
+                .setHeader("Accept", "application/vnd.conekta-v2.0.0+json")
                 .build();
-
         return send(request);
     }
 
