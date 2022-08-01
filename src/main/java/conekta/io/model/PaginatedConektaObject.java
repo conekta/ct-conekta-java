@@ -1,6 +1,5 @@
 package conekta.io.model;
 
-import conekta.io.model.ConektaObject;
 import lombok.Data;
 import java.util.*;
 

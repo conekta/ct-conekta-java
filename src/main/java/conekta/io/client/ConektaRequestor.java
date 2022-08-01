@@ -1,6 +1,7 @@
 package conekta.io.client;
 
 import conekta.io.config.ConektaAuthenticator;
+import conekta.io.config.Constants;
 import conekta.io.error.IOConektaRequestorException;
 import conekta.io.error.InterruptedConektaRequestorException;
 import conekta.io.model.ConektaObject;
@@ -32,8 +33,8 @@ public interface ConektaRequestor {
         HttpRequest request = HttpRequest.newBuilder()
                 .method(method, HttpRequest.BodyPublishers.ofString(conektaObject.parseToString()))
                 .uri(URI.create(url))
-                .setHeader("Content-Type", "application/json; charset=utf-8")
-                .setHeader("Accept", "application/vnd.conekta-v2.0.0+json")
+                .setHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
+                .setHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
                 .build();
         return send(request);
     }

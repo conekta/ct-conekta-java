@@ -9,7 +9,7 @@ public class ConektaAuthenticator {
     private static String username = null;
     private static String password = null;
 
-    private ConektaAuthenticator(){
+    private ConektaAuthenticator() {
     }
 
     public static ConektaAuthenticator getInstance() {
