@@ -1,7 +1,6 @@
 package conekta.io.client;
 
 import conekta.io.config.ConektaAuthenticator;
-import conekta.io.config.Headers;
 import conekta.io.error.IOConektaRequestorException;
 import conekta.io.error.InterruptedConektaRequestorException;
 import conekta.io.model.ConektaObject;
@@ -15,7 +14,7 @@ import java.time.Duration;
 
 public interface ConektaRequestor {
 
-    private HttpResponse<String> send(HttpRequest request){
+    private HttpResponse<String> send(HttpRequest request) {
         try {
             return HttpClient.newBuilder()
                     .authenticator(ConektaAuthenticator.getBasicAuthenticator())
@@ -29,7 +28,7 @@ public interface ConektaRequestor {
         }
     }
 
-    default HttpResponse<String> doRequest(ConektaObject conektaObject, Headers headers, String url, String method){
+    default HttpResponse<String> doRequest(ConektaObject conektaObject, String url, String method) {
         HttpRequest request = HttpRequest.newBuilder()
                 .method(method, HttpRequest.BodyPublishers.ofString(conektaObject.parseToString()))
                 .uri(URI.create(url))
