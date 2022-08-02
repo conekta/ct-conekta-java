@@ -17,21 +17,15 @@ import java.time.Duration;
 
 public interface ConektaRequestor {
 
-    private HttpResponse<String> send(HttpRequest request) {
-        try {
+    private HttpResponse<String> send(HttpRequest request) throws IOException, InterruptedException {
             return HttpClient.newBuilder()
                     .authenticator(ConektaAuthenticator.getBasicAuthenticator())
                     .connectTimeout(Duration.ofSeconds(15))
                     .build()
                     .send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException e) {
-            throw new IOConektaRequestorException(e);
-        } catch (InterruptedException e) {
-            throw new InterruptedConektaRequestorException(e);
-        }
     }
 
-    default HttpResponse<String> doRequest(ConektaObject conektaObject, String url, String method) throws JsonProcessingException {
+    default HttpResponse<String> doRequest(ConektaObject conektaObject, String url, String method) throws IOException, InterruptedException {
 
         String jsonBody = ConektaObjectMapper.getInstance().conektaObjectToString(conektaObject);
         HttpRequest request = HttpRequest.newBuilder()
