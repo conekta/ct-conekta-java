@@ -1,5 +1,7 @@
 package conekta.io.model.impl;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import conekta.io.model.ConektaObject;
 import conekta.io.model.submodel.*;
 import lombok.Data;
@@ -7,6 +9,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class Order extends ConektaObject {
 
     private String createdAt;

@@ -11,29 +11,21 @@ import java.net.http.HttpResponse;
 public class CustomersClient implements ConektaRequestor {
 
 
-    public HttpResponse<String> createCustomer(Customer customer) {
-        return ConektaRequestor.super.doRequest(customer, Constants.API_BASE + Constants.CUSTOMERS_PATH, "POST");
-    }
-
-    public Customer createCustomer2(Customer customer) throws JsonProcessingException {
-
-        //User user = objectMapper.readValue(JSON, User.class);
+    public Customer createCustomer(Customer customer) throws JsonProcessingException {
         HttpResponse<String> cosa = ConektaRequestor.super.doRequest(customer, Constants.API_BASE + Constants.CUSTOMERS_PATH, "POST");
-
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(cosa.body(), Customer.class);
-
         return cus;
     }
 
-    public HttpResponse<String> getCustomers(Customer customer) {
+    public HttpResponse<String> getCustomers(Customer customer) throws JsonProcessingException {
         return ConektaRequestor.super.doRequest(customer, Constants.API_BASE + Constants.CUSTOMERS_PATH, "GET");
     }
 
-    public HttpResponse<String> updateCustomer(Customer customer) {
+    public HttpResponse<String> updateCustomer(Customer customer) throws JsonProcessingException {
         return ConektaRequestor.super.doRequest(customer, Constants.API_BASE + Constants.CUSTOMERS_PATH, "PUT");
     }
 
-    public HttpResponse<String> deleteCustomer(Customer customer) {
+    public HttpResponse<String> deleteCustomer(Customer customer) throws JsonProcessingException {
         return ConektaRequestor.super.doRequest(customer, Constants.API_BASE + Constants.CUSTOMERS_PATH, "DELETE");
     }
 }

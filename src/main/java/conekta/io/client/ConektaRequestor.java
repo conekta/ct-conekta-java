@@ -1,5 +1,6 @@
 package conekta.io.client;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import conekta.io.config.ConektaAuthenticator;
 import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
@@ -30,30 +31,15 @@ public interface ConektaRequestor {
         }
     }
 
-    default HttpResponse<String> doRequest(ConektaObject conektaObject, String url, String method) {
-        try {
-            //    ObjectMapper objectMapper = new ObjectMapper().setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
-            //    objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false).setSerializationInclusion(JsonInclude.Include.NON_NULL);
+    default HttpResponse<String> doRequest(ConektaObject conektaObject, String url, String method) throws JsonProcessingException {
 
-            String jsonBody = ConektaObjectMapper.getInstance().conektaObjectToString(conektaObject);
-
-            // String jsonBody = objectMapper.writeValueAsString(conektaObject);
-
-            HttpRequest request = HttpRequest.newBuilder()
-                    .method(method, HttpRequest.BodyPublishers.ofString(jsonBody))
-                    .uri(URI.create(url))
-                    .setHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                    .setHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                    .build();
-            HttpResponse<String> algo = send(request);
-
-
-            return algo;
-
-
-        } catch (Exception exp) {
-            exp.toString();
-        }
-        return null;
+        String jsonBody = ConektaObjectMapper.getInstance().conektaObjectToString(conektaObject);
+        HttpRequest request = HttpRequest.newBuilder()
+                .method(method, HttpRequest.BodyPublishers.ofString(jsonBody))
+                .uri(URI.create(url))
+                .setHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
+                .setHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
+                .build();
+        return send(request);
     }
 }
