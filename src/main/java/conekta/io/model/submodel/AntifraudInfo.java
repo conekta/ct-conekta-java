@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class AntifraudInfo {
-    Long firstPaidAt;
-    Long accountCreatedAt;
+    private Long firstPaidAt;
+    private Long accountCreatedAt;
 }
