@@ -10,6 +10,7 @@ import lombok.Data;
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class Customer extends ConektaObject {
 
+    private String id;
     private Boolean livemode;
     private String name;
     private String email;
@@ -30,5 +31,5 @@ public class Customer extends ConektaObject {
     private Object shippingContacts;
     //TODO REVISAR CON UN EXPERTO
 
-
+    private Boolean deleted;
 }

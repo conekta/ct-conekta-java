@@ -41,7 +41,7 @@ public class CustomersClient implements ConektaRequestor {
     }
 
     /**
-     * Retrieves all customer.
+     * Retrieves all customers.
      *
      * @return List<Customer>
      * @throws IOException If an error occurs while communicating with the API.
@@ -60,8 +60,8 @@ public class CustomersClient implements ConektaRequestor {
      * @throws IOException If an error occurs while communicating with the API.
      * @throws InterruptedException If the thread is interrupted while communicating with the API.
      */
-    public Customer updateCustomer(Customer customer) throws IOException, InterruptedException {
-        HttpResponse<String> customerResponse = ConektaRequestor.super.doRequest(customer, Constants.API_BASE + Constants.CUSTOMERS_PATH, "PUT");
+    public Customer updateCustomer(String customerId, Customer customer) throws IOException, InterruptedException {
+        HttpResponse<String> customerResponse = ConektaRequestor.super.doRequest(customer, Constants.API_BASE + Constants.CUSTOMERS_PATH + "/" + customerId , "PUT");
         return ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), Customer.class);
     }
 
