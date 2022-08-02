@@ -6,8 +6,8 @@ import java.net.PasswordAuthentication;
 public class ConektaAuthenticator {
 
     private static ConektaAuthenticator conektaAuthenticator = null;
-    private static String username = null;
-    private static String password = null;
+    private static String username = "key_7yMxyxV1iNbxyaxPxi5zzQ";
+    private static String password = "";
 
     private ConektaAuthenticator() {
     }
