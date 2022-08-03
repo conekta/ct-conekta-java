@@ -2,6 +2,10 @@ package conekta.io.config;
 
 public class Constants {
 
+    private Constants() {
+        throw new IllegalStateException("Utility class");
+    }
+
     /**
      * The default base URL to use when building requests to the Conekta API.
      */

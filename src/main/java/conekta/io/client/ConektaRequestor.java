@@ -1,11 +1,8 @@
 package conekta.io.client;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import conekta.io.config.ConektaAuthenticator;
 import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
-import conekta.io.error.IOConektaRequestorException;
-import conekta.io.error.InterruptedConektaRequestorException;
 import conekta.io.model.ConektaObject;
 
 import java.io.IOException;
@@ -18,7 +15,8 @@ import java.time.Duration;
 public interface ConektaRequestor {
 
     private HttpResponse<String> send(HttpRequest request) throws IOException, InterruptedException {
-            return HttpClient.newBuilder()
+        ConektaAuthenticator.getInstance();
+        return HttpClient.newBuilder()
                     .authenticator(ConektaAuthenticator.getBasicAuthenticator())
                     .connectTimeout(Duration.ofSeconds(15))
                     .build()

@@ -12,11 +12,10 @@ public class ConektaAuthenticator {
     private ConektaAuthenticator() {
     }
 
-    public static ConektaAuthenticator getInstance() {
+    public static void getInstance() {
         if (conektaAuthenticator == null) {
             conektaAuthenticator = new ConektaAuthenticator();
         }
-        return conektaAuthenticator;
     }
 
     public static void setCredentials(String username, String password) {

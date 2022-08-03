@@ -1,13 +1,12 @@
 package conekta.io.model.impl;
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategies;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import conekta.io.model.ConektaObject;
 import conekta.io.model.submodel.AntifraudInfo;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
-@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
+
 public class Customer extends ConektaObject {
 
     private String id;
@@ -30,6 +29,5 @@ public class Customer extends ConektaObject {
     private Object paymentSources;
     private Object shippingContacts;
     //TODO REVISAR CON UN EXPERTO
-
     private Boolean deleted;
 }

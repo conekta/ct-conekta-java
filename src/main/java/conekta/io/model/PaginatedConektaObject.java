@@ -1,5 +1,7 @@
 package conekta.io.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import conekta.io.config.CustomNextPageUrl;
 import lombok.Data;
 
 import java.util.List;
@@ -7,9 +9,11 @@ import java.util.List;
 @Data
 public class PaginatedConektaObject<T> {
 
-    private List<T> data;
+    @JsonSerialize(using = CustomNextPageUrl.class)
+    private String nextPageUrl;
     private boolean hasMore;
     private int total;
     private String object;
+    private List<T> data;
 
 }
