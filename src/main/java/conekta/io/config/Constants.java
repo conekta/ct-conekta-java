@@ -2,6 +2,16 @@ package conekta.io.config;
 
 public class Constants {
 
+    public static final String SLASH = "/";
+    public static final String GET = "GET";
+    public static final String PUT = "PUT";
+    public static final String DELETE = "DELETE";
+    public static final String POST = "POST";
+    public static final String API_BASE_TEST = "https://apipp.conekta.io/";
+    public static final String API_BASE_PROD = "https://api.conekta.io/";
+    public static final String NEXT = "?next=";
+    public static final String WEBHOOKS = "/webhooks";
+
     private Constants() {
         throw new IllegalStateException("Utility class");
     }
@@ -9,8 +19,20 @@ public class Constants {
     /**
      * The default base URL to use when building requests to the Conekta API.
      */
-    public static final String API_BASE = "https://apipp.conekta.io/";
-    //TODO cambiar a produccion
+    public enum API_BASE {
+        LIVE(API_BASE_PROD),
+        TEST(API_BASE_TEST);
+
+        private final String url;
+
+        API_BASE(String url) {
+            this.url = url;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+    }
 
     /**
      * Version of the Conekta API to use.

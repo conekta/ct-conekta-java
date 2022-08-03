@@ -2,11 +2,9 @@ package conekta.io.model.impl;
 
 import conekta.io.model.ConektaObject;
 import conekta.io.model.submodel.AntifraudInfo;
-import lombok.Builder;
 import lombok.Data;
 
 @Data
-
 public class Customer extends ConektaObject {
 
     private Boolean livemode;

@@ -9,9 +9,10 @@ import conekta.io.model.impl.Customer;
 import conekta.io.model.impl.Webhook;
 
 import java.io.IOException;
+import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class CustomersClient implements ConektaRequestor {
+public class CustomersClient extends ConektaRequestor {
 
     /**
      * Creates a new customer.
@@ -22,7 +23,7 @@ public class CustomersClient implements ConektaRequestor {
      * @throws InterruptedException If the thread is interrupted while communicating with the API.
      */
     public Customer createCustomer(Customer customer) throws IOException, InterruptedException {
-        HttpResponse<String> customerResponse = ConektaRequestor.super.doRequest(customer, Constants.API_BASE + Constants.CUSTOMERS_PATH, "POST");
+        HttpResponse<String> customerResponse = doRequest(customer, Constants.CUSTOMERS_PATH, Constants.POST);
         return ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), Customer.class);
     }
 
@@ -35,7 +36,7 @@ public class CustomersClient implements ConektaRequestor {
      * @throws InterruptedException If the thread is interrupted while communicating with the API.
      */
     public Customer retrieveCustomer(String customerId) throws IOException, InterruptedException {
-        HttpResponse<String> customerResponse = ConektaRequestor.super.doRequest(null, Constants.API_BASE + Constants.CUSTOMERS_PATH + "/" + customerId, "GET");
+        HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId, Constants.GET);
         return ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), Customer.class);
     }
 
@@ -47,7 +48,7 @@ public class CustomersClient implements ConektaRequestor {
      * @throws InterruptedException If the thread is interrupted while communicating with the API.
      */
     public PaginatedConektaObject<Customer> getCustomers() throws IOException, InterruptedException {
-        HttpResponse<String> customersResponse = ConektaRequestor.super.doRequest(null, Constants.API_BASE + Constants.CUSTOMERS_PATH, "GET");
+        HttpResponse<String> customersResponse = doRequest(null, Constants.CUSTOMERS_PATH, Constants.GET);
         return ConektaObjectMapper.getInstance().stringJsonToObject(customersResponse.body(), new TypeReference<>() {
         });
     }
@@ -61,7 +62,7 @@ public class CustomersClient implements ConektaRequestor {
      * @throws InterruptedException If the thread is interrupted while communicating with the API.
      */
     public PaginatedConektaObject<Customer> getCustomers(String next) throws IOException, InterruptedException {
-        HttpResponse<String> customersResponse = ConektaRequestor.super.doRequest(null, Constants.API_BASE + Constants.CUSTOMERS_PATH + "?next=" + next, "GET");
+        HttpResponse<String> customersResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.NEXT + next, Constants.GET);
         return ConektaObjectMapper.getInstance().stringJsonToObject(customersResponse.body(), new TypeReference<>() {
         });
     }
@@ -75,7 +76,7 @@ public class CustomersClient implements ConektaRequestor {
      * @throws InterruptedException If the thread is interrupted while communicating with the API.
      */
     public Customer updateCustomer(String customerId, Customer customer) throws IOException, InterruptedException {
-        HttpResponse<String> customerResponse = ConektaRequestor.super.doRequest(customer, Constants.API_BASE + Constants.CUSTOMERS_PATH + "/" + customerId, "PUT");
+        HttpResponse<String> customerResponse = doRequest(customer, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId, Constants.PUT);
         return ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), Customer.class);
     }
 
@@ -88,7 +89,7 @@ public class CustomersClient implements ConektaRequestor {
      * @throws InterruptedException If the thread is interrupted while communicating with the API.
      */
     public Customer deleteCustomer(String customerId) throws IOException, InterruptedException {
-        HttpResponse<String> customerResponse = ConektaRequestor.super.doRequest(null, Constants.API_BASE + Constants.CUSTOMERS_PATH + "/" + customerId, "DELETE");
+        HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId, Constants.DELETE);
         return ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), Customer.class);
     }
 
@@ -101,7 +102,7 @@ public class CustomersClient implements ConektaRequestor {
      * @throws InterruptedException If the thread is interrupted while communicating with the API.
      */
     public PaginatedConektaObject<Webhook> getCustomerWebhooks(String customerId) throws IOException, InterruptedException {
-        HttpResponse<String> customerResponse = ConektaRequestor.super.doRequest(null, Constants.API_BASE + Constants.CUSTOMERS_PATH + "/" + customerId + "/webhooks", "GET");
+        HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId + Constants.WEBHOOKS, Constants.GET);
         return ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), new TypeReference<>() {
         });
     }
@@ -116,7 +117,7 @@ public class CustomersClient implements ConektaRequestor {
      * @throws InterruptedException If the thread is interrupted while communicating with the API.
      */
     public PaginatedConektaObject<Webhook> getCustomerWebhooks(String customerId, String next) throws IOException, InterruptedException {
-        HttpResponse<String> customerResponse = ConektaRequestor.super.doRequest(null, Constants.API_BASE + Constants.CUSTOMERS_PATH + "/" + customerId + "/webhooks?next=" + next, "GET");
+        HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId + Constants.WEBHOOKS + Constants.NEXT + next, Constants.GET);
         return ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), new TypeReference<>() {
         });
     }

@@ -12,7 +12,13 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
 
-public interface ConektaRequestor {
+public abstract class ConektaRequestor {
+
+    private String environment = Constants.API_BASE.TEST.getUrl();
+
+    public void setEnvironment(Constants.API_BASE environment){
+        this.environment = environment.getUrl();
+    }
 
     private HttpResponse<String> send(HttpRequest request) throws IOException, InterruptedException {
         ConektaAuthenticator.getInstance();
@@ -23,12 +29,11 @@ public interface ConektaRequestor {
                     .send(request, HttpResponse.BodyHandlers.ofString());
     }
 
-    default HttpResponse<String> doRequest(ConektaObject conektaObject, String url, String method) throws IOException, InterruptedException {
-
+    public HttpResponse<String> doRequest(ConektaObject conektaObject, String path, String method) throws IOException, InterruptedException {
         String jsonBody = ConektaObjectMapper.getInstance().conektaObjectToString(conektaObject);
         HttpRequest request = HttpRequest.newBuilder()
                 .method(method, HttpRequest.BodyPublishers.ofString(jsonBody))
-                .uri(URI.create(url))
+                .uri(URI.create(environment + path))
                 .setHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
                 .setHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
                 .build();
