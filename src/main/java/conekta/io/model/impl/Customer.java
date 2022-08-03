@@ -9,7 +9,6 @@ import lombok.Data;
 
 public class Customer extends ConektaObject {
 
-    private String id;
     private Boolean livemode;
     private String name;
     private String email;
@@ -20,12 +19,6 @@ public class Customer extends ConektaObject {
     private String customReference;
     private AntifraudInfo antifraudInfo;
     private String defaultPaymentSourceId;
-
-  /*  private PaginatedConektaObject<PaymentSource> paymentSources;
-    private List<PaymentSource> lstPaymentSources;
-    private List<ShippingContact> lstShippingContacts;
-    private PaginatedConektaObject<ShippingContact> shippingContacts; */
-
     private Object paymentSources;
     private Object shippingContacts;
     //TODO REVISAR CON UN EXPERTO
