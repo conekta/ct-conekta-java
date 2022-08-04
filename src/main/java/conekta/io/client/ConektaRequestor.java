@@ -16,23 +16,40 @@ public abstract class ConektaRequestor {
 
     private String environment = Constants.API_BASE.TEST.getUrl();
 
-    public void setEnvironment(Constants.API_BASE environment){
-        this.environment = environment.getUrl();
+    public void setEnvironment(String environment) {
+        this.environment = environment;
     }
 
     private HttpResponse<String> send(HttpRequest request) throws IOException, InterruptedException {
         ConektaAuthenticator.getInstance();
         return HttpClient.newBuilder()
-                    .authenticator(ConektaAuthenticator.getBasicAuthenticator())
-                    .connectTimeout(Duration.ofSeconds(15))
-                    .build()
-                    .send(request, HttpResponse.BodyHandlers.ofString());
+                .authenticator(ConektaAuthenticator.getBasicAuthenticator())
+                .connectTimeout(Duration.ofSeconds(Constants.HTTP_CLIENT_TIMEOUT))
+                .build()
+                .send(request, HttpResponse.BodyHandlers.ofString());
     }
 
     public HttpResponse<String> doRequest(ConektaObject conektaObject, String path, String method) throws IOException, InterruptedException {
+        HttpRequest.Builder builder = HttpRequest.newBuilder();
         String jsonBody = ConektaObjectMapper.getInstance().conektaObjectToString(conektaObject);
-        HttpRequest request = HttpRequest.newBuilder()
-                .method(method, HttpRequest.BodyPublishers.ofString(jsonBody))
+        switch (method) {
+            case Constants.POST:
+                builder = builder.POST(HttpRequest.BodyPublishers.ofString(jsonBody));
+                break;
+            case Constants.GET:
+                builder = builder.GET();
+                break;
+            case Constants.PUT:
+                builder = builder.PUT(HttpRequest.BodyPublishers.ofString(jsonBody));
+                break;
+            case Constants.DELETE:
+                builder = builder.DELETE();
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid method: " + method);
+        }
+
+        HttpRequest request = builder
                 .uri(URI.create(environment + path))
                 .setHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
                 .setHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)

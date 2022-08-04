@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import conekta.io.model.ConektaObject;
+import conekta.io.model.PaginatedConektaObject;
 
 public class ConektaObjectMapper {
 
@@ -29,6 +30,10 @@ public class ConektaObjectMapper {
 
     public String conektaObjectToString(ConektaObject conektaObject) throws JsonProcessingException {
         return objectMapper.writeValueAsString(conektaObject);
+    }
+
+    public String conektaObjectToString(PaginatedConektaObject paginatedConektaObject) throws JsonProcessingException {
+        return objectMapper.writeValueAsString(paginatedConektaObject);
     }
 
     public ConektaObject stringJsonToConektaObject(String conektaJsonStr) throws JsonProcessingException {
