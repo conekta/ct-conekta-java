@@ -10,7 +10,7 @@
 
     <name>ct-conekta-java</name>
     <description>This is a java library that allows interaction with https://api.conekta.io API.</description>
-    <url>https://www.conekta.io</url>
+    <url>https://www.conekta.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
