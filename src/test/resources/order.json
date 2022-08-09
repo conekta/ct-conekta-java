@@ -1,0 +1,65 @@
+{
+  "currency": "MXN",
+  "customer_info": {
+    "email": "test@tedst.com",
+    "phone": "5556581111",
+    "name": "John Doe",
+    "corporate": false,
+    "customer_id": "cus_2rYuZoAh4cSWMpjP3",
+    "object": "customer_info"
+  },
+  "line_items": [
+    {
+      "name": "It is fine dog cup",
+      "unit_price": 80000,
+      "quantity": 1,
+      "tags": [
+        "physical goods"
+      ]
+    }
+  ],
+  "shipping_lines": [
+    {
+      "amount": 0,
+      "carrier": "Fedex",
+      "method": "Airplane",
+      "tracking_number": "TRACK000000000123",
+      "object": "shipping_line"
+    }
+  ],
+  "checkout": {
+    "name": "Concepto quemado",
+    "allowed_payment_methods": [
+      "cash",
+      "card",
+      "bank_transfer"
+    ],
+    "type": "HostedPayment",
+    "force_3ds_flow": true,
+    "success_url": "https://www.google.com/payment/",
+    "failure_url": "https://www.mysite.com/payment/",
+    "monthly_installments_enabled": true,
+    "monthly_installments_options": [
+      3,
+      6,
+      9,
+      12
+    ]
+  },
+  "shipping_contact": {
+    "phone": "5556581111",
+    "receiver": "Monse Torres",
+    "address": {
+      "street1": "Av. Jardín",
+      "country": "MX",
+      "postal_code": "02970"
+    }
+  },
+  "tax_lines": [
+    {
+      "description": "IVA MX 16 ",
+      "amount": 1568,
+      "object": "tax_line"
+    }
+  ]
+}
