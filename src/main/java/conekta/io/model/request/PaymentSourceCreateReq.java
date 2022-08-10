@@ -10,6 +10,5 @@ public class PaymentSourceCreateReq extends ConektaObject {
     private String tokenId;
     private String paymentType;
     private BigDecimal expiresAt;
-    //TODO revisar
     private CardReq card;
 }

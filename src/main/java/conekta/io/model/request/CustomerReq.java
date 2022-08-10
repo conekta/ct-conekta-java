@@ -7,7 +7,6 @@ import java.util.List;
 
 @Data
 public class CustomerReq extends ConektaObject {
-    private String id;
     private String name;
     private String phone;
     private String email;

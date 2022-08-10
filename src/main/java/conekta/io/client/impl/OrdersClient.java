@@ -12,9 +12,9 @@ import java.net.http.HttpResponse;
 public class OrdersClient extends ConektaRequestor {
 
     /**
-     * Creates a new customer.
+     * Creates a new order.
      *
-     * @param order The customer to be created.
+     * @param order The Order to be created.
      * @return The created order.
      * @throws IOException          If an error occurs while communicating with the API.
      * @throws InterruptedException If the thread is interrupted while communicating with the API.

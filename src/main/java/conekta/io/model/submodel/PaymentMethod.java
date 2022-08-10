@@ -2,12 +2,13 @@ package conekta.io.model.submodel;
 
 import conekta.io.model.ConektaObject;
 import lombok.Data;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 
 @Data
 public class PaymentMethod extends ConektaObject {
-    
+
     private String type;
     private BigDecimal createdAt;
     private String last4;
@@ -17,7 +18,7 @@ public class PaymentMethod extends ConektaObject {
     private String brand;
     private String name;
     private String parentId;
-    //TODO SET FIELD NAME
+    @ToString.Include(name = "default")
     private Boolean Default;
     private String reference;
     private String storeName;
