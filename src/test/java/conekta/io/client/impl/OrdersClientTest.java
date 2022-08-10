@@ -32,18 +32,20 @@ public class OrdersClientTest {
     @Test
     void createOrder() throws URISyntaxException, IOException, InterruptedException {
         // Arrange
-        String orderJson = Utils.readFile("order.json");
-        OrderReq orderReq = ConektaObjectMapper.getInstance().stringJsonToObject(orderJson, OrderReq.class);
+        String orderRequestJson = Utils.readFile("order.json");
+        String orderResponseJson = Utils.readFile("orderResponse.json");
+        OrderReq orderReq = ConektaObjectMapper.getInstance().stringJsonToObject(orderRequestJson, OrderReq.class);
+        Order orderResp = ConektaObjectMapper.getInstance().stringJsonToObject(orderResponseJson, Order.class);
         mockWebServer.enqueue(new MockResponse()
                 .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
                 .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(orderJson)
+                .setBody(orderResponseJson)
                 .setResponseCode(200));
 
         // Act
         Order order = ordersClient.createOrder(orderReq);
 
         // Assert
-        Assertions.assertEquals(order, orderReq);
+        Assertions.assertEquals(order, orderResp);
     }
 }

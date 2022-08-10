@@ -1,7 +1,7 @@
 {
   "currency": "MXN",
   "customer_info": {
-    "email": "test@tedst.com",
+    "email": "test@test.com",
     "phone": "5556581111",
     "name": "John Doe",
     "corporate": false,
