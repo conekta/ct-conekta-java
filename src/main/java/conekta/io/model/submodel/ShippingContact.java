@@ -12,4 +12,5 @@ public class ShippingContact extends ConektaObject {
     private Long createdAt;
     private String parentId;
     private Boolean isDefault;
+    private Boolean deleted;
 }

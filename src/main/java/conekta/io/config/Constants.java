@@ -51,6 +51,11 @@ public class Constants {
     public static final String CUSTOMERS_PATH = "customers";
 
     /**
+     * The orders' path.
+     */
+    public static final String ORDERS_PATH = "orders";
+
+    /**
      * Content type header.
      */
     public static final String CONTENT_TYPE = "Content-Type";
