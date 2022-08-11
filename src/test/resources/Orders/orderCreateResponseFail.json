@@ -1,0 +1,13 @@
+{
+  "details": [
+    {
+      "debug_message": "The \"line_items\" is missing.",
+      "message": "You need to add the param \"line_items\".",
+      "param": "line_items",
+      "code": "conekta.errors.parameter_validation.line_items.missing"
+    }
+  ],
+  "object": "error",
+  "type": "parameter_validation_error",
+  "log_id": "62f56af56cd84c7b254d3fd2"
+}
