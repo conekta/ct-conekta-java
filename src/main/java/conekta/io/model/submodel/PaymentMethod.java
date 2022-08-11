@@ -19,7 +19,7 @@ public class PaymentMethod extends ConektaObject {
     private String name;
     private String parentId;
     @ToString.Include(name = "default")
-    private Boolean Default;
+    private Boolean conektaDefault;
     private String reference;
     private String storeName;
     private String serviceName;
@@ -28,6 +28,6 @@ public class PaymentMethod extends ConektaObject {
     private String description;
     private BigDecimal authCode;
     private String store;
-    private DefaultAddress Address;
+    private DefaultAddress address;
 
 }
