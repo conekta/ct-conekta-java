@@ -1,6 +1,7 @@
 package conekta.io.client.impl;
 
 import conekta.io.Utils;
+import conekta.io.client.ConektaResponse;
 import conekta.io.config.ConektaAuthenticator;
 import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
@@ -43,9 +44,9 @@ public class OrdersClientTest {
                 .setResponseCode(200));
 
         // Act
-        Order order = ordersClient.createOrder(orderReq);
+        ConektaResponse<Order> order = ordersClient.createOrder(orderReq);
 
         // Assert
-        Assertions.assertEquals(order, orderResp);
+        Assertions.assertEquals(order.getData(), orderResp);
     }
 }

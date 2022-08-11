@@ -1,8 +1,10 @@
 package conekta.io.client.impl;
 
 import conekta.io.client.ConektaRequestor;
+import conekta.io.client.ConektaResponse;
 import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
+import conekta.io.error.ConektaErrorResponse;
 import conekta.io.model.request.OrderReq;
 import conekta.io.model.response.Order;
 
@@ -14,14 +16,16 @@ public class OrdersClient extends ConektaRequestor {
     /**
      * Creates a new order.
      *
-     * @param order The Order to be created.
-     * @return The created order.
-     * @throws IOException          If an error occurs while communicating with the API.
-     * @throws InterruptedException If the thread is interrupted while communicating with the API.
+     * @param orderReq The order request.
+     * @return The order.
      */
-    public Order createOrder(OrderReq orderReq) throws IOException, InterruptedException {
+    public ConektaResponse<Order> createOrder(OrderReq orderReq){
         HttpResponse<String> orderResponse = doRequest(orderReq, Constants.ORDERS_PATH, Constants.POST);
-        Order cosa = ConektaObjectMapper.getInstance().stringJsonToObject(orderResponse.body(), Order.class);
-        return cosa;
+        return ConektaResponse.<Order>builder()
+                .response(orderResponse)
+                .statusCode(orderResponse.statusCode())
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(orderResponse.body(), Order.class))
+                .error(ConektaObjectMapper.getInstance().stringJsonToObject(orderResponse.body(), ConektaErrorResponse.class))
+                .build();
     }
 }
