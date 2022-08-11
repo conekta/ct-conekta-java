@@ -1,117 +1,3 @@
-# Created by https://www.toptal.com/developers/gitignore/api/intellij,visualstudiocode,java,maven,gradle,intellij+iml,intellij+all
-# Edit at https://www.toptal.com/developers/gitignore?templates=intellij,visualstudiocode,java,maven,gradle,intellij+iml,intellij+all
-
-### Intellij ###
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
-# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
-
-# User-specific stuff
-/.idea/
-.vscode/
-
-# CMake
-cmake-build-*/
-
-# IntelliJ
-out/
-
-# JIRA plugin
-atlassian-ide-plugin.xml
-
-# Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
-
-
-### Intellij Patch ###
-# Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
-
-# *.iml
-# modules.xml
-# *.ipr
-
-
-### Intellij+all ###
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
-# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
-
-# User-specific stuff
-
-# AWS User-specific
-
-# Generated files
-
-# Sensitive or high-churn files
-
-
-
-# CMake
-
-# Mongo Explorer plugin
-
-# File-based project format
-
-# IntelliJ
-
-# mpeltonen/sbt-idea plugin
-
-# JIRA plugin
-
-# Cursive Clojure plugin
-
-# SonarLint plugin
-
-# Crashlytics plugin (for Android Studio and IntelliJ)
-
-# Editor-based Rest Client
-
-# Android studio 3.1+ serialized cache file
-
-### Intellij+iml ###
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
-# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
-
-# User-specific stuff
-
-# AWS User-specific
-
-# Generated files
-
-# Sensitive or high-churn files
-
-
-# CMake
-
-# Mongo Explorer plugin
-
-# File-based project format
-
-# IntelliJ
-
-# mpeltonen/sbt-idea plugin
-
-# JIRA plugin
-
-# Cursive Clojure plugin
-
-# SonarLint plugin
-
-# Crashlytics plugin (for Android Studio and IntelliJ)
-
-# Editor-based Rest Client
-
-# Android studio 3.1+ serialized cache file
-
-### Intellij+iml Patch ###
-# Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-249601023
-
-*.iml
-modules.xml
-*.ipr
-
-### Java ###
 # Compiled class file
 *.class
 
@@ -135,9 +21,7 @@ modules.xml
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-replay_pid*
 
-### Maven ###
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -150,52 +34,79 @@ buildNumber.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 
-# Eclipse m2e generated files
-# Eclipse Core
-.project
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
-# Local History for Visual Studio Code
-.history/
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
 
-# Built Visual Studio Code Extensions
-*.vsix
+# AWS User-specific
+.idea/**/aws.xml
 
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
-.ionide
+# Generated files
+.idea/**/contentModel.xml
 
-# Support for Project snippet scope
-.vscode/*.code-snippets
+# Sensitive or high-churn files
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
 
-# Ignore code-workspaces
-*.code-workspace
+# Gradle
+.idea/**/gradle.xml
+.idea/**/libraries
 
-### Gradle ###
-.gradle
-**/build/
-!src/**/build/
+# Gradle and Maven with auto-import
+# When using Gradle or Maven with auto-import, you should exclude module files,
+# since they will be recreated, and may cause churn.  Uncomment if using
+# auto-import.
+.idea/artifacts
+.idea/compiler.xml
+.idea/jarRepositories.xml
+.idea/modules.xml
+.idea/*.iml
+.idea/modules
+*.iml
+*.ipr
 
-# Ignore Gradle GUI config
-gradle-app.setting
+# CMake
+cmake-build-*/
 
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
+# Mongo Explorer plugin
+.idea/**/mongoSettings.xml
 
-# Avoid ignore Gradle wrappper properties
-!gradle-wrapper.properties
+# File-based project format
+*.iws
 
-# Cache of project
-.gradletasknamecache
+# IntelliJ
+out/
 
-# Eclipse Gradle plugin generated files
-# Eclipse Core
-# JDT-specific (Eclipse Java Development Tools)
+# mpeltonen/sbt-idea plugin
+.idea_modules/
 
-### Gradle Patch ###
-# Java heap dump
-*.hprof
+# JIRA plugin
+atlassian-ide-plugin.xml
 
-# End of https://www.toptal.com/developers/gitignore/api/intellij,visualstudiocode,java,maven,gradle,intellij+iml,intellij+all
+# Cursive Clojure plugin
+.idea/replstate.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Editor-based Rest Client
+.idea/httpRequests
+
+# Android studio 3.1+ serialized cache file
+.idea/caches/build_file_checksums.ser
+
+# End of https://mrkandreev.name/snippets/gitignore-generator/#Java,Maven,Intellij+iml
