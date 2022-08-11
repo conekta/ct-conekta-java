@@ -1,7 +1,6 @@
 package conekta.io.model.submodel;
 
 import conekta.io.model.ConektaObject;
-import lombok.Builder;
 import lombok.Data;
 
 @Data

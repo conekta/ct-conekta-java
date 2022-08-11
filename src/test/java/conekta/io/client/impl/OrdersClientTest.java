@@ -1,6 +1,7 @@
 package conekta.io.client.impl;
 
 import conekta.io.Utils;
+import conekta.io.client.ConektaResponse;
 import conekta.io.config.ConektaAuthenticator;
 import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
@@ -43,13 +44,12 @@ public class OrdersClientTest {
                 .setResponseCode(200));
 
         // Act
-        Order order = ordersClient.createOrder(orderReq);
+        ConektaResponse<Order> order = ordersClient.createOrder(orderReq);
 
         // Assert
-        Assertions.assertEquals(order, orderResp);
+        Assertions.assertEquals(order.getData(), orderResp);
     }
-
-
+    
     @Test
     void updateOrder() throws IOException, InterruptedException, URISyntaxException {
         String orderUpdateRequest = Utils.readFile("orderUpdateRequest.json");
@@ -63,11 +63,11 @@ public class OrdersClientTest {
                 .setResponseCode(200));
 
         // Act
-        Order order = ordersClient.updateOrder("1", orderReq);
+        ConektaResponse<Order> order = ordersClient.updateOrder("1", orderReq);
 
         // Assert
-        Assertions.assertNotNull(order.getCustomerInfo());
-        Assertions.assertEquals(order.getCustomerInfo().getName(), ordModified.getCustomerInfo().getName());
-        Assertions.assertEquals(order.getCustomerInfo().getEmail(), ordModified.getCustomerInfo().getEmail());
+        Assertions.assertNotNull(order.getData().getCustomerInfo());
+        Assertions.assertEquals(order.getData().getCustomerInfo().getName(), ordModified.getCustomerInfo().getName());
+        Assertions.assertEquals(order.getData().getCustomerInfo().getEmail(), ordModified.getCustomerInfo().getEmail());
     }
 }

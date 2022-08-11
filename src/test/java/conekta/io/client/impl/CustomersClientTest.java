@@ -1,6 +1,7 @@
 package conekta.io.client.impl;
 
 import conekta.io.Utils;
+import conekta.io.client.ConektaResponse;
 import conekta.io.config.ConektaAuthenticator;
 import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
@@ -43,10 +44,10 @@ class CustomersClientTest {
                 .setResponseCode(200));
 
         // Act
-        Customer customer = customersClient.createCustomer(cus);
+        ConektaResponse<Customer> customerConektaResponse = customersClient.createCustomer(cus);
 
         // Assert
-        Assertions.assertEquals(customer, cus);
+        Assertions.assertEquals(customerConektaResponse.getData(), cus);
     }
 
     @Test
@@ -61,10 +62,10 @@ class CustomersClientTest {
                 .setResponseCode(200));
 
         // Act
-        Customer customer = customersClient.retrieveCustomer("1");
+        ConektaResponse<Customer> customerConektaResponse = customersClient.retrieveCustomer("1");
 
         // Assert
-        Assertions.assertEquals(customer, cus);
+        Assertions.assertEquals(customerConektaResponse.getData(), cus);
     }
 
     @Test
@@ -81,10 +82,10 @@ class CustomersClientTest {
                 .setResponseCode(200));
 
         // Act
-        PaginatedConektaObject<Customer> customers = customersClient.getCustomers();
+        ConektaResponse<PaginatedConektaObject<Customer>> customers = customersClient.getCustomers(null);
 
         // Assert
-        Assertions.assertEquals(customers.getData().get(0), cus);
+        Assertions.assertEquals(customers.getData().getData().get(0), cus);
     }
 
     @Test
@@ -100,11 +101,11 @@ class CustomersClientTest {
                 .setResponseCode(200));
 
         // Act
-        Customer customer = customersClient.updateCustomer("1", cusModified);
+        ConektaResponse<Customer> customerConektaResponse = customersClient.updateCustomer("1", cusModified);
 
         // Assert
-        Assertions.assertEquals(customer, cusModified);
-        Assertions.assertNotEquals(cus, customer);
+        Assertions.assertEquals(customerConektaResponse.getData(), cusModified);
+        Assertions.assertNotEquals(cus, customerConektaResponse.getData());
         Assertions.assertNotEquals(cus, cusModified);
 
     }
@@ -123,10 +124,10 @@ class CustomersClientTest {
                 .setResponseCode(200));
 
         // Act
-        Customer customer = customersClient.deleteCustomer("1");
+        ConektaResponse<Customer> customerConektaResponse = customersClient.deleteCustomer("1");
 
         // Assert
-        Assertions.assertEquals(customer, cus);
+        Assertions.assertEquals(customerConektaResponse.getData(), cus);
     }
 
     @Test
@@ -144,9 +145,9 @@ class CustomersClientTest {
                 .setResponseCode(200));
 
         // Act
-        PaginatedConektaObject<Webhook> webhooks = customersClient.getCustomerWebhooks("1");
+        ConektaResponse<PaginatedConektaObject<Webhook>> customerWebhooks = customersClient.getCustomerWebhooks("1", null);
 
         // Assert
-        Assertions.assertEquals(webhooks, paginatedConektaObject);
+        Assertions.assertEquals(customerWebhooks.getData(), paginatedConektaObject);
     }
 }

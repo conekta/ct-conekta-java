@@ -2,122 +2,114 @@ package conekta.io.client.impl;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import conekta.io.client.ConektaRequestor;
+import conekta.io.client.ConektaResponse;
 import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
+import conekta.io.error.ConektaErrorResponse;
 import conekta.io.model.PaginatedConektaObject;
 import conekta.io.model.impl.Customer;
 import conekta.io.model.impl.Webhook;
 
-import java.io.IOException;
 import java.net.http.HttpResponse;
 
 public class CustomersClient extends ConektaRequestor {
 
     /**
-     * Creates a new customer.
+     * Creates a new customer in Conekta.
      *
      * @param customer The customer to be created.
-     * @return The created customer.
-     * @throws IOException          If an error occurs while communicating with the API.
-     * @throws InterruptedException If the thread is interrupted while communicating with the API.
+     * @return The created ConektaResponse<Customer>.
      */
-    public Customer createCustomer(Customer customer) throws IOException, InterruptedException {
+    public ConektaResponse<Customer> createCustomer(Customer customer){
         HttpResponse<String> customerResponse = doRequest(customer, Constants.CUSTOMERS_PATH, Constants.POST);
-        return ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), Customer.class);
+        return ConektaResponse.<Customer>builder()
+                .response(customerResponse)
+                .statusCode(customerResponse.statusCode())
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), Customer.class))
+                .error(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), ConektaErrorResponse.class))
+                .build();
     }
 
     /**
-     * Retrieves a customer.
+     * Retrieves a customer in Conekta.
      *
-     * @param customerId The customer's ID.
-     * @return The customer.
-     * @throws IOException          If an error occurs while communicating with the API.
-     * @throws InterruptedException If the thread is interrupted while communicating with the API.
+     * @param customerId The id of the customer to be retrieved.
+     * @return The retrieved ConektaResponse<Customer>.
      */
-    public Customer retrieveCustomer(String customerId) throws IOException, InterruptedException {
+    public ConektaResponse<Customer> retrieveCustomer(String customerId){
         HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId, Constants.GET);
-        return ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), Customer.class);
+        return ConektaResponse.<Customer>builder()
+                .response(customerResponse)
+                .statusCode(customerResponse.statusCode())
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), Customer.class))
+                .error(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), ConektaErrorResponse.class))
+                .build();
     }
 
     /**
-     * Retrieves all customers.
-     *
-     * @return PaginatedConektaObject<Customer>
-     * @throws IOException          If an error occurs while communicating with the API.
-     * @throws InterruptedException If the thread is interrupted while communicating with the API.
+     * Retrieves all customers paginated in Conekta.
+     * @param next The next page of the customers to be retrieved.
+     *             If null, the first page will be retrieved.
+     *             If not null, the next page will be retrieved.
+     * @return The retrieved ConektaResponse<PaginatedConektaObject<Customer>>.
      */
-    public PaginatedConektaObject<Customer> getCustomers() throws IOException, InterruptedException {
-        HttpResponse<String> customersResponse = doRequest(null, Constants.CUSTOMERS_PATH, Constants.GET);
-        return ConektaObjectMapper.getInstance().stringJsonToObject(customersResponse.body(), new TypeReference<>() {
-        });
+    public ConektaResponse<PaginatedConektaObject<Customer>> getCustomers(String next){
+        HttpResponse<String> customersResponse = doRequest(null, Constants.CUSTOMERS_PATH + (next != null ? Constants.NEXT + next : ""), Constants.GET);
+        return ConektaResponse.<PaginatedConektaObject<Customer>>builder()
+                .response(customersResponse)
+                .statusCode(customersResponse.statusCode())
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(customersResponse.body(), new TypeReference<PaginatedConektaObject<Customer>>() {
+                }))
+                .error(ConektaObjectMapper.getInstance().stringJsonToObject(customersResponse.body(), ConektaErrorResponse.class))
+                .build();
     }
 
     /**
-     * Retrieves all customers paginated from next.
-     *
-     * @param next The next page.
-     * @return PaginatedConektaObject<Customer>
-     * @throws IOException          If an error occurs while communicating with the API.
-     * @throws InterruptedException If the thread is interrupted while communicating with the API.
-     */
-    public PaginatedConektaObject<Customer> getCustomers(String next) throws IOException, InterruptedException {
-        HttpResponse<String> customersResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.NEXT + next, Constants.GET);
-        return ConektaObjectMapper.getInstance().stringJsonToObject(customersResponse.body(), new TypeReference<>() {
-        });
-    }
-
-    /**
-     * Updates a customer.
+     * Updates a customer in Conekta.
      *
      * @param customer The customer to be updated.
-     * @return The updated customer.
-     * @throws IOException          If an error occurs while communicating with the API.
-     * @throws InterruptedException If the thread is interrupted while communicating with the API.
+     * @return The updated ConektaResponse<Customer>.
      */
-    public Customer updateCustomer(String customerId, Customer customer) throws IOException, InterruptedException {
+    public ConektaResponse<Customer> updateCustomer(String customerId, Customer customer){
         HttpResponse<String> customerResponse = doRequest(customer, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId, Constants.PUT);
-        return ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), Customer.class);
+        return ConektaResponse.<Customer>builder()
+                .response(customerResponse)
+                .statusCode(customerResponse.statusCode())
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), Customer.class))
+                .error(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), ConektaErrorResponse.class))
+                .build();
     }
 
     /**
-     * Logically deletes a customer.
+     * Deletes a customer in Conekta (Logically).
      *
-     * @param customerId The customer's ID.
-     * @return The logically deleted customer.
-     * @throws IOException          If an error occurs while communicating with the API.
-     * @throws InterruptedException If the thread is interrupted while communicating with the API.
+     * @param customerId The id of the customer to be deleted.
+     * @return The deleted ConektaResponse<Customer>.
      */
-    public Customer deleteCustomer(String customerId) throws IOException, InterruptedException {
+    public ConektaResponse<Customer> deleteCustomer(String customerId){
         HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId, Constants.DELETE);
-        return ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), Customer.class);
+        return ConektaResponse.<Customer>builder()
+                .response(customerResponse)
+                .statusCode(customerResponse.statusCode())
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), Customer.class))
+                .error(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), ConektaErrorResponse.class))
+                .build();
     }
 
     /**
-     * Get customer webhooks.
+     * Retrieves customer's webhooks in Conekta.
      *
-     * @param customerId The customer's ID.
-     * @return List<Webhook>
-     * @throws IOException          If an error occurs while communicating with the API.
-     * @throws InterruptedException If the thread is interrupted while communicating with the API.
+     * @param customerId The id of the customer to be retrieved.
+     * @return The retrieved ConektaResponse<PaginatedConektaObject<Webhook>>.
      */
-    public PaginatedConektaObject<Webhook> getCustomerWebhooks(String customerId) throws IOException, InterruptedException {
-        HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId + Constants.WEBHOOKS, Constants.GET);
-        return ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), new TypeReference<>() {
-        });
-    }
-
-    /**
-     * Get customer webhooks paginated from next.
-     *
-     * @param customerId The customer's ID.
-     * @param next       The next page.
-     * @return List<Webhook>
-     * @throws IOException          If an error occurs while communicating with the API.
-     * @throws InterruptedException If the thread is interrupted while communicating with the API.
-     */
-    public PaginatedConektaObject<Webhook> getCustomerWebhooks(String customerId, String next) throws IOException, InterruptedException {
-        HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId + Constants.WEBHOOKS + Constants.NEXT + next, Constants.GET);
-        return ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), new TypeReference<>() {
-        });
+    public ConektaResponse<PaginatedConektaObject<Webhook>> getCustomerWebhooks(String customerId, String next){
+        HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId + Constants.WEBHOOKS + (next != null ? Constants.NEXT + next : ""), Constants.GET);
+        return ConektaResponse.<PaginatedConektaObject<Webhook>>builder()
+                .response(customerResponse)
+                .statusCode(customerResponse.statusCode())
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), new TypeReference<PaginatedConektaObject<Webhook>>() {
+                }))
+                .error(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), ConektaErrorResponse.class))
+                .build();
     }
 }
