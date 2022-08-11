@@ -68,5 +68,6 @@ public class OrdersClientTest {
         // Assert
         Assertions.assertNotNull(order.getCustomerInfo());
         Assertions.assertEquals(order.getCustomerInfo().getName(), ordModified.getCustomerInfo().getName());
+        Assertions.assertEquals(order.getCustomerInfo().getEmail(), ordModified.getCustomerInfo().getEmail());
     }
 }
