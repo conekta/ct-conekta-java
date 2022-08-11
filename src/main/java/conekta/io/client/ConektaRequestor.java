@@ -3,6 +3,8 @@ package conekta.io.client;
 import conekta.io.config.ConektaAuthenticator;
 import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
+import conekta.io.error.IOConektaRequestorException;
+import conekta.io.error.InterruptedConektaRequestorException;
 import conekta.io.model.ConektaObject;
 
 import java.io.IOException;
@@ -20,16 +22,22 @@ public abstract class ConektaRequestor {
         this.environment = environment;
     }
 
-    private HttpResponse<String> send(HttpRequest request) throws IOException, InterruptedException {
+    private HttpResponse<String> send(HttpRequest request){
         ConektaAuthenticator.getInstance();
-        return HttpClient.newBuilder()
-                .authenticator(ConektaAuthenticator.getBasicAuthenticator())
-                .connectTimeout(Duration.ofSeconds(Constants.HTTP_CLIENT_TIMEOUT))
-                .build()
-                .send(request, HttpResponse.BodyHandlers.ofString());
+        try {
+            return HttpClient.newBuilder()
+                    .authenticator(ConektaAuthenticator.getBasicAuthenticator())
+                    .connectTimeout(Duration.ofSeconds(Constants.HTTP_CLIENT_TIMEOUT))
+                    .build()
+                    .send(request, HttpResponse.BodyHandlers.ofString());
+        } catch (IOException e) {
+            throw new IOConektaRequestorException(e);
+        } catch (InterruptedException e) {
+            throw new InterruptedConektaRequestorException(e);
+        }
     }
 
-    public HttpResponse<String> doRequest(ConektaObject conektaObject, String path, String method) throws IOException, InterruptedException {
+    public HttpResponse<String> doRequest(ConektaObject conektaObject, String path, String method){
         HttpRequest.Builder builder = HttpRequest.newBuilder();
         String jsonBody = ConektaObjectMapper.getInstance().conektaObjectToString(conektaObject);
         switch (method) {

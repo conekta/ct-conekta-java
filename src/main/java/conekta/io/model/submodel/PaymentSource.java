@@ -1,11 +1,9 @@
 package conekta.io.model.submodel;
 
 import conekta.io.model.ConektaObject;
-import lombok.Builder;
 import lombok.Data;
 
 @Data
-
 public class PaymentSource extends ConektaObject {
     private String type;
     private String tokenId;

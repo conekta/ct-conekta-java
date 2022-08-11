@@ -2,7 +2,6 @@ package conekta.io.model.impl;
 
 import conekta.io.model.ConektaObject;
 import conekta.io.model.submodel.*;
-import lombok.Builder;
 import lombok.Data;
 
 import java.util.List;
