@@ -48,4 +48,25 @@ public class OrdersClientTest {
         // Assert
         Assertions.assertEquals(order, orderResp);
     }
+
+
+    @Test
+    void updateOrder() throws IOException, InterruptedException, URISyntaxException {
+        String orderUpdateRequest = Utils.readFile("orderUpdateRequest.json");
+        String orderJsonModified = Utils.readFile("orderModified.json");
+        OrderReq orderReq = ConektaObjectMapper.getInstance().stringJsonToObject(orderUpdateRequest, OrderReq.class);
+        Order ordModified = ConektaObjectMapper.getInstance().stringJsonToObject(orderJsonModified, Order.class);
+        mockWebServer.enqueue(new MockResponse()
+                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
+                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
+                .setBody(orderJsonModified)
+                .setResponseCode(200));
+
+        // Act
+        Order order = ordersClient.updateOrder("1", orderReq);
+
+        // Assert
+        Assertions.assertNotNull(order.getCustomerInfo());
+        Assertions.assertEquals(order.getCustomerInfo().getName(), ordModified.getCustomerInfo().getName());
+    }
 }

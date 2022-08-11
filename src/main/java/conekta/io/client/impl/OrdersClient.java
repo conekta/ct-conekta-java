@@ -24,4 +24,17 @@ public class OrdersClient extends ConektaRequestor {
         Order cosa = ConektaObjectMapper.getInstance().stringJsonToObject(orderResponse.body(), Order.class);
         return cosa;
     }
+
+    /**
+     * Updates a order.
+     *
+     * @param order The order to be updated.
+     * @return The updated order.
+     * @throws IOException          If an error occurs while communicating with the API.
+     * @throws InterruptedException If the thread is interrupted while communicating with the API.
+     */
+    public Order updateOrder(String orderId, OrderReq orderReq) throws IOException, InterruptedException {
+        HttpResponse<String> orderResponse = doRequest(orderReq, Constants.ORDERS_PATH + Constants.SLASH + orderId, Constants.PUT);
+        return ConektaObjectMapper.getInstance().stringJsonToObject(orderResponse.body(), Order.class);
+    }
 }
