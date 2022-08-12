@@ -114,4 +114,19 @@ public class OrdersClientTest {
         Assertions.assertEquals(order.getError().getCode(), orderResp.getCode());
     }
 
+    @Test
+    void getOrder() throws IOException, InterruptedException, URISyntaxException {
+        String orderJson = Utils.readFile("Orders/orderResponse.json");
+        Order order = ConektaObjectMapper.getInstance().stringJsonToObject(orderJson, Order.class);
+        mockWebServer.enqueue(new MockResponse()
+                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
+                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
+                .setBody(orderJson)
+                .setResponseCode(200));
+        // Act
+        ConektaResponse<Order> orderResponse = ordersClient.retrieveOrder("1");
+        // Assert
+        Assertions.assertEquals(orderResponse.getData(), order);
+    }
+
 }

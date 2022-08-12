@@ -28,8 +28,31 @@ public class OrdersClient extends ConektaRequestor {
                 .build();
     }
 
+    /**
+     * Updates an order.
+     *
+     * @param orderReq The updated information.
+     * @param orderId  The order id.
+     * @return The order.
+     */
     public ConektaResponse<Order> updateOrder(String orderId, OrderReq orderReq) {
         HttpResponse<String> orderResponse = doRequest(orderReq, Constants.ORDERS_PATH + Constants.SLASH + orderId, Constants.PUT);
+        return ConektaResponse.<Order>builder()
+                .response(orderResponse)
+                .statusCode(orderResponse.statusCode())
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(orderResponse.body(), Order.class))
+                .error(ConektaObjectMapper.getInstance().stringJsonToObject(orderResponse.body(), ConektaErrorResponse.class))
+                .build();
+    }
+
+    /**
+     * Retrieves an order.
+     *
+     * @param orderId The order id.
+     * @return The order.
+     */
+    public ConektaResponse<Order> retrieveOrder(String orderId) {
+        HttpResponse<String> orderResponse = doRequest(null, Constants.ORDERS_PATH + Constants.SLASH + orderId, Constants.GET);
         return ConektaResponse.<Order>builder()
                 .response(orderResponse)
                 .statusCode(orderResponse.statusCode())
