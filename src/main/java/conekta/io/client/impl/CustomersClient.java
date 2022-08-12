@@ -9,6 +9,7 @@ import conekta.io.error.ConektaErrorResponse;
 import conekta.io.model.PaginatedConektaObject;
 import conekta.io.model.impl.Customer;
 import conekta.io.model.impl.Webhook;
+import conekta.io.model.submodel.PaymentSource;
 
 import java.net.http.HttpResponse;
 
@@ -58,7 +59,7 @@ public class CustomersClient extends ConektaRequestor {
         return ConektaResponse.<PaginatedConektaObject<Customer>>builder()
                 .response(customersResponse)
                 .statusCode(customersResponse.statusCode())
-                .data(ConektaObjectMapper.getInstance().stringJsonToObject(customersResponse.body(), new TypeReference<PaginatedConektaObject<Customer>>() {
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(customersResponse.body(), new TypeReference<>() {
                 }))
                 .error(ConektaObjectMapper.getInstance().stringJsonToObject(customersResponse.body(), ConektaErrorResponse.class))
                 .build();
@@ -102,12 +103,23 @@ public class CustomersClient extends ConektaRequestor {
      * @param customerId The id of the customer to be retrieved.
      * @return The retrieved ConektaResponse<PaginatedConektaObject<Webhook>>.
      */
-    public ConektaResponse<PaginatedConektaObject<Webhook>> getCustomerWebhooks(String customerId, String next){
+    public ConektaResponse<PaginatedConektaObject<Webhook>> getCustomerWebhooks(String customerId, String next) {
         HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId + Constants.WEBHOOKS + (next != null ? Constants.NEXT + next : ""), Constants.GET);
         return ConektaResponse.<PaginatedConektaObject<Webhook>>builder()
                 .response(customerResponse)
                 .statusCode(customerResponse.statusCode())
-                .data(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), new TypeReference<PaginatedConektaObject<Webhook>>() {
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), new TypeReference<>() {
+                }))
+                .error(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), ConektaErrorResponse.class))
+                .build();
+    }
+
+    public ConektaResponse<PaginatedConektaObject<PaymentSource>> getCustomerPaymentSources(String customerId, String next) {
+        HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId + Constants.PAYMENT_SOURCES + (next != null ? Constants.NEXT + next : ""), Constants.GET);
+        return ConektaResponse.<PaginatedConektaObject<PaymentSource>>builder()
+                .response(customerResponse)
+                .statusCode(customerResponse.statusCode())
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), new TypeReference<>() {
                 }))
                 .error(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), ConektaErrorResponse.class))
                 .build();
