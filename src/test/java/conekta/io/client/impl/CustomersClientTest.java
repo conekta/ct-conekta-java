@@ -1,12 +1,15 @@
 package conekta.io.client.impl;
 
 import conekta.io.Utils;
+import conekta.io.client.ConektaResponse;
 import conekta.io.config.ConektaAuthenticator;
 import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
+import conekta.io.error.ConektaErrorResponse;
 import conekta.io.model.PaginatedConektaObject;
 import conekta.io.model.impl.Customer;
 import conekta.io.model.impl.Webhook;
+import conekta.io.model.submodel.PaymentSource;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import org.junit.jupiter.api.Assertions;
@@ -32,7 +35,47 @@ class CustomersClientTest {
     }
 
     @Test
-    void createCustomer() throws URISyntaxException, IOException, InterruptedException {
+    void createCustomer() throws URISyntaxException, IOException {
+        // Arrange
+        String customerJson = Utils.readFile("customer.json");
+        Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
+        mockWebServer.enqueue(new MockResponse()
+                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
+                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
+                .setBody(customerJson)
+                .setResponseCode(201));
+
+        // Act
+        ConektaResponse<Customer> customerConektaResponse = customersClient.createCustomer(cus);
+
+        // Assert
+        Assertions.assertEquals(customerConektaResponse.getData(), cus);
+        Assertions.assertEquals(201, customerConektaResponse.getStatusCode());
+    }
+
+    @Test
+    void createCustomerWithError() throws URISyntaxException, IOException {
+        // Arrange
+        String customerJson = Utils.readFile("customerWithNoMail.json");
+        String errorJson = Utils.readFile("errorMail.json");
+        Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
+        ConektaErrorResponse error = ConektaObjectMapper.getInstance().stringJsonToObject(errorJson, ConektaErrorResponse.class);
+        mockWebServer.enqueue(new MockResponse()
+                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
+                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
+                .setBody(errorJson)
+                .setResponseCode(404));
+
+        // Act
+        ConektaResponse<Customer> customerConektaResponse = customersClient.createCustomer(cus);
+
+        // Assert
+        Assertions.assertEquals(customerConektaResponse.getError(), error);
+        Assertions.assertEquals(404, customerConektaResponse.getStatusCode());
+    }
+
+    @Test
+    void retrieveCustomer() throws IOException, URISyntaxException {
         // Arrange
         String customerJson = Utils.readFile("customer.json");
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
@@ -43,32 +86,14 @@ class CustomersClientTest {
                 .setResponseCode(200));
 
         // Act
-        Customer customer = customersClient.createCustomer(cus);
+        ConektaResponse<Customer> customerConektaResponse = customersClient.retrieveCustomer("1");
 
         // Assert
-        Assertions.assertEquals(customer, cus);
+        Assertions.assertEquals(customerConektaResponse.getData(), cus);
     }
 
     @Test
-    void retrieveCustomer() throws IOException, URISyntaxException, InterruptedException {
-        // Arrange
-        String customerJson = Utils.readFile("customer.json");
-        Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
-        mockWebServer.enqueue(new MockResponse()
-                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(customerJson)
-                .setResponseCode(200));
-
-        // Act
-        Customer customer = customersClient.retrieveCustomer("1");
-
-        // Assert
-        Assertions.assertEquals(customer, cus);
-    }
-
-    @Test
-    void getCustomers() throws IOException, InterruptedException, URISyntaxException {
+    void getCustomers() throws IOException, URISyntaxException {
         String customerJson = Utils.readFile("customer.json");
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
         PaginatedConektaObject<Customer> paginatedConektaObject = new PaginatedConektaObject<>();
@@ -81,14 +106,14 @@ class CustomersClientTest {
                 .setResponseCode(200));
 
         // Act
-        PaginatedConektaObject<Customer> customers = customersClient.getCustomers();
+        ConektaResponse<PaginatedConektaObject<Customer>> customers = customersClient.getCustomers(null);
 
         // Assert
-        Assertions.assertEquals(customers.getData().get(0), cus);
+        Assertions.assertEquals(customers.getData().getData().get(0), cus);
     }
 
     @Test
-    void updateCustomer() throws IOException, InterruptedException, URISyntaxException {
+    void updateCustomer() throws IOException, URISyntaxException {
         String customerJson = Utils.readFile("customer.json");
         String customerJsonModified = Utils.readFile("customerModified.json");
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
@@ -100,17 +125,17 @@ class CustomersClientTest {
                 .setResponseCode(200));
 
         // Act
-        Customer customer = customersClient.updateCustomer("1", cusModified);
+        ConektaResponse<Customer> customerConektaResponse = customersClient.updateCustomer("1", cusModified);
 
         // Assert
-        Assertions.assertEquals(customer, cusModified);
-        Assertions.assertNotEquals(cus, customer);
+        Assertions.assertEquals(customerConektaResponse.getData(), cusModified);
+        Assertions.assertNotEquals(cus, customerConektaResponse.getData());
         Assertions.assertNotEquals(cus, cusModified);
 
     }
 
     @Test
-    void deleteCustomer() throws IOException, URISyntaxException, InterruptedException {
+    void deleteCustomer() throws IOException, URISyntaxException {
         // Arrange
         String customerJson = Utils.readFile("customer.json");
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
@@ -123,14 +148,14 @@ class CustomersClientTest {
                 .setResponseCode(200));
 
         // Act
-        Customer customer = customersClient.deleteCustomer("1");
+        ConektaResponse<Customer> customerConektaResponse = customersClient.deleteCustomer("1");
 
         // Assert
-        Assertions.assertEquals(customer, cus);
+        Assertions.assertEquals(customerConektaResponse.getData(), cus);
     }
 
     @Test
-    void getCustomerWebhooks() throws IOException, URISyntaxException, InterruptedException {
+    void getCustomerWebhooks() throws IOException, URISyntaxException {
         // Arrange
         String webhookJson = Utils.readFile("webhook.json");
         Webhook webhook = ConektaObjectMapper.getInstance().stringJsonToObject(webhookJson, Webhook.class);
@@ -144,9 +169,28 @@ class CustomersClientTest {
                 .setResponseCode(200));
 
         // Act
-        PaginatedConektaObject<Webhook> webhooks = customersClient.getCustomerWebhooks("1");
+        ConektaResponse<PaginatedConektaObject<Webhook>> customerWebhooks = customersClient.getCustomerWebhooks("1", null);
 
         // Assert
-        Assertions.assertEquals(webhooks, paginatedConektaObject);
+        Assertions.assertEquals(customerWebhooks.getData(), paginatedConektaObject);
+    }
+
+    @Test
+    void getCustomerPaymentSources() throws IOException, URISyntaxException {
+        // Arrange
+        String paymentSourceJson = Utils.readFile("paymentSource.json");
+        PaymentSource paymentSource = ConektaObjectMapper.getInstance().stringJsonToObject(paymentSourceJson, PaymentSource.class);
+        PaginatedConektaObject<PaymentSource> paginatedConektaObject = new PaginatedConektaObject<>();
+        paginatedConektaObject.setData(List.of(paymentSource));
+        String s = ConektaObjectMapper.getInstance().conektaObjectToString(paginatedConektaObject);
+        mockWebServer.enqueue(new MockResponse()
+                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
+                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
+                .setBody(s)
+                .setResponseCode(200));
+        // Act
+        ConektaResponse<PaginatedConektaObject<PaymentSource>> customerPaymentSources = customersClient.getCustomerPaymentSources("1", null);
+        // Assert
+        Assertions.assertEquals(customerPaymentSources.getData(), paginatedConektaObject);
     }
 }

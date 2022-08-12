@@ -10,8 +10,8 @@ public class CustomerReq extends ConektaObject {
     private String name;
     private String phone;
     private String email;
-    private List<PaymentSourceCreateReq> PaymentSources;
-    private Boolean Corporate;
-    private String DefaultPaymentSourceID;
-    private List<ShippingContactReq> ShippingContacts;
+    private List<PaymentSourceCreateReq> paymentSources;
+    private Boolean corporate;
+    private String defaultPaymentSourceID;
+    private List<ShippingContactReq> shippingContacts;
 }

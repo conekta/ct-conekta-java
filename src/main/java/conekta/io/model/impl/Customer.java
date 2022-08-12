@@ -19,6 +19,6 @@ public class Customer extends ConektaObject {
     private String defaultPaymentSourceId;
     private Object paymentSources;
     private Object shippingContacts;
-    //TODO REVISAR CON UN EXPERTO
+    //TODO REVISAR CON UN EXPERTO URGENTE
     private Boolean deleted;
 }
