@@ -10,6 +10,6 @@ public class DiscountLine extends ConektaObject {
     private String code;
     private BigDecimal amount;
     private String type;
-    private String ParentId;
+    private String parentId;
     private Boolean deleted;
 }

@@ -6,6 +6,8 @@ import conekta.io.client.ConektaResponse;
 import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
 import conekta.io.error.ConektaErrorResponse;
+import conekta.io.model.request.OrderReq;
+import conekta.io.model.response.Order;
 import conekta.io.model.PaginatedConektaObject;
 import conekta.io.model.request.OrderReq;
 import conekta.io.model.response.Order;
@@ -31,6 +33,13 @@ public class OrdersClient extends ConektaRequestor {
                 .build();
     }
 
+    /**
+     * Updates an order.
+     *
+     * @param orderReq The updated information.
+     * @param orderId  The order id.
+     * @return The order.
+     */
     public ConektaResponse<Order> updateOrder(String orderId, OrderReq orderReq) {
         HttpResponse<String> orderResponse = doRequest(orderReq, Constants.ORDERS_PATH + Constants.SLASH + orderId, Constants.PUT);
         return ConektaResponse.<Order>builder()
@@ -41,9 +50,24 @@ public class OrdersClient extends ConektaRequestor {
                 .build();
     }
 
+    /**
+     * Retrieves an order.
+     *
+     * @param orderId The order id.
+     * @return The order.
+     */
+    public ConektaResponse<Order> retrieveOrder(String orderId) {
+        HttpResponse<String> orderResponse = doRequest(null, Constants.ORDERS_PATH + Constants.SLASH + orderId, Constants.GET);
+        return ConektaResponse.<Order>builder()
+                .response(orderResponse)
+                .statusCode(orderResponse.statusCode())
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(orderResponse.body(), Order.class))
+                .error(ConektaObjectMapper.getInstance().stringJsonToObject(orderResponse.body(), ConektaErrorResponse.class))
+                .build();
+    }
 
     public ConektaResponse<PaginatedConektaObject<Charge>> getOrderCharges(String orderId, String next) {
-        HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + orderId + Constants.WEBHOOKS + (next != null ? Constants.CHARGES + next : ""), Constants.GET);
+        HttpResponse<String> customerResponse = doRequest(null, Constants.ORDERS_PATH + Constants.SLASH + orderId + Constants.CHARGES + (next != null ? next : ""), Constants.GET);
         return ConektaResponse.<PaginatedConektaObject<Charge>>builder()
                 .response(customerResponse)
                 .statusCode(customerResponse.statusCode())

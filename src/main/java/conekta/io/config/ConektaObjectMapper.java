@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import conekta.io.error.ConektaObjectMapperException;
@@ -57,14 +56,6 @@ public class ConektaObjectMapper {
     public <T> T stringJsonToObject(String jsonStr, TypeReference<T> valueType) {
         try {
             return objectMapper.readValue(jsonStr, valueType);
-        } catch (JsonProcessingException e) {
-            throw new ConektaObjectMapperException(e);
-        }
-    }
-
-    public <T> Class<T> stringJsonToObject(String body, JavaType type) {
-        try {
-            return objectMapper.readValue(body, type);
         } catch (JsonProcessingException e) {
             throw new ConektaObjectMapperException(e);
         }
