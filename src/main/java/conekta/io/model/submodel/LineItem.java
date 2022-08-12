@@ -7,11 +7,11 @@ import java.util.List;
 
 @Data
 public class LineItem extends ConektaData {
-    public String name;
-    public BigDecimal unitPrice;
-    public int quantity;
-    public List<String> tags;
+    private String name;
+    private BigDecimal unitPrice;
+    private int quantity;
+    private List<String> tags;
     //TODO REVISAR
-    public Object metadata;
-    public AntifraudInfo antifraudInfo;
+    private Object metadata;
+    private AntifraudInfo antifraudInfo;
 }

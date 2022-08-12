@@ -17,5 +17,5 @@ public class OrderReq extends ConektaObject {
     private List<ShippingLinesReq> shippingLines;
     private Object metadata;
     private List<ChargeReq> charges;
-    private String OrderCheckoutReq;
+    private String orderCheckoutReq;
 }

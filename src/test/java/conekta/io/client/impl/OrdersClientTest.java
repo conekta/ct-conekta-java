@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-public class OrdersClientTest {
+class OrdersClientTest {
 
     private MockWebServer mockWebServer;
     private OrdersClient ordersClient;

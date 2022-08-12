@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class ShippingLines extends ConektaData {
-    public String carrier;
-    public String method;
-    public String trackingNumber;
+    private String carrier;
+    private String method;
+    private String trackingNumber;
 }
