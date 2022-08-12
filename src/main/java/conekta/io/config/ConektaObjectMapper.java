@@ -61,12 +61,4 @@ public class ConektaObjectMapper {
             throw new ConektaObjectMapperException(e);
         }
     }
-
-    public <T> Class<T> stringJsonToObject(String body, JavaType type) {
-        try {
-            return objectMapper.readValue(body, type);
-        } catch (JsonProcessingException e) {
-            throw new ConektaObjectMapperException(e);
-        }
-    }
 }
