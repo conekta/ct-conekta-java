@@ -20,12 +20,12 @@ import java.net.URISyntaxException;
 public class OrdersClientTest {
 
     private MockWebServer mockWebServer;
-    private conekta.io.client.impl.OrdersClient ordersClient;
+    private OrdersClient ordersClient;
 
     @BeforeEach
     void generateAuthenticator() {
         this.mockWebServer = new MockWebServer();
-        this.ordersClient = new conekta.io.client.impl.OrdersClient();
+        this.ordersClient = new OrdersClient();
         ordersClient.setEnvironment(mockWebServer.url("/").toString());
         ConektaAuthenticator.getInstance();
         ConektaAuthenticator.setCredentials("USER", "");
