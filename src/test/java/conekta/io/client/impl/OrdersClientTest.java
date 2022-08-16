@@ -134,7 +134,7 @@ class OrdersClientTest {
     @Test
     void getChargesOrder() throws IOException, URISyntaxException {
         // Arrange
-        String orderChargesResponse = Utils.readFile("Orders/orderCharges.json");
+        String orderChargesResponse = Utils.readFile("Orders/orderChargesResponse.json");
         String orderCharge = Utils.readFile("Orders/orderCharge.json");
 
         Charge charge = ConektaObjectMapper.getInstance().stringJsonToObject(orderCharge, Charge.class);
