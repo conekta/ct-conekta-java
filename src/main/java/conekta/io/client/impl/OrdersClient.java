@@ -1,5 +1,6 @@
 package conekta.io.client.impl;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import conekta.io.client.ConektaRequestor;
 import conekta.io.client.ConektaResponse;
 import conekta.io.config.ConektaObjectMapper;
@@ -7,6 +8,10 @@ import conekta.io.config.Constants;
 import conekta.io.error.ConektaErrorResponse;
 import conekta.io.model.request.OrderReq;
 import conekta.io.model.response.Order;
+import conekta.io.model.PaginatedConektaObject;
+import conekta.io.model.request.OrderReq;
+import conekta.io.model.response.Order;
+import conekta.io.model.submodel.Charge;
 
 import java.net.http.HttpResponse;
 
@@ -58,6 +63,17 @@ public class OrdersClient extends ConektaRequestor {
                 .statusCode(orderResponse.statusCode())
                 .data(ConektaObjectMapper.getInstance().stringJsonToObject(orderResponse.body(), Order.class))
                 .error(ConektaObjectMapper.getInstance().stringJsonToObject(orderResponse.body(), ConektaErrorResponse.class))
+                .build();
+    }
+
+    public ConektaResponse<PaginatedConektaObject<Charge>> getOrderCharges(String orderId, String next) {
+        HttpResponse<String> customerResponse = doRequest(null, Constants.ORDERS_PATH + Constants.SLASH + orderId + Constants.CHARGES + (next != null ? next : ""), Constants.GET);
+        return ConektaResponse.<PaginatedConektaObject<Charge>>builder()
+                .response(customerResponse)
+                .statusCode(customerResponse.statusCode())
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), new TypeReference<PaginatedConektaObject<Charge>>() {
+                }))
+                .error(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), ConektaErrorResponse.class))
                 .build();
     }
 }

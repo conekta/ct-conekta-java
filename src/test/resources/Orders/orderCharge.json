@@ -1,0 +1,35 @@
+{
+  "id": "62f6609b6cd84c3f624f321e",
+  "livemode": false,
+  "created_at": 1660313755,
+  "currency": "MXN",
+  "device_fingerprint": "zptcxk4p6w1ijwz85snf1l3bqe5g09ie",
+  "channel": {
+    "segment": "Checkout",
+    "checkout_request_id": "0ceb3290-602e-4ca4-b802-e00b4df3f020",
+    "checkout_request_type": "HostedPayment",
+    "id": "channel_2sKHpVdfZ6iCcN3pU"
+  },
+  "payment_method": {
+    "name": "erererere ererere ",
+    "exp_month": "06",
+    "exp_year": "24",
+    "auth_code": "983919",
+    "object": "card_payment",
+    "type": "credit",
+    "last4": "4607",
+    "brand": "visa",
+    "issuer": "BANAMEX",
+    "account_type": "Credit",
+    "country": "MX",
+    "fraud_indicators": []
+  },
+  "object": "charge",
+  "description": "Payment from order",
+  "status": "paid",
+  "amount": 81568,
+  "paid_at": 1660313756,
+  "fee": 3033,
+  "customer_id": "cus_2rYuZoAh4cSWMpjP3",
+  "order_id": "ord_2sKHmeG8vScta8WX2"
+}
