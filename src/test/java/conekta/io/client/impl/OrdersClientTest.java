@@ -6,9 +6,9 @@ import conekta.io.config.ConektaAuthenticator;
 import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
 import conekta.io.error.ConektaError;
+import conekta.io.model.PaginatedConektaObject;
 import conekta.io.model.request.OrderReq;
 import conekta.io.model.response.Order;
-import conekta.io.model.PaginatedConektaObject;
 import conekta.io.model.submodel.Charge;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
@@ -134,11 +134,10 @@ class OrdersClientTest {
     @Test
     void getChargesOrder() throws IOException, URISyntaxException {
         // Arrange
-
-        PaginatedConektaObject<Charge> cosa = new PaginatedConektaObject<>();
         String orderChargesResponse = Utils.readFile("Orders/orderCharges.json");
+        String orderCharge = Utils.readFile("Orders/orderCharge.json");
 
-        cosa = ConektaObjectMapper.getInstance().stringJsonToObject(orderChargesResponse, cosa.getClass());
+        Charge charge = ConektaObjectMapper.getInstance().stringJsonToObject(orderCharge, Charge.class);
         mockWebServer.enqueue(new MockResponse()
                 .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
                 .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
@@ -150,8 +149,7 @@ class OrdersClientTest {
 
         // Assert
         Assertions.assertNotNull(order.getData().getData());
-        //TODO REVISAR LA FORMA DE COMPARAR
-        //Assertions.assertEquals(order.getData().getData().get(0).getAmount().toString(), cosa.getData().get(0).getAmount().toString());
+        Assertions.assertEquals(order.getData().getData().get(0).getAmount().toString(), charge.getAmount().toString());
     }
 
 }
