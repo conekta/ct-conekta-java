@@ -59,7 +59,7 @@ class OrdersClientTest {
         String orderRequestJson = Utils.readFile("Orders/order.json");
         String orderResponseFailJson = Utils.readFile("Orders/orderCreateResponseFail.json");
         OrderReq orderReq = ConektaObjectMapper.getInstance().stringJsonToObject(orderRequestJson, OrderReq.class);
-        conekta.io.error.ConektaError orderResp = ConektaObjectMapper.getInstance().stringJsonToObject(orderResponseFailJson, ConektaError.class);
+        ConektaError orderResp = ConektaObjectMapper.getInstance().stringJsonToObject(orderResponseFailJson, ConektaError.class);
         mockWebServer.enqueue(new MockResponse()
                 .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
                 .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
@@ -152,4 +152,24 @@ class OrdersClientTest {
         Assertions.assertEquals(order.getData().getData().get(0).getAmount().toString(), charge.getAmount().toString());
     }
 
+    @Test
+    void getChargesOrderFail() throws IOException, URISyntaxException {
+        // Arrange
+        String orderChargesFailResponse = Utils.readFile("Orders/orderChargesFail.json");
+        ConektaError orderResp = ConektaObjectMapper.getInstance().stringJsonToObject(orderChargesFailResponse, ConektaError.class);
+
+        mockWebServer.enqueue(new MockResponse()
+                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
+                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
+                .setBody(orderChargesFailResponse)
+                .setResponseCode(404));
+
+        // Act
+        ConektaResponse<PaginatedConektaObject<Charge>> order = ordersClient.getOrderCharges("1", null);
+
+        // Assert
+        Assertions.assertNotNull(order.getError());
+        Assertions.assertEquals(order.getError().getCode(), orderResp.getCode());
+
+    }
 }
