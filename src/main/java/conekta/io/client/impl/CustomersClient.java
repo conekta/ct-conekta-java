@@ -8,7 +8,7 @@ import conekta.io.config.Constants;
 import conekta.io.error.ConektaErrorResponse;
 import conekta.io.model.PaginatedConektaObject;
 import conekta.io.model.impl.Customer;
-import conekta.io.model.impl.Webhook;
+import conekta.io.model.submodel.Event;
 import conekta.io.model.submodel.PaymentSource;
 
 import java.net.http.HttpResponse;
@@ -98,14 +98,14 @@ public class CustomersClient extends ConektaRequestor {
     }
 
     /**
-     * Retrieves customer's webhooks in Conekta.
+     * Retrieves all subscriptions events of a customer in Conekta.
      *
      * @param customerId The id of the customer to be retrieved.
-     * @return The retrieved ConektaResponse<PaginatedConektaObject<Webhook>>.
+     * @return ConektaResponse<PaginatedConektaObject < Subscription>>.
      */
-    public ConektaResponse<PaginatedConektaObject<Webhook>> getCustomerWebhooks(String customerId, String next) {
-        HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId + Constants.WEBHOOKS + (next != null ? Constants.NEXT + next : ""), Constants.GET);
-        return ConektaResponse.<PaginatedConektaObject<Webhook>>builder()
+    public ConektaResponse<PaginatedConektaObject<Event>> getCustomerEvents(String customerId, String next) {
+        HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId + Constants.EVENTS_PATH + (next != null ? Constants.NEXT + next : ""), Constants.GET);
+        return ConektaResponse.<PaginatedConektaObject<Event>>builder()
                 .response(customerResponse)
                 .statusCode(customerResponse.statusCode())
                 .data(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), new TypeReference<>() {
@@ -114,6 +114,12 @@ public class CustomersClient extends ConektaRequestor {
                 .build();
     }
 
+    /**
+     * Retrieves all payments sources of a customer in Conekta.
+     *
+     * @param customerId The id of the customer to be retrieved.
+     * @return ConektaResponse<PaginatedConektaObject < PaymentSource>>.
+     */
     public ConektaResponse<PaginatedConektaObject<PaymentSource>> getCustomerPaymentSources(String customerId, String next) {
         HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId + Constants.PAYMENT_SOURCES + (next != null ? Constants.NEXT + next : ""), Constants.GET);
         return ConektaResponse.<PaginatedConektaObject<PaymentSource>>builder()
