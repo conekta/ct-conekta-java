@@ -1,0 +1,16 @@
+{
+  "id": "src_2sK3qBZDob13EsU6Y",
+  "object": "payment_source",
+  "type": "card",
+  "created_at": 1660250017,
+  "last4": "4242",
+  "bin": "424242",
+  "card_type": "credit",
+  "exp_month": "08",
+  "exp_year": "23",
+  "brand": "visa",
+  "name": "Jorge Lopez",
+  "parent_id": "cus_2sK3qBZDob13EsU6U",
+  "default": true,
+  "visible_on_checkout": false
+}

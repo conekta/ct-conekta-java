@@ -1,0 +1,32 @@
+{
+  "name": "Jhon Doe",
+  "email": "test@ctest.com",
+  "phone": "+52144444444",
+  "corporate": true,
+  "antifraud_info": {
+    "account_created_at": 1484040996,
+    "first_paid_at": 1485151007
+  },
+  "payment_sources": [
+    {
+      "token_id": "tok_test_visa_4242",
+      "type": "card"
+    }
+  ],
+  "shipping_contacts": [
+    {
+      "phone": "+5215555555555",
+      "receiver": "Marvin Fuller",
+      "between_streets": "Morelos Campeche",
+      "address": {
+        "street1": "Nuevo Leon 4",
+        "street2": "fake street",
+        "city": "Ciudad de Mexico",
+        "state": "Ciudad de Mexico",
+        "country": "MX",
+        "postal_code": "06100",
+        "residential": true
+      }
+    }
+  ]
+}
