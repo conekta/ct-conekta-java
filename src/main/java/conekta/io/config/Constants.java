@@ -10,8 +10,7 @@ public class Constants {
     public static final String API_BASE_TEST = "https://apipp.conekta.io/";
     public static final String API_BASE_PROD = "https://api.conekta.io/";
     public static final String NEXT = "?next=";
-    public static final String WEBHOOKS = "/webhooks";
-    
+    public static final String EVENTS_PATH = "/events";
     public static final String CHARGES = "/charges";
     public static final int HTTP_CLIENT_TIMEOUT = 15;
     public static final String PAYMENT_SOURCES = "/payment_sources";

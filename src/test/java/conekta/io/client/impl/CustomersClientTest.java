@@ -8,7 +8,7 @@ import conekta.io.config.Constants;
 import conekta.io.error.ConektaErrorResponse;
 import conekta.io.model.PaginatedConektaObject;
 import conekta.io.model.impl.Customer;
-import conekta.io.model.impl.Webhook;
+import conekta.io.model.submodel.Event;
 import conekta.io.model.submodel.PaymentSource;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
@@ -155,12 +155,12 @@ class CustomersClientTest {
     }
 
     @Test
-    void getCustomerWebhooks() throws IOException, URISyntaxException {
+    void getCustomerEvents() throws IOException, URISyntaxException {
         // Arrange
-        String webhookJson = Utils.readFile("webhook.json");
-        Webhook webhook = ConektaObjectMapper.getInstance().stringJsonToObject(webhookJson, Webhook.class);
-        PaginatedConektaObject<Webhook> paginatedConektaObject = new PaginatedConektaObject<>();
-        paginatedConektaObject.setData(List.of(webhook));
+        String eventJson = Utils.readFile("clientEvents.json");
+        Event event = ConektaObjectMapper.getInstance().stringJsonToObject(eventJson, Event.class);
+        PaginatedConektaObject<Event> paginatedConektaObject = new PaginatedConektaObject<>();
+        paginatedConektaObject.setData(List.of(event));
         String s = ConektaObjectMapper.getInstance().conektaObjectToString(paginatedConektaObject);
         mockWebServer.enqueue(new MockResponse()
                 .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
@@ -169,10 +169,10 @@ class CustomersClientTest {
                 .setResponseCode(200));
 
         // Act
-        ConektaResponse<PaginatedConektaObject<Webhook>> customerWebhooks = customersClient.getCustomerWebhooks("1", null);
+        ConektaResponse<PaginatedConektaObject<Event>> customerEvents = customersClient.getCustomerEvents("1", null);
 
         // Assert
-        Assertions.assertEquals(customerWebhooks.getData(), paginatedConektaObject);
+        Assertions.assertEquals(customerEvents.getData(), paginatedConektaObject);
     }
 
     @Test
