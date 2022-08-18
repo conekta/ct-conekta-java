@@ -1,6 +1,7 @@
 package conekta.io.model.request;
 
 import conekta.io.model.ConektaObject;
+import conekta.io.model.submodel.Checkout;
 import lombok.Data;
 
 import java.util.List;
@@ -17,5 +18,5 @@ public class OrderReq extends ConektaObject {
     private List<ShippingLinesReq> shippingLines;
     private Object metadata;
     private List<ChargeReq> charges;
-    private String orderCheckoutReq;
+    private Checkout checkout;
 }
