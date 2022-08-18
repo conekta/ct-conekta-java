@@ -1,0 +1,9 @@
+{
+  "customer_info": {
+    "object": "customer_info",
+    "name": "Pepito Perez",
+    "email": "pepito@conekta.com",
+    "phone": "5556581111",
+    "corporate": false
+  }
+}
