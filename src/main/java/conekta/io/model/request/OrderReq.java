@@ -19,4 +19,5 @@ public class OrderReq extends ConektaObject {
     private Object metadata;
     private List<ChargeReq> charges;
     private Checkout checkout;
+
 }
