@@ -170,6 +170,44 @@ class OrdersClientTest {
         // Assert
         Assertions.assertNotNull(order.getError());
         Assertions.assertEquals(order.getError().getCode(), orderResp.getCode());
+    }
+    
+    @Test
+    void getOrders() throws IOException, URISyntaxException {
+        // Arrange
+        String orderListResponse = Utils.readFile("Orders/orderListResponse.json");
+        String orderStr = Utils.readFile("Orders/orderData.json");
 
+        Order order = ConektaObjectMapper.getInstance().stringJsonToObject(orderStr, Order.class);
+        mockWebServer.enqueue(new MockResponse()
+                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
+                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
+                .setBody(orderListResponse)
+                .setResponseCode(200));
+        // Act
+        ConektaResponse<PaginatedConektaObject<Order>> orderResponse = ordersClient.getOrders(null);
+        // Assert
+        Assertions.assertNotNull(orderResponse.getData());
+        Assertions.assertEquals(orderResponse.getData().getData().get(0), order);
+    }
+
+    @Test
+    void getOrdersFail() throws IOException, URISyntaxException {
+        // Arrange
+        String orderChargesFailResponse = Utils.readFile("Orders/orderChargesFail.json");
+        ConektaError orderResp = ConektaObjectMapper.getInstance().stringJsonToObject(orderChargesFailResponse, ConektaError.class);
+
+        mockWebServer.enqueue(new MockResponse()
+                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
+                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
+                .setBody(orderChargesFailResponse)
+                .setResponseCode(404));
+
+        // Act
+        ConektaResponse<PaginatedConektaObject<Order>> orderResponse = ordersClient.getOrders(null);
+
+        // Assert
+        Assertions.assertNotNull(orderResponse.getError());
+        Assertions.assertEquals(orderResponse.getError().getCode(), orderResp.getCode());
     }
 }
