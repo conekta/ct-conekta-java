@@ -10,6 +10,7 @@ import conekta.io.model.PaginatedConektaObject;
 import conekta.io.model.request.OrderReq;
 import conekta.io.model.response.Order;
 import conekta.io.model.submodel.Charge;
+import conekta.io.utils.Utils;
 
 import java.net.http.HttpResponse;
 
@@ -76,7 +77,7 @@ public class OrdersClient extends ConektaRequestor {
     }
 
     public ConektaResponse<PaginatedConektaObject<Order>> getOrders(String next) {
-        HttpResponse<String> customerResponse = doRequest(null, Constants.ORDERS_PATH + Constants.SLASH + (next != null ? next : ""), Constants.GET);
+        HttpResponse<String> customerResponse = doRequest(null, Constants.ORDERS_PATH + Constants.SLASH + Utils.nextPage(next), Constants.GET);
         return ConektaResponse.<PaginatedConektaObject<Order>>builder()
                 .response(customerResponse)
                 .statusCode(customerResponse.statusCode())
