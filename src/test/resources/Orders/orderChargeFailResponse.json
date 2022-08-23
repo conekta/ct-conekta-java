@@ -1,0 +1,12 @@
+{
+  "details": [
+    {
+      "debug_message": "The object order \"ord_2sLgKeSCQibNS7Hm\" could not be found.",
+      "message": "El recurso no ha sido encontrado.",
+      "code": "conekta.errors.resource_not_found.entity"
+    }
+  ],
+  "object": "error",
+  "type": "resource_not_found_error",
+  "log_id": "630531496cd84c0d4807c615"
+}

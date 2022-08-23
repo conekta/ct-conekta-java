@@ -7,6 +7,7 @@ import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
 import conekta.io.error.ConektaErrorResponse;
 import conekta.io.model.PaginatedConektaObject;
+import conekta.io.model.request.OrderRefundReq;
 import conekta.io.model.request.OrderReq;
 import conekta.io.model.response.Order;
 import conekta.io.model.submodel.Charge;
@@ -65,6 +66,17 @@ public class OrdersClient extends ConektaRequestor {
                 .build();
     }
 
+    public ConektaResponse<Charge> getOrderCharge(String orderId, String chargeId) {
+        HttpResponse<String> customerResponse = doRequest(null, Constants.ORDERS_PATH + Constants.SLASH + orderId + Constants.CHARGES + Constants.SLASH + chargeId, Constants.GET);
+        return ConektaResponse.<Charge>builder()
+                .response(customerResponse)
+                .statusCode(customerResponse.statusCode())
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), new TypeReference<Charge>() {
+                }))
+                .error(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), ConektaErrorResponse.class))
+                .build();
+    }
+
     public ConektaResponse<PaginatedConektaObject<Charge>> getOrderCharges(String orderId, String next) {
         HttpResponse<String> customerResponse = doRequest(null, Constants.ORDERS_PATH + Constants.SLASH + orderId + Constants.CHARGES + (next != null ? next : ""), Constants.GET);
         return ConektaResponse.<PaginatedConektaObject<Charge>>builder()
@@ -84,6 +96,16 @@ public class OrdersClient extends ConektaRequestor {
                 .data(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), new TypeReference<PaginatedConektaObject<Order>>() {
                 }))
                 .error(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), ConektaErrorResponse.class))
+                .build();
+    }
+
+    public ConektaResponse<Order> refundOrder(String orderId, OrderRefundReq orderRefundReq) {
+        HttpResponse<String> orderResponse = doRequest(orderRefundReq, Constants.ORDERS_PATH + Constants.SLASH + orderId + Constants.REFUNDS, Constants.POST);
+        return ConektaResponse.<Order>builder()
+                .response(orderResponse)
+                .statusCode(orderResponse.statusCode())
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(orderResponse.body(), Order.class))
+                .error(ConektaObjectMapper.getInstance().stringJsonToObject(orderResponse.body(), ConektaErrorResponse.class))
                 .build();
     }
 }
