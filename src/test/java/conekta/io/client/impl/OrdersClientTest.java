@@ -7,6 +7,7 @@ import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
 import conekta.io.error.ConektaError;
 import conekta.io.model.PaginatedConektaObject;
+import conekta.io.model.request.OrderRefundReq;
 import conekta.io.model.request.OrderReq;
 import conekta.io.model.response.Order;
 import conekta.io.model.submodel.Charge;
@@ -205,6 +206,48 @@ class OrdersClientTest {
 
         // Act
         ConektaResponse<PaginatedConektaObject<Order>> orderResponse = ordersClient.getOrders(null);
+
+        // Assert
+        Assertions.assertNotNull(orderResponse.getError());
+        Assertions.assertEquals(orderResponse.getError().getCode(), orderResp.getCode());
+    }
+
+    @Test
+    void refundOrder() throws URISyntaxException, IOException, InterruptedException {
+        // Arrange
+        String orderRefundRequestJson = Utils.readFile("Orders/orderRefundRequest.json");
+        String orderRefundResponseJson = Utils.readFile("Orders/orderRefundResponse.json");
+        OrderRefundReq orderRefundReq = ConektaObjectMapper.getInstance().stringJsonToObject(orderRefundRequestJson, OrderRefundReq.class);
+        Order orderResp = ConektaObjectMapper.getInstance().stringJsonToObject(orderRefundResponseJson, Order.class);
+        mockWebServer.enqueue(new MockResponse()
+                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
+                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
+                .setBody(orderRefundResponseJson)
+                .setResponseCode(200));
+
+        // Act
+        ConektaResponse<Order> order = ordersClient.refundOrder("anything", orderRefundReq);
+
+        // Assert
+        Assertions.assertEquals(order.getData(), orderResp);
+    }
+
+    @Test
+    void refundOrdersFail() throws IOException, URISyntaxException {
+        // Arrange
+        String orderRefundRequestJson = Utils.readFile("Orders/orderRefundRequest.json");
+        String orderRefundFailResponse = Utils.readFile("Orders/orderRefundFailResponse.json");
+        OrderRefundReq orderRefundReq = ConektaObjectMapper.getInstance().stringJsonToObject(orderRefundRequestJson, OrderRefundReq.class);
+        ConektaError orderResp = ConektaObjectMapper.getInstance().stringJsonToObject(orderRefundFailResponse, ConektaError.class);
+
+        mockWebServer.enqueue(new MockResponse()
+                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
+                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
+                .setBody(orderRefundFailResponse)
+                .setResponseCode(404));
+
+        // Act
+        ConektaResponse<Order> orderResponse = ordersClient.refundOrder("anything", orderRefundReq);
 
         // Assert
         Assertions.assertNotNull(orderResponse.getError());
