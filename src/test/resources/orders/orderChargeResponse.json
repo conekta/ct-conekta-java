@@ -1,0 +1,29 @@
+{
+  "id": "62fbffbb9e9c315e01b36ada",
+  "livemode": false,
+  "created_at": 1660682171,
+  "currency": "MXN",
+  "device_fingerprint": "zptcxk4p6w1ijwz85snf1l3bqe5g09ie",
+  "payment_method": {
+    "name": "erererere ererere ",
+    "exp_month": "06",
+    "exp_year": "24",
+    "auth_code": "272780",
+    "object": "card_payment",
+    "type": "credit",
+    "last4": "4607",
+    "brand": "visa",
+    "issuer": "BANAMEX",
+    "account_type": "Credit",
+    "country": "MX",
+    "fraud_indicators": []
+  },
+  "object": "charge",
+  "description": "Payment from order",
+  "status": "paid",
+  "amount": 81568,
+  "paid_at": 1660682171,
+  "fee": 3033,
+  "customer_id": "",
+  "order_id": "ord_2sLgKeSCQibNS7Hms"
+}
