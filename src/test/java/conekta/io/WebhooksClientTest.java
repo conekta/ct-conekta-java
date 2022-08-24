@@ -5,8 +5,8 @@ import conekta.io.client.impl.WebhooksClient;
 import conekta.io.config.ConektaAuthenticator;
 import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
+import conekta.io.error.ConektaErrorResponse;
 import conekta.io.model.PaginatedConektaObject;
-import conekta.io.model.impl.Customer;
 import conekta.io.model.impl.Webhook;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
@@ -123,5 +123,24 @@ class WebhooksClientTest {
         // Assert
         Assertions.assertEquals(webhookConektaResponse.getData(), webhook);
         Assertions.assertEquals(200, webhookConektaResponse.getStatusCode());
+    }
+
+    @Test
+    void createWithError() throws IOException, URISyntaxException {
+        // Arrange
+        String webhookJsonError = Utils.readFile("webhooks/webhookError.json");
+        ConektaErrorResponse error = ConektaObjectMapper.getInstance().stringJsonToObject(webhookJsonError, ConektaErrorResponse.class);
+        Webhook webhook = ConektaObjectMapper.getInstance().stringJsonToObject(webhookJsonError, Webhook.class);
+
+        mockWebServer.enqueue(new MockResponse()
+                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
+                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
+                .setBody(webhookJsonError)
+                .setResponseCode(404));
+        // Act
+        ConektaResponse<Webhook> webhookConektaResponse = webhooksClient.createWebhook(webhook);
+        // Assert
+        Assertions.assertEquals(webhookConektaResponse.getError(), error);
+        Assertions.assertEquals(404, webhookConektaResponse.getStatusCode());
     }
 }

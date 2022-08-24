@@ -1,0 +1,12 @@
+{
+  "details": [
+    {
+      "debug_message": "The webhook URL is invalid. If you are using an ip address you will need to include an http prefix.",
+      "message": "The webhook URL is invalid. If you are using an ip address you will need to include an http prefix",
+      "code": "conekta.errors.parameter_validation.webhook.url"
+    }
+  ],
+  "object": "error",
+  "type": "parameter_validation_error",
+  "log_id": "63066d366cd84c254976c7e7"
+}
