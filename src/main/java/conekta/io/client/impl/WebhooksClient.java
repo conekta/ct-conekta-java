@@ -8,6 +8,7 @@ import conekta.io.config.Constants;
 import conekta.io.error.ConektaErrorResponse;
 import conekta.io.model.PaginatedConektaObject;
 import conekta.io.model.impl.Webhook;
+import conekta.io.utils.Utils;
 
 import java.net.http.HttpResponse;
 
@@ -33,7 +34,7 @@ public class WebhooksClient extends ConektaRequestor {
     }
 
     public ConektaResponse<PaginatedConektaObject<Webhook>> getWebhooks(String next) {
-        HttpResponse<String> webhooksResponse = doRequest(null, Constants.WEBHOOKS_PATH + (next != null ? Constants.NEXT + next : ""), Constants.GET);
+        HttpResponse<String> webhooksResponse = doRequest(null, Constants.WEBHOOKS_PATH + Utils.nextPage(next), Constants.GET);
         return ConektaResponse.<PaginatedConektaObject<Webhook>>builder()
                 .response(webhooksResponse)
                 .statusCode(webhooksResponse.statusCode())
