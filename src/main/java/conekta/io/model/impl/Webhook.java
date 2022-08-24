@@ -6,7 +6,6 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-
 public class Webhook extends ConektaObject {
 
     private String url;
