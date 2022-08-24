@@ -15,6 +15,7 @@ public class Constants {
     public static final String REFUNDS = "/refunds";
     public static final int HTTP_CLIENT_TIMEOUT = 15;
     public static final String PAYMENT_SOURCES = "/payment_sources";
+    public static final String WEBHOOKS_PATH = "/webhooks";
 
     private Constants() {
         throw new IllegalStateException("Utility class");

@@ -15,5 +15,6 @@ public class Webhook extends ConektaObject {
     private Boolean synchronous;
     private Boolean productionEnabled;
     private Boolean developmentEnabled;
+    private Boolean deleted;
 
 }
