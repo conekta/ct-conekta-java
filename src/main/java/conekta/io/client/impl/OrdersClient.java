@@ -66,6 +66,17 @@ public class OrdersClient extends ConektaRequestor {
                 .build();
     }
 
+    public ConektaResponse<Charge> getOrderCharge(String orderId, String chargeId) {
+        HttpResponse<String> customerResponse = doRequest(null, Constants.ORDERS_PATH + Constants.SLASH + orderId + Constants.CHARGES + Constants.SLASH + chargeId, Constants.GET);
+        return ConektaResponse.<Charge>builder()
+                .response(customerResponse)
+                .statusCode(customerResponse.statusCode())
+                .data(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), new TypeReference<Charge>() {
+                }))
+                .error(ConektaObjectMapper.getInstance().stringJsonToObject(customerResponse.body(), ConektaErrorResponse.class))
+                .build();
+    }
+
     public ConektaResponse<PaginatedConektaObject<Charge>> getOrderCharges(String orderId, String next) {
         HttpResponse<String> customerResponse = doRequest(null, Constants.ORDERS_PATH + Constants.SLASH + orderId + Constants.CHARGES + (next != null ? next : ""), Constants.GET);
         return ConektaResponse.<PaginatedConektaObject<Charge>>builder()
