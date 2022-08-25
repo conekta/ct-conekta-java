@@ -1,7 +1,7 @@
-package conekta.io.client.impl;
+package conekta.io;
 
-import conekta.io.Utils;
 import conekta.io.client.ConektaResponse;
+import conekta.io.client.impl.CustomersClient;
 import conekta.io.config.ConektaAuthenticator;
 import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
@@ -37,7 +37,7 @@ class CustomersClientTest {
     @Test
     void createCustomer() throws URISyntaxException, IOException {
         // Arrange
-        String customerJson = Utils.readFile("customer.json");
+        String customerJson = Utils.readFile("clients/customer.json");
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
         mockWebServer.enqueue(new MockResponse()
                 .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
@@ -56,8 +56,8 @@ class CustomersClientTest {
     @Test
     void createCustomerWithError() throws URISyntaxException, IOException {
         // Arrange
-        String customerJson = Utils.readFile("customerWithNoMail.json");
-        String errorJson = Utils.readFile("errorMail.json");
+        String customerJson = Utils.readFile("clients/customerWithNoMail.json");
+        String errorJson = Utils.readFile("clients/errorMail.json");
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
         ConektaErrorResponse error = ConektaObjectMapper.getInstance().stringJsonToObject(errorJson, ConektaErrorResponse.class);
         mockWebServer.enqueue(new MockResponse()
@@ -77,7 +77,7 @@ class CustomersClientTest {
     @Test
     void retrieveCustomer() throws IOException, URISyntaxException {
         // Arrange
-        String customerJson = Utils.readFile("customer.json");
+        String customerJson = Utils.readFile("clients/customer.json");
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
         mockWebServer.enqueue(new MockResponse()
                 .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
@@ -94,7 +94,7 @@ class CustomersClientTest {
 
     @Test
     void getCustomers() throws IOException, URISyntaxException {
-        String customerJson = Utils.readFile("customer.json");
+        String customerJson = Utils.readFile("clients/customer.json");
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
         PaginatedConektaObject<Customer> paginatedConektaObject = new PaginatedConektaObject<>();
         paginatedConektaObject.setData(List.of(cus));
@@ -114,8 +114,8 @@ class CustomersClientTest {
 
     @Test
     void updateCustomer() throws IOException, URISyntaxException {
-        String customerJson = Utils.readFile("customer.json");
-        String customerJsonModified = Utils.readFile("customerModified.json");
+        String customerJson = Utils.readFile("clients/customer.json");
+        String customerJsonModified = Utils.readFile("clients/customerModified.json");
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
         Customer cusModified = ConektaObjectMapper.getInstance().stringJsonToObject(customerJsonModified, Customer.class);
         mockWebServer.enqueue(new MockResponse()
@@ -137,7 +137,7 @@ class CustomersClientTest {
     @Test
     void deleteCustomer() throws IOException, URISyntaxException {
         // Arrange
-        String customerJson = Utils.readFile("customer.json");
+        String customerJson = Utils.readFile("clients/customer.json");
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
         cus.setDeleted(true);
         String deletedJson = ConektaObjectMapper.getInstance().conektaObjectToString(cus);
@@ -157,7 +157,7 @@ class CustomersClientTest {
     @Test
     void getCustomerEvents() throws IOException, URISyntaxException {
         // Arrange
-        String eventJson = Utils.readFile("clientEvents.json");
+        String eventJson = Utils.readFile("clients/clientEvents.json");
         Event event = ConektaObjectMapper.getInstance().stringJsonToObject(eventJson, Event.class);
         PaginatedConektaObject<Event> paginatedConektaObject = new PaginatedConektaObject<>();
         paginatedConektaObject.setData(List.of(event));
@@ -178,7 +178,7 @@ class CustomersClientTest {
     @Test
     void getCustomerPaymentSources() throws IOException, URISyntaxException {
         // Arrange
-        String paymentSourceJson = Utils.readFile("paymentSource.json");
+        String paymentSourceJson = Utils.readFile("clients/paymentSource.json");
         PaymentSource paymentSource = ConektaObjectMapper.getInstance().stringJsonToObject(paymentSourceJson, PaymentSource.class);
         PaginatedConektaObject<PaymentSource> paginatedConektaObject = new PaginatedConektaObject<>();
         paginatedConektaObject.setData(List.of(paymentSource));

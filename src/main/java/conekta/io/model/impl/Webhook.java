@@ -6,7 +6,6 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-
 public class Webhook extends ConektaObject {
 
     private String url;
@@ -15,5 +14,6 @@ public class Webhook extends ConektaObject {
     private Boolean synchronous;
     private Boolean productionEnabled;
     private Boolean developmentEnabled;
+    private Boolean deleted;
 
 }
