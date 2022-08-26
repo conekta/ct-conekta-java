@@ -1,0 +1,195 @@
+{
+  "livemode": false,
+  "amount": 81568,
+  "currency": "MXN",
+  "payment_status": "partially_refunded",
+  "amount_refunded": 20,
+  "customer_info": {
+    "email": "test@test.com",
+    "phone": "5556581111",
+    "name": "John Doe",
+    "corporate": true,
+    "customer_id": "cus_2rYuZoAh4cSWMpjP3",
+    "object": "customer_info"
+  },
+  "shipping_contact": {
+    "receiver": "Monse Torres",
+    "phone": "5556581111",
+    "address": {
+      "street1": "Av. Jardín",
+      "country": "mx",
+      "residential": true,
+      "object": "shipping_address",
+      "postal_code": "02970"
+    },
+    "id": "ship_cont_2sB7DCyt6hWpZnMES",
+    "object": "shipping_contact",
+    "created_at": 0
+  },
+  "channel": {
+    "segment": "Checkout",
+    "checkout_request_id": "f8192408-999f-48b6-8d0a-bbbfc0b84b33",
+    "checkout_request_type": "HostedPayment",
+    "id": "channel_2sB7DCyt6hWpZnMEU"
+  },
+  "checkout": {
+    "id": "f8192408-999f-48b6-8d0a-bbbfc0b84b33",
+    "name": "Concepto quemado",
+    "livemode": false,
+    "emails_sent": 0,
+    "success_url": "https://www.google.com/payment/",
+    "failure_url": "https://www.mysite.com/payment/",
+    "paid_payments_count": 0,
+    "sms_sent": 0,
+    "status": "Issued",
+    "type": "HostedPayment",
+    "recurrent": false,
+    "starts_at": 1658120400,
+    "expires_at": 1658379599,
+    "allowed_payment_methods": [
+      "card",
+      "cash",
+      "bank_transfer"
+    ],
+    "exclude_card_networks": [],
+    "needs_shipping_contact": false,
+    "monthly_installments_options": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "monthly_installments_enabled": true,
+    "is_redirect_on_failure": true,
+    "force_3ds_flow": true,
+    "metadata": {},
+    "can_not_expire": false,
+    "object": "checkout",
+    "slug": "f8192408999f48b68d0abbbfc0b84b33",
+    "url": "https://pay.stg.conekta.io/checkout/f8192408999f48b68d0abbbfc0b84b33"
+  },
+  "object": "order",
+  "id": "ord_2sB7DCyt6hWpZnMET",
+  "metadata": {},
+  "created_at": 1658151139,
+  "updated_at": 1661273884,
+  "line_items": {
+    "object": "list",
+    "has_more": false,
+    "total": 1,
+    "data": [
+      {
+        "name": "It is fine dog cup",
+        "unit_price": 80000,
+        "quantity": 1,
+        "tags": [
+          "physical goods"
+        ],
+        "object": "line_item",
+        "id": "line_item_2sB7DCyt6hWpZnMEN",
+        "parent_id": "ord_2sB7DCyt6hWpZnMET",
+        "metadata": {},
+        "antifraud_info": {}
+      }
+    ]
+  },
+  "shipping_lines": {
+    "object": "list",
+    "has_more": false,
+    "total": 1,
+    "data": [
+      {
+        "amount": 0,
+        "carrier": "Fedex",
+        "method": "Airplane",
+        "tracking_number": "TRACK000000000123",
+        "object": "shipping_line",
+        "id": "ship_lin_2sB7DCyt6hWpZnMEP",
+        "parent_id": "ord_2sB7DCyt6hWpZnMET"
+      }
+    ]
+  },
+  "tax_lines": {
+    "object": "list",
+    "has_more": false,
+    "total": 1,
+    "data": [
+      {
+        "description": "IVA MX 16 ",
+        "amount": 1568,
+        "object": "tax_line",
+        "id": "tax_lin_2sB7DCyt6hWpZnMEQ",
+        "parent_id": "ord_2sB7DCyt6hWpZnMET"
+      }
+    ]
+  },
+  "charges": {
+    "object": "list",
+    "has_more": false,
+    "total": 1,
+    "data": [
+      {
+        "id": "62d5610a6cd84c51ce9441a0",
+        "livemode": false,
+        "created_at": 1658151178,
+        "currency": "MXN",
+        "channel": {
+          "segment": "Checkout",
+          "checkout_request_id": "f8192408-999f-48b6-8d0a-bbbfc0b84b33",
+          "checkout_request_type": "HostedPayment",
+          "id": "channel_2sB7DhmqQUU7sTLSX"
+        },
+        "payment_method": {
+          "name": "TEST",
+          "exp_month": "12",
+          "exp_year": "25",
+          "auth_code": "878062",
+          "object": "card_payment",
+          "type": "credit",
+          "last4": "4242",
+          "brand": "visa",
+          "issuer": "BANAMEX",
+          "account_type": "Credit",
+          "country": "MX",
+          "fraud_indicators": []
+        },
+        "object": "charge",
+        "description": "Payment from order",
+        "status": "partially_refunded",
+        "amount": 81568,
+        "paid_at": 1658151179,
+        "fee": 5890,
+        "customer_id": "cus_2rYuZoAh4cSWMpjP3",
+        "order_id": "ord_2sB7DCyt6hWpZnMET",
+        "refunds": {
+          "object": "list",
+          "has_more": false,
+          "total": 3,
+          "data": [
+            {
+              "object": "refund",
+              "amount": -10,
+              "auth_code": "878062",
+              "id": "6305071c6cd84c3fc17086be",
+              "created_at": 1661273884
+            },
+            {
+              "object": "refund",
+              "amount": -10,
+              "auth_code": "878062",
+              "id": "6304dd746cd84c121d49af7f",
+              "created_at": 1661263220
+            },
+            {
+              "object": "refund",
+              "amount": -10,
+              "auth_code": "878062",
+              "id": "62d56c206cd84c51d1db81c7",
+              "created_at": 1658154016
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
