@@ -4,11 +4,9 @@ import conekta.io.client.ConektaResponse;
 import conekta.io.client.impl.WebhooksClient;
 import conekta.io.config.ConektaAuthenticator;
 import conekta.io.config.ConektaObjectMapper;
-import conekta.io.config.Constants;
 import conekta.io.error.ConektaErrorResponse;
 import conekta.io.model.PaginatedConektaObject;
 import conekta.io.model.impl.Webhook;
-import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -37,11 +35,9 @@ class WebhooksClientTest {
         // Arrange
         String webhookJson = Utils.readFile("webhooks/webhook.json");
         Webhook webhook = ConektaObjectMapper.getInstance().stringJsonToObject(webhookJson, Webhook.class);
-        mockWebServer.enqueue(new MockResponse()
-                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(webhookJson)
-                .setResponseCode(201));
+
+        Utils.buildMockServer(this.mockWebServer, webhookJson, 201);
+
         // Act
         ConektaResponse<Webhook> webhookConektaResponse = webhooksClient.createWebhook(webhook);
         // Assert
@@ -54,11 +50,9 @@ class WebhooksClientTest {
         // Arrange
         String webhookJson = Utils.readFile("webhooks/webhook.json");
         Webhook webhook = ConektaObjectMapper.getInstance().stringJsonToObject(webhookJson, Webhook.class);
-        mockWebServer.enqueue(new MockResponse()
-                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(webhookJson)
-                .setResponseCode(200));
+
+        Utils.buildMockServer(this.mockWebServer, webhookJson, 200);
+
         // Act
         ConektaResponse<Webhook> webhookConektaResponse = webhooksClient.retrieveWebhook(webhook.getId());
         // Assert
@@ -74,11 +68,9 @@ class WebhooksClientTest {
         PaginatedConektaObject<Webhook> paginatedConektaObject = new PaginatedConektaObject<>();
         paginatedConektaObject.setData(List.of(webhook));
         String s = ConektaObjectMapper.getInstance().conektaObjectToString(paginatedConektaObject);
-        mockWebServer.enqueue(new MockResponse()
-                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(s)
-                .setResponseCode(200));
+
+        Utils.buildMockServer(this.mockWebServer, s, 200);
+
         // Act
         ConektaResponse<PaginatedConektaObject<Webhook>> webhooksConektaResponse = webhooksClient.getWebhooks(null);
         // Assert
@@ -93,11 +85,9 @@ class WebhooksClientTest {
         String webhookJsonUpdated = Utils.readFile("webhooks/webhookUpdated.json");
         Webhook webhook = ConektaObjectMapper.getInstance().stringJsonToObject(webhookJson, Webhook.class);
         Webhook webhookUpdated = ConektaObjectMapper.getInstance().stringJsonToObject(webhookJsonUpdated, Webhook.class);
-        mockWebServer.enqueue(new MockResponse()
-                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(webhookJsonUpdated)
-                .setResponseCode(200));
+
+        Utils.buildMockServer(this.mockWebServer, webhookJsonUpdated, 200);
+
         // Act
         ConektaResponse<Webhook> webhookConektaResponse = webhooksClient.updateWebhook(webhook.getId(), webhook);
         // Assert
@@ -113,11 +103,9 @@ class WebhooksClientTest {
         String webhookJsonDeleted = Utils.readFile("webhooks/webhookDeleted.json");
         Webhook webhook = ConektaObjectMapper.getInstance().stringJsonToObject(webhookJson, Webhook.class);
         webhook.setDeleted(true);
-        mockWebServer.enqueue(new MockResponse()
-                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(webhookJsonDeleted)
-                .setResponseCode(200));
+
+        Utils.buildMockServer(this.mockWebServer, webhookJsonDeleted, 200);
+
         // Act
         ConektaResponse<Webhook> webhookConektaResponse = webhooksClient.deleteWebhook(webhook.getId());
         // Assert
@@ -132,11 +120,8 @@ class WebhooksClientTest {
         ConektaErrorResponse error = ConektaObjectMapper.getInstance().stringJsonToObject(webhookJsonError, ConektaErrorResponse.class);
         Webhook webhook = ConektaObjectMapper.getInstance().stringJsonToObject(webhookJsonError, Webhook.class);
 
-        mockWebServer.enqueue(new MockResponse()
-                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(webhookJsonError)
-                .setResponseCode(404));
+        Utils.buildMockServer(this.mockWebServer, webhookJsonError, 404);
+
         // Act
         ConektaResponse<Webhook> webhookConektaResponse = webhooksClient.createWebhook(webhook);
         // Assert

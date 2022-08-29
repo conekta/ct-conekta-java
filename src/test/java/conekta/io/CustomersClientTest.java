@@ -4,13 +4,11 @@ import conekta.io.client.ConektaResponse;
 import conekta.io.client.impl.CustomersClient;
 import conekta.io.config.ConektaAuthenticator;
 import conekta.io.config.ConektaObjectMapper;
-import conekta.io.config.Constants;
 import conekta.io.error.ConektaErrorResponse;
 import conekta.io.model.PaginatedConektaObject;
 import conekta.io.model.impl.Customer;
 import conekta.io.model.submodel.Event;
 import conekta.io.model.submodel.PaymentSource;
-import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -39,11 +37,8 @@ class CustomersClientTest {
         // Arrange
         String customerJson = Utils.readFile("clients/customer.json");
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
-        mockWebServer.enqueue(new MockResponse()
-                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(customerJson)
-                .setResponseCode(201));
+
+        Utils.buildMockServer(this.mockWebServer, customerJson, 201);
 
         // Act
         ConektaResponse<Customer> customerConektaResponse = customersClient.createCustomer(cus);
@@ -60,11 +55,8 @@ class CustomersClientTest {
         String errorJson = Utils.readFile("clients/errorMail.json");
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
         ConektaErrorResponse error = ConektaObjectMapper.getInstance().stringJsonToObject(errorJson, ConektaErrorResponse.class);
-        mockWebServer.enqueue(new MockResponse()
-                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(errorJson)
-                .setResponseCode(404));
+
+        Utils.buildMockServer(this.mockWebServer, errorJson, 404);
 
         // Act
         ConektaResponse<Customer> customerConektaResponse = customersClient.createCustomer(cus);
@@ -79,11 +71,8 @@ class CustomersClientTest {
         // Arrange
         String customerJson = Utils.readFile("clients/customer.json");
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
-        mockWebServer.enqueue(new MockResponse()
-                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(customerJson)
-                .setResponseCode(200));
+
+        Utils.buildMockServer(this.mockWebServer, customerJson, 200);
 
         // Act
         ConektaResponse<Customer> customerConektaResponse = customersClient.retrieveCustomer("1");
@@ -99,11 +88,8 @@ class CustomersClientTest {
         PaginatedConektaObject<Customer> paginatedConektaObject = new PaginatedConektaObject<>();
         paginatedConektaObject.setData(List.of(cus));
         String s = ConektaObjectMapper.getInstance().conektaObjectToString(paginatedConektaObject);
-        mockWebServer.enqueue(new MockResponse()
-                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(s)
-                .setResponseCode(200));
+
+        Utils.buildMockServer(this.mockWebServer, s, 200);
 
         // Act
         ConektaResponse<PaginatedConektaObject<Customer>> customers = customersClient.getCustomers(null);
@@ -118,11 +104,8 @@ class CustomersClientTest {
         String customerJsonModified = Utils.readFile("clients/customerModified.json");
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
         Customer cusModified = ConektaObjectMapper.getInstance().stringJsonToObject(customerJsonModified, Customer.class);
-        mockWebServer.enqueue(new MockResponse()
-                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(customerJsonModified)
-                .setResponseCode(200));
+
+        Utils.buildMockServer(this.mockWebServer, customerJsonModified, 200);
 
         // Act
         ConektaResponse<Customer> customerConektaResponse = customersClient.updateCustomer("1", cusModified);
@@ -141,11 +124,8 @@ class CustomersClientTest {
         Customer cus = ConektaObjectMapper.getInstance().stringJsonToObject(customerJson, Customer.class);
         cus.setDeleted(true);
         String deletedJson = ConektaObjectMapper.getInstance().conektaObjectToString(cus);
-        mockWebServer.enqueue(new MockResponse()
-                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(deletedJson)
-                .setResponseCode(200));
+
+        Utils.buildMockServer(this.mockWebServer, deletedJson, 200);
 
         // Act
         ConektaResponse<Customer> customerConektaResponse = customersClient.deleteCustomer("1");
@@ -162,11 +142,8 @@ class CustomersClientTest {
         PaginatedConektaObject<Event> paginatedConektaObject = new PaginatedConektaObject<>();
         paginatedConektaObject.setData(List.of(event));
         String s = ConektaObjectMapper.getInstance().conektaObjectToString(paginatedConektaObject);
-        mockWebServer.enqueue(new MockResponse()
-                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(s)
-                .setResponseCode(200));
+
+        Utils.buildMockServer(this.mockWebServer, s, 200);
 
         // Act
         ConektaResponse<PaginatedConektaObject<Event>> customerEvents = customersClient.getCustomerEvents("1", null);
@@ -183,11 +160,9 @@ class CustomersClientTest {
         PaginatedConektaObject<PaymentSource> paginatedConektaObject = new PaginatedConektaObject<>();
         paginatedConektaObject.setData(List.of(paymentSource));
         String s = ConektaObjectMapper.getInstance().conektaObjectToString(paginatedConektaObject);
-        mockWebServer.enqueue(new MockResponse()
-                .addHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
-                .addHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
-                .setBody(s)
-                .setResponseCode(200));
+
+        Utils.buildMockServer(this.mockWebServer, s, 200);
+
         // Act
         ConektaResponse<PaginatedConektaObject<PaymentSource>> customerPaymentSources = customersClient.getCustomerPaymentSources("1", null);
         // Assert
