@@ -9,9 +9,8 @@ import java.util.List;
 public class LineItem extends ConektaData {
     private String name;
     private BigDecimal unitPrice;
-    private int quantity;
+    private Integer quantity;
     private List<String> tags;
-    //TODO REVISAR
     private Object metadata;
     private AntifraudInfo antifraudInfo;
 }

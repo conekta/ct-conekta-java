@@ -1,6 +1,7 @@
 package conekta.io.model.request;
 
 import conekta.io.model.ConektaObject;
+import conekta.io.model.submodel.ShippingContact;
 import lombok.Data;
 
 import java.util.List;
@@ -13,5 +14,5 @@ public class CustomerReq extends ConektaObject {
     private List<PaymentSourceCreateReq> paymentSources;
     private Boolean corporate;
     private String defaultPaymentSourceID;
-    private List<ShippingContactReq> shippingContacts;
+    private List<ShippingContact> shippingContacts;
 }
