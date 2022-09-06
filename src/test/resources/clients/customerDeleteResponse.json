@@ -3,35 +3,35 @@
   "name": "Jhon Doe",
   "email": "test@test.com",
   "phone": "+5215555555555",
-  "default_shipping_contact_id": "ship_cont_2sM1HXz92ykiYoCui",
-  "id": "cus_2sM1HXz92ykiYoCuj",
+  "default_shipping_contact_id": "ship_cont_2sTTpLxTSUnV63Eeb",
+  "id": "cus_2sTTpLxTSUnV63Eec",
   "object": "customer",
-  "created_at": 1660766987,
+  "created_at": 1662473589,
   "corporate": true,
   "custom_reference": "",
   "antifraud_info": {
     "first_paid_at": 1485151007,
     "account_created_at": 1484040996
   },
-  "default_payment_source_id": "src_2sM1HXz92ykiYoCuo",
+  "default_payment_source_id": "src_2sTTpLxTSUnV63Eeg",
   "payment_sources": {
     "object": "list",
     "has_more": false,
     "total": 1,
     "data": [
       {
-        "id": "src_2sM1HXz92ykiYoCuo",
+        "id": "src_2sTTpLxTSUnV63Eeg",
         "object": "payment_source",
         "type": "card",
-        "created_at": 1660766987,
+        "created_at": 1662473590,
         "last4": "4242",
         "bin": "424242",
         "card_type": "credit",
-        "exp_month": "08",
+        "exp_month": "09",
         "exp_year": "23",
         "brand": "visa",
         "name": "Jorge Lopez",
-        "parent_id": "cus_2sM1HXz92ykiYoCuj",
+        "parent_id": "cus_2sTTpLxTSUnV63Eec",
         "default": true,
         "visible_on_checkout": false
       }
@@ -56,12 +56,13 @@
           "object": "shipping_address",
           "postal_code": "06100"
         },
-        "id": "ship_cont_2sM1HXz92ykiYoCui",
+        "id": "ship_cont_2sTTpLxTSUnV63Eeb",
         "object": "shipping_contact",
-        "created_at": 1660766987,
-        "parent_id": "cus_2sM1HXz92ykiYoCuj",
+        "created_at": 1662473589,
+        "parent_id": "cus_2sTTpLxTSUnV63Eec",
         "default": true
       }
     ]
-  }
+  },
+  "deleted": true
 }

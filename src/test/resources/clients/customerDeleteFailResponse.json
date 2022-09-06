@@ -1,0 +1,12 @@
+{
+  "details": [
+    {
+      "debug_message": "The object customer \"cus_2sTTpLxTSUnV63Eec\" could not be found.",
+      "message": "El recurso no ha sido encontrado.",
+      "code": "conekta.errors.resource_not_found.entity"
+    }
+  ],
+  "object": "error",
+  "type": "resource_not_found_error",
+  "log_id": "63176fdf9e9c3150da5e44fd"
+}

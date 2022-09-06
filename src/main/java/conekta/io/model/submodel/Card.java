@@ -1,10 +1,11 @@
-package conekta.io.model.request;
+package conekta.io.model.submodel;
 
 import conekta.io.model.ConektaObject;
+import conekta.io.model.request.TokenAddressReq;
 import lombok.Data;
 
 @Data
-public class CardReq extends ConektaObject {
+public class Card extends ConektaObject {
     private String number;
     private String name;
     private String expYear;

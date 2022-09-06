@@ -1,8 +1,7 @@
-package conekta.io.model.response;
+package conekta.io.model.impl;
 
 import conekta.io.model.ConektaObject;
 import conekta.io.model.PaginatedConektaObject;
-import conekta.io.model.impl.Customer;
 import conekta.io.model.submodel.*;
 import lombok.Data;
 
