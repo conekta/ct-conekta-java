@@ -7,9 +7,9 @@ import conekta.io.config.ConektaObjectMapper;
 import conekta.io.config.Constants;
 import conekta.io.error.ConektaErrorResponse;
 import conekta.io.model.PaginatedConektaObject;
+import conekta.io.model.impl.Order;
 import conekta.io.model.request.OrderRefundReq;
 import conekta.io.model.request.OrderReq;
-import conekta.io.model.response.Order;
 import conekta.io.model.submodel.Charge;
 import conekta.io.utils.Utils;
 
