@@ -2,7 +2,6 @@ package conekta.io.model.impl;
 
 import conekta.io.model.ConektaObject;
 import conekta.io.model.PaginatedConektaObject;
-import conekta.io.model.submodel.Checkout;
 import conekta.io.model.submodel.*;
 import lombok.Data;
 
