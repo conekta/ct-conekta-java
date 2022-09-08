@@ -43,7 +43,7 @@ public class Constants {
     }
 
     /**
-     * Version of the library to use.
+     * Version of the lib to use.
      */
     public static final String LIB_VERSION = "0.0.7";
 
