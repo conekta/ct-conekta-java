@@ -16,6 +16,9 @@ public class Constants {
     public static final int HTTP_CLIENT_TIMEOUT = 15;
     public static final String PAYMENT_SOURCES = "/payment_sources";
     public static final String WEBHOOKS_PATH = "/webhooks";
+    public static final String API_NAME_VALUE = "ct-conekta-java";
+    public static final String USER_AGENT = "user_agent";
+
 
     private Constants() {
         throw new IllegalStateException("Utility class");
@@ -40,9 +43,9 @@ public class Constants {
     }
 
     /**
-     * Version of the Conekta API to use.
+     * Version of the library to use.
      */
-    public static final String API_VERSION = "2.1.1";
+    public static final String LIB_VERSION = "0.0.7";
 
     /**
      * Locale to use when building requests to the Conekta API.
