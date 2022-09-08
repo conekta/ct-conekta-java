@@ -62,6 +62,7 @@ public abstract class ConektaRequestor {
                 .uri(URI.create(environment + path))
                 .setHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
                 .setHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
+                .setHeader(Constants.USER_AGENT, Constants.API_NAME_VALUE + Constants.SLASH + Constants.API_VERSION)
                 .build();
         return send(request);
     }
