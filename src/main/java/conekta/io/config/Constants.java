@@ -17,7 +17,7 @@ public class Constants {
     public static final String PAYMENT_SOURCES = "/payment_sources";
     public static final String WEBHOOKS_PATH = "/webhooks";
     public static final String API_NAME_VALUE = "ct-conekta-java";
-    public static final String USER_AGENT = "user_agent";
+    public static final String USER_AGENT = "User-Agent";
 
 
     private Constants() {
