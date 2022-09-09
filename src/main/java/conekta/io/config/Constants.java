@@ -16,7 +16,7 @@ public class Constants {
     public static final int HTTP_CLIENT_TIMEOUT = 15;
     public static final String PAYMENT_SOURCES = "/payment_sources";
     public static final String WEBHOOKS_PATH = "/webhooks";
-    public static final String API_NAME_VALUE = "ct-conekta-java";
+    public static final String LIB_NAME = "ct-conekta-java";
     public static final String USER_AGENT = "User-Agent";
 
 
