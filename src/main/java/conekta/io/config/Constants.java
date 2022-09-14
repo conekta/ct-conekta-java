@@ -7,7 +7,7 @@ public class Constants {
     public static final String PUT = "PUT";
     public static final String DELETE = "DELETE";
     public static final String POST = "POST";
-    public static final String API_BASE_TEST = "https://apipp.conekta.io/";
+    public static final String API_BASE_TEST = "https://api-core.stg.conekta.io/";
     public static final String API_BASE_PROD = "https://api.conekta.io/";
     public static final String NEXT = "?next=";
     public static final String EVENTS_PATH = "/events";
@@ -45,7 +45,7 @@ public class Constants {
     /**
      * Version of the lib to use.
      */
-    public static final String LIB_VERSION = "0.0.7";
+    public static final String LIB_VERSION = "0.0.8";
 
     /**
      * Locale to use when building requests to the Conekta API.
