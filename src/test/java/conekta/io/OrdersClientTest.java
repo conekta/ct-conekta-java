@@ -153,8 +153,8 @@ class OrdersClientTest {
     @Test
     void getChargeOrder() throws IOException, URISyntaxException {
         // Arrange
-        String orderChargeResponse = Utils.readFile("Orders/orderChargeResponse.json");
-        String orderCharge = Utils.readFile("Orders/orderCharge.json");
+        String orderChargeResponse = Utils.readFile("orders/orderChargeResponse.json");
+        String orderCharge = Utils.readFile("orders/orderCharge.json");
 
         Charge charge = ConektaObjectMapper.getInstance().stringJsonToObject(orderCharge, Charge.class);
 
@@ -171,7 +171,7 @@ class OrdersClientTest {
     @Test
     void getChargeOrderFail() throws IOException, URISyntaxException {
         // Arrange
-        String orderChargeFailResponse = Utils.readFile("Orders/orderChargeFailResponse.json");
+        String orderChargeFailResponse = Utils.readFile("orders/orderChargeFailResponse.json");
         ConektaError orderResp = ConektaObjectMapper.getInstance().stringJsonToObject(orderChargeFailResponse, ConektaError.class);
 
         Utils.buildMockServer(this.mockWebServer, orderChargeFailResponse, 404);
