@@ -2,10 +2,9 @@
 
 ## Upgraded Conekta JAVA Library
 
-El objetivo principal de esta libreria es conectarse con el cliente principal de Conekta y facilitar su uso desde Java,
-evitando la manipulacion de JSON innecesarios, la documentacion del mismo se encuentra en:
-
-https://developers.conekta.com/reference/autenticaci%C3%B3n
+El objetivo principal de esta librería es conectarse con el cliente principal de Conekta y facilitar su uso desde Java,
+evitando la manipulación de JSON innecesarios, la documentación del mismo se encuentra en
+la [WIKI](https://github.com/conekta/ct-conekta-java/wiki) de este proyecto.
 
 ## Features:
 
@@ -16,7 +15,7 @@ HTTP y facilidad de escritura de la misma.
 
 ### Nuevo cliente HttpClient
 
-La documentacion del mismo se encuentra en:
+La documentación del mismo se encuentra en:
 https://openjdk.org/groups/net/httpclient/intro.html
 
 ### JacksonMapper para el manejo de JSON de manera optima.
