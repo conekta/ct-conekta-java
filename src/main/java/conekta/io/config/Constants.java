@@ -45,7 +45,7 @@ public class Constants {
     /**
      * Version of the lib to use.
      */
-    public static final String LIB_VERSION = "0.0.8";
+    public static final String LIB_VERSION = "3.0.0";
 
     /**
      * Locale to use when building requests to the Conekta API.
