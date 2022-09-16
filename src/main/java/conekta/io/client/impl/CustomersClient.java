@@ -8,6 +8,7 @@ import conekta.io.config.Constants;
 import conekta.io.error.ConektaErrorResponse;
 import conekta.io.model.PaginatedConektaObject;
 import conekta.io.model.impl.Customer;
+import conekta.io.model.request.CustomerReq;
 import conekta.io.model.submodel.Event;
 import conekta.io.model.submodel.PaymentSource;
 
@@ -18,11 +19,11 @@ public class CustomersClient extends ConektaRequestor {
     /**
      * Creates a new customer in Conekta.
      *
-     * @param customer The customer to be created.
-     * @return The created ConektaResponse<Customer>.
+     * @param customerReq the customer to be created.
+     * @return The created customer.
      */
-    public ConektaResponse<Customer> createCustomer(Customer customer){
-        HttpResponse<String> customerResponse = doRequest(customer, Constants.CUSTOMERS_PATH, Constants.POST);
+    public ConektaResponse<Customer> createCustomer(CustomerReq customerReq) {
+        HttpResponse<String> customerResponse = doRequest(customerReq, Constants.CUSTOMERS_PATH, Constants.POST);
         return ConektaResponse.<Customer>builder()
                 .response(customerResponse)
                 .statusCode(customerResponse.statusCode())
@@ -35,9 +36,9 @@ public class CustomersClient extends ConektaRequestor {
      * Retrieves a customer in Conekta.
      *
      * @param customerId The id of the customer to be retrieved.
-     * @return The retrieved ConektaResponse<Customer>.
+     * @return The retrieved customer.
      */
-    public ConektaResponse<Customer> retrieveCustomer(String customerId){
+    public ConektaResponse<Customer> retrieveCustomer(String customerId) {
         HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId, Constants.GET);
         return ConektaResponse.<Customer>builder()
                 .response(customerResponse)
@@ -49,12 +50,13 @@ public class CustomersClient extends ConektaRequestor {
 
     /**
      * Retrieves all customers paginated in Conekta.
+     *
      * @param next The next page of the customers to be retrieved.
      *             If null, the first page will be retrieved.
      *             If not null, the next page will be retrieved.
-     * @return The retrieved ConektaResponse<PaginatedConektaObject<Customer>>.
+     * @return The retrieved paginated object of customers.
      */
-    public ConektaResponse<PaginatedConektaObject<Customer>> getCustomers(String next){
+    public ConektaResponse<PaginatedConektaObject<Customer>> getCustomers(String next) {
         HttpResponse<String> customersResponse = doRequest(null, Constants.CUSTOMERS_PATH + (next != null ? Constants.NEXT + next : ""), Constants.GET);
         return ConektaResponse.<PaginatedConektaObject<Customer>>builder()
                 .response(customersResponse)
@@ -69,9 +71,10 @@ public class CustomersClient extends ConektaRequestor {
      * Updates a customer in Conekta.
      *
      * @param customer The customer to be updated.
-     * @return The updated ConektaResponse<Customer>.
+     * @param customerId The id of the customer to be updated.
+     * @return The updated customer.
      */
-    public ConektaResponse<Customer> updateCustomer(String customerId, Customer customer){
+    public ConektaResponse<Customer> updateCustomer(String customerId, Customer customer) {
         HttpResponse<String> customerResponse = doRequest(customer, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId, Constants.PUT);
         return ConektaResponse.<Customer>builder()
                 .response(customerResponse)
@@ -85,9 +88,9 @@ public class CustomersClient extends ConektaRequestor {
      * Deletes a customer in Conekta (Logically).
      *
      * @param customerId The id of the customer to be deleted.
-     * @return The deleted ConektaResponse<Customer>.
+     * @return The deleted customer with deleted == true.
      */
-    public ConektaResponse<Customer> deleteCustomer(String customerId){
+    public ConektaResponse<Customer> deleteCustomer(String customerId) {
         HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId, Constants.DELETE);
         return ConektaResponse.<Customer>builder()
                 .response(customerResponse)
@@ -101,7 +104,10 @@ public class CustomersClient extends ConektaRequestor {
      * Retrieves all subscriptions events of a customer in Conekta.
      *
      * @param customerId The id of the customer to be retrieved.
-     * @return ConektaResponse<PaginatedConektaObject < Subscription>>.
+     * @param next       The next page of the subscriptions events to be retrieved
+     *                   If null, the first page will be retrieved.
+     *                   If not null, the next page will be retrieved.
+     * @return The retrieved paginated object of subscriptions events.
      */
     public ConektaResponse<PaginatedConektaObject<Event>> getCustomerEvents(String customerId, String next) {
         HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId + Constants.EVENTS_PATH + (next != null ? Constants.NEXT + next : ""), Constants.GET);
@@ -118,7 +124,8 @@ public class CustomersClient extends ConektaRequestor {
      * Retrieves all payments sources of a customer in Conekta.
      *
      * @param customerId The id of the customer to be retrieved.
-     * @return ConektaResponse<PaginatedConektaObject < PaymentSource>>.
+     * @param next       The next page of the payments sources to be retrieved
+     * @return The retrieved paginated object of payments sources.
      */
     public ConektaResponse<PaginatedConektaObject<PaymentSource>> getCustomerPaymentSources(String customerId, String next) {
         HttpResponse<String> customerResponse = doRequest(null, Constants.CUSTOMERS_PATH + Constants.SLASH + customerId + Constants.PAYMENT_SOURCES + (next != null ? Constants.NEXT + next : ""), Constants.GET);

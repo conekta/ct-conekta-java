@@ -7,7 +7,6 @@ public class Constants {
     public static final String PUT = "PUT";
     public static final String DELETE = "DELETE";
     public static final String POST = "POST";
-    public static final String API_BASE_TEST = "https://apipp.conekta.io/";
     public static final String API_BASE_PROD = "https://api.conekta.io/";
     public static final String NEXT = "?next=";
     public static final String EVENTS_PATH = "/events";
@@ -16,38 +15,18 @@ public class Constants {
     public static final int HTTP_CLIENT_TIMEOUT = 15;
     public static final String PAYMENT_SOURCES = "/payment_sources";
     public static final String WEBHOOKS_PATH = "/webhooks";
+    public static final String LIB_NAME = "ct-conekta-java";
+    public static final String USER_AGENT = "User-Agent";
+
 
     private Constants() {
         throw new IllegalStateException("Utility class");
     }
 
     /**
-     * The default base URL to use when building requests to the Conekta API.
+     * Version of the lib to use.
      */
-    public enum API_BASE {
-        LIVE(API_BASE_PROD),
-        TEST(API_BASE_TEST);
-
-        private final String url;
-
-        API_BASE(String url) {
-            this.url = url;
-        }
-
-        public String getUrl() {
-            return url;
-        }
-    }
-
-    /**
-     * Version of the Conekta API to use.
-     */
-    public static final String API_VERSION = "2.1.1";
-
-    /**
-     * Locale to use when building requests to the Conekta API.
-     */
-    public static final String LOCALE = "es";
+    public static final String LIB_VERSION = "3.0.0";
 
     /**
      * The customer path.

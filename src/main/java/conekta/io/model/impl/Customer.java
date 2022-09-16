@@ -1,7 +1,10 @@
 package conekta.io.model.impl;
 
 import conekta.io.model.ConektaObject;
+import conekta.io.model.PaginatedConektaObject;
 import conekta.io.model.submodel.AntifraudInfo;
+import conekta.io.model.submodel.PaymentSource;
+import conekta.io.model.submodel.ShippingContact;
 import lombok.Data;
 
 @Data
@@ -17,8 +20,8 @@ public class Customer extends ConektaObject {
     private String customReference;
     private AntifraudInfo antifraudInfo;
     private String defaultPaymentSourceId;
-    private Object paymentSources;
-    private Object shippingContacts;
-    //TODO REVISAR CON UN EXPERTO URGENTE
+    private PaginatedConektaObject<PaymentSource> paymentSources;
+    private PaginatedConektaObject<ShippingContact> shippingContacts;
+    private Subscription subscription;
     private Boolean deleted;
 }

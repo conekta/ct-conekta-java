@@ -1,0 +1,208 @@
+{
+  "livemode": false,
+  "name": "Jhon Doe",
+  "email": "test@test.com",
+  "phone": "+5215555555555",
+  "default_shipping_contact_id": "ship_cont_2rYuZoAh4cSWMpjP2",
+  "subscription": {
+    "id": "sub_2sM1EZpuw1MkG1dEU",
+    "status": "active",
+    "object": "subscription",
+    "charge_id": "62fd4a226cd84c621b06a8f3",
+    "created_at": 1660766754,
+    "subscription_start": 1660766754,
+    "billing_cycle_start": 1660766744,
+    "billing_cycle_end": 1663445144,
+    "trial_end": 1660766754,
+    "plan_id": "extra-plan",
+    "last_billing_cycle_order_id": "ord_2sM1EZpuw1MkG1dEa",
+    "customer_id": "cus_2rYuZoAh4cSWMpjP3",
+    "card_id": "src_2rYuZoAh4cSWMpjP7"
+  },
+  "id": "cus_2rYuZoAh4cSWMpjP3",
+  "object": "customer",
+  "created_at": 1648583824,
+  "corporate": true,
+  "custom_reference": "",
+  "antifraud_info": {
+    "first_paid_at": 1485151007,
+    "account_created_at": 1484040996
+  },
+  "default_payment_source_id": "src_2rYuZoAh4cSWMpjP7",
+  "payment_sources": {
+    "next_page_url": "https://apipp.conekta.io/customers/cus_2rYuZoAh4cSWMpjP3/payment_sources?next=src_2s7GEemaHFAEHYNZJ&limit=5",
+    "object": "list",
+    "has_more": true,
+    "total": 9,
+    "data": [
+      {
+        "id": "src_2sMczNBeEwd6NBd5P",
+        "object": "payment_source",
+        "type": "card",
+        "created_at": 1660929677,
+        "last4": "4242",
+        "bin": "424242",
+        "card_type": "credit",
+        "exp_month": "12",
+        "exp_year": "25",
+        "brand": "visa",
+        "name": "TEST",
+        "parent_id": "cus_2rYuZoAh4cSWMpjP3",
+        "default": false,
+        "visible_on_checkout": false
+      },
+      {
+        "id": "src_2sM1CX7KtRy87foUd",
+        "object": "payment_source",
+        "type": "card",
+        "created_at": 1660766593,
+        "last4": "4242",
+        "bin": "424242",
+        "card_type": "credit",
+        "exp_month": "12",
+        "exp_year": "25",
+        "brand": "visa",
+        "name": "TEST",
+        "parent_id": "cus_2rYuZoAh4cSWMpjP3",
+        "default": false,
+        "visible_on_checkout": false
+      },
+      {
+        "id": "src_2sLgmTn78YZ4ZKt5v",
+        "object": "payment_source",
+        "type": "card",
+        "created_at": 1660682605,
+        "last4": "4242",
+        "bin": "424242",
+        "card_type": "credit",
+        "exp_month": "12",
+        "exp_year": "25",
+        "brand": "visa",
+        "name": "TEST",
+        "parent_id": "cus_2rYuZoAh4cSWMpjP3",
+        "default": false,
+        "visible_on_checkout": false
+      },
+      {
+        "id": "src_2sB7Dh31tGuUL3ZrP",
+        "object": "payment_source",
+        "type": "card",
+        "created_at": 1658151177,
+        "last4": "4242",
+        "bin": "424242",
+        "card_type": "credit",
+        "exp_month": "12",
+        "exp_year": "25",
+        "brand": "visa",
+        "name": "TEST",
+        "parent_id": "cus_2rYuZoAh4cSWMpjP3",
+        "default": false,
+        "visible_on_checkout": false
+      },
+      {
+        "id": "src_2s7GEemaHFAEHYNZJ",
+        "object": "payment_source",
+        "type": "card",
+        "created_at": 1657135123,
+        "last4": "4242",
+        "bin": "424242",
+        "card_type": "credit",
+        "exp_month": "12",
+        "exp_year": "25",
+        "brand": "visa",
+        "name": "TEST",
+        "parent_id": "cus_2rYuZoAh4cSWMpjP3",
+        "default": false,
+        "visible_on_checkout": false
+      }
+    ]
+  },
+  "shipping_contacts": {
+    "next_page_url": "https://apipp.conekta.io/customers/cus_2rYuZoAh4cSWMpjP3/shipping_contacts?next=ship_cont_2sMM6xaEa78TCYQpb&limit=5",
+    "object": "list",
+    "has_more": true,
+    "total": 41,
+    "data": [
+      {
+        "receiver": "Monse Torres",
+        "phone": "5556581111",
+        "address": {
+          "street1": "Av. Jardín",
+          "country": "mx",
+          "residential": true,
+          "object": "shipping_address",
+          "postal_code": "02970"
+        },
+        "id": "ship_cont_2sPcpsbA8fyJ1Z1YX",
+        "object": "shipping_contact",
+        "created_at": 1661457501,
+        "parent_id": "cus_2rYuZoAh4cSWMpjP3",
+        "default": false
+      },
+      {
+        "receiver": "Monse Torres",
+        "phone": "5556581111",
+        "address": {
+          "street1": "Av. Jardín",
+          "country": "mx",
+          "residential": true,
+          "object": "shipping_address",
+          "postal_code": "02970"
+        },
+        "id": "ship_cont_2sMcyyJF6mAyyp3tJ",
+        "object": "shipping_contact",
+        "created_at": 1660929646,
+        "parent_id": "cus_2rYuZoAh4cSWMpjP3",
+        "default": false
+      },
+      {
+        "receiver": "Monse Torres",
+        "phone": "5556581111",
+        "address": {
+          "street1": "Av. Jardín",
+          "country": "mx",
+          "residential": true,
+          "object": "shipping_address",
+          "postal_code": "02970"
+        },
+        "id": "ship_cont_2sMbjx4CKFfsFq8EQ",
+        "object": "shipping_contact",
+        "created_at": 1660923988,
+        "parent_id": "cus_2rYuZoAh4cSWMpjP3",
+        "default": false
+      },
+      {
+        "receiver": "Monse Torres",
+        "phone": "5556581111",
+        "address": {
+          "street1": "Av. Jardín",
+          "country": "mx",
+          "residential": true,
+          "object": "shipping_address",
+          "postal_code": "02970"
+        },
+        "id": "ship_cont_2sMbfbZzF5A1PUAgD",
+        "object": "shipping_contact",
+        "created_at": 1660923646,
+        "parent_id": "cus_2rYuZoAh4cSWMpjP3",
+        "default": false
+      },
+      {
+        "receiver": "Monse Torres",
+        "phone": "5556581111",
+        "address": {
+          "street1": "Av. Jardín",
+          "country": "mx",
+          "residential": true,
+          "object": "shipping_address",
+          "postal_code": "02970"
+        },
+        "id": "ship_cont_2sMM6xaEa78TCYQpb",
+        "object": "shipping_contact",
+        "created_at": 1660857289,
+        "parent_id": "cus_2rYuZoAh4cSWMpjP3",
+        "default": false
+      }
+    ]
+  }
+}

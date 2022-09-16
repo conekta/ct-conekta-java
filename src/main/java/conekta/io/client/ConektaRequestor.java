@@ -16,7 +16,7 @@ import java.time.Duration;
 
 public abstract class ConektaRequestor {
 
-    private String environment = Constants.API_BASE.TEST.getUrl();
+    private String environment = Constants.API_BASE_PROD;
 
     public void setEnvironment(String environment) {
         this.environment = environment;
@@ -31,9 +31,10 @@ public abstract class ConektaRequestor {
                     .build()
                     .send(request, HttpResponse.BodyHandlers.ofString());
         } catch (IOException e) {
-            throw new IOConektaRequestorException(e);
+            throw new IOConektaRequestorException("Something went wrong with the request, check the syntax.", e.getCause());
         } catch (InterruptedException e) {
-            throw new InterruptedConektaRequestorException(e);
+            Thread.currentThread().interrupt();
+            throw new InterruptedConektaRequestorException("The request was interrupted, the Conekta-Api was unable to accept the request.", e.getCause());
         }
     }
 
@@ -54,13 +55,14 @@ public abstract class ConektaRequestor {
                 builder = builder.DELETE();
                 break;
             default:
-                throw new IllegalArgumentException("Invalid method: " + method);
+                throw new IOConektaRequestorException("Invalid method on Conekta-Api: " + method);
         }
 
         HttpRequest request = builder
                 .uri(URI.create(environment + path))
                 .setHeader(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON_CHARSET_UTF_8)
                 .setHeader(Constants.ACCEPT, Constants.APPLICATION_VND_CONEKTA_V_2_0_0_JSON)
+                .setHeader(Constants.USER_AGENT, Constants.LIB_NAME + Constants.SLASH + Constants.LIB_VERSION)
                 .build();
         return send(request);
     }
