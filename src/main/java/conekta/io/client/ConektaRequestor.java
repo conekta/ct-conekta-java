@@ -16,7 +16,7 @@ import java.time.Duration;
 
 public abstract class ConektaRequestor {
 
-    private String environment = Constants.API_BASE.TEST.getUrl();
+    private String environment = Constants.API_BASE_PROD;
 
     public void setEnvironment(String environment) {
         this.environment = environment;
