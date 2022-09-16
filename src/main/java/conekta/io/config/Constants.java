@@ -7,7 +7,6 @@ public class Constants {
     public static final String PUT = "PUT";
     public static final String DELETE = "DELETE";
     public static final String POST = "POST";
-    public static final String API_BASE_TEST = "https://api-core.stg.conekta.io/";
     public static final String API_BASE_PROD = "https://api.conekta.io/";
     public static final String NEXT = "?next=";
     public static final String EVENTS_PATH = "/events";
@@ -25,32 +24,9 @@ public class Constants {
     }
 
     /**
-     * The default base URL to use when building requests to the Conekta API.
-     */
-    public enum API_BASE {
-        LIVE(API_BASE_PROD),
-        TEST(API_BASE_TEST);
-
-        private final String url;
-
-        API_BASE(String url) {
-            this.url = url;
-        }
-
-        public String getUrl() {
-            return url;
-        }
-    }
-
-    /**
      * Version of the lib to use.
      */
     public static final String LIB_VERSION = "3.0.0";
-
-    /**
-     * Locale to use when building requests to the Conekta API.
-     */
-    public static final String LOCALE = "es";
 
     /**
      * The customer path.
