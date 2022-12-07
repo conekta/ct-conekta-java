@@ -26,7 +26,7 @@ public class PaymentMethod extends ConektaObject {
     private String serviceNumber;
     private BigDecimal expiresAt;
     private String description;
-    private BigDecimal authCode;
+    private String authCode;
     private String store;
     private DefaultAddress address;
     private String tokenID;
