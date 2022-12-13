@@ -1,7 +1,7 @@
-package conekta.io;
+package conekta.io.client.impl;
 
+import conekta.io.Utils;
 import conekta.io.client.ConektaResponse;
-import conekta.io.client.impl.CustomersClient;
 import conekta.io.config.ConektaAuthenticator;
 import conekta.io.config.ConektaObjectMapper;
 import conekta.io.error.ConektaErrorResponse;
