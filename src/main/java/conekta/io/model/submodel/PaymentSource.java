@@ -3,8 +3,6 @@ package conekta.io.model.submodel;
 import conekta.io.model.ConektaObject;
 import lombok.Data;
 
-import java.math.BigDecimal;
-
 @Data
 public class PaymentSource extends ConektaObject {
     private String type;
@@ -21,6 +19,6 @@ public class PaymentSource extends ConektaObject {
     private Boolean isDefault;
     private Boolean visibleOnCheckout;
     private String paymentType;
-    private BigDecimal expiresAt;
+    private Integer expiresAt;
     private Card card;
 }

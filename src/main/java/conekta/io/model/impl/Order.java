@@ -5,7 +5,6 @@ import conekta.io.model.PaginatedConektaObject;
 import conekta.io.model.submodel.*;
 import lombok.Data;
 
-import java.math.BigDecimal;
 
 /**
  * Frase corta descriptiva
@@ -24,8 +23,8 @@ public class Order extends ConektaObject {
      * Comportamiento en caso de que sea null(si aplica)
      */
     private Boolean livemode;
-    private BigDecimal amount;
-    private BigDecimal amountRefunded;
+    private Integer amount;
+    private Integer amountRefunded;
     private String paymentStatus;
     private String currency;
     private Integer createdAt;
