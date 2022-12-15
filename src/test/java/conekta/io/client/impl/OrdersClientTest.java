@@ -33,7 +33,7 @@ class OrdersClientTest {
     }
 
     @Test
-    void createOrder() throws URISyntaxException, IOException, InterruptedException {
+    void createOrder() throws URISyntaxException, IOException {
         // Arrange
         String orderRequestJson = Utils.readFile("orders/order.json");
         String orderResponseJson = Utils.readFile("orders/orderResponse.json");
@@ -47,10 +47,11 @@ class OrdersClientTest {
 
         // Assert
         Assertions.assertEquals(order.getData(), orderResp);
+        Assertions.assertEquals("https://pay.stg.conekta.io/checkout/0652bd0014f04cc281490a43a37fcadd", orderResp.getCheckout().getUrl());
     }
 
     @Test
-    void createOrderFail() throws URISyntaxException, IOException, InterruptedException {
+    void createOrderFail() throws URISyntaxException, IOException {
         // Arrange
         String orderRequestJson = Utils.readFile("orders/order.json");
         String orderResponseFailJson = Utils.readFile("orders/orderCreateResponseFail.json");
@@ -68,7 +69,7 @@ class OrdersClientTest {
     }
 
     @Test
-    void updateOrder() throws IOException, InterruptedException, URISyntaxException {
+    void updateOrder() throws IOException, URISyntaxException {
         String orderUpdateRequest = Utils.readFile("orders/orderUpdateRequest.json");
         String orderJsonModified = Utils.readFile("orders/orderModified.json");
         OrderReq orderReq = ConektaObjectMapper.getInstance().stringJsonToObject(orderUpdateRequest, OrderReq.class);
@@ -86,7 +87,7 @@ class OrdersClientTest {
     }
 
     @Test
-    void updateOrderFail() throws IOException, InterruptedException, URISyntaxException {
+    void updateOrderFail() throws IOException, URISyntaxException {
         // Arrange
         String orderRequestJson = Utils.readFile("orders/order.json");
         String orderUpdateRespFailJson = Utils.readFile("orders/orderUpdateResponseFail.json");
@@ -104,7 +105,7 @@ class OrdersClientTest {
     }
 
     @Test
-    void getOrder() throws IOException, InterruptedException, URISyntaxException {
+    void getOrder() throws IOException, URISyntaxException {
         String orderJson = Utils.readFile("orders/orderResponse.json");
         Order order = ConektaObjectMapper.getInstance().stringJsonToObject(orderJson, Order.class);
 
@@ -218,7 +219,7 @@ class OrdersClientTest {
     }
 
     @Test
-    void refundOrder() throws URISyntaxException, IOException, InterruptedException {
+    void refundOrder() throws URISyntaxException, IOException {
         // Arrange
         String orderRefundRequestJson = Utils.readFile("orders/orderRefundRequest.json");
         String orderRefundResponseJson = Utils.readFile("orders/orderRefundResponse.json");
