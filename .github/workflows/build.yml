@@ -21,6 +21,3 @@ jobs:
         run: mvn --batch-mode --update-snapshots package
       - name: checkstyle
         run: mvn --batch-mode --update-snapshots  checkstyle:checkstyle
-      - name: Extract Project version
-        id: project
-        run: echo  "{name}={$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)}" >> $GITHUB_STATE
