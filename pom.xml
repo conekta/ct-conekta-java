@@ -7,7 +7,7 @@
 
     <groupId>io.conekta</groupId>
     <artifactId>ct-conekta-java</artifactId>
-    <version>3.0.2</version>
+    <version>3.0.3</version>
 
     <name>ct-conekta-java</name>
     <description>This is a java library that allows interaction with https://api.conekta.io API.</description>
