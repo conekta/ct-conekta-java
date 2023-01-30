@@ -1,5 +1,6 @@
 package conekta.io.config;
 
+import org.json.JSONObject;
 public class Constants {
 
     public static final String SLASH = "/";
@@ -26,7 +27,7 @@ public class Constants {
     /**
      * Version of the lib to use.
      */
-    public static final String LIB_VERSION = "3.0.0";
+    public static final String LIB_VERSION = "3.0.3";
 
     /**
      * The customer path.
@@ -48,6 +49,8 @@ public class Constants {
      */
     public static final String ACCEPT = "Accept";
 
+    public static final String CONEKTA_CLIENT_USER_AGENT  = "X-Conekta-Client-User-Agent";
+
     /**
      * Content type header value.
      */
@@ -57,4 +60,15 @@ public class Constants {
      * Accept header value.
      */
     public static final String APPLICATION_VND_CONEKTA_V_2_0_0_JSON = "application/vnd.conekta-v2.0.0+json";
+
+    public static final String CONEKTA_CLIENT_USER_AGENT_VALUE= getUserAgent().toString();
+
+    private static JSONObject getUserAgent()  {
+        JSONObject userAgent = new JSONObject();
+        userAgent.put("bindings_version", LIB_VERSION);
+        userAgent.put("lang", "java");
+        userAgent.put("lang_version", System.getProperty("java.version"));
+        userAgent.put("publisher", "conekta");
+        return userAgent;
+    }
 }
