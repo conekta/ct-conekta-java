@@ -18,7 +18,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <checkstyle-maven-plugin.version>3.2.1</checkstyle-maven-plugin.version>
-        <org-json.version>20220924</org-json.version>
+        <org-json.version>20230227</org-json.version>
     </properties>
 
     <licenses>
