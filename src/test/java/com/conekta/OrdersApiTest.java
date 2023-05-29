@@ -109,7 +109,7 @@ public class OrdersApiTest {
     @Test
     public void orderCancelRefundTest() throws ApiException {
         String id = "ord_2tUigJ8DgBhbp6w5D";
-        String refundId = "";
+        String refundId = "6407b5bee1329a000175ba11";
         String acceptLanguage = "es";
         OrderResponse response = api.orderCancelRefund(id, refundId, acceptLanguage, null);
         Assertions.assertNotNull(response);
