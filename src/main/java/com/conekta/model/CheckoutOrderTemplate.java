@@ -42,7 +42,7 @@ import com.conekta.JSON;
   CheckoutOrderTemplate.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("checkout_order_template")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CheckoutOrderTemplate {
   public static final String JSON_PROPERTY_CURRENCY = "currency";
   private String currency;

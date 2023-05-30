@@ -4,8 +4,6 @@ Conekta API
 
 - API version: 2.1.0
 
-- Build date: 2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]
-
 Conekta sdk
 
   For more information, please visit [https://github.com/conekta/openapi/issues](https://github.com/conekta/openapi/issues)

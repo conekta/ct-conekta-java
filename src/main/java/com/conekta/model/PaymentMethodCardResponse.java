@@ -47,7 +47,7 @@ import com.conekta.JSON;
   PaymentMethodCardResponse.JSON_PROPERTY_PAYMENT_SOURCE_STATUS
 })
 @JsonTypeName("payment_method_card_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PaymentMethodCardResponse {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;

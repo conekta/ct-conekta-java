@@ -33,7 +33,7 @@ import com.conekta.JSON;
   OrderResponseCustomerInfoAllOf.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("order_response_customer_info_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderResponseCustomerInfoAllOf {
   public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;

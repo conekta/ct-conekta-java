@@ -17,3 +17,4 @@ appveyor.yml
 .openapi-generator/
 .openapi-generator
 .gitignore
+.github/workflows/maven.yml

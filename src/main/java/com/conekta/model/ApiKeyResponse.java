@@ -40,7 +40,7 @@ import com.conekta.JSON;
   ApiKeyResponse.JSON_PROPERTY_ROLE
 })
 @JsonTypeName("api-key_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiKeyResponse {
   public static final String JSON_PROPERTY_ACTIVE = "active";
   private Boolean active;

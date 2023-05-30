@@ -38,7 +38,7 @@ import com.conekta.JSON;
   OrderResponseCharges.JSON_PROPERTY_DATA
 })
 @JsonTypeName("order_response_charges")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderResponseCharges {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   private Boolean hasMore;

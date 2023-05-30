@@ -44,7 +44,7 @@ import com.conekta.JSON;
   WebhookResponse.JSON_PROPERTY_URL
 })
 @JsonTypeName("webhook_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class WebhookResponse {
   public static final String JSON_PROPERTY_DELETED = "deleted";
   private Boolean deleted;

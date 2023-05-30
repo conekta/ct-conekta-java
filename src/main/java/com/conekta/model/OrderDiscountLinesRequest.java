@@ -35,7 +35,7 @@ import com.conekta.JSON;
   OrderDiscountLinesRequest.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("order_discount_lines_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderDiscountLinesRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Long amount;

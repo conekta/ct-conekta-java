@@ -34,7 +34,7 @@ import com.conekta.JSON;
   UpdateCustomerAntifraudInfo.JSON_PROPERTY_FIRST_PAID_AT
 })
 @JsonTypeName("update_customer_antifraud_info")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpdateCustomerAntifraudInfo {
   public static final String JSON_PROPERTY_ACCOUNT_CREATED_AT = "account_created_at";
   private Long accountCreatedAt;

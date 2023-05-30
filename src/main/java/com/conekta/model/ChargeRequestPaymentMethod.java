@@ -36,7 +36,7 @@ import com.conekta.JSON;
   ChargeRequestPaymentMethod.JSON_PROPERTY_PAYMENT_SOURCE_ID
 })
 @JsonTypeName("charge_request_payment_method")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ChargeRequestPaymentMethod {
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
   private Long expiresAt;

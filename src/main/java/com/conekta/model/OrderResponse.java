@@ -61,7 +61,7 @@ import com.conekta.JSON;
   OrderResponse.JSON_PROPERTY_UPDATED_AT
 })
 @JsonTypeName("order_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Integer amount;

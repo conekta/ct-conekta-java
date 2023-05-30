@@ -36,7 +36,7 @@ import com.conekta.JSON;
   ChargeResponseRefundsAllOf.JSON_PROPERTY_DATA
 })
 @JsonTypeName("charge_response_refunds_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ChargeResponseRefundsAllOf {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<ChargeResponseRefundsData> data = new ArrayList<>();
