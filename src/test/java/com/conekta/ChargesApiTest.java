@@ -15,11 +15,9 @@ package com.conekta;
 
 import com.conekta.*;
 import com.conekta.auth.*;
-import com.conekta.model.ChargeOrderResponse;
-import com.conekta.model.ChargeRequest;
-import com.conekta.model.Error;
-import com.conekta.model.GetChargesResponse;
+import com.conekta.model.*;
 
+import com.conekta.model.Error;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -48,6 +46,10 @@ public class ChargesApiTest {
         Integer limit = 20;
         GetChargesResponse response = api.getCharges(acceptLanguage, xChildCompanyId, limit, null, null, null);
         Assertions.assertNotNull(response);
+        Assertions.assertNotNull(response.getData());
+        Assertions.assertEquals(PaymentMethodCash.class, response.getData().get(0).getPaymentMethod().getActualInstance().getClass());
+        PaymentMethodCash paymentMethodCash = (PaymentMethodCash)response.getData().get(0).getPaymentMethod().getActualInstance();
+        Assertions.assertEquals("oxxo", paymentMethodCash.getType());
     }
 
     /**
@@ -66,6 +68,10 @@ public class ChargesApiTest {
         String xChildCompanyId = "company_child_id";
         ChargeOrderResponse response = api.ordersCreateCharge(id, chargeRequest, acceptLanguage, xChildCompanyId);
         Assertions.assertNotNull(response);
+        Assertions.assertNotNull(response.getPaymentMethod());
+        Assertions.assertEquals(PaymentMethodCard.class, response.getPaymentMethod().getActualInstance().getClass());
+        PaymentMethodCard paymentMethodCard = (PaymentMethodCard)response.getPaymentMethod().getActualInstance();
+        Assertions.assertEquals("credit", paymentMethodCard.getType());
     }
 
 }
