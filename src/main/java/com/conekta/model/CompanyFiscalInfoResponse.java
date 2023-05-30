@@ -40,7 +40,7 @@ import com.conekta.JSON;
   CompanyFiscalInfoResponse.JSON_PROPERTY_ADDRESS
 })
 @JsonTypeName("company_fiscal_info_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
 public class CompanyFiscalInfoResponse {
   /**
    * The resource&#39;s type

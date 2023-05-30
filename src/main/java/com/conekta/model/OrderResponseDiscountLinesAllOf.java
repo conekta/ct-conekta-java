@@ -36,7 +36,7 @@ import com.conekta.JSON;
   OrderResponseDiscountLinesAllOf.JSON_PROPERTY_DATA
 })
 @JsonTypeName("order_response_discount_lines_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
 public class OrderResponseDiscountLinesAllOf {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<DiscountLinesDataResponse> data = new ArrayList<>();

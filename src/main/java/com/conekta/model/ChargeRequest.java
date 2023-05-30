@@ -37,7 +37,7 @@ import com.conekta.JSON;
   ChargeRequest.JSON_PROPERTY_REFERENCE_ID
 })
 @JsonTypeName("charge_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
 public class ChargeRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Integer amount;

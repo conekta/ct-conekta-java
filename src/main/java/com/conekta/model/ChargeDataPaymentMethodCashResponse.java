@@ -40,7 +40,7 @@ import com.conekta.JSON;
   ChargeDataPaymentMethodCashResponse.JSON_PROPERTY_STORE_NAME
 })
 @JsonTypeName("charge_data_payment_method_cash_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
 public class ChargeDataPaymentMethodCashResponse {
   public static final String JSON_PROPERTY_AUTH_CODE = "auth_code";
   private Integer authCode;

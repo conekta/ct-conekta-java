@@ -42,7 +42,7 @@ import com.conekta.JSON;
   PaymentMethodCardResponseAllOf.JSON_PROPERTY_PAYMENT_SOURCE_STATUS
 })
 @JsonTypeName("payment_method_card_response_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
 public class PaymentMethodCardResponseAllOf {
   public static final String JSON_PROPERTY_LAST4 = "last4";
   private String last4;

@@ -50,7 +50,7 @@ import com.conekta.JSON;
   ChargeDataPaymentMethodBankTransferResponse.JSON_PROPERTY_TRACKING_CODE
 })
 @JsonTypeName("charge_data_payment_method_bank_transfer_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-30T11:12:04.718851-03:00[America/Argentina/Buenos_Aires]")
 public class ChargeDataPaymentMethodBankTransferResponse {
   public static final String JSON_PROPERTY_BANK = "bank";
   private String bank;
