@@ -83,26 +83,29 @@ Please follow the [installation](#installation) instruction and execute the foll
 import com.conekta.*;
 import com.conekta.auth.*;
 import com.conekta.model.*;
-import com.conekta.AntifraudApi;
+import com.conekta.CustomersApi;
 
-public class AntifraudApiExample {
+public class CustomersApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.conekta.io");
-        
+
         // Configure HTTP bearer authorization: bearerAuth
         HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
         bearerAuth.setBearerToken("BEARER TOKEN");
 
-        AntifraudApi apiInstance = new AntifraudApi(defaultClient);
-        CreateRiskRulesData createRiskRulesData = new CreateRiskRulesData(); // CreateRiskRulesData | requested field for blacklist rule
+        CustomersApi apiInstance = new CustomersApi(defaultClient);
+        Customer customer = new Customer(); // Customer | requested field for customer
+        customer.setName("Customer Name");
+        customer.setEmail("customer@mail.com");
+        customer.setPhone("55454545454");
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         try {
-            BlacklistRuleResponse result = apiInstance.createRuleBlacklist(createRiskRulesData, acceptLanguage);
+            CustomerResponse result = apiInstance.createCustomer(customer, acceptLanguage,null);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AntifraudApi#createRuleBlacklist");
+            System.err.println("Exception when calling CustomersApi#createCustomer");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
