@@ -40,7 +40,7 @@ import com.conekta.JSON;
   CustomerShippingContacts.JSON_PROPERTY_DELETED
 })
 @JsonTypeName("customer_shipping_contacts")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomerShippingContacts {
   public static final String JSON_PROPERTY_PHONE = "phone";
   private String phone;

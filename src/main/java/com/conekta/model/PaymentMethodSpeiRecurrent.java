@@ -39,7 +39,7 @@ import com.conekta.JSON;
   PaymentMethodSpeiRecurrent.JSON_PROPERTY_EXPIRES_AT
 })
 @JsonTypeName("payment_method_spei_recurrent")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PaymentMethodSpeiRecurrent {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;

@@ -56,7 +56,7 @@ import com.conekta.JSON;
   OrderRequest.JSON_PROPERTY_TAX_LINES
 })
 @JsonTypeName("order_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderRequest {
   public static final String JSON_PROPERTY_CHARGES = "charges";
   private List<ChargeRequest> charges = new ArrayList<>();

@@ -36,7 +36,7 @@ import com.conekta.JSON;
   CustomerPaymentMethods.JSON_PROPERTY_DATA
 })
 @JsonTypeName("customerPaymentMethods")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomerPaymentMethods {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<CustomerPaymentMethodsData> data = new ArrayList<>();

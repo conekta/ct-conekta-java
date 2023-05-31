@@ -50,6 +50,9 @@ public class PaymentMethodsApiTest {
         String acceptLanguage = "es";
         CreateCustomerPaymentMethodsResponse response = api.createCustomerPaymentMethods(id, createCustomerPaymentMethodsRequest, acceptLanguage, null);
         Assertions.assertNotNull(response);
+        Assertions.assertEquals(PaymentMethodCashResponse.class, response.getActualInstance().getClass());
+        PaymentMethodCashResponse paymentMethodCashResponse = (PaymentMethodCashResponse)response.getActualInstance();
+        Assertions.assertEquals("oxxo_recurrent",paymentMethodCashResponse.getType());
     }
 
     /**
@@ -66,6 +69,9 @@ public class PaymentMethodsApiTest {
         String acceptLanguage = "es";
         UpdateCustomerPaymentMethodsResponse response = api.deleteCustomerPaymentMethods(id, paymentMethodId, acceptLanguage, null);
         Assertions.assertNotNull(response);
+        Assertions.assertEquals(PaymentMethodCardResponse.class, response.getActualInstance().getClass());
+        PaymentMethodCardResponse paymentMethodCardResponse = (PaymentMethodCardResponse)response.getActualInstance();
+        Assertions.assertEquals("card", paymentMethodCardResponse.getType());
     }
 
     /**
@@ -82,6 +88,10 @@ public class PaymentMethodsApiTest {
         Integer limit = 20;
         GetPaymentMethodResponse response = api.getCustomerPaymentMethods(id, acceptLanguage, null, limit, null, null, null);
         Assertions.assertNotNull(response);
+        Assertions.assertNotNull(response.getData());
+        Assertions.assertEquals(PaymentMethodCardResponse.class, response.getData().get(0).getActualInstance().getClass());
+        PaymentMethodCardResponse paymentMethodCardResponse = (PaymentMethodCardResponse)response.getData().get(0).getActualInstance();
+        Assertions.assertEquals("card", paymentMethodCardResponse.getType());
     }
 
     /**

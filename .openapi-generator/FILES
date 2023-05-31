@@ -1,7 +1,8 @@
 .github/workflows/maven.yml
-.gitignore
 AUTHORS.md
+CODE_OF_CONDUCT.md
 LICENSE
+README.md
 api/openapi.yaml
 docs/AntifraudApi.md
 docs/ApiKeyCreateResponse.md

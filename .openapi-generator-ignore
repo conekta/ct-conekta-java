@@ -8,7 +8,6 @@ gradle
 gradlew.bat
 settings.gradle
 gradle/
-README.md
 AndroidManifest.xml
 .gitlab-ci.yml
 .travis.yml
@@ -17,3 +16,5 @@ git_push.sh
 appveyor.yml
 .openapi-generator/
 .openapi-generator
+.gitignore
+.github/workflows/maven.yml

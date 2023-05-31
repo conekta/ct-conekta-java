@@ -60,7 +60,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.conekta.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 @JsonDeserialize(using = ChargeResponsePaymentMethod.ChargeResponsePaymentMethodDeserializer.class)
 @JsonSerialize(using = ChargeResponsePaymentMethod.ChargeResponsePaymentMethodSerializer.class)
 public class ChargeResponsePaymentMethod extends AbstractOpenApiSchema {

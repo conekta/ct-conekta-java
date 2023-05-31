@@ -55,7 +55,7 @@ import com.conekta.JSON;
   Customer.JSON_PROPERTY_SUBSCRIPTION
 })
 @JsonTypeName("customer")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Customer {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
   private CustomerAntifraudInfo antifraudInfo;

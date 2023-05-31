@@ -38,7 +38,7 @@ import com.conekta.JSON;
   WebhookKeyDeleteResponse.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("webhook-key_delete_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class WebhookKeyDeleteResponse {
   public static final String JSON_PROPERTY_ACTIVE = "active";
   private Boolean active;

@@ -158,11 +158,12 @@ public class OrdersApiTest {
      */
     @Test
     public void updateOrderTest() throws ApiException {
-        //String id = null;
-        //OrderUpdateRequest orderUpdateRequest = null;
-        //String acceptLanguage = null;
-        //OrderResponse response = api.updateOrder(id, orderUpdateRequest, acceptLanguage);
-        // TODO: test validations
+        String id = "ord_2tUigJ8DgBhbp6w5D";
+        OrderUpdateRequest orderUpdateRequest = new OrderUpdateRequest();
+        orderUpdateRequest.setCurrency("MXN");
+        String acceptLanguage = "es";
+        OrderResponse response = api.updateOrder(id, orderUpdateRequest, acceptLanguage);
+        Assertions.assertNotNull(response);
     }
 
 }

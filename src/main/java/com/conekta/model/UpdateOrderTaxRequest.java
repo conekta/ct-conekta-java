@@ -37,7 +37,7 @@ import com.conekta.JSON;
   UpdateOrderTaxRequest.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("update_order_tax_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpdateOrderTaxRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Long amount;

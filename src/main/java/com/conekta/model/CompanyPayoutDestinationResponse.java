@@ -38,7 +38,7 @@ import com.conekta.JSON;
   CompanyPayoutDestinationResponse.JSON_PROPERTY_ACCOUNT_NUMBER
 })
 @JsonTypeName("company_payout_destination_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CompanyPayoutDestinationResponse {
   /**
    * The resource&#39;s type

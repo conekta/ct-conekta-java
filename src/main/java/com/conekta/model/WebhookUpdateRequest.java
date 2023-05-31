@@ -37,7 +37,7 @@ import com.conekta.JSON;
   WebhookUpdateRequest.JSON_PROPERTY_SUBSCRIBED_EVENTS
 })
 @JsonTypeName("webhook_update_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class WebhookUpdateRequest {
   public static final String JSON_PROPERTY_URL = "url";
   private String url;

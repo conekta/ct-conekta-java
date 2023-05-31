@@ -38,7 +38,7 @@ import com.conekta.JSON;
   WebhookKeyCreateResponse.JSON_PROPERTY_PUBLIC_KEY
 })
 @JsonTypeName("webhook-key_create_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class WebhookKeyCreateResponse {
   public static final String JSON_PROPERTY_ACTIVE = "active";
   private Boolean active;

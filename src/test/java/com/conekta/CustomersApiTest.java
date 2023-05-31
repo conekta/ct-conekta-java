@@ -15,24 +15,14 @@ package com.conekta;
 
 import com.conekta.*;
 import com.conekta.auth.*;
-import com.conekta.model.CreateCustomerFiscalEntitiesResponse;
-import com.conekta.model.Customer;
-import com.conekta.model.CustomerFiscalEntitiesRequest;
-import com.conekta.model.CustomerResponse;
-import com.conekta.model.CustomerUpdateFiscalEntitiesRequest;
-import com.conekta.model.CustomersResponse;
-import com.conekta.model.Error;
-import com.conekta.model.UpdateCustomer;
-import com.conekta.model.UpdateCustomerFiscalEntitiesResponse;
+import com.conekta.model.*;
 
+import com.conekta.model.Error;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * API tests for CustomersApi
@@ -53,6 +43,7 @@ public class CustomersApiTest {
         Customer customer = new Customer();
         customer.setEmail("test@test.com");
         customer.setName("Foo Foo");
+        customer.setPaymentSources(Arrays.asList(new CustomerPaymentMethodsRequest(new PaymentMethodCardRequest())));
         String acceptLanguage = "es";
         String xChildCompanyId = "company_child_id";
         CustomerResponse response = api.createCustomer(customer, acceptLanguage, xChildCompanyId);
@@ -124,6 +115,11 @@ public class CustomersApiTest {
         Integer limit = 20;
         CustomersResponse response = api.getCustomers(acceptLanguage, xChildCompanyId, limit, null, null, null);
         Assertions.assertNotNull(response);
+        Assertions.assertNotNull(response.getData());
+        Assertions.assertNotNull(response.getData().get(0).getPaymentSources());
+        Assertions.assertEquals(PaymentMethodSpeiRecurrent.class, response.getData().get(0).getPaymentSources().getData().get(0).getActualInstance().getClass());
+        PaymentMethodSpeiRecurrent paymentMethodSpeiRecurrent = (PaymentMethodSpeiRecurrent)response.getData().get(0).getPaymentSources().getData().get(0).getActualInstance();
+        Assertions.assertEquals("spei_recurrent", paymentMethodSpeiRecurrent.getType());
     }
 
     /**

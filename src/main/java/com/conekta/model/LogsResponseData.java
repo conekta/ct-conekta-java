@@ -56,7 +56,7 @@ import com.conekta.JSON;
   LogsResponseData.JSON_PROPERTY_VERSION
 })
 @JsonTypeName("logs_response_data")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class LogsResponseData {
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private Long createdAt;

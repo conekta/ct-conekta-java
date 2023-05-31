@@ -15,13 +15,9 @@ package com.conekta;
 
 import com.conekta.*;
 import com.conekta.auth.*;
-import com.conekta.model.Checkout;
-import com.conekta.model.CheckoutResponse;
-import com.conekta.model.CheckoutsResponse;
-import com.conekta.model.EmailCheckoutRequest;
-import com.conekta.model.Error;
-import com.conekta.model.SmsCheckoutRequest;
+import com.conekta.model.*;
 
+import com.conekta.model.Error;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -60,6 +56,11 @@ public class PaymentLinkApiTest {
         checkout.setType("PaymentLink");
         checkout.setName("FooCheckout");
         checkout.setRecurrent(false);
+        CheckoutOrderTemplate orderTemplate = new CheckoutOrderTemplate();
+        CustomerInfoJustCustomerId customerInfoJustCustomerId =  new CustomerInfoJustCustomerId();
+        customerInfoJustCustomerId.setCustomerId("cus_2tYENskzTjjgkGQLt");
+        orderTemplate.setCustomerInfo(new CheckoutOrderTemplateCustomerInfo(new CustomerInfoJustCustomerId()));
+        checkout.setOrderTemplate(new CheckoutOrderTemplate());
         String acceptLanguage = "es";
         CheckoutResponse response = api.createCheckout(checkout, acceptLanguage, null);
         Assertions.assertNotNull(response);

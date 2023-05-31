@@ -34,7 +34,7 @@ import com.conekta.JSON;
   Page.JSON_PROPERTY_PREVIOUS_PAGE_URL
 })
 @JsonTypeName("page")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Page {
   public static final String JSON_PROPERTY_NEXT_PAGE_URL = "next_page_url";
   private String nextPageUrl;

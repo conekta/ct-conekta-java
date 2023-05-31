@@ -39,7 +39,7 @@ import com.conekta.JSON;
   ChargeResponseRefundsData.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("charge_response_refunds_data")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ChargeResponseRefundsData {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Long amount;

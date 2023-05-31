@@ -54,7 +54,7 @@ import com.conekta.JSON;
   ChargesDataResponse.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("charges_data_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ChargesDataResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Integer amount;

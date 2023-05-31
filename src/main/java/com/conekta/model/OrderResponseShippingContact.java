@@ -43,7 +43,7 @@ import com.conekta.JSON;
   OrderResponseShippingContact.JSON_PROPERTY_DELETED
 })
 @JsonTypeName("order_response_shipping_contact")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderResponseShippingContact {
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private Long createdAt;

@@ -5,13 +5,13 @@
     <artifactId>ct-conekta-java</artifactId>
     <packaging>jar</packaging>
     <name>ct-conekta-java</name>
-    <version>3.0.3</version>
+    <version>6.0.0</version>
     <url>https://developers.conekta.com/</url>
     <description>This is a java library that allows interaction with https://api.conekta.io API.</description>
     <scm>
         <connection>scm:git:git@github.com:conekta/ct-conekta-java.git</connection>
         <developerConnection>scm:git:git@github.com:conekta/ct-conekta-java.git</developerConnection>
-        <url>https://github.com/conekta/ct-conekta-java/tree/master</url>
+        <url>https://github.com/conekta/ct-conekta-java/tree/main</url>
     </scm>
 
     <licenses>

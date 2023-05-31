@@ -41,7 +41,7 @@ import com.conekta.JSON;
   CustomerFiscalEntitiesRequest.JSON_PROPERTY_COMPANY_NAME
 })
 @JsonTypeName("customer_fiscal_entities_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-29T15:59:59.366769-03:00[America/Argentina/Buenos_Aires]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomerFiscalEntitiesRequest {
   public static final String JSON_PROPERTY_ADDRESS = "address";
   private CustomerFiscalEntitiesRequestAddress address;
