@@ -16,6 +16,7 @@ import com.conekta.model.SubscriptionUpdateRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -88,47 +89,30 @@ public class SubscriptionsApi {
      </table>
    */
   public ApiResponse<SubscriptionResponse> cancelSubscriptionWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling cancelSubscription");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/customers/{id}/subscription/cancel"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (acceptLanguage != null)
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-if (xChildCompanyId != null)
+    }
+    if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
 
-    
-    
-    final String[] localVarAccepts = {
-      "application/vnd.conekta-v2.1.0+json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<SubscriptionResponse> localVarReturnType = new GenericType<SubscriptionResponse>() {};
-
-    return apiClient.invokeAPI("SubscriptionsApi.cancelSubscription", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("SubscriptionsApi.cancelSubscription", localVarPath, "POST", new ArrayList<>(), null,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
   /**
@@ -174,52 +158,33 @@ if (xChildCompanyId != null)
      </table>
    */
   public ApiResponse<SubscriptionResponse> createSubscriptionWithHttpInfo(String id, SubscriptionRequest subscriptionRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    Object localVarPostBody = subscriptionRequest;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling createSubscription");
     }
-    
-    // verify the required parameter 'subscriptionRequest' is set
     if (subscriptionRequest == null) {
       throw new ApiException(400, "Missing the required parameter 'subscriptionRequest' when calling createSubscription");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/customers/{id}/subscription"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (acceptLanguage != null)
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-if (xChildCompanyId != null)
+    }
+    if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
 
-    
-    
-    final String[] localVarAccepts = {
-      "application/vnd.conekta-v2.1.0+json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<SubscriptionResponse> localVarReturnType = new GenericType<SubscriptionResponse>() {};
-
-    return apiClient.invokeAPI("SubscriptionsApi.createSubscription", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("SubscriptionsApi.createSubscription", localVarPath, "POST", new ArrayList<>(), subscriptionRequest,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
   /**
@@ -265,47 +230,30 @@ if (xChildCompanyId != null)
      </table>
    */
   public ApiResponse<SubscriptionEventsResponse> getAllEventsFromSubscriptionWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getAllEventsFromSubscription");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/customers/{id}/subscription/events"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (acceptLanguage != null)
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-if (xChildCompanyId != null)
+    }
+    if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
 
-    
-    
-    final String[] localVarAccepts = {
-      "application/vnd.conekta-v2.1.0+json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<SubscriptionEventsResponse> localVarReturnType = new GenericType<SubscriptionEventsResponse>() {};
-
-    return apiClient.invokeAPI("SubscriptionsApi.getAllEventsFromSubscription", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("SubscriptionsApi.getAllEventsFromSubscription", localVarPath, "GET", new ArrayList<>(), null,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
   /**
@@ -345,45 +293,27 @@ if (xChildCompanyId != null)
      </table>
    */
   public ApiResponse<SubscriptionResponse> getSubscriptionWithHttpInfo(String id, String acceptLanguage) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getSubscription");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/customers/{id}/subscription"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (acceptLanguage != null)
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+    }
 
-    
-    
-    final String[] localVarAccepts = {
-      "application/vnd.conekta-v2.1.0+json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<SubscriptionResponse> localVarReturnType = new GenericType<SubscriptionResponse>() {};
-
-    return apiClient.invokeAPI("SubscriptionsApi.getSubscription", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("SubscriptionsApi.getSubscription", localVarPath, "GET", new ArrayList<>(), null,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
   /**
@@ -427,47 +357,30 @@ if (xChildCompanyId != null)
      </table>
    */
   public ApiResponse<SubscriptionResponse> pauseSubscriptionWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling pauseSubscription");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/customers/{id}/subscription/pause"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (acceptLanguage != null)
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-if (xChildCompanyId != null)
+    }
+    if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
 
-    
-    
-    final String[] localVarAccepts = {
-      "application/vnd.conekta-v2.1.0+json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<SubscriptionResponse> localVarReturnType = new GenericType<SubscriptionResponse>() {};
-
-    return apiClient.invokeAPI("SubscriptionsApi.pauseSubscription", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("SubscriptionsApi.pauseSubscription", localVarPath, "POST", new ArrayList<>(), null,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
   /**
@@ -513,47 +426,30 @@ if (xChildCompanyId != null)
      </table>
    */
   public ApiResponse<SubscriptionResponse> resumeSubscriptionWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling resumeSubscription");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/customers/{id}/subscription/resume"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (acceptLanguage != null)
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-if (xChildCompanyId != null)
+    }
+    if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
 
-    
-    
-    final String[] localVarAccepts = {
-      "application/vnd.conekta-v2.1.0+json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<SubscriptionResponse> localVarReturnType = new GenericType<SubscriptionResponse>() {};
-
-    return apiClient.invokeAPI("SubscriptionsApi.resumeSubscription", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("SubscriptionsApi.resumeSubscription", localVarPath, "POST", new ArrayList<>(), null,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
   /**
@@ -599,52 +495,33 @@ if (xChildCompanyId != null)
      </table>
    */
   public ApiResponse<SubscriptionResponse> updateSubscriptionWithHttpInfo(String id, SubscriptionUpdateRequest subscriptionUpdateRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    Object localVarPostBody = subscriptionUpdateRequest;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateSubscription");
     }
-    
-    // verify the required parameter 'subscriptionUpdateRequest' is set
     if (subscriptionUpdateRequest == null) {
       throw new ApiException(400, "Missing the required parameter 'subscriptionUpdateRequest' when calling updateSubscription");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/customers/{id}/subscription"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (acceptLanguage != null)
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-if (xChildCompanyId != null)
+    }
+    if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
 
-    
-    
-    final String[] localVarAccepts = {
-      "application/vnd.conekta-v2.1.0+json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<SubscriptionResponse> localVarReturnType = new GenericType<SubscriptionResponse>() {};
-
-    return apiClient.invokeAPI("SubscriptionsApi.updateSubscription", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("SubscriptionsApi.updateSubscription", localVarPath, "PUT", new ArrayList<>(), subscriptionUpdateRequest,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 }

@@ -55,7 +55,7 @@ public class ChargeResponseRefunds {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<ChargeResponseRefundsData> data = new ArrayList<>();
+  private List<ChargeResponseRefundsData> data;
 
   public ChargeResponseRefunds() { 
   }

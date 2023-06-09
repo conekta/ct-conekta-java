@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   contact:
     email: engineering@conekta.com
-    name: Api support client
+    name: Engineering Conekta
     url: https://github.com/conekta/openapi/issues
   description: Conekta sdk
   license:

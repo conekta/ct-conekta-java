@@ -15,6 +15,7 @@ import com.conekta.model.Error;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -91,52 +92,33 @@ public class ShippingContactsApi {
      </table>
    */
   public ApiResponse<CustomerShippingContactsResponse> createCustomerShippingContactsWithHttpInfo(String id, CustomerShippingContacts customerShippingContacts, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    Object localVarPostBody = customerShippingContacts;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling createCustomerShippingContacts");
     }
-    
-    // verify the required parameter 'customerShippingContacts' is set
     if (customerShippingContacts == null) {
       throw new ApiException(400, "Missing the required parameter 'customerShippingContacts' when calling createCustomerShippingContacts");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/customers/{id}/shipping_contacts"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (acceptLanguage != null)
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-if (xChildCompanyId != null)
+    }
+    if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
 
-    
-    
-    final String[] localVarAccepts = {
-      "application/vnd.conekta-v2.1.0+json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<CustomerShippingContactsResponse> localVarReturnType = new GenericType<CustomerShippingContactsResponse>() {};
-
-    return apiClient.invokeAPI("ShippingContactsApi.createCustomerShippingContacts", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("ShippingContactsApi.createCustomerShippingContacts", localVarPath, "POST", new ArrayList<>(), customerShippingContacts,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
   /**
@@ -182,53 +164,34 @@ if (xChildCompanyId != null)
      </table>
    */
   public ApiResponse<CustomerShippingContactsResponse> deleteCustomerShippingContactsWithHttpInfo(String id, String shippingContactsId, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling deleteCustomerShippingContacts");
     }
-    
-    // verify the required parameter 'shippingContactsId' is set
     if (shippingContactsId == null) {
       throw new ApiException(400, "Missing the required parameter 'shippingContactsId' when calling deleteCustomerShippingContacts");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/customers/{id}/shipping_contacts/{shipping_contacts_id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()))
-      .replaceAll("\\{" + "shipping_contacts_id" + "\\}", apiClient.escapeString(shippingContactsId.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id))
+            .replaceAll("\\{shipping_contacts_id}", apiClient.escapeString(shippingContactsId));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (acceptLanguage != null)
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-if (xChildCompanyId != null)
+    }
+    if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
 
-    
-    
-    final String[] localVarAccepts = {
-      "application/vnd.conekta-v2.1.0+json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<CustomerShippingContactsResponse> localVarReturnType = new GenericType<CustomerShippingContactsResponse>() {};
-
-    return apiClient.invokeAPI("ShippingContactsApi.deleteCustomerShippingContacts", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("ShippingContactsApi.deleteCustomerShippingContacts", localVarPath, "DELETE", new ArrayList<>(), null,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
   /**
@@ -276,58 +239,37 @@ if (xChildCompanyId != null)
      </table>
    */
   public ApiResponse<CustomerShippingContactsResponse> updateCustomerShippingContactsWithHttpInfo(String id, String shippingContactsId, CustomerUpdateShippingContacts customerUpdateShippingContacts, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    Object localVarPostBody = customerUpdateShippingContacts;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateCustomerShippingContacts");
     }
-    
-    // verify the required parameter 'shippingContactsId' is set
     if (shippingContactsId == null) {
       throw new ApiException(400, "Missing the required parameter 'shippingContactsId' when calling updateCustomerShippingContacts");
     }
-    
-    // verify the required parameter 'customerUpdateShippingContacts' is set
     if (customerUpdateShippingContacts == null) {
       throw new ApiException(400, "Missing the required parameter 'customerUpdateShippingContacts' when calling updateCustomerShippingContacts");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/customers/{id}/shipping_contacts/{shipping_contacts_id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()))
-      .replaceAll("\\{" + "shipping_contacts_id" + "\\}", apiClient.escapeString(shippingContactsId.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id))
+            .replaceAll("\\{shipping_contacts_id}", apiClient.escapeString(shippingContactsId));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (acceptLanguage != null)
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-if (xChildCompanyId != null)
+    }
+    if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
 
-    
-    
-    final String[] localVarAccepts = {
-      "application/vnd.conekta-v2.1.0+json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<CustomerShippingContactsResponse> localVarReturnType = new GenericType<CustomerShippingContactsResponse>() {};
-
-    return apiClient.invokeAPI("ShippingContactsApi.updateCustomerShippingContacts", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("ShippingContactsApi.updateCustomerShippingContacts", localVarPath, "PUT", new ArrayList<>(), customerUpdateShippingContacts,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 }

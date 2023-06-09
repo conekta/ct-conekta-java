@@ -113,7 +113,7 @@ public class ChargeOrderResponse {
   private String referenceId;
 
   public static final String JSON_PROPERTY_REFUNDS = "refunds";
-  private List<Object> refunds = new ArrayList<>();
+  private List<Object> refunds;
 
   public static final String JSON_PROPERTY_STATUS = "status";
   private String status;

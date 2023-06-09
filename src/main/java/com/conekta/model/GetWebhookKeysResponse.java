@@ -55,7 +55,7 @@ public class GetWebhookKeysResponse {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<WebhookKeyResponse> data = new ArrayList<>();
+  private List<WebhookKeyResponse> data;
 
   public GetWebhookKeysResponse() { 
   }

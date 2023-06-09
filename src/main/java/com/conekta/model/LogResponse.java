@@ -101,7 +101,7 @@ public class LogResponse {
   private Map<String, String> responseHeaders = new HashMap<>();
 
   public static final String JSON_PROPERTY_SEARCHABLE_TAGS = "searchable_tags";
-  private List<String> searchableTags = new ArrayList<>();
+  private List<String> searchableTags;
 
   public static final String JSON_PROPERTY_STATUS = "status";
   private String status;

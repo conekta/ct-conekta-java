@@ -55,7 +55,7 @@ public class RiskRulesList {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<RiskRulesData> data = new ArrayList<>();
+  private List<RiskRulesData> data;
 
   public RiskRulesList() { 
   }

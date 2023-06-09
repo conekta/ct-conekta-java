@@ -66,7 +66,7 @@ public class EventResponse {
   private String type;
 
   public static final String JSON_PROPERTY_WEBHOOK_LOGS = "webhook_logs";
-  private List<WebhookLog> webhookLogs = new ArrayList<>();
+  private List<WebhookLog> webhookLogs;
 
   public static final String JSON_PROPERTY_WEBHOOK_STATUS = "webhook_status";
   private String webhookStatus;

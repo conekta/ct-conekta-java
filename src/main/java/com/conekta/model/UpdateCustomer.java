@@ -85,16 +85,16 @@ public class UpdateCustomer {
   private String customReference;
 
   public static final String JSON_PROPERTY_FISCAL_ENTITIES = "fiscal_entities";
-  private List<CustomerFiscalEntitiesRequest> fiscalEntities = new ArrayList<>();
+  private List<CustomerFiscalEntitiesRequest> fiscalEntities;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_PAYMENT_SOURCES = "payment_sources";
-  private List<CustomerPaymentMethodsRequest> paymentSources = new ArrayList<>();
+  private List<CustomerPaymentMethodsRequest> paymentSources;
 
   public static final String JSON_PROPERTY_SHIPPING_CONTACTS = "shipping_contacts";
-  private List<CustomerShippingContacts> shippingContacts = new ArrayList<>();
+  private List<CustomerShippingContacts> shippingContacts;
 
   public static final String JSON_PROPERTY_SUBSCRIPTION = "subscription";
   private SubscriptionRequest subscription;

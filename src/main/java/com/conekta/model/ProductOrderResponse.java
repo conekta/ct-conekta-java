@@ -72,7 +72,7 @@ public class ProductOrderResponse {
   private String sku;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
-  private List<String> tags = new ArrayList<>();
+  private List<String> tags;
 
   public static final String JSON_PROPERTY_UNIT_PRICE = "unit_price";
   private Integer unitPrice;

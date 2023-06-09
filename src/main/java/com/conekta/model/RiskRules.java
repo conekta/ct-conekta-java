@@ -39,7 +39,7 @@ import com.conekta.JSON;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class RiskRules {
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<RiskRulesData> data = new ArrayList<>();
+  private List<RiskRulesData> data;
 
   public RiskRules() { 
   }

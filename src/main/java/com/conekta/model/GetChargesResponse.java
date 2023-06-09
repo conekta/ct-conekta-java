@@ -55,7 +55,7 @@ public class GetChargesResponse {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<ChargeResponse> data = new ArrayList<>();
+  private List<ChargeResponse> data;
 
   public GetChargesResponse() { 
   }

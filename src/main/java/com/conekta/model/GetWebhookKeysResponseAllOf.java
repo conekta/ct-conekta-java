@@ -39,7 +39,7 @@ import com.conekta.JSON;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class GetWebhookKeysResponseAllOf {
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<WebhookKeyResponse> data = new ArrayList<>();
+  private List<WebhookKeyResponse> data;
 
   public GetWebhookKeysResponseAllOf() { 
   }

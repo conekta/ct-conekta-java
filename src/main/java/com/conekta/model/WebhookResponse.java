@@ -68,7 +68,7 @@ public class WebhookResponse {
   private String status;
 
   public static final String JSON_PROPERTY_SUBSCRIBED_EVENTS = "subscribed_events";
-  private List<String> subscribedEvents = new ArrayList<>();
+  private List<String> subscribedEvents;
 
   public static final String JSON_PROPERTY_SYNCHRONOUS = "synchronous";
   private Boolean synchronous;

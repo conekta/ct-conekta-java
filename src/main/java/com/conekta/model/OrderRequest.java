@@ -59,7 +59,7 @@ import com.conekta.JSON;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderRequest {
   public static final String JSON_PROPERTY_CHARGES = "charges";
-  private List<ChargeRequest> charges = new ArrayList<>();
+  private List<ChargeRequest> charges;
 
   public static final String JSON_PROPERTY_CHECKOUT = "checkout";
   private CheckoutRequest checkout;
@@ -71,7 +71,7 @@ public class OrderRequest {
   private OrderRequestCustomerInfo customerInfo;
 
   public static final String JSON_PROPERTY_DISCOUNT_LINES = "discount_lines";
-  private List<OrderDiscountLinesRequest> discountLines = new ArrayList<>();
+  private List<OrderDiscountLinesRequest> discountLines;
 
   public static final String JSON_PROPERTY_LINE_ITEMS = "line_items";
   private List<Product> lineItems = new ArrayList<>();
@@ -89,10 +89,10 @@ public class OrderRequest {
   private CustomerShippingContacts shippingContact;
 
   public static final String JSON_PROPERTY_SHIPPING_LINES = "shipping_lines";
-  private List<ShippingRequest> shippingLines = new ArrayList<>();
+  private List<ShippingRequest> shippingLines;
 
   public static final String JSON_PROPERTY_TAX_LINES = "tax_lines";
-  private List<OrderTaxRequest> taxLines = new ArrayList<>();
+  private List<OrderTaxRequest> taxLines;
 
   public OrderRequest() { 
   }
@@ -244,6 +244,9 @@ public class OrderRequest {
   }
 
   public OrderRequest addLineItemsItem(Product lineItemsItem) {
+    if (this.lineItems == null) {
+      this.lineItems = new ArrayList<>();
+    }
     this.lineItems.add(lineItemsItem);
     return this;
   }

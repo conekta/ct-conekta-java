@@ -65,7 +65,7 @@ import com.conekta.JSON;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderResponseCheckout {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
-  private List<String> allowedPaymentMethods = new ArrayList<>();
+  private List<String> allowedPaymentMethods;
 
   public static final String JSON_PROPERTY_CAN_NOT_EXPIRE = "can_not_expire";
   private Boolean canNotExpire;
@@ -74,7 +74,7 @@ public class OrderResponseCheckout {
   private Integer emailsSent;
 
   public static final String JSON_PROPERTY_EXCLUDE_CARD_NETWORKS = "exclude_card_networks";
-  private List<Object> excludeCardNetworks = new ArrayList<>();
+  private List<Object> excludeCardNetworks;
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
   private Long expiresAt;
@@ -101,7 +101,7 @@ public class OrderResponseCheckout {
   private Boolean monthlyInstallmentsEnabled;
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS = "monthly_installments_options";
-  private List<Integer> monthlyInstallmentsOptions = new ArrayList<>();
+  private List<Integer> monthlyInstallmentsOptions;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;

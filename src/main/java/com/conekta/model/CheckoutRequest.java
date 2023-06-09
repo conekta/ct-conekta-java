@@ -58,7 +58,7 @@ public class CheckoutRequest {
   private Boolean monthlyInstallmentsEnabled;
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS = "monthly_installments_options";
-  private List<Integer> monthlyInstallmentsOptions = new ArrayList<>();
+  private List<Integer> monthlyInstallmentsOptions;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -81,6 +81,9 @@ public class CheckoutRequest {
   }
 
   public CheckoutRequest addAllowedPaymentMethodsItem(String allowedPaymentMethodsItem) {
+    if (this.allowedPaymentMethods == null) {
+      this.allowedPaymentMethods = new ArrayList<>();
+    }
     this.allowedPaymentMethods.add(allowedPaymentMethodsItem);
     return this;
   }

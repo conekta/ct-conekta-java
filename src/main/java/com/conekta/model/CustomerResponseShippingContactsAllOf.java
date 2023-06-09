@@ -39,7 +39,7 @@ import com.conekta.JSON;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomerResponseShippingContactsAllOf {
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<CustomerShippingContactsDataResponse> data = new ArrayList<>();
+  private List<CustomerShippingContactsDataResponse> data;
 
   public CustomerResponseShippingContactsAllOf() { 
   }

@@ -55,7 +55,7 @@ public class SubscriptionEventsResponse {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<EventResponse> data = new ArrayList<>();
+  private List<EventResponse> data;
 
   public SubscriptionEventsResponse() { 
   }

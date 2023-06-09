@@ -14,6 +14,7 @@ import com.conekta.model.GetCompaniesResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -88,43 +89,26 @@ public class CompaniesApi {
      </table>
    */
   public ApiResponse<GetCompaniesResponse> getCompaniesWithHttpInfo(String acceptLanguage, Integer limit, String search, String next, String previous) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // create path and map variables
-    String localVarPath = "/companies";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "limit", limit)
+    );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "search", search));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "next", next));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "previous", previous));
 
-    if (acceptLanguage != null)
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+    }
 
-    
-    
-    final String[] localVarAccepts = {
-      "application/vnd.conekta-v2.1.0+json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<GetCompaniesResponse> localVarReturnType = new GenericType<GetCompaniesResponse>() {};
-
-    return apiClient.invokeAPI("CompaniesApi.getCompanies", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("CompaniesApi.getCompanies", "/companies", "GET", localVarQueryParams, null,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
   /**
@@ -164,45 +148,27 @@ public class CompaniesApi {
      </table>
    */
   public ApiResponse<CompanyResponse> getCompanyWithHttpInfo(String id, String acceptLanguage) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getCompany");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/companies/{id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (acceptLanguage != null)
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+    }
 
-    
-    
-    final String[] localVarAccepts = {
-      "application/vnd.conekta-v2.1.0+json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<CompanyResponse> localVarReturnType = new GenericType<CompanyResponse>() {};
-
-    return apiClient.invokeAPI("CompaniesApi.getCompany", localVarPath, "GET", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("CompaniesApi.getCompany", localVarPath, "GET", new ArrayList<>(), null,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 }

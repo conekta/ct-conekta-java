@@ -55,7 +55,7 @@ public class GetPaymentMethodResponse {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<GetCustomerPaymentMethodDataResponse> data = new ArrayList<>();
+  private List<GetCustomerPaymentMethodDataResponse> data;
 
   public GetPaymentMethodResponse() { 
   }

@@ -73,7 +73,7 @@ public class PaymentMethodCard {
   private String expYear;
 
   public static final String JSON_PROPERTY_FRAUD_INDICATORS = "fraud_indicators";
-  private List<Object> fraudIndicators = new ArrayList<>();
+  private List<Object> fraudIndicators;
 
   public static final String JSON_PROPERTY_ISSUER = "issuer";
   private String issuer;

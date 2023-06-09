@@ -55,7 +55,7 @@ public class GetPlansResponse {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<PlanResponse> data = new ArrayList<>();
+  private List<PlanResponse> data;
 
   public GetPlansResponse() { 
   }

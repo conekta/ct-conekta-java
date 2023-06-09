@@ -88,7 +88,7 @@ public class PaymentMethodBankTransfer {
   private String issuingAccountTaxId;
 
   public static final String JSON_PROPERTY_PAYMENT_ATTEMPTS = "payment_attempts";
-  private List<Object> paymentAttempts = new ArrayList<>();
+  private List<Object> paymentAttempts;
 
   public static final String JSON_PROPERTY_RECEIVING_ACCOUNT_HOLDER_NAME = "receiving_account_holder_name";
   private String receivingAccountHolderName;
