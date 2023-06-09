@@ -43,10 +43,10 @@ public class PaymentMethodsApiTest {
      */
     @Test
     public void createCustomerPaymentMethodsTest() throws ApiException {
-        String id = "cus_2tYENskzTjjgkGQLt";
-        PaymentMethodCardRequest paymentMethodCardRequest = new PaymentMethodCardRequest();
-        paymentMethodCardRequest.setTokenId("token");
-        CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest = new CreateCustomerPaymentMethodsRequest(paymentMethodCardRequest);
+        String id = "cus_2tXyF9BwPG14UMkkg";
+        PaymentMethodCashRequest paymentMethodCashRequest = new PaymentMethodCashRequest();
+        paymentMethodCashRequest.setType("oxxo_recurrent");
+        CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest = new CreateCustomerPaymentMethodsRequest(paymentMethodCashRequest);
         String acceptLanguage = "es";
         CreateCustomerPaymentMethodsResponse response = api.createCustomerPaymentMethods(id, createCustomerPaymentMethodsRequest, acceptLanguage, null);
         Assertions.assertNotNull(response);
