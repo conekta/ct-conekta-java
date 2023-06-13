@@ -227,7 +227,7 @@ public class GetCustomerPaymentMethodDataResponse extends AbstractOpenApiSchema 
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, GenericType> schemas = new HashMap<>();
 
     public GetCustomerPaymentMethodDataResponse() {
         super("oneOf", Boolean.FALSE);
@@ -257,7 +257,7 @@ public class GetCustomerPaymentMethodDataResponse extends AbstractOpenApiSchema 
         });
         JSON.registerDescendants(GetCustomerPaymentMethodDataResponse.class, Collections.unmodifiableMap(schemas));
         // Initialize and register the discriminator mappings.
-        Map<String, Class<?>> mappings = new HashMap<String, Class<?>>();
+        Map<String, Class<?>> mappings = new HashMap<>();
         mappings.put("card", PaymentMethodCardResponse.class);
         mappings.put("cash", PaymentMethodCashResponse.class);
         mappings.put("oxxo_recurrent", PaymentMethodCashResponse.class);
@@ -284,17 +284,17 @@ public class GetCustomerPaymentMethodDataResponse extends AbstractOpenApiSchema 
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (JSON.isInstanceOf(PaymentMethodCardResponse.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(PaymentMethodCardResponse.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(PaymentMethodCashResponse.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(PaymentMethodCashResponse.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(PaymentMethodSpeiRecurrent.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(PaymentMethodSpeiRecurrent.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }

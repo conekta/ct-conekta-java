@@ -55,7 +55,7 @@ public class GetTransfersResponse {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<TransfersResponse> data = new ArrayList<>();
+  private List<TransfersResponse> data;
 
   public GetTransfersResponse() { 
   }

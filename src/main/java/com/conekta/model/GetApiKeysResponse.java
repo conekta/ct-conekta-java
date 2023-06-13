@@ -55,7 +55,7 @@ public class GetApiKeysResponse {
   private String _object;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<ApiKeyResponse> data = new ArrayList<>();
+  private List<ApiKeyResponse> data;
 
   public GetApiKeysResponse() { 
   }

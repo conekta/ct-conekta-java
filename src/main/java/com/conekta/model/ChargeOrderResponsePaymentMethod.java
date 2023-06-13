@@ -225,7 +225,7 @@ public class ChargeOrderResponsePaymentMethod extends AbstractOpenApiSchema {
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, GenericType> schemas = new HashMap<>();
 
     public ChargeOrderResponsePaymentMethod() {
         super("oneOf", Boolean.FALSE);
@@ -255,7 +255,7 @@ public class ChargeOrderResponsePaymentMethod extends AbstractOpenApiSchema {
         });
         JSON.registerDescendants(ChargeOrderResponsePaymentMethod.class, Collections.unmodifiableMap(schemas));
         // Initialize and register the discriminator mappings.
-        Map<String, Class<?>> mappings = new HashMap<String, Class<?>>();
+        Map<String, Class<?>> mappings = new HashMap<>();
         mappings.put("bank_transfer_payment", PaymentMethodBankTransfer.class);
         mappings.put("card_payment", PaymentMethodCard.class);
         mappings.put("cash_payment", PaymentMethodCash.class);
@@ -281,17 +281,17 @@ public class ChargeOrderResponsePaymentMethod extends AbstractOpenApiSchema {
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (JSON.isInstanceOf(PaymentMethodBankTransfer.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(PaymentMethodBankTransfer.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(PaymentMethodCard.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(PaymentMethodCard.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(PaymentMethodCash.class, instance, new HashSet<Class<?>>())) {
+        if (JSON.isInstanceOf(PaymentMethodCash.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }

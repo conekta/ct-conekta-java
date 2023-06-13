@@ -76,7 +76,7 @@ public class Customer {
   private String defaultShippingContactId;
 
   public static final String JSON_PROPERTY_FISCAL_ENTITIES = "fiscal_entities";
-  private List<CustomerFiscalEntitiesRequest> fiscalEntities = new ArrayList<>();
+  private List<CustomerFiscalEntitiesRequest> fiscalEntities;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Map<String, Object> metadata = new HashMap<>();
@@ -85,7 +85,7 @@ public class Customer {
   private String name;
 
   public static final String JSON_PROPERTY_PAYMENT_SOURCES = "payment_sources";
-  private List<CustomerPaymentMethodsRequest> paymentSources = new ArrayList<>();
+  private List<CustomerPaymentMethodsRequest> paymentSources;
 
   public static final String JSON_PROPERTY_PHONE = "phone";
   private String phone;
@@ -94,7 +94,7 @@ public class Customer {
   private String planId;
 
   public static final String JSON_PROPERTY_SHIPPING_CONTACTS = "shipping_contacts";
-  private List<CustomerShippingContacts> shippingContacts = new ArrayList<>();
+  private List<CustomerShippingContacts> shippingContacts;
 
   public static final String JSON_PROPERTY_SUBSCRIPTION = "subscription";
   private SubscriptionRequest subscription;

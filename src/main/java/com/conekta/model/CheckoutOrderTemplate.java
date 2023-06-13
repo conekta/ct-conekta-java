@@ -115,6 +115,9 @@ public class CheckoutOrderTemplate {
   }
 
   public CheckoutOrderTemplate addLineItemsItem(Product lineItemsItem) {
+    if (this.lineItems == null) {
+      this.lineItems = new ArrayList<>();
+    }
     this.lineItems.add(lineItemsItem);
     return this;
   }

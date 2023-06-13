@@ -55,7 +55,7 @@ public class CheckoutsResponse {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<CheckoutResponse> data = new ArrayList<>();
+  private List<CheckoutResponse> data;
 
   public CheckoutsResponse() { 
   }

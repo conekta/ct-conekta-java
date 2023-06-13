@@ -55,7 +55,7 @@ public class GetTransactionsResponse {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<TransactionResponse> data = new ArrayList<>();
+  private List<TransactionResponse> data;
 
   public GetTransactionsResponse() { 
   }

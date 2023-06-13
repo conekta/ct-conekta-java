@@ -47,7 +47,7 @@ public class OrderResponseCharges {
   private String _object;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<ChargesDataResponse> data = new ArrayList<>();
+  private List<ChargesDataResponse> data;
 
   public OrderResponseCharges() { 
   }

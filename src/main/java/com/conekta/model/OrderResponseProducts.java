@@ -55,7 +55,7 @@ public class OrderResponseProducts {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<ProductDataResponse> data = new ArrayList<>();
+  private List<ProductDataResponse> data;
 
   public OrderResponseProducts() { 
   }

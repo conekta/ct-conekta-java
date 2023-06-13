@@ -46,7 +46,7 @@ public class WebhookUpdateRequest {
   private Boolean synchronous = false;
 
   public static final String JSON_PROPERTY_SUBSCRIBED_EVENTS = "subscribed_events";
-  private List<String> subscribedEvents = new ArrayList<>();
+  private List<String> subscribedEvents;
 
   public WebhookUpdateRequest() { 
   }

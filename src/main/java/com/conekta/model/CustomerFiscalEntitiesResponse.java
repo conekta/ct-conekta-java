@@ -47,7 +47,7 @@ public class CustomerFiscalEntitiesResponse {
   private String _object;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<CustomerFiscalEntitiesDataResponse> data = new ArrayList<>();
+  private List<CustomerFiscalEntitiesDataResponse> data;
 
   public CustomerFiscalEntitiesResponse() { 
   }

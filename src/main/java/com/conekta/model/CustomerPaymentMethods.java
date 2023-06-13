@@ -39,7 +39,7 @@ import com.conekta.JSON;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomerPaymentMethods {
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<CustomerPaymentMethodsData> data = new ArrayList<>();
+  private List<CustomerPaymentMethodsData> data;
 
   public CustomerPaymentMethods() { 
   }

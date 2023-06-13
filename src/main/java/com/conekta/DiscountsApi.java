@@ -15,6 +15,7 @@ import com.conekta.model.UpdateOrderDiscountLinesRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -89,52 +90,33 @@ public class DiscountsApi {
      </table>
    */
   public ApiResponse<DiscountLinesResponse> ordersCreateDiscountLineWithHttpInfo(String id, OrderDiscountLinesRequest orderDiscountLinesRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    Object localVarPostBody = orderDiscountLinesRequest;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersCreateDiscountLine");
     }
-    
-    // verify the required parameter 'orderDiscountLinesRequest' is set
     if (orderDiscountLinesRequest == null) {
       throw new ApiException(400, "Missing the required parameter 'orderDiscountLinesRequest' when calling ordersCreateDiscountLine");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/orders/{id}/discount_lines"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (acceptLanguage != null)
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-if (xChildCompanyId != null)
+    }
+    if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
 
-    
-    
-    final String[] localVarAccepts = {
-      "application/vnd.conekta-v2.1.0+json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<DiscountLinesResponse> localVarReturnType = new GenericType<DiscountLinesResponse>() {};
-
-    return apiClient.invokeAPI("DiscountsApi.ordersCreateDiscountLine", localVarPath, "POST", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("DiscountsApi.ordersCreateDiscountLine", localVarPath, "POST", new ArrayList<>(), orderDiscountLinesRequest,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
   /**
@@ -180,53 +162,34 @@ if (xChildCompanyId != null)
      </table>
    */
   public ApiResponse<DiscountLinesResponse> ordersDeleteDiscountLinesWithHttpInfo(String id, String discountLinesId, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersDeleteDiscountLines");
     }
-    
-    // verify the required parameter 'discountLinesId' is set
     if (discountLinesId == null) {
       throw new ApiException(400, "Missing the required parameter 'discountLinesId' when calling ordersDeleteDiscountLines");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/orders/{id}/discount_lines/{discount_lines_id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()))
-      .replaceAll("\\{" + "discount_lines_id" + "\\}", apiClient.escapeString(discountLinesId.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id))
+            .replaceAll("\\{discount_lines_id}", apiClient.escapeString(discountLinesId));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (acceptLanguage != null)
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-if (xChildCompanyId != null)
+    }
+    if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
 
-    
-    
-    final String[] localVarAccepts = {
-      "application/vnd.conekta-v2.1.0+json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<DiscountLinesResponse> localVarReturnType = new GenericType<DiscountLinesResponse>() {};
-
-    return apiClient.invokeAPI("DiscountsApi.ordersDeleteDiscountLines", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("DiscountsApi.ordersDeleteDiscountLines", localVarPath, "DELETE", new ArrayList<>(), null,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
   /**
@@ -274,58 +237,37 @@ if (xChildCompanyId != null)
      </table>
    */
   public ApiResponse<DiscountLinesResponse> ordersUpdateDiscountLinesWithHttpInfo(String id, String discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    Object localVarPostBody = updateOrderDiscountLinesRequest;
-    
-    // verify the required parameter 'id' is set
+    // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersUpdateDiscountLines");
     }
-    
-    // verify the required parameter 'discountLinesId' is set
     if (discountLinesId == null) {
       throw new ApiException(400, "Missing the required parameter 'discountLinesId' when calling ordersUpdateDiscountLines");
     }
-    
-    // verify the required parameter 'updateOrderDiscountLinesRequest' is set
     if (updateOrderDiscountLinesRequest == null) {
       throw new ApiException(400, "Missing the required parameter 'updateOrderDiscountLinesRequest' when calling ordersUpdateDiscountLines");
     }
-    
-    // create path and map variables
+
+    // Path parameters
     String localVarPath = "/orders/{id}/discount_lines/{discount_lines_id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()))
-      .replaceAll("\\{" + "discount_lines_id" + "\\}", apiClient.escapeString(discountLinesId.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id))
+            .replaceAll("\\{discount_lines_id}", apiClient.escapeString(discountLinesId));
 
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, String> localVarCookieParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    if (acceptLanguage != null)
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-if (xChildCompanyId != null)
+    }
+    if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
 
-    
-    
-    final String[] localVarAccepts = {
-      "application/vnd.conekta-v2.1.0+json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "bearerAuth" };
-
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<DiscountLinesResponse> localVarReturnType = new GenericType<DiscountLinesResponse>() {};
-
-    return apiClient.invokeAPI("DiscountsApi.ordersUpdateDiscountLines", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
-                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+    return apiClient.invokeAPI("DiscountsApi.ordersUpdateDiscountLines", localVarPath, "PUT", new ArrayList<>(), updateOrderDiscountLinesRequest,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
 }

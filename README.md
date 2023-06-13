@@ -79,7 +79,6 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-
 import com.conekta.*;
 import com.conekta.auth.*;
 import com.conekta.model.*;
@@ -89,11 +88,10 @@ public class CustomersApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.conekta.io");
 
         // Configure HTTP bearer authorization: bearerAuth
         HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-        bearerAuth.setBearerToken("BEARER TOKEN");
+        bearerAuth.setBearerToken("API_KEY");
 
         CustomersApi apiInstance = new CustomersApi(defaultClient);
         Customer customer = new Customer(); // Customer | requested field for customer
@@ -113,7 +111,6 @@ public class CustomersApiExample {
         }
     }
 }
-
 ```
 
 ## Documentation for API Endpoints
@@ -412,9 +409,12 @@ Class | Method | HTTP request | Description
  - [WhitelistlistRuleResponse](docs/WhitelistlistRuleResponse.md)
 
 
+<a id="documentation-for-authorization"></a>
 ## Documentation for Authorization
 
+
 Authentication schemes defined for the API:
+<a id="bearerAuth"></a>
 ### bearerAuth
 
 
@@ -428,4 +428,3 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 ## Author
 
 engineering@conekta.com
-

@@ -50,6 +50,9 @@ public class OrdersResponse {
   }
 
   public OrdersResponse addDataItem(OrderResponse dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<>();
+    }
     this.data.add(dataItem);
     return this;
   }

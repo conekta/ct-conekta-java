@@ -42,7 +42,7 @@ import com.conekta.JSON;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Error {
   public static final String JSON_PROPERTY_DETAILS = "details";
-  private List<DetailsError> details = new ArrayList<>();
+  private List<DetailsError> details;
 
   public static final String JSON_PROPERTY_LOG_ID = "log_id";
   private String logId;
