@@ -470,4 +470,3 @@ src/main/java/com/conekta/model/WebhookRequest.java
 src/main/java/com/conekta/model/WebhookResponse.java
 src/main/java/com/conekta/model/WebhookUpdateRequest.java
 src/main/java/com/conekta/model/WhitelistlistRuleResponse.java
-src/test/java/com/conekta/BalancesApiTest.java
