@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.conekta</groupId>
     <artifactId>ct-conekta-java</artifactId>
@@ -12,7 +11,7 @@
         <connection>scm:git:git@github.com:conekta/ct-conekta-java.git</connection>
         <developerConnection>scm:git:git@github.com:conekta/ct-conekta-java.git</developerConnection>
         <url>https://github.com/conekta/ct-conekta-java/tree/main</url>
-        <tag>HEAD</tag>
+        <tag>ct-conekta-java-6.0.0</tag>
     </scm>
 
 
@@ -187,7 +186,7 @@
                         </goals>
                         <configuration>
                             <keyname>0x40191848</keyname>
-                            <passphraseServerId></passphraseServerId>
+                            <passphraseServerId />
                         </configuration>
                     </execution>
                 </executions>
@@ -233,8 +232,8 @@
                       <include>.gitignore</include>
                     </includes>
                     <!-- define the steps to apply to those files -->
-                    <trimTrailingWhitespace/>
-                    <endWithNewline/>
+                    <trimTrailingWhitespace />
+                    <endWithNewline />
                     <indent>
                       <spaces>true</spaces> <!-- or <tabs>true</tabs> -->
                       <spacesPerTab>4</spacesPerTab> <!-- optional, default is 4 -->
@@ -251,8 +250,8 @@
                     <style>AOSP</style>
                     <reflowLongStrings>true</reflowLongStrings>
                   </googleJavaFormat>
-                  <removeUnusedImports/>
-                  <importOrder/>
+                  <removeUnusedImports />
+                  <importOrder />
                 </java>
               </configuration>
             </plugin>
