@@ -33,7 +33,8 @@ import com.conekta.JSON;
   ChargeRequestPaymentMethod.JSON_PROPERTY_EXPIRES_AT,
   ChargeRequestPaymentMethod.JSON_PROPERTY_TYPE,
   ChargeRequestPaymentMethod.JSON_PROPERTY_TOKEN_ID,
-  ChargeRequestPaymentMethod.JSON_PROPERTY_PAYMENT_SOURCE_ID
+  ChargeRequestPaymentMethod.JSON_PROPERTY_PAYMENT_SOURCE_ID,
+  ChargeRequestPaymentMethod.JSON_PROPERTY_CONTRACT_ID
 })
 @JsonTypeName("charge_request_payment_method")
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
@@ -49,6 +50,9 @@ public class ChargeRequestPaymentMethod {
 
   public static final String JSON_PROPERTY_PAYMENT_SOURCE_ID = "payment_source_id";
   private String paymentSourceId;
+
+  public static final String JSON_PROPERTY_CONTRACT_ID = "contract_id";
+  private String contractId;
 
   public ChargeRequestPaymentMethod() { 
   }
@@ -153,6 +157,31 @@ public class ChargeRequestPaymentMethod {
   }
 
 
+  public ChargeRequestPaymentMethod contractId(String contractId) {
+    this.contractId = contractId;
+    return this;
+  }
+
+   /**
+   * Optional id sent to indicate the bank contract for recurrent card charges.
+   * @return contractId
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getContractId() {
+    return contractId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setContractId(String contractId) {
+    this.contractId = contractId;
+  }
+
+
   /**
    * Return true if this charge_request_payment_method object is equal to o.
    */
@@ -168,12 +197,13 @@ public class ChargeRequestPaymentMethod {
     return Objects.equals(this.expiresAt, chargeRequestPaymentMethod.expiresAt) &&
         Objects.equals(this.type, chargeRequestPaymentMethod.type) &&
         Objects.equals(this.tokenId, chargeRequestPaymentMethod.tokenId) &&
-        Objects.equals(this.paymentSourceId, chargeRequestPaymentMethod.paymentSourceId);
+        Objects.equals(this.paymentSourceId, chargeRequestPaymentMethod.paymentSourceId) &&
+        Objects.equals(this.contractId, chargeRequestPaymentMethod.contractId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(expiresAt, type, tokenId, paymentSourceId);
+    return Objects.hash(expiresAt, type, tokenId, paymentSourceId, contractId);
   }
 
   @Override
@@ -184,6 +214,7 @@ public class ChargeRequestPaymentMethod {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
     sb.append("    paymentSourceId: ").append(toIndentedString(paymentSourceId)).append("\n");
+    sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

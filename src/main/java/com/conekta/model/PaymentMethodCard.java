@@ -37,6 +37,7 @@ import com.conekta.JSON;
   PaymentMethodCard.JSON_PROPERTY_ACCOUNT_TYPE,
   PaymentMethodCard.JSON_PROPERTY_AUTH_CODE,
   PaymentMethodCard.JSON_PROPERTY_BRAND,
+  PaymentMethodCard.JSON_PROPERTY_CONTRACT_ID,
   PaymentMethodCard.JSON_PROPERTY_COUNTRY,
   PaymentMethodCard.JSON_PROPERTY_EXP_MONTH,
   PaymentMethodCard.JSON_PROPERTY_EXP_YEAR,
@@ -62,6 +63,9 @@ public class PaymentMethodCard {
 
   public static final String JSON_PROPERTY_BRAND = "brand";
   private String brand;
+
+  public static final String JSON_PROPERTY_CONTRACT_ID = "contract_id";
+  private String contractId;
 
   public static final String JSON_PROPERTY_COUNTRY = "country";
   private String country;
@@ -209,6 +213,31 @@ public class PaymentMethodCard {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBrand(String brand) {
     this.brand = brand;
+  }
+
+
+  public PaymentMethodCard contractId(String contractId) {
+    this.contractId = contractId;
+    return this;
+  }
+
+   /**
+   * Id sent for recurrent charges.
+   * @return contractId
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getContractId() {
+    return contractId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setContractId(String contractId) {
+    this.contractId = contractId;
   }
 
 
@@ -412,6 +441,7 @@ public class PaymentMethodCard {
         Objects.equals(this.accountType, paymentMethodCard.accountType) &&
         Objects.equals(this.authCode, paymentMethodCard.authCode) &&
         Objects.equals(this.brand, paymentMethodCard.brand) &&
+        Objects.equals(this.contractId, paymentMethodCard.contractId) &&
         Objects.equals(this.country, paymentMethodCard.country) &&
         Objects.equals(this.expMonth, paymentMethodCard.expMonth) &&
         Objects.equals(this.expYear, paymentMethodCard.expYear) &&
@@ -423,7 +453,7 @@ public class PaymentMethodCard {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, _object, accountType, authCode, brand, country, expMonth, expYear, fraudIndicators, issuer, last4, name);
+    return Objects.hash(type, _object, accountType, authCode, brand, contractId, country, expMonth, expYear, fraudIndicators, issuer, last4, name);
   }
 
   @Override
@@ -435,6 +465,7 @@ public class PaymentMethodCard {
     sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
     sb.append("    authCode: ").append(toIndentedString(authCode)).append("\n");
     sb.append("    brand: ").append(toIndentedString(brand)).append("\n");
+    sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    expMonth: ").append(toIndentedString(expMonth)).append("\n");
     sb.append("    expYear: ").append(toIndentedString(expYear)).append("\n");

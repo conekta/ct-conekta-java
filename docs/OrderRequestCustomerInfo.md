@@ -2,6 +2,8 @@
 
 # OrderRequestCustomerInfo
 
+Customer information
+
 ## oneOf schemas
 * [CustomerInfo](CustomerInfo.md)
 * [CustomerInfoJustCustomerId](CustomerInfoJustCustomerId.md)

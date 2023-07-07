@@ -49,7 +49,6 @@ public class ApiKeysApiTest {
     @Test
     public void createApiKeyTest() throws ApiException {
         ApiKeyRequest apiKeyRequest = new ApiKeyRequest();
-        apiKeyRequest.setActive(true);
         apiKeyRequest.setDescription("description");
         apiKeyRequest.setRole("private");
         String acceptLanguage = "es";

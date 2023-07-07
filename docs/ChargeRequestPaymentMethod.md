@@ -12,6 +12,7 @@ Payment method used in the charge. Go to the [payment methods](https://developer
 |**type** | **String** |  |  |
 |**tokenId** | **String** |  |  [optional] |
 |**paymentSourceId** | **String** |  |  [optional] |
+|**contractId** | **String** | Optional id sent to indicate the bank contract for recurrent card charges. |  [optional] |
 
 
 

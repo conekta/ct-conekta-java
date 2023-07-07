@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**data** | [**List&lt;ChargeResponseRefundsData&gt;**](ChargeResponseRefundsData.md) |  |  [optional] |
+|**data** | [**List&lt;ChargeResponseRefundsData&gt;**](ChargeResponseRefundsData.md) | refunds |  [optional] |
 
 
 

@@ -51,6 +51,7 @@ import com.conekta.JSON;
   OrderRequest.JSON_PROPERTY_METADATA,
   OrderRequest.JSON_PROPERTY_NEEDS_SHIPPING_CONTACT,
   OrderRequest.JSON_PROPERTY_PRE_AUTHORIZE,
+  OrderRequest.JSON_PROPERTY_PROCESSING_MODE,
   OrderRequest.JSON_PROPERTY_SHIPPING_CONTACT,
   OrderRequest.JSON_PROPERTY_SHIPPING_LINES,
   OrderRequest.JSON_PROPERTY_TAX_LINES
@@ -84,6 +85,9 @@ public class OrderRequest {
 
   public static final String JSON_PROPERTY_PRE_AUTHORIZE = "pre_authorize";
   private Boolean preAuthorize = false;
+
+  public static final String JSON_PROPERTY_PROCESSING_MODE = "processing_mode";
+  private String processingMode;
 
   public static final String JSON_PROPERTY_SHIPPING_CONTACT = "shipping_contact";
   private CustomerShippingContacts shippingContact;
@@ -285,7 +289,7 @@ public class OrderRequest {
   }
 
    /**
-   * Get metadata
+   * Metadata associated with the order
    * @return metadata
   **/
   @jakarta.annotation.Nullable
@@ -351,6 +355,31 @@ public class OrderRequest {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPreAuthorize(Boolean preAuthorize) {
     this.preAuthorize = preAuthorize;
+  }
+
+
+  public OrderRequest processingMode(String processingMode) {
+    this.processingMode = processingMode;
+    return this;
+  }
+
+   /**
+   * Indicates the processing mode for the order, either ecommerce, recurrent or validation.
+   * @return processingMode
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PROCESSING_MODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getProcessingMode() {
+    return processingMode;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PROCESSING_MODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setProcessingMode(String processingMode) {
+    this.processingMode = processingMode;
   }
 
 
@@ -466,6 +495,7 @@ public class OrderRequest {
         Objects.equals(this.metadata, orderRequest.metadata) &&
         Objects.equals(this.needsShippingContact, orderRequest.needsShippingContact) &&
         Objects.equals(this.preAuthorize, orderRequest.preAuthorize) &&
+        Objects.equals(this.processingMode, orderRequest.processingMode) &&
         Objects.equals(this.shippingContact, orderRequest.shippingContact) &&
         Objects.equals(this.shippingLines, orderRequest.shippingLines) &&
         Objects.equals(this.taxLines, orderRequest.taxLines);
@@ -473,7 +503,7 @@ public class OrderRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(charges, checkout, currency, customerInfo, discountLines, lineItems, metadata, needsShippingContact, preAuthorize, shippingContact, shippingLines, taxLines);
+    return Objects.hash(charges, checkout, currency, customerInfo, discountLines, lineItems, metadata, needsShippingContact, preAuthorize, processingMode, shippingContact, shippingLines, taxLines);
   }
 
   @Override
@@ -489,6 +519,7 @@ public class OrderRequest {
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    needsShippingContact: ").append(toIndentedString(needsShippingContact)).append("\n");
     sb.append("    preAuthorize: ").append(toIndentedString(preAuthorize)).append("\n");
+    sb.append("    processingMode: ").append(toIndentedString(processingMode)).append("\n");
     sb.append("    shippingContact: ").append(toIndentedString(shippingContact)).append("\n");
     sb.append("    shippingLines: ").append(toIndentedString(shippingLines)).append("\n");
     sb.append("    taxLines: ").append(toIndentedString(taxLines)).append("\n");

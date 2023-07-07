@@ -27,22 +27,22 @@ import com.conekta.JSON;
 
 
 /**
- * DeleteApiKeysResponse
+ * api keys model
  */
 @JsonPropertyOrder({
-  DeleteApiKeysResponse.JSON_PROPERTY_ACTIVE,
-  DeleteApiKeysResponse.JSON_PROPERTY_CREATED_AT,
-  DeleteApiKeysResponse.JSON_PROPERTY_DESCRIPTION,
-  DeleteApiKeysResponse.JSON_PROPERTY_LIVEMODE,
-  DeleteApiKeysResponse.JSON_PROPERTY_PREFIX,
-  DeleteApiKeysResponse.JSON_PROPERTY_ID,
-  DeleteApiKeysResponse.JSON_PROPERTY_OBJECT,
-  DeleteApiKeysResponse.JSON_PROPERTY_DELETED,
-  DeleteApiKeysResponse.JSON_PROPERTY_ROLE
+  ApiKeyResponseOnDelete.JSON_PROPERTY_ACTIVE,
+  ApiKeyResponseOnDelete.JSON_PROPERTY_CREATED_AT,
+  ApiKeyResponseOnDelete.JSON_PROPERTY_DESCRIPTION,
+  ApiKeyResponseOnDelete.JSON_PROPERTY_LIVEMODE,
+  ApiKeyResponseOnDelete.JSON_PROPERTY_PREFIX,
+  ApiKeyResponseOnDelete.JSON_PROPERTY_ID,
+  ApiKeyResponseOnDelete.JSON_PROPERTY_OBJECT,
+  ApiKeyResponseOnDelete.JSON_PROPERTY_DELETED,
+  ApiKeyResponseOnDelete.JSON_PROPERTY_ROLE
 })
-@JsonTypeName("delete_api_keys_response")
+@JsonTypeName("api_key_response_on_delete")
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class DeleteApiKeysResponse {
+public class ApiKeyResponseOnDelete {
   public static final String JSON_PROPERTY_ACTIVE = "active";
   private Boolean active;
 
@@ -70,10 +70,10 @@ public class DeleteApiKeysResponse {
   public static final String JSON_PROPERTY_ROLE = "role";
   private String role;
 
-  public DeleteApiKeysResponse() { 
+  public ApiKeyResponseOnDelete() { 
   }
 
-  public DeleteApiKeysResponse active(Boolean active) {
+  public ApiKeyResponseOnDelete active(Boolean active) {
     this.active = active;
     return this;
   }
@@ -98,7 +98,7 @@ public class DeleteApiKeysResponse {
   }
 
 
-  public DeleteApiKeysResponse createdAt(Long createdAt) {
+  public ApiKeyResponseOnDelete createdAt(Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -123,7 +123,7 @@ public class DeleteApiKeysResponse {
   }
 
 
-  public DeleteApiKeysResponse description(String description) {
+  public ApiKeyResponseOnDelete description(String description) {
     this.description = description;
     return this;
   }
@@ -148,7 +148,7 @@ public class DeleteApiKeysResponse {
   }
 
 
-  public DeleteApiKeysResponse livemode(Boolean livemode) {
+  public ApiKeyResponseOnDelete livemode(Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
@@ -173,7 +173,7 @@ public class DeleteApiKeysResponse {
   }
 
 
-  public DeleteApiKeysResponse prefix(String prefix) {
+  public ApiKeyResponseOnDelete prefix(String prefix) {
     this.prefix = prefix;
     return this;
   }
@@ -198,7 +198,7 @@ public class DeleteApiKeysResponse {
   }
 
 
-  public DeleteApiKeysResponse id(String id) {
+  public ApiKeyResponseOnDelete id(String id) {
     this.id = id;
     return this;
   }
@@ -223,7 +223,7 @@ public class DeleteApiKeysResponse {
   }
 
 
-  public DeleteApiKeysResponse _object(String _object) {
+  public ApiKeyResponseOnDelete _object(String _object) {
     this._object = _object;
     return this;
   }
@@ -248,13 +248,13 @@ public class DeleteApiKeysResponse {
   }
 
 
-  public DeleteApiKeysResponse deleted(Boolean deleted) {
+  public ApiKeyResponseOnDelete deleted(Boolean deleted) {
     this.deleted = deleted;
     return this;
   }
 
    /**
-   * Get deleted
+   * Indicates if the api key was deleted
    * @return deleted
   **/
   @jakarta.annotation.Nullable
@@ -273,7 +273,7 @@ public class DeleteApiKeysResponse {
   }
 
 
-  public DeleteApiKeysResponse role(String role) {
+  public ApiKeyResponseOnDelete role(String role) {
     this.role = role;
     return this;
   }
@@ -299,7 +299,7 @@ public class DeleteApiKeysResponse {
 
 
   /**
-   * Return true if this delete_api_keys_response object is equal to o.
+   * Return true if this api_key_response_on_delete object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -309,16 +309,16 @@ public class DeleteApiKeysResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DeleteApiKeysResponse deleteApiKeysResponse = (DeleteApiKeysResponse) o;
-    return Objects.equals(this.active, deleteApiKeysResponse.active) &&
-        Objects.equals(this.createdAt, deleteApiKeysResponse.createdAt) &&
-        Objects.equals(this.description, deleteApiKeysResponse.description) &&
-        Objects.equals(this.livemode, deleteApiKeysResponse.livemode) &&
-        Objects.equals(this.prefix, deleteApiKeysResponse.prefix) &&
-        Objects.equals(this.id, deleteApiKeysResponse.id) &&
-        Objects.equals(this._object, deleteApiKeysResponse._object) &&
-        Objects.equals(this.deleted, deleteApiKeysResponse.deleted) &&
-        Objects.equals(this.role, deleteApiKeysResponse.role);
+    ApiKeyResponseOnDelete apiKeyResponseOnDelete = (ApiKeyResponseOnDelete) o;
+    return Objects.equals(this.active, apiKeyResponseOnDelete.active) &&
+        Objects.equals(this.createdAt, apiKeyResponseOnDelete.createdAt) &&
+        Objects.equals(this.description, apiKeyResponseOnDelete.description) &&
+        Objects.equals(this.livemode, apiKeyResponseOnDelete.livemode) &&
+        Objects.equals(this.prefix, apiKeyResponseOnDelete.prefix) &&
+        Objects.equals(this.id, apiKeyResponseOnDelete.id) &&
+        Objects.equals(this._object, apiKeyResponseOnDelete._object) &&
+        Objects.equals(this.deleted, apiKeyResponseOnDelete.deleted) &&
+        Objects.equals(this.role, apiKeyResponseOnDelete.role);
   }
 
   @Override
@@ -329,7 +329,7 @@ public class DeleteApiKeysResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DeleteApiKeysResponse {\n");
+    sb.append("class ApiKeyResponseOnDelete {\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");

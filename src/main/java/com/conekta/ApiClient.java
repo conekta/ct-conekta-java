@@ -81,7 +81,7 @@ public class ApiClient extends JavaTimeFormatter {
   protected String userAgent;
   private static final Logger log = Logger.getLogger(ApiClient.class.getName());
 
-  JSONObject conektaUserAgent = getConektaUserAgent();
+ JSONObject conektaUserAgent = getConektaUserAgent();
 
   private JSONObject getConektaUserAgent()  {
     JSONObject userAgent = new JSONObject();

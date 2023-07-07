@@ -244,9 +244,9 @@ public class ApiKeysApi {
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @param limit The numbers of items to return, the maximum value is 250 (optional, default to 20)
-   * @param search General order search, e.g. by mail, reference etc. (optional)
    * @param next next page (optional)
    * @param previous previous page (optional)
+   * @param search General search, e.g. by id, description, prefix (optional)
    * @return GetApiKeysResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -257,8 +257,8 @@ public class ApiKeysApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public GetApiKeysResponse getApiKeys(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
-    return getApiKeysWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous).getData();
+  public GetApiKeysResponse getApiKeys(String acceptLanguage, String xChildCompanyId, Integer limit, String next, String previous, String search) throws ApiException {
+    return getApiKeysWithHttpInfo(acceptLanguage, xChildCompanyId, limit, next, previous, search).getData();
   }
 
   /**
@@ -267,9 +267,9 @@ public class ApiKeysApi {
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @param limit The numbers of items to return, the maximum value is 250 (optional, default to 20)
-   * @param search General order search, e.g. by mail, reference etc. (optional)
    * @param next next page (optional)
    * @param previous previous page (optional)
+   * @param search General search, e.g. by id, description, prefix (optional)
    * @return ApiResponse&lt;GetApiKeysResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -280,14 +280,14 @@ public class ApiKeysApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<GetApiKeysResponse> getApiKeysWithHttpInfo(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public ApiResponse<GetApiKeysResponse> getApiKeysWithHttpInfo(String acceptLanguage, String xChildCompanyId, Integer limit, String next, String previous, String search) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "limit", limit)
     );
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "search", search));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "next", next));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "previous", previous));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "search", search));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

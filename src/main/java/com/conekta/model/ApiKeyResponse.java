@@ -32,14 +32,17 @@ import com.conekta.JSON;
 @JsonPropertyOrder({
   ApiKeyResponse.JSON_PROPERTY_ACTIVE,
   ApiKeyResponse.JSON_PROPERTY_CREATED_AT,
+  ApiKeyResponse.JSON_PROPERTY_UPDATED_AT,
+  ApiKeyResponse.JSON_PROPERTY_DEACTIVATED_AT,
   ApiKeyResponse.JSON_PROPERTY_DESCRIPTION,
   ApiKeyResponse.JSON_PROPERTY_ID,
   ApiKeyResponse.JSON_PROPERTY_LIVEMODE,
+  ApiKeyResponse.JSON_PROPERTY_DELETED,
   ApiKeyResponse.JSON_PROPERTY_OBJECT,
   ApiKeyResponse.JSON_PROPERTY_PREFIX,
   ApiKeyResponse.JSON_PROPERTY_ROLE
 })
-@JsonTypeName("api-key_response")
+@JsonTypeName("api_key_response")
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiKeyResponse {
   public static final String JSON_PROPERTY_ACTIVE = "active";
@@ -47,6 +50,12 @@ public class ApiKeyResponse {
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private Long createdAt;
+
+  public static final String JSON_PROPERTY_UPDATED_AT = "updated_at";
+  private Long updatedAt;
+
+  public static final String JSON_PROPERTY_DEACTIVATED_AT = "deactivated_at";
+  private Long deactivatedAt;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
@@ -56,6 +65,9 @@ public class ApiKeyResponse {
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
   private Boolean livemode;
+
+  public static final String JSON_PROPERTY_DELETED = "deleted";
+  private Boolean deleted;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;
@@ -100,7 +112,7 @@ public class ApiKeyResponse {
   }
 
    /**
-   * Unix timestamp in seconds with the creation date of the api key
+   * Unix timestamp in seconds of when the api key was created
    * @return createdAt
   **/
   @jakarta.annotation.Nullable
@@ -119,13 +131,63 @@ public class ApiKeyResponse {
   }
 
 
+  public ApiKeyResponse updatedAt(Long updatedAt) {
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+   /**
+   * Unix timestamp in seconds of when the api key was last updated
+   * @return updatedAt
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getUpdatedAt() {
+    return updatedAt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUpdatedAt(Long updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+
+  public ApiKeyResponse deactivatedAt(Long deactivatedAt) {
+    this.deactivatedAt = deactivatedAt;
+    return this;
+  }
+
+   /**
+   * Unix timestamp in seconds of when the api key was deleted
+   * @return deactivatedAt
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DEACTIVATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getDeactivatedAt() {
+    return deactivatedAt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DEACTIVATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDeactivatedAt(Long deactivatedAt) {
+    this.deactivatedAt = deactivatedAt;
+  }
+
+
   public ApiKeyResponse description(String description) {
     this.description = description;
     return this;
   }
 
    /**
-   * Detail of the use that will be given to the api key
+   * A name or brief explanation of what this api key is used for
    * @return description
   **/
   @jakarta.annotation.Nullable
@@ -175,7 +237,7 @@ public class ApiKeyResponse {
   }
 
    /**
-   * Indicates if the api key is in live mode
+   * Indicates if the api key is in production
    * @return livemode
   **/
   @jakarta.annotation.Nullable
@@ -194,13 +256,38 @@ public class ApiKeyResponse {
   }
 
 
+  public ApiKeyResponse deleted(Boolean deleted) {
+    this.deleted = deleted;
+    return this;
+  }
+
+   /**
+   * Indicates if the api key was deleted
+   * @return deleted
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DELETED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getDeleted() {
+    return deleted;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DELETED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDeleted(Boolean deleted) {
+    this.deleted = deleted;
+  }
+
+
   public ApiKeyResponse _object(String _object) {
     this._object = _object;
     return this;
   }
 
    /**
-   * Object name, value is api_key
+   * Object name, value is &#39;api_key&#39;
    * @return _object
   **/
   @jakarta.annotation.Nullable
@@ -250,7 +337,7 @@ public class ApiKeyResponse {
   }
 
    /**
-   * Indicates the user account private&#x3D;owner or public&#x3D;public
+   * Indicates if the api key is private or public
    * @return role
   **/
   @jakarta.annotation.Nullable
@@ -270,7 +357,7 @@ public class ApiKeyResponse {
 
 
   /**
-   * Return true if this api-key_response object is equal to o.
+   * Return true if this api_key_response object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -283,9 +370,12 @@ public class ApiKeyResponse {
     ApiKeyResponse apiKeyResponse = (ApiKeyResponse) o;
     return Objects.equals(this.active, apiKeyResponse.active) &&
         Objects.equals(this.createdAt, apiKeyResponse.createdAt) &&
+        Objects.equals(this.updatedAt, apiKeyResponse.updatedAt) &&
+        Objects.equals(this.deactivatedAt, apiKeyResponse.deactivatedAt) &&
         Objects.equals(this.description, apiKeyResponse.description) &&
         Objects.equals(this.id, apiKeyResponse.id) &&
         Objects.equals(this.livemode, apiKeyResponse.livemode) &&
+        Objects.equals(this.deleted, apiKeyResponse.deleted) &&
         Objects.equals(this._object, apiKeyResponse._object) &&
         Objects.equals(this.prefix, apiKeyResponse.prefix) &&
         Objects.equals(this.role, apiKeyResponse.role);
@@ -293,7 +383,7 @@ public class ApiKeyResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, createdAt, description, id, livemode, _object, prefix, role);
+    return Objects.hash(active, createdAt, updatedAt, deactivatedAt, description, id, livemode, deleted, _object, prefix, role);
   }
 
   @Override
@@ -302,9 +392,12 @@ public class ApiKeyResponse {
     sb.append("class ApiKeyResponse {\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    deactivatedAt: ").append(toIndentedString(deactivatedAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    livemode: ").append(toIndentedString(livemode)).append("\n");
+    sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");

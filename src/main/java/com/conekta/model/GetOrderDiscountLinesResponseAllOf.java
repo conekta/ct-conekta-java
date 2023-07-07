@@ -17,7 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.ChargeResponseRefundsData;
+import com.conekta.model.DiscountLinesResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -30,26 +30,26 @@ import com.conekta.JSON;
 
 
 /**
- * ChargeResponseRefundsAllOf
+ * GetOrderDiscountLinesResponseAllOf
  */
 @JsonPropertyOrder({
-  ChargeResponseRefundsAllOf.JSON_PROPERTY_DATA
+  GetOrderDiscountLinesResponseAllOf.JSON_PROPERTY_DATA
 })
-@JsonTypeName("charge_response_refunds_allOf")
+@JsonTypeName("get_order_discount_lines_response_allOf")
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class ChargeResponseRefundsAllOf {
+public class GetOrderDiscountLinesResponseAllOf {
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<ChargeResponseRefundsData> data;
+  private List<DiscountLinesResponse> data;
 
-  public ChargeResponseRefundsAllOf() { 
+  public GetOrderDiscountLinesResponseAllOf() { 
   }
 
-  public ChargeResponseRefundsAllOf data(List<ChargeResponseRefundsData> data) {
+  public GetOrderDiscountLinesResponseAllOf data(List<DiscountLinesResponse> data) {
     this.data = data;
     return this;
   }
 
-  public ChargeResponseRefundsAllOf addDataItem(ChargeResponseRefundsData dataItem) {
+  public GetOrderDiscountLinesResponseAllOf addDataItem(DiscountLinesResponse dataItem) {
     if (this.data == null) {
       this.data = new ArrayList<>();
     }
@@ -58,27 +58,27 @@ public class ChargeResponseRefundsAllOf {
   }
 
    /**
-   * refunds
+   * Get data
    * @return data
   **/
   @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<ChargeResponseRefundsData> getData() {
+  public List<DiscountLinesResponse> getData() {
     return data;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setData(List<ChargeResponseRefundsData> data) {
+  public void setData(List<DiscountLinesResponse> data) {
     this.data = data;
   }
 
 
   /**
-   * Return true if this charge_response_refunds_allOf object is equal to o.
+   * Return true if this get_order_discount_lines_response_allOf object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -88,8 +88,8 @@ public class ChargeResponseRefundsAllOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ChargeResponseRefundsAllOf chargeResponseRefundsAllOf = (ChargeResponseRefundsAllOf) o;
-    return Objects.equals(this.data, chargeResponseRefundsAllOf.data);
+    GetOrderDiscountLinesResponseAllOf getOrderDiscountLinesResponseAllOf = (GetOrderDiscountLinesResponseAllOf) o;
+    return Objects.equals(this.data, getOrderDiscountLinesResponseAllOf.data);
   }
 
   @Override
@@ -100,7 +100,7 @@ public class ChargeResponseRefundsAllOf {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ChargeResponseRefundsAllOf {\n");
+    sb.append("class GetOrderDiscountLinesResponseAllOf {\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();
