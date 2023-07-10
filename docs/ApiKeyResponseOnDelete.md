@@ -1,7 +1,8 @@
 
 
-# DeleteApiKeysResponse
+# ApiKeyResponseOnDelete
 
+api keys model
 
 ## Properties
 
@@ -14,7 +15,7 @@
 |**prefix** | **String** | The first few characters of the authentication_token |  [optional] |
 |**id** | **String** | Unique identifier of the api key |  [optional] |
 |**_object** | **String** | Object name, value is &#39;api_key&#39; |  [optional] |
-|**deleted** | **Boolean** |  |  [optional] |
+|**deleted** | **Boolean** | Indicates if the api key was deleted |  [optional] |
 |**role** | **String** | Indicates if the api key is private or public |  [optional] |
 
 

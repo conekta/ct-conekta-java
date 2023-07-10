@@ -130,6 +130,7 @@ Class | Method | HTTP request | Description
 *ApiKeysApi* | [**getApiKey**](docs/ApiKeysApi.md#getApiKey) | **GET** /api_keys/{id} | Get Api Key
 *ApiKeysApi* | [**getApiKeys**](docs/ApiKeysApi.md#getApiKeys) | **GET** /api_keys | Get list of Api Keys
 *ApiKeysApi* | [**updateApiKey**](docs/ApiKeysApi.md#updateApiKey) | **PUT** /api_keys/{id} | Update Api Key
+*BalancesApi* | [**getBalance**](docs/BalancesApi.md#getBalance) | **GET** /balances | Get a company&#39;s balance
 *ChargesApi* | [**getCharges**](docs/ChargesApi.md#getCharges) | **GET** /charges | Get A List of Charges
 *ChargesApi* | [**ordersCreateCharge**](docs/ChargesApi.md#ordersCreateCharge) | **POST** /orders/{id}/charges | Create charge
 *CompaniesApi* | [**getCompanies**](docs/CompaniesApi.md#getCompanies) | **GET** /companies | Get List of Companies
@@ -143,6 +144,8 @@ Class | Method | HTTP request | Description
 *CustomersApi* | [**updateCustomerFiscalEntities**](docs/CustomersApi.md#updateCustomerFiscalEntities) | **PUT** /customers/{id}/fiscal_entities/{fiscal_entities_id} | Update  Fiscal Entity
 *DiscountsApi* | [**ordersCreateDiscountLine**](docs/DiscountsApi.md#ordersCreateDiscountLine) | **POST** /orders/{id}/discount_lines | Create Discount
 *DiscountsApi* | [**ordersDeleteDiscountLines**](docs/DiscountsApi.md#ordersDeleteDiscountLines) | **DELETE** /orders/{id}/discount_lines/{discount_lines_id} | Delete Discount
+*DiscountsApi* | [**ordersGetDiscountLine**](docs/DiscountsApi.md#ordersGetDiscountLine) | **GET** /orders/{id}/discount_lines/{discount_lines_id} | Get Discount
+*DiscountsApi* | [**ordersGetDiscountLines**](docs/DiscountsApi.md#ordersGetDiscountLines) | **GET** /orders/{id}/discount_lines | Get a List of Discount
 *DiscountsApi* | [**ordersUpdateDiscountLines**](docs/DiscountsApi.md#ordersUpdateDiscountLines) | **PUT** /orders/{id}/discount_lines/{discount_lines_id} | Update Discount
 *EventsApi* | [**getEvent**](docs/EventsApi.md#getEvent) | **GET** /events/{id} | Get Event
 *EventsApi* | [**getEvents**](docs/EventsApi.md#getEvents) | **GET** /events | Get list of Events
@@ -215,7 +218,10 @@ Class | Method | HTTP request | Description
  - [ApiKeyCreateResponseAllOf](docs/ApiKeyCreateResponseAllOf.md)
  - [ApiKeyRequest](docs/ApiKeyRequest.md)
  - [ApiKeyResponse](docs/ApiKeyResponse.md)
+ - [ApiKeyResponseOnDelete](docs/ApiKeyResponseOnDelete.md)
  - [ApiKeyUpdateRequest](docs/ApiKeyUpdateRequest.md)
+ - [BalanceCommonField](docs/BalanceCommonField.md)
+ - [BalanceResponse](docs/BalanceResponse.md)
  - [BlacklistRuleResponse](docs/BlacklistRuleResponse.md)
  - [ChargeDataPaymentMethodBankTransferResponse](docs/ChargeDataPaymentMethodBankTransferResponse.md)
  - [ChargeDataPaymentMethodCardResponse](docs/ChargeDataPaymentMethodCardResponse.md)
@@ -301,6 +307,8 @@ Class | Method | HTTP request | Description
  - [GetCustomerPaymentMethodDataResponse](docs/GetCustomerPaymentMethodDataResponse.md)
  - [GetEventsResponse](docs/GetEventsResponse.md)
  - [GetEventsResponseAllOf](docs/GetEventsResponseAllOf.md)
+ - [GetOrderDiscountLinesResponse](docs/GetOrderDiscountLinesResponse.md)
+ - [GetOrderDiscountLinesResponseAllOf](docs/GetOrderDiscountLinesResponseAllOf.md)
  - [GetOrdersResponse](docs/GetOrdersResponse.md)
  - [GetPaymentMethodResponse](docs/GetPaymentMethodResponse.md)
  - [GetPaymentMethodResponseAllOf](docs/GetPaymentMethodResponseAllOf.md)
@@ -339,6 +347,7 @@ Class | Method | HTTP request | Description
  - [OrderResponseShippingContactAllOf](docs/OrderResponseShippingContactAllOf.md)
  - [OrderTaxRequest](docs/OrderTaxRequest.md)
  - [OrderUpdateRequest](docs/OrderUpdateRequest.md)
+ - [OrderUpdateRequestCustomerInfo](docs/OrderUpdateRequestCustomerInfo.md)
  - [OrdersResponse](docs/OrdersResponse.md)
  - [Page](docs/Page.md)
  - [Pagination](docs/Pagination.md)

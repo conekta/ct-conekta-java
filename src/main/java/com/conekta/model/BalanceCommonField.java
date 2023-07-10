@@ -27,76 +27,76 @@ import com.conekta.JSON;
 
 
 /**
- * ApiKeyUpdateRequest
+ * balance common fields model
  */
 @JsonPropertyOrder({
-  ApiKeyUpdateRequest.JSON_PROPERTY_ACTIVE,
-  ApiKeyUpdateRequest.JSON_PROPERTY_DESCRIPTION
+  BalanceCommonField.JSON_PROPERTY_AMOUNT,
+  BalanceCommonField.JSON_PROPERTY_CURRENCY
 })
-@JsonTypeName("api_key_update_request")
+@JsonTypeName("balance_common_field")
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class ApiKeyUpdateRequest {
-  public static final String JSON_PROPERTY_ACTIVE = "active";
-  private Boolean active;
+public class BalanceCommonField {
+  public static final String JSON_PROPERTY_AMOUNT = "amount";
+  private Long amount;
 
-  public static final String JSON_PROPERTY_DESCRIPTION = "description";
-  private String description;
+  public static final String JSON_PROPERTY_CURRENCY = "currency";
+  private String currency;
 
-  public ApiKeyUpdateRequest() { 
+  public BalanceCommonField() { 
   }
 
-  public ApiKeyUpdateRequest active(Boolean active) {
-    this.active = active;
+  public BalanceCommonField amount(Long amount) {
+    this.amount = amount;
     return this;
   }
 
    /**
-   * Indicates if the webhook key is active
-   * @return active
+   * The balance&#39;s amount
+   * @return amount
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Boolean getActive() {
-    return active;
+  public Long getAmount() {
+    return amount;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setActive(Boolean active) {
-    this.active = active;
+  public void setAmount(Long amount) {
+    this.amount = amount;
   }
 
 
-  public ApiKeyUpdateRequest description(String description) {
-    this.description = description;
+  public BalanceCommonField currency(String currency) {
+    this.currency = currency;
     return this;
   }
 
    /**
-   * A name or brief explanation of what this api key is used for
-   * @return description
+   * The balance&#39;s currency
+   * @return currency
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getDescription() {
-    return description;
+  public String getCurrency() {
+    return currency;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
-    this.description = description;
+  public void setCurrency(String currency) {
+    this.currency = currency;
   }
 
 
   /**
-   * Return true if this api_key_update_request object is equal to o.
+   * Return true if this balance_common_field object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -106,22 +106,22 @@ public class ApiKeyUpdateRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ApiKeyUpdateRequest apiKeyUpdateRequest = (ApiKeyUpdateRequest) o;
-    return Objects.equals(this.active, apiKeyUpdateRequest.active) &&
-        Objects.equals(this.description, apiKeyUpdateRequest.description);
+    BalanceCommonField balanceCommonField = (BalanceCommonField) o;
+    return Objects.equals(this.amount, balanceCommonField.amount) &&
+        Objects.equals(this.currency, balanceCommonField.currency);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, description);
+    return Objects.hash(amount, currency);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ApiKeyUpdateRequest {\n");
-    sb.append("    active: ").append(toIndentedString(active)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("class BalanceCommonField {\n");
+    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("}");
     return sb.toString();
   }

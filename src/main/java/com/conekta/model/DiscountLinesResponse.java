@@ -143,12 +143,12 @@ public class DiscountLinesResponse {
   }
 
    /**
-   * Get id
+   * The discount line id
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
     return id;
@@ -156,7 +156,7 @@ public class DiscountLinesResponse {
 
 
   @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(String id) {
     this.id = id;
   }
@@ -168,12 +168,12 @@ public class DiscountLinesResponse {
   }
 
    /**
-   * Get _object
+   * The object name
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
     return _object;
@@ -181,7 +181,7 @@ public class DiscountLinesResponse {
 
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setObject(String _object) {
     this._object = _object;
   }
@@ -193,12 +193,12 @@ public class DiscountLinesResponse {
   }
 
    /**
-   * Get parentId
+   * The order id
    * @return parentId
   **/
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getParentId() {
     return parentId;
@@ -206,7 +206,7 @@ public class DiscountLinesResponse {
 
 
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setParentId(String parentId) {
     this.parentId = parentId;
   }

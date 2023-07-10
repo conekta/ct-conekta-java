@@ -8,8 +8,12 @@ docs/ApiKeyCreateResponse.md
 docs/ApiKeyCreateResponseAllOf.md
 docs/ApiKeyRequest.md
 docs/ApiKeyResponse.md
+docs/ApiKeyResponseOnDelete.md
 docs/ApiKeyUpdateRequest.md
 docs/ApiKeysApi.md
+docs/BalanceCommonField.md
+docs/BalanceResponse.md
+docs/BalancesApi.md
 docs/BlacklistRuleResponse.md
 docs/ChargeDataPaymentMethodBankTransferResponse.md
 docs/ChargeDataPaymentMethodCardResponse.md
@@ -100,6 +104,8 @@ docs/GetCompaniesResponseAllOf.md
 docs/GetCustomerPaymentMethodDataResponse.md
 docs/GetEventsResponse.md
 docs/GetEventsResponseAllOf.md
+docs/GetOrderDiscountLinesResponse.md
+docs/GetOrderDiscountLinesResponseAllOf.md
 docs/GetOrdersResponse.md
 docs/GetPaymentMethodResponse.md
 docs/GetPaymentMethodResponseAllOf.md
@@ -139,6 +145,7 @@ docs/OrderResponseShippingContact.md
 docs/OrderResponseShippingContactAllOf.md
 docs/OrderTaxRequest.md
 docs/OrderUpdateRequest.md
+docs/OrderUpdateRequestCustomerInfo.md
 docs/OrdersApi.md
 docs/OrdersResponse.md
 docs/Page.md
@@ -227,6 +234,7 @@ src/main/java/com/conekta/ApiClient.java
 src/main/java/com/conekta/ApiException.java
 src/main/java/com/conekta/ApiKeysApi.java
 src/main/java/com/conekta/ApiResponse.java
+src/main/java/com/conekta/BalancesApi.java
 src/main/java/com/conekta/ChargesApi.java
 src/main/java/com/conekta/CompaniesApi.java
 src/main/java/com/conekta/Configuration.java
@@ -264,7 +272,10 @@ src/main/java/com/conekta/model/ApiKeyCreateResponse.java
 src/main/java/com/conekta/model/ApiKeyCreateResponseAllOf.java
 src/main/java/com/conekta/model/ApiKeyRequest.java
 src/main/java/com/conekta/model/ApiKeyResponse.java
+src/main/java/com/conekta/model/ApiKeyResponseOnDelete.java
 src/main/java/com/conekta/model/ApiKeyUpdateRequest.java
+src/main/java/com/conekta/model/BalanceCommonField.java
+src/main/java/com/conekta/model/BalanceResponse.java
 src/main/java/com/conekta/model/BlacklistRuleResponse.java
 src/main/java/com/conekta/model/ChargeDataPaymentMethodBankTransferResponse.java
 src/main/java/com/conekta/model/ChargeDataPaymentMethodCardResponse.java
@@ -350,6 +361,8 @@ src/main/java/com/conekta/model/GetCompaniesResponseAllOf.java
 src/main/java/com/conekta/model/GetCustomerPaymentMethodDataResponse.java
 src/main/java/com/conekta/model/GetEventsResponse.java
 src/main/java/com/conekta/model/GetEventsResponseAllOf.java
+src/main/java/com/conekta/model/GetOrderDiscountLinesResponse.java
+src/main/java/com/conekta/model/GetOrderDiscountLinesResponseAllOf.java
 src/main/java/com/conekta/model/GetOrdersResponse.java
 src/main/java/com/conekta/model/GetPaymentMethodResponse.java
 src/main/java/com/conekta/model/GetPaymentMethodResponseAllOf.java
@@ -388,6 +401,7 @@ src/main/java/com/conekta/model/OrderResponseShippingContact.java
 src/main/java/com/conekta/model/OrderResponseShippingContactAllOf.java
 src/main/java/com/conekta/model/OrderTaxRequest.java
 src/main/java/com/conekta/model/OrderUpdateRequest.java
+src/main/java/com/conekta/model/OrderUpdateRequestCustomerInfo.java
 src/main/java/com/conekta/model/OrdersResponse.java
 src/main/java/com/conekta/model/Page.java
 src/main/java/com/conekta/model/Pagination.java

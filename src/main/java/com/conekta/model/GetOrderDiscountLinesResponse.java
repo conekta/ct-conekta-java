@@ -17,7 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.ChargeResponseRefundsData;
+import com.conekta.model.DiscountLinesResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -30,18 +30,18 @@ import com.conekta.JSON;
 
 
 /**
- * ChargeResponseRefunds
+ * GetOrderDiscountLinesResponse
  */
 @JsonPropertyOrder({
-  ChargeResponseRefunds.JSON_PROPERTY_HAS_MORE,
-  ChargeResponseRefunds.JSON_PROPERTY_OBJECT,
-  ChargeResponseRefunds.JSON_PROPERTY_NEXT_PAGE_URL,
-  ChargeResponseRefunds.JSON_PROPERTY_PREVIOUS_PAGE_URL,
-  ChargeResponseRefunds.JSON_PROPERTY_DATA
+  GetOrderDiscountLinesResponse.JSON_PROPERTY_HAS_MORE,
+  GetOrderDiscountLinesResponse.JSON_PROPERTY_OBJECT,
+  GetOrderDiscountLinesResponse.JSON_PROPERTY_NEXT_PAGE_URL,
+  GetOrderDiscountLinesResponse.JSON_PROPERTY_PREVIOUS_PAGE_URL,
+  GetOrderDiscountLinesResponse.JSON_PROPERTY_DATA
 })
-@JsonTypeName("charge_response_refunds")
+@JsonTypeName("get_order_discount_lines_response")
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class ChargeResponseRefunds {
+public class GetOrderDiscountLinesResponse {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   private Boolean hasMore;
 
@@ -55,12 +55,12 @@ public class ChargeResponseRefunds {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<ChargeResponseRefundsData> data;
+  private List<DiscountLinesResponse> data;
 
-  public ChargeResponseRefunds() { 
+  public GetOrderDiscountLinesResponse() { 
   }
 
-  public ChargeResponseRefunds hasMore(Boolean hasMore) {
+  public GetOrderDiscountLinesResponse hasMore(Boolean hasMore) {
     this.hasMore = hasMore;
     return this;
   }
@@ -85,7 +85,7 @@ public class ChargeResponseRefunds {
   }
 
 
-  public ChargeResponseRefunds _object(String _object) {
+  public GetOrderDiscountLinesResponse _object(String _object) {
     this._object = _object;
     return this;
   }
@@ -110,7 +110,7 @@ public class ChargeResponseRefunds {
   }
 
 
-  public ChargeResponseRefunds nextPageUrl(String nextPageUrl) {
+  public GetOrderDiscountLinesResponse nextPageUrl(String nextPageUrl) {
     this.nextPageUrl = nextPageUrl;
     return this;
   }
@@ -135,7 +135,7 @@ public class ChargeResponseRefunds {
   }
 
 
-  public ChargeResponseRefunds previousPageUrl(String previousPageUrl) {
+  public GetOrderDiscountLinesResponse previousPageUrl(String previousPageUrl) {
     this.previousPageUrl = previousPageUrl;
     return this;
   }
@@ -160,12 +160,12 @@ public class ChargeResponseRefunds {
   }
 
 
-  public ChargeResponseRefunds data(List<ChargeResponseRefundsData> data) {
+  public GetOrderDiscountLinesResponse data(List<DiscountLinesResponse> data) {
     this.data = data;
     return this;
   }
 
-  public ChargeResponseRefunds addDataItem(ChargeResponseRefundsData dataItem) {
+  public GetOrderDiscountLinesResponse addDataItem(DiscountLinesResponse dataItem) {
     if (this.data == null) {
       this.data = new ArrayList<>();
     }
@@ -174,27 +174,27 @@ public class ChargeResponseRefunds {
   }
 
    /**
-   * refunds
+   * Get data
    * @return data
   **/
   @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<ChargeResponseRefundsData> getData() {
+  public List<DiscountLinesResponse> getData() {
     return data;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setData(List<ChargeResponseRefundsData> data) {
+  public void setData(List<DiscountLinesResponse> data) {
     this.data = data;
   }
 
 
   /**
-   * Return true if this charge_response_refunds object is equal to o.
+   * Return true if this get_order_discount_lines_response object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -204,12 +204,12 @@ public class ChargeResponseRefunds {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ChargeResponseRefunds chargeResponseRefunds = (ChargeResponseRefunds) o;
-    return Objects.equals(this.hasMore, chargeResponseRefunds.hasMore) &&
-        Objects.equals(this._object, chargeResponseRefunds._object) &&
-        Objects.equals(this.nextPageUrl, chargeResponseRefunds.nextPageUrl) &&
-        Objects.equals(this.previousPageUrl, chargeResponseRefunds.previousPageUrl) &&
-        Objects.equals(this.data, chargeResponseRefunds.data);
+    GetOrderDiscountLinesResponse getOrderDiscountLinesResponse = (GetOrderDiscountLinesResponse) o;
+    return Objects.equals(this.hasMore, getOrderDiscountLinesResponse.hasMore) &&
+        Objects.equals(this._object, getOrderDiscountLinesResponse._object) &&
+        Objects.equals(this.nextPageUrl, getOrderDiscountLinesResponse.nextPageUrl) &&
+        Objects.equals(this.previousPageUrl, getOrderDiscountLinesResponse.previousPageUrl) &&
+        Objects.equals(this.data, getOrderDiscountLinesResponse.data);
   }
 
   @Override
@@ -220,7 +220,7 @@ public class ChargeResponseRefunds {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ChargeResponseRefunds {\n");
+    sb.append("class GetOrderDiscountLinesResponse {\n");
     sb.append("    hasMore: ").append(toIndentedString(hasMore)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    nextPageUrl: ").append(toIndentedString(nextPageUrl)).append("\n");

@@ -57,6 +57,7 @@ import com.conekta.JSON;
   OrderResponse.JSON_PROPERTY_METADATA,
   OrderResponse.JSON_PROPERTY_OBJECT,
   OrderResponse.JSON_PROPERTY_PAYMENT_STATUS,
+  OrderResponse.JSON_PROPERTY_PROCESSING_MODE,
   OrderResponse.JSON_PROPERTY_SHIPPING_CONTACT,
   OrderResponse.JSON_PROPERTY_UPDATED_AT
 })
@@ -113,6 +114,9 @@ public class OrderResponse {
 
   public static final String JSON_PROPERTY_PAYMENT_STATUS = "payment_status";
   private String paymentStatus;
+
+  public static final String JSON_PROPERTY_PROCESSING_MODE = "processing_mode";
+  private String processingMode;
 
   public static final String JSON_PROPERTY_SHIPPING_CONTACT = "shipping_contact";
   private OrderResponseShippingContact shippingContact;
@@ -556,6 +560,31 @@ public class OrderResponse {
   }
 
 
+  public OrderResponse processingMode(String processingMode) {
+    this.processingMode = processingMode;
+    return this;
+  }
+
+   /**
+   * Indicates the processing mode for the order, either ecommerce, recurrent or validation.
+   * @return processingMode
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PROCESSING_MODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getProcessingMode() {
+    return processingMode;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PROCESSING_MODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setProcessingMode(String processingMode) {
+    this.processingMode = processingMode;
+  }
+
+
   public OrderResponse shippingContact(OrderResponseShippingContact shippingContact) {
     this.shippingContact = shippingContact;
     return this;
@@ -635,13 +664,14 @@ public class OrderResponse {
         Objects.equals(this.metadata, orderResponse.metadata) &&
         Objects.equals(this._object, orderResponse._object) &&
         Objects.equals(this.paymentStatus, orderResponse.paymentStatus) &&
+        Objects.equals(this.processingMode, orderResponse.processingMode) &&
         Objects.equals(this.shippingContact, orderResponse.shippingContact) &&
         Objects.equals(this.updatedAt, orderResponse.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, amountRefunded, channel, charges, checkout, createdAt, currency, customerInfo, discountLines, fiscalEntity, id, isRefundable, lineItems, livemode, metadata, _object, paymentStatus, shippingContact, updatedAt);
+    return Objects.hash(amount, amountRefunded, channel, charges, checkout, createdAt, currency, customerInfo, discountLines, fiscalEntity, id, isRefundable, lineItems, livemode, metadata, _object, paymentStatus, processingMode, shippingContact, updatedAt);
   }
 
   @Override
@@ -665,6 +695,7 @@ public class OrderResponse {
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    paymentStatus: ").append(toIndentedString(paymentStatus)).append("\n");
+    sb.append("    processingMode: ").append(toIndentedString(processingMode)).append("\n");
     sb.append("    shippingContact: ").append(toIndentedString(shippingContact)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

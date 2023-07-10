@@ -166,6 +166,7 @@ public class Example {
 | **401** | authentication error |  -  |
 | **404** | not found entity |  -  |
 | **422** | parameter validation error |  -  |
+| **428** | Precondition Required |  -  |
 | **500** | internal server error |  -  |
 
 

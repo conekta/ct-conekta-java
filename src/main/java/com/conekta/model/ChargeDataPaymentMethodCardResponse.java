@@ -35,6 +35,7 @@ import com.conekta.JSON;
   ChargeDataPaymentMethodCardResponse.JSON_PROPERTY_ACCOUNT_TYPE,
   ChargeDataPaymentMethodCardResponse.JSON_PROPERTY_AUTH_CODE,
   ChargeDataPaymentMethodCardResponse.JSON_PROPERTY_BRAND,
+  ChargeDataPaymentMethodCardResponse.JSON_PROPERTY_CONTRACT_ID,
   ChargeDataPaymentMethodCardResponse.JSON_PROPERTY_COUNTRY,
   ChargeDataPaymentMethodCardResponse.JSON_PROPERTY_EXP_MONTH,
   ChargeDataPaymentMethodCardResponse.JSON_PROPERTY_EXP_YEAR,
@@ -54,6 +55,9 @@ public class ChargeDataPaymentMethodCardResponse {
 
   public static final String JSON_PROPERTY_BRAND = "brand";
   private String brand;
+
+  public static final String JSON_PROPERTY_CONTRACT_ID = "contract_id";
+  private String contractId;
 
   public static final String JSON_PROPERTY_COUNTRY = "country";
   private String country;
@@ -151,6 +155,31 @@ public class ChargeDataPaymentMethodCardResponse {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBrand(String brand) {
     this.brand = brand;
+  }
+
+
+  public ChargeDataPaymentMethodCardResponse contractId(String contractId) {
+    this.contractId = contractId;
+    return this;
+  }
+
+   /**
+   * Id sent for recurrent charges.
+   * @return contractId
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getContractId() {
+    return contractId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setContractId(String contractId) {
+    this.contractId = contractId;
   }
 
 
@@ -352,6 +381,7 @@ public class ChargeDataPaymentMethodCardResponse {
     return Objects.equals(this.accountType, chargeDataPaymentMethodCardResponse.accountType) &&
         Objects.equals(this.authCode, chargeDataPaymentMethodCardResponse.authCode) &&
         Objects.equals(this.brand, chargeDataPaymentMethodCardResponse.brand) &&
+        Objects.equals(this.contractId, chargeDataPaymentMethodCardResponse.contractId) &&
         Objects.equals(this.country, chargeDataPaymentMethodCardResponse.country) &&
         Objects.equals(this.expMonth, chargeDataPaymentMethodCardResponse.expMonth) &&
         Objects.equals(this.expYear, chargeDataPaymentMethodCardResponse.expYear) &&
@@ -363,7 +393,7 @@ public class ChargeDataPaymentMethodCardResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountType, authCode, brand, country, expMonth, expYear, fraudIndicators, issuer, last4, name);
+    return Objects.hash(accountType, authCode, brand, contractId, country, expMonth, expYear, fraudIndicators, issuer, last4, name);
   }
 
   @Override
@@ -373,6 +403,7 @@ public class ChargeDataPaymentMethodCardResponse {
     sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
     sb.append("    authCode: ").append(toIndentedString(authCode)).append("\n");
     sb.append("    brand: ").append(toIndentedString(brand)).append("\n");
+    sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    expMonth: ").append(toIndentedString(expMonth)).append("\n");
     sb.append("    expYear: ").append(toIndentedString(expYear)).append("\n");

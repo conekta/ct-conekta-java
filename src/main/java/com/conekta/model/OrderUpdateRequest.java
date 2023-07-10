@@ -21,8 +21,8 @@ import com.conekta.model.ChargeRequest;
 import com.conekta.model.CheckoutRequest;
 import com.conekta.model.CustomerShippingContacts;
 import com.conekta.model.OrderDiscountLinesRequest;
-import com.conekta.model.OrderRequestCustomerInfo;
 import com.conekta.model.OrderTaxRequest;
+import com.conekta.model.OrderUpdateRequestCustomerInfo;
 import com.conekta.model.Product;
 import com.conekta.model.ShippingRequest;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -67,7 +67,7 @@ public class OrderUpdateRequest {
   private String currency;
 
   public static final String JSON_PROPERTY_CUSTOMER_INFO = "customer_info";
-  private OrderRequestCustomerInfo customerInfo;
+  private OrderUpdateRequestCustomerInfo customerInfo;
 
   public static final String JSON_PROPERTY_DISCOUNT_LINES = "discount_lines";
   private List<OrderDiscountLinesRequest> discountLines;
@@ -176,7 +176,7 @@ public class OrderUpdateRequest {
   }
 
 
-  public OrderUpdateRequest customerInfo(OrderRequestCustomerInfo customerInfo) {
+  public OrderUpdateRequest customerInfo(OrderUpdateRequestCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
     return this;
   }
@@ -189,14 +189,14 @@ public class OrderUpdateRequest {
   @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OrderRequestCustomerInfo getCustomerInfo() {
+  public OrderUpdateRequestCustomerInfo getCustomerInfo() {
     return customerInfo;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomerInfo(OrderRequestCustomerInfo customerInfo) {
+  public void setCustomerInfo(OrderUpdateRequestCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
   }
 

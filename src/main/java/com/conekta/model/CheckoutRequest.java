@@ -29,7 +29,7 @@ import com.conekta.JSON;
 
 
 /**
- * [Checkout](https://developers.conekta.com/reference/checkout) details 
+ * [Checkout](https://developers.conekta.com/v2.1.0/reference/payment-link) details 
  */
 @JsonPropertyOrder({
   CheckoutRequest.JSON_PROPERTY_ALLOWED_PAYMENT_METHODS,

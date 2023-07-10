@@ -25,6 +25,7 @@ order response
 |**metadata** | **Map&lt;String, Object&gt;** | Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format. |  [optional] |
 |**_object** | **String** | String representing the object’s type. Objects of the same type share the same value. |  [optional] |
 |**paymentStatus** | **String** | The payment status of the order. |  [optional] |
+|**processingMode** | **String** | Indicates the processing mode for the order, either ecommerce, recurrent or validation. |  [optional] |
 |**shippingContact** | [**OrderResponseShippingContact**](OrderResponseShippingContact.md) |  |  [optional] |
 |**updatedAt** | **Long** | The time at which the object was last updated in seconds since the Unix epoch |  [optional] |
 

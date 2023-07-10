@@ -30,16 +30,12 @@ import com.conekta.JSON;
  * ApiKeyRequest
  */
 @JsonPropertyOrder({
-  ApiKeyRequest.JSON_PROPERTY_ACTIVE,
   ApiKeyRequest.JSON_PROPERTY_DESCRIPTION,
   ApiKeyRequest.JSON_PROPERTY_ROLE
 })
-@JsonTypeName("api-key_request")
+@JsonTypeName("api_key_request")
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiKeyRequest {
-  public static final String JSON_PROPERTY_ACTIVE = "active";
-  private Boolean active;
-
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
 
@@ -49,43 +45,18 @@ public class ApiKeyRequest {
   public ApiKeyRequest() { 
   }
 
-  public ApiKeyRequest active(Boolean active) {
-    this.active = active;
-    return this;
-  }
-
-   /**
-   * Indicates if the api key is active
-   * @return active
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Boolean getActive() {
-    return active;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setActive(Boolean active) {
-    this.active = active;
-  }
-
-
   public ApiKeyRequest description(String description) {
     this.description = description;
     return this;
   }
 
    /**
-   * Detail of the use that will be given to the api key
+   * A name or brief explanation of what this api key is used for
    * @return description
   **/
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
     return description;
@@ -93,7 +64,7 @@ public class ApiKeyRequest {
 
 
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(String description) {
     this.description = description;
   }
@@ -125,7 +96,7 @@ public class ApiKeyRequest {
 
 
   /**
-   * Return true if this api-key_request object is equal to o.
+   * Return true if this api_key_request object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -136,21 +107,19 @@ public class ApiKeyRequest {
       return false;
     }
     ApiKeyRequest apiKeyRequest = (ApiKeyRequest) o;
-    return Objects.equals(this.active, apiKeyRequest.active) &&
-        Objects.equals(this.description, apiKeyRequest.description) &&
+    return Objects.equals(this.description, apiKeyRequest.description) &&
         Objects.equals(this.role, apiKeyRequest.role);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, description, role);
+    return Objects.hash(description, role);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ApiKeyRequest {\n");
-    sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("}");
