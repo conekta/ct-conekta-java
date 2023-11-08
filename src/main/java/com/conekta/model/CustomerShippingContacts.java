@@ -43,7 +43,7 @@ import com.conekta.JSON;
   CustomerShippingContacts.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("customer_shipping_contacts")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomerShippingContacts {
   public static final String JSON_PROPERTY_PHONE = "phone";
   private String phone;
@@ -81,7 +81,7 @@ public class CustomerShippingContacts {
    * Phone contact
    * @return phone
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -106,7 +106,7 @@ public class CustomerShippingContacts {
    * Name of the person who will receive the order
    * @return receiver
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECEIVER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -131,7 +131,7 @@ public class CustomerShippingContacts {
    * The street names between which the order will be delivered.
    * @return betweenStreets
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BETWEEN_STREETS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -156,7 +156,7 @@ public class CustomerShippingContacts {
    * Get address
    * @return address
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -181,7 +181,7 @@ public class CustomerShippingContacts {
    * Get parentId
    * @return parentId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -206,7 +206,7 @@ public class CustomerShippingContacts {
    * Get _default
    * @return _default
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -231,7 +231,7 @@ public class CustomerShippingContacts {
    * Get deleted
    * @return deleted
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -264,7 +264,7 @@ public class CustomerShippingContacts {
    * Metadata associated with the shipping contact
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 

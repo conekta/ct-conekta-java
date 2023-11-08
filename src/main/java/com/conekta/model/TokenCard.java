@@ -38,7 +38,7 @@ import com.conekta.JSON;
   TokenCard.JSON_PROPERTY_NUMBER
 })
 @JsonTypeName("token_card")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TokenCard {
   public static final String JSON_PROPERTY_CVC = "cvc";
   private String cvc;
@@ -70,7 +70,7 @@ public class TokenCard {
    * It is a value that allows identifying the security code of the card.
    * @return cvc
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CVC)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -95,7 +95,7 @@ public class TokenCard {
    * It is a value that allows identifying the device fingerprint.
    * @return deviceFingerprint
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEVICE_FINGERPRINT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -120,7 +120,7 @@ public class TokenCard {
    * It is a value that allows identifying the expiration month of the card.
    * @return expMonth
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_EXP_MONTH)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -145,7 +145,7 @@ public class TokenCard {
    * It is a value that allows identifying the expiration year of the card.
    * @return expYear
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_EXP_YEAR)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -170,7 +170,7 @@ public class TokenCard {
    * It is a value that allows identifying the name of the cardholder.
    * @return name
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -195,7 +195,7 @@ public class TokenCard {
    * It is a value that allows identifying the number of the card.
    * @return number
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NUMBER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 

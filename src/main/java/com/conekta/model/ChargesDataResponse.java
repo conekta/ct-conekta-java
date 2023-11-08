@@ -54,7 +54,7 @@ import com.conekta.JSON;
   ChargesDataResponse.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("charges_data_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ChargesDataResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Integer amount;
@@ -125,7 +125,7 @@ public class ChargesDataResponse {
    * Get amount
    * @return amount
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -150,7 +150,7 @@ public class ChargesDataResponse {
    * Get channel
    * @return channel
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -175,7 +175,7 @@ public class ChargesDataResponse {
    * Get createdAt
    * @return createdAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -200,7 +200,7 @@ public class ChargesDataResponse {
    * Get currency
    * @return currency
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -225,7 +225,7 @@ public class ChargesDataResponse {
    * Get customerId
    * @return customerId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -250,7 +250,7 @@ public class ChargesDataResponse {
    * Get description
    * @return description
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -275,7 +275,7 @@ public class ChargesDataResponse {
    * Get deviceFingerprint
    * @return deviceFingerprint
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEVICE_FINGERPRINT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -300,7 +300,7 @@ public class ChargesDataResponse {
    * Get failureCode
    * @return failureCode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAILURE_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -325,7 +325,7 @@ public class ChargesDataResponse {
    * Get failureMessage
    * @return failureMessage
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAILURE_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -350,7 +350,7 @@ public class ChargesDataResponse {
    * Get fee
    * @return fee
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FEE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -375,7 +375,7 @@ public class ChargesDataResponse {
    * Get id
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -400,7 +400,7 @@ public class ChargesDataResponse {
    * Get livemode
    * @return livemode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -425,7 +425,7 @@ public class ChargesDataResponse {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -450,7 +450,7 @@ public class ChargesDataResponse {
    * Get orderId
    * @return orderId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ORDER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -475,7 +475,7 @@ public class ChargesDataResponse {
    * Get paidAt
    * @return paidAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAID_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -500,7 +500,7 @@ public class ChargesDataResponse {
    * Get paymentMethod
    * @return paymentMethod
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENT_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -525,7 +525,7 @@ public class ChargesDataResponse {
    * Reference ID of the charge
    * @return referenceId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERENCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -550,7 +550,7 @@ public class ChargesDataResponse {
    * Get refunds
    * @return refunds
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFUNDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -575,7 +575,7 @@ public class ChargesDataResponse {
    * Get status
    * @return status
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

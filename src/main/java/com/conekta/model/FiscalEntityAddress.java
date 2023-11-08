@@ -39,7 +39,7 @@ import com.conekta.JSON;
   FiscalEntityAddress.JSON_PROPERTY_EXTERNAL_NUMBER
 })
 @JsonTypeName("fiscal_entity_address")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class FiscalEntityAddress {
   public static final String JSON_PROPERTY_STREET1 = "street1";
   private String street1;
@@ -74,7 +74,7 @@ public class FiscalEntityAddress {
    * Street name and number
    * @return street1
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_STREET1)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -99,7 +99,7 @@ public class FiscalEntityAddress {
    * Street name and number
    * @return street2
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STREET2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -124,7 +124,7 @@ public class FiscalEntityAddress {
    * Postal code
    * @return postalCode
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -149,7 +149,7 @@ public class FiscalEntityAddress {
    * City
    * @return city
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CITY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -174,7 +174,7 @@ public class FiscalEntityAddress {
    * State
    * @return state
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -199,7 +199,7 @@ public class FiscalEntityAddress {
    * this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
    * @return country
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -224,7 +224,7 @@ public class FiscalEntityAddress {
    * External number
    * @return externalNumber
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_EXTERNAL_NUMBER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 

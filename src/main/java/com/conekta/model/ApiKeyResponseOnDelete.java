@@ -41,7 +41,7 @@ import com.conekta.JSON;
   ApiKeyResponseOnDelete.JSON_PROPERTY_ROLE
 })
 @JsonTypeName("api_key_response_on_delete")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiKeyResponseOnDelete {
   public static final String JSON_PROPERTY_ACTIVE = "active";
   private Boolean active;
@@ -82,7 +82,7 @@ public class ApiKeyResponseOnDelete {
    * Indicates if the api key is active
    * @return active
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -107,7 +107,7 @@ public class ApiKeyResponseOnDelete {
    * Unix timestamp in seconds of when the api key was created
    * @return createdAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -132,7 +132,7 @@ public class ApiKeyResponseOnDelete {
    * A name or brief explanation of what this api key is used for
    * @return description
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -157,7 +157,7 @@ public class ApiKeyResponseOnDelete {
    * Indicates if the api key is in production
    * @return livemode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -182,7 +182,7 @@ public class ApiKeyResponseOnDelete {
    * The first few characters of the authentication_token
    * @return prefix
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PREFIX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -207,7 +207,7 @@ public class ApiKeyResponseOnDelete {
    * Unique identifier of the api key
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -232,7 +232,7 @@ public class ApiKeyResponseOnDelete {
    * Object name, value is &#39;api_key&#39;
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -257,7 +257,7 @@ public class ApiKeyResponseOnDelete {
    * Indicates if the api key was deleted
    * @return deleted
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -282,7 +282,7 @@ public class ApiKeyResponseOnDelete {
    * Indicates if the api key is private or public
    * @return role
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ROLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

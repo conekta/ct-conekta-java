@@ -11,10 +11,10 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import jakarta.ws.rs.core.GenericType;
-import jakarta.ws.rs.ext.ContextResolver;
+import javax.ws.rs.core.GenericType;
+import javax.ws.rs.ext.ContextResolver;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class JSON implements ContextResolver<ObjectMapper> {
   private ObjectMapper mapper;
 

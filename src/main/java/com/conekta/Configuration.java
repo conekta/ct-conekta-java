@@ -13,7 +13,7 @@
 
 package com.conekta;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Configuration {
     public static final String VERSION = "6.0.0";
 

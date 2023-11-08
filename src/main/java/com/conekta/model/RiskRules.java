@@ -36,7 +36,7 @@ import com.conekta.JSON;
   RiskRules.JSON_PROPERTY_DATA
 })
 @JsonTypeName("risk_rules")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class RiskRules {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<RiskRulesData> data;
@@ -61,7 +61,7 @@ public class RiskRules {
    * Get data
    * @return data
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

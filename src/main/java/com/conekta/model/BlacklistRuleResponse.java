@@ -36,7 +36,7 @@ import com.conekta.JSON;
   BlacklistRuleResponse.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("blacklist_rule_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BlacklistRuleResponse {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -62,7 +62,7 @@ public class BlacklistRuleResponse {
    * Blacklist rule id
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -87,7 +87,7 @@ public class BlacklistRuleResponse {
    * field used for blacklists rule
    * @return field
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FIELD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -112,7 +112,7 @@ public class BlacklistRuleResponse {
    * value used for blacklists rule
    * @return value
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -137,7 +137,7 @@ public class BlacklistRuleResponse {
    * use an description for blacklisted rule
    * @return description
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

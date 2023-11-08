@@ -40,7 +40,7 @@ import com.conekta.JSON;
   TransferDestinationResponse.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("transfer_destination_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TransferDestinationResponse {
   public static final String JSON_PROPERTY_ACCOUNT_HOLDER = "account_holder";
   private String accountHolder;
@@ -78,7 +78,7 @@ public class TransferDestinationResponse {
    * Name of the account holder.
    * @return accountHolder
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACCOUNT_HOLDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -103,7 +103,7 @@ public class TransferDestinationResponse {
    * Account number of the bank account.
    * @return accountNumber
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACCOUNT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -128,7 +128,7 @@ public class TransferDestinationResponse {
    * Name of the bank.
    * @return bank
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BANK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -153,7 +153,7 @@ public class TransferDestinationResponse {
    * Date and time of creation of the transfer.
    * @return createdAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -178,7 +178,7 @@ public class TransferDestinationResponse {
    * Unique identifier of the transfer.
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -203,7 +203,7 @@ public class TransferDestinationResponse {
    * Object name, which is bank_transfer_payout_method.
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -228,7 +228,7 @@ public class TransferDestinationResponse {
    * Unique identifier of the payee.
    * @return payeeId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYEE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -253,7 +253,7 @@ public class TransferDestinationResponse {
    * Type of the payee.
    * @return type
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

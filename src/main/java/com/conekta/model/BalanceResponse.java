@@ -45,7 +45,7 @@ import com.conekta.JSON;
   BalanceResponse.JSON_PROPERTY_TEMPORARILY_RETAINED
 })
 @JsonTypeName("balance_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BalanceResponse {
   public static final String JSON_PROPERTY_AVAILABLE = "available";
   private List<BalanceCommonField> available;
@@ -97,7 +97,7 @@ public class BalanceResponse {
    * The balance&#39;s available
    * @return available
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AVAILABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -130,7 +130,7 @@ public class BalanceResponse {
    * The balance&#39;s cashout retention amount
    * @return cashoutRetentionAmount
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CASHOUT_RETENTION_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -163,7 +163,7 @@ public class BalanceResponse {
    * The balance&#39;s conekta retention
    * @return conektaRetention
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CONEKTA_RETENTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -196,7 +196,7 @@ public class BalanceResponse {
    * The balance&#39;s gateway
    * @return gateway
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_GATEWAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -229,7 +229,7 @@ public class BalanceResponse {
    * The balance&#39;s pending
    * @return pending
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PENDING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -262,7 +262,7 @@ public class BalanceResponse {
    * The balance&#39;s retained
    * @return retained
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RETAINED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -295,7 +295,7 @@ public class BalanceResponse {
    * The balance&#39;s retention amount
    * @return retentionAmount
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RETENTION_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -320,7 +320,7 @@ public class BalanceResponse {
    * The balance&#39;s target collateral amount
    * @return targetCollateralAmount
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TARGET_COLLATERAL_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -353,7 +353,7 @@ public class BalanceResponse {
    * The balance&#39;s target retention amount
    * @return targetRetentionAmount
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TARGET_RETENTION_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -386,7 +386,7 @@ public class BalanceResponse {
    * The balance&#39;s temporarily retained
    * @return temporarilyRetained
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TEMPORARILY_RETAINED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -36,7 +36,7 @@ import com.conekta.JSON;
   Details.JSON_PROPERTY_DETAILS
 })
 @JsonTypeName("details")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Details {
   public static final String JSON_PROPERTY_DETAILS = "details";
   private List<DetailsError> details;
@@ -61,7 +61,7 @@ public class Details {
    * Get details
    * @return details
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DETAILS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

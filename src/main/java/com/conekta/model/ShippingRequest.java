@@ -39,7 +39,7 @@ import com.conekta.JSON;
   ShippingRequest.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("shipping_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ShippingRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Long amount;
@@ -69,7 +69,7 @@ public class ShippingRequest {
    * minimum: 0
    * @return amount
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -94,7 +94,7 @@ public class ShippingRequest {
    * Carrier name for the shipment
    * @return carrier
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CARRIER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -119,7 +119,7 @@ public class ShippingRequest {
    * Tracking number can be used to track the shipment
    * @return trackingNumber
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRACKING_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -144,7 +144,7 @@ public class ShippingRequest {
    * Method of shipment
    * @return method
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -177,7 +177,7 @@ public class ShippingRequest {
    * Hash where the user can send additional information for each &#39;shipping&#39;.
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -46,7 +46,7 @@ import com.conekta.JSON;
   CreateCustomerFiscalEntitiesResponse.JSON_PROPERTY_DEFAULT
 })
 @JsonTypeName("create_customer_fiscal_entities_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CreateCustomerFiscalEntitiesResponse {
   public static final String JSON_PROPERTY_ADDRESS = "address";
   private CustomerFiscalEntitiesRequestAddress address;
@@ -93,7 +93,7 @@ public class CreateCustomerFiscalEntitiesResponse {
    * Get address
    * @return address
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -118,7 +118,7 @@ public class CreateCustomerFiscalEntitiesResponse {
    * Get taxId
    * @return taxId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAX_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -143,7 +143,7 @@ public class CreateCustomerFiscalEntitiesResponse {
    * Get email
    * @return email
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -168,7 +168,7 @@ public class CreateCustomerFiscalEntitiesResponse {
    * Get phone
    * @return phone
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -201,7 +201,7 @@ public class CreateCustomerFiscalEntitiesResponse {
    * Get metadata
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -226,7 +226,7 @@ public class CreateCustomerFiscalEntitiesResponse {
    * Get companyName
    * @return companyName
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_COMPANY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -251,7 +251,7 @@ public class CreateCustomerFiscalEntitiesResponse {
    * Get id
    * @return id
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -276,7 +276,7 @@ public class CreateCustomerFiscalEntitiesResponse {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -301,7 +301,7 @@ public class CreateCustomerFiscalEntitiesResponse {
    * Get createdAt
    * @return createdAt
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -326,7 +326,7 @@ public class CreateCustomerFiscalEntitiesResponse {
    * Get parentId
    * @return parentId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -351,7 +351,7 @@ public class CreateCustomerFiscalEntitiesResponse {
    * Get _default
    * @return _default
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

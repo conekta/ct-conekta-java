@@ -39,7 +39,7 @@ import com.conekta.JSON;
   CustomerShippingContactsAddress.JSON_PROPERTY_RESIDENTIAL
 })
 @JsonTypeName("customer_shipping_contacts_address")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomerShippingContactsAddress {
   public static final String JSON_PROPERTY_STREET1 = "street1";
   private String street1;
@@ -74,7 +74,7 @@ public class CustomerShippingContactsAddress {
    * Get street1
    * @return street1
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STREET1)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -99,7 +99,7 @@ public class CustomerShippingContactsAddress {
    * Get street2
    * @return street2
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STREET2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -124,7 +124,7 @@ public class CustomerShippingContactsAddress {
    * Get postalCode
    * @return postalCode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -149,7 +149,7 @@ public class CustomerShippingContactsAddress {
    * Get city
    * @return city
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -174,7 +174,7 @@ public class CustomerShippingContactsAddress {
    * Get state
    * @return state
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -199,7 +199,7 @@ public class CustomerShippingContactsAddress {
    * this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
    * @return country
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -224,7 +224,7 @@ public class CustomerShippingContactsAddress {
    * Get residential
    * @return residential
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RESIDENTIAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -42,7 +42,7 @@ import com.conekta.JSON;
   CompanyResponse.JSON_PROPERTY_FISCAL_INFO
 })
 @JsonTypeName("company_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CompanyResponse {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -113,7 +113,7 @@ public class CompanyResponse {
    * The child company&#39;s unique identifier
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -138,7 +138,7 @@ public class CompanyResponse {
    * The resource&#39;s creation date (unix timestamp)
    * @return createdAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -163,7 +163,7 @@ public class CompanyResponse {
    * The child company&#39;s name
    * @return name
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -188,7 +188,7 @@ public class CompanyResponse {
    * The resource&#39;s type
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -213,7 +213,7 @@ public class CompanyResponse {
    * Id of the parent company
    * @return parentCompanyId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PARENT_COMPANY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -238,7 +238,7 @@ public class CompanyResponse {
    * Whether the parent company&#39;s fiscal data is to be used for liquidation and tax purposes
    * @return useParentFiscalData
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_USE_PARENT_FISCAL_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -263,7 +263,7 @@ public class CompanyResponse {
    * Get payoutDestination
    * @return payoutDestination
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYOUT_DESTINATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -288,7 +288,7 @@ public class CompanyResponse {
    * Get fiscalInfo
    * @return fiscalInfo
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FISCAL_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -33,7 +33,7 @@ import com.conekta.JSON;
   WebhookKeyRequest.JSON_PROPERTY_ACTIVE
 })
 @JsonTypeName("webhook_key_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class WebhookKeyRequest {
   public static final String JSON_PROPERTY_ACTIVE = "active";
   private Boolean active = true;
@@ -50,7 +50,7 @@ public class WebhookKeyRequest {
    * Indicates if the webhook key is active
    * @return active
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

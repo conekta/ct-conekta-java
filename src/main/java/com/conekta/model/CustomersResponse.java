@@ -40,7 +40,7 @@ import com.conekta.JSON;
   CustomersResponse.JSON_PROPERTY_PREVIOUS_PAGE_URL
 })
 @JsonTypeName("customers_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomersResponse {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<CustomerResponse> data;
@@ -77,7 +77,7 @@ public class CustomersResponse {
    * Get data
    * @return data
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -102,7 +102,7 @@ public class CustomersResponse {
    * Indicates if there are more pages to be requested
    * @return hasMore
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_HAS_MORE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -127,7 +127,7 @@ public class CustomersResponse {
    * Object type, in this case is list
    * @return _object
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -152,7 +152,7 @@ public class CustomersResponse {
    * URL of the next page.
    * @return nextPageUrl
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NEXT_PAGE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -177,7 +177,7 @@ public class CustomersResponse {
    * Url of the previous page.
    * @return previousPageUrl
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PREVIOUS_PAGE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -15,7 +15,7 @@ Conekta sdk
 Building the API client library requires:
 
 1. Java 1.11+
-2. Maven/Gradle
+2. Maven (3.8.3+)/Gradle (7.2+)
 
 ## Installation
 
@@ -73,6 +73,44 @@ Then manually install the following JARs:
 
 - `target/ct-conekta-java-6.0.0.jar`
 - `target/lib/*.jar`
+
+## Usage
+
+To add a HTTP proxy for the API client, use `ClientConfig`:
+```java
+import com.conekta.*;
+import com.conekta.auth.*;
+import com.conekta.model.*;
+import com.conekta.CustomersApi;
+
+public class CustomersApiExample {
+
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("API_KEY");
+
+        CustomersApi apiInstance = new CustomersApi(defaultClient);
+        Customer customer = new Customer(); // Customer | requested field for customer
+        customer.setName("Customer Name");
+        customer.setEmail("customer@mail.com");
+        customer.setPhone("55454545454");
+        String acceptLanguage = "es"; // String | Use for knowing which language to use
+        try {
+            CustomerResponse result = apiInstance.createCustomer(customer, acceptLanguage,null);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CustomersApi#createCustomer");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
 
 ## Getting Started
 

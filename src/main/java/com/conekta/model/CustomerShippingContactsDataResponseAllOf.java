@@ -35,7 +35,7 @@ import com.conekta.JSON;
   CustomerShippingContactsDataResponseAllOf.JSON_PROPERTY_CREATED_AT
 })
 @JsonTypeName("customer_shipping_contacts_data_response_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomerShippingContactsDataResponseAllOf {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -58,7 +58,7 @@ public class CustomerShippingContactsDataResponseAllOf {
    * Get id
    * @return id
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -83,7 +83,7 @@ public class CustomerShippingContactsDataResponseAllOf {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -108,7 +108,7 @@ public class CustomerShippingContactsDataResponseAllOf {
    * Get createdAt
    * @return createdAt
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 

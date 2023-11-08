@@ -45,7 +45,7 @@ import com.conekta.JSON;
   EventResponse.JSON_PROPERTY_WEBHOOK_STATUS
 })
 @JsonTypeName("event_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class EventResponse {
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private Long createdAt;
@@ -83,7 +83,7 @@ public class EventResponse {
    * Get createdAt
    * @return createdAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -116,7 +116,7 @@ public class EventResponse {
    * Get data
    * @return data
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -141,7 +141,7 @@ public class EventResponse {
    * Get id
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -166,7 +166,7 @@ public class EventResponse {
    * Get livemode
    * @return livemode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -191,7 +191,7 @@ public class EventResponse {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -216,7 +216,7 @@ public class EventResponse {
    * Get type
    * @return type
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -249,7 +249,7 @@ public class EventResponse {
    * Get webhookLogs
    * @return webhookLogs
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_WEBHOOK_LOGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -274,7 +274,7 @@ public class EventResponse {
    * Get webhookStatus
    * @return webhookStatus
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_WEBHOOK_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -40,7 +40,7 @@ import com.conekta.JSON;
   CustomerFiscalEntitiesRequestAddress.JSON_PROPERTY_EXTERNAL_NUMBER
 })
 @JsonTypeName("customer_fiscal_entities_request_address")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomerFiscalEntitiesRequestAddress {
   public static final String JSON_PROPERTY_STREET1 = "street1";
   private String street1;
@@ -78,7 +78,7 @@ public class CustomerFiscalEntitiesRequestAddress {
    * Get street1
    * @return street1
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_STREET1)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -103,7 +103,7 @@ public class CustomerFiscalEntitiesRequestAddress {
    * Get street2
    * @return street2
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STREET2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -128,7 +128,7 @@ public class CustomerFiscalEntitiesRequestAddress {
    * Get postalCode
    * @return postalCode
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -153,7 +153,7 @@ public class CustomerFiscalEntitiesRequestAddress {
    * Get city
    * @return city
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CITY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -178,7 +178,7 @@ public class CustomerFiscalEntitiesRequestAddress {
    * Get state
    * @return state
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -203,7 +203,7 @@ public class CustomerFiscalEntitiesRequestAddress {
    * this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
    * @return country
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -228,7 +228,7 @@ public class CustomerFiscalEntitiesRequestAddress {
    * Get residential
    * @return residential
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RESIDENTIAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -253,7 +253,7 @@ public class CustomerFiscalEntitiesRequestAddress {
    * Get externalNumber
    * @return externalNumber
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXTERNAL_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

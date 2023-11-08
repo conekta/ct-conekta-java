@@ -36,7 +36,7 @@ import com.conekta.JSON;
   OrderResponseChargesAllOf.JSON_PROPERTY_DATA
 })
 @JsonTypeName("order_response_charges_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderResponseChargesAllOf {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<ChargesDataResponse> data;
@@ -61,7 +61,7 @@ public class OrderResponseChargesAllOf {
    * Get data
    * @return data
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

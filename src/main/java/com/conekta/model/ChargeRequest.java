@@ -36,7 +36,7 @@ import com.conekta.JSON;
   ChargeRequest.JSON_PROPERTY_REFERENCE_ID
 })
 @JsonTypeName("charge_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ChargeRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Integer amount;
@@ -59,7 +59,7 @@ public class ChargeRequest {
    * Get amount
    * @return amount
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -84,7 +84,7 @@ public class ChargeRequest {
    * Get paymentMethod
    * @return paymentMethod
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_PAYMENT_METHOD)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -109,7 +109,7 @@ public class ChargeRequest {
    * Custom reference to add to the charge
    * @return referenceId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERENCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

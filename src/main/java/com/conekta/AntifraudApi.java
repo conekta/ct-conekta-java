@@ -6,7 +6,7 @@ import com.conekta.ApiResponse;
 import com.conekta.Configuration;
 import com.conekta.Pair;
 
-import jakarta.ws.rs.core.GenericType;
+import javax.ws.rs.core.GenericType;
 
 import com.conekta.model.BlacklistRuleResponse;
 import com.conekta.model.CreateRiskRulesData;
@@ -22,7 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class AntifraudApi {
   private ApiClient apiClient;
 

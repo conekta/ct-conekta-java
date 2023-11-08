@@ -33,8 +33,8 @@ import com.conekta.JSON;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 
-import jakarta.ws.rs.core.GenericType;
-import jakarta.ws.rs.core.Response;
+import javax.ws.rs.core.GenericType;
+import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -58,7 +58,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.conekta.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 @JsonDeserialize(using = CreateCustomerPaymentMethodsResponse.CreateCustomerPaymentMethodsResponseDeserializer.class)
 @JsonSerialize(using = CreateCustomerPaymentMethodsResponse.CreateCustomerPaymentMethodsResponseSerializer.class)
 public class CreateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema {
@@ -93,7 +93,7 @@ public class CreateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
             JsonNode tree = jp.readValueAsTree();
             Object deserialized = null;
             CreateCustomerPaymentMethodsResponse newCreateCustomerPaymentMethodsResponse = new CreateCustomerPaymentMethodsResponse();
-            Map<String,Object> result2 = tree.traverse(jp.getCodec()).readValueAs(new TypeReference<Map<String, Object>>() {});
+            Map<String, Object> result2 = tree.traverse(jp.getCodec()).readValueAs(new TypeReference<Map<String, Object>>() {});
             String discriminatorValue = (String)result2.get("type");
             switch (discriminatorValue) {
                 case "card":

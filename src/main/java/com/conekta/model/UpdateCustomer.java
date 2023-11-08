@@ -55,7 +55,7 @@ import com.conekta.JSON;
   UpdateCustomer.JSON_PROPERTY_SUBSCRIPTION
 })
 @JsonTypeName("update_customer")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpdateCustomer {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
   private UpdateCustomerAntifraudInfo antifraudInfo;
@@ -111,7 +111,7 @@ public class UpdateCustomer {
    * Get antifraudInfo
    * @return antifraudInfo
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ANTIFRAUD_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -136,7 +136,7 @@ public class UpdateCustomer {
    * It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)
    * @return defaultPaymentSourceId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT_PAYMENT_SOURCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -161,7 +161,7 @@ public class UpdateCustomer {
    * An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc).
    * @return email
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -186,7 +186,7 @@ public class UpdateCustomer {
    * Client&#39;s name
    * @return name
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -211,7 +211,7 @@ public class UpdateCustomer {
    * Is the customer&#39;s phone number
    * @return phone
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -236,7 +236,7 @@ public class UpdateCustomer {
    * Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription
    * @return planId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PLAN_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -261,7 +261,7 @@ public class UpdateCustomer {
    * It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)
    * @return defaultShippingContactId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT_SHIPPING_CONTACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -286,7 +286,7 @@ public class UpdateCustomer {
    * It is a value that allows identifying if the email is corporate or not.
    * @return corporate
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CORPORATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -311,7 +311,7 @@ public class UpdateCustomer {
    * It is an undefined value.
    * @return customReference
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOM_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -344,7 +344,7 @@ public class UpdateCustomer {
    * Get fiscalEntities
    * @return fiscalEntities
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -377,7 +377,7 @@ public class UpdateCustomer {
    * Get metadata
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -410,7 +410,7 @@ public class UpdateCustomer {
    * Contains details of the payment methods that the customer has active or has used in Conekta
    * @return paymentSources
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENT_SOURCES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -443,7 +443,7 @@ public class UpdateCustomer {
    * Contains the detail of the shipping addresses that the client has active or has used in Conekta
    * @return shippingContacts
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -468,7 +468,7 @@ public class UpdateCustomer {
    * Get subscription
    * @return subscription
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUBSCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -59,7 +59,7 @@ import com.conekta.JSON;
   OrderRequest.JSON_PROPERTY_TAX_LINES
 })
 @JsonTypeName("order_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderRequest {
   public static final String JSON_PROPERTY_CHARGES = "charges";
   private List<ChargeRequest> charges;
@@ -123,7 +123,7 @@ public class OrderRequest {
    * List of [charges](https://developers.conekta.com/v2.1.0/reference/orderscreatecharge) that are applied to the order
    * @return charges
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHARGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -148,7 +148,7 @@ public class OrderRequest {
    * Get checkout
    * @return checkout
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHECKOUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -173,7 +173,7 @@ public class OrderRequest {
    * Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)
    * @return currency
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -198,7 +198,7 @@ public class OrderRequest {
    * Get customerInfo
    * @return customerInfo
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -231,7 +231,7 @@ public class OrderRequest {
    * List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount.
    * @return discountLines
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -256,7 +256,7 @@ public class OrderRequest {
    * Get fiscalEntity
    * @return fiscalEntity
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -289,7 +289,7 @@ public class OrderRequest {
    * List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product.
    * @return lineItems
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LINE_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -322,7 +322,7 @@ public class OrderRequest {
    * Metadata associated with the order
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -347,7 +347,7 @@ public class OrderRequest {
    * Allows you to fill out the shipping information at checkout
    * @return needsShippingContact
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NEEDS_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -372,7 +372,7 @@ public class OrderRequest {
    * Indicates whether the order charges must be preauthorized
    * @return preAuthorize
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PRE_AUTHORIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -397,7 +397,7 @@ public class OrderRequest {
    * Indicates the processing mode for the order, either ecommerce, recurrent or validation.
    * @return processingMode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PROCESSING_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -422,7 +422,7 @@ public class OrderRequest {
    * Get shippingContact
    * @return shippingContact
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -455,7 +455,7 @@ public class OrderRequest {
    * List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping). If the online store offers digital products.
    * @return shippingLines
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHIPPING_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -488,7 +488,7 @@ public class OrderRequest {
    * List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxes) that are applied to the order.
    * @return taxLines
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAX_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

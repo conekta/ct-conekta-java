@@ -44,7 +44,7 @@ import com.conekta.JSON;
   OrderFiscalEntityResponse.JSON_PROPERTY_PHONE
 })
 @JsonTypeName("order_fiscal_entity_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderFiscalEntityResponse {
   public static final String JSON_PROPERTY_ADDRESS = "address";
   private OrderFiscalEntityAddressResponse address;
@@ -85,7 +85,7 @@ public class OrderFiscalEntityResponse {
    * Get address
    * @return address
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -110,7 +110,7 @@ public class OrderFiscalEntityResponse {
    * Email of the fiscal entity
    * @return email
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -143,7 +143,7 @@ public class OrderFiscalEntityResponse {
    * Metadata associated with the fiscal entity
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -168,7 +168,7 @@ public class OrderFiscalEntityResponse {
    * Name of the fiscal entity
    * @return name
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -193,7 +193,7 @@ public class OrderFiscalEntityResponse {
    * Tax ID of the fiscal entity
    * @return taxId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAX_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -218,7 +218,7 @@ public class OrderFiscalEntityResponse {
    * ID of the fiscal entity
    * @return id
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -243,7 +243,7 @@ public class OrderFiscalEntityResponse {
    * The time at which the object was created in seconds since the Unix epoch
    * @return createdAt
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -268,7 +268,7 @@ public class OrderFiscalEntityResponse {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -293,7 +293,7 @@ public class OrderFiscalEntityResponse {
    * Phone of the fiscal entity
    * @return phone
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

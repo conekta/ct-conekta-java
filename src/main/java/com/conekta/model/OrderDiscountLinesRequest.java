@@ -35,7 +35,7 @@ import com.conekta.JSON;
   OrderDiscountLinesRequest.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("order_discount_lines_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderDiscountLinesRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Long amount;
@@ -59,7 +59,7 @@ public class OrderDiscountLinesRequest {
    * minimum: 0
    * @return amount
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -84,7 +84,7 @@ public class OrderDiscountLinesRequest {
    * Discount code.
    * @return code
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -109,7 +109,7 @@ public class OrderDiscountLinesRequest {
    * It can be &#39;loyalty&#39;, &#39;campaign&#39;, &#39;coupon&#39; o &#39;sign&#39;
    * @return type
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 

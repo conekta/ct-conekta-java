@@ -62,7 +62,7 @@ import com.conekta.JSON;
   OrderResponseCheckout.JSON_PROPERTY_URL
 })
 @JsonTypeName("order_response_checkout")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderResponseCheckout {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
   private List<String> allowedPaymentMethods;
@@ -162,7 +162,7 @@ public class OrderResponseCheckout {
    * Get allowedPaymentMethods
    * @return allowedPaymentMethods
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ALLOWED_PAYMENT_METHODS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -187,7 +187,7 @@ public class OrderResponseCheckout {
    * Get canNotExpire
    * @return canNotExpire
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CAN_NOT_EXPIRE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -212,7 +212,7 @@ public class OrderResponseCheckout {
    * Get emailsSent
    * @return emailsSent
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAILS_SENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -245,7 +245,7 @@ public class OrderResponseCheckout {
    * Get excludeCardNetworks
    * @return excludeCardNetworks
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXCLUDE_CARD_NETWORKS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -270,7 +270,7 @@ public class OrderResponseCheckout {
    * Get expiresAt
    * @return expiresAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -295,7 +295,7 @@ public class OrderResponseCheckout {
    * Get failureUrl
    * @return failureUrl
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAILURE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -320,7 +320,7 @@ public class OrderResponseCheckout {
    * Get force3dsFlow
    * @return force3dsFlow
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FORCE3DS_FLOW)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -345,7 +345,7 @@ public class OrderResponseCheckout {
    * Get id
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -370,7 +370,7 @@ public class OrderResponseCheckout {
    * Get isRedirectOnFailure
    * @return isRedirectOnFailure
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_IS_REDIRECT_ON_FAILURE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -395,7 +395,7 @@ public class OrderResponseCheckout {
    * Get livemode
    * @return livemode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -428,7 +428,7 @@ public class OrderResponseCheckout {
    * Get metadata
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -453,7 +453,7 @@ public class OrderResponseCheckout {
    * Get monthlyInstallmentsEnabled
    * @return monthlyInstallmentsEnabled
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -486,7 +486,7 @@ public class OrderResponseCheckout {
    * Get monthlyInstallmentsOptions
    * @return monthlyInstallmentsOptions
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -511,7 +511,7 @@ public class OrderResponseCheckout {
    * Get name
    * @return name
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -536,7 +536,7 @@ public class OrderResponseCheckout {
    * Get needsShippingContact
    * @return needsShippingContact
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NEEDS_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -561,7 +561,7 @@ public class OrderResponseCheckout {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -586,7 +586,7 @@ public class OrderResponseCheckout {
    * Get onDemandEnabled
    * @return onDemandEnabled
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ON_DEMAND_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -611,7 +611,7 @@ public class OrderResponseCheckout {
    * Get paidPaymentsCount
    * @return paidPaymentsCount
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAID_PAYMENTS_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -636,7 +636,7 @@ public class OrderResponseCheckout {
    * Get recurrent
    * @return recurrent
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECURRENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -661,7 +661,7 @@ public class OrderResponseCheckout {
    * Get slug
    * @return slug
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SLUG)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -686,7 +686,7 @@ public class OrderResponseCheckout {
    * Get smsSent
    * @return smsSent
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SMS_SENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -711,7 +711,7 @@ public class OrderResponseCheckout {
    * Get successUrl
    * @return successUrl
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUCCESS_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -736,7 +736,7 @@ public class OrderResponseCheckout {
    * Get startsAt
    * @return startsAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STARTS_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -761,7 +761,7 @@ public class OrderResponseCheckout {
    * Get status
    * @return status
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -786,7 +786,7 @@ public class OrderResponseCheckout {
    * Get type
    * @return type
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -811,7 +811,7 @@ public class OrderResponseCheckout {
    * Get url
    * @return url
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -50,7 +50,7 @@ import com.conekta.JSON;
   ChargeDataPaymentMethodBankTransferResponse.JSON_PROPERTY_TRACKING_CODE
 })
 @JsonTypeName("charge_data_payment_method_bank_transfer_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ChargeDataPaymentMethodBankTransferResponse {
   public static final String JSON_PROPERTY_BANK = "bank";
   private String bank;
@@ -112,7 +112,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get bank
    * @return bank
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BANK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -137,7 +137,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get clabe
    * @return clabe
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CLABE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -162,7 +162,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get description
    * @return description
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -187,7 +187,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get executedAt
    * @return executedAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXECUTED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -212,7 +212,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get expiresAt
    * @return expiresAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -237,7 +237,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get issuingAccountBank
    * @return issuingAccountBank
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_BANK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -262,7 +262,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get issuingAccountNumber
    * @return issuingAccountNumber
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -287,7 +287,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get issuingAccountHolderName
    * @return issuingAccountHolderName
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_HOLDER_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -312,7 +312,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get issuingAccountTaxId
    * @return issuingAccountTaxId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_TAX_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -345,7 +345,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get paymentAttempts
    * @return paymentAttempts
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENT_ATTEMPTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -370,7 +370,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get receivingAccountHolderName
    * @return receivingAccountHolderName
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_HOLDER_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -395,7 +395,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get receivingAccountNumber
    * @return receivingAccountNumber
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -420,7 +420,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get receivingAccountBank
    * @return receivingAccountBank
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_BANK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -445,7 +445,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get receivingAccountTaxId
    * @return receivingAccountTaxId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_TAX_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -470,7 +470,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get referenceNumber
    * @return referenceNumber
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERENCE_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -495,7 +495,7 @@ public class ChargeDataPaymentMethodBankTransferResponse {
    * Get trackingCode
    * @return trackingCode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRACKING_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

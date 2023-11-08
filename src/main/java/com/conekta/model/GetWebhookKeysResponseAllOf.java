@@ -36,7 +36,7 @@ import com.conekta.JSON;
   GetWebhookKeysResponseAllOf.JSON_PROPERTY_DATA
 })
 @JsonTypeName("get_webhook_keys_response_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class GetWebhookKeysResponseAllOf {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<WebhookKeyResponse> data;
@@ -61,7 +61,7 @@ public class GetWebhookKeysResponseAllOf {
    * Get data
    * @return data
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

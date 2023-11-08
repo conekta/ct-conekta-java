@@ -34,7 +34,7 @@ import com.conekta.JSON;
   PaymentMethodSpeiRecurrentAllOf.JSON_PROPERTY_EXPIRES_AT
 })
 @JsonTypeName("payment_method_spei_recurrent_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PaymentMethodSpeiRecurrentAllOf {
   public static final String JSON_PROPERTY_REFERENCE = "reference";
   private String reference;
@@ -54,7 +54,7 @@ public class PaymentMethodSpeiRecurrentAllOf {
    * Get reference
    * @return reference
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -79,7 +79,7 @@ public class PaymentMethodSpeiRecurrentAllOf {
    * Get expiresAt
    * @return expiresAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -37,7 +37,7 @@ import com.conekta.JSON;
   WebhookUpdateRequest.JSON_PROPERTY_EVENTS
 })
 @JsonTypeName("webhook_update_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class WebhookUpdateRequest {
   public static final String JSON_PROPERTY_URL = "url";
   private String url;
@@ -60,7 +60,7 @@ public class WebhookUpdateRequest {
    * Here you must place the URL of your Webhook remember that you must program what you will do with the events received. Also do not forget to handle the HTTPS protocol for greater security.
    * @return url
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -85,7 +85,7 @@ public class WebhookUpdateRequest {
    * It is a value that allows to decide if the events will be synchronous or asynchronous. We recommend asynchronous &#x3D; false
    * @return synchronous
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SYNCHRONOUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -118,7 +118,7 @@ public class WebhookUpdateRequest {
    * Get events
    * @return events
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EVENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

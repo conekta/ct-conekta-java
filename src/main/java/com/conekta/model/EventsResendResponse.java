@@ -41,7 +41,7 @@ import com.conekta.JSON;
   EventsResendResponse.JSON_PROPERTY_URL
 })
 @JsonTypeName("events_resend_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class EventsResendResponse {
   public static final String JSON_PROPERTY_FAILED_ATTEMPTS = "failed_attempts";
   private Integer failedAttempts;
@@ -73,7 +73,7 @@ public class EventsResendResponse {
    * Get failedAttempts
    * @return failedAttempts
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAILED_ATTEMPTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -98,7 +98,7 @@ public class EventsResendResponse {
    * Get id
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -123,7 +123,7 @@ public class EventsResendResponse {
    * Get lastAttemptedAt
    * @return lastAttemptedAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST_ATTEMPTED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -148,7 +148,7 @@ public class EventsResendResponse {
    * Get lastHttpResponseStatus
    * @return lastHttpResponseStatus
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST_HTTP_RESPONSE_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -181,7 +181,7 @@ public class EventsResendResponse {
    * Get responseData
    * @return responseData
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RESPONSE_DATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -206,7 +206,7 @@ public class EventsResendResponse {
    * Get url
    * @return url
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

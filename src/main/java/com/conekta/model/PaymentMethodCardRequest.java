@@ -34,7 +34,7 @@ import com.conekta.JSON;
   PaymentMethodCardRequest.JSON_PROPERTY_TOKEN_ID
 })
 @JsonTypeName("payment_method_card_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PaymentMethodCardRequest {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -54,7 +54,7 @@ public class PaymentMethodCardRequest {
    * Type of payment method
    * @return type
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -79,7 +79,7 @@ public class PaymentMethodCardRequest {
    * Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.
    * @return tokenId
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TOKEN_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 

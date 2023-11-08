@@ -35,7 +35,7 @@ import com.conekta.JSON;
   ErrorAllOf.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("error_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ErrorAllOf {
   public static final String JSON_PROPERTY_LOG_ID = "log_id";
   private String logId;
@@ -58,7 +58,7 @@ public class ErrorAllOf {
    * log id
    * @return logId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LOG_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -83,7 +83,7 @@ public class ErrorAllOf {
    * Get type
    * @return type
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -108,7 +108,7 @@ public class ErrorAllOf {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -49,7 +49,7 @@ import com.conekta.JSON;
   SubscriptionResponse.JSON_PROPERTY_TRIAL_END
 })
 @JsonTypeName("subscription_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SubscriptionResponse {
   public static final String JSON_PROPERTY_BILLING_CYCLE_START = "billing_cycle_start";
   private Long billingCycleStart;
@@ -114,7 +114,7 @@ public class SubscriptionResponse {
    * Get billingCycleStart
    * @return billingCycleStart
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BILLING_CYCLE_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -139,7 +139,7 @@ public class SubscriptionResponse {
    * Get billingCycleEnd
    * @return billingCycleEnd
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BILLING_CYCLE_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -164,7 +164,7 @@ public class SubscriptionResponse {
    * Get canceledAt
    * @return canceledAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CANCELED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -189,7 +189,7 @@ public class SubscriptionResponse {
    * Get cardId
    * @return cardId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CARD_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -214,7 +214,7 @@ public class SubscriptionResponse {
    * Get chargeId
    * @return chargeId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHARGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -239,7 +239,7 @@ public class SubscriptionResponse {
    * Get createdAt
    * @return createdAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -264,7 +264,7 @@ public class SubscriptionResponse {
    * Get customerCustomReference
    * @return customerCustomReference
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -289,7 +289,7 @@ public class SubscriptionResponse {
    * Get customerId
    * @return customerId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -314,7 +314,7 @@ public class SubscriptionResponse {
    * Get id
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -339,7 +339,7 @@ public class SubscriptionResponse {
    * Get lastBillingCycleOrderId
    * @return lastBillingCycleOrderId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST_BILLING_CYCLE_ORDER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -364,7 +364,7 @@ public class SubscriptionResponse {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -389,7 +389,7 @@ public class SubscriptionResponse {
    * Get pausedAt
    * @return pausedAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAUSED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -414,7 +414,7 @@ public class SubscriptionResponse {
    * Get planId
    * @return planId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PLAN_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -439,7 +439,7 @@ public class SubscriptionResponse {
    * Get status
    * @return status
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -464,7 +464,7 @@ public class SubscriptionResponse {
    * Get subscriptionStart
    * @return subscriptionStart
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUBSCRIPTION_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -489,7 +489,7 @@ public class SubscriptionResponse {
    * Get trialStart
    * @return trialStart
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRIAL_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -514,7 +514,7 @@ public class SubscriptionResponse {
    * Get trialEnd
    * @return trialEnd
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRIAL_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

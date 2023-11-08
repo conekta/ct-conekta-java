@@ -48,7 +48,7 @@ import com.conekta.JSON;
   ProductOrderResponse.JSON_PROPERTY_PARENT_ID
 })
 @JsonTypeName("product_order_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ProductOrderResponse {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
   private Map<String, Object> antifraudInfo = new HashMap<>();
@@ -106,7 +106,7 @@ public class ProductOrderResponse {
    * Get antifraudInfo
    * @return antifraudInfo
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ANTIFRAUD_INFO)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -131,7 +131,7 @@ public class ProductOrderResponse {
    * The brand of the item.
    * @return brand
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BRAND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -156,7 +156,7 @@ public class ProductOrderResponse {
    * Short description of the item
    * @return description
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -189,7 +189,7 @@ public class ProductOrderResponse {
    * It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -214,7 +214,7 @@ public class ProductOrderResponse {
    * The name of the item. It will be displayed in the order.
    * @return name
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -240,7 +240,7 @@ public class ProductOrderResponse {
    * minimum: 1
    * @return quantity
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -265,7 +265,7 @@ public class ProductOrderResponse {
    * The stock keeping unit for the item. It is used to identify the item in the order.
    * @return sku
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SKU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -298,7 +298,7 @@ public class ProductOrderResponse {
    * List of tags for the item. It is used to identify the item in the order.
    * @return tags
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -324,7 +324,7 @@ public class ProductOrderResponse {
    * minimum: 0
    * @return unitPrice
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_UNIT_PRICE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -349,7 +349,7 @@ public class ProductOrderResponse {
    * Get id
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -374,7 +374,7 @@ public class ProductOrderResponse {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -399,7 +399,7 @@ public class ProductOrderResponse {
    * Get parentId
    * @return parentId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

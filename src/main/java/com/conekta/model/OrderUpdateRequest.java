@@ -57,7 +57,7 @@ import com.conekta.JSON;
   OrderUpdateRequest.JSON_PROPERTY_TAX_LINES
 })
 @JsonTypeName("order_update_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderUpdateRequest {
   public static final String JSON_PROPERTY_CHARGES = "charges";
   private List<ChargeRequest> charges;
@@ -115,7 +115,7 @@ public class OrderUpdateRequest {
    * Get charges
    * @return charges
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHARGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -140,7 +140,7 @@ public class OrderUpdateRequest {
    * Get checkout
    * @return checkout
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHECKOUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -165,7 +165,7 @@ public class OrderUpdateRequest {
    * Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)
    * @return currency
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -190,7 +190,7 @@ public class OrderUpdateRequest {
    * Get customerInfo
    * @return customerInfo
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -223,7 +223,7 @@ public class OrderUpdateRequest {
    * List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount.
    * @return discountLines
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -248,7 +248,7 @@ public class OrderUpdateRequest {
    * Get fiscalEntity
    * @return fiscalEntity
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -281,7 +281,7 @@ public class OrderUpdateRequest {
    * List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product.
    * @return lineItems
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LINE_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -314,7 +314,7 @@ public class OrderUpdateRequest {
    * Get metadata
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -339,7 +339,7 @@ public class OrderUpdateRequest {
    * Indicates whether the order charges must be preauthorized
    * @return preAuthorize
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PRE_AUTHORIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -364,7 +364,7 @@ public class OrderUpdateRequest {
    * Get shippingContact
    * @return shippingContact
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -397,7 +397,7 @@ public class OrderUpdateRequest {
    * List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping). If the online store offers digital products.
    * @return shippingLines
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHIPPING_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -430,7 +430,7 @@ public class OrderUpdateRequest {
    * Get taxLines
    * @return taxLines
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAX_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

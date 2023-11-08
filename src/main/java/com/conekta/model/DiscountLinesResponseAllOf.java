@@ -35,7 +35,7 @@ import com.conekta.JSON;
   DiscountLinesResponseAllOf.JSON_PROPERTY_PARENT_ID
 })
 @JsonTypeName("discount_lines_response_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class DiscountLinesResponseAllOf {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -58,7 +58,7 @@ public class DiscountLinesResponseAllOf {
    * The discount line id
    * @return id
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -83,7 +83,7 @@ public class DiscountLinesResponseAllOf {
    * The object name
    * @return _object
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -108,7 +108,7 @@ public class DiscountLinesResponseAllOf {
    * The order id
    * @return parentId
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 

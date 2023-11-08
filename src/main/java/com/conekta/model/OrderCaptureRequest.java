@@ -33,7 +33,7 @@ import com.conekta.JSON;
   OrderCaptureRequest.JSON_PROPERTY_AMOUNT
 })
 @JsonTypeName("order_capture_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderCaptureRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Long amount;
@@ -51,7 +51,7 @@ public class OrderCaptureRequest {
    * minimum: 1
    * @return amount
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 

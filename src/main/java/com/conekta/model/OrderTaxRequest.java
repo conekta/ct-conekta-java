@@ -37,7 +37,7 @@ import com.conekta.JSON;
   OrderTaxRequest.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("order_tax_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderTaxRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Long amount;
@@ -61,7 +61,7 @@ public class OrderTaxRequest {
    * minimum: 0
    * @return amount
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -86,7 +86,7 @@ public class OrderTaxRequest {
    * description or tax&#39;s name
    * @return description
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -119,7 +119,7 @@ public class OrderTaxRequest {
    * Get metadata
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 

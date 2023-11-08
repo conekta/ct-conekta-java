@@ -34,7 +34,7 @@ import com.conekta.JSON;
   PaymentMethodSpeiRequest.JSON_PROPERTY_EXPIRES_AT
 })
 @JsonTypeName("payment_method_spei_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PaymentMethodSpeiRequest {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -54,7 +54,7 @@ public class PaymentMethodSpeiRequest {
    * Type of payment method
    * @return type
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -79,7 +79,7 @@ public class PaymentMethodSpeiRequest {
    * Get expiresAt
    * @return expiresAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

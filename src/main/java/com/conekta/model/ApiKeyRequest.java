@@ -34,7 +34,7 @@ import com.conekta.JSON;
   ApiKeyRequest.JSON_PROPERTY_ROLE
 })
 @JsonTypeName("api_key_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiKeyRequest {
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
@@ -54,7 +54,7 @@ public class ApiKeyRequest {
    * A name or brief explanation of what this api key is used for
    * @return description
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -79,7 +79,7 @@ public class ApiKeyRequest {
    * Get role
    * @return role
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ROLE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 

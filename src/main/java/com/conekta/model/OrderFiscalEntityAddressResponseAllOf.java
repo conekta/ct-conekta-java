@@ -33,7 +33,7 @@ import com.conekta.JSON;
   OrderFiscalEntityAddressResponseAllOf.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("order_fiscal_entity_address_response_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderFiscalEntityAddressResponseAllOf {
   public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;
@@ -50,7 +50,7 @@ public class OrderFiscalEntityAddressResponseAllOf {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

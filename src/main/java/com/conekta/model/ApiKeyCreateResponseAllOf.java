@@ -33,7 +33,7 @@ import com.conekta.JSON;
   ApiKeyCreateResponseAllOf.JSON_PROPERTY_AUTHENTICATION_TOKEN
 })
 @JsonTypeName("api_key_create_response_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiKeyCreateResponseAllOf {
   public static final String JSON_PROPERTY_AUTHENTICATION_TOKEN = "authentication_token";
   private String authenticationToken;
@@ -50,7 +50,7 @@ public class ApiKeyCreateResponseAllOf {
    * It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.
    * @return authenticationToken
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AUTHENTICATION_TOKEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

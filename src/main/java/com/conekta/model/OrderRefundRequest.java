@@ -35,7 +35,7 @@ import com.conekta.JSON;
   OrderRefundRequest.JSON_PROPERTY_REASON
 })
 @JsonTypeName("orderRefund_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderRefundRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Integer amount;
@@ -58,7 +58,7 @@ public class OrderRefundRequest {
    * Get amount
    * @return amount
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -83,7 +83,7 @@ public class OrderRefundRequest {
    * Get expiresAt
    * @return expiresAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -108,7 +108,7 @@ public class OrderRefundRequest {
    * Get reason
    * @return reason
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_REASON)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 

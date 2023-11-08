@@ -36,7 +36,7 @@ import com.conekta.JSON;
   CustomerFiscalEntitiesResponseAllOf.JSON_PROPERTY_DATA
 })
 @JsonTypeName("customer_fiscal_entities_response_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomerFiscalEntitiesResponseAllOf {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<CustomerFiscalEntitiesDataResponse> data;
@@ -61,7 +61,7 @@ public class CustomerFiscalEntitiesResponseAllOf {
    * Get data
    * @return data
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

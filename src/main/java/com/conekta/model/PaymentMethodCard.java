@@ -47,7 +47,7 @@ import com.conekta.JSON;
   PaymentMethodCard.JSON_PROPERTY_NAME
 })
 @JsonTypeName("payment_method_card")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PaymentMethodCard {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -100,7 +100,7 @@ public class PaymentMethodCard {
    * Get type
    * @return type
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -125,7 +125,7 @@ public class PaymentMethodCard {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -150,7 +150,7 @@ public class PaymentMethodCard {
    * Get accountType
    * @return accountType
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACCOUNT_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -175,7 +175,7 @@ public class PaymentMethodCard {
    * Get authCode
    * @return authCode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AUTH_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -200,7 +200,7 @@ public class PaymentMethodCard {
    * Get brand
    * @return brand
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BRAND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -225,7 +225,7 @@ public class PaymentMethodCard {
    * Id sent for recurrent charges.
    * @return contractId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -250,7 +250,7 @@ public class PaymentMethodCard {
    * Get country
    * @return country
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -275,7 +275,7 @@ public class PaymentMethodCard {
    * Get expMonth
    * @return expMonth
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXP_MONTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -300,7 +300,7 @@ public class PaymentMethodCard {
    * Get expYear
    * @return expYear
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXP_YEAR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -333,7 +333,7 @@ public class PaymentMethodCard {
    * Get fraudIndicators
    * @return fraudIndicators
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FRAUD_INDICATORS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -358,7 +358,7 @@ public class PaymentMethodCard {
    * Get issuer
    * @return issuer
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ISSUER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -383,7 +383,7 @@ public class PaymentMethodCard {
    * Get last4
    * @return last4
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST4)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -408,7 +408,7 @@ public class PaymentMethodCard {
    * Get name
    * @return name
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

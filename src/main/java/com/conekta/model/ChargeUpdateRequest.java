@@ -33,7 +33,7 @@ import com.conekta.JSON;
   ChargeUpdateRequest.JSON_PROPERTY_REFERENCE_ID
 })
 @JsonTypeName("charge_update_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ChargeUpdateRequest {
   public static final String JSON_PROPERTY_REFERENCE_ID = "reference_id";
   private String referenceId;
@@ -50,7 +50,7 @@ public class ChargeUpdateRequest {
    * custom reference id
    * @return referenceId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERENCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

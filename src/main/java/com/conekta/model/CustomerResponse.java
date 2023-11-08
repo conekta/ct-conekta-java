@@ -57,7 +57,7 @@ import com.conekta.JSON;
   CustomerResponse.JSON_PROPERTY_SUBSCRIPTION
 })
 @JsonTypeName("customer_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomerResponse {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
   private CustomerAntifraudInfoResponse antifraudInfo;
@@ -125,7 +125,7 @@ public class CustomerResponse {
    * Get antifraudInfo
    * @return antifraudInfo
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ANTIFRAUD_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -150,7 +150,7 @@ public class CustomerResponse {
    * true if the customer is a company
    * @return corporate
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CORPORATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -175,7 +175,7 @@ public class CustomerResponse {
    * Creation date of the object
    * @return createdAt
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -200,7 +200,7 @@ public class CustomerResponse {
    * Custom reference
    * @return customReference
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOM_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -225,7 +225,7 @@ public class CustomerResponse {
    * Get defaultFiscalEntityId
    * @return defaultFiscalEntityId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT_FISCAL_ENTITY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -250,7 +250,7 @@ public class CustomerResponse {
    * Get defaultShippingContactId
    * @return defaultShippingContactId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT_SHIPPING_CONTACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -275,7 +275,7 @@ public class CustomerResponse {
    * Get defaultPaymentSourceId
    * @return defaultPaymentSourceId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT_PAYMENT_SOURCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -300,7 +300,7 @@ public class CustomerResponse {
    * Get email
    * @return email
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -325,7 +325,7 @@ public class CustomerResponse {
    * Get fiscalEntities
    * @return fiscalEntities
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -350,7 +350,7 @@ public class CustomerResponse {
    * Customer&#39;s ID
    * @return id
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -375,7 +375,7 @@ public class CustomerResponse {
    * true if the object exists in live mode or the value false if the object exists in test mode
    * @return livemode
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -400,7 +400,7 @@ public class CustomerResponse {
    * Customer&#39;s name
    * @return name
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -433,7 +433,7 @@ public class CustomerResponse {
    * Get metadata
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -458,7 +458,7 @@ public class CustomerResponse {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -483,7 +483,7 @@ public class CustomerResponse {
    * Get paymentSources
    * @return paymentSources
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENT_SOURCES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -508,7 +508,7 @@ public class CustomerResponse {
    * Customer&#39;s phone number
    * @return phone
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -533,7 +533,7 @@ public class CustomerResponse {
    * Get shippingContacts
    * @return shippingContacts
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -558,7 +558,7 @@ public class CustomerResponse {
    * Get subscription
    * @return subscription
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUBSCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

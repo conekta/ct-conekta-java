@@ -38,7 +38,7 @@ import com.conekta.JSON;
   ChargeRequestPaymentMethod.JSON_PROPERTY_CONTRACT_ID
 })
 @JsonTypeName("charge_request_payment_method")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ChargeRequestPaymentMethod {
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
   private Long expiresAt;
@@ -70,7 +70,7 @@ public class ChargeRequestPaymentMethod {
    * Method expiration date as unix timestamp
    * @return expiresAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -95,7 +95,7 @@ public class ChargeRequestPaymentMethod {
    * How many months without interest to apply, it can be 3, 6, 9, 12 or 18
    * @return monthlyInstallments
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -120,7 +120,7 @@ public class ChargeRequestPaymentMethod {
    * Get type
    * @return type
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -145,7 +145,7 @@ public class ChargeRequestPaymentMethod {
    * Get tokenId
    * @return tokenId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TOKEN_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -170,7 +170,7 @@ public class ChargeRequestPaymentMethod {
    * Get paymentSourceId
    * @return paymentSourceId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENT_SOURCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -195,7 +195,7 @@ public class ChargeRequestPaymentMethod {
    * Optional id sent to indicate the bank contract for recurrent card charges.
    * @return contractId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

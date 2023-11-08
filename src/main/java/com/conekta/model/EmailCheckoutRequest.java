@@ -33,7 +33,7 @@ import com.conekta.JSON;
   EmailCheckoutRequest.JSON_PROPERTY_EMAIL
 })
 @JsonTypeName("emailCheckout_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class EmailCheckoutRequest {
   public static final String JSON_PROPERTY_EMAIL = "email";
   private String email;
@@ -50,7 +50,7 @@ public class EmailCheckoutRequest {
    * Get email
    * @return email
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 

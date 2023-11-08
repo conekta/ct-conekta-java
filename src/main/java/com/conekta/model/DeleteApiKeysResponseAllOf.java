@@ -33,7 +33,7 @@ import com.conekta.JSON;
   DeleteApiKeysResponseAllOf.JSON_PROPERTY_DELETED
 })
 @JsonTypeName("delete_api_keys_response_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class DeleteApiKeysResponseAllOf {
   public static final String JSON_PROPERTY_DELETED = "deleted";
   private Boolean deleted;
@@ -50,7 +50,7 @@ public class DeleteApiKeysResponseAllOf {
    * Get deleted
    * @return deleted
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

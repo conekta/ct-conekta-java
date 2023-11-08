@@ -36,7 +36,7 @@ import com.conekta.JSON;
   ChargeResponseChannel.JSON_PROPERTY_ID
 })
 @JsonTypeName("charge_response_channel")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ChargeResponseChannel {
   public static final String JSON_PROPERTY_SEGMENT = "segment";
   private String segment;
@@ -62,7 +62,7 @@ public class ChargeResponseChannel {
    * Get segment
    * @return segment
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SEGMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -87,7 +87,7 @@ public class ChargeResponseChannel {
    * Get checkoutRequestId
    * @return checkoutRequestId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHECKOUT_REQUEST_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -112,7 +112,7 @@ public class ChargeResponseChannel {
    * Get checkoutRequestType
    * @return checkoutRequestType
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHECKOUT_REQUEST_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -137,7 +137,7 @@ public class ChargeResponseChannel {
    * Get id
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

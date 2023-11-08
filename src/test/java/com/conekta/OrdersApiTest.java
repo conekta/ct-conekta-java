@@ -13,14 +13,9 @@
 
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
 import com.conekta.model.*;
 
-import com.conekta.model.Error;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -58,14 +53,18 @@ public class OrdersApiTest {
     public void createOrderTest() throws ApiException {
         OrderRequest orderRequest = new OrderRequest();
         orderRequest.setCurrency("MXN");
+        orderRequest.setFiscalEntity(new OrderFiscalEntityRequest().metadata(new HashMap<>()));
+        orderRequest.setShippingContact(new CustomerShippingContacts().metadata(new HashMap<>()));
         CustomerInfoJustCustomerId customer = new CustomerInfoJustCustomerId();
         customer.setCustomerId("cus_2tYENskzTjjgkGQLt");
         orderRequest.setCustomerInfo(new OrderRequestCustomerInfo(customer));
         ChargeRequest chargeRequest = new ChargeRequest();
         chargeRequest.setAmount(1000);
-        orderRequest.setCharges(Arrays.asList(chargeRequest));
+        orderRequest.setCharges(List.of(chargeRequest));
         String acceptLanguage = "es";
+
         OrderResponse response = api.createOrder(orderRequest, acceptLanguage, null);
+
         Assertions.assertNotNull(response);
     }
 

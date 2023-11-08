@@ -36,7 +36,7 @@ import com.conekta.JSON;
   GetPaymentMethodResponseAllOf.JSON_PROPERTY_DATA
 })
 @JsonTypeName("get_payment_method_response_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class GetPaymentMethodResponseAllOf {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<GetCustomerPaymentMethodDataResponse> data;
@@ -61,7 +61,7 @@ public class GetPaymentMethodResponseAllOf {
    * Get data
    * @return data
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

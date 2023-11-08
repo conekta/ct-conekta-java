@@ -42,7 +42,7 @@ import com.conekta.JSON;
   PaymentMethodCashResponse.JSON_PROPERTY_PROVIDER
 })
 @JsonTypeName("payment_method_cash_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PaymentMethodCashResponse {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -86,7 +86,7 @@ public class PaymentMethodCashResponse {
    * Get type
    * @return type
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -111,7 +111,7 @@ public class PaymentMethodCashResponse {
    * Get id
    * @return id
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -136,7 +136,7 @@ public class PaymentMethodCashResponse {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -161,7 +161,7 @@ public class PaymentMethodCashResponse {
    * Get createdAt
    * @return createdAt
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -186,7 +186,7 @@ public class PaymentMethodCashResponse {
    * Get parentId
    * @return parentId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -211,7 +211,7 @@ public class PaymentMethodCashResponse {
    * Get reference
    * @return reference
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -236,7 +236,7 @@ public class PaymentMethodCashResponse {
    * Get barcode
    * @return barcode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BARCODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -261,7 +261,7 @@ public class PaymentMethodCashResponse {
    * Get barcodeUrl
    * @return barcodeUrl
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BARCODE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -286,7 +286,7 @@ public class PaymentMethodCashResponse {
    * Get expiresAt
    * @return expiresAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -311,7 +311,7 @@ public class PaymentMethodCashResponse {
    * Get provider
    * @return provider
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PROVIDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -38,7 +38,7 @@ import com.conekta.JSON;
   WebhookKeyDeleteResponse.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("webhook-key_delete_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class WebhookKeyDeleteResponse {
   public static final String JSON_PROPERTY_ACTIVE = "active";
   private Boolean active;
@@ -70,7 +70,7 @@ public class WebhookKeyDeleteResponse {
    * Indicates if the webhook key is active
    * @return active
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACTIVE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -95,7 +95,7 @@ public class WebhookKeyDeleteResponse {
    * Unix timestamp in seconds with the creation date of the webhook key
    * @return createdAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -120,7 +120,7 @@ public class WebhookKeyDeleteResponse {
    * Indicates if the webhook key is deleted
    * @return deleted
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -145,7 +145,7 @@ public class WebhookKeyDeleteResponse {
    * Unique identifier of the webhook key
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -170,7 +170,7 @@ public class WebhookKeyDeleteResponse {
    * Indicates if the webhook key is in live mode
    * @return livemode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -195,7 +195,7 @@ public class WebhookKeyDeleteResponse {
    * Object name, value is webhook_key
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

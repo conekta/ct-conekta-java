@@ -41,7 +41,7 @@ import com.conekta.JSON;
   OrderUpdateFiscalEntityRequest.JSON_PROPERTY_TAX_ID
 })
 @JsonTypeName("order_update_fiscal_entity_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderUpdateFiscalEntityRequest {
   public static final String JSON_PROPERTY_ADDRESS = "address";
   private FiscalEntityAddress address;
@@ -73,7 +73,7 @@ public class OrderUpdateFiscalEntityRequest {
    * Get address
    * @return address
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -98,7 +98,7 @@ public class OrderUpdateFiscalEntityRequest {
    * Email of the fiscal entity
    * @return email
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -123,7 +123,7 @@ public class OrderUpdateFiscalEntityRequest {
    * Name of the fiscal entity
    * @return name
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -156,7 +156,7 @@ public class OrderUpdateFiscalEntityRequest {
    * Metadata associated with the fiscal entity
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -181,7 +181,7 @@ public class OrderUpdateFiscalEntityRequest {
    * Phone of the fiscal entity
    * @return phone
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -206,7 +206,7 @@ public class OrderUpdateFiscalEntityRequest {
    * Tax ID of the fiscal entity
    * @return taxId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAX_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

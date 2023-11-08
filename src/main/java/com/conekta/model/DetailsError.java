@@ -36,7 +36,7 @@ import com.conekta.JSON;
   DetailsError.JSON_PROPERTY_DEBUG_MESSAGE
 })
 @JsonTypeName("details_error")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class DetailsError {
   public static final String JSON_PROPERTY_CODE = "code";
   private String code;
@@ -62,7 +62,7 @@ public class DetailsError {
    * Get code
    * @return code
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -87,7 +87,7 @@ public class DetailsError {
    * Get param
    * @return param
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PARAM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -112,7 +112,7 @@ public class DetailsError {
    * Get message
    * @return message
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -137,7 +137,7 @@ public class DetailsError {
    * Get debugMessage
    * @return debugMessage
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEBUG_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
