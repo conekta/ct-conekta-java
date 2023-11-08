@@ -16,6 +16,7 @@
 |**address** | [**CustomerShippingContactsResponseAddress**](CustomerShippingContactsResponseAddress.md) |  |  [optional] |
 |**parentId** | **String** |  |  [optional] |
 |**_default** | **Boolean** |  |  [optional] |
+|**metadata** | **Map&lt;String, Object&gt;** | Metadata associated with the shipping contact |  [optional] |
 |**deleted** | **Boolean** |  |  [optional] |
 
 

@@ -4,7 +4,7 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getBalance**](BalancesApi.md#getBalance) | **GET** /balances | Get a company&#39;s balance |
+| [**getBalance**](BalancesApi.md#getBalance) | **GET** /balance | Get a company&#39;s balance |
 
 
 

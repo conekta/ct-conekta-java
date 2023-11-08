@@ -27,47 +27,47 @@ import com.conekta.JSON;
 
 
 /**
- * OrderResponseFiscalEntityAddressAllOf
+ * requested field for update a charge
  */
 @JsonPropertyOrder({
-  OrderResponseFiscalEntityAddressAllOf.JSON_PROPERTY_OBJECT
+  ChargeUpdateRequest.JSON_PROPERTY_REFERENCE_ID
 })
-@JsonTypeName("order_response_fiscal_entity_address_allOf")
+@JsonTypeName("charge_update_request")
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class OrderResponseFiscalEntityAddressAllOf {
-  public static final String JSON_PROPERTY_OBJECT = "object";
-  private String _object;
+public class ChargeUpdateRequest {
+  public static final String JSON_PROPERTY_REFERENCE_ID = "reference_id";
+  private String referenceId;
 
-  public OrderResponseFiscalEntityAddressAllOf() { 
+  public ChargeUpdateRequest() { 
   }
 
-  public OrderResponseFiscalEntityAddressAllOf _object(String _object) {
-    this._object = _object;
+  public ChargeUpdateRequest referenceId(String referenceId) {
+    this.referenceId = referenceId;
     return this;
   }
 
    /**
-   * Get _object
-   * @return _object
+   * custom reference id
+   * @return referenceId
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(JSON_PROPERTY_REFERENCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getObject() {
-    return _object;
+  public String getReferenceId() {
+    return referenceId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(JSON_PROPERTY_REFERENCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
-    this._object = _object;
+  public void setReferenceId(String referenceId) {
+    this.referenceId = referenceId;
   }
 
 
   /**
-   * Return true if this order_response_fiscal_entity_address_allOf object is equal to o.
+   * Return true if this charge_update_request object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -77,20 +77,20 @@ public class OrderResponseFiscalEntityAddressAllOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrderResponseFiscalEntityAddressAllOf orderResponseFiscalEntityAddressAllOf = (OrderResponseFiscalEntityAddressAllOf) o;
-    return Objects.equals(this._object, orderResponseFiscalEntityAddressAllOf._object);
+    ChargeUpdateRequest chargeUpdateRequest = (ChargeUpdateRequest) o;
+    return Objects.equals(this.referenceId, chargeUpdateRequest.referenceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(_object);
+    return Objects.hash(referenceId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrderResponseFiscalEntityAddressAllOf {\n");
-    sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
+    sb.append("class ChargeUpdateRequest {\n");
+    sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

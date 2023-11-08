@@ -23,6 +23,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
@@ -37,7 +39,8 @@ import com.conekta.JSON;
   CustomerShippingContacts.JSON_PROPERTY_ADDRESS,
   CustomerShippingContacts.JSON_PROPERTY_PARENT_ID,
   CustomerShippingContacts.JSON_PROPERTY_DEFAULT,
-  CustomerShippingContacts.JSON_PROPERTY_DELETED
+  CustomerShippingContacts.JSON_PROPERTY_DELETED,
+  CustomerShippingContacts.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("customer_shipping_contacts")
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
@@ -62,6 +65,9 @@ public class CustomerShippingContacts {
 
   public static final String JSON_PROPERTY_DELETED = "deleted";
   private Boolean deleted;
+
+  public static final String JSON_PROPERTY_METADATA = "metadata";
+  private Map<String, Object> metadata = new HashMap<>();
 
   public CustomerShippingContacts() { 
   }
@@ -241,6 +247,39 @@ public class CustomerShippingContacts {
   }
 
 
+  public CustomerShippingContacts metadata(Map<String, Object> metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+  public CustomerShippingContacts putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
+   /**
+   * Metadata associated with the shipping contact
+   * @return metadata
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Map<String, Object> getMetadata() {
+    return metadata;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMetadata(Map<String, Object> metadata) {
+    this.metadata = metadata;
+  }
+
+
   /**
    * Return true if this customer_shipping_contacts object is equal to o.
    */
@@ -259,12 +298,13 @@ public class CustomerShippingContacts {
         Objects.equals(this.address, customerShippingContacts.address) &&
         Objects.equals(this.parentId, customerShippingContacts.parentId) &&
         Objects.equals(this._default, customerShippingContacts._default) &&
-        Objects.equals(this.deleted, customerShippingContacts.deleted);
+        Objects.equals(this.deleted, customerShippingContacts.deleted) &&
+        Objects.equals(this.metadata, customerShippingContacts.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(phone, receiver, betweenStreets, address, parentId, _default, deleted);
+    return Objects.hash(phone, receiver, betweenStreets, address, parentId, _default, deleted, metadata);
   }
 
   @Override
@@ -278,6 +318,7 @@ public class CustomerShippingContacts {
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
     sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

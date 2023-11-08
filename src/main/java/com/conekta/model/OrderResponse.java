@@ -18,11 +18,11 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.ChargeResponseChannel;
+import com.conekta.model.OrderFiscalEntityResponse;
 import com.conekta.model.OrderResponseCharges;
 import com.conekta.model.OrderResponseCheckout;
 import com.conekta.model.OrderResponseCustomerInfo;
 import com.conekta.model.OrderResponseDiscountLines;
-import com.conekta.model.OrderResponseFiscalEntity;
 import com.conekta.model.OrderResponseProducts;
 import com.conekta.model.OrderResponseShippingContact;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -92,7 +92,7 @@ public class OrderResponse {
   private OrderResponseDiscountLines discountLines;
 
   public static final String JSON_PROPERTY_FISCAL_ENTITY = "fiscal_entity";
-  private OrderResponseFiscalEntity fiscalEntity;
+  private OrderFiscalEntityResponse fiscalEntity;
 
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -352,7 +352,7 @@ public class OrderResponse {
   }
 
 
-  public OrderResponse fiscalEntity(OrderResponseFiscalEntity fiscalEntity) {
+  public OrderResponse fiscalEntity(OrderFiscalEntityResponse fiscalEntity) {
     this.fiscalEntity = fiscalEntity;
     return this;
   }
@@ -365,14 +365,14 @@ public class OrderResponse {
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OrderResponseFiscalEntity getFiscalEntity() {
+  public OrderFiscalEntityResponse getFiscalEntity() {
     return fiscalEntity;
   }
 
 
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiscalEntity(OrderResponseFiscalEntity fiscalEntity) {
+  public void setFiscalEntity(OrderFiscalEntityResponse fiscalEntity) {
     this.fiscalEntity = fiscalEntity;
   }
 

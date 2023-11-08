@@ -1027,7 +1027,7 @@ paths:
       - Api Keys
       x-content-type: application/json
       x-accepts: application/vnd.conekta-v2.1.0+json
-  /balances:
+  /balance:
     get:
       description: Get a company's balance
       operationId: getBalance
@@ -1243,6 +1243,130 @@ paths:
       summary: Get A List of Charges
       tags:
       - Charges
+      x-accepts: application/vnd.conekta-v2.1.0+json
+  /charges/{id}:
+    put:
+      operationId: updateCharge
+      parameters:
+      - description: Identifier of the resource
+        example: 6307a60c41de27127515a575
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/charge_update'
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              schema:
+                $ref: '#/components/schemas/charge_response'
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+            Content-Type:
+              description: The format of the response body
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+            Content-Length:
+              description: The length of the response body in bytes
+              schema:
+                example: "2737"
+                type: string
+            Connection:
+              description: The type of connection used to transfer the response
+              schema:
+                example: keep-alive
+                type: string
+            Conekta-Media-Type:
+              schema:
+                example: conekta-v2.1.0; format=application/json
+                type: string
+        "422":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: The "custom_field" parameter is not allowed
+                  message: El parametro "custom_field" no está permitido
+                  code: conekta.errors.parameter_validation.whitelist
+                object: error
+                type: parameter_validation_error
+                log_id: 6462aa7c90fef20001633546
+              schema:
+                $ref: '#/components/schemas/error'
+          description: whitelist validation error
+        "404":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  param: null
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.1.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  param: null
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: '#/components/schemas/error'
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Update a charge
+      tags:
+      - Charges
+      x-content-type: application/json
       x-accepts: application/vnd.conekta-v2.1.0+json
   /orders/{id}/charges:
     post:
@@ -10719,6 +10843,22 @@ components:
           phone: "5522997233"
           corporate: false
           object: customer_info
+        fiscal_entity:
+          tax_id: "1234567890"
+          name: Conekta Inc
+          email: test@gmail.com
+          phone: "525511223344"
+          metadata:
+            test: true
+            company_id: "123"
+          address:
+            street1: Nuevo Leon 254
+            street2: Departamento 404
+            postal_code: "06100"
+            city: Ciudad de Mexico
+            state: Ciudad de Mexico
+            country: MX
+            external_number: "123"
         discount_lines:
         - amount: 500
           code: "123"
@@ -10741,17 +10881,19 @@ components:
             additionalProp2: string
             additionalProp3: string
         metadata:
-          additionalProp1: string
-          additionalProp2: string
-          additionalProp3: string
+          test: true
+          company_id: "123"
         pre_authorize: false
         shipping_contact:
           phone: "525511223344"
           receiver: Marvin Fuller
           between_streets: Ackerman Crescent
+          metadata:
+            test: true
+            company_id: "123"
           address:
-            street1: avenida siempre viva
-            street2: fake street
+            street1: Nuevo Leon 254
+            street2: Departamento 404
             postal_code: "06100"
             city: Ciudad de Mexico
             state: Ciudad de Mexico
@@ -10827,8 +10969,8 @@ components:
           receiver: Marvin Fuller
           between_streets: Ackerman Crescent
           address:
-            street1: avenida siempre viva
-            street2: fake street
+            street1: Nuevo Leon 254
+            street2: Departamento 404
             postal_code: "06100"
             city: Ciudad de Mexico
             state: Ciudad de Mexico
@@ -11091,6 +11233,13 @@ components:
           schema:
             $ref: '#/components/schemas/api_key_request'
       description: requested field for a api keys
+      required: true
+    charge_update:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/charge_update_request'
+      description: requested field for update a charge
       required: true
     charge_create:
       content:
@@ -11458,7 +11607,7 @@ components:
       properties:
         description:
           description: Description of the rule
-          example: this client's email was verified at 20/09/22 by internal process
+          example: this client email was verified at 20/09/22 by internal process
           type: string
         field:
           description: Field to be used for the rule
@@ -11821,12 +11970,16 @@ components:
         antifraud_info:
           $ref: '#/components/schemas/customer_antifraud_info_response'
         corporate:
+          description: true if the customer is a company
           type: boolean
         created_at:
+          description: Creation date of the object
           example: 1485151007
           format: int64
           type: integer
         custom_reference:
+          description: Custom reference
+          example: custom_reference
           type: string
         default_fiscal_entity_id:
           example: fis_ent_2tKqqAfqPi21oCmEJ
@@ -11846,20 +11999,29 @@ components:
         fiscal_entities:
           $ref: '#/components/schemas/customer_fiscal_entities_response'
         id:
+          description: Customer's ID
           example: cus_2tHJfJ79KyUwpxTik
           type: string
         livemode:
+          description: true if the object exists in live mode or the value false if
+            the object exists in test mode
           example: true
           type: boolean
         name:
+          description: Customer's name
           example: Felipe
           type: string
+        metadata:
+          additionalProperties: true
+          maxProperties: 100
+          type: object
         object:
           example: customer
           type: string
         payment_sources:
           $ref: '#/components/schemas/customer_payment_methods_response'
         phone:
+          description: Customer's phone number
           example: +5215555555555
           type: string
         shipping_contacts:
@@ -11870,6 +12032,7 @@ components:
       - created_at
       - id
       - livemode
+      - name
       - object
       title: customer response
       type: object
@@ -12157,7 +12320,7 @@ components:
         discount_lines:
           $ref: '#/components/schemas/order_response_discount_lines'
         fiscal_entity:
-          $ref: '#/components/schemas/order_response_fiscal_entity'
+          $ref: '#/components/schemas/order_fiscal_entity_response'
         id:
           example: ord_2tMtQQpDvfnNjiuFG
           type: string
@@ -12397,6 +12560,11 @@ components:
           example: 1675715413
           format: int64
           type: integer
+        metadata:
+          additionalProperties: true
+          description: Metadata associated with the shipping contact
+          maxProperties: 100
+          type: object
         object:
           example: shipping_contact
           type: string
@@ -12843,16 +13011,20 @@ components:
       - role
       title: api_keys_request
       type: object
+    charge_update_request:
+      description: requested field for update a charge
+      properties:
+        reference_id:
+          description: custom reference id
+          example: "278482642"
+          type: string
+      title: charge_update_request
+      type: object
     charge_request:
       description: The charges to be made
       properties:
         amount:
           example: 40000
-          type: integer
-        monthly_installments:
-          description: "How many months without interest to apply, it can be 3, 6,\
-            \ 9, 12 or 18"
-          format: int8
           type: integer
         payment_method:
           $ref: '#/components/schemas/charge_request_payment_method'
@@ -13087,6 +13259,8 @@ components:
           items:
             $ref: '#/components/schemas/order_discount_lines_request'
           type: array
+        fiscal_entity:
+          $ref: '#/components/schemas/order_fiscal_entity_request'
         line_items:
           description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct)\
             \ that are sold in the order. You must have at least one product."
@@ -13154,6 +13328,8 @@ components:
           items:
             $ref: '#/components/schemas/order_discount_lines_request'
           type: array
+        fiscal_entity:
+          $ref: '#/components/schemas/order_update_fiscal_entity_request'
         line_items:
           description: "List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct)\
             \ that are sold in the order. You must have at least one product."
@@ -13516,6 +13692,11 @@ components:
         deleted:
           nullable: true
           type: boolean
+        metadata:
+          additionalProperties: true
+          description: Metadata associated with the shipping contact
+          maxProperties: 100
+          type: object
       required:
       - address
       title: customer_shipping_contacts_request
@@ -13673,7 +13854,7 @@ components:
             or asynchronous. We recommend asynchronous = false
           example: false
           type: boolean
-        subscribed_events:
+        events:
           example: customer.created
           items:
             type: string
@@ -13780,10 +13961,10 @@ components:
     customer_address:
       properties:
         street1:
-          example: avenida siempre viva
+          example: Nuevo Leon 254
           type: string
         street2:
-          example: fake street
+          example: Departamento 404
           type: string
         postal_code:
           example: "06100"
@@ -13808,8 +13989,13 @@ components:
       - postal_code
       - street1
       type: object
-    customer_info_response:
+    order_customer_info_response:
       properties:
+        customer_custom_reference:
+          description: Custom reference
+          example: custom_reference
+          nullable: true
+          type: string
         name:
           example: DevTest
           type: string
@@ -13826,7 +14012,7 @@ components:
         object:
           example: customer_info
           type: string
-      title: customer_info
+      title: order_customer_info_response
       type: object
     customer_info_just_customer_id_response:
       properties:
@@ -13834,6 +14020,46 @@ components:
           example: cus_23874283647
           type: string
       title: customer_info_response
+      type: object
+    fiscal_entity_address:
+      description: Address of the fiscal entity
+      properties:
+        street1:
+          description: Street name and number
+          example: Nuevo Leon 254
+          type: string
+        street2:
+          description: Street name and number
+          example: Departamento 404
+          nullable: true
+          type: string
+        postal_code:
+          description: Postal code
+          example: "06100"
+          type: string
+        city:
+          description: City
+          example: Ciudad de Mexico
+          type: string
+        state:
+          description: State
+          example: Ciudad de Mexico
+          type: string
+        country:
+          description: "this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)"
+          example: MX
+          type: string
+        external_number:
+          description: External number
+          example: "123"
+          type: string
+      required:
+      - city
+      - country
+      - external_number
+      - postal_code
+      - street1
+      title: order_fiscal_entity_address_request
       type: object
     payment_method_response:
       properties:
@@ -14995,7 +15221,7 @@ components:
     order_response_customer_info:
       allOf:
       - $ref: '#/components/schemas/order_response_customer_info_allOf'
-      - $ref: '#/components/schemas/customer_info_response'
+      - $ref: '#/components/schemas/order_customer_info_response'
       - $ref: '#/components/schemas/customer_info_just_customer_id_response'
     discount_lines_data_response:
       allOf:
@@ -15012,29 +15238,69 @@ components:
       allOf:
       - $ref: '#/components/schemas/pagination'
       - $ref: '#/components/schemas/order_response_discount_lines_allOf'
-    order_response_fiscal_entity_address_allOf:
+    order_fiscal_entity_address_response_allOf:
       properties:
         object:
           example: fiscal_entity_address
           type: string
       type: object
-    order_response_fiscal_entity_address:
+    order_fiscal_entity_address_response:
       allOf:
-      - $ref: '#/components/schemas/customer_address'
-      - $ref: '#/components/schemas/order_response_fiscal_entity_address_allOf'
-    order_response_fiscal_entity:
+      - $ref: '#/components/schemas/fiscal_entity_address'
+      - $ref: '#/components/schemas/order_fiscal_entity_address_response_allOf'
+      description: Address of the fiscal entity
+      title: order_fiscal_entity_address_response
+    order_fiscal_entity_response:
+      description: "Fiscal entity of the order, Currently it is a purely informative\
+        \ field"
+      nullable: true
       properties:
         address:
-          $ref: '#/components/schemas/order_response_fiscal_entity_address'
+          $ref: '#/components/schemas/order_fiscal_entity_address_response'
+        email:
+          description: Email of the fiscal entity
+          example: test@gmail.com
+          nullable: true
+          type: string
+        metadata:
+          additionalProperties: true
+          description: Metadata associated with the fiscal entity
+          maxProperties: 100
+          type: object
+        name:
+          description: Name of the fiscal entity
+          example: Conekta Inc
+          nullable: true
+          type: string
         tax_id:
+          description: Tax ID of the fiscal entity
           example: "324234234"
+          nullable: true
           type: string
         id:
+          description: ID of the fiscal entity
           example: fis_ent_2tN85VYaSMyDvjB3M
           type: string
+        created_at:
+          description: The time at which the object was created in seconds since the
+            Unix epoch
+          example: 1676328434
+          format: int64
+          type: integer
         object:
           example: fiscal_entity
           type: string
+        phone:
+          description: Phone of the fiscal entity
+          example: +525511223344
+          nullable: true
+          type: string
+      required:
+      - address
+      - created_at
+      - id
+      - object
+      title: order_fiscal_entity_response
       type: object
     product_data_response_allOf:
       properties:
@@ -15158,10 +15424,10 @@ components:
           example: shipping_address
           type: string
         street1:
-          example: avenida siempre viva
+          example: Nuevo Leon 254
           type: string
         street2:
-          example: fake street
+          example: Departamento 404
           type: string
         postal_code:
           example: "06100"
@@ -15376,6 +15642,11 @@ components:
           example: 1677196303
           format: int64
           type: integer
+        monthly_installments:
+          description: "How many months without interest to apply, it can be 3, 6,\
+            \ 9, 12 or 18"
+          format: int8
+          type: integer
         type:
           example: card
           type: string
@@ -15429,10 +15700,76 @@ components:
       oneOf:
       - $ref: '#/components/schemas/customer_info'
       - $ref: '#/components/schemas/customer_info_just_customer_id'
+    order_fiscal_entity_request:
+      description: "Fiscal entity of the order, Currently it is a purely informative\
+        \ field"
+      properties:
+        address:
+          $ref: '#/components/schemas/fiscal_entity_address'
+        email:
+          description: Email of the fiscal entity
+          example: test@gmail.com
+          type: string
+        metadata:
+          additionalProperties: true
+          description: Metadata associated with the fiscal entity
+          maxProperties: 100
+          type: object
+        name:
+          description: Name of the fiscal entity
+          example: Conekta Inc
+          nullable: true
+          type: string
+        phone:
+          description: Phone of the fiscal entity
+          example: +525511223344
+          type: string
+        tax_id:
+          description: Tax ID of the fiscal entity
+          example: AAA010101AAA
+          nullable: true
+          type: string
+      required:
+      - address
+      title: order_fiscal_entity_request
+      type: object
     order_update_request_customer_info:
       oneOf:
       - $ref: '#/components/schemas/customer_info'
       - $ref: '#/components/schemas/customer_info_just_customer_id'
+    order_update_fiscal_entity_request:
+      description: "Fiscal entity of the order, Currently it is a purely informative\
+        \ field"
+      properties:
+        address:
+          $ref: '#/components/schemas/fiscal_entity_address'
+        email:
+          description: Email of the fiscal entity
+          example: test@gmail.com
+          type: string
+        name:
+          description: Name of the fiscal entity
+          example: Conekta Inc
+          nullable: true
+          type: string
+        metadata:
+          additionalProperties: true
+          description: Metadata associated with the fiscal entity
+          maxProperties: 100
+          type: object
+        phone:
+          description: Phone of the fiscal entity
+          example: +525511223344
+          type: string
+        tax_id:
+          description: Tax ID of the fiscal entity
+          example: AAA010101AAA
+          nullable: true
+          type: string
+      required:
+      - address
+      title: order_update_fiscal_entity_request
+      type: object
     checkout_order_template_customer_info:
       description: It is the information of the customer who will be created when
         receiving a new payment.
@@ -15493,10 +15830,10 @@ components:
       description: Address of the person who will receive the order
       properties:
         street1:
-          example: avenida siempre viva
+          example: Nuevo Leon 254
           type: string
         street2:
-          example: fake street
+          example: Departamento 404
           type: string
         postal_code:
           example: "06100"

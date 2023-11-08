@@ -22,6 +22,7 @@ import com.conekta.model.CheckoutRequest;
 import com.conekta.model.CustomerShippingContacts;
 import com.conekta.model.OrderDiscountLinesRequest;
 import com.conekta.model.OrderTaxRequest;
+import com.conekta.model.OrderUpdateFiscalEntityRequest;
 import com.conekta.model.OrderUpdateRequestCustomerInfo;
 import com.conekta.model.Product;
 import com.conekta.model.ShippingRequest;
@@ -47,6 +48,7 @@ import com.conekta.JSON;
   OrderUpdateRequest.JSON_PROPERTY_CURRENCY,
   OrderUpdateRequest.JSON_PROPERTY_CUSTOMER_INFO,
   OrderUpdateRequest.JSON_PROPERTY_DISCOUNT_LINES,
+  OrderUpdateRequest.JSON_PROPERTY_FISCAL_ENTITY,
   OrderUpdateRequest.JSON_PROPERTY_LINE_ITEMS,
   OrderUpdateRequest.JSON_PROPERTY_METADATA,
   OrderUpdateRequest.JSON_PROPERTY_PRE_AUTHORIZE,
@@ -71,6 +73,9 @@ public class OrderUpdateRequest {
 
   public static final String JSON_PROPERTY_DISCOUNT_LINES = "discount_lines";
   private List<OrderDiscountLinesRequest> discountLines;
+
+  public static final String JSON_PROPERTY_FISCAL_ENTITY = "fiscal_entity";
+  private OrderUpdateFiscalEntityRequest fiscalEntity;
 
   public static final String JSON_PROPERTY_LINE_ITEMS = "line_items";
   private List<Product> lineItems;
@@ -231,6 +236,31 @@ public class OrderUpdateRequest {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscountLines(List<OrderDiscountLinesRequest> discountLines) {
     this.discountLines = discountLines;
+  }
+
+
+  public OrderUpdateRequest fiscalEntity(OrderUpdateFiscalEntityRequest fiscalEntity) {
+    this.fiscalEntity = fiscalEntity;
+    return this;
+  }
+
+   /**
+   * Get fiscalEntity
+   * @return fiscalEntity
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_FISCAL_ENTITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public OrderUpdateFiscalEntityRequest getFiscalEntity() {
+    return fiscalEntity;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FISCAL_ENTITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFiscalEntity(OrderUpdateFiscalEntityRequest fiscalEntity) {
+    this.fiscalEntity = fiscalEntity;
   }
 
 
@@ -433,6 +463,7 @@ public class OrderUpdateRequest {
         Objects.equals(this.currency, orderUpdateRequest.currency) &&
         Objects.equals(this.customerInfo, orderUpdateRequest.customerInfo) &&
         Objects.equals(this.discountLines, orderUpdateRequest.discountLines) &&
+        Objects.equals(this.fiscalEntity, orderUpdateRequest.fiscalEntity) &&
         Objects.equals(this.lineItems, orderUpdateRequest.lineItems) &&
         Objects.equals(this.metadata, orderUpdateRequest.metadata) &&
         Objects.equals(this.preAuthorize, orderUpdateRequest.preAuthorize) &&
@@ -443,7 +474,7 @@ public class OrderUpdateRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(charges, checkout, currency, customerInfo, discountLines, lineItems, metadata, preAuthorize, shippingContact, shippingLines, taxLines);
+    return Objects.hash(charges, checkout, currency, customerInfo, discountLines, fiscalEntity, lineItems, metadata, preAuthorize, shippingContact, shippingLines, taxLines);
   }
 
   @Override
@@ -455,6 +486,7 @@ public class OrderUpdateRequest {
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    customerInfo: ").append(toIndentedString(customerInfo)).append("\n");
     sb.append("    discountLines: ").append(toIndentedString(discountLines)).append("\n");
+    sb.append("    fiscalEntity: ").append(toIndentedString(fiscalEntity)).append("\n");
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    preAuthorize: ").append(toIndentedString(preAuthorize)).append("\n");

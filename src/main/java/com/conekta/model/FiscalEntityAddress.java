@@ -27,22 +27,20 @@ import com.conekta.JSON;
 
 
 /**
- * OrderResponseFiscalEntityAddress
+ * Address of the fiscal entity
  */
 @JsonPropertyOrder({
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_STREET1,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_STREET2,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_POSTAL_CODE,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_CITY,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_STATE,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_COUNTRY,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_RESIDENTIAL,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_EXTERNAL_NUMBER,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_OBJECT
+  FiscalEntityAddress.JSON_PROPERTY_STREET1,
+  FiscalEntityAddress.JSON_PROPERTY_STREET2,
+  FiscalEntityAddress.JSON_PROPERTY_POSTAL_CODE,
+  FiscalEntityAddress.JSON_PROPERTY_CITY,
+  FiscalEntityAddress.JSON_PROPERTY_STATE,
+  FiscalEntityAddress.JSON_PROPERTY_COUNTRY,
+  FiscalEntityAddress.JSON_PROPERTY_EXTERNAL_NUMBER
 })
-@JsonTypeName("order_response_fiscal_entity_address")
+@JsonTypeName("fiscal_entity_address")
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class OrderResponseFiscalEntityAddress {
+public class FiscalEntityAddress {
   public static final String JSON_PROPERTY_STREET1 = "street1";
   private String street1;
 
@@ -61,25 +59,19 @@ public class OrderResponseFiscalEntityAddress {
   public static final String JSON_PROPERTY_COUNTRY = "country";
   private String country;
 
-  public static final String JSON_PROPERTY_RESIDENTIAL = "residential";
-  private Boolean residential;
-
   public static final String JSON_PROPERTY_EXTERNAL_NUMBER = "external_number";
   private String externalNumber;
 
-  public static final String JSON_PROPERTY_OBJECT = "object";
-  private String _object;
-
-  public OrderResponseFiscalEntityAddress() { 
+  public FiscalEntityAddress() { 
   }
 
-  public OrderResponseFiscalEntityAddress street1(String street1) {
+  public FiscalEntityAddress street1(String street1) {
     this.street1 = street1;
     return this;
   }
 
    /**
-   * Get street1
+   * Street name and number
    * @return street1
   **/
   @jakarta.annotation.Nonnull
@@ -98,13 +90,13 @@ public class OrderResponseFiscalEntityAddress {
   }
 
 
-  public OrderResponseFiscalEntityAddress street2(String street2) {
+  public FiscalEntityAddress street2(String street2) {
     this.street2 = street2;
     return this;
   }
 
    /**
-   * Get street2
+   * Street name and number
    * @return street2
   **/
   @jakarta.annotation.Nullable
@@ -123,13 +115,13 @@ public class OrderResponseFiscalEntityAddress {
   }
 
 
-  public OrderResponseFiscalEntityAddress postalCode(String postalCode) {
+  public FiscalEntityAddress postalCode(String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
 
    /**
-   * Get postalCode
+   * Postal code
    * @return postalCode
   **/
   @jakarta.annotation.Nonnull
@@ -148,13 +140,13 @@ public class OrderResponseFiscalEntityAddress {
   }
 
 
-  public OrderResponseFiscalEntityAddress city(String city) {
+  public FiscalEntityAddress city(String city) {
     this.city = city;
     return this;
   }
 
    /**
-   * Get city
+   * City
    * @return city
   **/
   @jakarta.annotation.Nonnull
@@ -173,13 +165,13 @@ public class OrderResponseFiscalEntityAddress {
   }
 
 
-  public OrderResponseFiscalEntityAddress state(String state) {
+  public FiscalEntityAddress state(String state) {
     this.state = state;
     return this;
   }
 
    /**
-   * Get state
+   * State
    * @return state
   **/
   @jakarta.annotation.Nullable
@@ -198,7 +190,7 @@ public class OrderResponseFiscalEntityAddress {
   }
 
 
-  public OrderResponseFiscalEntityAddress country(String country) {
+  public FiscalEntityAddress country(String country) {
     this.country = country;
     return this;
   }
@@ -207,9 +199,9 @@ public class OrderResponseFiscalEntityAddress {
    * this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
    * @return country
   **/
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_COUNTRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCountry() {
     return country;
@@ -217,49 +209,24 @@ public class OrderResponseFiscalEntityAddress {
 
 
   @JsonProperty(JSON_PROPERTY_COUNTRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCountry(String country) {
     this.country = country;
   }
 
 
-  public OrderResponseFiscalEntityAddress residential(Boolean residential) {
-    this.residential = residential;
-    return this;
-  }
-
-   /**
-   * Get residential
-   * @return residential
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RESIDENTIAL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getResidential() {
-    return residential;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_RESIDENTIAL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setResidential(Boolean residential) {
-    this.residential = residential;
-  }
-
-
-  public OrderResponseFiscalEntityAddress externalNumber(String externalNumber) {
+  public FiscalEntityAddress externalNumber(String externalNumber) {
     this.externalNumber = externalNumber;
     return this;
   }
 
    /**
-   * Get externalNumber
+   * External number
    * @return externalNumber
   **/
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_EXTERNAL_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getExternalNumber() {
     return externalNumber;
@@ -267,39 +234,14 @@ public class OrderResponseFiscalEntityAddress {
 
 
   @JsonProperty(JSON_PROPERTY_EXTERNAL_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setExternalNumber(String externalNumber) {
     this.externalNumber = externalNumber;
   }
 
 
-  public OrderResponseFiscalEntityAddress _object(String _object) {
-    this._object = _object;
-    return this;
-  }
-
-   /**
-   * Get _object
-   * @return _object
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getObject() {
-    return _object;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
-    this._object = _object;
-  }
-
-
   /**
-   * Return true if this order_response_fiscal_entity_address object is equal to o.
+   * Return true if this fiscal_entity_address object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -309,36 +251,32 @@ public class OrderResponseFiscalEntityAddress {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrderResponseFiscalEntityAddress orderResponseFiscalEntityAddress = (OrderResponseFiscalEntityAddress) o;
-    return Objects.equals(this.street1, orderResponseFiscalEntityAddress.street1) &&
-        Objects.equals(this.street2, orderResponseFiscalEntityAddress.street2) &&
-        Objects.equals(this.postalCode, orderResponseFiscalEntityAddress.postalCode) &&
-        Objects.equals(this.city, orderResponseFiscalEntityAddress.city) &&
-        Objects.equals(this.state, orderResponseFiscalEntityAddress.state) &&
-        Objects.equals(this.country, orderResponseFiscalEntityAddress.country) &&
-        Objects.equals(this.residential, orderResponseFiscalEntityAddress.residential) &&
-        Objects.equals(this.externalNumber, orderResponseFiscalEntityAddress.externalNumber) &&
-        Objects.equals(this._object, orderResponseFiscalEntityAddress._object);
+    FiscalEntityAddress fiscalEntityAddress = (FiscalEntityAddress) o;
+    return Objects.equals(this.street1, fiscalEntityAddress.street1) &&
+        Objects.equals(this.street2, fiscalEntityAddress.street2) &&
+        Objects.equals(this.postalCode, fiscalEntityAddress.postalCode) &&
+        Objects.equals(this.city, fiscalEntityAddress.city) &&
+        Objects.equals(this.state, fiscalEntityAddress.state) &&
+        Objects.equals(this.country, fiscalEntityAddress.country) &&
+        Objects.equals(this.externalNumber, fiscalEntityAddress.externalNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(street1, street2, postalCode, city, state, country, residential, externalNumber, _object);
+    return Objects.hash(street1, street2, postalCode, city, state, country, externalNumber);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrderResponseFiscalEntityAddress {\n");
+    sb.append("class FiscalEntityAddress {\n");
     sb.append("    street1: ").append(toIndentedString(street1)).append("\n");
     sb.append("    street2: ").append(toIndentedString(street2)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    residential: ").append(toIndentedString(residential)).append("\n");
     sb.append("    externalNumber: ").append(toIndentedString(externalNumber)).append("\n");
-    sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("}");
     return sb.toString();
   }

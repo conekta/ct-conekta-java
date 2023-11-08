@@ -23,6 +23,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
@@ -39,6 +41,7 @@ import com.conekta.JSON;
   CustomerShippingContactsResponse.JSON_PROPERTY_DEFAULT,
   CustomerShippingContactsResponse.JSON_PROPERTY_ID,
   CustomerShippingContactsResponse.JSON_PROPERTY_CREATED_AT,
+  CustomerShippingContactsResponse.JSON_PROPERTY_METADATA,
   CustomerShippingContactsResponse.JSON_PROPERTY_OBJECT,
   CustomerShippingContactsResponse.JSON_PROPERTY_DELETED
 })
@@ -68,6 +71,9 @@ public class CustomerShippingContactsResponse {
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private Long createdAt;
+
+  public static final String JSON_PROPERTY_METADATA = "metadata";
+  private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;
@@ -278,6 +284,39 @@ public class CustomerShippingContactsResponse {
   }
 
 
+  public CustomerShippingContactsResponse metadata(Map<String, Object> metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+  public CustomerShippingContactsResponse putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
+   /**
+   * Metadata associated with the shipping contact
+   * @return metadata
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Map<String, Object> getMetadata() {
+    return metadata;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMetadata(Map<String, Object> metadata) {
+    this.metadata = metadata;
+  }
+
+
   public CustomerShippingContactsResponse _object(String _object) {
     this._object = _object;
     return this;
@@ -348,13 +387,14 @@ public class CustomerShippingContactsResponse {
         Objects.equals(this._default, customerShippingContactsResponse._default) &&
         Objects.equals(this.id, customerShippingContactsResponse.id) &&
         Objects.equals(this.createdAt, customerShippingContactsResponse.createdAt) &&
+        Objects.equals(this.metadata, customerShippingContactsResponse.metadata) &&
         Objects.equals(this._object, customerShippingContactsResponse._object) &&
         Objects.equals(this.deleted, customerShippingContactsResponse.deleted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(phone, receiver, betweenStreets, address, parentId, _default, id, createdAt, _object, deleted);
+    return Objects.hash(phone, receiver, betweenStreets, address, parentId, _default, id, createdAt, metadata, _object, deleted);
   }
 
   @Override
@@ -369,6 +409,7 @@ public class CustomerShippingContactsResponse {
     sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("}");

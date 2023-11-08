@@ -130,9 +130,10 @@ Class | Method | HTTP request | Description
 *ApiKeysApi* | [**getApiKey**](docs/ApiKeysApi.md#getApiKey) | **GET** /api_keys/{id} | Get Api Key
 *ApiKeysApi* | [**getApiKeys**](docs/ApiKeysApi.md#getApiKeys) | **GET** /api_keys | Get list of Api Keys
 *ApiKeysApi* | [**updateApiKey**](docs/ApiKeysApi.md#updateApiKey) | **PUT** /api_keys/{id} | Update Api Key
-*BalancesApi* | [**getBalance**](docs/BalancesApi.md#getBalance) | **GET** /balances | Get a company&#39;s balance
+*BalancesApi* | [**getBalance**](docs/BalancesApi.md#getBalance) | **GET** /balance | Get a company&#39;s balance
 *ChargesApi* | [**getCharges**](docs/ChargesApi.md#getCharges) | **GET** /charges | Get A List of Charges
 *ChargesApi* | [**ordersCreateCharge**](docs/ChargesApi.md#ordersCreateCharge) | **POST** /orders/{id}/charges | Create charge
+*ChargesApi* | [**updateCharge**](docs/ChargesApi.md#updateCharge) | **PUT** /charges/{id} | Update a charge
 *CompaniesApi* | [**getCompanies**](docs/CompaniesApi.md#getCompanies) | **GET** /companies | Get List of Companies
 *CompaniesApi* | [**getCompany**](docs/CompaniesApi.md#getCompany) | **GET** /companies/{id} | Get Company
 *CustomersApi* | [**createCustomer**](docs/CustomersApi.md#createCustomer) | **POST** /customers | Create customer
@@ -236,6 +237,7 @@ Class | Method | HTTP request | Description
  - [ChargeResponseRefunds](docs/ChargeResponseRefunds.md)
  - [ChargeResponseRefundsAllOf](docs/ChargeResponseRefundsAllOf.md)
  - [ChargeResponseRefundsData](docs/ChargeResponseRefundsData.md)
+ - [ChargeUpdateRequest](docs/ChargeUpdateRequest.md)
  - [ChargesDataResponse](docs/ChargesDataResponse.md)
  - [Checkout](docs/Checkout.md)
  - [CheckoutOrderTemplate](docs/CheckoutOrderTemplate.md)
@@ -265,7 +267,6 @@ Class | Method | HTTP request | Description
  - [CustomerInfo](docs/CustomerInfo.md)
  - [CustomerInfoJustCustomerId](docs/CustomerInfoJustCustomerId.md)
  - [CustomerInfoJustCustomerIdResponse](docs/CustomerInfoJustCustomerIdResponse.md)
- - [CustomerInfoResponse](docs/CustomerInfoResponse.md)
  - [CustomerPaymentMethodRequest](docs/CustomerPaymentMethodRequest.md)
  - [CustomerPaymentMethods](docs/CustomerPaymentMethods.md)
  - [CustomerPaymentMethodsData](docs/CustomerPaymentMethodsData.md)
@@ -298,6 +299,7 @@ Class | Method | HTTP request | Description
  - [ErrorAllOf](docs/ErrorAllOf.md)
  - [EventResponse](docs/EventResponse.md)
  - [EventsResendResponse](docs/EventsResendResponse.md)
+ - [FiscalEntityAddress](docs/FiscalEntityAddress.md)
  - [GetApiKeysResponse](docs/GetApiKeysResponse.md)
  - [GetApiKeysResponseAllOf](docs/GetApiKeysResponseAllOf.md)
  - [GetChargesResponse](docs/GetChargesResponse.md)
@@ -326,7 +328,12 @@ Class | Method | HTTP request | Description
  - [LogsResponse](docs/LogsResponse.md)
  - [LogsResponseData](docs/LogsResponseData.md)
  - [OrderCaptureRequest](docs/OrderCaptureRequest.md)
+ - [OrderCustomerInfoResponse](docs/OrderCustomerInfoResponse.md)
  - [OrderDiscountLinesRequest](docs/OrderDiscountLinesRequest.md)
+ - [OrderFiscalEntityAddressResponse](docs/OrderFiscalEntityAddressResponse.md)
+ - [OrderFiscalEntityAddressResponseAllOf](docs/OrderFiscalEntityAddressResponseAllOf.md)
+ - [OrderFiscalEntityRequest](docs/OrderFiscalEntityRequest.md)
+ - [OrderFiscalEntityResponse](docs/OrderFiscalEntityResponse.md)
  - [OrderRefundRequest](docs/OrderRefundRequest.md)
  - [OrderRequest](docs/OrderRequest.md)
  - [OrderRequestCustomerInfo](docs/OrderRequestCustomerInfo.md)
@@ -338,14 +345,12 @@ Class | Method | HTTP request | Description
  - [OrderResponseCustomerInfoAllOf](docs/OrderResponseCustomerInfoAllOf.md)
  - [OrderResponseDiscountLines](docs/OrderResponseDiscountLines.md)
  - [OrderResponseDiscountLinesAllOf](docs/OrderResponseDiscountLinesAllOf.md)
- - [OrderResponseFiscalEntity](docs/OrderResponseFiscalEntity.md)
- - [OrderResponseFiscalEntityAddress](docs/OrderResponseFiscalEntityAddress.md)
- - [OrderResponseFiscalEntityAddressAllOf](docs/OrderResponseFiscalEntityAddressAllOf.md)
  - [OrderResponseProducts](docs/OrderResponseProducts.md)
  - [OrderResponseProductsAllOf](docs/OrderResponseProductsAllOf.md)
  - [OrderResponseShippingContact](docs/OrderResponseShippingContact.md)
  - [OrderResponseShippingContactAllOf](docs/OrderResponseShippingContactAllOf.md)
  - [OrderTaxRequest](docs/OrderTaxRequest.md)
+ - [OrderUpdateFiscalEntityRequest](docs/OrderUpdateFiscalEntityRequest.md)
  - [OrderUpdateRequest](docs/OrderUpdateRequest.md)
  - [OrderUpdateRequestCustomerInfo](docs/OrderUpdateRequestCustomerInfo.md)
  - [OrdersResponse](docs/OrdersResponse.md)

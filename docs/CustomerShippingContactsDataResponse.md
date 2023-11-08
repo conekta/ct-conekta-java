@@ -14,6 +14,7 @@
 |**parentId** | **String** |  |  [optional] |
 |**_default** | **Boolean** |  |  [optional] |
 |**deleted** | **Boolean** |  |  [optional] |
+|**metadata** | **Map&lt;String, Object&gt;** | Metadata associated with the shipping contact |  [optional] |
 |**id** | **String** |  |  |
 |**_object** | **String** |  |  |
 |**createdAt** | **Long** |  |  |

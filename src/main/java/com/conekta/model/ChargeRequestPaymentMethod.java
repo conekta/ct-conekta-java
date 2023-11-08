@@ -31,6 +31,7 @@ import com.conekta.JSON;
  */
 @JsonPropertyOrder({
   ChargeRequestPaymentMethod.JSON_PROPERTY_EXPIRES_AT,
+  ChargeRequestPaymentMethod.JSON_PROPERTY_MONTHLY_INSTALLMENTS,
   ChargeRequestPaymentMethod.JSON_PROPERTY_TYPE,
   ChargeRequestPaymentMethod.JSON_PROPERTY_TOKEN_ID,
   ChargeRequestPaymentMethod.JSON_PROPERTY_PAYMENT_SOURCE_ID,
@@ -41,6 +42,9 @@ import com.conekta.JSON;
 public class ChargeRequestPaymentMethod {
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
   private Long expiresAt;
+
+  public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS = "monthly_installments";
+  private Integer monthlyInstallments;
 
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -79,6 +83,31 @@ public class ChargeRequestPaymentMethod {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExpiresAt(Long expiresAt) {
     this.expiresAt = expiresAt;
+  }
+
+
+  public ChargeRequestPaymentMethod monthlyInstallments(Integer monthlyInstallments) {
+    this.monthlyInstallments = monthlyInstallments;
+    return this;
+  }
+
+   /**
+   * How many months without interest to apply, it can be 3, 6, 9, 12 or 18
+   * @return monthlyInstallments
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getMonthlyInstallments() {
+    return monthlyInstallments;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMonthlyInstallments(Integer monthlyInstallments) {
+    this.monthlyInstallments = monthlyInstallments;
   }
 
 
@@ -195,6 +224,7 @@ public class ChargeRequestPaymentMethod {
     }
     ChargeRequestPaymentMethod chargeRequestPaymentMethod = (ChargeRequestPaymentMethod) o;
     return Objects.equals(this.expiresAt, chargeRequestPaymentMethod.expiresAt) &&
+        Objects.equals(this.monthlyInstallments, chargeRequestPaymentMethod.monthlyInstallments) &&
         Objects.equals(this.type, chargeRequestPaymentMethod.type) &&
         Objects.equals(this.tokenId, chargeRequestPaymentMethod.tokenId) &&
         Objects.equals(this.paymentSourceId, chargeRequestPaymentMethod.paymentSourceId) &&
@@ -203,7 +233,7 @@ public class ChargeRequestPaymentMethod {
 
   @Override
   public int hashCode() {
-    return Objects.hash(expiresAt, type, tokenId, paymentSourceId, contractId);
+    return Objects.hash(expiresAt, monthlyInstallments, type, tokenId, paymentSourceId, contractId);
   }
 
   @Override
@@ -211,6 +241,7 @@ public class ChargeRequestPaymentMethod {
     StringBuilder sb = new StringBuilder();
     sb.append("class ChargeRequestPaymentMethod {\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
+    sb.append("    monthlyInstallments: ").append(toIndentedString(monthlyInstallments)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
     sb.append("    paymentSourceId: ").append(toIndentedString(paymentSourceId)).append("\n");

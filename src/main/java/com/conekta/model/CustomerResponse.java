@@ -27,6 +27,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
@@ -47,6 +49,7 @@ import com.conekta.JSON;
   CustomerResponse.JSON_PROPERTY_ID,
   CustomerResponse.JSON_PROPERTY_LIVEMODE,
   CustomerResponse.JSON_PROPERTY_NAME,
+  CustomerResponse.JSON_PROPERTY_METADATA,
   CustomerResponse.JSON_PROPERTY_OBJECT,
   CustomerResponse.JSON_PROPERTY_PAYMENT_SOURCES,
   CustomerResponse.JSON_PROPERTY_PHONE,
@@ -91,6 +94,9 @@ public class CustomerResponse {
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
+
+  public static final String JSON_PROPERTY_METADATA = "metadata";
+  private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;
@@ -141,7 +147,7 @@ public class CustomerResponse {
   }
 
    /**
-   * Get corporate
+   * true if the customer is a company
    * @return corporate
   **/
   @jakarta.annotation.Nullable
@@ -166,7 +172,7 @@ public class CustomerResponse {
   }
 
    /**
-   * Get createdAt
+   * Creation date of the object
    * @return createdAt
   **/
   @jakarta.annotation.Nonnull
@@ -191,7 +197,7 @@ public class CustomerResponse {
   }
 
    /**
-   * Get customReference
+   * Custom reference
    * @return customReference
   **/
   @jakarta.annotation.Nullable
@@ -341,7 +347,7 @@ public class CustomerResponse {
   }
 
    /**
-   * Get id
+   * Customer&#39;s ID
    * @return id
   **/
   @jakarta.annotation.Nonnull
@@ -366,7 +372,7 @@ public class CustomerResponse {
   }
 
    /**
-   * Get livemode
+   * true if the object exists in live mode or the value false if the object exists in test mode
    * @return livemode
   **/
   @jakarta.annotation.Nonnull
@@ -391,12 +397,12 @@ public class CustomerResponse {
   }
 
    /**
-   * Get name
+   * Customer&#39;s name
    * @return name
   **/
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getName() {
     return name;
@@ -404,9 +410,42 @@ public class CustomerResponse {
 
 
   @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public CustomerResponse metadata(Map<String, Object> metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+  public CustomerResponse putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
+   /**
+   * Get metadata
+   * @return metadata
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Map<String, Object> getMetadata() {
+    return metadata;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMetadata(Map<String, Object> metadata) {
+    this.metadata = metadata;
   }
 
 
@@ -466,7 +505,7 @@ public class CustomerResponse {
   }
 
    /**
-   * Get phone
+   * Customer&#39;s phone number
    * @return phone
   **/
   @jakarta.annotation.Nullable
@@ -559,6 +598,7 @@ public class CustomerResponse {
         Objects.equals(this.id, customerResponse.id) &&
         Objects.equals(this.livemode, customerResponse.livemode) &&
         Objects.equals(this.name, customerResponse.name) &&
+        Objects.equals(this.metadata, customerResponse.metadata) &&
         Objects.equals(this._object, customerResponse._object) &&
         Objects.equals(this.paymentSources, customerResponse.paymentSources) &&
         Objects.equals(this.phone, customerResponse.phone) &&
@@ -568,7 +608,7 @@ public class CustomerResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(antifraudInfo, corporate, createdAt, customReference, defaultFiscalEntityId, defaultShippingContactId, defaultPaymentSourceId, email, fiscalEntities, id, livemode, name, _object, paymentSources, phone, shippingContacts, subscription);
+    return Objects.hash(antifraudInfo, corporate, createdAt, customReference, defaultFiscalEntityId, defaultShippingContactId, defaultPaymentSourceId, email, fiscalEntities, id, livemode, name, metadata, _object, paymentSources, phone, shippingContacts, subscription);
   }
 
   @Override
@@ -587,6 +627,7 @@ public class CustomerResponse {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    livemode: ").append(toIndentedString(livemode)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    paymentSources: ").append(toIndentedString(paymentSources)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");

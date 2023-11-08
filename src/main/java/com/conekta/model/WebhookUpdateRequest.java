@@ -34,7 +34,7 @@ import com.conekta.JSON;
 @JsonPropertyOrder({
   WebhookUpdateRequest.JSON_PROPERTY_URL,
   WebhookUpdateRequest.JSON_PROPERTY_SYNCHRONOUS,
-  WebhookUpdateRequest.JSON_PROPERTY_SUBSCRIBED_EVENTS
+  WebhookUpdateRequest.JSON_PROPERTY_EVENTS
 })
 @JsonTypeName("webhook_update_request")
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
@@ -45,8 +45,8 @@ public class WebhookUpdateRequest {
   public static final String JSON_PROPERTY_SYNCHRONOUS = "synchronous";
   private Boolean synchronous = false;
 
-  public static final String JSON_PROPERTY_SUBSCRIBED_EVENTS = "subscribed_events";
-  private List<String> subscribedEvents;
+  public static final String JSON_PROPERTY_EVENTS = "events";
+  private List<String> events;
 
   public WebhookUpdateRequest() { 
   }
@@ -101,36 +101,36 @@ public class WebhookUpdateRequest {
   }
 
 
-  public WebhookUpdateRequest subscribedEvents(List<String> subscribedEvents) {
-    this.subscribedEvents = subscribedEvents;
+  public WebhookUpdateRequest events(List<String> events) {
+    this.events = events;
     return this;
   }
 
-  public WebhookUpdateRequest addSubscribedEventsItem(String subscribedEventsItem) {
-    if (this.subscribedEvents == null) {
-      this.subscribedEvents = new ArrayList<>();
+  public WebhookUpdateRequest addEventsItem(String eventsItem) {
+    if (this.events == null) {
+      this.events = new ArrayList<>();
     }
-    this.subscribedEvents.add(subscribedEventsItem);
+    this.events.add(eventsItem);
     return this;
   }
 
    /**
-   * Get subscribedEvents
-   * @return subscribedEvents
+   * Get events
+   * @return events
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SUBSCRIBED_EVENTS)
+  @JsonProperty(JSON_PROPERTY_EVENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<String> getSubscribedEvents() {
-    return subscribedEvents;
+  public List<String> getEvents() {
+    return events;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SUBSCRIBED_EVENTS)
+  @JsonProperty(JSON_PROPERTY_EVENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubscribedEvents(List<String> subscribedEvents) {
-    this.subscribedEvents = subscribedEvents;
+  public void setEvents(List<String> events) {
+    this.events = events;
   }
 
 
@@ -148,12 +148,12 @@ public class WebhookUpdateRequest {
     WebhookUpdateRequest webhookUpdateRequest = (WebhookUpdateRequest) o;
     return Objects.equals(this.url, webhookUpdateRequest.url) &&
         Objects.equals(this.synchronous, webhookUpdateRequest.synchronous) &&
-        Objects.equals(this.subscribedEvents, webhookUpdateRequest.subscribedEvents);
+        Objects.equals(this.events, webhookUpdateRequest.events);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, synchronous, subscribedEvents);
+    return Objects.hash(url, synchronous, events);
   }
 
   @Override
@@ -162,7 +162,7 @@ public class WebhookUpdateRequest {
     sb.append("class WebhookUpdateRequest {\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    synchronous: ").append(toIndentedString(synchronous)).append("\n");
-    sb.append("    subscribedEvents: ").append(toIndentedString(subscribedEvents)).append("\n");
+    sb.append("    events: ").append(toIndentedString(events)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -9,20 +9,21 @@ customer response
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**antifraudInfo** | [**CustomerAntifraudInfoResponse**](CustomerAntifraudInfoResponse.md) |  |  [optional] |
-|**corporate** | **Boolean** |  |  [optional] |
-|**createdAt** | **Long** |  |  |
-|**customReference** | **String** |  |  [optional] |
+|**corporate** | **Boolean** | true if the customer is a company |  [optional] |
+|**createdAt** | **Long** | Creation date of the object |  |
+|**customReference** | **String** | Custom reference |  [optional] |
 |**defaultFiscalEntityId** | **String** |  |  [optional] |
 |**defaultShippingContactId** | **String** |  |  [optional] |
 |**defaultPaymentSourceId** | **String** |  |  [optional] |
 |**email** | **String** |  |  [optional] |
 |**fiscalEntities** | [**CustomerFiscalEntitiesResponse**](CustomerFiscalEntitiesResponse.md) |  |  [optional] |
-|**id** | **String** |  |  |
-|**livemode** | **Boolean** |  |  |
-|**name** | **String** |  |  [optional] |
+|**id** | **String** | Customer&#39;s ID |  |
+|**livemode** | **Boolean** | true if the object exists in live mode or the value false if the object exists in test mode |  |
+|**name** | **String** | Customer&#39;s name |  |
+|**metadata** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**_object** | **String** |  |  |
 |**paymentSources** | [**CustomerPaymentMethodsResponse**](CustomerPaymentMethodsResponse.md) |  |  [optional] |
-|**phone** | **String** |  |  [optional] |
+|**phone** | **String** | Customer&#39;s phone number |  [optional] |
 |**shippingContacts** | [**CustomerResponseShippingContacts**](CustomerResponseShippingContacts.md) |  |  [optional] |
 |**subscription** | [**SubscriptionResponse**](SubscriptionResponse.md) |  |  [optional] |
 

@@ -90,7 +90,7 @@ public class BalancesApi {
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<BalanceResponse> localVarReturnType = new GenericType<BalanceResponse>() {};
-    return apiClient.invokeAPI("BalancesApi.getBalance", "/balances", "GET", new ArrayList<>(), null,
+    return apiClient.invokeAPI("BalancesApi.getBalance", "/balance", "GET", new ArrayList<>(), null,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
