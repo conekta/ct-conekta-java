@@ -9980,14 +9980,6 @@ paths:
           minimum: 1
           type: integer
         style: form
-      - description: "General order search, e.g. by mail, reference etc."
-        explode: true
-        in: query
-        name: search
-        required: false
-        schema:
-          type: string
-        style: form
       - description: next page
         explode: true
         in: query
@@ -10002,6 +9994,42 @@ paths:
         name: previous
         required: false
         schema:
+          type: string
+        style: form
+      - description: id of the object to be retrieved
+        explode: true
+        in: query
+        name: id
+        required: false
+        schema:
+          example: 65412a893cd69a0001c25892
+          type: string
+        style: form
+      - description: id of the charge used for filtering
+        explode: true
+        in: query
+        name: charge_id
+        required: false
+        schema:
+          example: 65412a893cd69a0001c25892
+          type: string
+        style: form
+      - description: type of the object to be retrieved
+        explode: true
+        in: query
+        name: type
+        required: false
+        schema:
+          example: capture
+          type: string
+        style: form
+      - description: currency of the object to be retrieved
+        explode: true
+        in: query
+        name: currency
+        required: false
+        schema:
+          example: MXN
           type: string
         style: form
       responses:
@@ -12275,6 +12303,46 @@ components:
       schema:
         type: string
       style: simple
+    id_query:
+      description: id of the object to be retrieved
+      explode: true
+      in: query
+      name: id
+      required: false
+      schema:
+        example: 65412a893cd69a0001c25892
+        type: string
+      style: form
+    charge_id:
+      description: id of the charge used for filtering
+      explode: true
+      in: query
+      name: charge_id
+      required: false
+      schema:
+        example: 65412a893cd69a0001c25892
+        type: string
+      style: form
+    type:
+      description: type of the object to be retrieved
+      explode: true
+      in: query
+      name: type
+      required: false
+      schema:
+        example: capture
+        type: string
+      style: form
+    currency:
+      description: currency of the object to be retrieved
+      explode: true
+      in: query
+      name: currency
+      required: false
+      schema:
+        example: MXN
+        type: string
+      style: form
   requestBodies:
     api_keys_create:
       content:
@@ -12874,9 +12942,6 @@ components:
           example: Este cargo ha sido declinado porque el comportamiento del comprador
             es sospechoso.
           type: string
-        fee:
-          example: 1160
-          type: integer
         id:
           example: 63efa757cf65380001aec040
           type: string
@@ -12935,9 +13000,6 @@ components:
           example: Este cargo ha sido declinado porque el comportamiento del comprador
             es sospechoso.
           type: string
-        fee:
-          example: 1160
-          type: integer
         id:
           example: 63efa757cf65380001aec040
           type: string

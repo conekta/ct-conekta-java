@@ -43,7 +43,6 @@ import com.conekta.JSON;
   ChargeOrderResponse.JSON_PROPERTY_DEVICE_FINGERPRINT,
   ChargeOrderResponse.JSON_PROPERTY_FAILURE_CODE,
   ChargeOrderResponse.JSON_PROPERTY_FAILURE_MESSAGE,
-  ChargeOrderResponse.JSON_PROPERTY_FEE,
   ChargeOrderResponse.JSON_PROPERTY_ID,
   ChargeOrderResponse.JSON_PROPERTY_LIVEMODE,
   ChargeOrderResponse.JSON_PROPERTY_MONTHLY_INSTALLMENTS,
@@ -84,9 +83,6 @@ public class ChargeOrderResponse {
 
   public static final String JSON_PROPERTY_FAILURE_MESSAGE = "failure_message";
   private String failureMessage;
-
-  public static final String JSON_PROPERTY_FEE = "fee";
-  private Integer fee;
 
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -343,31 +339,6 @@ public class ChargeOrderResponse {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFailureMessage(String failureMessage) {
     this.failureMessage = failureMessage;
-  }
-
-
-  public ChargeOrderResponse fee(Integer fee) {
-    this.fee = fee;
-    return this;
-  }
-
-   /**
-   * Get fee
-   * @return fee
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FEE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Integer getFee() {
-    return fee;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_FEE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFee(Integer fee) {
-    this.fee = fee;
   }
 
 
@@ -650,7 +621,6 @@ public class ChargeOrderResponse {
         Objects.equals(this.deviceFingerprint, chargeOrderResponse.deviceFingerprint) &&
         Objects.equals(this.failureCode, chargeOrderResponse.failureCode) &&
         Objects.equals(this.failureMessage, chargeOrderResponse.failureMessage) &&
-        Objects.equals(this.fee, chargeOrderResponse.fee) &&
         Objects.equals(this.id, chargeOrderResponse.id) &&
         Objects.equals(this.livemode, chargeOrderResponse.livemode) &&
         Objects.equals(this.monthlyInstallments, chargeOrderResponse.monthlyInstallments) &&
@@ -665,7 +635,7 @@ public class ChargeOrderResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, channel, createdAt, currency, customerId, description, deviceFingerprint, failureCode, failureMessage, fee, id, livemode, monthlyInstallments, _object, orderId, paidAt, paymentMethod, referenceId, refunds, status);
+    return Objects.hash(amount, channel, createdAt, currency, customerId, description, deviceFingerprint, failureCode, failureMessage, id, livemode, monthlyInstallments, _object, orderId, paidAt, paymentMethod, referenceId, refunds, status);
   }
 
   @Override
@@ -681,7 +651,6 @@ public class ChargeOrderResponse {
     sb.append("    deviceFingerprint: ").append(toIndentedString(deviceFingerprint)).append("\n");
     sb.append("    failureCode: ").append(toIndentedString(failureCode)).append("\n");
     sb.append("    failureMessage: ").append(toIndentedString(failureMessage)).append("\n");
-    sb.append("    fee: ").append(toIndentedString(fee)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    livemode: ").append(toIndentedString(livemode)).append("\n");
     sb.append("    monthlyInstallments: ").append(toIndentedString(monthlyInstallments)).append("\n");

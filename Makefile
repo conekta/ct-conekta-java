@@ -9,3 +9,6 @@ java:
 	-c config-java.json \
 	--global-property modelTests=false \
 	--additional-properties=hideGenerationTimestamp=true
+
+test:
+	mvn -B package --no-transfer-progress --file pom.xml

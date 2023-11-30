@@ -16,7 +16,6 @@
 |**deviceFingerprint** | **String** |  |  [optional] |
 |**failureCode** | **String** |  |  [optional] |
 |**failureMessage** | **String** |  |  [optional] |
-|**fee** | **Integer** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**livemode** | **Boolean** |  |  [optional] |
 |**_object** | **String** |  |  [optional] |
