@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -22,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
@@ -35,7 +35,7 @@ import com.conekta.JSON;
   TokenCheckout.JSON_PROPERTY_RETURNS_CONTROL_ON
 })
 @JsonTypeName("token_checkout")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TokenCheckout {
   public static final String JSON_PROPERTY_RETURNS_CONTROL_ON = "returns_control_on";
   private String returnsControlOn;
@@ -52,7 +52,7 @@ public class TokenCheckout {
    * It is a value that allows identifying the returns control on.
    * @return returnsControlOn
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RETURNS_CONTROL_ON)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.ProductDataResponse;
@@ -24,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
@@ -36,7 +36,7 @@ import com.conekta.JSON;
   OrderResponseProductsAllOf.JSON_PROPERTY_DATA
 })
 @JsonTypeName("order_response_products_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderResponseProductsAllOf {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<ProductDataResponse> data;
@@ -61,7 +61,7 @@ public class OrderResponseProductsAllOf {
    * Get data
    * @return data
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

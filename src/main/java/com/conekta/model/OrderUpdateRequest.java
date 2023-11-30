@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.ChargeRequest;
@@ -22,6 +21,7 @@ import com.conekta.model.CheckoutRequest;
 import com.conekta.model.CustomerShippingContacts;
 import com.conekta.model.OrderDiscountLinesRequest;
 import com.conekta.model.OrderTaxRequest;
+import com.conekta.model.OrderUpdateFiscalEntityRequest;
 import com.conekta.model.OrderUpdateRequestCustomerInfo;
 import com.conekta.model.Product;
 import com.conekta.model.ShippingRequest;
@@ -31,6 +31,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,6 +48,7 @@ import com.conekta.JSON;
   OrderUpdateRequest.JSON_PROPERTY_CURRENCY,
   OrderUpdateRequest.JSON_PROPERTY_CUSTOMER_INFO,
   OrderUpdateRequest.JSON_PROPERTY_DISCOUNT_LINES,
+  OrderUpdateRequest.JSON_PROPERTY_FISCAL_ENTITY,
   OrderUpdateRequest.JSON_PROPERTY_LINE_ITEMS,
   OrderUpdateRequest.JSON_PROPERTY_METADATA,
   OrderUpdateRequest.JSON_PROPERTY_PRE_AUTHORIZE,
@@ -55,7 +57,7 @@ import com.conekta.JSON;
   OrderUpdateRequest.JSON_PROPERTY_TAX_LINES
 })
 @JsonTypeName("order_update_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderUpdateRequest {
   public static final String JSON_PROPERTY_CHARGES = "charges";
   private List<ChargeRequest> charges;
@@ -71,6 +73,9 @@ public class OrderUpdateRequest {
 
   public static final String JSON_PROPERTY_DISCOUNT_LINES = "discount_lines";
   private List<OrderDiscountLinesRequest> discountLines;
+
+  public static final String JSON_PROPERTY_FISCAL_ENTITY = "fiscal_entity";
+  private OrderUpdateFiscalEntityRequest fiscalEntity;
 
   public static final String JSON_PROPERTY_LINE_ITEMS = "line_items";
   private List<Product> lineItems;
@@ -110,7 +115,7 @@ public class OrderUpdateRequest {
    * Get charges
    * @return charges
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHARGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -135,7 +140,7 @@ public class OrderUpdateRequest {
    * Get checkout
    * @return checkout
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHECKOUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -160,7 +165,7 @@ public class OrderUpdateRequest {
    * Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)
    * @return currency
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -185,7 +190,7 @@ public class OrderUpdateRequest {
    * Get customerInfo
    * @return customerInfo
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -218,7 +223,7 @@ public class OrderUpdateRequest {
    * List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount.
    * @return discountLines
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -231,6 +236,31 @@ public class OrderUpdateRequest {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiscountLines(List<OrderDiscountLinesRequest> discountLines) {
     this.discountLines = discountLines;
+  }
+
+
+  public OrderUpdateRequest fiscalEntity(OrderUpdateFiscalEntityRequest fiscalEntity) {
+    this.fiscalEntity = fiscalEntity;
+    return this;
+  }
+
+   /**
+   * Get fiscalEntity
+   * @return fiscalEntity
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_FISCAL_ENTITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public OrderUpdateFiscalEntityRequest getFiscalEntity() {
+    return fiscalEntity;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FISCAL_ENTITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFiscalEntity(OrderUpdateFiscalEntityRequest fiscalEntity) {
+    this.fiscalEntity = fiscalEntity;
   }
 
 
@@ -251,7 +281,7 @@ public class OrderUpdateRequest {
    * List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product.
    * @return lineItems
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LINE_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -284,7 +314,7 @@ public class OrderUpdateRequest {
    * Get metadata
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -309,7 +339,7 @@ public class OrderUpdateRequest {
    * Indicates whether the order charges must be preauthorized
    * @return preAuthorize
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PRE_AUTHORIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -334,7 +364,7 @@ public class OrderUpdateRequest {
    * Get shippingContact
    * @return shippingContact
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -367,7 +397,7 @@ public class OrderUpdateRequest {
    * List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping). If the online store offers digital products.
    * @return shippingLines
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHIPPING_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -400,7 +430,7 @@ public class OrderUpdateRequest {
    * Get taxLines
    * @return taxLines
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAX_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -433,6 +463,7 @@ public class OrderUpdateRequest {
         Objects.equals(this.currency, orderUpdateRequest.currency) &&
         Objects.equals(this.customerInfo, orderUpdateRequest.customerInfo) &&
         Objects.equals(this.discountLines, orderUpdateRequest.discountLines) &&
+        Objects.equals(this.fiscalEntity, orderUpdateRequest.fiscalEntity) &&
         Objects.equals(this.lineItems, orderUpdateRequest.lineItems) &&
         Objects.equals(this.metadata, orderUpdateRequest.metadata) &&
         Objects.equals(this.preAuthorize, orderUpdateRequest.preAuthorize) &&
@@ -443,7 +474,7 @@ public class OrderUpdateRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(charges, checkout, currency, customerInfo, discountLines, lineItems, metadata, preAuthorize, shippingContact, shippingLines, taxLines);
+    return Objects.hash(charges, checkout, currency, customerInfo, discountLines, fiscalEntity, lineItems, metadata, preAuthorize, shippingContact, shippingLines, taxLines);
   }
 
   @Override
@@ -455,6 +486,7 @@ public class OrderUpdateRequest {
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    customerInfo: ").append(toIndentedString(customerInfo)).append("\n");
     sb.append("    discountLines: ").append(toIndentedString(discountLines)).append("\n");
+    sb.append("    fiscalEntity: ").append(toIndentedString(fiscalEntity)).append("\n");
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    preAuthorize: ").append(toIndentedString(preAuthorize)).append("\n");

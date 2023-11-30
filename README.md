@@ -15,7 +15,7 @@ Conekta sdk
 Building the API client library requires:
 
 1. Java 1.11+
-2. Maven/Gradle
+2. Maven (3.8.3+)/Gradle (7.2+)
 
 ## Installation
 
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.conekta</groupId>
   <artifactId>ct-conekta-java</artifactId>
-  <version>6.0.0</version>
+  <version>6.1.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "io.conekta:ct-conekta-java:6.0.0"
+     implementation "io.conekta:ct-conekta-java:6.1.0"
   }
 ```
 
@@ -71,8 +71,46 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/ct-conekta-java-6.0.0.jar`
+- `target/ct-conekta-java-6.1.0.jar`
 - `target/lib/*.jar`
+
+## Usage
+
+To add a HTTP proxy for the API client, use `ClientConfig`:
+```java
+import com.conekta.*;
+import com.conekta.auth.*;
+import com.conekta.model.*;
+import com.conekta.CustomersApi;
+
+public class CustomersApiExample {
+
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("API_KEY");
+
+        CustomersApi apiInstance = new CustomersApi(defaultClient);
+        Customer customer = new Customer(); // Customer | requested field for customer
+        customer.setName("Customer Name");
+        customer.setEmail("customer@mail.com");
+        customer.setPhone("55454545454");
+        String acceptLanguage = "es"; // String | Use for knowing which language to use
+        try {
+            CustomerResponse result = apiInstance.createCustomer(customer, acceptLanguage,null);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CustomersApi#createCustomer");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
 
 ## Getting Started
 
@@ -130,9 +168,10 @@ Class | Method | HTTP request | Description
 *ApiKeysApi* | [**getApiKey**](docs/ApiKeysApi.md#getApiKey) | **GET** /api_keys/{id} | Get Api Key
 *ApiKeysApi* | [**getApiKeys**](docs/ApiKeysApi.md#getApiKeys) | **GET** /api_keys | Get list of Api Keys
 *ApiKeysApi* | [**updateApiKey**](docs/ApiKeysApi.md#updateApiKey) | **PUT** /api_keys/{id} | Update Api Key
-*BalancesApi* | [**getBalance**](docs/BalancesApi.md#getBalance) | **GET** /balances | Get a company&#39;s balance
+*BalancesApi* | [**getBalance**](docs/BalancesApi.md#getBalance) | **GET** /balance | Get a company&#39;s balance
 *ChargesApi* | [**getCharges**](docs/ChargesApi.md#getCharges) | **GET** /charges | Get A List of Charges
 *ChargesApi* | [**ordersCreateCharge**](docs/ChargesApi.md#ordersCreateCharge) | **POST** /orders/{id}/charges | Create charge
+*ChargesApi* | [**updateCharge**](docs/ChargesApi.md#updateCharge) | **PUT** /charges/{id} | Update a charge
 *CompaniesApi* | [**getCompanies**](docs/CompaniesApi.md#getCompanies) | **GET** /companies | Get List of Companies
 *CompaniesApi* | [**getCompany**](docs/CompaniesApi.md#getCompany) | **GET** /companies/{id} | Get Company
 *CustomersApi* | [**createCustomer**](docs/CustomersApi.md#createCustomer) | **POST** /customers | Create customer
@@ -236,6 +275,7 @@ Class | Method | HTTP request | Description
  - [ChargeResponseRefunds](docs/ChargeResponseRefunds.md)
  - [ChargeResponseRefundsAllOf](docs/ChargeResponseRefundsAllOf.md)
  - [ChargeResponseRefundsData](docs/ChargeResponseRefundsData.md)
+ - [ChargeUpdateRequest](docs/ChargeUpdateRequest.md)
  - [ChargesDataResponse](docs/ChargesDataResponse.md)
  - [Checkout](docs/Checkout.md)
  - [CheckoutOrderTemplate](docs/CheckoutOrderTemplate.md)
@@ -265,7 +305,6 @@ Class | Method | HTTP request | Description
  - [CustomerInfo](docs/CustomerInfo.md)
  - [CustomerInfoJustCustomerId](docs/CustomerInfoJustCustomerId.md)
  - [CustomerInfoJustCustomerIdResponse](docs/CustomerInfoJustCustomerIdResponse.md)
- - [CustomerInfoResponse](docs/CustomerInfoResponse.md)
  - [CustomerPaymentMethodRequest](docs/CustomerPaymentMethodRequest.md)
  - [CustomerPaymentMethods](docs/CustomerPaymentMethods.md)
  - [CustomerPaymentMethodsData](docs/CustomerPaymentMethodsData.md)
@@ -298,6 +337,7 @@ Class | Method | HTTP request | Description
  - [ErrorAllOf](docs/ErrorAllOf.md)
  - [EventResponse](docs/EventResponse.md)
  - [EventsResendResponse](docs/EventsResendResponse.md)
+ - [FiscalEntityAddress](docs/FiscalEntityAddress.md)
  - [GetApiKeysResponse](docs/GetApiKeysResponse.md)
  - [GetApiKeysResponseAllOf](docs/GetApiKeysResponseAllOf.md)
  - [GetChargesResponse](docs/GetChargesResponse.md)
@@ -326,7 +366,12 @@ Class | Method | HTTP request | Description
  - [LogsResponse](docs/LogsResponse.md)
  - [LogsResponseData](docs/LogsResponseData.md)
  - [OrderCaptureRequest](docs/OrderCaptureRequest.md)
+ - [OrderCustomerInfoResponse](docs/OrderCustomerInfoResponse.md)
  - [OrderDiscountLinesRequest](docs/OrderDiscountLinesRequest.md)
+ - [OrderFiscalEntityAddressResponse](docs/OrderFiscalEntityAddressResponse.md)
+ - [OrderFiscalEntityAddressResponseAllOf](docs/OrderFiscalEntityAddressResponseAllOf.md)
+ - [OrderFiscalEntityRequest](docs/OrderFiscalEntityRequest.md)
+ - [OrderFiscalEntityResponse](docs/OrderFiscalEntityResponse.md)
  - [OrderRefundRequest](docs/OrderRefundRequest.md)
  - [OrderRequest](docs/OrderRequest.md)
  - [OrderRequestCustomerInfo](docs/OrderRequestCustomerInfo.md)
@@ -338,14 +383,12 @@ Class | Method | HTTP request | Description
  - [OrderResponseCustomerInfoAllOf](docs/OrderResponseCustomerInfoAllOf.md)
  - [OrderResponseDiscountLines](docs/OrderResponseDiscountLines.md)
  - [OrderResponseDiscountLinesAllOf](docs/OrderResponseDiscountLinesAllOf.md)
- - [OrderResponseFiscalEntity](docs/OrderResponseFiscalEntity.md)
- - [OrderResponseFiscalEntityAddress](docs/OrderResponseFiscalEntityAddress.md)
- - [OrderResponseFiscalEntityAddressAllOf](docs/OrderResponseFiscalEntityAddressAllOf.md)
  - [OrderResponseProducts](docs/OrderResponseProducts.md)
  - [OrderResponseProductsAllOf](docs/OrderResponseProductsAllOf.md)
  - [OrderResponseShippingContact](docs/OrderResponseShippingContact.md)
  - [OrderResponseShippingContactAllOf](docs/OrderResponseShippingContactAllOf.md)
  - [OrderTaxRequest](docs/OrderTaxRequest.md)
+ - [OrderUpdateFiscalEntityRequest](docs/OrderUpdateFiscalEntityRequest.md)
  - [OrderUpdateRequest](docs/OrderUpdateRequest.md)
  - [OrderUpdateRequestCustomerInfo](docs/OrderUpdateRequestCustomerInfo.md)
  - [OrdersResponse](docs/OrdersResponse.md)

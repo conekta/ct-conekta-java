@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.ChargeResponseChannel;
@@ -25,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
@@ -42,7 +42,6 @@ import com.conekta.JSON;
   ChargesDataResponse.JSON_PROPERTY_DEVICE_FINGERPRINT,
   ChargesDataResponse.JSON_PROPERTY_FAILURE_CODE,
   ChargesDataResponse.JSON_PROPERTY_FAILURE_MESSAGE,
-  ChargesDataResponse.JSON_PROPERTY_FEE,
   ChargesDataResponse.JSON_PROPERTY_ID,
   ChargesDataResponse.JSON_PROPERTY_LIVEMODE,
   ChargesDataResponse.JSON_PROPERTY_OBJECT,
@@ -54,7 +53,7 @@ import com.conekta.JSON;
   ChargesDataResponse.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("charges_data_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ChargesDataResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Integer amount;
@@ -82,9 +81,6 @@ public class ChargesDataResponse {
 
   public static final String JSON_PROPERTY_FAILURE_MESSAGE = "failure_message";
   private String failureMessage;
-
-  public static final String JSON_PROPERTY_FEE = "fee";
-  private Integer fee;
 
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -125,7 +121,7 @@ public class ChargesDataResponse {
    * Get amount
    * @return amount
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -150,7 +146,7 @@ public class ChargesDataResponse {
    * Get channel
    * @return channel
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -175,7 +171,7 @@ public class ChargesDataResponse {
    * Get createdAt
    * @return createdAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -200,7 +196,7 @@ public class ChargesDataResponse {
    * Get currency
    * @return currency
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -225,7 +221,7 @@ public class ChargesDataResponse {
    * Get customerId
    * @return customerId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -250,7 +246,7 @@ public class ChargesDataResponse {
    * Get description
    * @return description
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -275,7 +271,7 @@ public class ChargesDataResponse {
    * Get deviceFingerprint
    * @return deviceFingerprint
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEVICE_FINGERPRINT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -300,7 +296,7 @@ public class ChargesDataResponse {
    * Get failureCode
    * @return failureCode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAILURE_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -325,7 +321,7 @@ public class ChargesDataResponse {
    * Get failureMessage
    * @return failureMessage
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAILURE_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -341,31 +337,6 @@ public class ChargesDataResponse {
   }
 
 
-  public ChargesDataResponse fee(Integer fee) {
-    this.fee = fee;
-    return this;
-  }
-
-   /**
-   * Get fee
-   * @return fee
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FEE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Integer getFee() {
-    return fee;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_FEE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFee(Integer fee) {
-    this.fee = fee;
-  }
-
-
   public ChargesDataResponse id(String id) {
     this.id = id;
     return this;
@@ -375,7 +346,7 @@ public class ChargesDataResponse {
    * Get id
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -400,7 +371,7 @@ public class ChargesDataResponse {
    * Get livemode
    * @return livemode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -425,7 +396,7 @@ public class ChargesDataResponse {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -450,7 +421,7 @@ public class ChargesDataResponse {
    * Get orderId
    * @return orderId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ORDER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -475,7 +446,7 @@ public class ChargesDataResponse {
    * Get paidAt
    * @return paidAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAID_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -500,7 +471,7 @@ public class ChargesDataResponse {
    * Get paymentMethod
    * @return paymentMethod
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENT_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -525,7 +496,7 @@ public class ChargesDataResponse {
    * Reference ID of the charge
    * @return referenceId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERENCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -550,7 +521,7 @@ public class ChargesDataResponse {
    * Get refunds
    * @return refunds
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFUNDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -575,7 +546,7 @@ public class ChargesDataResponse {
    * Get status
    * @return status
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -612,7 +583,6 @@ public class ChargesDataResponse {
         Objects.equals(this.deviceFingerprint, chargesDataResponse.deviceFingerprint) &&
         Objects.equals(this.failureCode, chargesDataResponse.failureCode) &&
         Objects.equals(this.failureMessage, chargesDataResponse.failureMessage) &&
-        Objects.equals(this.fee, chargesDataResponse.fee) &&
         Objects.equals(this.id, chargesDataResponse.id) &&
         Objects.equals(this.livemode, chargesDataResponse.livemode) &&
         Objects.equals(this._object, chargesDataResponse._object) &&
@@ -626,7 +596,7 @@ public class ChargesDataResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, channel, createdAt, currency, customerId, description, deviceFingerprint, failureCode, failureMessage, fee, id, livemode, _object, orderId, paidAt, paymentMethod, referenceId, refunds, status);
+    return Objects.hash(amount, channel, createdAt, currency, customerId, description, deviceFingerprint, failureCode, failureMessage, id, livemode, _object, orderId, paidAt, paymentMethod, referenceId, refunds, status);
   }
 
   @Override
@@ -642,7 +612,6 @@ public class ChargesDataResponse {
     sb.append("    deviceFingerprint: ").append(toIndentedString(deviceFingerprint)).append("\n");
     sb.append("    failureCode: ").append(toIndentedString(failureCode)).append("\n");
     sb.append("    failureMessage: ").append(toIndentedString(failureMessage)).append("\n");
-    sb.append("    fee: ").append(toIndentedString(fee)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    livemode: ").append(toIndentedString(livemode)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");

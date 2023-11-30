@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -22,23 +21,28 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
 
 /**
- * CustomerInfoResponse
+ * OrderCustomerInfoResponse
  */
 @JsonPropertyOrder({
-  CustomerInfoResponse.JSON_PROPERTY_NAME,
-  CustomerInfoResponse.JSON_PROPERTY_EMAIL,
-  CustomerInfoResponse.JSON_PROPERTY_PHONE,
-  CustomerInfoResponse.JSON_PROPERTY_CORPORATE,
-  CustomerInfoResponse.JSON_PROPERTY_OBJECT
+  OrderCustomerInfoResponse.JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE,
+  OrderCustomerInfoResponse.JSON_PROPERTY_NAME,
+  OrderCustomerInfoResponse.JSON_PROPERTY_EMAIL,
+  OrderCustomerInfoResponse.JSON_PROPERTY_PHONE,
+  OrderCustomerInfoResponse.JSON_PROPERTY_CORPORATE,
+  OrderCustomerInfoResponse.JSON_PROPERTY_OBJECT
 })
-@JsonTypeName("customer_info_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class CustomerInfoResponse {
+@JsonTypeName("order_customer_info_response")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+public class OrderCustomerInfoResponse {
+  public static final String JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE = "customer_custom_reference";
+  private String customerCustomReference;
+
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
@@ -54,10 +58,35 @@ public class CustomerInfoResponse {
   public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;
 
-  public CustomerInfoResponse() { 
+  public OrderCustomerInfoResponse() { 
   }
 
-  public CustomerInfoResponse name(String name) {
+  public OrderCustomerInfoResponse customerCustomReference(String customerCustomReference) {
+    this.customerCustomReference = customerCustomReference;
+    return this;
+  }
+
+   /**
+   * Custom reference
+   * @return customerCustomReference
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCustomerCustomReference() {
+    return customerCustomReference;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCustomerCustomReference(String customerCustomReference) {
+    this.customerCustomReference = customerCustomReference;
+  }
+
+
+  public OrderCustomerInfoResponse name(String name) {
     this.name = name;
     return this;
   }
@@ -66,7 +95,7 @@ public class CustomerInfoResponse {
    * Get name
    * @return name
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -82,7 +111,7 @@ public class CustomerInfoResponse {
   }
 
 
-  public CustomerInfoResponse email(String email) {
+  public OrderCustomerInfoResponse email(String email) {
     this.email = email;
     return this;
   }
@@ -91,7 +120,7 @@ public class CustomerInfoResponse {
    * Get email
    * @return email
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -107,7 +136,7 @@ public class CustomerInfoResponse {
   }
 
 
-  public CustomerInfoResponse phone(String phone) {
+  public OrderCustomerInfoResponse phone(String phone) {
     this.phone = phone;
     return this;
   }
@@ -116,7 +145,7 @@ public class CustomerInfoResponse {
    * Get phone
    * @return phone
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -132,7 +161,7 @@ public class CustomerInfoResponse {
   }
 
 
-  public CustomerInfoResponse corporate(Boolean corporate) {
+  public OrderCustomerInfoResponse corporate(Boolean corporate) {
     this.corporate = corporate;
     return this;
   }
@@ -141,7 +170,7 @@ public class CustomerInfoResponse {
    * Get corporate
    * @return corporate
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CORPORATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -157,7 +186,7 @@ public class CustomerInfoResponse {
   }
 
 
-  public CustomerInfoResponse _object(String _object) {
+  public OrderCustomerInfoResponse _object(String _object) {
     this._object = _object;
     return this;
   }
@@ -166,7 +195,7 @@ public class CustomerInfoResponse {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -183,7 +212,7 @@ public class CustomerInfoResponse {
 
 
   /**
-   * Return true if this customer_info_response object is equal to o.
+   * Return true if this order_customer_info_response object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -193,23 +222,25 @@ public class CustomerInfoResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CustomerInfoResponse customerInfoResponse = (CustomerInfoResponse) o;
-    return Objects.equals(this.name, customerInfoResponse.name) &&
-        Objects.equals(this.email, customerInfoResponse.email) &&
-        Objects.equals(this.phone, customerInfoResponse.phone) &&
-        Objects.equals(this.corporate, customerInfoResponse.corporate) &&
-        Objects.equals(this._object, customerInfoResponse._object);
+    OrderCustomerInfoResponse orderCustomerInfoResponse = (OrderCustomerInfoResponse) o;
+    return Objects.equals(this.customerCustomReference, orderCustomerInfoResponse.customerCustomReference) &&
+        Objects.equals(this.name, orderCustomerInfoResponse.name) &&
+        Objects.equals(this.email, orderCustomerInfoResponse.email) &&
+        Objects.equals(this.phone, orderCustomerInfoResponse.phone) &&
+        Objects.equals(this.corporate, orderCustomerInfoResponse.corporate) &&
+        Objects.equals(this._object, orderCustomerInfoResponse._object);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, email, phone, corporate, _object);
+    return Objects.hash(customerCustomReference, name, email, phone, corporate, _object);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CustomerInfoResponse {\n");
+    sb.append("class OrderCustomerInfoResponse {\n");
+    sb.append("    customerCustomReference: ").append(toIndentedString(customerCustomReference)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");

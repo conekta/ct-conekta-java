@@ -14,15 +14,14 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.ChargeResponseChannel;
+import com.conekta.model.OrderFiscalEntityResponse;
 import com.conekta.model.OrderResponseCharges;
 import com.conekta.model.OrderResponseCheckout;
 import com.conekta.model.OrderResponseCustomerInfo;
 import com.conekta.model.OrderResponseDiscountLines;
-import com.conekta.model.OrderResponseFiscalEntity;
 import com.conekta.model.OrderResponseProducts;
 import com.conekta.model.OrderResponseShippingContact;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -30,6 +29,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -62,7 +62,7 @@ import com.conekta.JSON;
   OrderResponse.JSON_PROPERTY_UPDATED_AT
 })
 @JsonTypeName("order_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OrderResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Integer amount;
@@ -92,7 +92,7 @@ public class OrderResponse {
   private OrderResponseDiscountLines discountLines;
 
   public static final String JSON_PROPERTY_FISCAL_ENTITY = "fiscal_entity";
-  private OrderResponseFiscalEntity fiscalEntity;
+  private OrderFiscalEntityResponse fiscalEntity;
 
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -136,7 +136,7 @@ public class OrderResponse {
    * The total amount to be collected in cents
    * @return amount
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -161,7 +161,7 @@ public class OrderResponse {
    * The total amount refunded in cents
    * @return amountRefunded
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AMOUNT_REFUNDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -186,7 +186,7 @@ public class OrderResponse {
    * Get channel
    * @return channel
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -211,7 +211,7 @@ public class OrderResponse {
    * Get charges
    * @return charges
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHARGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -236,7 +236,7 @@ public class OrderResponse {
    * Get checkout
    * @return checkout
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHECKOUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -261,7 +261,7 @@ public class OrderResponse {
    * The time at which the object was created in seconds since the Unix epoch
    * @return createdAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -286,7 +286,7 @@ public class OrderResponse {
    * The three-letter ISO 4217 currency code. The currency of the order.
    * @return currency
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -311,7 +311,7 @@ public class OrderResponse {
    * Get customerInfo
    * @return customerInfo
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -336,7 +336,7 @@ public class OrderResponse {
    * Get discountLines
    * @return discountLines
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -352,7 +352,7 @@ public class OrderResponse {
   }
 
 
-  public OrderResponse fiscalEntity(OrderResponseFiscalEntity fiscalEntity) {
+  public OrderResponse fiscalEntity(OrderFiscalEntityResponse fiscalEntity) {
     this.fiscalEntity = fiscalEntity;
     return this;
   }
@@ -361,18 +361,18 @@ public class OrderResponse {
    * Get fiscalEntity
    * @return fiscalEntity
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OrderResponseFiscalEntity getFiscalEntity() {
+  public OrderFiscalEntityResponse getFiscalEntity() {
     return fiscalEntity;
   }
 
 
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiscalEntity(OrderResponseFiscalEntity fiscalEntity) {
+  public void setFiscalEntity(OrderFiscalEntityResponse fiscalEntity) {
     this.fiscalEntity = fiscalEntity;
   }
 
@@ -386,7 +386,7 @@ public class OrderResponse {
    * Get id
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -411,7 +411,7 @@ public class OrderResponse {
    * Get isRefundable
    * @return isRefundable
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_IS_REFUNDABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -436,7 +436,7 @@ public class OrderResponse {
    * Get lineItems
    * @return lineItems
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LINE_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -461,7 +461,7 @@ public class OrderResponse {
    * Whether the object exists in live mode or test mode
    * @return livemode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -494,7 +494,7 @@ public class OrderResponse {
    * Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -519,7 +519,7 @@ public class OrderResponse {
    * String representing the object’s type. Objects of the same type share the same value.
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -544,7 +544,7 @@ public class OrderResponse {
    * The payment status of the order.
    * @return paymentStatus
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENT_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -569,7 +569,7 @@ public class OrderResponse {
    * Indicates the processing mode for the order, either ecommerce, recurrent or validation.
    * @return processingMode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PROCESSING_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -594,7 +594,7 @@ public class OrderResponse {
    * Get shippingContact
    * @return shippingContact
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -619,7 +619,7 @@ public class OrderResponse {
    * The time at which the object was last updated in seconds since the Unix epoch
    * @return updatedAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.CheckoutOrderTemplate;
@@ -24,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
@@ -46,7 +46,7 @@ import com.conekta.JSON;
   Checkout.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("checkout")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Checkout {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
   private List<String> allowedPaymentMethods = new ArrayList<>();
@@ -101,7 +101,7 @@ public class Checkout {
    * Those are the payment methods that will be available for the link
    * @return allowedPaymentMethods
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ALLOWED_PAYMENT_METHODS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -126,7 +126,7 @@ public class Checkout {
    * It is the time when the link will expire. It is expressed in seconds since the Unix epoch. The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs) 
    * @return expiresAt
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -151,7 +151,7 @@ public class Checkout {
    * This flag allows you to specify if months without interest will be active.
    * @return monthlyInstallmentsEnabled
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -184,7 +184,7 @@ public class Checkout {
    * This field allows you to specify the number of months without interest.
    * @return monthlyInstallmentsOptions
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -209,7 +209,7 @@ public class Checkout {
    * Reason for charge
    * @return name
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -234,7 +234,7 @@ public class Checkout {
    * This flag allows you to fill in the shipping information at checkout.
    * @return needsShippingContact
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NEEDS_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -259,7 +259,7 @@ public class Checkout {
    * This flag allows you to specify if the link will be on demand.
    * @return onDemandEnabled
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ON_DEMAND_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -284,7 +284,7 @@ public class Checkout {
    * Get orderTemplate
    * @return orderTemplate
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ORDER_TEMPLATE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -309,7 +309,7 @@ public class Checkout {
    * It is the number of payments that can be made through the link.
    * @return paymentsLimitCount
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENTS_LIMIT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -334,7 +334,7 @@ public class Checkout {
    * false: single use. true: multiple payments
    * @return recurrent
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_RECURRENT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -359,7 +359,7 @@ public class Checkout {
    * It is the type of link that will be created. It must be a valid type.
    * @return type
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 

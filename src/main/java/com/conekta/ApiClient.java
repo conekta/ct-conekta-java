@@ -1,15 +1,15 @@
 package com.conekta;
 
-import jakarta.ws.rs.client.Client;
-import jakarta.ws.rs.client.ClientBuilder;
-import jakarta.ws.rs.client.Entity;
-import jakarta.ws.rs.client.Invocation;
-import jakarta.ws.rs.client.WebTarget;
-import jakarta.ws.rs.core.Form;
-import jakarta.ws.rs.core.GenericType;
-import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
-import jakarta.ws.rs.core.Response.Status;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.Invocation;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Form;
+import javax.ws.rs.core.GenericType;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 import org.json.JSONObject;
 
 import org.glassfish.jersey.client.ClientConfig;
@@ -71,7 +71,7 @@ import com.conekta.auth.ApiKeyAuth;
 /**
  * <p>ApiClient class.</p>
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiClient extends JavaTimeFormatter {
   private static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$");
 
@@ -85,7 +85,7 @@ public class ApiClient extends JavaTimeFormatter {
 
   private JSONObject getConektaUserAgent()  {
     JSONObject userAgent = new JSONObject();
-    userAgent.put("bindings_version", "6.0.0");
+    userAgent.put("bindings_version", "6.1.0");
     userAgent.put("lang", "java");
     userAgent.put("lang_version", System.getProperty("java.version"));
     userAgent.put("publisher", "conekta");
@@ -137,7 +137,7 @@ public class ApiClient extends JavaTimeFormatter {
     this.dateFormat = new RFC3339DateFormat();
 
     // Set default User-Agent.
-    setUserAgent("Conekta/v2 JavaBindings/6.0.0");
+    setUserAgent("Conekta/v2 JavaBindings/6.1.0");
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<>();
@@ -169,7 +169,7 @@ public class ApiClient extends JavaTimeFormatter {
   /**
    * <p>Getter for the field <code>httpClient</code>.</p>
    *
-   * @return a {@link jakarta.ws.rs.client.Client} object.
+   * @return a {@link javax.ws.rs.client.Client} object.
    */
   public Client getHttpClient() {
     return httpClient;
@@ -178,7 +178,7 @@ public class ApiClient extends JavaTimeFormatter {
   /**
    * <p>Setter for the field <code>httpClient</code>.</p>
    *
-   * @param httpClient a {@link jakarta.ws.rs.client.Client} object.
+   * @param httpClient a {@link javax.ws.rs.client.Client} object.
    * @return a {@link com.conekta.ApiClient} object.
    */
   public ApiClient setHttpClient(Client httpClient) {
@@ -908,7 +908,7 @@ public class ApiClient extends JavaTimeFormatter {
   /**
    * <p>Prepare the file for download from the response.</p>
    *
-   * @param response a {@link jakarta.ws.rs.core.Response} object.
+   * @param response a {@link javax.ws.rs.core.Response} object.
    * @return a {@link java.io.File} object.
    * @throws java.io.IOException if any.
    */
@@ -1176,7 +1176,7 @@ public class ApiClient extends JavaTimeFormatter {
    * To completely disable certificate validation (at your own risk), you can
    * override this method and invoke disableCertificateValidation(clientBuilder).
    *
-   * @param clientBuilder a {@link jakarta.ws.rs.client.ClientBuilder} object.
+   * @param clientBuilder a {@link javax.ws.rs.client.ClientBuilder} object.
    */
   protected void customizeClientBuilder(ClientBuilder clientBuilder) {
     // No-op extension point
@@ -1188,7 +1188,7 @@ public class ApiClient extends JavaTimeFormatter {
    * Please note that trusting all certificates is extremely risky.
    * This may be useful in a development environment with self-signed certificates.
    *
-   * @param clientBuilder a {@link jakarta.ws.rs.client.ClientBuilder} object.
+   * @param clientBuilder a {@link javax.ws.rs.client.ClientBuilder} object.
    * @throws java.security.KeyManagementException if any.
    * @throws java.security.NoSuchAlgorithmException if any.
    */
@@ -1215,7 +1215,7 @@ public class ApiClient extends JavaTimeFormatter {
   /**
    * <p>Build the response headers.</p>
    *
-   * @param response a {@link jakarta.ws.rs.core.Response} object.
+   * @param response a {@link javax.ws.rs.core.Response} object.
    * @return a {@link java.util.Map} of response headers.
    */
   protected Map<String, List<String>> buildResponseHeaders(Response response) {

@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -22,27 +21,27 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
 
 /**
- * OrderResponseFiscalEntityAddress
+ * Address of the fiscal entity
  */
 @JsonPropertyOrder({
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_STREET1,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_STREET2,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_POSTAL_CODE,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_CITY,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_STATE,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_COUNTRY,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_RESIDENTIAL,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_EXTERNAL_NUMBER,
-  OrderResponseFiscalEntityAddress.JSON_PROPERTY_OBJECT
+  OrderFiscalEntityAddressResponse.JSON_PROPERTY_STREET1,
+  OrderFiscalEntityAddressResponse.JSON_PROPERTY_STREET2,
+  OrderFiscalEntityAddressResponse.JSON_PROPERTY_POSTAL_CODE,
+  OrderFiscalEntityAddressResponse.JSON_PROPERTY_CITY,
+  OrderFiscalEntityAddressResponse.JSON_PROPERTY_STATE,
+  OrderFiscalEntityAddressResponse.JSON_PROPERTY_COUNTRY,
+  OrderFiscalEntityAddressResponse.JSON_PROPERTY_EXTERNAL_NUMBER,
+  OrderFiscalEntityAddressResponse.JSON_PROPERTY_OBJECT
 })
-@JsonTypeName("order_response_fiscal_entity_address")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class OrderResponseFiscalEntityAddress {
+@JsonTypeName("order_fiscal_entity_address_response")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+public class OrderFiscalEntityAddressResponse {
   public static final String JSON_PROPERTY_STREET1 = "street1";
   private String street1;
 
@@ -61,28 +60,25 @@ public class OrderResponseFiscalEntityAddress {
   public static final String JSON_PROPERTY_COUNTRY = "country";
   private String country;
 
-  public static final String JSON_PROPERTY_RESIDENTIAL = "residential";
-  private Boolean residential;
-
   public static final String JSON_PROPERTY_EXTERNAL_NUMBER = "external_number";
   private String externalNumber;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;
 
-  public OrderResponseFiscalEntityAddress() { 
+  public OrderFiscalEntityAddressResponse() { 
   }
 
-  public OrderResponseFiscalEntityAddress street1(String street1) {
+  public OrderFiscalEntityAddressResponse street1(String street1) {
     this.street1 = street1;
     return this;
   }
 
    /**
-   * Get street1
+   * Street name and number
    * @return street1
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_STREET1)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -98,16 +94,16 @@ public class OrderResponseFiscalEntityAddress {
   }
 
 
-  public OrderResponseFiscalEntityAddress street2(String street2) {
+  public OrderFiscalEntityAddressResponse street2(String street2) {
     this.street2 = street2;
     return this;
   }
 
    /**
-   * Get street2
+   * Street name and number
    * @return street2
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STREET2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -123,16 +119,16 @@ public class OrderResponseFiscalEntityAddress {
   }
 
 
-  public OrderResponseFiscalEntityAddress postalCode(String postalCode) {
+  public OrderFiscalEntityAddressResponse postalCode(String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
 
    /**
-   * Get postalCode
+   * Postal code
    * @return postalCode
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -148,16 +144,16 @@ public class OrderResponseFiscalEntityAddress {
   }
 
 
-  public OrderResponseFiscalEntityAddress city(String city) {
+  public OrderFiscalEntityAddressResponse city(String city) {
     this.city = city;
     return this;
   }
 
    /**
-   * Get city
+   * City
    * @return city
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CITY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -173,16 +169,16 @@ public class OrderResponseFiscalEntityAddress {
   }
 
 
-  public OrderResponseFiscalEntityAddress state(String state) {
+  public OrderFiscalEntityAddressResponse state(String state) {
     this.state = state;
     return this;
   }
 
    /**
-   * Get state
+   * State
    * @return state
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -198,7 +194,7 @@ public class OrderResponseFiscalEntityAddress {
   }
 
 
-  public OrderResponseFiscalEntityAddress country(String country) {
+  public OrderFiscalEntityAddressResponse country(String country) {
     this.country = country;
     return this;
   }
@@ -207,9 +203,9 @@ public class OrderResponseFiscalEntityAddress {
    * this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
    * @return country
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_COUNTRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCountry() {
     return country;
@@ -217,49 +213,24 @@ public class OrderResponseFiscalEntityAddress {
 
 
   @JsonProperty(JSON_PROPERTY_COUNTRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCountry(String country) {
     this.country = country;
   }
 
 
-  public OrderResponseFiscalEntityAddress residential(Boolean residential) {
-    this.residential = residential;
-    return this;
-  }
-
-   /**
-   * Get residential
-   * @return residential
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RESIDENTIAL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getResidential() {
-    return residential;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_RESIDENTIAL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setResidential(Boolean residential) {
-    this.residential = residential;
-  }
-
-
-  public OrderResponseFiscalEntityAddress externalNumber(String externalNumber) {
+  public OrderFiscalEntityAddressResponse externalNumber(String externalNumber) {
     this.externalNumber = externalNumber;
     return this;
   }
 
    /**
-   * Get externalNumber
+   * External number
    * @return externalNumber
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_EXTERNAL_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getExternalNumber() {
     return externalNumber;
@@ -267,13 +238,13 @@ public class OrderResponseFiscalEntityAddress {
 
 
   @JsonProperty(JSON_PROPERTY_EXTERNAL_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setExternalNumber(String externalNumber) {
     this.externalNumber = externalNumber;
   }
 
 
-  public OrderResponseFiscalEntityAddress _object(String _object) {
+  public OrderFiscalEntityAddressResponse _object(String _object) {
     this._object = _object;
     return this;
   }
@@ -282,7 +253,7 @@ public class OrderResponseFiscalEntityAddress {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -299,7 +270,7 @@ public class OrderResponseFiscalEntityAddress {
 
 
   /**
-   * Return true if this order_response_fiscal_entity_address object is equal to o.
+   * Return true if this order_fiscal_entity_address_response object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -309,34 +280,32 @@ public class OrderResponseFiscalEntityAddress {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrderResponseFiscalEntityAddress orderResponseFiscalEntityAddress = (OrderResponseFiscalEntityAddress) o;
-    return Objects.equals(this.street1, orderResponseFiscalEntityAddress.street1) &&
-        Objects.equals(this.street2, orderResponseFiscalEntityAddress.street2) &&
-        Objects.equals(this.postalCode, orderResponseFiscalEntityAddress.postalCode) &&
-        Objects.equals(this.city, orderResponseFiscalEntityAddress.city) &&
-        Objects.equals(this.state, orderResponseFiscalEntityAddress.state) &&
-        Objects.equals(this.country, orderResponseFiscalEntityAddress.country) &&
-        Objects.equals(this.residential, orderResponseFiscalEntityAddress.residential) &&
-        Objects.equals(this.externalNumber, orderResponseFiscalEntityAddress.externalNumber) &&
-        Objects.equals(this._object, orderResponseFiscalEntityAddress._object);
+    OrderFiscalEntityAddressResponse orderFiscalEntityAddressResponse = (OrderFiscalEntityAddressResponse) o;
+    return Objects.equals(this.street1, orderFiscalEntityAddressResponse.street1) &&
+        Objects.equals(this.street2, orderFiscalEntityAddressResponse.street2) &&
+        Objects.equals(this.postalCode, orderFiscalEntityAddressResponse.postalCode) &&
+        Objects.equals(this.city, orderFiscalEntityAddressResponse.city) &&
+        Objects.equals(this.state, orderFiscalEntityAddressResponse.state) &&
+        Objects.equals(this.country, orderFiscalEntityAddressResponse.country) &&
+        Objects.equals(this.externalNumber, orderFiscalEntityAddressResponse.externalNumber) &&
+        Objects.equals(this._object, orderFiscalEntityAddressResponse._object);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(street1, street2, postalCode, city, state, country, residential, externalNumber, _object);
+    return Objects.hash(street1, street2, postalCode, city, state, country, externalNumber, _object);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrderResponseFiscalEntityAddress {\n");
+    sb.append("class OrderFiscalEntityAddressResponse {\n");
     sb.append("    street1: ").append(toIndentedString(street1)).append("\n");
     sb.append("    street2: ").append(toIndentedString(street2)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    residential: ").append(toIndentedString(residential)).append("\n");
     sb.append("    externalNumber: ").append(toIndentedString(externalNumber)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("}");

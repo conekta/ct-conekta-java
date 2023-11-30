@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -22,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
@@ -34,7 +34,7 @@ import com.conekta.JSON;
   CustomerAntifraudInfoResponse.JSON_PROPERTY_ACCOUNT_CREATED_AT
 })
 @JsonTypeName("customer_antifraud_info_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomerAntifraudInfoResponse {
   public static final String JSON_PROPERTY_FIRST_PAID_AT = "first_paid_at";
   private Integer firstPaidAt;
@@ -54,7 +54,7 @@ public class CustomerAntifraudInfoResponse {
    * Get firstPaidAt
    * @return firstPaidAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FIRST_PAID_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -79,7 +79,7 @@ public class CustomerAntifraudInfoResponse {
    * Get accountCreatedAt
    * @return accountCreatedAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACCOUNT_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

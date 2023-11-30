@@ -88,7 +88,7 @@ public class Example {
 
 ## getTransactions
 
-> GetTransactionsResponse getTransactions(acceptLanguage, xChildCompanyId, limit, search, next, previous)
+> GetTransactionsResponse getTransactions(acceptLanguage, xChildCompanyId, limit, next, previous, id, chargeId, type, currency)
 
 Get List transactions
 
@@ -118,11 +118,14 @@ public class Example {
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
         Integer limit = 20; // Integer | The numbers of items to return, the maximum value is 250
-        String search = "search_example"; // String | General order search, e.g. by mail, reference etc.
         String next = "next_example"; // String | next page
         String previous = "previous_example"; // String | previous page
+        String id = "65412a893cd69a0001c25892"; // String | id of the object to be retrieved
+        String chargeId = "65412a893cd69a0001c25892"; // String | id of the charge used for filtering
+        String type = "capture"; // String | type of the object to be retrieved
+        String currency = "MXN"; // String | currency of the object to be retrieved
         try {
-            GetTransactionsResponse result = apiInstance.getTransactions(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+            GetTransactionsResponse result = apiInstance.getTransactions(acceptLanguage, xChildCompanyId, limit, next, previous, id, chargeId, type, currency);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TransactionsApi#getTransactions");
@@ -143,9 +146,12 @@ public class Example {
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
 | **limit** | **Integer**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20] |
-| **search** | **String**| General order search, e.g. by mail, reference etc. | [optional] |
 | **next** | **String**| next page | [optional] |
 | **previous** | **String**| previous page | [optional] |
+| **id** | **String**| id of the object to be retrieved | [optional] |
+| **chargeId** | **String**| id of the charge used for filtering | [optional] |
+| **type** | **String**| type of the object to be retrieved | [optional] |
+| **currency** | **String**| currency of the object to be retrieved | [optional] |
 
 ### Return type
 

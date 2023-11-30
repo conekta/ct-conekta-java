@@ -17,7 +17,7 @@ order response
 |**currency** | **String** | The three-letter ISO 4217 currency code. The currency of the order. |  [optional] |
 |**customerInfo** | [**OrderResponseCustomerInfo**](OrderResponseCustomerInfo.md) |  |  [optional] |
 |**discountLines** | [**OrderResponseDiscountLines**](OrderResponseDiscountLines.md) |  |  [optional] |
-|**fiscalEntity** | [**OrderResponseFiscalEntity**](OrderResponseFiscalEntity.md) |  |  [optional] |
+|**fiscalEntity** | [**OrderFiscalEntityResponse**](OrderFiscalEntityResponse.md) |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**isRefundable** | **Boolean** |  |  [optional] |
 |**lineItems** | [**OrderResponseProducts**](OrderResponseProducts.md) |  |  [optional] |

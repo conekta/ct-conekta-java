@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -23,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -61,7 +61,7 @@ import com.conekta.JSON;
   TokenResponseCheckout.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("token_response_checkout")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TokenResponseCheckout {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
   private List<String> allowedPaymentMethods;
@@ -152,7 +152,7 @@ public class TokenResponseCheckout {
    * Get allowedPaymentMethods
    * @return allowedPaymentMethods
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ALLOWED_PAYMENT_METHODS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -177,7 +177,7 @@ public class TokenResponseCheckout {
    * Indicates if the checkout can not expire.
    * @return canNotExpire
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CAN_NOT_EXPIRE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -202,7 +202,7 @@ public class TokenResponseCheckout {
    * Get emailsSent
    * @return emailsSent
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAILS_SENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -235,7 +235,7 @@ public class TokenResponseCheckout {
    * Get excludeCardNetworks
    * @return excludeCardNetworks
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXCLUDE_CARD_NETWORKS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -260,7 +260,7 @@ public class TokenResponseCheckout {
    * Date and time when the checkout expires.
    * @return expiresAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -285,7 +285,7 @@ public class TokenResponseCheckout {
    * URL to redirect the customer to if the payment process fails.
    * @return failureUrl
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAILURE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -310,7 +310,7 @@ public class TokenResponseCheckout {
    * Indicates if the checkout forces the 3DS flow.
    * @return force3dsFlow
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FORCE3DS_FLOW)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -335,7 +335,7 @@ public class TokenResponseCheckout {
    * Get id
    * @return id
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -360,7 +360,7 @@ public class TokenResponseCheckout {
    * Get livemode
    * @return livemode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -393,7 +393,7 @@ public class TokenResponseCheckout {
    * Get metadata
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -418,7 +418,7 @@ public class TokenResponseCheckout {
    * Indicates if the checkout allows monthly installments.
    * @return monthlyInstallmentsEnabled
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -451,7 +451,7 @@ public class TokenResponseCheckout {
    * List of monthly installments options.
    * @return monthlyInstallmentsOptions
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -476,7 +476,7 @@ public class TokenResponseCheckout {
    * Get name
    * @return name
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -501,7 +501,7 @@ public class TokenResponseCheckout {
    * Get needsShippingContact
    * @return needsShippingContact
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NEEDS_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -526,7 +526,7 @@ public class TokenResponseCheckout {
    * Indicates the type of object, in this case checkout.
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -551,7 +551,7 @@ public class TokenResponseCheckout {
    * Indicates if the checkout allows on demand payments.
    * @return onDemandEnabled
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ON_DEMAND_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -576,7 +576,7 @@ public class TokenResponseCheckout {
    * Number of payments that have been paid.
    * @return paidPaymentsCount
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAID_PAYMENTS_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -601,7 +601,7 @@ public class TokenResponseCheckout {
    * Indicates if the checkout is recurrent.
    * @return recurrent
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECURRENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -626,7 +626,7 @@ public class TokenResponseCheckout {
    * Get smsSent
    * @return smsSent
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SMS_SENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -651,7 +651,7 @@ public class TokenResponseCheckout {
    * Date and time when the checkout starts.
    * @return startsAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STARTS_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -676,7 +676,7 @@ public class TokenResponseCheckout {
    * Status of the checkout.
    * @return status
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -701,7 +701,7 @@ public class TokenResponseCheckout {
    * URL to redirect the customer to after the payment process is completed.
    * @return successUrl
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUCCESS_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -726,7 +726,7 @@ public class TokenResponseCheckout {
    * Type of checkout.
    * @return type
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

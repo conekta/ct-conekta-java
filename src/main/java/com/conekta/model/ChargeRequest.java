@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.ChargeRequestPaymentMethod;
@@ -23,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
@@ -32,18 +32,14 @@ import com.conekta.JSON;
  */
 @JsonPropertyOrder({
   ChargeRequest.JSON_PROPERTY_AMOUNT,
-  ChargeRequest.JSON_PROPERTY_MONTHLY_INSTALLMENTS,
   ChargeRequest.JSON_PROPERTY_PAYMENT_METHOD,
   ChargeRequest.JSON_PROPERTY_REFERENCE_ID
 })
 @JsonTypeName("charge_request")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ChargeRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Integer amount;
-
-  public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS = "monthly_installments";
-  private Integer monthlyInstallments;
 
   public static final String JSON_PROPERTY_PAYMENT_METHOD = "payment_method";
   private ChargeRequestPaymentMethod paymentMethod;
@@ -63,7 +59,7 @@ public class ChargeRequest {
    * Get amount
    * @return amount
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -79,31 +75,6 @@ public class ChargeRequest {
   }
 
 
-  public ChargeRequest monthlyInstallments(Integer monthlyInstallments) {
-    this.monthlyInstallments = monthlyInstallments;
-    return this;
-  }
-
-   /**
-   * How many months without interest to apply, it can be 3, 6, 9, 12 or 18
-   * @return monthlyInstallments
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Integer getMonthlyInstallments() {
-    return monthlyInstallments;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMonthlyInstallments(Integer monthlyInstallments) {
-    this.monthlyInstallments = monthlyInstallments;
-  }
-
-
   public ChargeRequest paymentMethod(ChargeRequestPaymentMethod paymentMethod) {
     this.paymentMethod = paymentMethod;
     return this;
@@ -113,7 +84,7 @@ public class ChargeRequest {
    * Get paymentMethod
    * @return paymentMethod
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_PAYMENT_METHOD)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -138,7 +109,7 @@ public class ChargeRequest {
    * Custom reference to add to the charge
    * @return referenceId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERENCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -167,14 +138,13 @@ public class ChargeRequest {
     }
     ChargeRequest chargeRequest = (ChargeRequest) o;
     return Objects.equals(this.amount, chargeRequest.amount) &&
-        Objects.equals(this.monthlyInstallments, chargeRequest.monthlyInstallments) &&
         Objects.equals(this.paymentMethod, chargeRequest.paymentMethod) &&
         Objects.equals(this.referenceId, chargeRequest.referenceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, monthlyInstallments, paymentMethod, referenceId);
+    return Objects.hash(amount, paymentMethod, referenceId);
   }
 
   @Override
@@ -182,7 +152,6 @@ public class ChargeRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class ChargeRequest {\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    monthlyInstallments: ").append(toIndentedString(monthlyInstallments)).append("\n");
     sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
     sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
     sb.append("}");

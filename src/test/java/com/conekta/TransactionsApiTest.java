@@ -61,7 +61,7 @@ public class TransactionsApiTest {
     public void getTransactionsTest() throws ApiException {
         String acceptLanguage = "es";
         Integer limit = 2;
-        GetTransactionsResponse response = api.getTransactions(acceptLanguage, null, limit, null, null, null);
+        GetTransactionsResponse response = api.getTransactions(acceptLanguage, null, limit, null, null, null, null, null,null);
         Assertions.assertNotNull(response);
     }
 

@@ -13,6 +13,7 @@ a order
 |**currency** | **String** | Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217) |  |
 |**customerInfo** | [**OrderRequestCustomerInfo**](OrderRequestCustomerInfo.md) |  |  |
 |**discountLines** | [**List&lt;OrderDiscountLinesRequest&gt;**](OrderDiscountLinesRequest.md) | List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount. |  [optional] |
+|**fiscalEntity** | [**OrderFiscalEntityRequest**](OrderFiscalEntityRequest.md) |  |  [optional] |
 |**lineItems** | [**List&lt;Product&gt;**](Product.md) | List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product. |  |
 |**metadata** | **Map&lt;String, Object&gt;** | Metadata associated with the order |  [optional] |
 |**needsShippingContact** | **Boolean** | Allows you to fill out the shipping information at checkout |  [optional] |

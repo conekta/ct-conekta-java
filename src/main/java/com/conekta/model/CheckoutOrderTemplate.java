@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.CheckoutOrderTemplateCustomerInfo;
@@ -25,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,7 +42,7 @@ import com.conekta.JSON;
   CheckoutOrderTemplate.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("checkout_order_template")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CheckoutOrderTemplate {
   public static final String JSON_PROPERTY_CURRENCY = "currency";
   private String currency;
@@ -68,7 +68,7 @@ public class CheckoutOrderTemplate {
    * It is the currency in which the order will be created. It must be a valid ISO 4217 currency code.
    * @return currency
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -93,7 +93,7 @@ public class CheckoutOrderTemplate {
    * Get customerInfo
    * @return customerInfo
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -126,7 +126,7 @@ public class CheckoutOrderTemplate {
    * They are the products to buy. Each contains the \&quot;unit price\&quot; and \&quot;quantity\&quot; parameters that are used to calculate the total amount of the order.
    * @return lineItems
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LINE_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -159,7 +159,7 @@ public class CheckoutOrderTemplate {
    * It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format.
    * @return metadata
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 

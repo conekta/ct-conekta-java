@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -22,26 +21,27 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
 
 /**
- * OrderResponseFiscalEntityAddressAllOf
+ * OrderFiscalEntityAddressResponseAllOf
  */
 @JsonPropertyOrder({
-  OrderResponseFiscalEntityAddressAllOf.JSON_PROPERTY_OBJECT
+  OrderFiscalEntityAddressResponseAllOf.JSON_PROPERTY_OBJECT
 })
-@JsonTypeName("order_response_fiscal_entity_address_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class OrderResponseFiscalEntityAddressAllOf {
+@JsonTypeName("order_fiscal_entity_address_response_allOf")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+public class OrderFiscalEntityAddressResponseAllOf {
   public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;
 
-  public OrderResponseFiscalEntityAddressAllOf() { 
+  public OrderFiscalEntityAddressResponseAllOf() { 
   }
 
-  public OrderResponseFiscalEntityAddressAllOf _object(String _object) {
+  public OrderFiscalEntityAddressResponseAllOf _object(String _object) {
     this._object = _object;
     return this;
   }
@@ -50,7 +50,7 @@ public class OrderResponseFiscalEntityAddressAllOf {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -67,7 +67,7 @@ public class OrderResponseFiscalEntityAddressAllOf {
 
 
   /**
-   * Return true if this order_response_fiscal_entity_address_allOf object is equal to o.
+   * Return true if this order_fiscal_entity_address_response_allOf object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -77,8 +77,8 @@ public class OrderResponseFiscalEntityAddressAllOf {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrderResponseFiscalEntityAddressAllOf orderResponseFiscalEntityAddressAllOf = (OrderResponseFiscalEntityAddressAllOf) o;
-    return Objects.equals(this._object, orderResponseFiscalEntityAddressAllOf._object);
+    OrderFiscalEntityAddressResponseAllOf orderFiscalEntityAddressResponseAllOf = (OrderFiscalEntityAddressResponseAllOf) o;
+    return Objects.equals(this._object, orderFiscalEntityAddressResponseAllOf._object);
   }
 
   @Override
@@ -89,7 +89,7 @@ public class OrderResponseFiscalEntityAddressAllOf {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrderResponseFiscalEntityAddressAllOf {\n");
+    sb.append("class OrderFiscalEntityAddressResponseAllOf {\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("}");
     return sb.toString();

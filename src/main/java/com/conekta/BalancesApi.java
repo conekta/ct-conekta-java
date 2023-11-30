@@ -6,7 +6,7 @@ import com.conekta.ApiResponse;
 import com.conekta.Configuration;
 import com.conekta.Pair;
 
-import jakarta.ws.rs.core.GenericType;
+import javax.ws.rs.core.GenericType;
 
 import com.conekta.model.BalanceResponse;
 import com.conekta.model.Error;
@@ -17,7 +17,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BalancesApi {
   private ApiClient apiClient;
 
@@ -90,7 +90,7 @@ public class BalancesApi {
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<BalanceResponse> localVarReturnType = new GenericType<BalanceResponse>() {};
-    return apiClient.invokeAPI("BalancesApi.getBalance", "/balances", "GET", new ArrayList<>(), null,
+    return apiClient.invokeAPI("BalancesApi.getBalance", "/balance", "GET", new ArrayList<>(), null,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

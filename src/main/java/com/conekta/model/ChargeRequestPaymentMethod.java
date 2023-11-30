@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -22,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
@@ -31,16 +31,20 @@ import com.conekta.JSON;
  */
 @JsonPropertyOrder({
   ChargeRequestPaymentMethod.JSON_PROPERTY_EXPIRES_AT,
+  ChargeRequestPaymentMethod.JSON_PROPERTY_MONTHLY_INSTALLMENTS,
   ChargeRequestPaymentMethod.JSON_PROPERTY_TYPE,
   ChargeRequestPaymentMethod.JSON_PROPERTY_TOKEN_ID,
   ChargeRequestPaymentMethod.JSON_PROPERTY_PAYMENT_SOURCE_ID,
   ChargeRequestPaymentMethod.JSON_PROPERTY_CONTRACT_ID
 })
 @JsonTypeName("charge_request_payment_method")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ChargeRequestPaymentMethod {
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
   private Long expiresAt;
+
+  public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS = "monthly_installments";
+  private Integer monthlyInstallments;
 
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -66,7 +70,7 @@ public class ChargeRequestPaymentMethod {
    * Method expiration date as unix timestamp
    * @return expiresAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -82,6 +86,31 @@ public class ChargeRequestPaymentMethod {
   }
 
 
+  public ChargeRequestPaymentMethod monthlyInstallments(Integer monthlyInstallments) {
+    this.monthlyInstallments = monthlyInstallments;
+    return this;
+  }
+
+   /**
+   * How many months without interest to apply, it can be 3, 6, 9, 12 or 18
+   * @return monthlyInstallments
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getMonthlyInstallments() {
+    return monthlyInstallments;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMonthlyInstallments(Integer monthlyInstallments) {
+    this.monthlyInstallments = monthlyInstallments;
+  }
+
+
   public ChargeRequestPaymentMethod type(String type) {
     this.type = type;
     return this;
@@ -91,7 +120,7 @@ public class ChargeRequestPaymentMethod {
    * Get type
    * @return type
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -116,7 +145,7 @@ public class ChargeRequestPaymentMethod {
    * Get tokenId
    * @return tokenId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TOKEN_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -141,7 +170,7 @@ public class ChargeRequestPaymentMethod {
    * Get paymentSourceId
    * @return paymentSourceId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENT_SOURCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -166,7 +195,7 @@ public class ChargeRequestPaymentMethod {
    * Optional id sent to indicate the bank contract for recurrent card charges.
    * @return contractId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -195,6 +224,7 @@ public class ChargeRequestPaymentMethod {
     }
     ChargeRequestPaymentMethod chargeRequestPaymentMethod = (ChargeRequestPaymentMethod) o;
     return Objects.equals(this.expiresAt, chargeRequestPaymentMethod.expiresAt) &&
+        Objects.equals(this.monthlyInstallments, chargeRequestPaymentMethod.monthlyInstallments) &&
         Objects.equals(this.type, chargeRequestPaymentMethod.type) &&
         Objects.equals(this.tokenId, chargeRequestPaymentMethod.tokenId) &&
         Objects.equals(this.paymentSourceId, chargeRequestPaymentMethod.paymentSourceId) &&
@@ -203,7 +233,7 @@ public class ChargeRequestPaymentMethod {
 
   @Override
   public int hashCode() {
-    return Objects.hash(expiresAt, type, tokenId, paymentSourceId, contractId);
+    return Objects.hash(expiresAt, monthlyInstallments, type, tokenId, paymentSourceId, contractId);
   }
 
   @Override
@@ -211,6 +241,7 @@ public class ChargeRequestPaymentMethod {
     StringBuilder sb = new StringBuilder();
     sb.append("class ChargeRequestPaymentMethod {\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
+    sb.append("    monthlyInstallments: ").append(toIndentedString(monthlyInstallments)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
     sb.append("    paymentSourceId: ").append(toIndentedString(paymentSourceId)).append("\n");

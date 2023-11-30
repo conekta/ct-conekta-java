@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.CustomerShippingContactsAddress;
@@ -23,6 +22,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
@@ -38,12 +40,13 @@ import com.conekta.JSON;
   CustomerShippingContactsDataResponse.JSON_PROPERTY_PARENT_ID,
   CustomerShippingContactsDataResponse.JSON_PROPERTY_DEFAULT,
   CustomerShippingContactsDataResponse.JSON_PROPERTY_DELETED,
+  CustomerShippingContactsDataResponse.JSON_PROPERTY_METADATA,
   CustomerShippingContactsDataResponse.JSON_PROPERTY_ID,
   CustomerShippingContactsDataResponse.JSON_PROPERTY_OBJECT,
   CustomerShippingContactsDataResponse.JSON_PROPERTY_CREATED_AT
 })
 @JsonTypeName("customer_shipping_contacts_data_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CustomerShippingContactsDataResponse {
   public static final String JSON_PROPERTY_PHONE = "phone";
   private String phone;
@@ -66,6 +69,9 @@ public class CustomerShippingContactsDataResponse {
   public static final String JSON_PROPERTY_DELETED = "deleted";
   private Boolean deleted;
 
+  public static final String JSON_PROPERTY_METADATA = "metadata";
+  private Map<String, Object> metadata = new HashMap<>();
+
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
 
@@ -87,7 +93,7 @@ public class CustomerShippingContactsDataResponse {
    * Phone contact
    * @return phone
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -112,7 +118,7 @@ public class CustomerShippingContactsDataResponse {
    * Name of the person who will receive the order
    * @return receiver
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECEIVER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -137,7 +143,7 @@ public class CustomerShippingContactsDataResponse {
    * The street names between which the order will be delivered.
    * @return betweenStreets
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BETWEEN_STREETS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -162,7 +168,7 @@ public class CustomerShippingContactsDataResponse {
    * Get address
    * @return address
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -187,7 +193,7 @@ public class CustomerShippingContactsDataResponse {
    * Get parentId
    * @return parentId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -212,7 +218,7 @@ public class CustomerShippingContactsDataResponse {
    * Get _default
    * @return _default
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -237,7 +243,7 @@ public class CustomerShippingContactsDataResponse {
    * Get deleted
    * @return deleted
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -253,6 +259,39 @@ public class CustomerShippingContactsDataResponse {
   }
 
 
+  public CustomerShippingContactsDataResponse metadata(Map<String, Object> metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+  public CustomerShippingContactsDataResponse putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
+   /**
+   * Metadata associated with the shipping contact
+   * @return metadata
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Map<String, Object> getMetadata() {
+    return metadata;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMetadata(Map<String, Object> metadata) {
+    this.metadata = metadata;
+  }
+
+
   public CustomerShippingContactsDataResponse id(String id) {
     this.id = id;
     return this;
@@ -262,7 +301,7 @@ public class CustomerShippingContactsDataResponse {
    * Get id
    * @return id
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -287,7 +326,7 @@ public class CustomerShippingContactsDataResponse {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -312,7 +351,7 @@ public class CustomerShippingContactsDataResponse {
    * Get createdAt
    * @return createdAt
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -347,6 +386,7 @@ public class CustomerShippingContactsDataResponse {
         Objects.equals(this.parentId, customerShippingContactsDataResponse.parentId) &&
         Objects.equals(this._default, customerShippingContactsDataResponse._default) &&
         Objects.equals(this.deleted, customerShippingContactsDataResponse.deleted) &&
+        Objects.equals(this.metadata, customerShippingContactsDataResponse.metadata) &&
         Objects.equals(this.id, customerShippingContactsDataResponse.id) &&
         Objects.equals(this._object, customerShippingContactsDataResponse._object) &&
         Objects.equals(this.createdAt, customerShippingContactsDataResponse.createdAt);
@@ -354,7 +394,7 @@ public class CustomerShippingContactsDataResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(phone, receiver, betweenStreets, address, parentId, _default, deleted, id, _object, createdAt);
+    return Objects.hash(phone, receiver, betweenStreets, address, parentId, _default, deleted, metadata, id, _object, createdAt);
   }
 
   @Override
@@ -368,6 +408,7 @@ public class CustomerShippingContactsDataResponse {
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
     sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

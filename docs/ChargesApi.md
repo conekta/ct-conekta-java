@@ -6,6 +6,7 @@ All URIs are relative to *https://api.conekta.io*
 |------------- | ------------- | -------------|
 | [**getCharges**](ChargesApi.md#getCharges) | **GET** /charges | Get A List of Charges |
 | [**ordersCreateCharge**](ChargesApi.md#ordersCreateCharge) | **POST** /orders/{id}/charges | Create charge |
+| [**updateCharge**](ChargesApi.md#updateCharge) | **PUT** /charges/{id} | Update a charge |
 
 
 
@@ -166,5 +167,82 @@ public class Example {
 | **401** | authentication error |  -  |
 | **404** | not found entity |  -  |
 | **428** | Precondition Required |  -  |
+| **500** | internal server error |  -  |
+
+
+## updateCharge
+
+> ChargeResponse updateCharge(id, chargeUpdateRequest, acceptLanguage, xChildCompanyId)
+
+Update a charge
+
+### Example
+
+```java
+// Import classes:
+import com.conekta.ApiClient;
+import com.conekta.ApiException;
+import com.conekta.Configuration;
+import com.conekta.auth.*;
+import com.conekta.model.*;
+import com.conekta.ChargesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.conekta.io");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        ChargesApi apiInstance = new ChargesApi(defaultClient);
+        String id = "6307a60c41de27127515a575"; // String | Identifier of the resource
+        ChargeUpdateRequest chargeUpdateRequest = new ChargeUpdateRequest(); // ChargeUpdateRequest | requested field for update a charge
+        String acceptLanguage = "es"; // String | Use for knowing which language to use
+        String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
+        try {
+            ChargeResponse result = apiInstance.updateCharge(id, chargeUpdateRequest, acceptLanguage, xChildCompanyId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ChargesApi#updateCharge");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| Identifier of the resource | |
+| **chargeUpdateRequest** | [**ChargeUpdateRequest**](ChargeUpdateRequest.md)| requested field for update a charge | |
+| **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
+| **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
+
+### Return type
+
+[**ChargeResponse**](ChargeResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.1.0+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | successful |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
+| **422** | whitelist validation error |  -  |
+| **404** | not found entity |  -  |
 | **500** | internal server error |  -  |
 

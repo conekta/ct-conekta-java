@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -23,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
@@ -52,7 +52,7 @@ import com.conekta.JSON;
   PaymentMethodBankTransfer.JSON_PROPERTY_TRACKING_CODE
 })
 @JsonTypeName("payment_method_bank_transfer")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PaymentMethodBankTransfer {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -120,7 +120,7 @@ public class PaymentMethodBankTransfer {
    * Get type
    * @return type
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -145,7 +145,7 @@ public class PaymentMethodBankTransfer {
    * Get _object
    * @return _object
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -170,7 +170,7 @@ public class PaymentMethodBankTransfer {
    * Get bank
    * @return bank
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BANK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -195,7 +195,7 @@ public class PaymentMethodBankTransfer {
    * Get clabe
    * @return clabe
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CLABE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -220,7 +220,7 @@ public class PaymentMethodBankTransfer {
    * Get description
    * @return description
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -245,7 +245,7 @@ public class PaymentMethodBankTransfer {
    * Get executedAt
    * @return executedAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXECUTED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -270,7 +270,7 @@ public class PaymentMethodBankTransfer {
    * Get expiresAt
    * @return expiresAt
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -295,7 +295,7 @@ public class PaymentMethodBankTransfer {
    * Get issuingAccountBank
    * @return issuingAccountBank
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_BANK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -320,7 +320,7 @@ public class PaymentMethodBankTransfer {
    * Get issuingAccountNumber
    * @return issuingAccountNumber
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -345,7 +345,7 @@ public class PaymentMethodBankTransfer {
    * Get issuingAccountHolderName
    * @return issuingAccountHolderName
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_HOLDER_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -370,7 +370,7 @@ public class PaymentMethodBankTransfer {
    * Get issuingAccountTaxId
    * @return issuingAccountTaxId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_TAX_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -403,7 +403,7 @@ public class PaymentMethodBankTransfer {
    * Get paymentAttempts
    * @return paymentAttempts
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENT_ATTEMPTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -428,7 +428,7 @@ public class PaymentMethodBankTransfer {
    * Get receivingAccountHolderName
    * @return receivingAccountHolderName
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_HOLDER_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -453,7 +453,7 @@ public class PaymentMethodBankTransfer {
    * Get receivingAccountNumber
    * @return receivingAccountNumber
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -478,7 +478,7 @@ public class PaymentMethodBankTransfer {
    * Get receivingAccountBank
    * @return receivingAccountBank
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_BANK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -503,7 +503,7 @@ public class PaymentMethodBankTransfer {
    * Get receivingAccountTaxId
    * @return receivingAccountTaxId
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_TAX_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -528,7 +528,7 @@ public class PaymentMethodBankTransfer {
    * Get referenceNumber
    * @return referenceNumber
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERENCE_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -553,7 +553,7 @@ public class PaymentMethodBankTransfer {
    * Get trackingCode
    * @return trackingCode
   **/
-  @jakarta.annotation.Nullable
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRACKING_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

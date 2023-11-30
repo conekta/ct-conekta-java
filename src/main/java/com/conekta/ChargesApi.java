@@ -6,10 +6,12 @@ import com.conekta.ApiResponse;
 import com.conekta.Configuration;
 import com.conekta.Pair;
 
-import jakarta.ws.rs.core.GenericType;
+import javax.ws.rs.core.GenericType;
 
 import com.conekta.model.ChargeOrderResponse;
 import com.conekta.model.ChargeRequest;
+import com.conekta.model.ChargeResponse;
+import com.conekta.model.ChargeUpdateRequest;
 import com.conekta.model.Error;
 import com.conekta.model.GetChargesResponse;
 
@@ -19,7 +21,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ChargesApi {
   private ApiClient apiClient;
 
@@ -186,6 +188,76 @@ public class ChargesApi {
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<ChargeOrderResponse> localVarReturnType = new GenericType<ChargeOrderResponse>() {};
     return apiClient.invokeAPI("ChargesApi.ordersCreateCharge", localVarPath, "POST", new ArrayList<>(), chargeRequest,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+  /**
+   * Update a charge
+   * 
+   * @param id Identifier of the resource (required)
+   * @param chargeUpdateRequest requested field for update a charge (required)
+   * @param acceptLanguage Use for knowing which language to use (optional, default to es)
+   * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
+   * @return ChargeResponse
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
+       <tr><td> 422 </td><td> whitelist validation error </td><td>  -  </td></tr>
+       <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
+       <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
+     </table>
+   */
+  public ChargeResponse updateCharge(String id, ChargeUpdateRequest chargeUpdateRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+    return updateChargeWithHttpInfo(id, chargeUpdateRequest, acceptLanguage, xChildCompanyId).getData();
+  }
+
+  /**
+   * Update a charge
+   * 
+   * @param id Identifier of the resource (required)
+   * @param chargeUpdateRequest requested field for update a charge (required)
+   * @param acceptLanguage Use for knowing which language to use (optional, default to es)
+   * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
+   * @return ApiResponse&lt;ChargeResponse&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
+       <tr><td> 422 </td><td> whitelist validation error </td><td>  -  </td></tr>
+       <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
+       <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<ChargeResponse> updateChargeWithHttpInfo(String id, ChargeUpdateRequest chargeUpdateRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+    // Check required parameters
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling updateCharge");
+    }
+    if (chargeUpdateRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'chargeUpdateRequest' when calling updateCharge");
+    }
+
+    // Path parameters
+    String localVarPath = "/charges/{id}"
+            .replaceAll("\\{id}", apiClient.escapeString(id));
+
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
+      localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+    }
+    if (xChildCompanyId != null) {
+      localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
+
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
+    GenericType<ChargeResponse> localVarReturnType = new GenericType<ChargeResponse>() {};
+    return apiClient.invokeAPI("ChargesApi.updateCharge", localVarPath, "PUT", new ArrayList<>(), chargeUpdateRequest,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

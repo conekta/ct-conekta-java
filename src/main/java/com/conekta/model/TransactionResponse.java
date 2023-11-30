@@ -14,7 +14,6 @@
 package com.conekta.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -22,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
@@ -43,7 +43,7 @@ import com.conekta.JSON;
   TransactionResponse.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("transaction_response")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TransactionResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Long amount;
@@ -90,7 +90,7 @@ public class TransactionResponse {
    * The amount of the transaction.
    * @return amount
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -115,7 +115,7 @@ public class TransactionResponse {
    * Randomly assigned unique order identifier associated with the charge.
    * @return charge
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CHARGE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -140,7 +140,7 @@ public class TransactionResponse {
    * Date and time of creation of the transaction in Unix format.
    * @return createdAt
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -165,7 +165,7 @@ public class TransactionResponse {
    * The currency of the transaction. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)
    * @return currency
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -190,7 +190,7 @@ public class TransactionResponse {
    * The amount to be deducted for taxes and commissions.
    * @return fee
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_FEE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -215,7 +215,7 @@ public class TransactionResponse {
    * Unique identifier of the transaction.
    * @return id
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -240,7 +240,7 @@ public class TransactionResponse {
    * Indicates whether the transaction was created in live mode or test mode.
    * @return livemode
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -265,7 +265,7 @@ public class TransactionResponse {
    * The net amount after deducting commissions and taxes.
    * @return net
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NET)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -290,7 +290,7 @@ public class TransactionResponse {
    * Object name, which is transaction.
    * @return _object
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -315,7 +315,7 @@ public class TransactionResponse {
    * Code indicating transaction status.
    * @return status
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -340,7 +340,7 @@ public class TransactionResponse {
    * Transaction Type
    * @return type
   **/
-  @jakarta.annotation.Nonnull
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
