@@ -28,7 +28,7 @@
     "javaMinVersion": 11,
     "swagger1AnnotationLibrary": false,
     "javaxPackage": "javax",
-    "templateDir": "templates/java/jersey3",
+    "templateDir": "templates/java/jersey2",
     "disallowAdditionalPropertiesIfNotPresent": true,
     "useOneOfDiscriminatorLookup": true,
     "serializationLibrary": "jackson",
