@@ -55,7 +55,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.conekta.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 @JsonDeserialize(using = CustomerPaymentMethodsRequest.CustomerPaymentMethodsRequestDeserializer.class)
 @JsonSerialize(using = CustomerPaymentMethodsRequest.CustomerPaymentMethodsRequestSerializer.class)
 public class CustomerPaymentMethodsRequest extends AbstractOpenApiSchema {
@@ -95,16 +95,6 @@ public class CustomerPaymentMethodsRequest extends AbstractOpenApiSchema {
             // deserialize PaymentMethodCardRequest
             try {
                 boolean attemptParsing = true;
-                // ensure that we respect type coercion as set on the client ObjectMapper
-                if (PaymentMethodCardRequest.class.equals(Integer.class) || PaymentMethodCardRequest.class.equals(Long.class) || PaymentMethodCardRequest.class.equals(Float.class) || PaymentMethodCardRequest.class.equals(Double.class) || PaymentMethodCardRequest.class.equals(Boolean.class) || PaymentMethodCardRequest.class.equals(String.class)) {
-                    attemptParsing = typeCoercion;
-                    if (!attemptParsing) {
-                        attemptParsing |= ((PaymentMethodCardRequest.class.equals(Integer.class) || PaymentMethodCardRequest.class.equals(Long.class)) && token == JsonToken.VALUE_NUMBER_INT);
-                        attemptParsing |= ((PaymentMethodCardRequest.class.equals(Float.class) || PaymentMethodCardRequest.class.equals(Double.class)) && token == JsonToken.VALUE_NUMBER_FLOAT);
-                        attemptParsing |= (PaymentMethodCardRequest.class.equals(Boolean.class) && (token == JsonToken.VALUE_FALSE || token == JsonToken.VALUE_TRUE));
-                        attemptParsing |= (PaymentMethodCardRequest.class.equals(String.class) && token == JsonToken.VALUE_STRING);
-                    }
-                }
                 if (attemptParsing) {
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCardRequest.class);
                     // TODO: there is no validation against JSON schema constraints
@@ -121,16 +111,6 @@ public class CustomerPaymentMethodsRequest extends AbstractOpenApiSchema {
             // deserialize PaymentMethodCashRequest
             try {
                 boolean attemptParsing = true;
-                // ensure that we respect type coercion as set on the client ObjectMapper
-                if (PaymentMethodCashRequest.class.equals(Integer.class) || PaymentMethodCashRequest.class.equals(Long.class) || PaymentMethodCashRequest.class.equals(Float.class) || PaymentMethodCashRequest.class.equals(Double.class) || PaymentMethodCashRequest.class.equals(Boolean.class) || PaymentMethodCashRequest.class.equals(String.class)) {
-                    attemptParsing = typeCoercion;
-                    if (!attemptParsing) {
-                        attemptParsing |= ((PaymentMethodCashRequest.class.equals(Integer.class) || PaymentMethodCashRequest.class.equals(Long.class)) && token == JsonToken.VALUE_NUMBER_INT);
-                        attemptParsing |= ((PaymentMethodCashRequest.class.equals(Float.class) || PaymentMethodCashRequest.class.equals(Double.class)) && token == JsonToken.VALUE_NUMBER_FLOAT);
-                        attemptParsing |= (PaymentMethodCashRequest.class.equals(Boolean.class) && (token == JsonToken.VALUE_FALSE || token == JsonToken.VALUE_TRUE));
-                        attemptParsing |= (PaymentMethodCashRequest.class.equals(String.class) && token == JsonToken.VALUE_STRING);
-                    }
-                }
                 if (attemptParsing) {
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashRequest.class);
                     // TODO: there is no validation against JSON schema constraints
@@ -147,16 +127,6 @@ public class CustomerPaymentMethodsRequest extends AbstractOpenApiSchema {
             // deserialize PaymentMethodSpeiRequest
             try {
                 boolean attemptParsing = true;
-                // ensure that we respect type coercion as set on the client ObjectMapper
-                if (PaymentMethodSpeiRequest.class.equals(Integer.class) || PaymentMethodSpeiRequest.class.equals(Long.class) || PaymentMethodSpeiRequest.class.equals(Float.class) || PaymentMethodSpeiRequest.class.equals(Double.class) || PaymentMethodSpeiRequest.class.equals(Boolean.class) || PaymentMethodSpeiRequest.class.equals(String.class)) {
-                    attemptParsing = typeCoercion;
-                    if (!attemptParsing) {
-                        attemptParsing |= ((PaymentMethodSpeiRequest.class.equals(Integer.class) || PaymentMethodSpeiRequest.class.equals(Long.class)) && token == JsonToken.VALUE_NUMBER_INT);
-                        attemptParsing |= ((PaymentMethodSpeiRequest.class.equals(Float.class) || PaymentMethodSpeiRequest.class.equals(Double.class)) && token == JsonToken.VALUE_NUMBER_FLOAT);
-                        attemptParsing |= (PaymentMethodSpeiRequest.class.equals(Boolean.class) && (token == JsonToken.VALUE_FALSE || token == JsonToken.VALUE_TRUE));
-                        attemptParsing |= (PaymentMethodSpeiRequest.class.equals(String.class) && token == JsonToken.VALUE_STRING);
-                    }
-                }
                 if (attemptParsing) {
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodSpeiRequest.class);
                     // TODO: there is no validation against JSON schema constraints

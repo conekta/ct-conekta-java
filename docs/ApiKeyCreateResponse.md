@@ -7,7 +7,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**authenticationToken** | **String** | It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place. |  [optional] |
 |**active** | **Boolean** | Indicates if the api key is active |  [optional] |
 |**createdAt** | **Long** | Unix timestamp in seconds of when the api key was created |  [optional] |
 |**updatedAt** | **Long** | Unix timestamp in seconds of when the api key was last updated |  [optional] |
@@ -19,6 +18,7 @@
 |**_object** | **String** | Object name, value is &#39;api_key&#39; |  [optional] |
 |**prefix** | **String** | The first few characters of the authentication_token |  [optional] |
 |**role** | **String** | Indicates if the api key is private or public |  [optional] |
+|**authenticationToken** | **String** | It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place. |  [optional] |
 
 
 

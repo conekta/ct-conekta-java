@@ -36,7 +36,7 @@ import com.conekta.JSON;
   BlacklistRuleResponse.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("blacklist_rule_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class BlacklistRuleResponse {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

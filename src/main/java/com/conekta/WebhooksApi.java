@@ -20,7 +20,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WebhooksApi {
   private ApiClient apiClient;
 
@@ -236,6 +236,7 @@ public class WebhooksApi {
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @param limit The numbers of items to return, the maximum value is 250 (optional, default to 20)
    * @param search General order search, e.g. by mail, reference etc. (optional)
+   * @param url url for webhook filter (optional)
    * @param next next page (optional)
    * @param previous previous page (optional)
    * @return GetWebhooksResponse
@@ -248,8 +249,8 @@ public class WebhooksApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public GetWebhooksResponse getWebhooks(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
-    return getWebhooksWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous).getData();
+  public GetWebhooksResponse getWebhooks(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String url, String next, String previous) throws ApiException {
+    return getWebhooksWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, url, next, previous).getData();
   }
 
   /**
@@ -259,6 +260,7 @@ public class WebhooksApi {
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @param limit The numbers of items to return, the maximum value is 250 (optional, default to 20)
    * @param search General order search, e.g. by mail, reference etc. (optional)
+   * @param url url for webhook filter (optional)
    * @param next next page (optional)
    * @param previous previous page (optional)
    * @return ApiResponse&lt;GetWebhooksResponse&gt;
@@ -271,12 +273,13 @@ public class WebhooksApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<GetWebhooksResponse> getWebhooksWithHttpInfo(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public ApiResponse<GetWebhooksResponse> getWebhooksWithHttpInfo(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String url, String next, String previous) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "limit", limit)
     );
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "search", search));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "url", url));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "next", next));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "previous", previous));
 

@@ -35,7 +35,7 @@ import com.conekta.JSON;
   SubscriptionUpdateRequest.JSON_PROPERTY_TRIAL_END
 })
 @JsonTypeName("subscription_update_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class SubscriptionUpdateRequest {
   public static final String JSON_PROPERTY_PLAN_ID = "plan_id";
   private String planId;

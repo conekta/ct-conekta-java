@@ -43,7 +43,7 @@ import com.conekta.JSON;
   TransfersResponse.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("transfers_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class TransfersResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Long amount;

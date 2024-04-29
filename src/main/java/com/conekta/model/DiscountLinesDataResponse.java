@@ -38,7 +38,7 @@ import com.conekta.JSON;
   DiscountLinesDataResponse.JSON_PROPERTY_PARENT_ID
 })
 @JsonTypeName("discount_lines_data_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class DiscountLinesDataResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Long amount;

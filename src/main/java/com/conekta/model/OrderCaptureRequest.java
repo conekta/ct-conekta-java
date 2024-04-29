@@ -33,7 +33,7 @@ import com.conekta.JSON;
   OrderCaptureRequest.JSON_PROPERTY_AMOUNT
 })
 @JsonTypeName("order_capture_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class OrderCaptureRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Long amount;

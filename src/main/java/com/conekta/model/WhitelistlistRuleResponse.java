@@ -36,7 +36,7 @@ import com.conekta.JSON;
   WhitelistlistRuleResponse.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("whitelistlist_rule_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WhitelistlistRuleResponse {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

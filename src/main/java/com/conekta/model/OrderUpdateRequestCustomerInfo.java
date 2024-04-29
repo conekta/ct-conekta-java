@@ -54,7 +54,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.conekta.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 @JsonDeserialize(using = OrderUpdateRequestCustomerInfo.OrderUpdateRequestCustomerInfoDeserializer.class)
 @JsonSerialize(using = OrderUpdateRequestCustomerInfo.OrderUpdateRequestCustomerInfoSerializer.class)
 public class OrderUpdateRequestCustomerInfo extends AbstractOpenApiSchema {
@@ -94,16 +94,6 @@ public class OrderUpdateRequestCustomerInfo extends AbstractOpenApiSchema {
             // deserialize CustomerInfo
             try {
                 boolean attemptParsing = true;
-                // ensure that we respect type coercion as set on the client ObjectMapper
-                if (CustomerInfo.class.equals(Integer.class) || CustomerInfo.class.equals(Long.class) || CustomerInfo.class.equals(Float.class) || CustomerInfo.class.equals(Double.class) || CustomerInfo.class.equals(Boolean.class) || CustomerInfo.class.equals(String.class)) {
-                    attemptParsing = typeCoercion;
-                    if (!attemptParsing) {
-                        attemptParsing |= ((CustomerInfo.class.equals(Integer.class) || CustomerInfo.class.equals(Long.class)) && token == JsonToken.VALUE_NUMBER_INT);
-                        attemptParsing |= ((CustomerInfo.class.equals(Float.class) || CustomerInfo.class.equals(Double.class)) && token == JsonToken.VALUE_NUMBER_FLOAT);
-                        attemptParsing |= (CustomerInfo.class.equals(Boolean.class) && (token == JsonToken.VALUE_FALSE || token == JsonToken.VALUE_TRUE));
-                        attemptParsing |= (CustomerInfo.class.equals(String.class) && token == JsonToken.VALUE_STRING);
-                    }
-                }
                 if (attemptParsing) {
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(CustomerInfo.class);
                     // TODO: there is no validation against JSON schema constraints
@@ -120,16 +110,6 @@ public class OrderUpdateRequestCustomerInfo extends AbstractOpenApiSchema {
             // deserialize CustomerInfoJustCustomerId
             try {
                 boolean attemptParsing = true;
-                // ensure that we respect type coercion as set on the client ObjectMapper
-                if (CustomerInfoJustCustomerId.class.equals(Integer.class) || CustomerInfoJustCustomerId.class.equals(Long.class) || CustomerInfoJustCustomerId.class.equals(Float.class) || CustomerInfoJustCustomerId.class.equals(Double.class) || CustomerInfoJustCustomerId.class.equals(Boolean.class) || CustomerInfoJustCustomerId.class.equals(String.class)) {
-                    attemptParsing = typeCoercion;
-                    if (!attemptParsing) {
-                        attemptParsing |= ((CustomerInfoJustCustomerId.class.equals(Integer.class) || CustomerInfoJustCustomerId.class.equals(Long.class)) && token == JsonToken.VALUE_NUMBER_INT);
-                        attemptParsing |= ((CustomerInfoJustCustomerId.class.equals(Float.class) || CustomerInfoJustCustomerId.class.equals(Double.class)) && token == JsonToken.VALUE_NUMBER_FLOAT);
-                        attemptParsing |= (CustomerInfoJustCustomerId.class.equals(Boolean.class) && (token == JsonToken.VALUE_FALSE || token == JsonToken.VALUE_TRUE));
-                        attemptParsing |= (CustomerInfoJustCustomerId.class.equals(String.class) && token == JsonToken.VALUE_STRING);
-                    }
-                }
                 if (attemptParsing) {
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(CustomerInfoJustCustomerId.class);
                     // TODO: there is no validation against JSON schema constraints

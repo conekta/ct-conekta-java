@@ -57,10 +57,10 @@ import com.conekta.JSON;
   OrderUpdateRequest.JSON_PROPERTY_TAX_LINES
 })
 @JsonTypeName("order_update_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class OrderUpdateRequest {
   public static final String JSON_PROPERTY_CHARGES = "charges";
-  private List<ChargeRequest> charges;
+  private List<ChargeRequest> charges = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CHECKOUT = "checkout";
   private CheckoutRequest checkout;
@@ -72,13 +72,13 @@ public class OrderUpdateRequest {
   private OrderUpdateRequestCustomerInfo customerInfo;
 
   public static final String JSON_PROPERTY_DISCOUNT_LINES = "discount_lines";
-  private List<OrderDiscountLinesRequest> discountLines;
+  private List<OrderDiscountLinesRequest> discountLines = new ArrayList<>();
 
   public static final String JSON_PROPERTY_FISCAL_ENTITY = "fiscal_entity";
   private OrderUpdateFiscalEntityRequest fiscalEntity;
 
   public static final String JSON_PROPERTY_LINE_ITEMS = "line_items";
-  private List<Product> lineItems;
+  private List<Product> lineItems = new ArrayList<>();
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Map<String, String> metadata = new HashMap<>();
@@ -90,10 +90,10 @@ public class OrderUpdateRequest {
   private CustomerShippingContacts shippingContact;
 
   public static final String JSON_PROPERTY_SHIPPING_LINES = "shipping_lines";
-  private List<ShippingRequest> shippingLines;
+  private List<ShippingRequest> shippingLines = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TAX_LINES = "tax_lines";
-  private List<OrderTaxRequest> taxLines;
+  private List<OrderTaxRequest> taxLines = new ArrayList<>();
 
   public OrderUpdateRequest() { 
   }

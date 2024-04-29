@@ -41,7 +41,7 @@ import com.conekta.JSON;
   EventsResendResponse.JSON_PROPERTY_URL
 })
 @JsonTypeName("events_resend_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class EventsResendResponse {
   public static final String JSON_PROPERTY_FAILED_ATTEMPTS = "failed_attempts";
   private Integer failedAttempts;

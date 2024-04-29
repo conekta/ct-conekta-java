@@ -40,7 +40,7 @@ import com.conekta.JSON;
   RiskRulesList.JSON_PROPERTY_DATA
 })
 @JsonTypeName("risk_rules_list")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class RiskRulesList {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   private Boolean hasMore;
@@ -55,7 +55,7 @@ public class RiskRulesList {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<RiskRulesData> data;
+  private List<RiskRulesData> data = new ArrayList<>();
 
   public RiskRulesList() { 
   }

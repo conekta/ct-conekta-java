@@ -44,7 +44,7 @@ import com.conekta.JSON;
   WebhookResponse.JSON_PROPERTY_URL
 })
 @JsonTypeName("webhook_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WebhookResponse {
   public static final String JSON_PROPERTY_DELETED = "deleted";
   private Boolean deleted;
@@ -68,7 +68,7 @@ public class WebhookResponse {
   private String status;
 
   public static final String JSON_PROPERTY_SUBSCRIBED_EVENTS = "subscribed_events";
-  private List<String> subscribedEvents;
+  private List<String> subscribedEvents = new ArrayList<>();
 
   public static final String JSON_PROPERTY_SYNCHRONOUS = "synchronous";
   private Boolean synchronous;

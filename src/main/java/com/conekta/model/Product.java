@@ -45,7 +45,7 @@ import com.conekta.JSON;
   Product.JSON_PROPERTY_UNIT_PRICE
 })
 @JsonTypeName("product")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class Product {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
   private Map<String, Object> antifraudInfo = new HashMap<>();
@@ -57,7 +57,7 @@ public class Product {
   private String description;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
-  private Map<String, String> metadata = new HashMap<>();
+  private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -69,7 +69,7 @@ public class Product {
   private String sku;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
-  private List<String> tags;
+  private List<String> tags = new ArrayList<>();
 
   public static final String JSON_PROPERTY_UNIT_PRICE = "unit_price";
   private Integer unitPrice;
@@ -160,12 +160,12 @@ public class Product {
   }
 
 
-  public Product metadata(Map<String, String> metadata) {
+  public Product metadata(Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
 
-  public Product putMetadataItem(String key, String metadataItem) {
+  public Product putMetadataItem(String key, Object metadataItem) {
     if (this.metadata == null) {
       this.metadata = new HashMap<>();
     }
@@ -179,16 +179,16 @@ public class Product {
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Map<String, String> getMetadata() {
+  public Map<String, Object> getMetadata() {
     return metadata;
   }
 
 
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, String> metadata) {
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 

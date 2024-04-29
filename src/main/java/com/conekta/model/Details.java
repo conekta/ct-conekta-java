@@ -36,10 +36,10 @@ import com.conekta.JSON;
   Details.JSON_PROPERTY_DETAILS
 })
 @JsonTypeName("details")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class Details {
   public static final String JSON_PROPERTY_DETAILS = "details";
-  private List<DetailsError> details;
+  private List<DetailsError> details = new ArrayList<>();
 
   public Details() { 
   }

@@ -16,7 +16,7 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.CustomerFiscalEntitiesRequestAddress;
+import com.conekta.model.CustomerAddress;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -41,10 +41,10 @@ import com.conekta.JSON;
   CustomerFiscalEntitiesRequest.JSON_PROPERTY_COMPANY_NAME
 })
 @JsonTypeName("customer_fiscal_entities_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CustomerFiscalEntitiesRequest {
   public static final String JSON_PROPERTY_ADDRESS = "address";
-  private CustomerFiscalEntitiesRequestAddress address;
+  private CustomerAddress address;
 
   public static final String JSON_PROPERTY_TAX_ID = "tax_id";
   private String taxId;
@@ -64,7 +64,7 @@ public class CustomerFiscalEntitiesRequest {
   public CustomerFiscalEntitiesRequest() { 
   }
 
-  public CustomerFiscalEntitiesRequest address(CustomerFiscalEntitiesRequestAddress address) {
+  public CustomerFiscalEntitiesRequest address(CustomerAddress address) {
     this.address = address;
     return this;
   }
@@ -77,14 +77,14 @@ public class CustomerFiscalEntitiesRequest {
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public CustomerFiscalEntitiesRequestAddress getAddress() {
+  public CustomerAddress getAddress() {
     return address;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAddress(CustomerFiscalEntitiesRequestAddress address) {
+  public void setAddress(CustomerAddress address) {
     this.address = address;
   }
 

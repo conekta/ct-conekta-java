@@ -40,7 +40,7 @@ import com.conekta.JSON;
   CustomerPaymentMethodsResponse.JSON_PROPERTY_DATA
 })
 @JsonTypeName("customer_payment_methods_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CustomerPaymentMethodsResponse {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   private Boolean hasMore;
@@ -55,7 +55,7 @@ public class CustomerPaymentMethodsResponse {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<CustomerPaymentMethodsData> data;
+  private List<CustomerPaymentMethodsData> data = new ArrayList<>();
 
   public CustomerPaymentMethodsResponse() { 
   }

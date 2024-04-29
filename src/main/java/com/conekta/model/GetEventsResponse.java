@@ -40,7 +40,7 @@ import com.conekta.JSON;
   GetEventsResponse.JSON_PROPERTY_DATA
 })
 @JsonTypeName("get_events_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class GetEventsResponse {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   private Boolean hasMore;
@@ -55,7 +55,7 @@ public class GetEventsResponse {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<EventResponse> data;
+  private List<EventResponse> data = new ArrayList<>();
 
   public GetEventsResponse() { 
   }

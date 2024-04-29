@@ -237,7 +237,7 @@ public class Example {
 
 ## getWebhooks
 
-> GetWebhooksResponse getWebhooks(acceptLanguage, xChildCompanyId, limit, search, next, previous)
+> GetWebhooksResponse getWebhooks(acceptLanguage, xChildCompanyId, limit, search, url, next, previous)
 
 Get List of Webhooks
 
@@ -268,10 +268,11 @@ public class Example {
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
         Integer limit = 20; // Integer | The numbers of items to return, the maximum value is 250
         String search = "search_example"; // String | General order search, e.g. by mail, reference etc.
+        String url = "url_example"; // String | url for webhook filter
         String next = "next_example"; // String | next page
         String previous = "previous_example"; // String | previous page
         try {
-            GetWebhooksResponse result = apiInstance.getWebhooks(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+            GetWebhooksResponse result = apiInstance.getWebhooks(acceptLanguage, xChildCompanyId, limit, search, url, next, previous);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling WebhooksApi#getWebhooks");
@@ -293,6 +294,7 @@ public class Example {
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
 | **limit** | **Integer**| The numbers of items to return, the maximum value is 250 | [optional] [default to 20] |
 | **search** | **String**| General order search, e.g. by mail, reference etc. | [optional] |
+| **url** | **String**| url for webhook filter | [optional] |
 | **next** | **String**| next page | [optional] |
 | **previous** | **String**| previous page | [optional] |
 

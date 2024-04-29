@@ -43,7 +43,7 @@ import com.conekta.JSON;
   PlanResponse.JSON_PROPERTY_TRIAL_PERIOD_DAYS
 })
 @JsonTypeName("plan_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class PlanResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Integer amount;

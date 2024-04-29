@@ -33,7 +33,7 @@ import com.conekta.JSON;
   UpdatePaymentMethods.JSON_PROPERTY_NAME
 })
 @JsonTypeName("update_payment_methods")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class UpdatePaymentMethods {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;

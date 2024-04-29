@@ -34,7 +34,7 @@ import com.conekta.JSON;
   PaymentMethodCashRequest.JSON_PROPERTY_EXPIRES_AT
 })
 @JsonTypeName("payment_method_cash_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class PaymentMethodCashRequest {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;

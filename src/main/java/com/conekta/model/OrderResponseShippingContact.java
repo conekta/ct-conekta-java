@@ -33,30 +33,21 @@ import com.conekta.JSON;
  * OrderResponseShippingContact
  */
 @JsonPropertyOrder({
-  OrderResponseShippingContact.JSON_PROPERTY_CREATED_AT,
-  OrderResponseShippingContact.JSON_PROPERTY_ID,
-  OrderResponseShippingContact.JSON_PROPERTY_OBJECT,
   OrderResponseShippingContact.JSON_PROPERTY_PHONE,
   OrderResponseShippingContact.JSON_PROPERTY_RECEIVER,
   OrderResponseShippingContact.JSON_PROPERTY_BETWEEN_STREETS,
   OrderResponseShippingContact.JSON_PROPERTY_ADDRESS,
   OrderResponseShippingContact.JSON_PROPERTY_PARENT_ID,
   OrderResponseShippingContact.JSON_PROPERTY_DEFAULT,
+  OrderResponseShippingContact.JSON_PROPERTY_ID,
+  OrderResponseShippingContact.JSON_PROPERTY_CREATED_AT,
   OrderResponseShippingContact.JSON_PROPERTY_METADATA,
+  OrderResponseShippingContact.JSON_PROPERTY_OBJECT,
   OrderResponseShippingContact.JSON_PROPERTY_DELETED
 })
 @JsonTypeName("order_response_shipping_contact")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class OrderResponseShippingContact {
-  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
-  private Long createdAt;
-
-  public static final String JSON_PROPERTY_ID = "id";
-  private String id;
-
-  public static final String JSON_PROPERTY_OBJECT = "object";
-  private String _object;
-
   public static final String JSON_PROPERTY_PHONE = "phone";
   private String phone;
 
@@ -75,89 +66,23 @@ public class OrderResponseShippingContact {
   public static final String JSON_PROPERTY_DEFAULT = "default";
   private Boolean _default;
 
+  public static final String JSON_PROPERTY_ID = "id";
+  private String id;
+
+  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  private Long createdAt;
+
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Map<String, Object> metadata = new HashMap<>();
+
+  public static final String JSON_PROPERTY_OBJECT = "object";
+  private String _object;
 
   public static final String JSON_PROPERTY_DELETED = "deleted";
   private Boolean deleted;
 
   public OrderResponseShippingContact() { 
   }
-
-  public OrderResponseShippingContact createdAt(Long createdAt) {
-    this.createdAt = createdAt;
-    return this;
-  }
-
-   /**
-   * Get createdAt
-   * @return createdAt
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getCreatedAt() {
-    return createdAt;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
-    this.createdAt = createdAt;
-  }
-
-
-  public OrderResponseShippingContact id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Get id
-   * @return id
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getId() {
-    return id;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
-    this.id = id;
-  }
-
-
-  public OrderResponseShippingContact _object(String _object) {
-    this._object = _object;
-    return this;
-  }
-
-   /**
-   * Get _object
-   * @return _object
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getObject() {
-    return _object;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
-    this._object = _object;
-  }
-
 
   public OrderResponseShippingContact phone(String phone) {
     this.phone = phone;
@@ -309,6 +234,56 @@ public class OrderResponseShippingContact {
   }
 
 
+  public OrderResponseShippingContact id(String id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getId() {
+    return id;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
+  public OrderResponseShippingContact createdAt(Long createdAt) {
+    this.createdAt = createdAt;
+    return this;
+  }
+
+   /**
+   * Get createdAt
+   * @return createdAt
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getCreatedAt() {
+    return createdAt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCreatedAt(Long createdAt) {
+    this.createdAt = createdAt;
+  }
+
+
   public OrderResponseShippingContact metadata(Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
@@ -339,6 +314,31 @@ public class OrderResponseShippingContact {
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
+  }
+
+
+  public OrderResponseShippingContact _object(String _object) {
+    this._object = _object;
+    return this;
+  }
+
+   /**
+   * Get _object
+   * @return _object
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getObject() {
+    return _object;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setObject(String _object) {
+    this._object = _object;
   }
 
 
@@ -379,38 +379,38 @@ public class OrderResponseShippingContact {
       return false;
     }
     OrderResponseShippingContact orderResponseShippingContact = (OrderResponseShippingContact) o;
-    return Objects.equals(this.createdAt, orderResponseShippingContact.createdAt) &&
-        Objects.equals(this.id, orderResponseShippingContact.id) &&
-        Objects.equals(this._object, orderResponseShippingContact._object) &&
-        Objects.equals(this.phone, orderResponseShippingContact.phone) &&
+    return Objects.equals(this.phone, orderResponseShippingContact.phone) &&
         Objects.equals(this.receiver, orderResponseShippingContact.receiver) &&
         Objects.equals(this.betweenStreets, orderResponseShippingContact.betweenStreets) &&
         Objects.equals(this.address, orderResponseShippingContact.address) &&
         Objects.equals(this.parentId, orderResponseShippingContact.parentId) &&
         Objects.equals(this._default, orderResponseShippingContact._default) &&
+        Objects.equals(this.id, orderResponseShippingContact.id) &&
+        Objects.equals(this.createdAt, orderResponseShippingContact.createdAt) &&
         Objects.equals(this.metadata, orderResponseShippingContact.metadata) &&
+        Objects.equals(this._object, orderResponseShippingContact._object) &&
         Objects.equals(this.deleted, orderResponseShippingContact.deleted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, id, _object, phone, receiver, betweenStreets, address, parentId, _default, metadata, deleted);
+    return Objects.hash(phone, receiver, betweenStreets, address, parentId, _default, id, createdAt, metadata, _object, deleted);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrderResponseShippingContact {\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    receiver: ").append(toIndentedString(receiver)).append("\n");
     sb.append("    betweenStreets: ").append(toIndentedString(betweenStreets)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
     sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("}");
     return sb.toString();

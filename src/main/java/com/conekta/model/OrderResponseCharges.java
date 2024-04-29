@@ -38,7 +38,7 @@ import com.conekta.JSON;
   OrderResponseCharges.JSON_PROPERTY_DATA
 })
 @JsonTypeName("order_response_charges")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class OrderResponseCharges {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   private Boolean hasMore;
@@ -47,7 +47,7 @@ public class OrderResponseCharges {
   private String _object;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<ChargesDataResponse> data;
+  private List<ChargesDataResponse> data = new ArrayList<>();
 
   public OrderResponseCharges() { 
   }

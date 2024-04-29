@@ -39,7 +39,7 @@ import com.conekta.JSON;
   RiskRulesData.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("risk_rules_data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class RiskRulesData {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

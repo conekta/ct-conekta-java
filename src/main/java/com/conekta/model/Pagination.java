@@ -34,7 +34,7 @@ import com.conekta.JSON;
   Pagination.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("pagination")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class Pagination {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   private Boolean hasMore;

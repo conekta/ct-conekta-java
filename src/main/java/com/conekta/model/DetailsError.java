@@ -36,7 +36,7 @@ import com.conekta.JSON;
   DetailsError.JSON_PROPERTY_DEBUG_MESSAGE
 })
 @JsonTypeName("details_error")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class DetailsError {
   public static final String JSON_PROPERTY_CODE = "code";
   private String code;

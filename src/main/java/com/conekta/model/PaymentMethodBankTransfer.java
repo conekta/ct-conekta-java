@@ -52,7 +52,7 @@ import com.conekta.JSON;
   PaymentMethodBankTransfer.JSON_PROPERTY_TRACKING_CODE
 })
 @JsonTypeName("payment_method_bank_transfer")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class PaymentMethodBankTransfer {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -88,7 +88,7 @@ public class PaymentMethodBankTransfer {
   private String issuingAccountTaxId;
 
   public static final String JSON_PROPERTY_PAYMENT_ATTEMPTS = "payment_attempts";
-  private List<Object> paymentAttempts;
+  private List<Object> paymentAttempts = new ArrayList<>();
 
   public static final String JSON_PROPERTY_RECEIVING_ACCOUNT_HOLDER_NAME = "receiving_account_holder_name";
   private String receivingAccountHolderName;

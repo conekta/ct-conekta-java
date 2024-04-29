@@ -23,6 +23,7 @@ order response
 |**lineItems** | [**OrderResponseProducts**](OrderResponseProducts.md) |  |  [optional] |
 |**livemode** | **Boolean** | Whether the object exists in live mode or test mode |  [optional] |
 |**metadata** | **Map&lt;String, Object&gt;** | Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format. |  [optional] |
+|**nextAction** | [**OrderNextActionResponse**](OrderNextActionResponse.md) |  |  [optional] |
 |**_object** | **String** | String representing the object’s type. Objects of the same type share the same value. |  [optional] |
 |**paymentStatus** | **String** | The payment status of the order. |  [optional] |
 |**processingMode** | **String** | Indicates the processing mode for the order, either ecommerce, recurrent or validation. |  [optional] |

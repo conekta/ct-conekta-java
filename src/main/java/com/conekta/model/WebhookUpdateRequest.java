@@ -37,7 +37,7 @@ import com.conekta.JSON;
   WebhookUpdateRequest.JSON_PROPERTY_EVENTS
 })
 @JsonTypeName("webhook_update_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WebhookUpdateRequest {
   public static final String JSON_PROPERTY_URL = "url";
   private String url;
@@ -46,7 +46,7 @@ public class WebhookUpdateRequest {
   private Boolean synchronous = false;
 
   public static final String JSON_PROPERTY_EVENTS = "events";
-  private List<String> events;
+  private List<String> events = new ArrayList<>();
 
   public WebhookUpdateRequest() { 
   }

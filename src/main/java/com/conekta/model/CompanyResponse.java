@@ -42,7 +42,7 @@ import com.conekta.JSON;
   CompanyResponse.JSON_PROPERTY_FISCAL_INFO
 })
 @JsonTypeName("company_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CompanyResponse {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

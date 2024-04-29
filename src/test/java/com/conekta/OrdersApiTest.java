@@ -94,7 +94,9 @@ public class OrdersApiTest {
     public void getOrdersTest() throws ApiException {
         String acceptLanguage = "es";
         Integer limit = 20;
-        GetOrdersResponse response = api.getOrders(acceptLanguage, null, limit, null, null, null);
+        GetOrdersResponse response = api.getOrders(acceptLanguage, null, limit,
+                null, null, null, null,null, null
+        ,null, null, null,null);
         Assertions.assertNotNull(response);
     }
 
