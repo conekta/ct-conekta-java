@@ -24,15 +24,10 @@ jobs:
             server-id: maven-central-release
             server-username: MVN_CENTRAL_USERNAME
             server-password: MVN_CENTRAL_PASSWORD
-      - name: Calculate version
-        id: calculate-version
-        uses: bitshifted/git-auto-semver@v1
-        with:
-            create_tag: true
       - name: Release to Maven repo
         run: |
             mvn -P release -Dgpg.keyname=${{ secrets.GPG_KEY_NAME }} -Dgpg.passphrase=${{ secrets.MAVEN_SIGNING_KEY_PASSPHRASE }} \
-                -Drevision=${{ steps.calculate-version.outputs.version-string }} deploy            
+                -Drevision=${{ github.event.release.tag_name }} deploy            
         env:
-            MVN_CENTRAL_USERNAME: ${{ vars.MVN_CENTRAL_USERNAME }}
+            MVN_CENTRAL_USERNAME: ${{ secrets.MVN_CENTRAL_USERNAME }}
             MVN_CENTRAL_PASSWORD: ${{ secrets.MVN_CENTRAL_PASSWORD }}
