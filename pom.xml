@@ -6,6 +6,7 @@
     <packaging>jar</packaging>
     <name>ct-conekta-java</name>
     <version>6.1.1</version>
+    <version>${revision}</version>
     <url>https://developers.conekta.com/</url>
     <description>This is a java library that allows interaction with https://api.conekta.io API.</description>
     <scm>
@@ -38,6 +39,10 @@
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
+        <repository>
+            <id>maven-central-release</id>
+            <url>https://oss.sonatype.org/content/repositories/releases/</url>
+        </repository>
     </distributionManagement>
 
     <build>
@@ -186,8 +191,11 @@
                             <goal>sign</goal>
                         </goals>
                         <configuration>
-                            <keyname>0x5F8EB601</keyname>
-                            <passphraseServerId />
+                            <!-- Prevent gpg from using pinentry programs -->
+                            <gpgArguments>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
                         </configuration>
                     </execution>
                 </executions>
@@ -360,6 +368,7 @@
         </dependency>
     </dependencies>
     <properties>
+        <revision>0.0.0-SNAPSHOT</revision>
         <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jersey-version>2.37</jersey-version>
