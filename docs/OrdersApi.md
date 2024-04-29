@@ -251,7 +251,7 @@ public class Example {
 
 ## getOrders
 
-> GetOrdersResponse getOrders(acceptLanguage, xChildCompanyId, limit, search, next, previous)
+> GetOrdersResponse getOrders(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte)
 
 Get a list of Orders
 
@@ -284,8 +284,15 @@ public class Example {
         String search = "search_example"; // String | General order search, e.g. by mail, reference etc.
         String next = "next_example"; // String | next page
         String previous = "previous_example"; // String | previous page
+        String paymentStatus = "paid"; // String | Filters by order status
+        String lastPaymentInfoStatus = "pending_payment"; // String | Filters by last payment info status
+        Long createdAt = 1612137600L; // Long | created equal to
+        Long createdAtGte = 1612137600L; // Long | created at greater than or equal to
+        Long createdAtLte = 1612137600L; // Long | created at less than or equal to
+        Long updatedAtGte = 1612137600L; // Long | updated at greater than or equal to
+        Long updatedAtLte = 1612137600L; // Long | updated at less than or equal to
         try {
-            GetOrdersResponse result = apiInstance.getOrders(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+            GetOrdersResponse result = apiInstance.getOrders(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OrdersApi#getOrders");
@@ -309,6 +316,13 @@ public class Example {
 | **search** | **String**| General order search, e.g. by mail, reference etc. | [optional] |
 | **next** | **String**| next page | [optional] |
 | **previous** | **String**| previous page | [optional] |
+| **paymentStatus** | **String**| Filters by order status | [optional] |
+| **lastPaymentInfoStatus** | **String**| Filters by last payment info status | [optional] |
+| **createdAt** | **Long**| created equal to | [optional] |
+| **createdAtGte** | **Long**| created at greater than or equal to | [optional] |
+| **createdAtLte** | **Long**| created at less than or equal to | [optional] |
+| **updatedAtGte** | **Long**| updated at greater than or equal to | [optional] |
+| **updatedAtLte** | **Long**| updated at less than or equal to | [optional] |
 
 ### Return type
 

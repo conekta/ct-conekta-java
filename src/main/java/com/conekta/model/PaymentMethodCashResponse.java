@@ -42,7 +42,7 @@ import com.conekta.JSON;
   PaymentMethodCashResponse.JSON_PROPERTY_PROVIDER
 })
 @JsonTypeName("payment_method_cash_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class PaymentMethodCashResponse {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;

@@ -90,7 +90,7 @@ public class WebhooksApiTest {
     public void getWebhooksTest() throws ApiException {
         String acceptLanguage = "es";
         Integer limit = 20;
-        GetWebhooksResponse response = api.getWebhooks(acceptLanguage, null, limit, null, null, null);
+        GetWebhooksResponse response = api.getWebhooks(acceptLanguage, null, limit, null, null, null, null);
         Assertions.assertNotNull(response);
     }
 

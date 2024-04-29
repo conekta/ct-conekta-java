@@ -39,7 +39,7 @@ import com.conekta.JSON;
   FiscalEntityAddress.JSON_PROPERTY_EXTERNAL_NUMBER
 })
 @JsonTypeName("fiscal_entity_address")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class FiscalEntityAddress {
   public static final String JSON_PROPERTY_STREET1 = "street1";
   private String street1;

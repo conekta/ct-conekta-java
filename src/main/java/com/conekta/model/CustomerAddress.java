@@ -40,7 +40,7 @@ import com.conekta.JSON;
   CustomerAddress.JSON_PROPERTY_EXTERNAL_NUMBER
 })
 @JsonTypeName("customer_address")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CustomerAddress {
   public static final String JSON_PROPERTY_STREET1 = "street1";
   private String street1;
@@ -61,7 +61,7 @@ public class CustomerAddress {
   private String country;
 
   public static final String JSON_PROPERTY_RESIDENTIAL = "residential";
-  private Boolean residential;
+  private Boolean residential = false;
 
   public static final String JSON_PROPERTY_EXTERNAL_NUMBER = "external_number";
   private String externalNumber;

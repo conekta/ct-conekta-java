@@ -36,7 +36,7 @@ import com.conekta.JSON;
   PlanUpdateRequest.JSON_PROPERTY_NAME
 })
 @JsonTypeName("plan_update_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class PlanUpdateRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Integer amount;

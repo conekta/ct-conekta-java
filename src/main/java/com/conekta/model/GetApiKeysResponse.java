@@ -40,7 +40,7 @@ import com.conekta.JSON;
   GetApiKeysResponse.JSON_PROPERTY_DATA
 })
 @JsonTypeName("get_api_keys_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class GetApiKeysResponse {
   public static final String JSON_PROPERTY_NEXT_PAGE_URL = "next_page_url";
   private String nextPageUrl;
@@ -55,7 +55,7 @@ public class GetApiKeysResponse {
   private String _object;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<ApiKeyResponse> data;
+  private List<ApiKeyResponse> data = new ArrayList<>();
 
   public GetApiKeysResponse() { 
   }

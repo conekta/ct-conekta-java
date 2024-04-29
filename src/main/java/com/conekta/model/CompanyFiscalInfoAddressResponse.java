@@ -41,7 +41,7 @@ import com.conekta.JSON;
   CompanyFiscalInfoAddressResponse.JSON_PROPERTY_INTERNAL_NUMBER
 })
 @JsonTypeName("company_fiscal_info_address_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CompanyFiscalInfoAddressResponse {
   /**
    * The resource&#39;s type

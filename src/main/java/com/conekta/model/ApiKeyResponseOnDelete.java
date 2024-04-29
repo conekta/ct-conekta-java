@@ -41,7 +41,7 @@ import com.conekta.JSON;
   ApiKeyResponseOnDelete.JSON_PROPERTY_ROLE
 })
 @JsonTypeName("api_key_response_on_delete")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class ApiKeyResponseOnDelete {
   public static final String JSON_PROPERTY_ACTIVE = "active";
   private Boolean active;

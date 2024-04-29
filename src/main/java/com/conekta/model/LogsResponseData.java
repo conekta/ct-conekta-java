@@ -56,7 +56,7 @@ import com.conekta.JSON;
   LogsResponseData.JSON_PROPERTY_VERSION
 })
 @JsonTypeName("logs_response_data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class LogsResponseData {
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private Long createdAt;
@@ -101,7 +101,7 @@ public class LogsResponseData {
   private Map<String, String> responseHeaders = new HashMap<>();
 
   public static final String JSON_PROPERTY_SEARCHABLE_TAGS = "searchable_tags";
-  private List<String> searchableTags;
+  private List<String> searchableTags = new ArrayList<>();
 
   public static final String JSON_PROPERTY_STATUS = "status";
   private String status;

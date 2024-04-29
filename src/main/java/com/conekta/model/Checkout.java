@@ -46,7 +46,7 @@ import com.conekta.JSON;
   Checkout.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("checkout")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class Checkout {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
   private List<String> allowedPaymentMethods = new ArrayList<>();
@@ -58,7 +58,7 @@ public class Checkout {
   private Boolean monthlyInstallmentsEnabled;
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS = "monthly_installments_options";
-  private List<Integer> monthlyInstallmentsOptions;
+  private List<Integer> monthlyInstallmentsOptions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;

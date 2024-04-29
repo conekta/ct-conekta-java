@@ -30,6 +30,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -54,15 +55,17 @@ import com.conekta.JSON;
   OrderRequest.JSON_PROPERTY_NEEDS_SHIPPING_CONTACT,
   OrderRequest.JSON_PROPERTY_PRE_AUTHORIZE,
   OrderRequest.JSON_PROPERTY_PROCESSING_MODE,
+  OrderRequest.JSON_PROPERTY_RETURN_URL,
   OrderRequest.JSON_PROPERTY_SHIPPING_CONTACT,
   OrderRequest.JSON_PROPERTY_SHIPPING_LINES,
-  OrderRequest.JSON_PROPERTY_TAX_LINES
+  OrderRequest.JSON_PROPERTY_TAX_LINES,
+  OrderRequest.JSON_PROPERTY_THREE_DS_MODE
 })
 @JsonTypeName("order_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class OrderRequest {
   public static final String JSON_PROPERTY_CHARGES = "charges";
-  private List<ChargeRequest> charges;
+  private List<ChargeRequest> charges = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CHECKOUT = "checkout";
   private CheckoutRequest checkout;
@@ -74,7 +77,7 @@ public class OrderRequest {
   private OrderRequestCustomerInfo customerInfo;
 
   public static final String JSON_PROPERTY_DISCOUNT_LINES = "discount_lines";
-  private List<OrderDiscountLinesRequest> discountLines;
+  private List<OrderDiscountLinesRequest> discountLines = new ArrayList<>();
 
   public static final String JSON_PROPERTY_FISCAL_ENTITY = "fiscal_entity";
   private OrderFiscalEntityRequest fiscalEntity;
@@ -94,14 +97,20 @@ public class OrderRequest {
   public static final String JSON_PROPERTY_PROCESSING_MODE = "processing_mode";
   private String processingMode;
 
+  public static final String JSON_PROPERTY_RETURN_URL = "return_url";
+  private URI returnUrl;
+
   public static final String JSON_PROPERTY_SHIPPING_CONTACT = "shipping_contact";
   private CustomerShippingContacts shippingContact;
 
   public static final String JSON_PROPERTY_SHIPPING_LINES = "shipping_lines";
-  private List<ShippingRequest> shippingLines;
+  private List<ShippingRequest> shippingLines = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TAX_LINES = "tax_lines";
-  private List<OrderTaxRequest> taxLines;
+  private List<OrderTaxRequest> taxLines = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_THREE_DS_MODE = "three_ds_mode";
+  private String threeDsMode;
 
   public OrderRequest() { 
   }
@@ -413,6 +422,31 @@ public class OrderRequest {
   }
 
 
+  public OrderRequest returnUrl(URI returnUrl) {
+    this.returnUrl = returnUrl;
+    return this;
+  }
+
+   /**
+   * Indicates the redirection callback upon completion of the 3DS2 flow.
+   * @return returnUrl
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_RETURN_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public URI getReturnUrl() {
+    return returnUrl;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_RETURN_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setReturnUrl(URI returnUrl) {
+    this.returnUrl = returnUrl;
+  }
+
+
   public OrderRequest shippingContact(CustomerShippingContacts shippingContact) {
     this.shippingContact = shippingContact;
     return this;
@@ -504,6 +538,31 @@ public class OrderRequest {
   }
 
 
+  public OrderRequest threeDsMode(String threeDsMode) {
+    this.threeDsMode = threeDsMode;
+    return this;
+  }
+
+   /**
+   * Indicates the 3DS2 mode for the order, either smart or strict.
+   * @return threeDsMode
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_THREE_DS_MODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getThreeDsMode() {
+    return threeDsMode;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_THREE_DS_MODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setThreeDsMode(String threeDsMode) {
+    this.threeDsMode = threeDsMode;
+  }
+
+
   /**
    * Return true if this order_request object is equal to o.
    */
@@ -527,14 +586,16 @@ public class OrderRequest {
         Objects.equals(this.needsShippingContact, orderRequest.needsShippingContact) &&
         Objects.equals(this.preAuthorize, orderRequest.preAuthorize) &&
         Objects.equals(this.processingMode, orderRequest.processingMode) &&
+        Objects.equals(this.returnUrl, orderRequest.returnUrl) &&
         Objects.equals(this.shippingContact, orderRequest.shippingContact) &&
         Objects.equals(this.shippingLines, orderRequest.shippingLines) &&
-        Objects.equals(this.taxLines, orderRequest.taxLines);
+        Objects.equals(this.taxLines, orderRequest.taxLines) &&
+        Objects.equals(this.threeDsMode, orderRequest.threeDsMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(charges, checkout, currency, customerInfo, discountLines, fiscalEntity, lineItems, metadata, needsShippingContact, preAuthorize, processingMode, shippingContact, shippingLines, taxLines);
+    return Objects.hash(charges, checkout, currency, customerInfo, discountLines, fiscalEntity, lineItems, metadata, needsShippingContact, preAuthorize, processingMode, returnUrl, shippingContact, shippingLines, taxLines, threeDsMode);
   }
 
   @Override
@@ -552,9 +613,11 @@ public class OrderRequest {
     sb.append("    needsShippingContact: ").append(toIndentedString(needsShippingContact)).append("\n");
     sb.append("    preAuthorize: ").append(toIndentedString(preAuthorize)).append("\n");
     sb.append("    processingMode: ").append(toIndentedString(processingMode)).append("\n");
+    sb.append("    returnUrl: ").append(toIndentedString(returnUrl)).append("\n");
     sb.append("    shippingContact: ").append(toIndentedString(shippingContact)).append("\n");
     sb.append("    shippingLines: ").append(toIndentedString(shippingLines)).append("\n");
     sb.append("    taxLines: ").append(toIndentedString(taxLines)).append("\n");
+    sb.append("    threeDsMode: ").append(toIndentedString(threeDsMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

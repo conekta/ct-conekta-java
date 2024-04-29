@@ -45,7 +45,7 @@ import com.conekta.JSON;
   EventResponse.JSON_PROPERTY_WEBHOOK_STATUS
 })
 @JsonTypeName("event_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class EventResponse {
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private Long createdAt;
@@ -66,7 +66,7 @@ public class EventResponse {
   private String type;
 
   public static final String JSON_PROPERTY_WEBHOOK_LOGS = "webhook_logs";
-  private List<WebhookLog> webhookLogs;
+  private List<WebhookLog> webhookLogs = new ArrayList<>();
 
   public static final String JSON_PROPERTY_WEBHOOK_STATUS = "webhook_status";
   private String webhookStatus;

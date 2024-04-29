@@ -34,7 +34,7 @@ import com.conekta.JSON;
   CustomerAntifraudInfoResponse.JSON_PROPERTY_ACCOUNT_CREATED_AT
 })
 @JsonTypeName("customer_antifraud_info_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CustomerAntifraudInfoResponse {
   public static final String JSON_PROPERTY_FIRST_PAID_AT = "first_paid_at";
   private Integer firstPaidAt;

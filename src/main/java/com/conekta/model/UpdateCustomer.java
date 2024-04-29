@@ -55,7 +55,7 @@ import com.conekta.JSON;
   UpdateCustomer.JSON_PROPERTY_SUBSCRIPTION
 })
 @JsonTypeName("update_customer")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class UpdateCustomer {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
   private UpdateCustomerAntifraudInfo antifraudInfo;
@@ -85,16 +85,16 @@ public class UpdateCustomer {
   private String customReference;
 
   public static final String JSON_PROPERTY_FISCAL_ENTITIES = "fiscal_entities";
-  private List<CustomerFiscalEntitiesRequest> fiscalEntities;
+  private List<CustomerFiscalEntitiesRequest> fiscalEntities = new ArrayList<>();
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_PAYMENT_SOURCES = "payment_sources";
-  private List<CustomerPaymentMethodsRequest> paymentSources;
+  private List<CustomerPaymentMethodsRequest> paymentSources = new ArrayList<>();
 
   public static final String JSON_PROPERTY_SHIPPING_CONTACTS = "shipping_contacts";
-  private List<CustomerShippingContacts> shippingContacts;
+  private List<CustomerShippingContacts> shippingContacts = new ArrayList<>();
 
   public static final String JSON_PROPERTY_SUBSCRIPTION = "subscription";
   private SubscriptionRequest subscription;

@@ -26,6 +26,7 @@
 |**onDemandEnabled** | **Boolean** |  |  [optional] |
 |**paidPaymentsCount** | **Integer** |  |  [optional] |
 |**recurrent** | **Boolean** |  |  [optional] |
+|**redirectionTime** | **Integer** | number of seconds to wait before redirecting to the success_url |  [optional] |
 |**slug** | **String** |  |  [optional] |
 |**smsSent** | **Integer** |  |  [optional] |
 |**successUrl** | **String** |  |  [optional] |

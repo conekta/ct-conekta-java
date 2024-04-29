@@ -58,7 +58,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.conekta.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 @JsonDeserialize(using = CustomerPaymentMethodsData.CustomerPaymentMethodsDataDeserializer.class)
 @JsonSerialize(using = CustomerPaymentMethodsData.CustomerPaymentMethodsDataSerializer.class)
 public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
@@ -108,6 +108,10 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashResponse.class);
                     newCustomerPaymentMethodsData.setActualInstance(deserialized);
                     return newCustomerPaymentMethodsData;
+                case "spei_recurrent":
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodSpeiRecurrent.class);
+                    newCustomerPaymentMethodsData.setActualInstance(deserialized);
+                    return newCustomerPaymentMethodsData;
                 case "payment_method_card_response":
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCardResponse.class);
                     newCustomerPaymentMethodsData.setActualInstance(deserialized);
@@ -120,56 +124,16 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodSpeiRecurrent.class);
                     newCustomerPaymentMethodsData.setActualInstance(deserialized);
                     return newCustomerPaymentMethodsData;
-                case "spei_recurrent":
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodSpeiRecurrent.class);
-                    newCustomerPaymentMethodsData.setActualInstance(deserialized);
-                    return newCustomerPaymentMethodsData;
                 default:
-                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for CustomerPaymentMethodsData. Possible values: card cash oxxo_recurrent payment_method_card_response payment_method_cash_response payment_method_spei_recurrent spei_recurrent", discriminatorValue));
+                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for CustomerPaymentMethodsData. Possible values: card cash oxxo_recurrent spei_recurrent payment_method_card_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
             }
 
             boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
             int match = 0;
             JsonToken token = tree.traverse(jp.getCodec()).nextToken();
-            // deserialize PaymentMethodCardResponse
-            try {
-                boolean attemptParsing = true;
-                // ensure that we respect type coercion as set on the client ObjectMapper
-                if (PaymentMethodCardResponse.class.equals(Integer.class) || PaymentMethodCardResponse.class.equals(Long.class) || PaymentMethodCardResponse.class.equals(Float.class) || PaymentMethodCardResponse.class.equals(Double.class) || PaymentMethodCardResponse.class.equals(Boolean.class) || PaymentMethodCardResponse.class.equals(String.class)) {
-                    attemptParsing = typeCoercion;
-                    if (!attemptParsing) {
-                        attemptParsing |= ((PaymentMethodCardResponse.class.equals(Integer.class) || PaymentMethodCardResponse.class.equals(Long.class)) && token == JsonToken.VALUE_NUMBER_INT);
-                        attemptParsing |= ((PaymentMethodCardResponse.class.equals(Float.class) || PaymentMethodCardResponse.class.equals(Double.class)) && token == JsonToken.VALUE_NUMBER_FLOAT);
-                        attemptParsing |= (PaymentMethodCardResponse.class.equals(Boolean.class) && (token == JsonToken.VALUE_FALSE || token == JsonToken.VALUE_TRUE));
-                        attemptParsing |= (PaymentMethodCardResponse.class.equals(String.class) && token == JsonToken.VALUE_STRING);
-                    }
-                }
-                if (attemptParsing) {
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCardResponse.class);
-                    // TODO: there is no validation against JSON schema constraints
-                    // (min, max, enum, pattern...), this does not perform a strict JSON
-                    // validation, which means the 'match' count may be higher than it should be.
-                    match++;
-                    log.log(Level.FINER, "Input data matches schema 'PaymentMethodCardResponse'");
-                }
-            } catch (Exception e) {
-                // deserialization failed, continue
-                log.log(Level.FINER, "Input data does not match schema 'PaymentMethodCardResponse'", e);
-            }
-
             // deserialize PaymentMethodCashResponse
             try {
                 boolean attemptParsing = true;
-                // ensure that we respect type coercion as set on the client ObjectMapper
-                if (PaymentMethodCashResponse.class.equals(Integer.class) || PaymentMethodCashResponse.class.equals(Long.class) || PaymentMethodCashResponse.class.equals(Float.class) || PaymentMethodCashResponse.class.equals(Double.class) || PaymentMethodCashResponse.class.equals(Boolean.class) || PaymentMethodCashResponse.class.equals(String.class)) {
-                    attemptParsing = typeCoercion;
-                    if (!attemptParsing) {
-                        attemptParsing |= ((PaymentMethodCashResponse.class.equals(Integer.class) || PaymentMethodCashResponse.class.equals(Long.class)) && token == JsonToken.VALUE_NUMBER_INT);
-                        attemptParsing |= ((PaymentMethodCashResponse.class.equals(Float.class) || PaymentMethodCashResponse.class.equals(Double.class)) && token == JsonToken.VALUE_NUMBER_FLOAT);
-                        attemptParsing |= (PaymentMethodCashResponse.class.equals(Boolean.class) && (token == JsonToken.VALUE_FALSE || token == JsonToken.VALUE_TRUE));
-                        attemptParsing |= (PaymentMethodCashResponse.class.equals(String.class) && token == JsonToken.VALUE_STRING);
-                    }
-                }
                 if (attemptParsing) {
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashResponse.class);
                     // TODO: there is no validation against JSON schema constraints
@@ -183,19 +147,25 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
                 log.log(Level.FINER, "Input data does not match schema 'PaymentMethodCashResponse'", e);
             }
 
+            // deserialize PaymentMethodCardResponse
+            try {
+                boolean attemptParsing = true;
+                if (attemptParsing) {
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCardResponse.class);
+                    // TODO: there is no validation against JSON schema constraints
+                    // (min, max, enum, pattern...), this does not perform a strict JSON
+                    // validation, which means the 'match' count may be higher than it should be.
+                    match++;
+                    log.log(Level.FINER, "Input data matches schema 'PaymentMethodCardResponse'");
+                }
+            } catch (Exception e) {
+                // deserialization failed, continue
+                log.log(Level.FINER, "Input data does not match schema 'PaymentMethodCardResponse'", e);
+            }
+
             // deserialize PaymentMethodSpeiRecurrent
             try {
                 boolean attemptParsing = true;
-                // ensure that we respect type coercion as set on the client ObjectMapper
-                if (PaymentMethodSpeiRecurrent.class.equals(Integer.class) || PaymentMethodSpeiRecurrent.class.equals(Long.class) || PaymentMethodSpeiRecurrent.class.equals(Float.class) || PaymentMethodSpeiRecurrent.class.equals(Double.class) || PaymentMethodSpeiRecurrent.class.equals(Boolean.class) || PaymentMethodSpeiRecurrent.class.equals(String.class)) {
-                    attemptParsing = typeCoercion;
-                    if (!attemptParsing) {
-                        attemptParsing |= ((PaymentMethodSpeiRecurrent.class.equals(Integer.class) || PaymentMethodSpeiRecurrent.class.equals(Long.class)) && token == JsonToken.VALUE_NUMBER_INT);
-                        attemptParsing |= ((PaymentMethodSpeiRecurrent.class.equals(Float.class) || PaymentMethodSpeiRecurrent.class.equals(Double.class)) && token == JsonToken.VALUE_NUMBER_FLOAT);
-                        attemptParsing |= (PaymentMethodSpeiRecurrent.class.equals(Boolean.class) && (token == JsonToken.VALUE_FALSE || token == JsonToken.VALUE_TRUE));
-                        attemptParsing |= (PaymentMethodSpeiRecurrent.class.equals(String.class) && token == JsonToken.VALUE_STRING);
-                    }
-                }
                 if (attemptParsing) {
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodSpeiRecurrent.class);
                     // TODO: there is no validation against JSON schema constraints
@@ -233,12 +203,12 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
         super("oneOf", Boolean.FALSE);
     }
 
-    public CustomerPaymentMethodsData(PaymentMethodCardResponse o) {
+    public CustomerPaymentMethodsData(PaymentMethodCashResponse o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
 
-    public CustomerPaymentMethodsData(PaymentMethodCashResponse o) {
+    public CustomerPaymentMethodsData(PaymentMethodCardResponse o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
@@ -261,10 +231,10 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
         mappings.put("card", PaymentMethodCardResponse.class);
         mappings.put("cash", PaymentMethodCashResponse.class);
         mappings.put("oxxo_recurrent", PaymentMethodCashResponse.class);
+        mappings.put("spei_recurrent", PaymentMethodSpeiRecurrent.class);
         mappings.put("payment_method_card_response", PaymentMethodCardResponse.class);
         mappings.put("payment_method_cash_response", PaymentMethodCashResponse.class);
         mappings.put("payment_method_spei_recurrent", PaymentMethodSpeiRecurrent.class);
-        mappings.put("spei_recurrent", PaymentMethodSpeiRecurrent.class);
         mappings.put("customer_payment_methods_data", CustomerPaymentMethodsData.class);
         JSON.registerDiscriminator(CustomerPaymentMethodsData.class, "type", mappings);
     }
@@ -284,12 +254,12 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (JSON.isInstanceOf(PaymentMethodCardResponse.class, instance, new HashSet<>())) {
+        if (JSON.isInstanceOf(PaymentMethodCashResponse.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (JSON.isInstanceOf(PaymentMethodCashResponse.class, instance, new HashSet<>())) {
+        if (JSON.isInstanceOf(PaymentMethodCardResponse.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
@@ -314,17 +284,6 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `PaymentMethodCardResponse`. If the actual instance is not `PaymentMethodCardResponse`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `PaymentMethodCardResponse`
-     * @throws ClassCastException if the instance is not `PaymentMethodCardResponse`
-     */
-    public PaymentMethodCardResponse getPaymentMethodCardResponse() throws ClassCastException {
-        return (PaymentMethodCardResponse)super.getActualInstance();
-    }
-
-    /**
      * Get the actual instance of `PaymentMethodCashResponse`. If the actual instance is not `PaymentMethodCashResponse`,
      * the ClassCastException will be thrown.
      *
@@ -333,6 +292,17 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
      */
     public PaymentMethodCashResponse getPaymentMethodCashResponse() throws ClassCastException {
         return (PaymentMethodCashResponse)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `PaymentMethodCardResponse`. If the actual instance is not `PaymentMethodCardResponse`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `PaymentMethodCardResponse`
+     * @throws ClassCastException if the instance is not `PaymentMethodCardResponse`
+     */
+    public PaymentMethodCardResponse getPaymentMethodCardResponse() throws ClassCastException {
+        return (PaymentMethodCardResponse)super.getActualInstance();
     }
 
     /**

@@ -33,7 +33,7 @@ import com.conekta.JSON;
   ChargeUpdateRequest.JSON_PROPERTY_REFERENCE_ID
 })
 @JsonTypeName("charge_update_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class ChargeUpdateRequest {
   public static final String JSON_PROPERTY_REFERENCE_ID = "reference_id";
   private String referenceId;

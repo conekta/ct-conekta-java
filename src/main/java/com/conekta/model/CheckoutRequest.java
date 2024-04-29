@@ -39,11 +39,12 @@ import com.conekta.JSON;
   CheckoutRequest.JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS,
   CheckoutRequest.JSON_PROPERTY_NAME,
   CheckoutRequest.JSON_PROPERTY_ON_DEMAND_ENABLED,
+  CheckoutRequest.JSON_PROPERTY_REDIRECTION_TIME,
   CheckoutRequest.JSON_PROPERTY_SUCCESS_URL,
   CheckoutRequest.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("checkout_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CheckoutRequest {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
   private List<String> allowedPaymentMethods = new ArrayList<>();
@@ -58,13 +59,16 @@ public class CheckoutRequest {
   private Boolean monthlyInstallmentsEnabled;
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS = "monthly_installments_options";
-  private List<Integer> monthlyInstallmentsOptions;
+  private List<Integer> monthlyInstallmentsOptions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
   public static final String JSON_PROPERTY_ON_DEMAND_ENABLED = "on_demand_enabled";
   private Boolean onDemandEnabled;
+
+  public static final String JSON_PROPERTY_REDIRECTION_TIME = "redirection_time";
+  private Integer redirectionTime;
 
   public static final String JSON_PROPERTY_SUCCESS_URL = "success_url";
   private String successUrl;
@@ -266,6 +270,31 @@ public class CheckoutRequest {
   }
 
 
+  public CheckoutRequest redirectionTime(Integer redirectionTime) {
+    this.redirectionTime = redirectionTime;
+    return this;
+  }
+
+   /**
+   * number of seconds to wait before redirecting to the success_url
+   * @return redirectionTime
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_REDIRECTION_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getRedirectionTime() {
+    return redirectionTime;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_REDIRECTION_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRedirectionTime(Integer redirectionTime) {
+    this.redirectionTime = redirectionTime;
+  }
+
+
   public CheckoutRequest successUrl(String successUrl) {
     this.successUrl = successUrl;
     return this;
@@ -335,13 +364,14 @@ public class CheckoutRequest {
         Objects.equals(this.monthlyInstallmentsOptions, checkoutRequest.monthlyInstallmentsOptions) &&
         Objects.equals(this.name, checkoutRequest.name) &&
         Objects.equals(this.onDemandEnabled, checkoutRequest.onDemandEnabled) &&
+        Objects.equals(this.redirectionTime, checkoutRequest.redirectionTime) &&
         Objects.equals(this.successUrl, checkoutRequest.successUrl) &&
         Objects.equals(this.type, checkoutRequest.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowedPaymentMethods, expiresAt, failureUrl, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, name, onDemandEnabled, successUrl, type);
+    return Objects.hash(allowedPaymentMethods, expiresAt, failureUrl, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, name, onDemandEnabled, redirectionTime, successUrl, type);
   }
 
   @Override
@@ -355,6 +385,7 @@ public class CheckoutRequest {
     sb.append("    monthlyInstallmentsOptions: ").append(toIndentedString(monthlyInstallmentsOptions)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    onDemandEnabled: ").append(toIndentedString(onDemandEnabled)).append("\n");
+    sb.append("    redirectionTime: ").append(toIndentedString(redirectionTime)).append("\n");
     sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");

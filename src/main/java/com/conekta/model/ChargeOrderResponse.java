@@ -55,7 +55,7 @@ import com.conekta.JSON;
   ChargeOrderResponse.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("charge_order_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class ChargeOrderResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Integer amount;
@@ -109,7 +109,7 @@ public class ChargeOrderResponse {
   private String referenceId;
 
   public static final String JSON_PROPERTY_REFUNDS = "refunds";
-  private List<Object> refunds;
+  private List<Object> refunds = new ArrayList<>();
 
   public static final String JSON_PROPERTY_STATUS = "status";
   private String status;

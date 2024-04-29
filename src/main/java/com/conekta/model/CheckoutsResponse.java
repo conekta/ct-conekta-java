@@ -40,7 +40,7 @@ import com.conekta.JSON;
   CheckoutsResponse.JSON_PROPERTY_DATA
 })
 @JsonTypeName("checkouts_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CheckoutsResponse {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   private Boolean hasMore;
@@ -55,7 +55,7 @@ public class CheckoutsResponse {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<CheckoutResponse> data;
+  private List<CheckoutResponse> data = new ArrayList<>();
 
   public CheckoutsResponse() { 
   }

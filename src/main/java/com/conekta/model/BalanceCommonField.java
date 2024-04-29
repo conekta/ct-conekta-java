@@ -34,7 +34,7 @@ import com.conekta.JSON;
   BalanceCommonField.JSON_PROPERTY_CURRENCY
 })
 @JsonTypeName("balance_common_field")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class BalanceCommonField {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Long amount;

@@ -6,7 +6,7 @@
     "developerOrganization": "Conekta, Inc.",
     "developerOrganizationUrl": "https://www.conekta.io",
     "artifactUrl": "https://developers.conekta.com/",
-    "artifactVersion": "6.1.0",
+    "artifactVersion": "6.1.1",
     "modelPackage": "com.conekta.model",
     "licenseName": "MIT License",
     "invokerPackage": "com.conekta",
@@ -21,17 +21,21 @@
     "scmUrl": "https://github.com/conekta/ct-conekta-java/tree/main",
     "library": "jersey2",
     "files": {
-        "AUTHORS.md": {},
-        "CODE_OF_CONDUCT.md": {},
-        "LICENSE": {}
+        "/local/AUTHORS.md": {},
+        "/local/CODE_OF_CONDUCT.md": {},
+        "/local/LICENSE": {},
+        "VERSION.mustache" : {
+            "templateType": "SupportingFiles",
+            "destinationFilename": "VERSION"
+        }
     },
     "javaMinVersion": 11,
     "swagger1AnnotationLibrary": false,
     "javaxPackage": "javax",
-    "templateDir": "templates/java/jersey2",
+    "templateDir": "local/templates/java/jersey2",
     "disallowAdditionalPropertiesIfNotPresent": true,
     "useOneOfDiscriminatorLookup": true,
     "serializationLibrary": "jackson",
-    "httpUserAgent": "Conekta/v2 JavaBindings/",
+    "httpUserAgent": "Conekta/v2 JavaBindings/6.1.1",
     "openApiNullable" : false
 }

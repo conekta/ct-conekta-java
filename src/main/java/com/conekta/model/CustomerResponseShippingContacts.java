@@ -38,7 +38,7 @@ import com.conekta.JSON;
   CustomerResponseShippingContacts.JSON_PROPERTY_DATA
 })
 @JsonTypeName("customer_response_shipping_contacts")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CustomerResponseShippingContacts {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   private Boolean hasMore;
@@ -47,7 +47,7 @@ public class CustomerResponseShippingContacts {
   private String _object;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<CustomerShippingContactsDataResponse> data;
+  private List<CustomerShippingContactsDataResponse> data = new ArrayList<>();
 
   public CustomerResponseShippingContacts() { 
   }

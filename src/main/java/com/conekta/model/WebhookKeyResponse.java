@@ -39,7 +39,7 @@ import com.conekta.JSON;
   WebhookKeyResponse.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("webhook-key_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WebhookKeyResponse {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

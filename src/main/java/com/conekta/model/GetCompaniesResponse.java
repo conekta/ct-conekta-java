@@ -40,7 +40,7 @@ import com.conekta.JSON;
   GetCompaniesResponse.JSON_PROPERTY_DATA
 })
 @JsonTypeName("get_companies_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class GetCompaniesResponse {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   private Boolean hasMore;
@@ -55,7 +55,7 @@ public class GetCompaniesResponse {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<CompanyResponse> data;
+  private List<CompanyResponse> data = new ArrayList<>();
 
   public GetCompaniesResponse() { 
   }

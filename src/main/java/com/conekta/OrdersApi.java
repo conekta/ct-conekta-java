@@ -22,7 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class OrdersApi {
   private ApiClient apiClient;
 
@@ -258,6 +258,13 @@ public class OrdersApi {
    * @param search General order search, e.g. by mail, reference etc. (optional)
    * @param next next page (optional)
    * @param previous previous page (optional)
+   * @param paymentStatus Filters by order status (optional)
+   * @param lastPaymentInfoStatus Filters by last payment info status (optional)
+   * @param createdAt created equal to (optional)
+   * @param createdAtGte created at greater than or equal to (optional)
+   * @param createdAtLte created at less than or equal to (optional)
+   * @param updatedAtGte updated at greater than or equal to (optional)
+   * @param updatedAtLte updated at less than or equal to (optional)
    * @return GetOrdersResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -268,8 +275,8 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public GetOrdersResponse getOrders(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
-    return getOrdersWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous).getData();
+  public GetOrdersResponse getOrders(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous, String paymentStatus, String lastPaymentInfoStatus, Long createdAt, Long createdAtGte, Long createdAtLte, Long updatedAtGte, Long updatedAtLte) throws ApiException {
+    return getOrdersWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte).getData();
   }
 
   /**
@@ -281,6 +288,13 @@ public class OrdersApi {
    * @param search General order search, e.g. by mail, reference etc. (optional)
    * @param next next page (optional)
    * @param previous previous page (optional)
+   * @param paymentStatus Filters by order status (optional)
+   * @param lastPaymentInfoStatus Filters by last payment info status (optional)
+   * @param createdAt created equal to (optional)
+   * @param createdAtGte created at greater than or equal to (optional)
+   * @param createdAtLte created at less than or equal to (optional)
+   * @param updatedAtGte updated at greater than or equal to (optional)
+   * @param updatedAtLte updated at less than or equal to (optional)
    * @return ApiResponse&lt;GetOrdersResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -291,7 +305,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<GetOrdersResponse> getOrdersWithHttpInfo(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public ApiResponse<GetOrdersResponse> getOrdersWithHttpInfo(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous, String paymentStatus, String lastPaymentInfoStatus, Long createdAt, Long createdAtGte, Long createdAtLte, Long updatedAtGte, Long updatedAtLte) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "limit", limit)
@@ -299,6 +313,13 @@ public class OrdersApi {
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "search", search));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "next", next));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "previous", previous));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "payment_status", paymentStatus));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "last_payment_info.status", lastPaymentInfoStatus));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "created_at", createdAt));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "created_at.gte", createdAtGte));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "created_at.lte", createdAtLte));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "updated_at.gte", updatedAtGte));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "updated_at.lte", updatedAtLte));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

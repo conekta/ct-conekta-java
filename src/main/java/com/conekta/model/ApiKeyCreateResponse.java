@@ -30,7 +30,6 @@ import com.conekta.JSON;
  * ApiKeyCreateResponse
  */
 @JsonPropertyOrder({
-  ApiKeyCreateResponse.JSON_PROPERTY_AUTHENTICATION_TOKEN,
   ApiKeyCreateResponse.JSON_PROPERTY_ACTIVE,
   ApiKeyCreateResponse.JSON_PROPERTY_CREATED_AT,
   ApiKeyCreateResponse.JSON_PROPERTY_UPDATED_AT,
@@ -41,14 +40,12 @@ import com.conekta.JSON;
   ApiKeyCreateResponse.JSON_PROPERTY_DELETED,
   ApiKeyCreateResponse.JSON_PROPERTY_OBJECT,
   ApiKeyCreateResponse.JSON_PROPERTY_PREFIX,
-  ApiKeyCreateResponse.JSON_PROPERTY_ROLE
+  ApiKeyCreateResponse.JSON_PROPERTY_ROLE,
+  ApiKeyCreateResponse.JSON_PROPERTY_AUTHENTICATION_TOKEN
 })
 @JsonTypeName("api_key_create_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class ApiKeyCreateResponse {
-  public static final String JSON_PROPERTY_AUTHENTICATION_TOKEN = "authentication_token";
-  private String authenticationToken;
-
   public static final String JSON_PROPERTY_ACTIVE = "active";
   private Boolean active;
 
@@ -82,33 +79,11 @@ public class ApiKeyCreateResponse {
   public static final String JSON_PROPERTY_ROLE = "role";
   private String role;
 
+  public static final String JSON_PROPERTY_AUTHENTICATION_TOKEN = "authentication_token";
+  private String authenticationToken;
+
   public ApiKeyCreateResponse() { 
   }
-
-  public ApiKeyCreateResponse authenticationToken(String authenticationToken) {
-    this.authenticationToken = authenticationToken;
-    return this;
-  }
-
-   /**
-   * It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.
-   * @return authenticationToken
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_AUTHENTICATION_TOKEN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getAuthenticationToken() {
-    return authenticationToken;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_AUTHENTICATION_TOKEN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthenticationToken(String authenticationToken) {
-    this.authenticationToken = authenticationToken;
-  }
-
 
   public ApiKeyCreateResponse active(Boolean active) {
     this.active = active;
@@ -385,6 +360,31 @@ public class ApiKeyCreateResponse {
   }
 
 
+  public ApiKeyCreateResponse authenticationToken(String authenticationToken) {
+    this.authenticationToken = authenticationToken;
+    return this;
+  }
+
+   /**
+   * It is occupied as a user when authenticated with basic authentication, with a blank password. This value will only appear once, in the request to create a new key. Copy and save it in a safe place.
+   * @return authenticationToken
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_AUTHENTICATION_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getAuthenticationToken() {
+    return authenticationToken;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_AUTHENTICATION_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAuthenticationToken(String authenticationToken) {
+    this.authenticationToken = authenticationToken;
+  }
+
+
   /**
    * Return true if this api_key_create_response object is equal to o.
    */
@@ -397,8 +397,7 @@ public class ApiKeyCreateResponse {
       return false;
     }
     ApiKeyCreateResponse apiKeyCreateResponse = (ApiKeyCreateResponse) o;
-    return Objects.equals(this.authenticationToken, apiKeyCreateResponse.authenticationToken) &&
-        Objects.equals(this.active, apiKeyCreateResponse.active) &&
+    return Objects.equals(this.active, apiKeyCreateResponse.active) &&
         Objects.equals(this.createdAt, apiKeyCreateResponse.createdAt) &&
         Objects.equals(this.updatedAt, apiKeyCreateResponse.updatedAt) &&
         Objects.equals(this.deactivatedAt, apiKeyCreateResponse.deactivatedAt) &&
@@ -408,19 +407,19 @@ public class ApiKeyCreateResponse {
         Objects.equals(this.deleted, apiKeyCreateResponse.deleted) &&
         Objects.equals(this._object, apiKeyCreateResponse._object) &&
         Objects.equals(this.prefix, apiKeyCreateResponse.prefix) &&
-        Objects.equals(this.role, apiKeyCreateResponse.role);
+        Objects.equals(this.role, apiKeyCreateResponse.role) &&
+        Objects.equals(this.authenticationToken, apiKeyCreateResponse.authenticationToken);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authenticationToken, active, createdAt, updatedAt, deactivatedAt, description, id, livemode, deleted, _object, prefix, role);
+    return Objects.hash(active, createdAt, updatedAt, deactivatedAt, description, id, livemode, deleted, _object, prefix, role, authenticationToken);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ApiKeyCreateResponse {\n");
-    sb.append("    authenticationToken: ").append(toIndentedString(authenticationToken)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -432,6 +431,7 @@ public class ApiKeyCreateResponse {
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
+    sb.append("    authenticationToken: ").append(toIndentedString(authenticationToken)).append("\n");
     sb.append("}");
     return sb.toString();
   }

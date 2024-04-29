@@ -35,7 +35,7 @@ import com.conekta.JSON;
   TokenCheckout.JSON_PROPERTY_RETURNS_CONTROL_ON
 })
 @JsonTypeName("token_checkout")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class TokenCheckout {
   public static final String JSON_PROPERTY_RETURNS_CONTROL_ON = "returns_control_on";
   private String returnsControlOn;

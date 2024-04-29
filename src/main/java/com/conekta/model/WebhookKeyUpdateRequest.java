@@ -33,7 +33,7 @@ import com.conekta.JSON;
   WebhookKeyUpdateRequest.JSON_PROPERTY_ACTIVE
 })
 @JsonTypeName("webhook_key_update_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WebhookKeyUpdateRequest {
   public static final String JSON_PROPERTY_ACTIVE = "active";
   private Boolean active = false;

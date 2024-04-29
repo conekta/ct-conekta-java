@@ -41,7 +41,7 @@ import com.conekta.JSON;
   WebhookLog.JSON_PROPERTY_RESPONSE_DATA,
   WebhookLog.JSON_PROPERTY_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WebhookLog {
   public static final String JSON_PROPERTY_FAILED_ATTEMPTS = "failed_attempts";
   private Integer failedAttempts;

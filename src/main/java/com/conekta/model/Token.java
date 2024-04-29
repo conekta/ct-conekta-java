@@ -36,12 +36,13 @@ import com.conekta.JSON;
   Token.JSON_PROPERTY_CHECKOUT
 })
 @JsonTypeName("token")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class Token {
   public static final String JSON_PROPERTY_CARD = "card";
   private TokenCard card;
 
   public static final String JSON_PROPERTY_CHECKOUT = "checkout";
+  @Deprecated
   private TokenCheckout checkout;
 
   public Token() { 
@@ -72,6 +73,7 @@ public class Token {
   }
 
 
+  @Deprecated
   public Token checkout(TokenCheckout checkout) {
     this.checkout = checkout;
     return this;
@@ -92,6 +94,7 @@ public class Token {
   }
 
 
+  @Deprecated
   @JsonProperty(JSON_PROPERTY_CHECKOUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCheckout(TokenCheckout checkout) {

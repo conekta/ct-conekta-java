@@ -40,7 +40,7 @@ import com.conekta.JSON;
   GetOrdersResponse.JSON_PROPERTY_PREVIOUS_PAGE_URL
 })
 @JsonTypeName("get_orders_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class GetOrdersResponse {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<OrderResponse> data = new ArrayList<>();

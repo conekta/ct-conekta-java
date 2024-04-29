@@ -45,7 +45,7 @@ import com.conekta.JSON;
   UpdateProduct.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("update_product")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class UpdateProduct {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
   private Map<String, Object> antifraudInfo = new HashMap<>();
@@ -66,7 +66,7 @@ public class UpdateProduct {
   private Integer quantity;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
-  private List<String> tags;
+  private List<String> tags = new ArrayList<>();
 
   public static final String JSON_PROPERTY_BRAND = "brand";
   private String brand;

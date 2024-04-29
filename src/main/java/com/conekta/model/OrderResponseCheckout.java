@@ -53,6 +53,7 @@ import com.conekta.JSON;
   OrderResponseCheckout.JSON_PROPERTY_ON_DEMAND_ENABLED,
   OrderResponseCheckout.JSON_PROPERTY_PAID_PAYMENTS_COUNT,
   OrderResponseCheckout.JSON_PROPERTY_RECURRENT,
+  OrderResponseCheckout.JSON_PROPERTY_REDIRECTION_TIME,
   OrderResponseCheckout.JSON_PROPERTY_SLUG,
   OrderResponseCheckout.JSON_PROPERTY_SMS_SENT,
   OrderResponseCheckout.JSON_PROPERTY_SUCCESS_URL,
@@ -62,10 +63,10 @@ import com.conekta.JSON;
   OrderResponseCheckout.JSON_PROPERTY_URL
 })
 @JsonTypeName("order_response_checkout")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class OrderResponseCheckout {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
-  private List<String> allowedPaymentMethods;
+  private List<String> allowedPaymentMethods = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CAN_NOT_EXPIRE = "can_not_expire";
   private Boolean canNotExpire;
@@ -74,7 +75,7 @@ public class OrderResponseCheckout {
   private Integer emailsSent;
 
   public static final String JSON_PROPERTY_EXCLUDE_CARD_NETWORKS = "exclude_card_networks";
-  private List<Object> excludeCardNetworks;
+  private List<Object> excludeCardNetworks = new ArrayList<>();
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
   private Long expiresAt;
@@ -101,7 +102,7 @@ public class OrderResponseCheckout {
   private Boolean monthlyInstallmentsEnabled;
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS = "monthly_installments_options";
-  private List<Integer> monthlyInstallmentsOptions;
+  private List<Integer> monthlyInstallmentsOptions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -120,6 +121,9 @@ public class OrderResponseCheckout {
 
   public static final String JSON_PROPERTY_RECURRENT = "recurrent";
   private Boolean recurrent;
+
+  public static final String JSON_PROPERTY_REDIRECTION_TIME = "redirection_time";
+  private Integer redirectionTime;
 
   public static final String JSON_PROPERTY_SLUG = "slug";
   private String slug;
@@ -652,6 +656,31 @@ public class OrderResponseCheckout {
   }
 
 
+  public OrderResponseCheckout redirectionTime(Integer redirectionTime) {
+    this.redirectionTime = redirectionTime;
+    return this;
+  }
+
+   /**
+   * number of seconds to wait before redirecting to the success_url
+   * @return redirectionTime
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_REDIRECTION_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getRedirectionTime() {
+    return redirectionTime;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_REDIRECTION_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRedirectionTime(Integer redirectionTime) {
+    this.redirectionTime = redirectionTime;
+  }
+
+
   public OrderResponseCheckout slug(String slug) {
     this.slug = slug;
     return this;
@@ -858,6 +887,7 @@ public class OrderResponseCheckout {
         Objects.equals(this.onDemandEnabled, orderResponseCheckout.onDemandEnabled) &&
         Objects.equals(this.paidPaymentsCount, orderResponseCheckout.paidPaymentsCount) &&
         Objects.equals(this.recurrent, orderResponseCheckout.recurrent) &&
+        Objects.equals(this.redirectionTime, orderResponseCheckout.redirectionTime) &&
         Objects.equals(this.slug, orderResponseCheckout.slug) &&
         Objects.equals(this.smsSent, orderResponseCheckout.smsSent) &&
         Objects.equals(this.successUrl, orderResponseCheckout.successUrl) &&
@@ -869,7 +899,7 @@ public class OrderResponseCheckout {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowedPaymentMethods, canNotExpire, emailsSent, excludeCardNetworks, expiresAt, failureUrl, force3dsFlow, id, isRedirectOnFailure, livemode, metadata, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, name, needsShippingContact, _object, onDemandEnabled, paidPaymentsCount, recurrent, slug, smsSent, successUrl, startsAt, status, type, url);
+    return Objects.hash(allowedPaymentMethods, canNotExpire, emailsSent, excludeCardNetworks, expiresAt, failureUrl, force3dsFlow, id, isRedirectOnFailure, livemode, metadata, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, name, needsShippingContact, _object, onDemandEnabled, paidPaymentsCount, recurrent, redirectionTime, slug, smsSent, successUrl, startsAt, status, type, url);
   }
 
   @Override
@@ -895,6 +925,7 @@ public class OrderResponseCheckout {
     sb.append("    onDemandEnabled: ").append(toIndentedString(onDemandEnabled)).append("\n");
     sb.append("    paidPaymentsCount: ").append(toIndentedString(paidPaymentsCount)).append("\n");
     sb.append("    recurrent: ").append(toIndentedString(recurrent)).append("\n");
+    sb.append("    redirectionTime: ").append(toIndentedString(redirectionTime)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    smsSent: ").append(toIndentedString(smsSent)).append("\n");
     sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");

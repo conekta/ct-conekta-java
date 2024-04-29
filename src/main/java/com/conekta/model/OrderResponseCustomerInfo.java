@@ -30,20 +30,17 @@ import com.conekta.JSON;
  * OrderResponseCustomerInfo
  */
 @JsonPropertyOrder({
-  OrderResponseCustomerInfo.JSON_PROPERTY_OBJECT,
   OrderResponseCustomerInfo.JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE,
   OrderResponseCustomerInfo.JSON_PROPERTY_NAME,
   OrderResponseCustomerInfo.JSON_PROPERTY_EMAIL,
   OrderResponseCustomerInfo.JSON_PROPERTY_PHONE,
   OrderResponseCustomerInfo.JSON_PROPERTY_CORPORATE,
+  OrderResponseCustomerInfo.JSON_PROPERTY_OBJECT,
   OrderResponseCustomerInfo.JSON_PROPERTY_CUSTOMER_ID
 })
 @JsonTypeName("order_response_customer_info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class OrderResponseCustomerInfo {
-  public static final String JSON_PROPERTY_OBJECT = "object";
-  private String _object;
-
   public static final String JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE = "customer_custom_reference";
   private String customerCustomReference;
 
@@ -59,36 +56,14 @@ public class OrderResponseCustomerInfo {
   public static final String JSON_PROPERTY_CORPORATE = "corporate";
   private Boolean corporate = false;
 
+  public static final String JSON_PROPERTY_OBJECT = "object";
+  private String _object;
+
   public static final String JSON_PROPERTY_CUSTOMER_ID = "customer_id";
   private String customerId;
 
   public OrderResponseCustomerInfo() { 
   }
-
-  public OrderResponseCustomerInfo _object(String _object) {
-    this._object = _object;
-    return this;
-  }
-
-   /**
-   * Get _object
-   * @return _object
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getObject() {
-    return _object;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
-    this._object = _object;
-  }
-
 
   public OrderResponseCustomerInfo customerCustomReference(String customerCustomReference) {
     this.customerCustomReference = customerCustomReference;
@@ -215,6 +190,31 @@ public class OrderResponseCustomerInfo {
   }
 
 
+  public OrderResponseCustomerInfo _object(String _object) {
+    this._object = _object;
+    return this;
+  }
+
+   /**
+   * Get _object
+   * @return _object
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getObject() {
+    return _object;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setObject(String _object) {
+    this._object = _object;
+  }
+
+
   public OrderResponseCustomerInfo customerId(String customerId) {
     this.customerId = customerId;
     return this;
@@ -252,30 +252,30 @@ public class OrderResponseCustomerInfo {
       return false;
     }
     OrderResponseCustomerInfo orderResponseCustomerInfo = (OrderResponseCustomerInfo) o;
-    return Objects.equals(this._object, orderResponseCustomerInfo._object) &&
-        Objects.equals(this.customerCustomReference, orderResponseCustomerInfo.customerCustomReference) &&
+    return Objects.equals(this.customerCustomReference, orderResponseCustomerInfo.customerCustomReference) &&
         Objects.equals(this.name, orderResponseCustomerInfo.name) &&
         Objects.equals(this.email, orderResponseCustomerInfo.email) &&
         Objects.equals(this.phone, orderResponseCustomerInfo.phone) &&
         Objects.equals(this.corporate, orderResponseCustomerInfo.corporate) &&
+        Objects.equals(this._object, orderResponseCustomerInfo._object) &&
         Objects.equals(this.customerId, orderResponseCustomerInfo.customerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(_object, customerCustomReference, name, email, phone, corporate, customerId);
+    return Objects.hash(customerCustomReference, name, email, phone, corporate, _object, customerId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrderResponseCustomerInfo {\n");
-    sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    customerCustomReference: ").append(toIndentedString(customerCustomReference)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    corporate: ").append(toIndentedString(corporate)).append("\n");
+    sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("}");
     return sb.toString();

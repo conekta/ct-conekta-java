@@ -40,7 +40,7 @@ import com.conekta.JSON;
   GetTransfersResponse.JSON_PROPERTY_DATA
 })
 @JsonTypeName("get_transfers_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class GetTransfersResponse {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   private Boolean hasMore;
@@ -55,7 +55,7 @@ public class GetTransfersResponse {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<TransfersResponse> data;
+  private List<TransfersResponse> data = new ArrayList<>();
 
   public GetTransfersResponse() { 
   }

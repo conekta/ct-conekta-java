@@ -38,9 +38,10 @@ import com.conekta.JSON;
   TokenResponse.JSON_PROPERTY_USED
 })
 @JsonTypeName("token_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class TokenResponse {
   public static final String JSON_PROPERTY_CHECKOUT = "checkout";
+  @Deprecated
   private TokenResponseCheckout checkout;
 
   public static final String JSON_PROPERTY_ID = "id";
@@ -58,6 +59,7 @@ public class TokenResponse {
   public TokenResponse() { 
   }
 
+  @Deprecated
   public TokenResponse checkout(TokenResponseCheckout checkout) {
     this.checkout = checkout;
     return this;
@@ -78,6 +80,7 @@ public class TokenResponse {
   }
 
 
+  @Deprecated
   @JsonProperty(JSON_PROPERTY_CHECKOUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCheckout(TokenResponseCheckout checkout) {

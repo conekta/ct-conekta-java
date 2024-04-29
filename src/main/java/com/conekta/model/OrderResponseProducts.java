@@ -40,7 +40,7 @@ import com.conekta.JSON;
   OrderResponseProducts.JSON_PROPERTY_DATA
 })
 @JsonTypeName("order_response_products")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class OrderResponseProducts {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   private Boolean hasMore;
@@ -55,7 +55,7 @@ public class OrderResponseProducts {
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<ProductDataResponse> data;
+  private List<ProductDataResponse> data = new ArrayList<>();
 
   public OrderResponseProducts() { 
   }

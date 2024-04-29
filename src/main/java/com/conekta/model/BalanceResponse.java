@@ -45,37 +45,37 @@ import com.conekta.JSON;
   BalanceResponse.JSON_PROPERTY_TEMPORARILY_RETAINED
 })
 @JsonTypeName("balance_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class BalanceResponse {
   public static final String JSON_PROPERTY_AVAILABLE = "available";
-  private List<BalanceCommonField> available;
+  private List<BalanceCommonField> available = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CASHOUT_RETENTION_AMOUNT = "cashout_retention_amount";
-  private List<BalanceCommonField> cashoutRetentionAmount;
+  private List<BalanceCommonField> cashoutRetentionAmount = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CONEKTA_RETENTION = "conekta_retention";
-  private List<BalanceCommonField> conektaRetention;
+  private List<BalanceCommonField> conektaRetention = new ArrayList<>();
 
   public static final String JSON_PROPERTY_GATEWAY = "gateway";
-  private List<BalanceCommonField> gateway;
+  private List<BalanceCommonField> gateway = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PENDING = "pending";
-  private List<BalanceCommonField> pending;
+  private List<BalanceCommonField> pending = new ArrayList<>();
 
   public static final String JSON_PROPERTY_RETAINED = "retained";
-  private List<BalanceCommonField> retained;
+  private List<BalanceCommonField> retained = new ArrayList<>();
 
   public static final String JSON_PROPERTY_RETENTION_AMOUNT = "retention_amount";
-  private List<BalanceCommonField> retentionAmount;
+  private List<BalanceCommonField> retentionAmount = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TARGET_COLLATERAL_AMOUNT = "target_collateral_amount";
   private Object targetCollateralAmount;
 
   public static final String JSON_PROPERTY_TARGET_RETENTION_AMOUNT = "target_retention_amount";
-  private List<BalanceCommonField> targetRetentionAmount;
+  private List<BalanceCommonField> targetRetentionAmount = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TEMPORARILY_RETAINED = "temporarily_retained";
-  private List<BalanceCommonField> temporarilyRetained;
+  private List<BalanceCommonField> temporarilyRetained = new ArrayList<>();
 
   public BalanceResponse() { 
   }

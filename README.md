@@ -14,7 +14,7 @@ Conekta sdk
 
 Building the API client library requires:
 
-1. Java 1.11+
+1. Java 11+
 2. Maven (3.8.3+)/Gradle (7.2+)
 
 ## Installation
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.conekta</groupId>
   <artifactId>ct-conekta-java</artifactId>
-  <version>6.1.0</version>
+  <version>6.1.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "io.conekta:ct-conekta-java:6.1.0"
+     implementation "io.conekta:ct-conekta-java:6.1.1"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/ct-conekta-java-6.1.0.jar`
+- `target/ct-conekta-java-6.1.1.jar`
 - `target/lib/*.jar`
 
 ## Usage
@@ -209,6 +209,9 @@ Class | Method | HTTP request | Description
 *PaymentMethodsApi* | [**deleteCustomerPaymentMethods**](docs/PaymentMethodsApi.md#deleteCustomerPaymentMethods) | **DELETE** /customers/{id}/payment_sources/{payment_method_id} | Delete Payment Method
 *PaymentMethodsApi* | [**getCustomerPaymentMethods**](docs/PaymentMethodsApi.md#getCustomerPaymentMethods) | **GET** /customers/{id}/payment_sources | Get Payment Methods
 *PaymentMethodsApi* | [**updateCustomerPaymentMethods**](docs/PaymentMethodsApi.md#updateCustomerPaymentMethods) | **PUT** /customers/{id}/payment_sources/{payment_method_id} | Update Payment Method
+*PayoutOrdersApi* | [**createPayoutOrder**](docs/PayoutOrdersApi.md#createPayoutOrder) | **POST** /payout_orders | Create payout order
+*PayoutOrdersApi* | [**getPayoutOrderById**](docs/PayoutOrdersApi.md#getPayoutOrderById) | **GET** /payout_orders/{id} | Get Payout Order
+*PayoutOrdersApi* | [**getPayoutOrders**](docs/PayoutOrdersApi.md#getPayoutOrders) | **GET** /payout_orders | Get a list of Payout Orders
 *PlansApi* | [**createPlan**](docs/PlansApi.md#createPlan) | **POST** /plans | Create Plan
 *PlansApi* | [**deletePlan**](docs/PlansApi.md#deletePlan) | **DELETE** /plans/{id} | Delete Plan
 *PlansApi* | [**getPlan**](docs/PlansApi.md#getPlan) | **GET** /plans/{id} | Get Plan
@@ -254,7 +257,6 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [ApiKeyCreateResponse](docs/ApiKeyCreateResponse.md)
- - [ApiKeyCreateResponseAllOf](docs/ApiKeyCreateResponseAllOf.md)
  - [ApiKeyRequest](docs/ApiKeyRequest.md)
  - [ApiKeyResponse](docs/ApiKeyResponse.md)
  - [ApiKeyResponseOnDelete](docs/ApiKeyResponseOnDelete.md)
@@ -262,9 +264,6 @@ Class | Method | HTTP request | Description
  - [BalanceCommonField](docs/BalanceCommonField.md)
  - [BalanceResponse](docs/BalanceResponse.md)
  - [BlacklistRuleResponse](docs/BlacklistRuleResponse.md)
- - [ChargeDataPaymentMethodBankTransferResponse](docs/ChargeDataPaymentMethodBankTransferResponse.md)
- - [ChargeDataPaymentMethodCardResponse](docs/ChargeDataPaymentMethodCardResponse.md)
- - [ChargeDataPaymentMethodCashResponse](docs/ChargeDataPaymentMethodCashResponse.md)
  - [ChargeOrderResponse](docs/ChargeOrderResponse.md)
  - [ChargeOrderResponsePaymentMethod](docs/ChargeOrderResponsePaymentMethod.md)
  - [ChargeRequest](docs/ChargeRequest.md)
@@ -273,7 +272,6 @@ Class | Method | HTTP request | Description
  - [ChargeResponseChannel](docs/ChargeResponseChannel.md)
  - [ChargeResponsePaymentMethod](docs/ChargeResponsePaymentMethod.md)
  - [ChargeResponseRefunds](docs/ChargeResponseRefunds.md)
- - [ChargeResponseRefundsAllOf](docs/ChargeResponseRefundsAllOf.md)
  - [ChargeResponseRefundsData](docs/ChargeResponseRefundsData.md)
  - [ChargeUpdateRequest](docs/ChargeUpdateRequest.md)
  - [ChargesDataResponse](docs/ChargesDataResponse.md)
@@ -283,13 +281,11 @@ Class | Method | HTTP request | Description
  - [CheckoutRequest](docs/CheckoutRequest.md)
  - [CheckoutResponse](docs/CheckoutResponse.md)
  - [CheckoutsResponse](docs/CheckoutsResponse.md)
- - [CheckoutsResponseAllOf](docs/CheckoutsResponseAllOf.md)
  - [CompanyFiscalInfoAddressResponse](docs/CompanyFiscalInfoAddressResponse.md)
  - [CompanyFiscalInfoResponse](docs/CompanyFiscalInfoResponse.md)
  - [CompanyPayoutDestinationResponse](docs/CompanyPayoutDestinationResponse.md)
  - [CompanyResponse](docs/CompanyResponse.md)
  - [CreateCustomerFiscalEntitiesResponse](docs/CreateCustomerFiscalEntitiesResponse.md)
- - [CreateCustomerFiscalEntitiesResponseAllOf](docs/CreateCustomerFiscalEntitiesResponseAllOf.md)
  - [CreateCustomerPaymentMethodsRequest](docs/CreateCustomerPaymentMethodsRequest.md)
  - [CreateCustomerPaymentMethodsResponse](docs/CreateCustomerPaymentMethodsResponse.md)
  - [CreateRiskRulesData](docs/CreateRiskRulesData.md)
@@ -299,69 +295,50 @@ Class | Method | HTTP request | Description
  - [CustomerAntifraudInfoResponse](docs/CustomerAntifraudInfoResponse.md)
  - [CustomerFiscalEntitiesDataResponse](docs/CustomerFiscalEntitiesDataResponse.md)
  - [CustomerFiscalEntitiesRequest](docs/CustomerFiscalEntitiesRequest.md)
- - [CustomerFiscalEntitiesRequestAddress](docs/CustomerFiscalEntitiesRequestAddress.md)
  - [CustomerFiscalEntitiesResponse](docs/CustomerFiscalEntitiesResponse.md)
- - [CustomerFiscalEntitiesResponseAllOf](docs/CustomerFiscalEntitiesResponseAllOf.md)
  - [CustomerInfo](docs/CustomerInfo.md)
  - [CustomerInfoJustCustomerId](docs/CustomerInfoJustCustomerId.md)
  - [CustomerInfoJustCustomerIdResponse](docs/CustomerInfoJustCustomerIdResponse.md)
  - [CustomerPaymentMethodRequest](docs/CustomerPaymentMethodRequest.md)
- - [CustomerPaymentMethods](docs/CustomerPaymentMethods.md)
  - [CustomerPaymentMethodsData](docs/CustomerPaymentMethodsData.md)
  - [CustomerPaymentMethodsRequest](docs/CustomerPaymentMethodsRequest.md)
  - [CustomerPaymentMethodsResponse](docs/CustomerPaymentMethodsResponse.md)
  - [CustomerResponse](docs/CustomerResponse.md)
  - [CustomerResponseShippingContacts](docs/CustomerResponseShippingContacts.md)
- - [CustomerResponseShippingContactsAllOf](docs/CustomerResponseShippingContactsAllOf.md)
  - [CustomerShippingContacts](docs/CustomerShippingContacts.md)
  - [CustomerShippingContactsAddress](docs/CustomerShippingContactsAddress.md)
  - [CustomerShippingContactsDataResponse](docs/CustomerShippingContactsDataResponse.md)
- - [CustomerShippingContactsDataResponseAllOf](docs/CustomerShippingContactsDataResponseAllOf.md)
  - [CustomerShippingContactsResponse](docs/CustomerShippingContactsResponse.md)
  - [CustomerShippingContactsResponseAddress](docs/CustomerShippingContactsResponseAddress.md)
  - [CustomerUpdateFiscalEntitiesRequest](docs/CustomerUpdateFiscalEntitiesRequest.md)
  - [CustomerUpdateShippingContacts](docs/CustomerUpdateShippingContacts.md)
  - [CustomersResponse](docs/CustomersResponse.md)
- - [CustomersResponseAllOf](docs/CustomersResponseAllOf.md)
  - [DeleteApiKeysResponse](docs/DeleteApiKeysResponse.md)
- - [DeleteApiKeysResponseAllOf](docs/DeleteApiKeysResponseAllOf.md)
  - [DeletedBlacklistRuleResponse](docs/DeletedBlacklistRuleResponse.md)
  - [DeletedWhitelistRuleResponse](docs/DeletedWhitelistRuleResponse.md)
  - [Details](docs/Details.md)
  - [DetailsError](docs/DetailsError.md)
  - [DiscountLinesDataResponse](docs/DiscountLinesDataResponse.md)
  - [DiscountLinesResponse](docs/DiscountLinesResponse.md)
- - [DiscountLinesResponseAllOf](docs/DiscountLinesResponseAllOf.md)
  - [EmailCheckoutRequest](docs/EmailCheckoutRequest.md)
  - [Error](docs/Error.md)
- - [ErrorAllOf](docs/ErrorAllOf.md)
  - [EventResponse](docs/EventResponse.md)
+ - [EventTypes](docs/EventTypes.md)
  - [EventsResendResponse](docs/EventsResendResponse.md)
  - [FiscalEntityAddress](docs/FiscalEntityAddress.md)
  - [GetApiKeysResponse](docs/GetApiKeysResponse.md)
- - [GetApiKeysResponseAllOf](docs/GetApiKeysResponseAllOf.md)
  - [GetChargesResponse](docs/GetChargesResponse.md)
- - [GetChargesResponseAllOf](docs/GetChargesResponseAllOf.md)
  - [GetCompaniesResponse](docs/GetCompaniesResponse.md)
- - [GetCompaniesResponseAllOf](docs/GetCompaniesResponseAllOf.md)
  - [GetCustomerPaymentMethodDataResponse](docs/GetCustomerPaymentMethodDataResponse.md)
  - [GetEventsResponse](docs/GetEventsResponse.md)
- - [GetEventsResponseAllOf](docs/GetEventsResponseAllOf.md)
  - [GetOrderDiscountLinesResponse](docs/GetOrderDiscountLinesResponse.md)
- - [GetOrderDiscountLinesResponseAllOf](docs/GetOrderDiscountLinesResponseAllOf.md)
  - [GetOrdersResponse](docs/GetOrdersResponse.md)
  - [GetPaymentMethodResponse](docs/GetPaymentMethodResponse.md)
- - [GetPaymentMethodResponseAllOf](docs/GetPaymentMethodResponseAllOf.md)
  - [GetPlansResponse](docs/GetPlansResponse.md)
- - [GetPlansResponseAllOf](docs/GetPlansResponseAllOf.md)
  - [GetTransactionsResponse](docs/GetTransactionsResponse.md)
- - [GetTransactionsResponseAllOf](docs/GetTransactionsResponseAllOf.md)
  - [GetTransfersResponse](docs/GetTransfersResponse.md)
- - [GetTransfersResponseAllOf](docs/GetTransfersResponseAllOf.md)
  - [GetWebhookKeysResponse](docs/GetWebhookKeysResponse.md)
- - [GetWebhookKeysResponseAllOf](docs/GetWebhookKeysResponseAllOf.md)
  - [GetWebhooksResponse](docs/GetWebhooksResponse.md)
- - [GetWebhooksResponseAllOf](docs/GetWebhooksResponseAllOf.md)
  - [LogResponse](docs/LogResponse.md)
  - [LogsResponse](docs/LogsResponse.md)
  - [LogsResponseData](docs/LogsResponseData.md)
@@ -369,24 +346,20 @@ Class | Method | HTTP request | Description
  - [OrderCustomerInfoResponse](docs/OrderCustomerInfoResponse.md)
  - [OrderDiscountLinesRequest](docs/OrderDiscountLinesRequest.md)
  - [OrderFiscalEntityAddressResponse](docs/OrderFiscalEntityAddressResponse.md)
- - [OrderFiscalEntityAddressResponseAllOf](docs/OrderFiscalEntityAddressResponseAllOf.md)
  - [OrderFiscalEntityRequest](docs/OrderFiscalEntityRequest.md)
  - [OrderFiscalEntityResponse](docs/OrderFiscalEntityResponse.md)
+ - [OrderNextActionResponse](docs/OrderNextActionResponse.md)
+ - [OrderNextActionResponseRedirectToUrl](docs/OrderNextActionResponseRedirectToUrl.md)
  - [OrderRefundRequest](docs/OrderRefundRequest.md)
  - [OrderRequest](docs/OrderRequest.md)
  - [OrderRequestCustomerInfo](docs/OrderRequestCustomerInfo.md)
  - [OrderResponse](docs/OrderResponse.md)
  - [OrderResponseCharges](docs/OrderResponseCharges.md)
- - [OrderResponseChargesAllOf](docs/OrderResponseChargesAllOf.md)
  - [OrderResponseCheckout](docs/OrderResponseCheckout.md)
  - [OrderResponseCustomerInfo](docs/OrderResponseCustomerInfo.md)
- - [OrderResponseCustomerInfoAllOf](docs/OrderResponseCustomerInfoAllOf.md)
  - [OrderResponseDiscountLines](docs/OrderResponseDiscountLines.md)
- - [OrderResponseDiscountLinesAllOf](docs/OrderResponseDiscountLinesAllOf.md)
  - [OrderResponseProducts](docs/OrderResponseProducts.md)
- - [OrderResponseProductsAllOf](docs/OrderResponseProductsAllOf.md)
  - [OrderResponseShippingContact](docs/OrderResponseShippingContact.md)
- - [OrderResponseShippingContactAllOf](docs/OrderResponseShippingContactAllOf.md)
  - [OrderTaxRequest](docs/OrderTaxRequest.md)
  - [OrderUpdateFiscalEntityRequest](docs/OrderUpdateFiscalEntityRequest.md)
  - [OrderUpdateRequest](docs/OrderUpdateRequest.md)
@@ -398,27 +371,26 @@ Class | Method | HTTP request | Description
  - [PaymentMethodBankTransfer](docs/PaymentMethodBankTransfer.md)
  - [PaymentMethodCard](docs/PaymentMethodCard.md)
  - [PaymentMethodCardRequest](docs/PaymentMethodCardRequest.md)
- - [PaymentMethodCardRequestAllOf](docs/PaymentMethodCardRequestAllOf.md)
  - [PaymentMethodCardResponse](docs/PaymentMethodCardResponse.md)
- - [PaymentMethodCardResponseAllOf](docs/PaymentMethodCardResponseAllOf.md)
  - [PaymentMethodCash](docs/PaymentMethodCash.md)
  - [PaymentMethodCashRequest](docs/PaymentMethodCashRequest.md)
- - [PaymentMethodCashRequestAllOf](docs/PaymentMethodCashRequestAllOf.md)
  - [PaymentMethodCashResponse](docs/PaymentMethodCashResponse.md)
- - [PaymentMethodCashResponseAllOf](docs/PaymentMethodCashResponseAllOf.md)
  - [PaymentMethodResponse](docs/PaymentMethodResponse.md)
  - [PaymentMethodSpeiRecurrent](docs/PaymentMethodSpeiRecurrent.md)
- - [PaymentMethodSpeiRecurrentAllOf](docs/PaymentMethodSpeiRecurrentAllOf.md)
  - [PaymentMethodSpeiRequest](docs/PaymentMethodSpeiRequest.md)
+ - [Payout](docs/Payout.md)
+ - [PayoutMethod](docs/PayoutMethod.md)
+ - [PayoutOrder](docs/PayoutOrder.md)
+ - [PayoutOrderPayoutsItem](docs/PayoutOrderPayoutsItem.md)
+ - [PayoutOrderResponse](docs/PayoutOrderResponse.md)
+ - [PayoutOrderResponseCustomerInfo](docs/PayoutOrderResponseCustomerInfo.md)
+ - [PayoutOrdersResponse](docs/PayoutOrdersResponse.md)
  - [PlanRequest](docs/PlanRequest.md)
  - [PlanResponse](docs/PlanResponse.md)
  - [PlanUpdateRequest](docs/PlanUpdateRequest.md)
  - [Product](docs/Product.md)
  - [ProductDataResponse](docs/ProductDataResponse.md)
- - [ProductDataResponseAllOf](docs/ProductDataResponseAllOf.md)
  - [ProductOrderResponse](docs/ProductOrderResponse.md)
- - [ProductOrderResponseAllOf](docs/ProductOrderResponseAllOf.md)
- - [RiskRules](docs/RiskRules.md)
  - [RiskRulesData](docs/RiskRulesData.md)
  - [RiskRulesList](docs/RiskRulesList.md)
  - [ShippingOrderResponse](docs/ShippingOrderResponse.md)
@@ -441,12 +413,10 @@ Class | Method | HTTP request | Description
  - [UpdateCustomer](docs/UpdateCustomer.md)
  - [UpdateCustomerAntifraudInfo](docs/UpdateCustomerAntifraudInfo.md)
  - [UpdateCustomerFiscalEntitiesResponse](docs/UpdateCustomerFiscalEntitiesResponse.md)
- - [UpdateCustomerFiscalEntitiesResponseAllOf](docs/UpdateCustomerFiscalEntitiesResponseAllOf.md)
  - [UpdateCustomerPaymentMethodsResponse](docs/UpdateCustomerPaymentMethodsResponse.md)
  - [UpdateOrderDiscountLinesRequest](docs/UpdateOrderDiscountLinesRequest.md)
  - [UpdateOrderTaxRequest](docs/UpdateOrderTaxRequest.md)
  - [UpdateOrderTaxResponse](docs/UpdateOrderTaxResponse.md)
- - [UpdateOrderTaxResponseAllOf](docs/UpdateOrderTaxResponseAllOf.md)
  - [UpdatePaymentMethods](docs/UpdatePaymentMethods.md)
  - [UpdateProduct](docs/UpdateProduct.md)
  - [WebhookKeyCreateResponse](docs/WebhookKeyCreateResponse.md)

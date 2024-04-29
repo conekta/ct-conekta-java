@@ -47,7 +47,7 @@ import com.conekta.JSON;
   PaymentMethodCard.JSON_PROPERTY_NAME
 })
 @JsonTypeName("payment_method_card")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class PaymentMethodCard {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -77,7 +77,7 @@ public class PaymentMethodCard {
   private String expYear;
 
   public static final String JSON_PROPERTY_FRAUD_INDICATORS = "fraud_indicators";
-  private List<Object> fraudIndicators;
+  private List<Object> fraudIndicators = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ISSUER = "issuer";
   private String issuer;

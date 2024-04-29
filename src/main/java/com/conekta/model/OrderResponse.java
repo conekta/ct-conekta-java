@@ -18,6 +18,7 @@ import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.ChargeResponseChannel;
 import com.conekta.model.OrderFiscalEntityResponse;
+import com.conekta.model.OrderNextActionResponse;
 import com.conekta.model.OrderResponseCharges;
 import com.conekta.model.OrderResponseCheckout;
 import com.conekta.model.OrderResponseCustomerInfo;
@@ -55,6 +56,7 @@ import com.conekta.JSON;
   OrderResponse.JSON_PROPERTY_LINE_ITEMS,
   OrderResponse.JSON_PROPERTY_LIVEMODE,
   OrderResponse.JSON_PROPERTY_METADATA,
+  OrderResponse.JSON_PROPERTY_NEXT_ACTION,
   OrderResponse.JSON_PROPERTY_OBJECT,
   OrderResponse.JSON_PROPERTY_PAYMENT_STATUS,
   OrderResponse.JSON_PROPERTY_PROCESSING_MODE,
@@ -62,7 +64,7 @@ import com.conekta.JSON;
   OrderResponse.JSON_PROPERTY_UPDATED_AT
 })
 @JsonTypeName("order_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class OrderResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   private Integer amount;
@@ -108,6 +110,9 @@ public class OrderResponse {
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Map<String, Object> metadata = new HashMap<>();
+
+  public static final String JSON_PROPERTY_NEXT_ACTION = "next_action";
+  private OrderNextActionResponse nextAction;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;
@@ -510,6 +515,31 @@ public class OrderResponse {
   }
 
 
+  public OrderResponse nextAction(OrderNextActionResponse nextAction) {
+    this.nextAction = nextAction;
+    return this;
+  }
+
+   /**
+   * Get nextAction
+   * @return nextAction
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_NEXT_ACTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public OrderNextActionResponse getNextAction() {
+    return nextAction;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_NEXT_ACTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setNextAction(OrderNextActionResponse nextAction) {
+    this.nextAction = nextAction;
+  }
+
+
   public OrderResponse _object(String _object) {
     this._object = _object;
     return this;
@@ -662,6 +692,7 @@ public class OrderResponse {
         Objects.equals(this.lineItems, orderResponse.lineItems) &&
         Objects.equals(this.livemode, orderResponse.livemode) &&
         Objects.equals(this.metadata, orderResponse.metadata) &&
+        Objects.equals(this.nextAction, orderResponse.nextAction) &&
         Objects.equals(this._object, orderResponse._object) &&
         Objects.equals(this.paymentStatus, orderResponse.paymentStatus) &&
         Objects.equals(this.processingMode, orderResponse.processingMode) &&
@@ -671,7 +702,7 @@ public class OrderResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, amountRefunded, channel, charges, checkout, createdAt, currency, customerInfo, discountLines, fiscalEntity, id, isRefundable, lineItems, livemode, metadata, _object, paymentStatus, processingMode, shippingContact, updatedAt);
+    return Objects.hash(amount, amountRefunded, channel, charges, checkout, createdAt, currency, customerInfo, discountLines, fiscalEntity, id, isRefundable, lineItems, livemode, metadata, nextAction, _object, paymentStatus, processingMode, shippingContact, updatedAt);
   }
 
   @Override
@@ -693,6 +724,7 @@ public class OrderResponse {
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("    livemode: ").append(toIndentedString(livemode)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    nextAction: ").append(toIndentedString(nextAction)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    paymentStatus: ").append(toIndentedString(paymentStatus)).append("\n");
     sb.append("    processingMode: ").append(toIndentedString(processingMode)).append("\n");
