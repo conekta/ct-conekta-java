@@ -26,8 +26,8 @@ jobs:
             server-password: MVN_CENTRAL_PASSWORD
       - name: Release to Maven repo
         run: |
-            mvn -P release -Dgpg.keyname=${{ secrets.GPG_KEY_NAME }} -Dgpg.passphrase=${{ secrets.MAVEN_SIGNING_KEY_PASSPHRASE }} \
-                -Drevision=${{ github.event.release.tag_name }} deploy            
+            mvn -P release -Dmaven.test.skip -Dgpg.keyname=${{ secrets.GPG_KEY_NAME }} -Dgpg.passphrase=${{ secrets.MAVEN_SIGNING_KEY_PASSPHRASE }} \
+                -Drevision=${{ github.event.release.tag_name }} deploy
         env:
             MVN_CENTRAL_USERNAME: ${{ secrets.MVN_CENTRAL_USERNAME }}
             MVN_CENTRAL_PASSWORD: ${{ secrets.MVN_CENTRAL_PASSWORD }}
