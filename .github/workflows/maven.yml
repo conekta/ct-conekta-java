@@ -31,6 +31,7 @@ jobs:
       with:
         port: 9080
         conf-file-text: |
+          events {}
           http {
             server {
               listen 80;
@@ -53,4 +54,4 @@ jobs:
       run: mvn -B package --no-transfer-progress --file pom.xml
       env:
         BASE_PATH: http://localhost:3000
-        PROXY_URI: http://localhost:9080
+        PROXY_URI: http://localhost:80
