@@ -18,6 +18,10 @@ jobs:
     strategy:
       matrix:
         java: [ '11' ]
+    container:
+      image: nginx:latest
+      volumes:
+        - ./nginx.conf:/etc/nginx/nginx.conf
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK
@@ -32,9 +36,6 @@ jobs:
         version: 'latest'
         data-file: 'https://raw.githubusercontent.com/conekta/openapi/main/mocks/conekta_api.json'
         port: 3000
-    - name: run proxy server
-      uses: docker://nginx
-
     - name: Build with Maven
       run: mvn -B package --no-transfer-progress --file pom.xml
       env:
