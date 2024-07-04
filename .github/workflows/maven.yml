@@ -26,6 +26,23 @@ jobs:
         java-version: ${{ matrix.java }}
         distribution: 'temurin'
         cache: maven
+    - uses: nyurik/action-setup-nginx@v1
+      id: nginx
+      with:
+        conf-file-text: |
+          events {}
+          http {
+            server {
+              listen 80;
+              location / {
+                proxy_pass http://localhost:3000;
+                proxy_set_header Host \$host;
+                proxy_set_header X-Real-IP \$remote_addr;
+                proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto \$scheme;
+              }
+            }
+          }
     - name: Run Mockoon CLI
       uses: mockoon/cli-action@v2
       with:
@@ -36,3 +53,4 @@ jobs:
       run: mvn -B package --no-transfer-progress --file pom.xml
       env:
         BASE_PATH: http://localhost:3000
+        PROXY_URI: http://localhost:80

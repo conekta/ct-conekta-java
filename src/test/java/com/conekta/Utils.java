@@ -9,4 +9,12 @@ public class Utils {
         }
         return basePath;
     }
+
+    public static String getProxyUri(){
+        String proxyUri = System.getenv("PROXY_URI");
+        if (proxyUri == null || proxyUri.isEmpty()) {
+            return "http://localhost:9080";
+        }
+        return proxyUri;
+    }
 }

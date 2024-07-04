@@ -36,6 +36,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import org.glassfish.jersey.logging.LoggingFeature;
+import java.util.Optional;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -85,7 +86,7 @@ public class ApiClient extends JavaTimeFormatter {
 
   private JSONObject getConektaUserAgent()  {
     JSONObject userAgent = new JSONObject();
-    userAgent.put("bindings_version", "6.1.1");
+    userAgent.put("bindings_version", "6.1.2");
     userAgent.put("lang", "java");
     userAgent.put("lang_version", System.getProperty("java.version"));
     userAgent.put("publisher", "conekta");
@@ -137,7 +138,7 @@ public class ApiClient extends JavaTimeFormatter {
     this.dateFormat = new RFC3339DateFormat();
 
     // Set default User-Agent.
-    setUserAgent("Conekta/v2 JavaBindings/6.1.1");
+    setUserAgent("Conekta/v2 JavaBindings/6.1.2");
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<>();
@@ -1158,6 +1159,9 @@ public class ApiClient extends JavaTimeFormatter {
       // suppress warnings for payloads with DELETE calls:
       java.util.logging.Logger.getLogger("org.glassfish.jersey.client").setLevel(java.util.logging.Level.SEVERE);
     }
+    Optional.ofNullable(this.clientConfig).orElse(new ClientConfig()).getProperties().forEach((k, v) -> {
+       clientConfig.property(k, v);
+    });
 
     return clientConfig;
   }

@@ -95,7 +95,7 @@ public class ChargeResponse {
   private String orderId;
 
   public static final String JSON_PROPERTY_PAID_AT = "paid_at";
-  private Integer paidAt;
+  private Long paidAt;
 
   public static final String JSON_PROPERTY_PAYMENT_METHOD = "payment_method";
   private ChargeResponsePaymentMethod paymentMethod;
@@ -343,7 +343,7 @@ public class ChargeResponse {
   }
 
    /**
-   * Get id
+   * Charge ID
    * @return id
   **/
   @javax.annotation.Nullable
@@ -368,7 +368,7 @@ public class ChargeResponse {
   }
 
    /**
-   * Get livemode
+   * Whether the charge was made in live mode or not
    * @return livemode
   **/
   @javax.annotation.Nullable
@@ -418,7 +418,7 @@ public class ChargeResponse {
   }
 
    /**
-   * Get orderId
+   * Order ID
    * @return orderId
   **/
   @javax.annotation.Nullable
@@ -437,27 +437,27 @@ public class ChargeResponse {
   }
 
 
-  public ChargeResponse paidAt(Integer paidAt) {
+  public ChargeResponse paidAt(Long paidAt) {
     this.paidAt = paidAt;
     return this;
   }
 
    /**
-   * Get paidAt
+   * Payment date
    * @return paidAt
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAID_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getPaidAt() {
+  public Long getPaidAt() {
     return paidAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PAID_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPaidAt(Integer paidAt) {
+  public void setPaidAt(Long paidAt) {
     this.paidAt = paidAt;
   }
 

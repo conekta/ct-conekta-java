@@ -16,6 +16,8 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
+import com.conekta.model.PaymentMethodCardRequest;
+import com.conekta.model.PaymentMethodGeneralRequest;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -25,241 +27,204 @@ import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 
-/**
- * Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details 
- */
-@JsonPropertyOrder({
-  ChargeRequestPaymentMethod.JSON_PROPERTY_EXPIRES_AT,
-  ChargeRequestPaymentMethod.JSON_PROPERTY_MONTHLY_INSTALLMENTS,
-  ChargeRequestPaymentMethod.JSON_PROPERTY_TYPE,
-  ChargeRequestPaymentMethod.JSON_PROPERTY_TOKEN_ID,
-  ChargeRequestPaymentMethod.JSON_PROPERTY_PAYMENT_SOURCE_ID,
-  ChargeRequestPaymentMethod.JSON_PROPERTY_CONTRACT_ID
-})
-@JsonTypeName("charge_request_payment_method")
+import javax.ws.rs.core.GenericType;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.JsonToken;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.MapperFeature;
+import com.fasterxml.jackson.databind.SerializerProvider;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.fasterxml.jackson.databind.ser.std.StdSerializer;
+import com.conekta.JSON;
+
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
-public class ChargeRequestPaymentMethod {
-  public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
-  private Long expiresAt;
+@JsonDeserialize(using = ChargeRequestPaymentMethod.ChargeRequestPaymentMethodDeserializer.class)
+@JsonSerialize(using = ChargeRequestPaymentMethod.ChargeRequestPaymentMethodSerializer.class)
+public class ChargeRequestPaymentMethod extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(ChargeRequestPaymentMethod.class.getName());
 
-  public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS = "monthly_installments";
-  private Integer monthlyInstallments;
+    public static class ChargeRequestPaymentMethodSerializer extends StdSerializer<ChargeRequestPaymentMethod> {
+        public ChargeRequestPaymentMethodSerializer(Class<ChargeRequestPaymentMethod> t) {
+            super(t);
+        }
 
-  public static final String JSON_PROPERTY_TYPE = "type";
-  private String type;
+        public ChargeRequestPaymentMethodSerializer() {
+            this(null);
+        }
 
-  public static final String JSON_PROPERTY_TOKEN_ID = "token_id";
-  private String tokenId;
-
-  public static final String JSON_PROPERTY_PAYMENT_SOURCE_ID = "payment_source_id";
-  private String paymentSourceId;
-
-  public static final String JSON_PROPERTY_CONTRACT_ID = "contract_id";
-  private String contractId;
-
-  public ChargeRequestPaymentMethod() { 
-  }
-
-  public ChargeRequestPaymentMethod expiresAt(Long expiresAt) {
-    this.expiresAt = expiresAt;
-    return this;
-  }
-
-   /**
-   * Method expiration date as unix timestamp
-   * @return expiresAt
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getExpiresAt() {
-    return expiresAt;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(Long expiresAt) {
-    this.expiresAt = expiresAt;
-  }
-
-
-  public ChargeRequestPaymentMethod monthlyInstallments(Integer monthlyInstallments) {
-    this.monthlyInstallments = monthlyInstallments;
-    return this;
-  }
-
-   /**
-   * How many months without interest to apply, it can be 3, 6, 9, 12 or 18
-   * @return monthlyInstallments
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Integer getMonthlyInstallments() {
-    return monthlyInstallments;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMonthlyInstallments(Integer monthlyInstallments) {
-    this.monthlyInstallments = monthlyInstallments;
-  }
-
-
-  public ChargeRequestPaymentMethod type(String type) {
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Get type
-   * @return type
-  **/
-  @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getType() {
-    return type;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(String type) {
-    this.type = type;
-  }
-
-
-  public ChargeRequestPaymentMethod tokenId(String tokenId) {
-    this.tokenId = tokenId;
-    return this;
-  }
-
-   /**
-   * Get tokenId
-   * @return tokenId
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TOKEN_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getTokenId() {
-    return tokenId;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TOKEN_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTokenId(String tokenId) {
-    this.tokenId = tokenId;
-  }
-
-
-  public ChargeRequestPaymentMethod paymentSourceId(String paymentSourceId) {
-    this.paymentSourceId = paymentSourceId;
-    return this;
-  }
-
-   /**
-   * Get paymentSourceId
-   * @return paymentSourceId
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PAYMENT_SOURCE_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getPaymentSourceId() {
-    return paymentSourceId;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_PAYMENT_SOURCE_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPaymentSourceId(String paymentSourceId) {
-    this.paymentSourceId = paymentSourceId;
-  }
-
-
-  public ChargeRequestPaymentMethod contractId(String contractId) {
-    this.contractId = contractId;
-    return this;
-  }
-
-   /**
-   * Optional id sent to indicate the bank contract for recurrent card charges.
-   * @return contractId
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getContractId() {
-    return contractId;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContractId(String contractId) {
-    this.contractId = contractId;
-  }
-
-
-  /**
-   * Return true if this charge_request_payment_method object is equal to o.
-   */
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+        @Override
+        public void serialize(ChargeRequestPaymentMethod value, JsonGenerator jgen, SerializerProvider provider) throws IOException, JsonProcessingException {
+            jgen.writeObject(value.getActualInstance());
+        }
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public static class ChargeRequestPaymentMethodDeserializer extends StdDeserializer<ChargeRequestPaymentMethod> {
+        public ChargeRequestPaymentMethodDeserializer() {
+            this(ChargeRequestPaymentMethod.class);
+        }
+
+        public ChargeRequestPaymentMethodDeserializer(Class<?> vc) {
+            super(vc);
+        }
+
+        @Override
+        public ChargeRequestPaymentMethod deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+            JsonNode tree = jp.readValueAsTree();
+            Object deserialized = null;
+            boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
+            int match = 0;
+            JsonToken token = tree.traverse(jp.getCodec()).nextToken();
+            // deserialize PaymentMethodCardRequest
+            try {
+                boolean attemptParsing = true;
+                if (attemptParsing) {
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCardRequest.class);
+                    // TODO: there is no validation against JSON schema constraints
+                    // (min, max, enum, pattern...), this does not perform a strict JSON
+                    // validation, which means the 'match' count may be higher than it should be.
+                    match++;
+                    log.log(Level.FINER, "Input data matches schema 'PaymentMethodCardRequest'");
+                }
+            } catch (Exception e) {
+                // deserialization failed, continue
+                log.log(Level.FINER, "Input data does not match schema 'PaymentMethodCardRequest'", e);
+            }
+
+            // deserialize PaymentMethodGeneralRequest
+            try {
+                boolean attemptParsing = true;
+                if (attemptParsing) {
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodGeneralRequest.class);
+                    // TODO: there is no validation against JSON schema constraints
+                    // (min, max, enum, pattern...), this does not perform a strict JSON
+                    // validation, which means the 'match' count may be higher than it should be.
+                    match++;
+                    log.log(Level.FINER, "Input data matches schema 'PaymentMethodGeneralRequest'");
+                }
+            } catch (Exception e) {
+                // deserialization failed, continue
+                log.log(Level.FINER, "Input data does not match schema 'PaymentMethodGeneralRequest'", e);
+            }
+
+            if (match == 1) {
+                ChargeRequestPaymentMethod ret = new ChargeRequestPaymentMethod();
+                ret.setActualInstance(deserialized);
+                return ret;
+            }
+            throw new IOException(String.format("Failed deserialization for ChargeRequestPaymentMethod: %d classes match result, expected 1", match));
+        }
+
+        /**
+         * Handle deserialization of the 'null' value.
+         */
+        @Override
+        public ChargeRequestPaymentMethod getNullValue(DeserializationContext ctxt) throws JsonMappingException {
+            throw new JsonMappingException(ctxt.getParser(), "ChargeRequestPaymentMethod cannot be null");
+        }
     }
-    ChargeRequestPaymentMethod chargeRequestPaymentMethod = (ChargeRequestPaymentMethod) o;
-    return Objects.equals(this.expiresAt, chargeRequestPaymentMethod.expiresAt) &&
-        Objects.equals(this.monthlyInstallments, chargeRequestPaymentMethod.monthlyInstallments) &&
-        Objects.equals(this.type, chargeRequestPaymentMethod.type) &&
-        Objects.equals(this.tokenId, chargeRequestPaymentMethod.tokenId) &&
-        Objects.equals(this.paymentSourceId, chargeRequestPaymentMethod.paymentSourceId) &&
-        Objects.equals(this.contractId, chargeRequestPaymentMethod.contractId);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(expiresAt, monthlyInstallments, type, tokenId, paymentSourceId, contractId);
-  }
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<>();
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ChargeRequestPaymentMethod {\n");
-    sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
-    sb.append("    monthlyInstallments: ").append(toIndentedString(monthlyInstallments)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
-    sb.append("    paymentSourceId: ").append(toIndentedString(paymentSourceId)).append("\n");
-    sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public ChargeRequestPaymentMethod() {
+        super("oneOf", Boolean.FALSE);
     }
-    return o.toString().replace("\n", "\n    ");
-  }
+
+    public ChargeRequestPaymentMethod(PaymentMethodCardRequest o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ChargeRequestPaymentMethod(PaymentMethodGeneralRequest o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("PaymentMethodCardRequest", new GenericType<PaymentMethodCardRequest>() {
+        });
+        schemas.put("PaymentMethodGeneralRequest", new GenericType<PaymentMethodGeneralRequest>() {
+        });
+        JSON.registerDescendants(ChargeRequestPaymentMethod.class, Collections.unmodifiableMap(schemas));
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return ChargeRequestPaymentMethod.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * PaymentMethodCardRequest, PaymentMethodGeneralRequest
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (JSON.isInstanceOf(PaymentMethodCardRequest.class, instance, new HashSet<>())) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (JSON.isInstanceOf(PaymentMethodGeneralRequest.class, instance, new HashSet<>())) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be PaymentMethodCardRequest, PaymentMethodGeneralRequest");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * PaymentMethodCardRequest, PaymentMethodGeneralRequest
+     *
+     * @return The actual instance (PaymentMethodCardRequest, PaymentMethodGeneralRequest)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `PaymentMethodCardRequest`. If the actual instance is not `PaymentMethodCardRequest`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `PaymentMethodCardRequest`
+     * @throws ClassCastException if the instance is not `PaymentMethodCardRequest`
+     */
+    public PaymentMethodCardRequest getPaymentMethodCardRequest() throws ClassCastException {
+        return (PaymentMethodCardRequest)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `PaymentMethodGeneralRequest`. If the actual instance is not `PaymentMethodGeneralRequest`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `PaymentMethodGeneralRequest`
+     * @throws ClassCastException if the instance is not `PaymentMethodGeneralRequest`
+     */
+    public PaymentMethodGeneralRequest getPaymentMethodGeneralRequest() throws ClassCastException {
+        return (PaymentMethodGeneralRequest)super.getActualInstance();
+    }
 
 }
 

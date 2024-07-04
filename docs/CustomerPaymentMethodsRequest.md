@@ -3,28 +3,21 @@
 # CustomerPaymentMethodsRequest
 
 ## oneOf schemas
-* [PaymentMethodCardRequest](PaymentMethodCardRequest.md)
 * [PaymentMethodCashRequest](PaymentMethodCashRequest.md)
 * [PaymentMethodSpeiRequest](PaymentMethodSpeiRequest.md)
+* [PaymentMethodTokenRequest](PaymentMethodTokenRequest.md)
 
 ## Example
 ```java
 // Import classes:
 import com.conekta.model.CustomerPaymentMethodsRequest;
-import com.conekta.model.PaymentMethodCardRequest;
 import com.conekta.model.PaymentMethodCashRequest;
 import com.conekta.model.PaymentMethodSpeiRequest;
+import com.conekta.model.PaymentMethodTokenRequest;
 
 public class Example {
     public static void main(String[] args) {
         CustomerPaymentMethodsRequest exampleCustomerPaymentMethodsRequest = new CustomerPaymentMethodsRequest();
-
-        // create a new PaymentMethodCardRequest
-        PaymentMethodCardRequest examplePaymentMethodCardRequest = new PaymentMethodCardRequest();
-        // set CustomerPaymentMethodsRequest to PaymentMethodCardRequest
-        exampleCustomerPaymentMethodsRequest.setActualInstance(examplePaymentMethodCardRequest);
-        // to get back the PaymentMethodCardRequest set earlier
-        PaymentMethodCardRequest testPaymentMethodCardRequest = (PaymentMethodCardRequest) exampleCustomerPaymentMethodsRequest.getActualInstance();
 
         // create a new PaymentMethodCashRequest
         PaymentMethodCashRequest examplePaymentMethodCashRequest = new PaymentMethodCashRequest();
@@ -39,6 +32,13 @@ public class Example {
         exampleCustomerPaymentMethodsRequest.setActualInstance(examplePaymentMethodSpeiRequest);
         // to get back the PaymentMethodSpeiRequest set earlier
         PaymentMethodSpeiRequest testPaymentMethodSpeiRequest = (PaymentMethodSpeiRequest) exampleCustomerPaymentMethodsRequest.getActualInstance();
+
+        // create a new PaymentMethodTokenRequest
+        PaymentMethodTokenRequest examplePaymentMethodTokenRequest = new PaymentMethodTokenRequest();
+        // set CustomerPaymentMethodsRequest to PaymentMethodTokenRequest
+        exampleCustomerPaymentMethodsRequest.setActualInstance(examplePaymentMethodTokenRequest);
+        // to get back the PaymentMethodTokenRequest set earlier
+        PaymentMethodTokenRequest testPaymentMethodTokenRequest = (PaymentMethodTokenRequest) exampleCustomerPaymentMethodsRequest.getActualInstance();
     }
 }
 ```

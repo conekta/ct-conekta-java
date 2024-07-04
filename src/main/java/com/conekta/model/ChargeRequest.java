@@ -56,7 +56,7 @@ public class ChargeRequest {
   }
 
    /**
-   * Get amount
+   * Amount to be charged in cents
    * @return amount
   **/
   @javax.annotation.Nullable

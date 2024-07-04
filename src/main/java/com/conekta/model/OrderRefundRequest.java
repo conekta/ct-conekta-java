@@ -55,7 +55,7 @@ public class OrderRefundRequest {
   }
 
    /**
-   * Get amount
+   * Amount to be refunded in cents
    * @return amount
   **/
   @javax.annotation.Nonnull
@@ -105,7 +105,7 @@ public class OrderRefundRequest {
   }
 
    /**
-   * Get reason
+   * Reason for the refund
    * @return reason
   **/
   @javax.annotation.Nonnull
