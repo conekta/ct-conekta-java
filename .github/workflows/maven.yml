@@ -29,7 +29,6 @@ jobs:
     - uses: nyurik/action-setup-nginx@v1
       id: nginx
       with:
-        port: 9080
         conf-file-text: |
           events {}
           http {
