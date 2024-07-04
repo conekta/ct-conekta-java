@@ -35,10 +35,9 @@ jobs:
     - name: run proxy server
       uses: docker://nginx
       with:
-          args: -p 9080:80 -v ./nginx.conf:/etc/nginx/nginx.conf
-      env:
-        PROXY_URI: http://localhost:9080
+          args: -v ./nginx.conf:/etc/nginx/nginx.conf
     - name: Build with Maven
       run: mvn -B package --no-transfer-progress --file pom.xml
       env:
         BASE_PATH: http://localhost:3000
+        PROXY_URI: http://localhost:80
