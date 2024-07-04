@@ -30,7 +30,7 @@ jobs:
       run: |
         docker run -d --name nginx-proxy \
           -v ${{ github.workspace }}/nginx.conf:/etc/nginx/nginx.conf:ro \
-          -p 8080:80 \
+          -p 8090:80 \
           nginx
     - name: Run Mockoon CLI
       uses: mockoon/cli-action@v2
@@ -42,4 +42,4 @@ jobs:
       run: mvn -B package --no-transfer-progress --file pom.xml
       env:
         BASE_PATH: http://localhost:3000
-        PROXY_URI: http://localhost:80
+        PROXY_URI: http://localhost:8090
