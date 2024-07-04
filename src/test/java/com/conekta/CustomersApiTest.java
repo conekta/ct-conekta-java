@@ -13,13 +13,11 @@
 
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
 import com.conekta.model.*;
 
-import com.conekta.model.Error;
+import org.glassfish.jersey.client.ClientConfig;
+import org.glassfish.jersey.client.ClientProperties;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -43,12 +41,34 @@ public class CustomersApiTest {
         Customer customer = new Customer();
         customer.setEmail("test@test.com");
         customer.setName("Foo Foo");
-        customer.setPaymentSources(Arrays.asList(new CustomerPaymentMethodsRequest(new PaymentMethodCardRequest())));
+        customer.setPaymentSources(Arrays.asList(new CustomerPaymentMethodsRequest(new PaymentMethodTokenRequest())));
         String acceptLanguage = "es";
-        String xChildCompanyId = "company_child_id";
-        CustomerResponse response = api.createCustomer(customer, acceptLanguage, xChildCompanyId);
+        CustomerResponse response = api.createCustomer(customer, acceptLanguage, null);
         Assertions.assertNotNull(response);
     }
+    @Test
+    public void createCustomerWithProxyTest() throws ApiException {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        ClientConfig clientConfig = defaultClient.getClientConfig();
+        clientConfig.property(ClientProperties.PROXY_URI, Utils.getProxyUri());
+        clientConfig.property(ClientProperties.PROXY_USERNAME, "proxy_username");
+        clientConfig.property(ClientProperties.PROXY_PASSWORD, "proxy_password");
+        defaultClient.setClientConfig(clientConfig);
+        defaultClient.setBasePath(Utils.getBasePath());
+
+        CustomersApi apiProxy = new CustomersApi(defaultClient);
+
+        Customer customer = new Customer();
+        customer.setEmail("test@test.com");
+        customer.setName("Foo Foo");
+        customer.setPaymentSources(Arrays.asList(new CustomerPaymentMethodsRequest(new PaymentMethodTokenRequest()
+                .type("card").tokenId("token_id"))));
+        CustomerResponse response = apiProxy.createCustomer(customer, "es", null);
+
+        Assertions.assertNotNull(response);
+    }
+
+
 
     /**
      * Create Fiscal Entity

@@ -16,9 +16,9 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.PaymentMethodCardRequest;
 import com.conekta.model.PaymentMethodCashRequest;
 import com.conekta.model.PaymentMethodSpeiRequest;
+import com.conekta.model.PaymentMethodTokenRequest;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -92,20 +92,20 @@ public class CustomerPaymentMethodsRequest extends AbstractOpenApiSchema {
             boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
             int match = 0;
             JsonToken token = tree.traverse(jp.getCodec()).nextToken();
-            // deserialize PaymentMethodCardRequest
+            // deserialize PaymentMethodTokenRequest
             try {
                 boolean attemptParsing = true;
                 if (attemptParsing) {
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCardRequest.class);
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodTokenRequest.class);
                     // TODO: there is no validation against JSON schema constraints
                     // (min, max, enum, pattern...), this does not perform a strict JSON
                     // validation, which means the 'match' count may be higher than it should be.
                     match++;
-                    log.log(Level.FINER, "Input data matches schema 'PaymentMethodCardRequest'");
+                    log.log(Level.FINER, "Input data matches schema 'PaymentMethodTokenRequest'");
                 }
             } catch (Exception e) {
                 // deserialization failed, continue
-                log.log(Level.FINER, "Input data does not match schema 'PaymentMethodCardRequest'", e);
+                log.log(Level.FINER, "Input data does not match schema 'PaymentMethodTokenRequest'", e);
             }
 
             // deserialize PaymentMethodCashRequest
@@ -164,7 +164,7 @@ public class CustomerPaymentMethodsRequest extends AbstractOpenApiSchema {
         super("oneOf", Boolean.FALSE);
     }
 
-    public CustomerPaymentMethodsRequest(PaymentMethodCardRequest o) {
+    public CustomerPaymentMethodsRequest(PaymentMethodTokenRequest o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
@@ -180,11 +180,11 @@ public class CustomerPaymentMethodsRequest extends AbstractOpenApiSchema {
     }
 
     static {
-        schemas.put("PaymentMethodCardRequest", new GenericType<PaymentMethodCardRequest>() {
-        });
         schemas.put("PaymentMethodCashRequest", new GenericType<PaymentMethodCashRequest>() {
         });
         schemas.put("PaymentMethodSpeiRequest", new GenericType<PaymentMethodSpeiRequest>() {
+        });
+        schemas.put("PaymentMethodTokenRequest", new GenericType<PaymentMethodTokenRequest>() {
         });
         JSON.registerDescendants(CustomerPaymentMethodsRequest.class, Collections.unmodifiableMap(schemas));
     }
@@ -197,14 +197,14 @@ public class CustomerPaymentMethodsRequest extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * PaymentMethodCardRequest, PaymentMethodCashRequest, PaymentMethodSpeiRequest
+     * PaymentMethodCashRequest, PaymentMethodSpeiRequest, PaymentMethodTokenRequest
      *
      * It could be an instance of the 'oneOf' schemas.
      * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (JSON.isInstanceOf(PaymentMethodCardRequest.class, instance, new HashSet<>())) {
+        if (JSON.isInstanceOf(PaymentMethodTokenRequest.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
@@ -219,14 +219,14 @@ public class CustomerPaymentMethodsRequest extends AbstractOpenApiSchema {
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be PaymentMethodCardRequest, PaymentMethodCashRequest, PaymentMethodSpeiRequest");
+        throw new RuntimeException("Invalid instance type. Must be PaymentMethodCashRequest, PaymentMethodSpeiRequest, PaymentMethodTokenRequest");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * PaymentMethodCardRequest, PaymentMethodCashRequest, PaymentMethodSpeiRequest
+     * PaymentMethodCashRequest, PaymentMethodSpeiRequest, PaymentMethodTokenRequest
      *
-     * @return The actual instance (PaymentMethodCardRequest, PaymentMethodCashRequest, PaymentMethodSpeiRequest)
+     * @return The actual instance (PaymentMethodCashRequest, PaymentMethodSpeiRequest, PaymentMethodTokenRequest)
      */
     @Override
     public Object getActualInstance() {
@@ -234,14 +234,14 @@ public class CustomerPaymentMethodsRequest extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `PaymentMethodCardRequest`. If the actual instance is not `PaymentMethodCardRequest`,
+     * Get the actual instance of `PaymentMethodTokenRequest`. If the actual instance is not `PaymentMethodTokenRequest`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `PaymentMethodCardRequest`
-     * @throws ClassCastException if the instance is not `PaymentMethodCardRequest`
+     * @return The actual instance of `PaymentMethodTokenRequest`
+     * @throws ClassCastException if the instance is not `PaymentMethodTokenRequest`
      */
-    public PaymentMethodCardRequest getPaymentMethodCardRequest() throws ClassCastException {
-        return (PaymentMethodCardRequest)super.getActualInstance();
+    public PaymentMethodTokenRequest getPaymentMethodTokenRequest() throws ClassCastException {
+        return (PaymentMethodTokenRequest)super.getActualInstance();
     }
 
     /**

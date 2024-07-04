@@ -31,7 +31,11 @@ import com.conekta.JSON;
  */
 @JsonPropertyOrder({
   PaymentMethodCardRequest.JSON_PROPERTY_TYPE,
-  PaymentMethodCardRequest.JSON_PROPERTY_TOKEN_ID
+  PaymentMethodCardRequest.JSON_PROPERTY_CVC,
+  PaymentMethodCardRequest.JSON_PROPERTY_EXP_MONTH,
+  PaymentMethodCardRequest.JSON_PROPERTY_EXP_YEAR,
+  PaymentMethodCardRequest.JSON_PROPERTY_NAME,
+  PaymentMethodCardRequest.JSON_PROPERTY_NUMBER
 })
 @JsonTypeName("payment_method_card_request")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
@@ -39,8 +43,20 @@ public class PaymentMethodCardRequest {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
 
-  public static final String JSON_PROPERTY_TOKEN_ID = "token_id";
-  private String tokenId;
+  public static final String JSON_PROPERTY_CVC = "cvc";
+  private String cvc;
+
+  public static final String JSON_PROPERTY_EXP_MONTH = "exp_month";
+  private String expMonth;
+
+  public static final String JSON_PROPERTY_EXP_YEAR = "exp_year";
+  private String expYear;
+
+  public static final String JSON_PROPERTY_NAME = "name";
+  private String name;
+
+  public static final String JSON_PROPERTY_NUMBER = "number";
+  private String number;
 
   public PaymentMethodCardRequest() { 
   }
@@ -70,28 +86,128 @@ public class PaymentMethodCardRequest {
   }
 
 
-  public PaymentMethodCardRequest tokenId(String tokenId) {
-    this.tokenId = tokenId;
+  public PaymentMethodCardRequest cvc(String cvc) {
+    this.cvc = cvc;
     return this;
   }
 
    /**
-   * Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.
-   * @return tokenId
+   * Card security code
+   * @return cvc
   **/
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TOKEN_ID)
+  @JsonProperty(JSON_PROPERTY_CVC)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public String getTokenId() {
-    return tokenId;
+  public String getCvc() {
+    return cvc;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TOKEN_ID)
+  @JsonProperty(JSON_PROPERTY_CVC)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTokenId(String tokenId) {
-    this.tokenId = tokenId;
+  public void setCvc(String cvc) {
+    this.cvc = cvc;
+  }
+
+
+  public PaymentMethodCardRequest expMonth(String expMonth) {
+    this.expMonth = expMonth;
+    return this;
+  }
+
+   /**
+   * Card expiration month
+   * @return expMonth
+  **/
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_EXP_MONTH)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getExpMonth() {
+    return expMonth;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_EXP_MONTH)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setExpMonth(String expMonth) {
+    this.expMonth = expMonth;
+  }
+
+
+  public PaymentMethodCardRequest expYear(String expYear) {
+    this.expYear = expYear;
+    return this;
+  }
+
+   /**
+   * Card expiration year
+   * @return expYear
+  **/
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_EXP_YEAR)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getExpYear() {
+    return expYear;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_EXP_YEAR)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setExpYear(String expYear) {
+    this.expYear = expYear;
+  }
+
+
+  public PaymentMethodCardRequest name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Cardholder name
+   * @return name
+  **/
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getName() {
+    return name;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
+  public PaymentMethodCardRequest number(String number) {
+    this.number = number;
+    return this;
+  }
+
+   /**
+   * Card number
+   * @return number
+  **/
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getNumber() {
+    return number;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setNumber(String number) {
+    this.number = number;
   }
 
 
@@ -108,12 +224,16 @@ public class PaymentMethodCardRequest {
     }
     PaymentMethodCardRequest paymentMethodCardRequest = (PaymentMethodCardRequest) o;
     return Objects.equals(this.type, paymentMethodCardRequest.type) &&
-        Objects.equals(this.tokenId, paymentMethodCardRequest.tokenId);
+        Objects.equals(this.cvc, paymentMethodCardRequest.cvc) &&
+        Objects.equals(this.expMonth, paymentMethodCardRequest.expMonth) &&
+        Objects.equals(this.expYear, paymentMethodCardRequest.expYear) &&
+        Objects.equals(this.name, paymentMethodCardRequest.name) &&
+        Objects.equals(this.number, paymentMethodCardRequest.number);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, tokenId);
+    return Objects.hash(type, cvc, expMonth, expYear, name, number);
   }
 
   @Override
@@ -121,7 +241,11 @@ public class PaymentMethodCardRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentMethodCardRequest {\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
+    sb.append("    cvc: ").append(toIndentedString(cvc)).append("\n");
+    sb.append("    expMonth: ").append(toIndentedString(expMonth)).append("\n");
+    sb.append("    expYear: ").append(toIndentedString(expYear)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("}");
     return sb.toString();
   }

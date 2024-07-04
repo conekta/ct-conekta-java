@@ -2,18 +2,36 @@
 
 # ChargeRequestPaymentMethod
 
-Payment method used in the charge. Go to the [payment methods](https://developers.conekta.com/reference/m%C3%A9todos-de-pago) section for more details 
+## oneOf schemas
+* [PaymentMethodCardRequest](PaymentMethodCardRequest.md)
+* [PaymentMethodGeneralRequest](PaymentMethodGeneralRequest.md)
 
-## Properties
+## Example
+```java
+// Import classes:
+import com.conekta.model.ChargeRequestPaymentMethod;
+import com.conekta.model.PaymentMethodCardRequest;
+import com.conekta.model.PaymentMethodGeneralRequest;
 
-| Name | Type | Description | Notes |
-|------------ | ------------- | ------------- | -------------|
-|**expiresAt** | **Long** | Method expiration date as unix timestamp |  [optional] |
-|**monthlyInstallments** | **Integer** | How many months without interest to apply, it can be 3, 6, 9, 12 or 18 |  [optional] |
-|**type** | **String** |  |  |
-|**tokenId** | **String** |  |  [optional] |
-|**paymentSourceId** | **String** |  |  [optional] |
-|**contractId** | **String** | Optional id sent to indicate the bank contract for recurrent card charges. |  [optional] |
+public class Example {
+    public static void main(String[] args) {
+        ChargeRequestPaymentMethod exampleChargeRequestPaymentMethod = new ChargeRequestPaymentMethod();
 
+        // create a new PaymentMethodCardRequest
+        PaymentMethodCardRequest examplePaymentMethodCardRequest = new PaymentMethodCardRequest();
+        // set ChargeRequestPaymentMethod to PaymentMethodCardRequest
+        exampleChargeRequestPaymentMethod.setActualInstance(examplePaymentMethodCardRequest);
+        // to get back the PaymentMethodCardRequest set earlier
+        PaymentMethodCardRequest testPaymentMethodCardRequest = (PaymentMethodCardRequest) exampleChargeRequestPaymentMethod.getActualInstance();
+
+        // create a new PaymentMethodGeneralRequest
+        PaymentMethodGeneralRequest examplePaymentMethodGeneralRequest = new PaymentMethodGeneralRequest();
+        // set ChargeRequestPaymentMethod to PaymentMethodGeneralRequest
+        exampleChargeRequestPaymentMethod.setActualInstance(examplePaymentMethodGeneralRequest);
+        // to get back the PaymentMethodGeneralRequest set earlier
+        PaymentMethodGeneralRequest testPaymentMethodGeneralRequest = (PaymentMethodGeneralRequest) exampleChargeRequestPaymentMethod.getActualInstance();
+    }
+}
+```
 
 

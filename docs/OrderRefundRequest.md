@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**amount** | **Integer** |  |  |
+|**amount** | **Integer** | Amount to be refunded in cents |  |
 |**expiresAt** | **Long** |  |  [optional] |
-|**reason** | **String** |  |  |
+|**reason** | **String** | Reason for the refund |  |
 
 
 

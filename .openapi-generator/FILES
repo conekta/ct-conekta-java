@@ -134,9 +134,11 @@ docs/PaymentMethodCardResponse.md
 docs/PaymentMethodCash.md
 docs/PaymentMethodCashRequest.md
 docs/PaymentMethodCashResponse.md
+docs/PaymentMethodGeneralRequest.md
 docs/PaymentMethodResponse.md
 docs/PaymentMethodSpeiRecurrent.md
 docs/PaymentMethodSpeiRequest.md
+docs/PaymentMethodTokenRequest.md
 docs/PaymentMethodsApi.md
 docs/Payout.md
 docs/PayoutMethod.md
@@ -361,9 +363,11 @@ src/main/java/com/conekta/model/PaymentMethodCardResponse.java
 src/main/java/com/conekta/model/PaymentMethodCash.java
 src/main/java/com/conekta/model/PaymentMethodCashRequest.java
 src/main/java/com/conekta/model/PaymentMethodCashResponse.java
+src/main/java/com/conekta/model/PaymentMethodGeneralRequest.java
 src/main/java/com/conekta/model/PaymentMethodResponse.java
 src/main/java/com/conekta/model/PaymentMethodSpeiRecurrent.java
 src/main/java/com/conekta/model/PaymentMethodSpeiRequest.java
+src/main/java/com/conekta/model/PaymentMethodTokenRequest.java
 src/main/java/com/conekta/model/Payout.java
 src/main/java/com/conekta/model/PayoutMethod.java
 src/main/java/com/conekta/model/PayoutOrder.java

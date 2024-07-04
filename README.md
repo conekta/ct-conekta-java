@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.conekta</groupId>
   <artifactId>ct-conekta-java</artifactId>
-  <version>6.1.1</version>
+  <version>6.1.2</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "io.conekta:ct-conekta-java:6.1.1"
+     implementation "io.conekta:ct-conekta-java:6.1.2"
   }
 ```
 
@@ -71,45 +71,31 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/ct-conekta-java-6.1.1.jar`
+- `target/ct-conekta-java-6.1.2.jar`
 - `target/lib/*.jar`
 
 ## Usage
 
 To add a HTTP proxy for the API client, use `ClientConfig`:
 ```java
+
+import org.glassfish.jersey.apache.connector.ApacheConnectorProvider;
+import org.glassfish.jersey.client.ClientConfig;
+import org.glassfish.jersey.client.ClientProperties;
 import com.conekta.*;
-import com.conekta.auth.*;
-import com.conekta.model.*;
-import com.conekta.CustomersApi;
+import com.conekta.AntifraudApi;
 
-public class CustomersApiExample {
+...
 
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+ClientConfig clientConfig = defaultClient.getClientConfig();
+clientConfig.connectorProvider(new ApacheConnectorProvider());
+clientConfig.property(ClientProperties.PROXY_URI, "http://proxy_url_here");
+clientConfig.property(ClientProperties.PROXY_USERNAME, "proxy_username");
+clientConfig.property(ClientProperties.PROXY_PASSWORD, "proxy_password");
+defaultClient.setClientConfig(clientConfig);
 
-        // Configure HTTP bearer authorization: bearerAuth
-        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-        bearerAuth.setBearerToken("API_KEY");
-
-        CustomersApi apiInstance = new CustomersApi(defaultClient);
-        Customer customer = new Customer(); // Customer | requested field for customer
-        customer.setName("Customer Name");
-        customer.setEmail("customer@mail.com");
-        customer.setPhone("55454545454");
-        String acceptLanguage = "es"; // String | Use for knowing which language to use
-        try {
-            CustomerResponse result = apiInstance.createCustomer(customer, acceptLanguage,null);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CustomersApi#createCustomer");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
+AntifraudApi apiInstance = new AntifraudApi(defaultClient);
 ```
 
 ## Getting Started
@@ -375,9 +361,11 @@ Class | Method | HTTP request | Description
  - [PaymentMethodCash](docs/PaymentMethodCash.md)
  - [PaymentMethodCashRequest](docs/PaymentMethodCashRequest.md)
  - [PaymentMethodCashResponse](docs/PaymentMethodCashResponse.md)
+ - [PaymentMethodGeneralRequest](docs/PaymentMethodGeneralRequest.md)
  - [PaymentMethodResponse](docs/PaymentMethodResponse.md)
  - [PaymentMethodSpeiRecurrent](docs/PaymentMethodSpeiRecurrent.md)
  - [PaymentMethodSpeiRequest](docs/PaymentMethodSpeiRequest.md)
+ - [PaymentMethodTokenRequest](docs/PaymentMethodTokenRequest.md)
  - [Payout](docs/Payout.md)
  - [PayoutMethod](docs/PayoutMethod.md)
  - [PayoutOrder](docs/PayoutOrder.md)

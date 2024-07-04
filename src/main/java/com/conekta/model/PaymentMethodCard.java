@@ -147,7 +147,7 @@ public class PaymentMethodCard {
   }
 
    /**
-   * Get accountType
+   * Account type of the card
    * @return accountType
   **/
   @javax.annotation.Nullable
@@ -197,7 +197,7 @@ public class PaymentMethodCard {
   }
 
    /**
-   * Get brand
+   * Brand of the card
    * @return brand
   **/
   @javax.annotation.Nullable
@@ -247,7 +247,7 @@ public class PaymentMethodCard {
   }
 
    /**
-   * Get country
+   * Country of the card
    * @return country
   **/
   @javax.annotation.Nullable
@@ -272,7 +272,7 @@ public class PaymentMethodCard {
   }
 
    /**
-   * Get expMonth
+   * Expiration month of the card
    * @return expMonth
   **/
   @javax.annotation.Nullable
@@ -297,7 +297,7 @@ public class PaymentMethodCard {
   }
 
    /**
-   * Get expYear
+   * Expiration year of the card
    * @return expYear
   **/
   @javax.annotation.Nullable
@@ -355,7 +355,7 @@ public class PaymentMethodCard {
   }
 
    /**
-   * Get issuer
+   * Issuer of the card
    * @return issuer
   **/
   @javax.annotation.Nullable
@@ -380,7 +380,7 @@ public class PaymentMethodCard {
   }
 
    /**
-   * Get last4
+   * Last 4 digits of the card
    * @return last4
   **/
   @javax.annotation.Nullable
@@ -405,7 +405,7 @@ public class PaymentMethodCard {
   }
 
    /**
-   * Get name
+   * Name of the cardholder
    * @return name
   **/
   @javax.annotation.Nullable

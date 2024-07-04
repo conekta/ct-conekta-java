@@ -16,11 +16,11 @@
 |**deviceFingerprint** | **String** |  |  [optional] |
 |**failureCode** | **String** |  |  [optional] |
 |**failureMessage** | **String** |  |  [optional] |
-|**id** | **String** |  |  [optional] |
-|**livemode** | **Boolean** |  |  [optional] |
+|**id** | **String** | Charge ID |  [optional] |
+|**livemode** | **Boolean** | Whether the charge was made in live mode or not |  [optional] |
 |**_object** | **String** |  |  [optional] |
-|**orderId** | **String** |  |  [optional] |
-|**paidAt** | **Integer** |  |  [optional] |
+|**orderId** | **String** | Order ID |  [optional] |
+|**paidAt** | **Long** | Payment date |  [optional] |
 |**paymentMethod** | [**ChargeResponsePaymentMethod**](ChargeResponsePaymentMethod.md) |  |  [optional] |
 |**referenceId** | **String** | Reference ID of the charge |  [optional] |
 |**refunds** | [**ChargeResponseRefunds**](ChargeResponseRefunds.md) |  |  [optional] |

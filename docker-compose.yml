@@ -1,4 +1,11 @@
 services:
+  proxy_server:
+    restart: always
+    image: nginx
+    ports:
+      - 9080:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
   mockserver:
     restart: always
     image: mockoon/cli:2.4.0
