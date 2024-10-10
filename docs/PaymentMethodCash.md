@@ -17,6 +17,7 @@
 |**serviceName** | **String** |  |  [optional] |
 |**store** | **String** |  |  [optional] |
 |**storeName** | **String** |  |  [optional] |
+|**customerIpAddress** | **String** |  |  [optional] |
 
 
 

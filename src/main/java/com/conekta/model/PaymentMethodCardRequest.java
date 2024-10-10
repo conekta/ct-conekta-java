@@ -35,7 +35,8 @@ import com.conekta.JSON;
   PaymentMethodCardRequest.JSON_PROPERTY_EXP_MONTH,
   PaymentMethodCardRequest.JSON_PROPERTY_EXP_YEAR,
   PaymentMethodCardRequest.JSON_PROPERTY_NAME,
-  PaymentMethodCardRequest.JSON_PROPERTY_NUMBER
+  PaymentMethodCardRequest.JSON_PROPERTY_NUMBER,
+  PaymentMethodCardRequest.JSON_PROPERTY_CUSTOMER_IP_ADDRESS
 })
 @JsonTypeName("payment_method_card_request")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
@@ -57,6 +58,9 @@ public class PaymentMethodCardRequest {
 
   public static final String JSON_PROPERTY_NUMBER = "number";
   private String number;
+
+  public static final String JSON_PROPERTY_CUSTOMER_IP_ADDRESS = "customer_ip_address";
+  private String customerIpAddress;
 
   public PaymentMethodCardRequest() { 
   }
@@ -211,6 +215,31 @@ public class PaymentMethodCardRequest {
   }
 
 
+  public PaymentMethodCardRequest customerIpAddress(String customerIpAddress) {
+    this.customerIpAddress = customerIpAddress;
+    return this;
+  }
+
+   /**
+   * Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes
+   * @return customerIpAddress
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCustomerIpAddress() {
+    return customerIpAddress;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCustomerIpAddress(String customerIpAddress) {
+    this.customerIpAddress = customerIpAddress;
+  }
+
+
   /**
    * Return true if this payment_method_card_request object is equal to o.
    */
@@ -228,12 +257,13 @@ public class PaymentMethodCardRequest {
         Objects.equals(this.expMonth, paymentMethodCardRequest.expMonth) &&
         Objects.equals(this.expYear, paymentMethodCardRequest.expYear) &&
         Objects.equals(this.name, paymentMethodCardRequest.name) &&
-        Objects.equals(this.number, paymentMethodCardRequest.number);
+        Objects.equals(this.number, paymentMethodCardRequest.number) &&
+        Objects.equals(this.customerIpAddress, paymentMethodCardRequest.customerIpAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, cvc, expMonth, expYear, name, number);
+    return Objects.hash(type, cvc, expMonth, expYear, name, number, customerIpAddress);
   }
 
   @Override
@@ -246,6 +276,7 @@ public class PaymentMethodCardRequest {
     sb.append("    expYear: ").append(toIndentedString(expYear)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    sb.append("    customerIpAddress: ").append(toIndentedString(customerIpAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -33,6 +33,7 @@ import com.conekta.JSON;
   SubscriptionResponse.JSON_PROPERTY_BILLING_CYCLE_START,
   SubscriptionResponse.JSON_PROPERTY_BILLING_CYCLE_END,
   SubscriptionResponse.JSON_PROPERTY_CANCELED_AT,
+  SubscriptionResponse.JSON_PROPERTY_CANCELED_REASON,
   SubscriptionResponse.JSON_PROPERTY_CARD_ID,
   SubscriptionResponse.JSON_PROPERTY_CHARGE_ID,
   SubscriptionResponse.JSON_PROPERTY_CREATED_AT,
@@ -59,6 +60,9 @@ public class SubscriptionResponse {
 
   public static final String JSON_PROPERTY_CANCELED_AT = "canceled_at";
   private Long canceledAt;
+
+  public static final String JSON_PROPERTY_CANCELED_REASON = "canceled_reason";
+  private String canceledReason;
 
   public static final String JSON_PROPERTY_CARD_ID = "card_id";
   private String cardId;
@@ -177,6 +181,31 @@ public class SubscriptionResponse {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCanceledAt(Long canceledAt) {
     this.canceledAt = canceledAt;
+  }
+
+
+  public SubscriptionResponse canceledReason(String canceledReason) {
+    this.canceledReason = canceledReason;
+    return this;
+  }
+
+   /**
+   * Reason for cancellation. This field appears when the subscription status is &#39;canceled&#39;.
+   * @return canceledReason
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CANCELED_REASON)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCanceledReason() {
+    return canceledReason;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CANCELED_REASON)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCanceledReason(String canceledReason) {
+    this.canceledReason = canceledReason;
   }
 
 
@@ -545,6 +574,7 @@ public class SubscriptionResponse {
     return Objects.equals(this.billingCycleStart, subscriptionResponse.billingCycleStart) &&
         Objects.equals(this.billingCycleEnd, subscriptionResponse.billingCycleEnd) &&
         Objects.equals(this.canceledAt, subscriptionResponse.canceledAt) &&
+        Objects.equals(this.canceledReason, subscriptionResponse.canceledReason) &&
         Objects.equals(this.cardId, subscriptionResponse.cardId) &&
         Objects.equals(this.chargeId, subscriptionResponse.chargeId) &&
         Objects.equals(this.createdAt, subscriptionResponse.createdAt) &&
@@ -563,7 +593,7 @@ public class SubscriptionResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingCycleStart, billingCycleEnd, canceledAt, cardId, chargeId, createdAt, customerCustomReference, customerId, id, lastBillingCycleOrderId, _object, pausedAt, planId, status, subscriptionStart, trialStart, trialEnd);
+    return Objects.hash(billingCycleStart, billingCycleEnd, canceledAt, canceledReason, cardId, chargeId, createdAt, customerCustomReference, customerId, id, lastBillingCycleOrderId, _object, pausedAt, planId, status, subscriptionStart, trialStart, trialEnd);
   }
 
   @Override
@@ -573,6 +603,7 @@ public class SubscriptionResponse {
     sb.append("    billingCycleStart: ").append(toIndentedString(billingCycleStart)).append("\n");
     sb.append("    billingCycleEnd: ").append(toIndentedString(billingCycleEnd)).append("\n");
     sb.append("    canceledAt: ").append(toIndentedString(canceledAt)).append("\n");
+    sb.append("    canceledReason: ").append(toIndentedString(canceledReason)).append("\n");
     sb.append("    cardId: ").append(toIndentedString(cardId)).append("\n");
     sb.append("    chargeId: ").append(toIndentedString(chargeId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

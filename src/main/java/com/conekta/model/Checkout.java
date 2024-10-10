@@ -37,6 +37,7 @@ import com.conekta.JSON;
   Checkout.JSON_PROPERTY_EXPIRES_AT,
   Checkout.JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED,
   Checkout.JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS,
+  Checkout.JSON_PROPERTY_THREE_DS_MODE,
   Checkout.JSON_PROPERTY_NAME,
   Checkout.JSON_PROPERTY_NEEDS_SHIPPING_CONTACT,
   Checkout.JSON_PROPERTY_ON_DEMAND_ENABLED,
@@ -59,6 +60,9 @@ public class Checkout {
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS = "monthly_installments_options";
   private List<Integer> monthlyInstallmentsOptions = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_THREE_DS_MODE = "three_ds_mode";
+  private String threeDsMode;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -197,6 +201,31 @@ public class Checkout {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMonthlyInstallmentsOptions(List<Integer> monthlyInstallmentsOptions) {
     this.monthlyInstallmentsOptions = monthlyInstallmentsOptions;
+  }
+
+
+  public Checkout threeDsMode(String threeDsMode) {
+    this.threeDsMode = threeDsMode;
+    return this;
+  }
+
+   /**
+   * Indicates the 3DS2 mode for the order, either smart or strict.
+   * @return threeDsMode
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_THREE_DS_MODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getThreeDsMode() {
+    return threeDsMode;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_THREE_DS_MODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setThreeDsMode(String threeDsMode) {
+    this.threeDsMode = threeDsMode;
   }
 
 
@@ -391,6 +420,7 @@ public class Checkout {
         Objects.equals(this.expiresAt, checkout.expiresAt) &&
         Objects.equals(this.monthlyInstallmentsEnabled, checkout.monthlyInstallmentsEnabled) &&
         Objects.equals(this.monthlyInstallmentsOptions, checkout.monthlyInstallmentsOptions) &&
+        Objects.equals(this.threeDsMode, checkout.threeDsMode) &&
         Objects.equals(this.name, checkout.name) &&
         Objects.equals(this.needsShippingContact, checkout.needsShippingContact) &&
         Objects.equals(this.onDemandEnabled, checkout.onDemandEnabled) &&
@@ -402,7 +432,7 @@ public class Checkout {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowedPaymentMethods, expiresAt, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, name, needsShippingContact, onDemandEnabled, orderTemplate, paymentsLimitCount, recurrent, type);
+    return Objects.hash(allowedPaymentMethods, expiresAt, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, threeDsMode, name, needsShippingContact, onDemandEnabled, orderTemplate, paymentsLimitCount, recurrent, type);
   }
 
   @Override
@@ -413,6 +443,7 @@ public class Checkout {
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("    monthlyInstallmentsEnabled: ").append(toIndentedString(monthlyInstallmentsEnabled)).append("\n");
     sb.append("    monthlyInstallmentsOptions: ").append(toIndentedString(monthlyInstallmentsOptions)).append("\n");
+    sb.append("    threeDsMode: ").append(toIndentedString(threeDsMode)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    needsShippingContact: ").append(toIndentedString(needsShippingContact)).append("\n");
     sb.append("    onDemandEnabled: ").append(toIndentedString(onDemandEnabled)).append("\n");

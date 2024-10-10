@@ -428,7 +428,7 @@ public class OrderRequest {
   }
 
    /**
-   * Indicates the redirection callback upon completion of the 3DS2 flow.
+   * Indicates the redirection callback upon completion of the 3DS2 flow. Do not use this parameter if your order has a checkout parameter
    * @return returnUrl
   **/
   @javax.annotation.Nullable

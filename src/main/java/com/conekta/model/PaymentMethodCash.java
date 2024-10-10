@@ -39,7 +39,8 @@ import com.conekta.JSON;
   PaymentMethodCash.JSON_PROPERTY_EXPIRES_AT,
   PaymentMethodCash.JSON_PROPERTY_SERVICE_NAME,
   PaymentMethodCash.JSON_PROPERTY_STORE,
-  PaymentMethodCash.JSON_PROPERTY_STORE_NAME
+  PaymentMethodCash.JSON_PROPERTY_STORE_NAME,
+  PaymentMethodCash.JSON_PROPERTY_CUSTOMER_IP_ADDRESS
 })
 @JsonTypeName("payment_method_cash")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
@@ -73,6 +74,9 @@ public class PaymentMethodCash {
 
   public static final String JSON_PROPERTY_STORE_NAME = "store_name";
   private String storeName;
+
+  public static final String JSON_PROPERTY_CUSTOMER_IP_ADDRESS = "customer_ip_address";
+  private String customerIpAddress;
 
   public PaymentMethodCash() { 
   }
@@ -327,6 +331,31 @@ public class PaymentMethodCash {
   }
 
 
+  public PaymentMethodCash customerIpAddress(String customerIpAddress) {
+    this.customerIpAddress = customerIpAddress;
+    return this;
+  }
+
+   /**
+   * Get customerIpAddress
+   * @return customerIpAddress
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCustomerIpAddress() {
+    return customerIpAddress;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCustomerIpAddress(String customerIpAddress) {
+    this.customerIpAddress = customerIpAddress;
+  }
+
+
   /**
    * Return true if this payment_method_cash object is equal to o.
    */
@@ -348,12 +377,13 @@ public class PaymentMethodCash {
         Objects.equals(this.expiresAt, paymentMethodCash.expiresAt) &&
         Objects.equals(this.serviceName, paymentMethodCash.serviceName) &&
         Objects.equals(this.store, paymentMethodCash.store) &&
-        Objects.equals(this.storeName, paymentMethodCash.storeName);
+        Objects.equals(this.storeName, paymentMethodCash.storeName) &&
+        Objects.equals(this.customerIpAddress, paymentMethodCash.customerIpAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, _object, authCode, cashierId, reference, barcodeUrl, expiresAt, serviceName, store, storeName);
+    return Objects.hash(type, _object, authCode, cashierId, reference, barcodeUrl, expiresAt, serviceName, store, storeName, customerIpAddress);
   }
 
   @Override
@@ -370,6 +400,7 @@ public class PaymentMethodCash {
     sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
     sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
+    sb.append("    customerIpAddress: ").append(toIndentedString(customerIpAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }
