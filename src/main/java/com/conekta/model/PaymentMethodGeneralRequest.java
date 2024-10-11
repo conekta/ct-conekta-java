@@ -35,7 +35,9 @@ import com.conekta.JSON;
   PaymentMethodGeneralRequest.JSON_PROPERTY_TYPE,
   PaymentMethodGeneralRequest.JSON_PROPERTY_TOKEN_ID,
   PaymentMethodGeneralRequest.JSON_PROPERTY_PAYMENT_SOURCE_ID,
-  PaymentMethodGeneralRequest.JSON_PROPERTY_CONTRACT_ID
+  PaymentMethodGeneralRequest.JSON_PROPERTY_CVC,
+  PaymentMethodGeneralRequest.JSON_PROPERTY_CONTRACT_ID,
+  PaymentMethodGeneralRequest.JSON_PROPERTY_CUSTOMER_IP_ADDRESS
 })
 @JsonTypeName("payment_method_general_request")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
@@ -55,8 +57,14 @@ public class PaymentMethodGeneralRequest {
   public static final String JSON_PROPERTY_PAYMENT_SOURCE_ID = "payment_source_id";
   private String paymentSourceId;
 
+  public static final String JSON_PROPERTY_CVC = "cvc";
+  private String cvc;
+
   public static final String JSON_PROPERTY_CONTRACT_ID = "contract_id";
   private String contractId;
+
+  public static final String JSON_PROPERTY_CUSTOMER_IP_ADDRESS = "customer_ip_address";
+  private String customerIpAddress;
 
   public PaymentMethodGeneralRequest() { 
   }
@@ -186,6 +194,31 @@ public class PaymentMethodGeneralRequest {
   }
 
 
+  public PaymentMethodGeneralRequest cvc(String cvc) {
+    this.cvc = cvc;
+    return this;
+  }
+
+   /**
+   * Optional, It is a value that allows identifying the security code of the card. Only for PCI merchants
+   * @return cvc
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CVC)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCvc() {
+    return cvc;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CVC)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCvc(String cvc) {
+    this.cvc = cvc;
+  }
+
+
   public PaymentMethodGeneralRequest contractId(String contractId) {
     this.contractId = contractId;
     return this;
@@ -211,6 +244,31 @@ public class PaymentMethodGeneralRequest {
   }
 
 
+  public PaymentMethodGeneralRequest customerIpAddress(String customerIpAddress) {
+    this.customerIpAddress = customerIpAddress;
+    return this;
+  }
+
+   /**
+   * Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes
+   * @return customerIpAddress
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCustomerIpAddress() {
+    return customerIpAddress;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCustomerIpAddress(String customerIpAddress) {
+    this.customerIpAddress = customerIpAddress;
+  }
+
+
   /**
    * Return true if this payment_method_general_request object is equal to o.
    */
@@ -228,12 +286,14 @@ public class PaymentMethodGeneralRequest {
         Objects.equals(this.type, paymentMethodGeneralRequest.type) &&
         Objects.equals(this.tokenId, paymentMethodGeneralRequest.tokenId) &&
         Objects.equals(this.paymentSourceId, paymentMethodGeneralRequest.paymentSourceId) &&
-        Objects.equals(this.contractId, paymentMethodGeneralRequest.contractId);
+        Objects.equals(this.cvc, paymentMethodGeneralRequest.cvc) &&
+        Objects.equals(this.contractId, paymentMethodGeneralRequest.contractId) &&
+        Objects.equals(this.customerIpAddress, paymentMethodGeneralRequest.customerIpAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(expiresAt, monthlyInstallments, type, tokenId, paymentSourceId, contractId);
+    return Objects.hash(expiresAt, monthlyInstallments, type, tokenId, paymentSourceId, cvc, contractId, customerIpAddress);
   }
 
   @Override
@@ -245,7 +305,9 @@ public class PaymentMethodGeneralRequest {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
     sb.append("    paymentSourceId: ").append(toIndentedString(paymentSourceId)).append("\n");
+    sb.append("    cvc: ").append(toIndentedString(cvc)).append("\n");
     sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
+    sb.append("    customerIpAddress: ").append(toIndentedString(customerIpAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

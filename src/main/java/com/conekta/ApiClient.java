@@ -86,7 +86,7 @@ public class ApiClient extends JavaTimeFormatter {
 
   private JSONObject getConektaUserAgent()  {
     JSONObject userAgent = new JSONObject();
-    userAgent.put("bindings_version", "6.1.2");
+    userAgent.put("bindings_version", "6.1.3");
     userAgent.put("lang", "java");
     userAgent.put("lang_version", System.getProperty("java.version"));
     userAgent.put("publisher", "conekta");
@@ -138,7 +138,7 @@ public class ApiClient extends JavaTimeFormatter {
     this.dateFormat = new RFC3339DateFormat();
 
     // Set default User-Agent.
-    setUserAgent("Conekta/v2 JavaBindings/6.1.2");
+    setUserAgent("Conekta/v2 JavaBindings/6.1.3");
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<>();

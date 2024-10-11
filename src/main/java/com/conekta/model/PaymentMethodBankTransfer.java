@@ -49,7 +49,8 @@ import com.conekta.JSON;
   PaymentMethodBankTransfer.JSON_PROPERTY_RECEIVING_ACCOUNT_BANK,
   PaymentMethodBankTransfer.JSON_PROPERTY_RECEIVING_ACCOUNT_TAX_ID,
   PaymentMethodBankTransfer.JSON_PROPERTY_REFERENCE_NUMBER,
-  PaymentMethodBankTransfer.JSON_PROPERTY_TRACKING_CODE
+  PaymentMethodBankTransfer.JSON_PROPERTY_TRACKING_CODE,
+  PaymentMethodBankTransfer.JSON_PROPERTY_CUSTOMER_IP_ADDRESS
 })
 @JsonTypeName("payment_method_bank_transfer")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
@@ -107,6 +108,9 @@ public class PaymentMethodBankTransfer {
 
   public static final String JSON_PROPERTY_TRACKING_CODE = "tracking_code";
   private String trackingCode;
+
+  public static final String JSON_PROPERTY_CUSTOMER_IP_ADDRESS = "customer_ip_address";
+  private String customerIpAddress;
 
   public PaymentMethodBankTransfer() { 
   }
@@ -569,6 +573,31 @@ public class PaymentMethodBankTransfer {
   }
 
 
+  public PaymentMethodBankTransfer customerIpAddress(String customerIpAddress) {
+    this.customerIpAddress = customerIpAddress;
+    return this;
+  }
+
+   /**
+   * Get customerIpAddress
+   * @return customerIpAddress
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCustomerIpAddress() {
+    return customerIpAddress;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCustomerIpAddress(String customerIpAddress) {
+    this.customerIpAddress = customerIpAddress;
+  }
+
+
   /**
    * Return true if this payment_method_bank_transfer object is equal to o.
    */
@@ -598,12 +627,13 @@ public class PaymentMethodBankTransfer {
         Objects.equals(this.receivingAccountBank, paymentMethodBankTransfer.receivingAccountBank) &&
         Objects.equals(this.receivingAccountTaxId, paymentMethodBankTransfer.receivingAccountTaxId) &&
         Objects.equals(this.referenceNumber, paymentMethodBankTransfer.referenceNumber) &&
-        Objects.equals(this.trackingCode, paymentMethodBankTransfer.trackingCode);
+        Objects.equals(this.trackingCode, paymentMethodBankTransfer.trackingCode) &&
+        Objects.equals(this.customerIpAddress, paymentMethodBankTransfer.customerIpAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, _object, bank, clabe, description, executedAt, expiresAt, issuingAccountBank, issuingAccountNumber, issuingAccountHolderName, issuingAccountTaxId, paymentAttempts, receivingAccountHolderName, receivingAccountNumber, receivingAccountBank, receivingAccountTaxId, referenceNumber, trackingCode);
+    return Objects.hash(type, _object, bank, clabe, description, executedAt, expiresAt, issuingAccountBank, issuingAccountNumber, issuingAccountHolderName, issuingAccountTaxId, paymentAttempts, receivingAccountHolderName, receivingAccountNumber, receivingAccountBank, receivingAccountTaxId, referenceNumber, trackingCode, customerIpAddress);
   }
 
   @Override
@@ -628,6 +658,7 @@ public class PaymentMethodBankTransfer {
     sb.append("    receivingAccountTaxId: ").append(toIndentedString(receivingAccountTaxId)).append("\n");
     sb.append("    referenceNumber: ").append(toIndentedString(referenceNumber)).append("\n");
     sb.append("    trackingCode: ").append(toIndentedString(trackingCode)).append("\n");
+    sb.append("    customerIpAddress: ").append(toIndentedString(customerIpAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

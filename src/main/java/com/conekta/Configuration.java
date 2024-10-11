@@ -15,7 +15,7 @@ package com.conekta;
 
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class Configuration {
-    public static final String VERSION = "6.1.2";
+    public static final String VERSION = "6.1.3";
 
     private static ApiClient defaultApiClient = new ApiClient();
 

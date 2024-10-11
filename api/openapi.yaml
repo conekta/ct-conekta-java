@@ -12300,6 +12300,7 @@ components:
           expires_at: 1656634070
           store_name: OXXO
           reference: 98000013217610
+          customer_ip_address: 0.0.0.0
         object: charge
         description: Payment from order
         status: paid
@@ -12362,6 +12363,7 @@ components:
             type: card
             token_id: tok_2897348234
             payment_source_id: src_2tLkkyfMPh6v7pFry
+            customer_ip_address: 0.0.0.0
           reference_id: string
         currency: MXN
         customer_info:
@@ -14481,6 +14483,11 @@ components:
           format: int64
           nullable: true
           type: integer
+        canceled_reason:
+          description: Reason for cancellation. This field appears when the subscription
+            status is 'canceled'.
+          example: user_cancelation
+          type: string
         card_id:
           example: src_2tKcHxhTz7xU5SymL
           type: string
@@ -15190,7 +15197,7 @@ components:
           type: string
         return_url:
           description: Indicates the redirection callback upon completion of the 3DS2
-            flow.
+            flow. Do not use this parameter if your order has a checkout parameter
           example: https://my-website.com
           format: uri
           type: string
@@ -15447,6 +15454,9 @@ components:
             format: int8
             type: integer
           type: array
+        three_ds_mode:
+          description: "Indicates the 3DS2 mode for the order, either smart or strict."
+          type: string
         name:
           description: Reason for charge
           example: Payment Link Name 1594138857
@@ -15889,6 +15899,9 @@ components:
           store_name:
             example: OXXO
             type: string
+          customer_ip_address:
+            example: 0.0.0.0
+            type: string
         title: charge_data_payment_method_cash_response
         type: object
     payment_method_card:
@@ -15937,6 +15950,11 @@ components:
           name:
             description: Name of the cardholder
             example: Fulanito Perez
+            type: string
+          customer_ip_address:
+            description: Optional field used to capture the customer's IP address
+              for fraud prevention and security monitoring purposes
+            example: 0.0.0.0
             type: string
         title: charge_data_payment_method_card_response
         type: object
@@ -15993,6 +16011,9 @@ components:
             type: string
           tracking_code:
             nullable: true
+            type: string
+          customer_ip_address:
+            example: 0.0.0.0
             type: string
         title: charge_data_payment_method_bank_transfer_response
         type: object
@@ -16214,6 +16235,11 @@ components:
           number:
             description: Card number
             example: "4242424242424242"
+            type: string
+          customer_ip_address:
+            description: Optional field used to capture the customer's IP address
+              for fraud prevention and security monitoring purposes
+            example: 0.0.0.0
             type: string
         required:
         - cvc
@@ -17729,10 +17755,20 @@ components:
         payment_source_id:
           example: src_2tLkkyfMPh6v7pFry
           type: string
+        cvc:
+          description: "Optional, It is a value that allows identifying the security\
+            \ code of the card. Only for PCI merchants"
+          example: "123"
+          type: string
         contract_id:
           description: Optional id sent to indicate the bank contract for recurrent
             card charges.
           example: S781317595
+          type: string
+        customer_ip_address:
+          description: Optional field used to capture the customer's IP address for
+            fraud prevention and security monitoring purposes
+          example: 0.0.0.0
           type: string
       required:
       - type
