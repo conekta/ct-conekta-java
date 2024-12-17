@@ -40,6 +40,7 @@ import com.conekta.JSON;
  */
 @JsonPropertyOrder({
   UpdateCustomer.JSON_PROPERTY_ANTIFRAUD_INFO,
+  UpdateCustomer.JSON_PROPERTY_DATE_OF_BIRTH,
   UpdateCustomer.JSON_PROPERTY_DEFAULT_PAYMENT_SOURCE_ID,
   UpdateCustomer.JSON_PROPERTY_EMAIL,
   UpdateCustomer.JSON_PROPERTY_NAME,
@@ -50,6 +51,7 @@ import com.conekta.JSON;
   UpdateCustomer.JSON_PROPERTY_CUSTOM_REFERENCE,
   UpdateCustomer.JSON_PROPERTY_FISCAL_ENTITIES,
   UpdateCustomer.JSON_PROPERTY_METADATA,
+  UpdateCustomer.JSON_PROPERTY_NATIONAL_ID,
   UpdateCustomer.JSON_PROPERTY_PAYMENT_SOURCES,
   UpdateCustomer.JSON_PROPERTY_SHIPPING_CONTACTS,
   UpdateCustomer.JSON_PROPERTY_SUBSCRIPTION
@@ -59,6 +61,9 @@ import com.conekta.JSON;
 public class UpdateCustomer {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
   private UpdateCustomerAntifraudInfo antifraudInfo;
+
+  public static final String JSON_PROPERTY_DATE_OF_BIRTH = "date_of_birth";
+  private String dateOfBirth;
 
   public static final String JSON_PROPERTY_DEFAULT_PAYMENT_SOURCE_ID = "default_payment_source_id";
   private String defaultPaymentSourceId;
@@ -89,6 +94,9 @@ public class UpdateCustomer {
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Map<String, Object> metadata = new HashMap<>();
+
+  public static final String JSON_PROPERTY_NATIONAL_ID = "national_id";
+  private String nationalId;
 
   public static final String JSON_PROPERTY_PAYMENT_SOURCES = "payment_sources";
   private List<CustomerPaymentMethodsRequest> paymentSources = new ArrayList<>();
@@ -124,6 +132,31 @@ public class UpdateCustomer {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAntifraudInfo(UpdateCustomerAntifraudInfo antifraudInfo) {
     this.antifraudInfo = antifraudInfo;
+  }
+
+
+  public UpdateCustomer dateOfBirth(String dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+    return this;
+  }
+
+   /**
+   * It is a parameter that allows to identify the date of birth of the client.
+   * @return dateOfBirth
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getDateOfBirth() {
+    return dateOfBirth;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDateOfBirth(String dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
   }
 
 
@@ -393,6 +426,31 @@ public class UpdateCustomer {
   }
 
 
+  public UpdateCustomer nationalId(String nationalId) {
+    this.nationalId = nationalId;
+    return this;
+  }
+
+   /**
+   * It is a parameter that allows to identify the national identification number of the client.
+   * @return nationalId
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_NATIONAL_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getNationalId() {
+    return nationalId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_NATIONAL_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setNationalId(String nationalId) {
+    this.nationalId = nationalId;
+  }
+
+
   public UpdateCustomer paymentSources(List<CustomerPaymentMethodsRequest> paymentSources) {
     this.paymentSources = paymentSources;
     return this;
@@ -497,6 +555,7 @@ public class UpdateCustomer {
     }
     UpdateCustomer updateCustomer = (UpdateCustomer) o;
     return Objects.equals(this.antifraudInfo, updateCustomer.antifraudInfo) &&
+        Objects.equals(this.dateOfBirth, updateCustomer.dateOfBirth) &&
         Objects.equals(this.defaultPaymentSourceId, updateCustomer.defaultPaymentSourceId) &&
         Objects.equals(this.email, updateCustomer.email) &&
         Objects.equals(this.name, updateCustomer.name) &&
@@ -507,6 +566,7 @@ public class UpdateCustomer {
         Objects.equals(this.customReference, updateCustomer.customReference) &&
         Objects.equals(this.fiscalEntities, updateCustomer.fiscalEntities) &&
         Objects.equals(this.metadata, updateCustomer.metadata) &&
+        Objects.equals(this.nationalId, updateCustomer.nationalId) &&
         Objects.equals(this.paymentSources, updateCustomer.paymentSources) &&
         Objects.equals(this.shippingContacts, updateCustomer.shippingContacts) &&
         Objects.equals(this.subscription, updateCustomer.subscription);
@@ -514,7 +574,7 @@ public class UpdateCustomer {
 
   @Override
   public int hashCode() {
-    return Objects.hash(antifraudInfo, defaultPaymentSourceId, email, name, phone, planId, defaultShippingContactId, corporate, customReference, fiscalEntities, metadata, paymentSources, shippingContacts, subscription);
+    return Objects.hash(antifraudInfo, dateOfBirth, defaultPaymentSourceId, email, name, phone, planId, defaultShippingContactId, corporate, customReference, fiscalEntities, metadata, nationalId, paymentSources, shippingContacts, subscription);
   }
 
   @Override
@@ -522,6 +582,7 @@ public class UpdateCustomer {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateCustomer {\n");
     sb.append("    antifraudInfo: ").append(toIndentedString(antifraudInfo)).append("\n");
+    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    defaultPaymentSourceId: ").append(toIndentedString(defaultPaymentSourceId)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -532,6 +593,7 @@ public class UpdateCustomer {
     sb.append("    customReference: ").append(toIndentedString(customReference)).append("\n");
     sb.append("    fiscalEntities: ").append(toIndentedString(fiscalEntities)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    nationalId: ").append(toIndentedString(nationalId)).append("\n");
     sb.append("    paymentSources: ").append(toIndentedString(paymentSources)).append("\n");
     sb.append("    shippingContacts: ").append(toIndentedString(shippingContacts)).append("\n");
     sb.append("    subscription: ").append(toIndentedString(subscription)).append("\n");

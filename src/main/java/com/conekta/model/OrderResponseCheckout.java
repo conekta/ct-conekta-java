@@ -44,6 +44,7 @@ import com.conekta.JSON;
   OrderResponseCheckout.JSON_PROPERTY_ID,
   OrderResponseCheckout.JSON_PROPERTY_IS_REDIRECT_ON_FAILURE,
   OrderResponseCheckout.JSON_PROPERTY_LIVEMODE,
+  OrderResponseCheckout.JSON_PROPERTY_MAX_FAILED_RETRIES,
   OrderResponseCheckout.JSON_PROPERTY_METADATA,
   OrderResponseCheckout.JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED,
   OrderResponseCheckout.JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS,
@@ -94,6 +95,9 @@ public class OrderResponseCheckout {
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
   private Boolean livemode;
+
+  public static final String JSON_PROPERTY_MAX_FAILED_RETRIES = "max_failed_retries";
+  private Integer maxFailedRetries;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Map<String, Object> metadata = new HashMap<>();
@@ -412,6 +416,31 @@ public class OrderResponseCheckout {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLivemode(Boolean livemode) {
     this.livemode = livemode;
+  }
+
+
+  public OrderResponseCheckout maxFailedRetries(Integer maxFailedRetries) {
+    this.maxFailedRetries = maxFailedRetries;
+    return this;
+  }
+
+   /**
+   * Number of retries allowed before the checkout is marked as failed
+   * @return maxFailedRetries
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MAX_FAILED_RETRIES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getMaxFailedRetries() {
+    return maxFailedRetries;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MAX_FAILED_RETRIES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMaxFailedRetries(Integer maxFailedRetries) {
+    this.maxFailedRetries = maxFailedRetries;
   }
 
 
@@ -878,6 +907,7 @@ public class OrderResponseCheckout {
         Objects.equals(this.id, orderResponseCheckout.id) &&
         Objects.equals(this.isRedirectOnFailure, orderResponseCheckout.isRedirectOnFailure) &&
         Objects.equals(this.livemode, orderResponseCheckout.livemode) &&
+        Objects.equals(this.maxFailedRetries, orderResponseCheckout.maxFailedRetries) &&
         Objects.equals(this.metadata, orderResponseCheckout.metadata) &&
         Objects.equals(this.monthlyInstallmentsEnabled, orderResponseCheckout.monthlyInstallmentsEnabled) &&
         Objects.equals(this.monthlyInstallmentsOptions, orderResponseCheckout.monthlyInstallmentsOptions) &&
@@ -899,7 +929,7 @@ public class OrderResponseCheckout {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowedPaymentMethods, canNotExpire, emailsSent, excludeCardNetworks, expiresAt, failureUrl, force3dsFlow, id, isRedirectOnFailure, livemode, metadata, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, name, needsShippingContact, _object, onDemandEnabled, paidPaymentsCount, recurrent, redirectionTime, slug, smsSent, successUrl, startsAt, status, type, url);
+    return Objects.hash(allowedPaymentMethods, canNotExpire, emailsSent, excludeCardNetworks, expiresAt, failureUrl, force3dsFlow, id, isRedirectOnFailure, livemode, maxFailedRetries, metadata, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, name, needsShippingContact, _object, onDemandEnabled, paidPaymentsCount, recurrent, redirectionTime, slug, smsSent, successUrl, startsAt, status, type, url);
   }
 
   @Override
@@ -916,6 +946,7 @@ public class OrderResponseCheckout {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    isRedirectOnFailure: ").append(toIndentedString(isRedirectOnFailure)).append("\n");
     sb.append("    livemode: ").append(toIndentedString(livemode)).append("\n");
+    sb.append("    maxFailedRetries: ").append(toIndentedString(maxFailedRetries)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    monthlyInstallmentsEnabled: ").append(toIndentedString(monthlyInstallmentsEnabled)).append("\n");
     sb.append("    monthlyInstallmentsOptions: ").append(toIndentedString(monthlyInstallmentsOptions)).append("\n");

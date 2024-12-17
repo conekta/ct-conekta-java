@@ -50,6 +50,66 @@ public class PayoutOrdersApi {
   }
 
   /**
+   * Cancel Payout Order
+   * Cancel a payout Order resource that corresponds to a payout order ID.
+   * @param id Identifier of the resource (required)
+   * @param acceptLanguage Use for knowing which language to use (optional, default to es)
+   * @return PayoutOrderResponse
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+       <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
+       <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
+       <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
+     </table>
+   */
+  public PayoutOrderResponse cancelPayoutOrderById(String id, String acceptLanguage) throws ApiException {
+    return cancelPayoutOrderByIdWithHttpInfo(id, acceptLanguage).getData();
+  }
+
+  /**
+   * Cancel Payout Order
+   * Cancel a payout Order resource that corresponds to a payout order ID.
+   * @param id Identifier of the resource (required)
+   * @param acceptLanguage Use for knowing which language to use (optional, default to es)
+   * @return ApiResponse&lt;PayoutOrderResponse&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+       <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
+       <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
+       <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<PayoutOrderResponse> cancelPayoutOrderByIdWithHttpInfo(String id, String acceptLanguage) throws ApiException {
+    // Check required parameters
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling cancelPayoutOrderById");
+    }
+
+    // Path parameters
+    String localVarPath = "/payout_orders/{id}/cancel"
+            .replaceAll("\\{id}", apiClient.escapeString(id));
+
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
+      localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+    }
+
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
+    GenericType<PayoutOrderResponse> localVarReturnType = new GenericType<PayoutOrderResponse>() {};
+    return apiClient.invokeAPI("PayoutOrdersApi.cancelPayoutOrderById", localVarPath, "PUT", new ArrayList<>(), null,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+  /**
    * Create payout order
    * Create a new payout order.
    * @param payoutOrder requested field for payout order (required)

@@ -157,6 +157,7 @@ Class | Method | HTTP request | Description
 *BalancesApi* | [**getBalance**](docs/BalancesApi.md#getBalance) | **GET** /balance | Get a company&#39;s balance
 *ChargesApi* | [**getCharges**](docs/ChargesApi.md#getCharges) | **GET** /charges | Get A List of Charges
 *ChargesApi* | [**ordersCreateCharge**](docs/ChargesApi.md#ordersCreateCharge) | **POST** /orders/{id}/charges | Create charge
+*ChargesApi* | [**ordersCreateCharges**](docs/ChargesApi.md#ordersCreateCharges) | **POST** /orders/{id}/add_charges | Create charges
 *ChargesApi* | [**updateCharge**](docs/ChargesApi.md#updateCharge) | **PUT** /charges/{id} | Update a charge
 *CompaniesApi* | [**getCompanies**](docs/CompaniesApi.md#getCompanies) | **GET** /companies | Get List of Companies
 *CompaniesApi* | [**getCompany**](docs/CompaniesApi.md#getCompany) | **GET** /companies/{id} | Get Company
@@ -195,6 +196,7 @@ Class | Method | HTTP request | Description
 *PaymentMethodsApi* | [**deleteCustomerPaymentMethods**](docs/PaymentMethodsApi.md#deleteCustomerPaymentMethods) | **DELETE** /customers/{id}/payment_sources/{payment_method_id} | Delete Payment Method
 *PaymentMethodsApi* | [**getCustomerPaymentMethods**](docs/PaymentMethodsApi.md#getCustomerPaymentMethods) | **GET** /customers/{id}/payment_sources | Get Payment Methods
 *PaymentMethodsApi* | [**updateCustomerPaymentMethods**](docs/PaymentMethodsApi.md#updateCustomerPaymentMethods) | **PUT** /customers/{id}/payment_sources/{payment_method_id} | Update Payment Method
+*PayoutOrdersApi* | [**cancelPayoutOrderById**](docs/PayoutOrdersApi.md#cancelPayoutOrderById) | **PUT** /payout_orders/{id}/cancel | Cancel Payout Order
 *PayoutOrdersApi* | [**createPayoutOrder**](docs/PayoutOrdersApi.md#createPayoutOrder) | **POST** /payout_orders | Create payout order
 *PayoutOrdersApi* | [**getPayoutOrderById**](docs/PayoutOrdersApi.md#getPayoutOrderById) | **GET** /payout_orders/{id} | Get Payout Order
 *PayoutOrdersApi* | [**getPayoutOrders**](docs/PayoutOrdersApi.md#getPayoutOrders) | **GET** /payout_orders | Get a list of Payout Orders
@@ -261,6 +263,8 @@ Class | Method | HTTP request | Description
  - [ChargeResponseRefundsData](docs/ChargeResponseRefundsData.md)
  - [ChargeUpdateRequest](docs/ChargeUpdateRequest.md)
  - [ChargesDataResponse](docs/ChargesDataResponse.md)
+ - [ChargesOrderResponse](docs/ChargesOrderResponse.md)
+ - [ChargesOrderResponseAllOfData](docs/ChargesOrderResponseAllOfData.md)
  - [Checkout](docs/Checkout.md)
  - [CheckoutOrderTemplate](docs/CheckoutOrderTemplate.md)
  - [CheckoutOrderTemplateCustomerInfo](docs/CheckoutOrderTemplateCustomerInfo.md)

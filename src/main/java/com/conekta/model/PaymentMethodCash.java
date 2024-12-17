@@ -32,11 +32,13 @@ import com.conekta.JSON;
 @JsonPropertyOrder({
   PaymentMethodCash.JSON_PROPERTY_TYPE,
   PaymentMethodCash.JSON_PROPERTY_OBJECT,
+  PaymentMethodCash.JSON_PROPERTY_AGREEMENT,
   PaymentMethodCash.JSON_PROPERTY_AUTH_CODE,
   PaymentMethodCash.JSON_PROPERTY_CASHIER_ID,
   PaymentMethodCash.JSON_PROPERTY_REFERENCE,
   PaymentMethodCash.JSON_PROPERTY_BARCODE_URL,
   PaymentMethodCash.JSON_PROPERTY_EXPIRES_AT,
+  PaymentMethodCash.JSON_PROPERTY_PRODUCT_TYPE,
   PaymentMethodCash.JSON_PROPERTY_SERVICE_NAME,
   PaymentMethodCash.JSON_PROPERTY_STORE,
   PaymentMethodCash.JSON_PROPERTY_STORE_NAME,
@@ -50,6 +52,9 @@ public class PaymentMethodCash {
 
   public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;
+
+  public static final String JSON_PROPERTY_AGREEMENT = "agreement";
+  private String agreement;
 
   public static final String JSON_PROPERTY_AUTH_CODE = "auth_code";
   private Integer authCode;
@@ -65,6 +70,9 @@ public class PaymentMethodCash {
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
   private Long expiresAt;
+
+  public static final String JSON_PROPERTY_PRODUCT_TYPE = "product_type";
+  private String productType;
 
   public static final String JSON_PROPERTY_SERVICE_NAME = "service_name";
   private String serviceName;
@@ -128,6 +136,31 @@ public class PaymentMethodCash {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setObject(String _object) {
     this._object = _object;
+  }
+
+
+  public PaymentMethodCash agreement(String agreement) {
+    this.agreement = agreement;
+    return this;
+  }
+
+   /**
+   * Agreement ID
+   * @return agreement
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_AGREEMENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getAgreement() {
+    return agreement;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_AGREEMENT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAgreement(String agreement) {
+    this.agreement = agreement;
   }
 
 
@@ -256,6 +289,31 @@ public class PaymentMethodCash {
   }
 
 
+  public PaymentMethodCash productType(String productType) {
+    this.productType = productType;
+    return this;
+  }
+
+   /**
+   * Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc.
+   * @return productType
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PRODUCT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getProductType() {
+    return productType;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PRODUCT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setProductType(String productType) {
+    this.productType = productType;
+  }
+
+
   public PaymentMethodCash serviceName(String serviceName) {
     this.serviceName = serviceName;
     return this;
@@ -370,11 +428,13 @@ public class PaymentMethodCash {
     PaymentMethodCash paymentMethodCash = (PaymentMethodCash) o;
     return Objects.equals(this.type, paymentMethodCash.type) &&
         Objects.equals(this._object, paymentMethodCash._object) &&
+        Objects.equals(this.agreement, paymentMethodCash.agreement) &&
         Objects.equals(this.authCode, paymentMethodCash.authCode) &&
         Objects.equals(this.cashierId, paymentMethodCash.cashierId) &&
         Objects.equals(this.reference, paymentMethodCash.reference) &&
         Objects.equals(this.barcodeUrl, paymentMethodCash.barcodeUrl) &&
         Objects.equals(this.expiresAt, paymentMethodCash.expiresAt) &&
+        Objects.equals(this.productType, paymentMethodCash.productType) &&
         Objects.equals(this.serviceName, paymentMethodCash.serviceName) &&
         Objects.equals(this.store, paymentMethodCash.store) &&
         Objects.equals(this.storeName, paymentMethodCash.storeName) &&
@@ -383,7 +443,7 @@ public class PaymentMethodCash {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, _object, authCode, cashierId, reference, barcodeUrl, expiresAt, serviceName, store, storeName, customerIpAddress);
+    return Objects.hash(type, _object, agreement, authCode, cashierId, reference, barcodeUrl, expiresAt, productType, serviceName, store, storeName, customerIpAddress);
   }
 
   @Override
@@ -392,11 +452,13 @@ public class PaymentMethodCash {
     sb.append("class PaymentMethodCash {\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
+    sb.append("    agreement: ").append(toIndentedString(agreement)).append("\n");
     sb.append("    authCode: ").append(toIndentedString(authCode)).append("\n");
     sb.append("    cashierId: ").append(toIndentedString(cashierId)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
     sb.append("    barcodeUrl: ").append(toIndentedString(barcodeUrl)).append("\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
+    sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
     sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
     sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
