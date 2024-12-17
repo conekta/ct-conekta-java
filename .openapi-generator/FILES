@@ -27,6 +27,8 @@ docs/ChargeResponseRefundsData.md
 docs/ChargeUpdateRequest.md
 docs/ChargesApi.md
 docs/ChargesDataResponse.md
+docs/ChargesOrderResponse.md
+docs/ChargesOrderResponseAllOfData.md
 docs/Checkout.md
 docs/CheckoutOrderTemplate.md
 docs/CheckoutOrderTemplateCustomerInfo.md
@@ -263,6 +265,8 @@ src/main/java/com/conekta/model/ChargeResponseRefunds.java
 src/main/java/com/conekta/model/ChargeResponseRefundsData.java
 src/main/java/com/conekta/model/ChargeUpdateRequest.java
 src/main/java/com/conekta/model/ChargesDataResponse.java
+src/main/java/com/conekta/model/ChargesOrderResponse.java
+src/main/java/com/conekta/model/ChargesOrderResponseAllOfData.java
 src/main/java/com/conekta/model/Checkout.java
 src/main/java/com/conekta/model/CheckoutOrderTemplate.java
 src/main/java/com/conekta/model/CheckoutOrderTemplateCustomerInfo.java

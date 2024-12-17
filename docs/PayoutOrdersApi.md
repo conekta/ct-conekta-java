@@ -4,10 +4,86 @@ All URIs are relative to *https://api.conekta.io*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**cancelPayoutOrderById**](PayoutOrdersApi.md#cancelPayoutOrderById) | **PUT** /payout_orders/{id}/cancel | Cancel Payout Order |
 | [**createPayoutOrder**](PayoutOrdersApi.md#createPayoutOrder) | **POST** /payout_orders | Create payout order |
 | [**getPayoutOrderById**](PayoutOrdersApi.md#getPayoutOrderById) | **GET** /payout_orders/{id} | Get Payout Order |
 | [**getPayoutOrders**](PayoutOrdersApi.md#getPayoutOrders) | **GET** /payout_orders | Get a list of Payout Orders |
 
+
+
+## cancelPayoutOrderById
+
+> PayoutOrderResponse cancelPayoutOrderById(id, acceptLanguage)
+
+Cancel Payout Order
+
+Cancel a payout Order resource that corresponds to a payout order ID.
+
+### Example
+
+```java
+// Import classes:
+import com.conekta.ApiClient;
+import com.conekta.ApiException;
+import com.conekta.Configuration;
+import com.conekta.auth.*;
+import com.conekta.model.*;
+import com.conekta.PayoutOrdersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.conekta.io");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        PayoutOrdersApi apiInstance = new PayoutOrdersApi(defaultClient);
+        String id = "6307a60c41de27127515a575"; // String | Identifier of the resource
+        String acceptLanguage = "es"; // String | Use for knowing which language to use
+        try {
+            PayoutOrderResponse result = apiInstance.cancelPayoutOrderById(id, acceptLanguage);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PayoutOrdersApi#cancelPayoutOrderById");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| Identifier of the resource | |
+| **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
+
+### Return type
+
+[**PayoutOrderResponse**](PayoutOrderResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.1.0+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | successful operation |  -  |
+| **401** | authentication error |  -  |
+| **404** | not found entity |  -  |
+| **500** | internal server error |  -  |
 
 
 ## createPayoutOrder

@@ -12,6 +12,7 @@ import com.conekta.model.ChargeOrderResponse;
 import com.conekta.model.ChargeRequest;
 import com.conekta.model.ChargeResponse;
 import com.conekta.model.ChargeUpdateRequest;
+import com.conekta.model.ChargesOrderResponse;
 import com.conekta.model.Error;
 import com.conekta.model.GetChargesResponse;
 
@@ -188,6 +189,78 @@ public class ChargesApi {
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<ChargeOrderResponse> localVarReturnType = new GenericType<ChargeOrderResponse>() {};
     return apiClient.invokeAPI("ChargesApi.ordersCreateCharge", localVarPath, "POST", new ArrayList<>(), chargeRequest,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+  /**
+   * Create charges
+   * Create charges for an existing orden
+   * @param id Identifier of the resource (required)
+   * @param chargeRequest requested field for a charge (required)
+   * @param acceptLanguage Use for knowing which language to use (optional, default to es)
+   * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
+   * @return ChargesOrderResponse
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
+       <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
+       <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
+       <tr><td> 428 </td><td> Precondition Required </td><td>  -  </td></tr>
+       <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
+     </table>
+   */
+  public ChargesOrderResponse ordersCreateCharges(String id, ChargeRequest chargeRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+    return ordersCreateChargesWithHttpInfo(id, chargeRequest, acceptLanguage, xChildCompanyId).getData();
+  }
+
+  /**
+   * Create charges
+   * Create charges for an existing orden
+   * @param id Identifier of the resource (required)
+   * @param chargeRequest requested field for a charge (required)
+   * @param acceptLanguage Use for knowing which language to use (optional, default to es)
+   * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
+   * @return ApiResponse&lt;ChargesOrderResponse&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
+       <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
+       <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
+       <tr><td> 428 </td><td> Precondition Required </td><td>  -  </td></tr>
+       <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<ChargesOrderResponse> ordersCreateChargesWithHttpInfo(String id, ChargeRequest chargeRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+    // Check required parameters
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling ordersCreateCharges");
+    }
+    if (chargeRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'chargeRequest' when calling ordersCreateCharges");
+    }
+
+    // Path parameters
+    String localVarPath = "/orders/{id}/add_charges"
+            .replaceAll("\\{id}", apiClient.escapeString(id));
+
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
+      localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+    }
+    if (xChildCompanyId != null) {
+      localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
+
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType("application/json");
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
+    GenericType<ChargesOrderResponse> localVarReturnType = new GenericType<ChargesOrderResponse>() {};
+    return apiClient.invokeAPI("ChargesApi.ordersCreateCharges", localVarPath, "POST", new ArrayList<>(), chargeRequest,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

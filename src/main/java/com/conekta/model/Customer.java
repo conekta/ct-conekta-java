@@ -42,12 +42,14 @@ import com.conekta.JSON;
   Customer.JSON_PROPERTY_ANTIFRAUD_INFO,
   Customer.JSON_PROPERTY_CORPORATE,
   Customer.JSON_PROPERTY_CUSTOM_REFERENCE,
+  Customer.JSON_PROPERTY_DATE_OF_BIRTH,
   Customer.JSON_PROPERTY_EMAIL,
   Customer.JSON_PROPERTY_DEFAULT_PAYMENT_SOURCE_ID,
   Customer.JSON_PROPERTY_DEFAULT_SHIPPING_CONTACT_ID,
   Customer.JSON_PROPERTY_FISCAL_ENTITIES,
   Customer.JSON_PROPERTY_METADATA,
   Customer.JSON_PROPERTY_NAME,
+  Customer.JSON_PROPERTY_NATIONAL_ID,
   Customer.JSON_PROPERTY_PAYMENT_SOURCES,
   Customer.JSON_PROPERTY_PHONE,
   Customer.JSON_PROPERTY_PLAN_ID,
@@ -66,6 +68,9 @@ public class Customer {
   public static final String JSON_PROPERTY_CUSTOM_REFERENCE = "custom_reference";
   private String customReference;
 
+  public static final String JSON_PROPERTY_DATE_OF_BIRTH = "date_of_birth";
+  private String dateOfBirth;
+
   public static final String JSON_PROPERTY_EMAIL = "email";
   private String email;
 
@@ -83,6 +88,9 @@ public class Customer {
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
+
+  public static final String JSON_PROPERTY_NATIONAL_ID = "national_id";
+  private String nationalId;
 
   public static final String JSON_PROPERTY_PAYMENT_SOURCES = "payment_sources";
   private List<CustomerPaymentMethodsRequest> paymentSources = new ArrayList<>();
@@ -174,6 +182,31 @@ public class Customer {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCustomReference(String customReference) {
     this.customReference = customReference;
+  }
+
+
+  public Customer dateOfBirth(String dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+    return this;
+  }
+
+   /**
+   * It is a parameter that allows to identify the date of birth of the client.
+   * @return dateOfBirth
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getDateOfBirth() {
+    return dateOfBirth;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDateOfBirth(String dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
   }
 
 
@@ -343,6 +376,31 @@ public class Customer {
   }
 
 
+  public Customer nationalId(String nationalId) {
+    this.nationalId = nationalId;
+    return this;
+  }
+
+   /**
+   * It is a parameter that allows to identify the national identification number of the client.
+   * @return nationalId
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_NATIONAL_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getNationalId() {
+    return nationalId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_NATIONAL_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setNationalId(String nationalId) {
+    this.nationalId = nationalId;
+  }
+
+
   public Customer paymentSources(List<CustomerPaymentMethodsRequest> paymentSources) {
     this.paymentSources = paymentSources;
     return this;
@@ -499,12 +557,14 @@ public class Customer {
     return Objects.equals(this.antifraudInfo, customer.antifraudInfo) &&
         Objects.equals(this.corporate, customer.corporate) &&
         Objects.equals(this.customReference, customer.customReference) &&
+        Objects.equals(this.dateOfBirth, customer.dateOfBirth) &&
         Objects.equals(this.email, customer.email) &&
         Objects.equals(this.defaultPaymentSourceId, customer.defaultPaymentSourceId) &&
         Objects.equals(this.defaultShippingContactId, customer.defaultShippingContactId) &&
         Objects.equals(this.fiscalEntities, customer.fiscalEntities) &&
         Objects.equals(this.metadata, customer.metadata) &&
         Objects.equals(this.name, customer.name) &&
+        Objects.equals(this.nationalId, customer.nationalId) &&
         Objects.equals(this.paymentSources, customer.paymentSources) &&
         Objects.equals(this.phone, customer.phone) &&
         Objects.equals(this.planId, customer.planId) &&
@@ -514,7 +574,7 @@ public class Customer {
 
   @Override
   public int hashCode() {
-    return Objects.hash(antifraudInfo, corporate, customReference, email, defaultPaymentSourceId, defaultShippingContactId, fiscalEntities, metadata, name, paymentSources, phone, planId, shippingContacts, subscription);
+    return Objects.hash(antifraudInfo, corporate, customReference, dateOfBirth, email, defaultPaymentSourceId, defaultShippingContactId, fiscalEntities, metadata, name, nationalId, paymentSources, phone, planId, shippingContacts, subscription);
   }
 
   @Override
@@ -524,12 +584,14 @@ public class Customer {
     sb.append("    antifraudInfo: ").append(toIndentedString(antifraudInfo)).append("\n");
     sb.append("    corporate: ").append(toIndentedString(corporate)).append("\n");
     sb.append("    customReference: ").append(toIndentedString(customReference)).append("\n");
+    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    defaultPaymentSourceId: ").append(toIndentedString(defaultPaymentSourceId)).append("\n");
     sb.append("    defaultShippingContactId: ").append(toIndentedString(defaultShippingContactId)).append("\n");
     sb.append("    fiscalEntities: ").append(toIndentedString(fiscalEntities)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    nationalId: ").append(toIndentedString(nationalId)).append("\n");
     sb.append("    paymentSources: ").append(toIndentedString(paymentSources)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    planId: ").append(toIndentedString(planId)).append("\n");

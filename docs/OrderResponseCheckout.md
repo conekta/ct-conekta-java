@@ -17,6 +17,7 @@
 |**id** | **String** |  |  [optional] |
 |**isRedirectOnFailure** | **Boolean** |  |  [optional] |
 |**livemode** | **Boolean** |  |  [optional] |
+|**maxFailedRetries** | **Integer** | Number of retries allowed before the checkout is marked as failed |  [optional] |
 |**metadata** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**monthlyInstallmentsEnabled** | **Boolean** |  |  [optional] |
 |**monthlyInstallmentsOptions** | **List&lt;Integer&gt;** |  |  [optional] |

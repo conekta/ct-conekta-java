@@ -37,6 +37,7 @@ import com.conekta.JSON;
   CheckoutRequest.JSON_PROPERTY_FAILURE_URL,
   CheckoutRequest.JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED,
   CheckoutRequest.JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS,
+  CheckoutRequest.JSON_PROPERTY_MAX_FAILED_RETRIES,
   CheckoutRequest.JSON_PROPERTY_NAME,
   CheckoutRequest.JSON_PROPERTY_ON_DEMAND_ENABLED,
   CheckoutRequest.JSON_PROPERTY_REDIRECTION_TIME,
@@ -60,6 +61,9 @@ public class CheckoutRequest {
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS = "monthly_installments_options";
   private List<Integer> monthlyInstallmentsOptions = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_MAX_FAILED_RETRIES = "max_failed_retries";
+  private Integer maxFailedRetries;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -220,6 +224,31 @@ public class CheckoutRequest {
   }
 
 
+  public CheckoutRequest maxFailedRetries(Integer maxFailedRetries) {
+    this.maxFailedRetries = maxFailedRetries;
+    return this;
+  }
+
+   /**
+   * Number of retries allowed before the checkout is marked as failed
+   * @return maxFailedRetries
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MAX_FAILED_RETRIES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getMaxFailedRetries() {
+    return maxFailedRetries;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MAX_FAILED_RETRIES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMaxFailedRetries(Integer maxFailedRetries) {
+    this.maxFailedRetries = maxFailedRetries;
+  }
+
+
   public CheckoutRequest name(String name) {
     this.name = name;
     return this;
@@ -362,6 +391,7 @@ public class CheckoutRequest {
         Objects.equals(this.failureUrl, checkoutRequest.failureUrl) &&
         Objects.equals(this.monthlyInstallmentsEnabled, checkoutRequest.monthlyInstallmentsEnabled) &&
         Objects.equals(this.monthlyInstallmentsOptions, checkoutRequest.monthlyInstallmentsOptions) &&
+        Objects.equals(this.maxFailedRetries, checkoutRequest.maxFailedRetries) &&
         Objects.equals(this.name, checkoutRequest.name) &&
         Objects.equals(this.onDemandEnabled, checkoutRequest.onDemandEnabled) &&
         Objects.equals(this.redirectionTime, checkoutRequest.redirectionTime) &&
@@ -371,7 +401,7 @@ public class CheckoutRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowedPaymentMethods, expiresAt, failureUrl, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, name, onDemandEnabled, redirectionTime, successUrl, type);
+    return Objects.hash(allowedPaymentMethods, expiresAt, failureUrl, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, maxFailedRetries, name, onDemandEnabled, redirectionTime, successUrl, type);
   }
 
   @Override
@@ -383,6 +413,7 @@ public class CheckoutRequest {
     sb.append("    failureUrl: ").append(toIndentedString(failureUrl)).append("\n");
     sb.append("    monthlyInstallmentsEnabled: ").append(toIndentedString(monthlyInstallmentsEnabled)).append("\n");
     sb.append("    monthlyInstallmentsOptions: ").append(toIndentedString(monthlyInstallmentsOptions)).append("\n");
+    sb.append("    maxFailedRetries: ").append(toIndentedString(maxFailedRetries)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    onDemandEnabled: ").append(toIndentedString(onDemandEnabled)).append("\n");
     sb.append("    redirectionTime: ").append(toIndentedString(redirectionTime)).append("\n");
