@@ -64,7 +64,7 @@ public class ChargesApiTest {
         String acceptLanguage = "es";
         String id = "id";
         ChargeRequest chargeRequest = new ChargeRequest();
-        chargeRequest.setAmount(100);
+        chargeRequest.setAmount(100L);
         String xChildCompanyId = "company_child_id";
         ChargeOrderResponse response = api.ordersCreateCharge(id, chargeRequest, acceptLanguage, xChildCompanyId);
         Assertions.assertNotNull(response);
