@@ -45,39 +45,48 @@ import com.conekta.JSON;
   UpdateProduct.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("update_product")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class UpdateProduct {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
+  @javax.annotation.Nullable
   private Map<String, Object> antifraudInfo = new HashMap<>();
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public static final String JSON_PROPERTY_SKU = "sku";
+  @javax.annotation.Nullable
   private String sku;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_UNIT_PRICE = "unit_price";
+  @javax.annotation.Nullable
   private Long unitPrice;
 
   public static final String JSON_PROPERTY_QUANTITY = "quantity";
+  @javax.annotation.Nullable
   private Integer quantity;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String JSON_PROPERTY_BRAND = "brand";
+  @javax.annotation.Nullable
   private String brand;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, String> metadata = new HashMap<>();
 
   public UpdateProduct() { 
   }
 
-  public UpdateProduct antifraudInfo(Map<String, Object> antifraudInfo) {
+  public UpdateProduct antifraudInfo(@javax.annotation.Nullable Map<String, Object> antifraudInfo) {
     this.antifraudInfo = antifraudInfo;
     return this;
   }
@@ -90,10 +99,10 @@ public class UpdateProduct {
     return this;
   }
 
-   /**
+  /**
    * Get antifraudInfo
    * @return antifraudInfo
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ANTIFRAUD_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -105,20 +114,20 @@ public class UpdateProduct {
 
   @JsonProperty(JSON_PROPERTY_ANTIFRAUD_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAntifraudInfo(Map<String, Object> antifraudInfo) {
+  public void setAntifraudInfo(@javax.annotation.Nullable Map<String, Object> antifraudInfo) {
     this.antifraudInfo = antifraudInfo;
   }
 
 
-  public UpdateProduct description(String description) {
+  public UpdateProduct description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -130,20 +139,20 @@ public class UpdateProduct {
 
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateProduct sku(String sku) {
+  public UpdateProduct sku(@javax.annotation.Nullable String sku) {
     this.sku = sku;
     return this;
   }
 
-   /**
+  /**
    * Get sku
    * @return sku
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SKU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -155,20 +164,20 @@ public class UpdateProduct {
 
   @JsonProperty(JSON_PROPERTY_SKU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSku(String sku) {
+  public void setSku(@javax.annotation.Nullable String sku) {
     this.sku = sku;
   }
 
 
-  public UpdateProduct name(String name) {
+  public UpdateProduct name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -180,21 +189,21 @@ public class UpdateProduct {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateProduct unitPrice(Long unitPrice) {
+  public UpdateProduct unitPrice(@javax.annotation.Nullable Long unitPrice) {
     this.unitPrice = unitPrice;
     return this;
   }
 
-   /**
+  /**
    * Get unitPrice
    * minimum: 0
    * @return unitPrice
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_UNIT_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -206,21 +215,21 @@ public class UpdateProduct {
 
   @JsonProperty(JSON_PROPERTY_UNIT_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUnitPrice(Long unitPrice) {
+  public void setUnitPrice(@javax.annotation.Nullable Long unitPrice) {
     this.unitPrice = unitPrice;
   }
 
 
-  public UpdateProduct quantity(Integer quantity) {
+  public UpdateProduct quantity(@javax.annotation.Nullable Integer quantity) {
     this.quantity = quantity;
     return this;
   }
 
-   /**
+  /**
    * Get quantity
    * minimum: 1
    * @return quantity
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -232,12 +241,12 @@ public class UpdateProduct {
 
   @JsonProperty(JSON_PROPERTY_QUANTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setQuantity(Integer quantity) {
+  public void setQuantity(@javax.annotation.Nullable Integer quantity) {
     this.quantity = quantity;
   }
 
 
-  public UpdateProduct tags(List<String> tags) {
+  public UpdateProduct tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -250,10 +259,10 @@ public class UpdateProduct {
     return this;
   }
 
-   /**
+  /**
    * Get tags
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -265,20 +274,20 @@ public class UpdateProduct {
 
   @JsonProperty(JSON_PROPERTY_TAGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public UpdateProduct brand(String brand) {
+  public UpdateProduct brand(@javax.annotation.Nullable String brand) {
     this.brand = brand;
     return this;
   }
 
-   /**
+  /**
    * Get brand
    * @return brand
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BRAND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -290,12 +299,12 @@ public class UpdateProduct {
 
   @JsonProperty(JSON_PROPERTY_BRAND)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBrand(String brand) {
+  public void setBrand(@javax.annotation.Nullable String brand) {
     this.brand = brand;
   }
 
 
-  public UpdateProduct metadata(Map<String, String> metadata) {
+  public UpdateProduct metadata(@javax.annotation.Nullable Map<String, String> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -308,10 +317,10 @@ public class UpdateProduct {
     return this;
   }
 
-   /**
+  /**
    * Get metadata
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -323,7 +332,7 @@ public class UpdateProduct {
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, String> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, String> metadata) {
     this.metadata = metadata;
   }
 

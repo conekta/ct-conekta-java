@@ -12,7 +12,7 @@
 |**_object** | **String** |  |  |
 |**createdAt** | **Long** |  |  |
 |**parentId** | **String** |  |  [optional] |
-|**agreements** | [**List&lt;PaymentMethodCashResponseAllOfAgreements&gt;**](PaymentMethodCashResponseAllOfAgreements.md) |  |  [optional] |
+|**agreements** | [**List&lt;PaymentMethodCashAgreements&gt;**](PaymentMethodCashAgreements.md) |  |  [optional] |
 |**reference** | **String** |  |  [optional] |
 |**barcode** | **String** |  |  [optional] |
 |**barcodeUrl** | **String** | URL to the barcode image, reference is the same as barcode |  [optional] |

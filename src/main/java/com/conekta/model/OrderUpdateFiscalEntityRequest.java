@@ -41,38 +41,44 @@ import com.conekta.JSON;
   OrderUpdateFiscalEntityRequest.JSON_PROPERTY_TAX_ID
 })
 @JsonTypeName("order_update_fiscal_entity_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class OrderUpdateFiscalEntityRequest {
   public static final String JSON_PROPERTY_ADDRESS = "address";
+  @javax.annotation.Nonnull
   private FiscalEntityAddress address;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @javax.annotation.Nullable
   private String email;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_PHONE = "phone";
+  @javax.annotation.Nullable
   private String phone;
 
   public static final String JSON_PROPERTY_TAX_ID = "tax_id";
+  @javax.annotation.Nullable
   private String taxId;
 
   public OrderUpdateFiscalEntityRequest() { 
   }
 
-  public OrderUpdateFiscalEntityRequest address(FiscalEntityAddress address) {
+  public OrderUpdateFiscalEntityRequest address(@javax.annotation.Nonnull FiscalEntityAddress address) {
     this.address = address;
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -84,20 +90,20 @@ public class OrderUpdateFiscalEntityRequest {
 
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAddress(FiscalEntityAddress address) {
+  public void setAddress(@javax.annotation.Nonnull FiscalEntityAddress address) {
     this.address = address;
   }
 
 
-  public OrderUpdateFiscalEntityRequest email(String email) {
+  public OrderUpdateFiscalEntityRequest email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * Email of the fiscal entity
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -109,20 +115,20 @@ public class OrderUpdateFiscalEntityRequest {
 
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public OrderUpdateFiscalEntityRequest name(String name) {
+  public OrderUpdateFiscalEntityRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Name of the fiscal entity
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -134,12 +140,12 @@ public class OrderUpdateFiscalEntityRequest {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public OrderUpdateFiscalEntityRequest metadata(Map<String, Object> metadata) {
+  public OrderUpdateFiscalEntityRequest metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -152,10 +158,10 @@ public class OrderUpdateFiscalEntityRequest {
     return this;
   }
 
-   /**
+  /**
    * Metadata associated with the fiscal entity
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
@@ -167,20 +173,20 @@ public class OrderUpdateFiscalEntityRequest {
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 
 
-  public OrderUpdateFiscalEntityRequest phone(String phone) {
+  public OrderUpdateFiscalEntityRequest phone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
     return this;
   }
 
-   /**
+  /**
    * Phone of the fiscal entity
    * @return phone
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -192,20 +198,20 @@ public class OrderUpdateFiscalEntityRequest {
 
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPhone(String phone) {
+  public void setPhone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
   }
 
 
-  public OrderUpdateFiscalEntityRequest taxId(String taxId) {
+  public OrderUpdateFiscalEntityRequest taxId(@javax.annotation.Nullable String taxId) {
     this.taxId = taxId;
     return this;
   }
 
-   /**
+  /**
    * Tax ID of the fiscal entity
    * @return taxId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAX_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -217,7 +223,7 @@ public class OrderUpdateFiscalEntityRequest {
 
   @JsonProperty(JSON_PROPERTY_TAX_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTaxId(String taxId) {
+  public void setTaxId(@javax.annotation.Nullable String taxId) {
     this.taxId = taxId;
   }
 

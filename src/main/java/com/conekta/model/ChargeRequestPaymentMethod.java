@@ -55,7 +55,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.conekta.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 @JsonDeserialize(using = ChargeRequestPaymentMethod.ChargeRequestPaymentMethodDeserializer.class)
 @JsonSerialize(using = ChargeRequestPaymentMethod.ChargeRequestPaymentMethodSerializer.class)
 public class ChargeRequestPaymentMethod extends AbstractOpenApiSchema {
@@ -158,7 +158,7 @@ public class ChargeRequestPaymentMethod extends AbstractOpenApiSchema {
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<>();
+    public static final Map<String, GenericType<?>> schemas = new HashMap<>();
 
     public ChargeRequestPaymentMethod() {
         super("oneOf", Boolean.FALSE);
@@ -190,7 +190,7 @@ public class ChargeRequestPaymentMethod extends AbstractOpenApiSchema {
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, GenericType<?>> getSchemas() {
         return ChargeRequestPaymentMethod.schemas;
     }
 

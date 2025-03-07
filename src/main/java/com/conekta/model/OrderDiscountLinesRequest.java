@@ -35,30 +35,33 @@ import com.conekta.JSON;
   OrderDiscountLinesRequest.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("order_discount_lines_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class OrderDiscountLinesRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nonnull
   private Long amount;
 
   public static final String JSON_PROPERTY_CODE = "code";
+  @javax.annotation.Nonnull
   private String code;
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nonnull
   private String type;
 
   public OrderDiscountLinesRequest() { 
   }
 
-  public OrderDiscountLinesRequest amount(Long amount) {
+  public OrderDiscountLinesRequest amount(@javax.annotation.Nonnull Long amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * The amount to be deducted from the total sum of all payments, in cents.
    * minimum: 0
    * @return amount
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -70,20 +73,20 @@ public class OrderDiscountLinesRequest {
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAmount(Long amount) {
+  public void setAmount(@javax.annotation.Nonnull Long amount) {
     this.amount = amount;
   }
 
 
-  public OrderDiscountLinesRequest code(String code) {
+  public OrderDiscountLinesRequest code(@javax.annotation.Nonnull String code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * Discount code.
    * @return code
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -95,20 +98,20 @@ public class OrderDiscountLinesRequest {
 
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCode(String code) {
+  public void setCode(@javax.annotation.Nonnull String code) {
     this.code = code;
   }
 
 
-  public OrderDiscountLinesRequest type(String type) {
+  public OrderDiscountLinesRequest type(@javax.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * It can be &#39;loyalty&#39;, &#39;campaign&#39;, &#39;coupon&#39; o &#39;sign&#39;
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -120,7 +123,7 @@ public class OrderDiscountLinesRequest {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
   }
 

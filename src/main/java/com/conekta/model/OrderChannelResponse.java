@@ -36,32 +36,36 @@ import com.conekta.JSON;
   OrderChannelResponse.JSON_PROPERTY_ID
 })
 @JsonTypeName("order_channel_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class OrderChannelResponse {
   public static final String JSON_PROPERTY_SEGMENT = "segment";
+  @javax.annotation.Nullable
   private String segment;
 
   public static final String JSON_PROPERTY_CHECKOUT_REQUEST_ID = "checkout_request_id";
+  @javax.annotation.Nullable
   private String checkoutRequestId;
 
   public static final String JSON_PROPERTY_CHECKOUT_REQUEST_TYPE = "checkout_request_type";
+  @javax.annotation.Nullable
   private String checkoutRequestType;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public OrderChannelResponse() { 
   }
 
-  public OrderChannelResponse segment(String segment) {
+  public OrderChannelResponse segment(@javax.annotation.Nullable String segment) {
     this.segment = segment;
     return this;
   }
 
-   /**
+  /**
    * Get segment
    * @return segment
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SEGMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -73,20 +77,20 @@ public class OrderChannelResponse {
 
   @JsonProperty(JSON_PROPERTY_SEGMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSegment(String segment) {
+  public void setSegment(@javax.annotation.Nullable String segment) {
     this.segment = segment;
   }
 
 
-  public OrderChannelResponse checkoutRequestId(String checkoutRequestId) {
+  public OrderChannelResponse checkoutRequestId(@javax.annotation.Nullable String checkoutRequestId) {
     this.checkoutRequestId = checkoutRequestId;
     return this;
   }
 
-   /**
+  /**
    * Get checkoutRequestId
    * @return checkoutRequestId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHECKOUT_REQUEST_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -98,20 +102,20 @@ public class OrderChannelResponse {
 
   @JsonProperty(JSON_PROPERTY_CHECKOUT_REQUEST_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCheckoutRequestId(String checkoutRequestId) {
+  public void setCheckoutRequestId(@javax.annotation.Nullable String checkoutRequestId) {
     this.checkoutRequestId = checkoutRequestId;
   }
 
 
-  public OrderChannelResponse checkoutRequestType(String checkoutRequestType) {
+  public OrderChannelResponse checkoutRequestType(@javax.annotation.Nullable String checkoutRequestType) {
     this.checkoutRequestType = checkoutRequestType;
     return this;
   }
 
-   /**
+  /**
    * Get checkoutRequestType
    * @return checkoutRequestType
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHECKOUT_REQUEST_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -123,20 +127,20 @@ public class OrderChannelResponse {
 
   @JsonProperty(JSON_PROPERTY_CHECKOUT_REQUEST_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCheckoutRequestType(String checkoutRequestType) {
+  public void setCheckoutRequestType(@javax.annotation.Nullable String checkoutRequestType) {
     this.checkoutRequestType = checkoutRequestType;
   }
 
 
-  public OrderChannelResponse id(String id) {
+  public OrderChannelResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -148,7 +152,7 @@ public class OrderChannelResponse {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 

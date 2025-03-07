@@ -38,29 +38,32 @@ import com.conekta.JSON;
   OrderDiscountLinesResponse.JSON_PROPERTY_DATA
 })
 @JsonTypeName("order_discount_lines_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class OrderDiscountLinesResponse {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
+  @javax.annotation.Nonnull
   private Boolean hasMore;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_DATA = "data";
+  @javax.annotation.Nullable
   private List<DiscountLinesDataResponse> data = new ArrayList<>();
 
   public OrderDiscountLinesResponse() { 
   }
 
-  public OrderDiscountLinesResponse hasMore(Boolean hasMore) {
+  public OrderDiscountLinesResponse hasMore(@javax.annotation.Nonnull Boolean hasMore) {
     this.hasMore = hasMore;
     return this;
   }
 
-   /**
+  /**
    * Indicates if there are more pages to be requested
    * @return hasMore
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_HAS_MORE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -72,20 +75,20 @@ public class OrderDiscountLinesResponse {
 
   @JsonProperty(JSON_PROPERTY_HAS_MORE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setHasMore(Boolean hasMore) {
+  public void setHasMore(@javax.annotation.Nonnull Boolean hasMore) {
     this.hasMore = hasMore;
   }
 
 
-  public OrderDiscountLinesResponse _object(String _object) {
+  public OrderDiscountLinesResponse _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Object type, in this case is list
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -97,12 +100,12 @@ public class OrderDiscountLinesResponse {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public OrderDiscountLinesResponse data(List<DiscountLinesDataResponse> data) {
+  public OrderDiscountLinesResponse data(@javax.annotation.Nullable List<DiscountLinesDataResponse> data) {
     this.data = data;
     return this;
   }
@@ -115,10 +118,10 @@ public class OrderDiscountLinesResponse {
     return this;
   }
 
-   /**
+  /**
    * Get data
    * @return data
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -130,7 +133,7 @@ public class OrderDiscountLinesResponse {
 
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setData(List<DiscountLinesDataResponse> data) {
+  public void setData(@javax.annotation.Nullable List<DiscountLinesDataResponse> data) {
     this.data = data;
   }
 

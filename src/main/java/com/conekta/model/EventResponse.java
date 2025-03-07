@@ -45,44 +45,52 @@ import com.conekta.JSON;
   EventResponse.JSON_PROPERTY_WEBHOOK_STATUS
 })
 @JsonTypeName("event_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class EventResponse {
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nullable
   private Long createdAt;
 
   public static final String JSON_PROPERTY_DATA = "data";
+  @javax.annotation.Nullable
   private Map<String, Object> data = new HashMap<>();
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
+  @javax.annotation.Nullable
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private String type;
 
   public static final String JSON_PROPERTY_WEBHOOK_LOGS = "webhook_logs";
+  @javax.annotation.Nullable
   private List<WebhookLog> webhookLogs = new ArrayList<>();
 
   public static final String JSON_PROPERTY_WEBHOOK_STATUS = "webhook_status";
+  @javax.annotation.Nullable
   private String webhookStatus;
 
   public EventResponse() { 
   }
 
-  public EventResponse createdAt(Long createdAt) {
+  public EventResponse createdAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -94,12 +102,12 @@ public class EventResponse {
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public EventResponse data(Map<String, Object> data) {
+  public EventResponse data(@javax.annotation.Nullable Map<String, Object> data) {
     this.data = data;
     return this;
   }
@@ -112,10 +120,10 @@ public class EventResponse {
     return this;
   }
 
-   /**
+  /**
    * Get data
    * @return data
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
@@ -127,20 +135,20 @@ public class EventResponse {
 
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setData(Map<String, Object> data) {
+  public void setData(@javax.annotation.Nullable Map<String, Object> data) {
     this.data = data;
   }
 
 
-  public EventResponse id(String id) {
+  public EventResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -152,20 +160,20 @@ public class EventResponse {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public EventResponse livemode(Boolean livemode) {
+  public EventResponse livemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
 
-   /**
+  /**
    * Get livemode
    * @return livemode
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -177,20 +185,20 @@ public class EventResponse {
 
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLivemode(Boolean livemode) {
+  public void setLivemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
   }
 
 
-  public EventResponse _object(String _object) {
+  public EventResponse _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -202,20 +210,20 @@ public class EventResponse {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
 
-  public EventResponse type(String type) {
+  public EventResponse type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -227,12 +235,12 @@ public class EventResponse {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public EventResponse webhookLogs(List<WebhookLog> webhookLogs) {
+  public EventResponse webhookLogs(@javax.annotation.Nullable List<WebhookLog> webhookLogs) {
     this.webhookLogs = webhookLogs;
     return this;
   }
@@ -245,10 +253,10 @@ public class EventResponse {
     return this;
   }
 
-   /**
+  /**
    * Get webhookLogs
    * @return webhookLogs
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_WEBHOOK_LOGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -260,20 +268,20 @@ public class EventResponse {
 
   @JsonProperty(JSON_PROPERTY_WEBHOOK_LOGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWebhookLogs(List<WebhookLog> webhookLogs) {
+  public void setWebhookLogs(@javax.annotation.Nullable List<WebhookLog> webhookLogs) {
     this.webhookLogs = webhookLogs;
   }
 
 
-  public EventResponse webhookStatus(String webhookStatus) {
+  public EventResponse webhookStatus(@javax.annotation.Nullable String webhookStatus) {
     this.webhookStatus = webhookStatus;
     return this;
   }
 
-   /**
+  /**
    * Get webhookStatus
    * @return webhookStatus
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_WEBHOOK_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -285,7 +293,7 @@ public class EventResponse {
 
   @JsonProperty(JSON_PROPERTY_WEBHOOK_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWebhookStatus(String webhookStatus) {
+  public void setWebhookStatus(@javax.annotation.Nullable String webhookStatus) {
     this.webhookStatus = webhookStatus;
   }
 

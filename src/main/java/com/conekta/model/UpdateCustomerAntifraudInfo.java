@@ -34,26 +34,28 @@ import com.conekta.JSON;
   UpdateCustomerAntifraudInfo.JSON_PROPERTY_FIRST_PAID_AT
 })
 @JsonTypeName("update_customer_antifraud_info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class UpdateCustomerAntifraudInfo {
   public static final String JSON_PROPERTY_ACCOUNT_CREATED_AT = "account_created_at";
+  @javax.annotation.Nullable
   private Long accountCreatedAt;
 
   public static final String JSON_PROPERTY_FIRST_PAID_AT = "first_paid_at";
+  @javax.annotation.Nullable
   private Integer firstPaidAt;
 
   public UpdateCustomerAntifraudInfo() { 
   }
 
-  public UpdateCustomerAntifraudInfo accountCreatedAt(Long accountCreatedAt) {
+  public UpdateCustomerAntifraudInfo accountCreatedAt(@javax.annotation.Nullable Long accountCreatedAt) {
     this.accountCreatedAt = accountCreatedAt;
     return this;
   }
 
-   /**
+  /**
    * Get accountCreatedAt
    * @return accountCreatedAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACCOUNT_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -65,20 +67,20 @@ public class UpdateCustomerAntifraudInfo {
 
   @JsonProperty(JSON_PROPERTY_ACCOUNT_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccountCreatedAt(Long accountCreatedAt) {
+  public void setAccountCreatedAt(@javax.annotation.Nullable Long accountCreatedAt) {
     this.accountCreatedAt = accountCreatedAt;
   }
 
 
-  public UpdateCustomerAntifraudInfo firstPaidAt(Integer firstPaidAt) {
+  public UpdateCustomerAntifraudInfo firstPaidAt(@javax.annotation.Nullable Integer firstPaidAt) {
     this.firstPaidAt = firstPaidAt;
     return this;
   }
 
-   /**
+  /**
    * Get firstPaidAt
    * @return firstPaidAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FIRST_PAID_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -90,7 +92,7 @@ public class UpdateCustomerAntifraudInfo {
 
   @JsonProperty(JSON_PROPERTY_FIRST_PAID_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFirstPaidAt(Integer firstPaidAt) {
+  public void setFirstPaidAt(@javax.annotation.Nullable Integer firstPaidAt) {
     this.firstPaidAt = firstPaidAt;
   }
 

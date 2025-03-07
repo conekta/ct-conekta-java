@@ -36,27 +36,29 @@ import com.conekta.JSON;
   Token.JSON_PROPERTY_CHECKOUT
 })
 @JsonTypeName("token")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Token {
   public static final String JSON_PROPERTY_CARD = "card";
+  @javax.annotation.Nullable
   private TokenCard card;
 
   public static final String JSON_PROPERTY_CHECKOUT = "checkout";
   @Deprecated
+  @javax.annotation.Nullable
   private TokenCheckout checkout;
 
   public Token() { 
   }
 
-  public Token card(TokenCard card) {
+  public Token card(@javax.annotation.Nullable TokenCard card) {
     this.card = card;
     return this;
   }
 
-   /**
+  /**
    * Get card
    * @return card
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CARD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -68,22 +70,22 @@ public class Token {
 
   @JsonProperty(JSON_PROPERTY_CARD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCard(TokenCard card) {
+  public void setCard(@javax.annotation.Nullable TokenCard card) {
     this.card = card;
   }
 
 
   @Deprecated
-  public Token checkout(TokenCheckout checkout) {
+  public Token checkout(@javax.annotation.Nullable TokenCheckout checkout) {
     this.checkout = checkout;
     return this;
   }
 
-   /**
+  /**
    * Get checkout
    * @return checkout
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHECKOUT)
@@ -97,7 +99,7 @@ public class Token {
   @Deprecated
   @JsonProperty(JSON_PROPERTY_CHECKOUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCheckout(TokenCheckout checkout) {
+  public void setCheckout(@javax.annotation.Nullable TokenCheckout checkout) {
     this.checkout = checkout;
   }
 

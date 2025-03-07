@@ -34,26 +34,28 @@ import com.conekta.JSON;
   ApiKeyRequest.JSON_PROPERTY_ROLE
 })
 @JsonTypeName("api_key_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ApiKeyRequest {
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public static final String JSON_PROPERTY_ROLE = "role";
+  @javax.annotation.Nonnull
   private String role;
 
   public ApiKeyRequest() { 
   }
 
-  public ApiKeyRequest description(String description) {
+  public ApiKeyRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * A name or brief explanation of what this api key is used for
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -65,20 +67,20 @@ public class ApiKeyRequest {
 
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ApiKeyRequest role(String role) {
+  public ApiKeyRequest role(@javax.annotation.Nonnull String role) {
     this.role = role;
     return this;
   }
 
-   /**
+  /**
    * Get role
    * @return role
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ROLE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -90,7 +92,7 @@ public class ApiKeyRequest {
 
   @JsonProperty(JSON_PROPERTY_ROLE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRole(String role) {
+  public void setRole(@javax.annotation.Nonnull String role) {
     this.role = role;
   }
 

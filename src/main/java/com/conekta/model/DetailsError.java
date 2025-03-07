@@ -36,32 +36,36 @@ import com.conekta.JSON;
   DetailsError.JSON_PROPERTY_DEBUG_MESSAGE
 })
 @JsonTypeName("details_error")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class DetailsError {
   public static final String JSON_PROPERTY_CODE = "code";
+  @javax.annotation.Nullable
   private String code;
 
   public static final String JSON_PROPERTY_PARAM = "param";
+  @javax.annotation.Nullable
   private String param;
 
   public static final String JSON_PROPERTY_MESSAGE = "message";
+  @javax.annotation.Nullable
   private String message;
 
   public static final String JSON_PROPERTY_DEBUG_MESSAGE = "debug_message";
+  @javax.annotation.Nullable
   private String debugMessage;
 
   public DetailsError() { 
   }
 
-  public DetailsError code(String code) {
+  public DetailsError code(@javax.annotation.Nullable String code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * Get code
    * @return code
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -73,20 +77,20 @@ public class DetailsError {
 
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCode(String code) {
+  public void setCode(@javax.annotation.Nullable String code) {
     this.code = code;
   }
 
 
-  public DetailsError param(String param) {
+  public DetailsError param(@javax.annotation.Nullable String param) {
     this.param = param;
     return this;
   }
 
-   /**
+  /**
    * Get param
    * @return param
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PARAM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -98,20 +102,20 @@ public class DetailsError {
 
   @JsonProperty(JSON_PROPERTY_PARAM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParam(String param) {
+  public void setParam(@javax.annotation.Nullable String param) {
     this.param = param;
   }
 
 
-  public DetailsError message(String message) {
+  public DetailsError message(@javax.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
 
-   /**
+  /**
    * Get message
    * @return message
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -123,20 +127,20 @@ public class DetailsError {
 
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nullable String message) {
     this.message = message;
   }
 
 
-  public DetailsError debugMessage(String debugMessage) {
+  public DetailsError debugMessage(@javax.annotation.Nullable String debugMessage) {
     this.debugMessage = debugMessage;
     return this;
   }
 
-   /**
+  /**
    * Get debugMessage
    * @return debugMessage
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEBUG_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -148,7 +152,7 @@ public class DetailsError {
 
   @JsonProperty(JSON_PROPERTY_DEBUG_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDebugMessage(String debugMessage) {
+  public void setDebugMessage(@javax.annotation.Nullable String debugMessage) {
     this.debugMessage = debugMessage;
   }
 

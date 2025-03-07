@@ -19,7 +19,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ShippingContactsApi {
   private ApiClient apiClient;
 
@@ -59,7 +59,8 @@ public class ShippingContactsApi {
    * @return CustomerShippingContactsResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -82,7 +83,8 @@ public class ShippingContactsApi {
    * @return ApiResponse&lt;CustomerShippingContactsResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -102,7 +104,7 @@ public class ShippingContactsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/shipping_contacts"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -131,7 +133,8 @@ public class ShippingContactsApi {
    * @return CustomerShippingContactsResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -154,7 +157,8 @@ public class ShippingContactsApi {
    * @return ApiResponse&lt;CustomerShippingContactsResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -174,8 +178,8 @@ public class ShippingContactsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/shipping_contacts/{shipping_contacts_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{shipping_contacts_id}", apiClient.escapeString(shippingContactsId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{shipping_contacts_id}", apiClient.escapeString(shippingContactsId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -205,7 +209,8 @@ public class ShippingContactsApi {
    * @return CustomerShippingContactsResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -229,7 +234,8 @@ public class ShippingContactsApi {
    * @return ApiResponse&lt;CustomerShippingContactsResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -252,8 +258,8 @@ public class ShippingContactsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/shipping_contacts/{shipping_contacts_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{shipping_contacts_id}", apiClient.escapeString(shippingContactsId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{shipping_contacts_id}", apiClient.escapeString(shippingContactsId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

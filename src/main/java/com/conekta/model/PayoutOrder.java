@@ -45,33 +45,40 @@ import com.conekta.JSON;
   PayoutOrder.JSON_PROPERTY_REASON
 })
 @JsonTypeName("payout_order")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PayoutOrder {
   public static final String JSON_PROPERTY_ALLOWED_PAYOUT_METHODS = "allowed_payout_methods";
+  @javax.annotation.Nonnull
   private List<String> allowedPayoutMethods = new ArrayList<>();
 
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nonnull
   private Integer amount;
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
+  @javax.annotation.Nonnull
   private String currency = "MXN";
 
   public static final String JSON_PROPERTY_CUSTOMER_INFO = "customer_info";
+  @javax.annotation.Nonnull
   private CustomerInfoJustCustomerId customerInfo;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_PAYOUT = "payout";
+  @javax.annotation.Nonnull
   private Payout payout;
 
   public static final String JSON_PROPERTY_REASON = "reason";
+  @javax.annotation.Nonnull
   private String reason;
 
   public PayoutOrder() { 
   }
 
-  public PayoutOrder allowedPayoutMethods(List<String> allowedPayoutMethods) {
+  public PayoutOrder allowedPayoutMethods(@javax.annotation.Nonnull List<String> allowedPayoutMethods) {
     this.allowedPayoutMethods = allowedPayoutMethods;
     return this;
   }
@@ -84,10 +91,10 @@ public class PayoutOrder {
     return this;
   }
 
-   /**
+  /**
    * The payout methods that are allowed for the payout order.
    * @return allowedPayoutMethods
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ALLOWED_PAYOUT_METHODS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -99,20 +106,20 @@ public class PayoutOrder {
 
   @JsonProperty(JSON_PROPERTY_ALLOWED_PAYOUT_METHODS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAllowedPayoutMethods(List<String> allowedPayoutMethods) {
+  public void setAllowedPayoutMethods(@javax.annotation.Nonnull List<String> allowedPayoutMethods) {
     this.allowedPayoutMethods = allowedPayoutMethods;
   }
 
 
-  public PayoutOrder amount(Integer amount) {
+  public PayoutOrder amount(@javax.annotation.Nonnull Integer amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * The amount of the payout order.
    * @return amount
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -124,20 +131,20 @@ public class PayoutOrder {
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAmount(Integer amount) {
+  public void setAmount(@javax.annotation.Nonnull Integer amount) {
     this.amount = amount;
   }
 
 
-  public PayoutOrder currency(String currency) {
+  public PayoutOrder currency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * The currency in which the payout order is made.
    * @return currency
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -149,20 +156,20 @@ public class PayoutOrder {
 
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCurrency(String currency) {
+  public void setCurrency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
   }
 
 
-  public PayoutOrder customerInfo(CustomerInfoJustCustomerId customerInfo) {
+  public PayoutOrder customerInfo(@javax.annotation.Nonnull CustomerInfoJustCustomerId customerInfo) {
     this.customerInfo = customerInfo;
     return this;
   }
 
-   /**
+  /**
    * Get customerInfo
    * @return customerInfo
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -174,12 +181,12 @@ public class PayoutOrder {
 
   @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCustomerInfo(CustomerInfoJustCustomerId customerInfo) {
+  public void setCustomerInfo(@javax.annotation.Nonnull CustomerInfoJustCustomerId customerInfo) {
     this.customerInfo = customerInfo;
   }
 
 
-  public PayoutOrder metadata(Map<String, Object> metadata) {
+  public PayoutOrder metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -192,10 +199,10 @@ public class PayoutOrder {
     return this;
   }
 
-   /**
+  /**
    * The metadata of the payout order.
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
@@ -207,20 +214,20 @@ public class PayoutOrder {
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 
 
-  public PayoutOrder payout(Payout payout) {
+  public PayoutOrder payout(@javax.annotation.Nonnull Payout payout) {
     this.payout = payout;
     return this;
   }
 
-   /**
+  /**
    * Get payout
    * @return payout
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_PAYOUT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -232,20 +239,20 @@ public class PayoutOrder {
 
   @JsonProperty(JSON_PROPERTY_PAYOUT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPayout(Payout payout) {
+  public void setPayout(@javax.annotation.Nonnull Payout payout) {
     this.payout = payout;
   }
 
 
-  public PayoutOrder reason(String reason) {
+  public PayoutOrder reason(@javax.annotation.Nonnull String reason) {
     this.reason = reason;
     return this;
   }
 
-   /**
+  /**
    * The reason for the payout order.
    * @return reason
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_REASON)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -257,7 +264,7 @@ public class PayoutOrder {
 
   @JsonProperty(JSON_PROPERTY_REASON)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setReason(String reason) {
+  public void setReason(@javax.annotation.Nonnull String reason) {
     this.reason = reason;
   }
 

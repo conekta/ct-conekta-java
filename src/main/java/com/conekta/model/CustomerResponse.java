@@ -59,80 +59,100 @@ import com.conekta.JSON;
   CustomerResponse.JSON_PROPERTY_SUBSCRIPTION
 })
 @JsonTypeName("customer_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CustomerResponse {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
+  @javax.annotation.Nullable
   private CustomerAntifraudInfoResponse antifraudInfo;
 
   public static final String JSON_PROPERTY_CORPORATE = "corporate";
+  @javax.annotation.Nullable
   private Boolean corporate;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public static final String JSON_PROPERTY_CUSTOM_REFERENCE = "custom_reference";
+  @javax.annotation.Nullable
   private String customReference;
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "date_of_birth";
+  @javax.annotation.Nullable
   private String dateOfBirth;
 
   public static final String JSON_PROPERTY_DEFAULT_FISCAL_ENTITY_ID = "default_fiscal_entity_id";
+  @javax.annotation.Nullable
   private String defaultFiscalEntityId;
 
   public static final String JSON_PROPERTY_DEFAULT_SHIPPING_CONTACT_ID = "default_shipping_contact_id";
+  @javax.annotation.Nullable
   private String defaultShippingContactId;
 
   public static final String JSON_PROPERTY_DEFAULT_PAYMENT_SOURCE_ID = "default_payment_source_id";
+  @javax.annotation.Nullable
   private String defaultPaymentSourceId;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @javax.annotation.Nullable
   private String email;
 
   public static final String JSON_PROPERTY_FISCAL_ENTITIES = "fiscal_entities";
+  @javax.annotation.Nullable
   private CustomerFiscalEntitiesResponse fiscalEntities;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
+  @javax.annotation.Nonnull
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String JSON_PROPERTY_NATIONAL_ID = "national_id";
+  @javax.annotation.Nullable
   private String nationalId;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_PAYMENT_SOURCES = "payment_sources";
+  @javax.annotation.Nullable
   private CustomerPaymentMethodsResponse paymentSources;
 
   public static final String JSON_PROPERTY_PHONE = "phone";
+  @javax.annotation.Nullable
   private String phone;
 
   public static final String JSON_PROPERTY_SHIPPING_CONTACTS = "shipping_contacts";
+  @javax.annotation.Nullable
   private CustomerResponseShippingContacts shippingContacts;
 
   public static final String JSON_PROPERTY_SUBSCRIPTION = "subscription";
+  @javax.annotation.Nullable
   private SubscriptionResponse subscription;
 
   public CustomerResponse() { 
   }
 
-  public CustomerResponse antifraudInfo(CustomerAntifraudInfoResponse antifraudInfo) {
+  public CustomerResponse antifraudInfo(@javax.annotation.Nullable CustomerAntifraudInfoResponse antifraudInfo) {
     this.antifraudInfo = antifraudInfo;
     return this;
   }
 
-   /**
+  /**
    * Get antifraudInfo
    * @return antifraudInfo
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ANTIFRAUD_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -144,20 +164,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_ANTIFRAUD_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAntifraudInfo(CustomerAntifraudInfoResponse antifraudInfo) {
+  public void setAntifraudInfo(@javax.annotation.Nullable CustomerAntifraudInfoResponse antifraudInfo) {
     this.antifraudInfo = antifraudInfo;
   }
 
 
-  public CustomerResponse corporate(Boolean corporate) {
+  public CustomerResponse corporate(@javax.annotation.Nullable Boolean corporate) {
     this.corporate = corporate;
     return this;
   }
 
-   /**
+  /**
    * true if the customer is a company
    * @return corporate
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CORPORATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -169,20 +189,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_CORPORATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCorporate(Boolean corporate) {
+  public void setCorporate(@javax.annotation.Nullable Boolean corporate) {
     this.corporate = corporate;
   }
 
 
-  public CustomerResponse createdAt(Long createdAt) {
+  public CustomerResponse createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Creation date of the object
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -194,20 +214,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CustomerResponse customReference(String customReference) {
+  public CustomerResponse customReference(@javax.annotation.Nullable String customReference) {
     this.customReference = customReference;
     return this;
   }
 
-   /**
+  /**
    * Custom reference
    * @return customReference
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOM_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -219,20 +239,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_CUSTOM_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomReference(String customReference) {
+  public void setCustomReference(@javax.annotation.Nullable String customReference) {
     this.customReference = customReference;
   }
 
 
-  public CustomerResponse dateOfBirth(String dateOfBirth) {
+  public CustomerResponse dateOfBirth(@javax.annotation.Nullable String dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
 
-   /**
+  /**
    * It is a parameter that allows to identify the date of birth of the client.
    * @return dateOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -244,20 +264,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDateOfBirth(String dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable String dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public CustomerResponse defaultFiscalEntityId(String defaultFiscalEntityId) {
+  public CustomerResponse defaultFiscalEntityId(@javax.annotation.Nullable String defaultFiscalEntityId) {
     this.defaultFiscalEntityId = defaultFiscalEntityId;
     return this;
   }
 
-   /**
+  /**
    * Get defaultFiscalEntityId
    * @return defaultFiscalEntityId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT_FISCAL_ENTITY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -269,20 +289,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_DEFAULT_FISCAL_ENTITY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDefaultFiscalEntityId(String defaultFiscalEntityId) {
+  public void setDefaultFiscalEntityId(@javax.annotation.Nullable String defaultFiscalEntityId) {
     this.defaultFiscalEntityId = defaultFiscalEntityId;
   }
 
 
-  public CustomerResponse defaultShippingContactId(String defaultShippingContactId) {
+  public CustomerResponse defaultShippingContactId(@javax.annotation.Nullable String defaultShippingContactId) {
     this.defaultShippingContactId = defaultShippingContactId;
     return this;
   }
 
-   /**
+  /**
    * Get defaultShippingContactId
    * @return defaultShippingContactId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT_SHIPPING_CONTACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -294,20 +314,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_DEFAULT_SHIPPING_CONTACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDefaultShippingContactId(String defaultShippingContactId) {
+  public void setDefaultShippingContactId(@javax.annotation.Nullable String defaultShippingContactId) {
     this.defaultShippingContactId = defaultShippingContactId;
   }
 
 
-  public CustomerResponse defaultPaymentSourceId(String defaultPaymentSourceId) {
+  public CustomerResponse defaultPaymentSourceId(@javax.annotation.Nullable String defaultPaymentSourceId) {
     this.defaultPaymentSourceId = defaultPaymentSourceId;
     return this;
   }
 
-   /**
+  /**
    * Get defaultPaymentSourceId
    * @return defaultPaymentSourceId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT_PAYMENT_SOURCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -319,20 +339,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_DEFAULT_PAYMENT_SOURCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDefaultPaymentSourceId(String defaultPaymentSourceId) {
+  public void setDefaultPaymentSourceId(@javax.annotation.Nullable String defaultPaymentSourceId) {
     this.defaultPaymentSourceId = defaultPaymentSourceId;
   }
 
 
-  public CustomerResponse email(String email) {
+  public CustomerResponse email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * Get email
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -344,20 +364,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public CustomerResponse fiscalEntities(CustomerFiscalEntitiesResponse fiscalEntities) {
+  public CustomerResponse fiscalEntities(@javax.annotation.Nullable CustomerFiscalEntitiesResponse fiscalEntities) {
     this.fiscalEntities = fiscalEntities;
     return this;
   }
 
-   /**
+  /**
    * Get fiscalEntities
    * @return fiscalEntities
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -369,20 +389,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiscalEntities(CustomerFiscalEntitiesResponse fiscalEntities) {
+  public void setFiscalEntities(@javax.annotation.Nullable CustomerFiscalEntitiesResponse fiscalEntities) {
     this.fiscalEntities = fiscalEntities;
   }
 
 
-  public CustomerResponse id(String id) {
+  public CustomerResponse id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Customer&#39;s ID
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -394,20 +414,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public CustomerResponse livemode(Boolean livemode) {
+  public CustomerResponse livemode(@javax.annotation.Nonnull Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
 
-   /**
+  /**
    * true if the object exists in live mode or the value false if the object exists in test mode
    * @return livemode
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -419,20 +439,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLivemode(Boolean livemode) {
+  public void setLivemode(@javax.annotation.Nonnull Boolean livemode) {
     this.livemode = livemode;
   }
 
 
-  public CustomerResponse name(String name) {
+  public CustomerResponse name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Customer&#39;s name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -444,20 +464,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public CustomerResponse nationalId(String nationalId) {
+  public CustomerResponse nationalId(@javax.annotation.Nullable String nationalId) {
     this.nationalId = nationalId;
     return this;
   }
 
-   /**
+  /**
    * It is a parameter that allows to identify the national identification number of the client.
    * @return nationalId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NATIONAL_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -469,12 +489,12 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_NATIONAL_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNationalId(String nationalId) {
+  public void setNationalId(@javax.annotation.Nullable String nationalId) {
     this.nationalId = nationalId;
   }
 
 
-  public CustomerResponse metadata(Map<String, Object> metadata) {
+  public CustomerResponse metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -487,10 +507,10 @@ public class CustomerResponse {
     return this;
   }
 
-   /**
+  /**
    * Get metadata
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
@@ -502,20 +522,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 
 
-  public CustomerResponse _object(String _object) {
+  public CustomerResponse _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -527,20 +547,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public CustomerResponse paymentSources(CustomerPaymentMethodsResponse paymentSources) {
+  public CustomerResponse paymentSources(@javax.annotation.Nullable CustomerPaymentMethodsResponse paymentSources) {
     this.paymentSources = paymentSources;
     return this;
   }
 
-   /**
+  /**
    * Get paymentSources
    * @return paymentSources
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENT_SOURCES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -552,20 +572,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_PAYMENT_SOURCES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPaymentSources(CustomerPaymentMethodsResponse paymentSources) {
+  public void setPaymentSources(@javax.annotation.Nullable CustomerPaymentMethodsResponse paymentSources) {
     this.paymentSources = paymentSources;
   }
 
 
-  public CustomerResponse phone(String phone) {
+  public CustomerResponse phone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
     return this;
   }
 
-   /**
+  /**
    * Customer&#39;s phone number
    * @return phone
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -577,20 +597,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPhone(String phone) {
+  public void setPhone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
   }
 
 
-  public CustomerResponse shippingContacts(CustomerResponseShippingContacts shippingContacts) {
+  public CustomerResponse shippingContacts(@javax.annotation.Nullable CustomerResponseShippingContacts shippingContacts) {
     this.shippingContacts = shippingContacts;
     return this;
   }
 
-   /**
+  /**
    * Get shippingContacts
    * @return shippingContacts
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -602,20 +622,20 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setShippingContacts(CustomerResponseShippingContacts shippingContacts) {
+  public void setShippingContacts(@javax.annotation.Nullable CustomerResponseShippingContacts shippingContacts) {
     this.shippingContacts = shippingContacts;
   }
 
 
-  public CustomerResponse subscription(SubscriptionResponse subscription) {
+  public CustomerResponse subscription(@javax.annotation.Nullable SubscriptionResponse subscription) {
     this.subscription = subscription;
     return this;
   }
 
-   /**
+  /**
    * Get subscription
    * @return subscription
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUBSCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -627,7 +647,7 @@ public class CustomerResponse {
 
   @JsonProperty(JSON_PROPERTY_SUBSCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubscription(SubscriptionResponse subscription) {
+  public void setSubscription(@javax.annotation.Nullable SubscriptionResponse subscription) {
     this.subscription = subscription;
   }
 

@@ -17,8 +17,8 @@ import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.PaymentMethodCardResponse;
+import com.conekta.model.PaymentMethodCashAgreements;
 import com.conekta.model.PaymentMethodCashResponse;
-import com.conekta.model.PaymentMethodCashResponseAllOfAgreements;
 import com.conekta.model.PaymentMethodSpeiRecurrent;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -61,7 +61,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.conekta.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 @JsonDeserialize(using = UpdateCustomerPaymentMethodsResponse.UpdateCustomerPaymentMethodsResponseDeserializer.class)
 @JsonSerialize(using = UpdateCustomerPaymentMethodsResponse.UpdateCustomerPaymentMethodsResponseSerializer.class)
 public class UpdateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema {
@@ -204,7 +204,7 @@ public class UpdateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<>();
+    public static final Map<String, GenericType<?>> schemas = new HashMap<>();
 
     public UpdateCustomerPaymentMethodsResponse() {
         super("oneOf", Boolean.FALSE);
@@ -248,7 +248,7 @@ public class UpdateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, GenericType<?>> getSchemas() {
         return UpdateCustomerPaymentMethodsResponse.schemas;
     }
 

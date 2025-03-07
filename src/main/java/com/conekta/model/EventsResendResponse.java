@@ -41,38 +41,44 @@ import com.conekta.JSON;
   EventsResendResponse.JSON_PROPERTY_URL
 })
 @JsonTypeName("events_resend_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class EventsResendResponse {
   public static final String JSON_PROPERTY_FAILED_ATTEMPTS = "failed_attempts";
+  @javax.annotation.Nullable
   private Integer failedAttempts;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_LAST_ATTEMPTED_AT = "last_attempted_at";
+  @javax.annotation.Nullable
   private Integer lastAttemptedAt;
 
   public static final String JSON_PROPERTY_LAST_HTTP_RESPONSE_STATUS = "last_http_response_status";
+  @javax.annotation.Nullable
   private Integer lastHttpResponseStatus;
 
   public static final String JSON_PROPERTY_RESPONSE_DATA = "response_data";
+  @javax.annotation.Nullable
   private Map<String, Object> responseData = new HashMap<>();
 
   public static final String JSON_PROPERTY_URL = "url";
+  @javax.annotation.Nullable
   private URI url;
 
   public EventsResendResponse() { 
   }
 
-  public EventsResendResponse failedAttempts(Integer failedAttempts) {
+  public EventsResendResponse failedAttempts(@javax.annotation.Nullable Integer failedAttempts) {
     this.failedAttempts = failedAttempts;
     return this;
   }
 
-   /**
+  /**
    * Get failedAttempts
    * @return failedAttempts
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAILED_ATTEMPTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -84,20 +90,20 @@ public class EventsResendResponse {
 
   @JsonProperty(JSON_PROPERTY_FAILED_ATTEMPTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFailedAttempts(Integer failedAttempts) {
+  public void setFailedAttempts(@javax.annotation.Nullable Integer failedAttempts) {
     this.failedAttempts = failedAttempts;
   }
 
 
-  public EventsResendResponse id(String id) {
+  public EventsResendResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -109,20 +115,20 @@ public class EventsResendResponse {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public EventsResendResponse lastAttemptedAt(Integer lastAttemptedAt) {
+  public EventsResendResponse lastAttemptedAt(@javax.annotation.Nullable Integer lastAttemptedAt) {
     this.lastAttemptedAt = lastAttemptedAt;
     return this;
   }
 
-   /**
+  /**
    * Get lastAttemptedAt
    * @return lastAttemptedAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST_ATTEMPTED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -134,20 +140,20 @@ public class EventsResendResponse {
 
   @JsonProperty(JSON_PROPERTY_LAST_ATTEMPTED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastAttemptedAt(Integer lastAttemptedAt) {
+  public void setLastAttemptedAt(@javax.annotation.Nullable Integer lastAttemptedAt) {
     this.lastAttemptedAt = lastAttemptedAt;
   }
 
 
-  public EventsResendResponse lastHttpResponseStatus(Integer lastHttpResponseStatus) {
+  public EventsResendResponse lastHttpResponseStatus(@javax.annotation.Nullable Integer lastHttpResponseStatus) {
     this.lastHttpResponseStatus = lastHttpResponseStatus;
     return this;
   }
 
-   /**
+  /**
    * Get lastHttpResponseStatus
    * @return lastHttpResponseStatus
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST_HTTP_RESPONSE_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -159,12 +165,12 @@ public class EventsResendResponse {
 
   @JsonProperty(JSON_PROPERTY_LAST_HTTP_RESPONSE_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastHttpResponseStatus(Integer lastHttpResponseStatus) {
+  public void setLastHttpResponseStatus(@javax.annotation.Nullable Integer lastHttpResponseStatus) {
     this.lastHttpResponseStatus = lastHttpResponseStatus;
   }
 
 
-  public EventsResendResponse responseData(Map<String, Object> responseData) {
+  public EventsResendResponse responseData(@javax.annotation.Nullable Map<String, Object> responseData) {
     this.responseData = responseData;
     return this;
   }
@@ -177,10 +183,10 @@ public class EventsResendResponse {
     return this;
   }
 
-   /**
+  /**
    * Get responseData
    * @return responseData
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RESPONSE_DATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
@@ -192,20 +198,20 @@ public class EventsResendResponse {
 
   @JsonProperty(JSON_PROPERTY_RESPONSE_DATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setResponseData(Map<String, Object> responseData) {
+  public void setResponseData(@javax.annotation.Nullable Map<String, Object> responseData) {
     this.responseData = responseData;
   }
 
 
-  public EventsResendResponse url(URI url) {
+  public EventsResendResponse url(@javax.annotation.Nullable URI url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * Get url
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -217,7 +223,7 @@ public class EventsResendResponse {
 
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUrl(URI url) {
+  public void setUrl(@javax.annotation.Nullable URI url) {
     this.url = url;
   }
 

@@ -40,35 +40,40 @@ import com.conekta.JSON;
   GetWebhooksResponse.JSON_PROPERTY_DATA
 })
 @JsonTypeName("get_webhooks_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class GetWebhooksResponse {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
+  @javax.annotation.Nonnull
   private Boolean hasMore;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_NEXT_PAGE_URL = "next_page_url";
+  @javax.annotation.Nullable
   private String nextPageUrl;
 
   public static final String JSON_PROPERTY_PREVIOUS_PAGE_URL = "previous_page_url";
+  @javax.annotation.Nullable
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
+  @javax.annotation.Nullable
   private List<WebhookResponse> data = new ArrayList<>();
 
   public GetWebhooksResponse() { 
   }
 
-  public GetWebhooksResponse hasMore(Boolean hasMore) {
+  public GetWebhooksResponse hasMore(@javax.annotation.Nonnull Boolean hasMore) {
     this.hasMore = hasMore;
     return this;
   }
 
-   /**
+  /**
    * Indicates if there are more pages to be requested
    * @return hasMore
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_HAS_MORE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -80,20 +85,20 @@ public class GetWebhooksResponse {
 
   @JsonProperty(JSON_PROPERTY_HAS_MORE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setHasMore(Boolean hasMore) {
+  public void setHasMore(@javax.annotation.Nonnull Boolean hasMore) {
     this.hasMore = hasMore;
   }
 
 
-  public GetWebhooksResponse _object(String _object) {
+  public GetWebhooksResponse _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Object type, in this case is list
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -105,20 +110,20 @@ public class GetWebhooksResponse {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public GetWebhooksResponse nextPageUrl(String nextPageUrl) {
+  public GetWebhooksResponse nextPageUrl(@javax.annotation.Nullable String nextPageUrl) {
     this.nextPageUrl = nextPageUrl;
     return this;
   }
 
-   /**
+  /**
    * URL of the next page.
    * @return nextPageUrl
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NEXT_PAGE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -130,20 +135,20 @@ public class GetWebhooksResponse {
 
   @JsonProperty(JSON_PROPERTY_NEXT_PAGE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNextPageUrl(String nextPageUrl) {
+  public void setNextPageUrl(@javax.annotation.Nullable String nextPageUrl) {
     this.nextPageUrl = nextPageUrl;
   }
 
 
-  public GetWebhooksResponse previousPageUrl(String previousPageUrl) {
+  public GetWebhooksResponse previousPageUrl(@javax.annotation.Nullable String previousPageUrl) {
     this.previousPageUrl = previousPageUrl;
     return this;
   }
 
-   /**
+  /**
    * Url of the previous page.
    * @return previousPageUrl
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PREVIOUS_PAGE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -155,12 +160,12 @@ public class GetWebhooksResponse {
 
   @JsonProperty(JSON_PROPERTY_PREVIOUS_PAGE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPreviousPageUrl(String previousPageUrl) {
+  public void setPreviousPageUrl(@javax.annotation.Nullable String previousPageUrl) {
     this.previousPageUrl = previousPageUrl;
   }
 
 
-  public GetWebhooksResponse data(List<WebhookResponse> data) {
+  public GetWebhooksResponse data(@javax.annotation.Nullable List<WebhookResponse> data) {
     this.data = data;
     return this;
   }
@@ -173,10 +178,10 @@ public class GetWebhooksResponse {
     return this;
   }
 
-   /**
+  /**
    * Get data
    * @return data
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -188,7 +193,7 @@ public class GetWebhooksResponse {
 
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setData(List<WebhookResponse> data) {
+  public void setData(@javax.annotation.Nullable List<WebhookResponse> data) {
     this.data = data;
   }
 

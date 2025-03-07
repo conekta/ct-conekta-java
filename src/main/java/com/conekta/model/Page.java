@@ -34,26 +34,28 @@ import com.conekta.JSON;
   Page.JSON_PROPERTY_PREVIOUS_PAGE_URL
 })
 @JsonTypeName("page")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Page {
   public static final String JSON_PROPERTY_NEXT_PAGE_URL = "next_page_url";
+  @javax.annotation.Nullable
   private String nextPageUrl;
 
   public static final String JSON_PROPERTY_PREVIOUS_PAGE_URL = "previous_page_url";
+  @javax.annotation.Nullable
   private String previousPageUrl;
 
   public Page() { 
   }
 
-  public Page nextPageUrl(String nextPageUrl) {
+  public Page nextPageUrl(@javax.annotation.Nullable String nextPageUrl) {
     this.nextPageUrl = nextPageUrl;
     return this;
   }
 
-   /**
+  /**
    * URL of the next page.
    * @return nextPageUrl
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NEXT_PAGE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -65,20 +67,20 @@ public class Page {
 
   @JsonProperty(JSON_PROPERTY_NEXT_PAGE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNextPageUrl(String nextPageUrl) {
+  public void setNextPageUrl(@javax.annotation.Nullable String nextPageUrl) {
     this.nextPageUrl = nextPageUrl;
   }
 
 
-  public Page previousPageUrl(String previousPageUrl) {
+  public Page previousPageUrl(@javax.annotation.Nullable String previousPageUrl) {
     this.previousPageUrl = previousPageUrl;
     return this;
   }
 
-   /**
+  /**
    * Url of the previous page.
    * @return previousPageUrl
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PREVIOUS_PAGE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -90,7 +92,7 @@ public class Page {
 
   @JsonProperty(JSON_PROPERTY_PREVIOUS_PAGE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPreviousPageUrl(String previousPageUrl) {
+  public void setPreviousPageUrl(@javax.annotation.Nullable String previousPageUrl) {
     this.previousPageUrl = previousPageUrl;
   }
 

@@ -40,13 +40,13 @@ import com.conekta.JSON;
   CompanyFiscalInfoResponse.JSON_PROPERTY_ADDRESS
 })
 @JsonTypeName("company_fiscal_info_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CompanyFiscalInfoResponse {
   /**
    * The resource&#39;s type
    */
   public enum ObjectEnum {
-    FISCAL_INFO("fiscal_info");
+    FISCAL_INFO(String.valueOf("fiscal_info"));
 
     private String value;
 
@@ -76,38 +76,45 @@ public class CompanyFiscalInfoResponse {
   }
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private ObjectEnum _object;
 
   public static final String JSON_PROPERTY_TAX_ID = "tax_id";
+  @javax.annotation.Nullable
   private String taxId;
 
   public static final String JSON_PROPERTY_LEGAL_ENTITY_NAME = "legal_entity_name";
+  @javax.annotation.Nullable
   private String legalEntityName;
 
   public static final String JSON_PROPERTY_BUSINESS_TYPE = "business_type";
+  @javax.annotation.Nullable
   private String businessType;
 
   public static final String JSON_PROPERTY_PHONE = "phone";
+  @javax.annotation.Nullable
   private String phone;
 
   public static final String JSON_PROPERTY_PHYSICAL_PERSON_BUSINESS_TYPE = "physical_person_business_type";
+  @javax.annotation.Nullable
   private String physicalPersonBusinessType;
 
   public static final String JSON_PROPERTY_ADDRESS = "address";
+  @javax.annotation.Nullable
   private CompanyFiscalInfoAddressResponse address;
 
   public CompanyFiscalInfoResponse() { 
   }
 
-  public CompanyFiscalInfoResponse _object(ObjectEnum _object) {
+  public CompanyFiscalInfoResponse _object(@javax.annotation.Nullable ObjectEnum _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * The resource&#39;s type
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -119,20 +126,20 @@ public class CompanyFiscalInfoResponse {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(ObjectEnum _object) {
+  public void setObject(@javax.annotation.Nullable ObjectEnum _object) {
     this._object = _object;
   }
 
 
-  public CompanyFiscalInfoResponse taxId(String taxId) {
+  public CompanyFiscalInfoResponse taxId(@javax.annotation.Nullable String taxId) {
     this.taxId = taxId;
     return this;
   }
 
-   /**
+  /**
    * Tax ID of the company
    * @return taxId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAX_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -144,20 +151,20 @@ public class CompanyFiscalInfoResponse {
 
   @JsonProperty(JSON_PROPERTY_TAX_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTaxId(String taxId) {
+  public void setTaxId(@javax.annotation.Nullable String taxId) {
     this.taxId = taxId;
   }
 
 
-  public CompanyFiscalInfoResponse legalEntityName(String legalEntityName) {
+  public CompanyFiscalInfoResponse legalEntityName(@javax.annotation.Nullable String legalEntityName) {
     this.legalEntityName = legalEntityName;
     return this;
   }
 
-   /**
+  /**
    * Legal name of the company
    * @return legalEntityName
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LEGAL_ENTITY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -169,20 +176,20 @@ public class CompanyFiscalInfoResponse {
 
   @JsonProperty(JSON_PROPERTY_LEGAL_ENTITY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLegalEntityName(String legalEntityName) {
+  public void setLegalEntityName(@javax.annotation.Nullable String legalEntityName) {
     this.legalEntityName = legalEntityName;
   }
 
 
-  public CompanyFiscalInfoResponse businessType(String businessType) {
+  public CompanyFiscalInfoResponse businessType(@javax.annotation.Nullable String businessType) {
     this.businessType = businessType;
     return this;
   }
 
-   /**
+  /**
    * Business type of the company
    * @return businessType
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BUSINESS_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -194,20 +201,20 @@ public class CompanyFiscalInfoResponse {
 
   @JsonProperty(JSON_PROPERTY_BUSINESS_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBusinessType(String businessType) {
+  public void setBusinessType(@javax.annotation.Nullable String businessType) {
     this.businessType = businessType;
   }
 
 
-  public CompanyFiscalInfoResponse phone(String phone) {
+  public CompanyFiscalInfoResponse phone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
     return this;
   }
 
-   /**
+  /**
    * Phone number of the company
    * @return phone
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -219,20 +226,20 @@ public class CompanyFiscalInfoResponse {
 
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPhone(String phone) {
+  public void setPhone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
   }
 
 
-  public CompanyFiscalInfoResponse physicalPersonBusinessType(String physicalPersonBusinessType) {
+  public CompanyFiscalInfoResponse physicalPersonBusinessType(@javax.annotation.Nullable String physicalPersonBusinessType) {
     this.physicalPersonBusinessType = physicalPersonBusinessType;
     return this;
   }
 
-   /**
+  /**
    * Business type if &#39;persona_fisica&#39;
    * @return physicalPersonBusinessType
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHYSICAL_PERSON_BUSINESS_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -244,20 +251,20 @@ public class CompanyFiscalInfoResponse {
 
   @JsonProperty(JSON_PROPERTY_PHYSICAL_PERSON_BUSINESS_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPhysicalPersonBusinessType(String physicalPersonBusinessType) {
+  public void setPhysicalPersonBusinessType(@javax.annotation.Nullable String physicalPersonBusinessType) {
     this.physicalPersonBusinessType = physicalPersonBusinessType;
   }
 
 
-  public CompanyFiscalInfoResponse address(CompanyFiscalInfoAddressResponse address) {
+  public CompanyFiscalInfoResponse address(@javax.annotation.Nullable CompanyFiscalInfoAddressResponse address) {
     this.address = address;
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -269,7 +276,7 @@ public class CompanyFiscalInfoResponse {
 
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAddress(CompanyFiscalInfoAddressResponse address) {
+  public void setAddress(@javax.annotation.Nullable CompanyFiscalInfoAddressResponse address) {
     this.address = address;
   }
 

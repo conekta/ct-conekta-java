@@ -35,30 +35,33 @@ import com.conekta.JSON;
   UpdateOrderDiscountLinesRequest.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("update_order_discount_lines_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class UpdateOrderDiscountLinesRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nullable
   private Long amount;
 
   public static final String JSON_PROPERTY_CODE = "code";
+  @javax.annotation.Nullable
   private String code;
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private String type;
 
   public UpdateOrderDiscountLinesRequest() { 
   }
 
-  public UpdateOrderDiscountLinesRequest amount(Long amount) {
+  public UpdateOrderDiscountLinesRequest amount(@javax.annotation.Nullable Long amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * Get amount
    * minimum: 0
    * @return amount
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -70,20 +73,20 @@ public class UpdateOrderDiscountLinesRequest {
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAmount(Long amount) {
+  public void setAmount(@javax.annotation.Nullable Long amount) {
     this.amount = amount;
   }
 
 
-  public UpdateOrderDiscountLinesRequest code(String code) {
+  public UpdateOrderDiscountLinesRequest code(@javax.annotation.Nullable String code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * Discount code.
    * @return code
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -95,20 +98,20 @@ public class UpdateOrderDiscountLinesRequest {
 
   @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCode(String code) {
+  public void setCode(@javax.annotation.Nullable String code) {
     this.code = code;
   }
 
 
-  public UpdateOrderDiscountLinesRequest type(String type) {
+  public UpdateOrderDiscountLinesRequest type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -120,7 +123,7 @@ public class UpdateOrderDiscountLinesRequest {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 

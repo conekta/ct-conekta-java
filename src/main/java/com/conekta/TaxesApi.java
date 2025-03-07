@@ -19,7 +19,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class TaxesApi {
   private ApiClient apiClient;
 
@@ -59,7 +59,8 @@ public class TaxesApi {
    * @return UpdateOrderTaxResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -81,7 +82,8 @@ public class TaxesApi {
    * @return ApiResponse&lt;UpdateOrderTaxResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -100,7 +102,7 @@ public class TaxesApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/tax_lines"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -129,7 +131,8 @@ public class TaxesApi {
    * @return UpdateOrderTaxResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -152,7 +155,8 @@ public class TaxesApi {
    * @return ApiResponse&lt;UpdateOrderTaxResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -172,8 +176,8 @@ public class TaxesApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/tax_lines/{tax_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{tax_id}", apiClient.escapeString(taxId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{tax_id}", apiClient.escapeString(taxId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -203,7 +207,8 @@ public class TaxesApi {
    * @return UpdateOrderTaxResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -227,7 +232,8 @@ public class TaxesApi {
    * @return ApiResponse&lt;UpdateOrderTaxResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -250,8 +256,8 @@ public class TaxesApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/tax_lines/{tax_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{tax_id}", apiClient.escapeString(taxId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{tax_id}", apiClient.escapeString(taxId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

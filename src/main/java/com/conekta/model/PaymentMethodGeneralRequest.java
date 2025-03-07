@@ -40,44 +40,52 @@ import com.conekta.JSON;
   PaymentMethodGeneralRequest.JSON_PROPERTY_CUSTOMER_IP_ADDRESS
 })
 @JsonTypeName("payment_method_general_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PaymentMethodGeneralRequest {
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nullable
   private Long expiresAt;
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS = "monthly_installments";
+  @javax.annotation.Nullable
   private Integer monthlyInstallments;
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nonnull
   private String type;
 
   public static final String JSON_PROPERTY_TOKEN_ID = "token_id";
+  @javax.annotation.Nullable
   private String tokenId;
 
   public static final String JSON_PROPERTY_PAYMENT_SOURCE_ID = "payment_source_id";
+  @javax.annotation.Nullable
   private String paymentSourceId;
 
   public static final String JSON_PROPERTY_CVC = "cvc";
+  @javax.annotation.Nullable
   private String cvc;
 
   public static final String JSON_PROPERTY_CONTRACT_ID = "contract_id";
+  @javax.annotation.Nullable
   private String contractId;
 
   public static final String JSON_PROPERTY_CUSTOMER_IP_ADDRESS = "customer_ip_address";
+  @javax.annotation.Nullable
   private String customerIpAddress;
 
   public PaymentMethodGeneralRequest() { 
   }
 
-  public PaymentMethodGeneralRequest expiresAt(Long expiresAt) {
+  public PaymentMethodGeneralRequest expiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
-   /**
+  /**
    * Method expiration date as unix timestamp
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -89,20 +97,20 @@ public class PaymentMethodGeneralRequest {
 
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(Long expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public PaymentMethodGeneralRequest monthlyInstallments(Integer monthlyInstallments) {
+  public PaymentMethodGeneralRequest monthlyInstallments(@javax.annotation.Nullable Integer monthlyInstallments) {
     this.monthlyInstallments = monthlyInstallments;
     return this;
   }
 
-   /**
+  /**
    * How many months without interest to apply, it can be 3, 6, 9, 12 or 18
    * @return monthlyInstallments
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -114,20 +122,20 @@ public class PaymentMethodGeneralRequest {
 
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMonthlyInstallments(Integer monthlyInstallments) {
+  public void setMonthlyInstallments(@javax.annotation.Nullable Integer monthlyInstallments) {
     this.monthlyInstallments = monthlyInstallments;
   }
 
 
-  public PaymentMethodGeneralRequest type(String type) {
+  public PaymentMethodGeneralRequest type(@javax.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Type of payment method
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -139,20 +147,20 @@ public class PaymentMethodGeneralRequest {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
   }
 
 
-  public PaymentMethodGeneralRequest tokenId(String tokenId) {
+  public PaymentMethodGeneralRequest tokenId(@javax.annotation.Nullable String tokenId) {
     this.tokenId = tokenId;
     return this;
   }
 
-   /**
+  /**
    * Get tokenId
    * @return tokenId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TOKEN_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -164,20 +172,20 @@ public class PaymentMethodGeneralRequest {
 
   @JsonProperty(JSON_PROPERTY_TOKEN_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTokenId(String tokenId) {
+  public void setTokenId(@javax.annotation.Nullable String tokenId) {
     this.tokenId = tokenId;
   }
 
 
-  public PaymentMethodGeneralRequest paymentSourceId(String paymentSourceId) {
+  public PaymentMethodGeneralRequest paymentSourceId(@javax.annotation.Nullable String paymentSourceId) {
     this.paymentSourceId = paymentSourceId;
     return this;
   }
 
-   /**
+  /**
    * Get paymentSourceId
    * @return paymentSourceId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENT_SOURCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -189,20 +197,20 @@ public class PaymentMethodGeneralRequest {
 
   @JsonProperty(JSON_PROPERTY_PAYMENT_SOURCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPaymentSourceId(String paymentSourceId) {
+  public void setPaymentSourceId(@javax.annotation.Nullable String paymentSourceId) {
     this.paymentSourceId = paymentSourceId;
   }
 
 
-  public PaymentMethodGeneralRequest cvc(String cvc) {
+  public PaymentMethodGeneralRequest cvc(@javax.annotation.Nullable String cvc) {
     this.cvc = cvc;
     return this;
   }
 
-   /**
+  /**
    * Optional, It is a value that allows identifying the security code of the card. Only for PCI merchants
    * @return cvc
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CVC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -214,20 +222,20 @@ public class PaymentMethodGeneralRequest {
 
   @JsonProperty(JSON_PROPERTY_CVC)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCvc(String cvc) {
+  public void setCvc(@javax.annotation.Nullable String cvc) {
     this.cvc = cvc;
   }
 
 
-  public PaymentMethodGeneralRequest contractId(String contractId) {
+  public PaymentMethodGeneralRequest contractId(@javax.annotation.Nullable String contractId) {
     this.contractId = contractId;
     return this;
   }
 
-   /**
+  /**
    * Optional id sent to indicate the bank contract for recurrent card charges.
    * @return contractId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -239,20 +247,20 @@ public class PaymentMethodGeneralRequest {
 
   @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContractId(String contractId) {
+  public void setContractId(@javax.annotation.Nullable String contractId) {
     this.contractId = contractId;
   }
 
 
-  public PaymentMethodGeneralRequest customerIpAddress(String customerIpAddress) {
+  public PaymentMethodGeneralRequest customerIpAddress(@javax.annotation.Nullable String customerIpAddress) {
     this.customerIpAddress = customerIpAddress;
     return this;
   }
 
-   /**
+  /**
    * Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes
    * @return customerIpAddress
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -264,7 +272,7 @@ public class PaymentMethodGeneralRequest {
 
   @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomerIpAddress(String customerIpAddress) {
+  public void setCustomerIpAddress(@javax.annotation.Nullable String customerIpAddress) {
     this.customerIpAddress = customerIpAddress;
   }
 

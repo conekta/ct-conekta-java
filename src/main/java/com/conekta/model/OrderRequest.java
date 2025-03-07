@@ -62,60 +62,76 @@ import com.conekta.JSON;
   OrderRequest.JSON_PROPERTY_THREE_DS_MODE
 })
 @JsonTypeName("order_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class OrderRequest {
   public static final String JSON_PROPERTY_CHARGES = "charges";
+  @javax.annotation.Nullable
   private List<ChargeRequest> charges = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CHECKOUT = "checkout";
+  @javax.annotation.Nullable
   private CheckoutRequest checkout;
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
+  @javax.annotation.Nonnull
   private String currency;
 
   public static final String JSON_PROPERTY_CUSTOMER_INFO = "customer_info";
+  @javax.annotation.Nonnull
   private OrderRequestCustomerInfo customerInfo;
 
   public static final String JSON_PROPERTY_DISCOUNT_LINES = "discount_lines";
+  @javax.annotation.Nullable
   private List<OrderDiscountLinesRequest> discountLines = new ArrayList<>();
 
   public static final String JSON_PROPERTY_FISCAL_ENTITY = "fiscal_entity";
+  @javax.annotation.Nullable
   private OrderFiscalEntityRequest fiscalEntity;
 
   public static final String JSON_PROPERTY_LINE_ITEMS = "line_items";
+  @javax.annotation.Nonnull
   private List<Product> lineItems = new ArrayList<>();
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_NEEDS_SHIPPING_CONTACT = "needs_shipping_contact";
+  @javax.annotation.Nullable
   private Boolean needsShippingContact;
 
   public static final String JSON_PROPERTY_PRE_AUTHORIZE = "pre_authorize";
+  @javax.annotation.Nullable
   private Boolean preAuthorize = false;
 
   public static final String JSON_PROPERTY_PROCESSING_MODE = "processing_mode";
+  @javax.annotation.Nullable
   private String processingMode;
 
   public static final String JSON_PROPERTY_RETURN_URL = "return_url";
+  @javax.annotation.Nullable
   private URI returnUrl;
 
   public static final String JSON_PROPERTY_SHIPPING_CONTACT = "shipping_contact";
+  @javax.annotation.Nullable
   private CustomerShippingContacts shippingContact;
 
   public static final String JSON_PROPERTY_SHIPPING_LINES = "shipping_lines";
+  @javax.annotation.Nullable
   private List<ShippingRequest> shippingLines = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TAX_LINES = "tax_lines";
+  @javax.annotation.Nullable
   private List<OrderTaxRequest> taxLines = new ArrayList<>();
 
   public static final String JSON_PROPERTY_THREE_DS_MODE = "three_ds_mode";
+  @javax.annotation.Nullable
   private String threeDsMode;
 
   public OrderRequest() { 
   }
 
-  public OrderRequest charges(List<ChargeRequest> charges) {
+  public OrderRequest charges(@javax.annotation.Nullable List<ChargeRequest> charges) {
     this.charges = charges;
     return this;
   }
@@ -128,10 +144,10 @@ public class OrderRequest {
     return this;
   }
 
-   /**
+  /**
    * List of [charges](https://developers.conekta.com/v2.1.0/reference/orderscreatecharge) that are applied to the order
    * @return charges
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHARGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -143,20 +159,20 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_CHARGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCharges(List<ChargeRequest> charges) {
+  public void setCharges(@javax.annotation.Nullable List<ChargeRequest> charges) {
     this.charges = charges;
   }
 
 
-  public OrderRequest checkout(CheckoutRequest checkout) {
+  public OrderRequest checkout(@javax.annotation.Nullable CheckoutRequest checkout) {
     this.checkout = checkout;
     return this;
   }
 
-   /**
+  /**
    * Get checkout
    * @return checkout
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHECKOUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -168,20 +184,20 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_CHECKOUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCheckout(CheckoutRequest checkout) {
+  public void setCheckout(@javax.annotation.Nullable CheckoutRequest checkout) {
     this.checkout = checkout;
   }
 
 
-  public OrderRequest currency(String currency) {
+  public OrderRequest currency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * Currency with which the payment will be made. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)
    * @return currency
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -193,20 +209,20 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCurrency(String currency) {
+  public void setCurrency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
   }
 
 
-  public OrderRequest customerInfo(OrderRequestCustomerInfo customerInfo) {
+  public OrderRequest customerInfo(@javax.annotation.Nonnull OrderRequestCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
     return this;
   }
 
-   /**
+  /**
    * Get customerInfo
    * @return customerInfo
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -218,12 +234,12 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCustomerInfo(OrderRequestCustomerInfo customerInfo) {
+  public void setCustomerInfo(@javax.annotation.Nonnull OrderRequestCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
   }
 
 
-  public OrderRequest discountLines(List<OrderDiscountLinesRequest> discountLines) {
+  public OrderRequest discountLines(@javax.annotation.Nullable List<OrderDiscountLinesRequest> discountLines) {
     this.discountLines = discountLines;
     return this;
   }
@@ -236,10 +252,10 @@ public class OrderRequest {
     return this;
   }
 
-   /**
+  /**
    * List of [discounts](https://developers.conekta.com/v2.1.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount.
    * @return discountLines
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -251,20 +267,20 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDiscountLines(List<OrderDiscountLinesRequest> discountLines) {
+  public void setDiscountLines(@javax.annotation.Nullable List<OrderDiscountLinesRequest> discountLines) {
     this.discountLines = discountLines;
   }
 
 
-  public OrderRequest fiscalEntity(OrderFiscalEntityRequest fiscalEntity) {
+  public OrderRequest fiscalEntity(@javax.annotation.Nullable OrderFiscalEntityRequest fiscalEntity) {
     this.fiscalEntity = fiscalEntity;
     return this;
   }
 
-   /**
+  /**
    * Get fiscalEntity
    * @return fiscalEntity
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -276,12 +292,12 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiscalEntity(OrderFiscalEntityRequest fiscalEntity) {
+  public void setFiscalEntity(@javax.annotation.Nullable OrderFiscalEntityRequest fiscalEntity) {
     this.fiscalEntity = fiscalEntity;
   }
 
 
-  public OrderRequest lineItems(List<Product> lineItems) {
+  public OrderRequest lineItems(@javax.annotation.Nonnull List<Product> lineItems) {
     this.lineItems = lineItems;
     return this;
   }
@@ -294,10 +310,10 @@ public class OrderRequest {
     return this;
   }
 
-   /**
+  /**
    * List of [products](https://developers.conekta.com/v2.1.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product.
    * @return lineItems
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LINE_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -309,12 +325,12 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_LINE_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLineItems(List<Product> lineItems) {
+  public void setLineItems(@javax.annotation.Nonnull List<Product> lineItems) {
     this.lineItems = lineItems;
   }
 
 
-  public OrderRequest metadata(Map<String, Object> metadata) {
+  public OrderRequest metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -327,10 +343,10 @@ public class OrderRequest {
     return this;
   }
 
-   /**
+  /**
    * Metadata associated with the order
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
@@ -342,20 +358,20 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 
 
-  public OrderRequest needsShippingContact(Boolean needsShippingContact) {
+  public OrderRequest needsShippingContact(@javax.annotation.Nullable Boolean needsShippingContact) {
     this.needsShippingContact = needsShippingContact;
     return this;
   }
 
-   /**
+  /**
    * Allows you to fill out the shipping information at checkout
    * @return needsShippingContact
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NEEDS_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -367,20 +383,20 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_NEEDS_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNeedsShippingContact(Boolean needsShippingContact) {
+  public void setNeedsShippingContact(@javax.annotation.Nullable Boolean needsShippingContact) {
     this.needsShippingContact = needsShippingContact;
   }
 
 
-  public OrderRequest preAuthorize(Boolean preAuthorize) {
+  public OrderRequest preAuthorize(@javax.annotation.Nullable Boolean preAuthorize) {
     this.preAuthorize = preAuthorize;
     return this;
   }
 
-   /**
+  /**
    * Indicates whether the order charges must be preauthorized
    * @return preAuthorize
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PRE_AUTHORIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -392,20 +408,20 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_PRE_AUTHORIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPreAuthorize(Boolean preAuthorize) {
+  public void setPreAuthorize(@javax.annotation.Nullable Boolean preAuthorize) {
     this.preAuthorize = preAuthorize;
   }
 
 
-  public OrderRequest processingMode(String processingMode) {
+  public OrderRequest processingMode(@javax.annotation.Nullable String processingMode) {
     this.processingMode = processingMode;
     return this;
   }
 
-   /**
+  /**
    * Indicates the processing mode for the order, either ecommerce, recurrent or validation.
    * @return processingMode
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PROCESSING_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -417,20 +433,20 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_PROCESSING_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProcessingMode(String processingMode) {
+  public void setProcessingMode(@javax.annotation.Nullable String processingMode) {
     this.processingMode = processingMode;
   }
 
 
-  public OrderRequest returnUrl(URI returnUrl) {
+  public OrderRequest returnUrl(@javax.annotation.Nullable URI returnUrl) {
     this.returnUrl = returnUrl;
     return this;
   }
 
-   /**
+  /**
    * Indicates the redirection callback upon completion of the 3DS2 flow. Do not use this parameter if your order has a checkout parameter
    * @return returnUrl
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RETURN_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -442,20 +458,20 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_RETURN_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReturnUrl(URI returnUrl) {
+  public void setReturnUrl(@javax.annotation.Nullable URI returnUrl) {
     this.returnUrl = returnUrl;
   }
 
 
-  public OrderRequest shippingContact(CustomerShippingContacts shippingContact) {
+  public OrderRequest shippingContact(@javax.annotation.Nullable CustomerShippingContacts shippingContact) {
     this.shippingContact = shippingContact;
     return this;
   }
 
-   /**
+  /**
    * Get shippingContact
    * @return shippingContact
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -467,12 +483,12 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setShippingContact(CustomerShippingContacts shippingContact) {
+  public void setShippingContact(@javax.annotation.Nullable CustomerShippingContacts shippingContact) {
     this.shippingContact = shippingContact;
   }
 
 
-  public OrderRequest shippingLines(List<ShippingRequest> shippingLines) {
+  public OrderRequest shippingLines(@javax.annotation.Nullable List<ShippingRequest> shippingLines) {
     this.shippingLines = shippingLines;
     return this;
   }
@@ -485,10 +501,10 @@ public class OrderRequest {
     return this;
   }
 
-   /**
+  /**
    * List of [shipping costs](https://developers.conekta.com/v2.1.0/reference/orderscreateshipping). If the online store offers digital products.
    * @return shippingLines
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHIPPING_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -500,12 +516,12 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_SHIPPING_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setShippingLines(List<ShippingRequest> shippingLines) {
+  public void setShippingLines(@javax.annotation.Nullable List<ShippingRequest> shippingLines) {
     this.shippingLines = shippingLines;
   }
 
 
-  public OrderRequest taxLines(List<OrderTaxRequest> taxLines) {
+  public OrderRequest taxLines(@javax.annotation.Nullable List<OrderTaxRequest> taxLines) {
     this.taxLines = taxLines;
     return this;
   }
@@ -518,10 +534,10 @@ public class OrderRequest {
     return this;
   }
 
-   /**
+  /**
    * List of [taxes](https://developers.conekta.com/v2.1.0/reference/orderscreatetaxes) that are applied to the order.
    * @return taxLines
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAX_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -533,20 +549,20 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_TAX_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTaxLines(List<OrderTaxRequest> taxLines) {
+  public void setTaxLines(@javax.annotation.Nullable List<OrderTaxRequest> taxLines) {
     this.taxLines = taxLines;
   }
 
 
-  public OrderRequest threeDsMode(String threeDsMode) {
+  public OrderRequest threeDsMode(@javax.annotation.Nullable String threeDsMode) {
     this.threeDsMode = threeDsMode;
     return this;
   }
 
-   /**
+  /**
    * Indicates the 3DS2 mode for the order, either smart or strict.
    * @return threeDsMode
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THREE_DS_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -558,7 +574,7 @@ public class OrderRequest {
 
   @JsonProperty(JSON_PROPERTY_THREE_DS_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setThreeDsMode(String threeDsMode) {
+  public void setThreeDsMode(@javax.annotation.Nullable String threeDsMode) {
     this.threeDsMode = threeDsMode;
   }
 

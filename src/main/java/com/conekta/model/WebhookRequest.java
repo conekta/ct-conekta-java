@@ -34,26 +34,28 @@ import com.conekta.JSON;
   WebhookRequest.JSON_PROPERTY_SYNCHRONOUS
 })
 @JsonTypeName("webhook_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class WebhookRequest {
   public static final String JSON_PROPERTY_URL = "url";
+  @javax.annotation.Nonnull
   private String url;
 
   public static final String JSON_PROPERTY_SYNCHRONOUS = "synchronous";
+  @javax.annotation.Nonnull
   private Boolean synchronous = false;
 
   public WebhookRequest() { 
   }
 
-  public WebhookRequest url(String url) {
+  public WebhookRequest url(@javax.annotation.Nonnull String url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * Here you must place the URL of your Webhook remember that you must program what you will do with the events received. Also do not forget to handle the HTTPS protocol for greater security.
    * @return url
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -65,20 +67,20 @@ public class WebhookRequest {
 
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nonnull String url) {
     this.url = url;
   }
 
 
-  public WebhookRequest synchronous(Boolean synchronous) {
+  public WebhookRequest synchronous(@javax.annotation.Nonnull Boolean synchronous) {
     this.synchronous = synchronous;
     return this;
   }
 
-   /**
+  /**
    * It is a value that allows to decide if the events will be synchronous or asynchronous. We recommend asynchronous &#x3D; false
    * @return synchronous
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_SYNCHRONOUS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -90,7 +92,7 @@ public class WebhookRequest {
 
   @JsonProperty(JSON_PROPERTY_SYNCHRONOUS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSynchronous(Boolean synchronous) {
+  public void setSynchronous(@javax.annotation.Nonnull Boolean synchronous) {
     this.synchronous = synchronous;
   }
 

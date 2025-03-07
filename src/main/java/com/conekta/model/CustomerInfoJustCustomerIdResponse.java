@@ -33,23 +33,24 @@ import com.conekta.JSON;
   CustomerInfoJustCustomerIdResponse.JSON_PROPERTY_CUSTOMER_ID
 })
 @JsonTypeName("customer_info_just_customer_id_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CustomerInfoJustCustomerIdResponse {
   public static final String JSON_PROPERTY_CUSTOMER_ID = "customer_id";
+  @javax.annotation.Nullable
   private String customerId;
 
   public CustomerInfoJustCustomerIdResponse() { 
   }
 
-  public CustomerInfoJustCustomerIdResponse customerId(String customerId) {
+  public CustomerInfoJustCustomerIdResponse customerId(@javax.annotation.Nullable String customerId) {
     this.customerId = customerId;
     return this;
   }
 
-   /**
+  /**
    * Get customerId
    * @return customerId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -61,7 +62,7 @@ public class CustomerInfoJustCustomerIdResponse {
 
   @JsonProperty(JSON_PROPERTY_CUSTOMER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomerId(String customerId) {
+  public void setCustomerId(@javax.annotation.Nullable String customerId) {
     this.customerId = customerId;
   }
 

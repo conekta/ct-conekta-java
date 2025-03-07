@@ -38,38 +38,44 @@ import com.conekta.JSON;
   TokenCard.JSON_PROPERTY_NUMBER
 })
 @JsonTypeName("token_card")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class TokenCard {
   public static final String JSON_PROPERTY_CVC = "cvc";
+  @javax.annotation.Nonnull
   private String cvc;
 
   public static final String JSON_PROPERTY_DEVICE_FINGERPRINT = "device_fingerprint";
+  @javax.annotation.Nullable
   private String deviceFingerprint;
 
   public static final String JSON_PROPERTY_EXP_MONTH = "exp_month";
+  @javax.annotation.Nonnull
   private String expMonth;
 
   public static final String JSON_PROPERTY_EXP_YEAR = "exp_year";
+  @javax.annotation.Nonnull
   private String expYear;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String JSON_PROPERTY_NUMBER = "number";
+  @javax.annotation.Nonnull
   private String number;
 
   public TokenCard() { 
   }
 
-  public TokenCard cvc(String cvc) {
+  public TokenCard cvc(@javax.annotation.Nonnull String cvc) {
     this.cvc = cvc;
     return this;
   }
 
-   /**
+  /**
    * It is a value that allows identifying the security code of the card.
    * @return cvc
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CVC)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -81,20 +87,20 @@ public class TokenCard {
 
   @JsonProperty(JSON_PROPERTY_CVC)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCvc(String cvc) {
+  public void setCvc(@javax.annotation.Nonnull String cvc) {
     this.cvc = cvc;
   }
 
 
-  public TokenCard deviceFingerprint(String deviceFingerprint) {
+  public TokenCard deviceFingerprint(@javax.annotation.Nullable String deviceFingerprint) {
     this.deviceFingerprint = deviceFingerprint;
     return this;
   }
 
-   /**
+  /**
    * It is a value that allows identifying the device fingerprint.
    * @return deviceFingerprint
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEVICE_FINGERPRINT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -106,20 +112,20 @@ public class TokenCard {
 
   @JsonProperty(JSON_PROPERTY_DEVICE_FINGERPRINT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDeviceFingerprint(String deviceFingerprint) {
+  public void setDeviceFingerprint(@javax.annotation.Nullable String deviceFingerprint) {
     this.deviceFingerprint = deviceFingerprint;
   }
 
 
-  public TokenCard expMonth(String expMonth) {
+  public TokenCard expMonth(@javax.annotation.Nonnull String expMonth) {
     this.expMonth = expMonth;
     return this;
   }
 
-   /**
+  /**
    * It is a value that allows identifying the expiration month of the card.
    * @return expMonth
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_EXP_MONTH)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -131,20 +137,20 @@ public class TokenCard {
 
   @JsonProperty(JSON_PROPERTY_EXP_MONTH)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setExpMonth(String expMonth) {
+  public void setExpMonth(@javax.annotation.Nonnull String expMonth) {
     this.expMonth = expMonth;
   }
 
 
-  public TokenCard expYear(String expYear) {
+  public TokenCard expYear(@javax.annotation.Nonnull String expYear) {
     this.expYear = expYear;
     return this;
   }
 
-   /**
+  /**
    * It is a value that allows identifying the expiration year of the card.
    * @return expYear
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_EXP_YEAR)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -156,20 +162,20 @@ public class TokenCard {
 
   @JsonProperty(JSON_PROPERTY_EXP_YEAR)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setExpYear(String expYear) {
+  public void setExpYear(@javax.annotation.Nonnull String expYear) {
     this.expYear = expYear;
   }
 
 
-  public TokenCard name(String name) {
+  public TokenCard name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * It is a value that allows identifying the name of the cardholder.
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -181,20 +187,20 @@ public class TokenCard {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public TokenCard number(String number) {
+  public TokenCard number(@javax.annotation.Nonnull String number) {
     this.number = number;
     return this;
   }
 
-   /**
+  /**
    * It is a value that allows identifying the number of the card.
    * @return number
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NUMBER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -206,7 +212,7 @@ public class TokenCard {
 
   @JsonProperty(JSON_PROPERTY_NUMBER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNumber(String number) {
+  public void setNumber(@javax.annotation.Nonnull String number) {
     this.number = number;
   }
 

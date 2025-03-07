@@ -14968,7 +14968,7 @@ components:
         properties:
           agreements:
             items:
-              $ref: '#/components/schemas/payment_method_cash_response_allOf_agreements'
+              $ref: '#/components/schemas/payment_method_cash_agreements'
             type: array
           reference:
             example: "93000262276908"
@@ -18345,7 +18345,7 @@ components:
       - object
       title: payout_order_payouts_item
       type: object
-    payment_method_cash_response_allOf_agreements:
+    payment_method_cash_agreements:
       properties:
         agreement:
           description: "Agreement number, you can use this number to pay in the store/bbva"
@@ -18355,6 +18355,7 @@ components:
           description: "Provider name, you can use this to know where to pay"
           example: bbva_cash_in
           type: string
+      title: payment_method_cash_agreements
       type: object
     customer_shipping_contacts_response_address:
       properties:

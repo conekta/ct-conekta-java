@@ -37,29 +37,32 @@ import com.conekta.JSON;
   WebhookUpdateRequest.JSON_PROPERTY_EVENTS
 })
 @JsonTypeName("webhook_update_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class WebhookUpdateRequest {
   public static final String JSON_PROPERTY_URL = "url";
+  @javax.annotation.Nonnull
   private String url;
 
   public static final String JSON_PROPERTY_SYNCHRONOUS = "synchronous";
+  @javax.annotation.Nullable
   private Boolean synchronous = false;
 
   public static final String JSON_PROPERTY_EVENTS = "events";
+  @javax.annotation.Nullable
   private List<String> events = new ArrayList<>();
 
   public WebhookUpdateRequest() { 
   }
 
-  public WebhookUpdateRequest url(String url) {
+  public WebhookUpdateRequest url(@javax.annotation.Nonnull String url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * Here you must place the URL of your Webhook remember that you must program what you will do with the events received. Also do not forget to handle the HTTPS protocol for greater security.
    * @return url
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -71,20 +74,20 @@ public class WebhookUpdateRequest {
 
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nonnull String url) {
     this.url = url;
   }
 
 
-  public WebhookUpdateRequest synchronous(Boolean synchronous) {
+  public WebhookUpdateRequest synchronous(@javax.annotation.Nullable Boolean synchronous) {
     this.synchronous = synchronous;
     return this;
   }
 
-   /**
+  /**
    * It is a value that allows to decide if the events will be synchronous or asynchronous. We recommend asynchronous &#x3D; false
    * @return synchronous
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SYNCHRONOUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -96,12 +99,12 @@ public class WebhookUpdateRequest {
 
   @JsonProperty(JSON_PROPERTY_SYNCHRONOUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSynchronous(Boolean synchronous) {
+  public void setSynchronous(@javax.annotation.Nullable Boolean synchronous) {
     this.synchronous = synchronous;
   }
 
 
-  public WebhookUpdateRequest events(List<String> events) {
+  public WebhookUpdateRequest events(@javax.annotation.Nullable List<String> events) {
     this.events = events;
     return this;
   }
@@ -114,10 +117,10 @@ public class WebhookUpdateRequest {
     return this;
   }
 
-   /**
+  /**
    * Get events
    * @return events
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EVENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -129,7 +132,7 @@ public class WebhookUpdateRequest {
 
   @JsonProperty(JSON_PROPERTY_EVENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEvents(List<String> events) {
+  public void setEvents(@javax.annotation.Nullable List<String> events) {
     this.events = events;
   }
 

@@ -43,53 +43,64 @@ import com.conekta.JSON;
   PlanResponse.JSON_PROPERTY_TRIAL_PERIOD_DAYS
 })
 @JsonTypeName("plan_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PlanResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nullable
   private Integer amount;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nullable
   private Long createdAt;
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
+  @javax.annotation.Nullable
   private String currency;
 
   public static final String JSON_PROPERTY_EXPIRY_COUNT = "expiry_count";
+  @javax.annotation.Nullable
   private Integer expiryCount;
 
   public static final String JSON_PROPERTY_FREQUENCY = "frequency";
+  @javax.annotation.Nullable
   private Integer frequency;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_INTERVAL = "interval";
+  @javax.annotation.Nullable
   private String interval;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
+  @javax.annotation.Nullable
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_TRIAL_PERIOD_DAYS = "trial_period_days";
+  @javax.annotation.Nullable
   private Integer trialPeriodDays;
 
   public PlanResponse() { 
   }
 
-  public PlanResponse amount(Integer amount) {
+  public PlanResponse amount(@javax.annotation.Nullable Integer amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * Get amount
    * @return amount
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -101,20 +112,20 @@ public class PlanResponse {
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAmount(Integer amount) {
+  public void setAmount(@javax.annotation.Nullable Integer amount) {
     this.amount = amount;
   }
 
 
-  public PlanResponse createdAt(Long createdAt) {
+  public PlanResponse createdAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -126,20 +137,20 @@ public class PlanResponse {
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public PlanResponse currency(String currency) {
+  public PlanResponse currency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * Get currency
    * @return currency
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -151,20 +162,20 @@ public class PlanResponse {
 
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCurrency(String currency) {
+  public void setCurrency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
   }
 
 
-  public PlanResponse expiryCount(Integer expiryCount) {
+  public PlanResponse expiryCount(@javax.annotation.Nullable Integer expiryCount) {
     this.expiryCount = expiryCount;
     return this;
   }
 
-   /**
+  /**
    * Get expiryCount
    * @return expiryCount
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRY_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -176,20 +187,20 @@ public class PlanResponse {
 
   @JsonProperty(JSON_PROPERTY_EXPIRY_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiryCount(Integer expiryCount) {
+  public void setExpiryCount(@javax.annotation.Nullable Integer expiryCount) {
     this.expiryCount = expiryCount;
   }
 
 
-  public PlanResponse frequency(Integer frequency) {
+  public PlanResponse frequency(@javax.annotation.Nullable Integer frequency) {
     this.frequency = frequency;
     return this;
   }
 
-   /**
+  /**
    * Get frequency
    * @return frequency
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FREQUENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -201,20 +212,20 @@ public class PlanResponse {
 
   @JsonProperty(JSON_PROPERTY_FREQUENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFrequency(Integer frequency) {
+  public void setFrequency(@javax.annotation.Nullable Integer frequency) {
     this.frequency = frequency;
   }
 
 
-  public PlanResponse id(String id) {
+  public PlanResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -226,20 +237,20 @@ public class PlanResponse {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public PlanResponse interval(String interval) {
+  public PlanResponse interval(@javax.annotation.Nullable String interval) {
     this.interval = interval;
     return this;
   }
 
-   /**
+  /**
    * Get interval
    * @return interval
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_INTERVAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -251,20 +262,20 @@ public class PlanResponse {
 
   @JsonProperty(JSON_PROPERTY_INTERVAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInterval(String interval) {
+  public void setInterval(@javax.annotation.Nullable String interval) {
     this.interval = interval;
   }
 
 
-  public PlanResponse livemode(Boolean livemode) {
+  public PlanResponse livemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
 
-   /**
+  /**
    * Get livemode
    * @return livemode
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -276,20 +287,20 @@ public class PlanResponse {
 
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLivemode(Boolean livemode) {
+  public void setLivemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
   }
 
 
-  public PlanResponse name(String name) {
+  public PlanResponse name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -301,20 +312,20 @@ public class PlanResponse {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public PlanResponse _object(String _object) {
+  public PlanResponse _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -326,20 +337,20 @@ public class PlanResponse {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
 
-  public PlanResponse trialPeriodDays(Integer trialPeriodDays) {
+  public PlanResponse trialPeriodDays(@javax.annotation.Nullable Integer trialPeriodDays) {
     this.trialPeriodDays = trialPeriodDays;
     return this;
   }
 
-   /**
+  /**
    * Get trialPeriodDays
    * @return trialPeriodDays
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRIAL_PERIOD_DAYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -351,7 +362,7 @@ public class PlanResponse {
 
   @JsonProperty(JSON_PROPERTY_TRIAL_PERIOD_DAYS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrialPeriodDays(Integer trialPeriodDays) {
+  public void setTrialPeriodDays(@javax.annotation.Nullable Integer trialPeriodDays) {
     this.trialPeriodDays = trialPeriodDays;
   }
 

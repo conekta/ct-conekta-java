@@ -33,23 +33,24 @@ import com.conekta.JSON;
   ChargeUpdateRequest.JSON_PROPERTY_REFERENCE_ID
 })
 @JsonTypeName("charge_update_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ChargeUpdateRequest {
   public static final String JSON_PROPERTY_REFERENCE_ID = "reference_id";
+  @javax.annotation.Nullable
   private String referenceId;
 
   public ChargeUpdateRequest() { 
   }
 
-  public ChargeUpdateRequest referenceId(String referenceId) {
+  public ChargeUpdateRequest referenceId(@javax.annotation.Nullable String referenceId) {
     this.referenceId = referenceId;
     return this;
   }
 
-   /**
+  /**
    * custom reference id
    * @return referenceId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERENCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -61,7 +62,7 @@ public class ChargeUpdateRequest {
 
   @JsonProperty(JSON_PROPERTY_REFERENCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReferenceId(String referenceId) {
+  public void setReferenceId(@javax.annotation.Nullable String referenceId) {
     this.referenceId = referenceId;
   }
 

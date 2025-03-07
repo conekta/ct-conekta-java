@@ -36,29 +36,32 @@ import com.conekta.JSON;
   ChargeRequest.JSON_PROPERTY_REFERENCE_ID
 })
 @JsonTypeName("charge_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ChargeRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nullable
   private Long amount;
 
   public static final String JSON_PROPERTY_PAYMENT_METHOD = "payment_method";
+  @javax.annotation.Nonnull
   private ChargeRequestPaymentMethod paymentMethod;
 
   public static final String JSON_PROPERTY_REFERENCE_ID = "reference_id";
+  @javax.annotation.Nullable
   private String referenceId;
 
   public ChargeRequest() { 
   }
 
-  public ChargeRequest amount(Long amount) {
+  public ChargeRequest amount(@javax.annotation.Nullable Long amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * Amount to be charged in cents
    * @return amount
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -70,20 +73,20 @@ public class ChargeRequest {
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAmount(Long amount) {
+  public void setAmount(@javax.annotation.Nullable Long amount) {
     this.amount = amount;
   }
 
 
-  public ChargeRequest paymentMethod(ChargeRequestPaymentMethod paymentMethod) {
+  public ChargeRequest paymentMethod(@javax.annotation.Nonnull ChargeRequestPaymentMethod paymentMethod) {
     this.paymentMethod = paymentMethod;
     return this;
   }
 
-   /**
+  /**
    * Get paymentMethod
    * @return paymentMethod
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_PAYMENT_METHOD)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -95,20 +98,20 @@ public class ChargeRequest {
 
   @JsonProperty(JSON_PROPERTY_PAYMENT_METHOD)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPaymentMethod(ChargeRequestPaymentMethod paymentMethod) {
+  public void setPaymentMethod(@javax.annotation.Nonnull ChargeRequestPaymentMethod paymentMethod) {
     this.paymentMethod = paymentMethod;
   }
 
 
-  public ChargeRequest referenceId(String referenceId) {
+  public ChargeRequest referenceId(@javax.annotation.Nullable String referenceId) {
     this.referenceId = referenceId;
     return this;
   }
 
-   /**
+  /**
    * Custom reference to add to the charge
    * @return referenceId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERENCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -120,7 +123,7 @@ public class ChargeRequest {
 
   @JsonProperty(JSON_PROPERTY_REFERENCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReferenceId(String referenceId) {
+  public void setReferenceId(@javax.annotation.Nullable String referenceId) {
     this.referenceId = referenceId;
   }
 

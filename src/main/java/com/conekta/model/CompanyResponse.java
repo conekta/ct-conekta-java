@@ -42,22 +42,25 @@ import com.conekta.JSON;
   CompanyResponse.JSON_PROPERTY_FISCAL_INFO
 })
 @JsonTypeName("company_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CompanyResponse {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nullable
   private Long createdAt;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   /**
    * The resource&#39;s type
    */
   public enum ObjectEnum {
-    COMPANY("company");
+    COMPANY(String.valueOf("company"));
 
     private String value;
 
@@ -87,32 +90,37 @@ public class CompanyResponse {
   }
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private ObjectEnum _object;
 
   public static final String JSON_PROPERTY_PARENT_COMPANY_ID = "parent_company_id";
+  @javax.annotation.Nullable
   private String parentCompanyId;
 
   public static final String JSON_PROPERTY_USE_PARENT_FISCAL_DATA = "use_parent_fiscal_data";
+  @javax.annotation.Nullable
   private Boolean useParentFiscalData;
 
   public static final String JSON_PROPERTY_PAYOUT_DESTINATION = "payout_destination";
+  @javax.annotation.Nullable
   private CompanyPayoutDestinationResponse payoutDestination;
 
   public static final String JSON_PROPERTY_FISCAL_INFO = "fiscal_info";
+  @javax.annotation.Nullable
   private CompanyFiscalInfoResponse fiscalInfo;
 
   public CompanyResponse() { 
   }
 
-  public CompanyResponse id(String id) {
+  public CompanyResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The child company&#39;s unique identifier
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -124,20 +132,20 @@ public class CompanyResponse {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public CompanyResponse createdAt(Long createdAt) {
+  public CompanyResponse createdAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * The resource&#39;s creation date (unix timestamp)
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -149,20 +157,20 @@ public class CompanyResponse {
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CompanyResponse name(String name) {
+  public CompanyResponse name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The child company&#39;s name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -174,20 +182,20 @@ public class CompanyResponse {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public CompanyResponse _object(ObjectEnum _object) {
+  public CompanyResponse _object(@javax.annotation.Nullable ObjectEnum _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * The resource&#39;s type
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -199,20 +207,20 @@ public class CompanyResponse {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(ObjectEnum _object) {
+  public void setObject(@javax.annotation.Nullable ObjectEnum _object) {
     this._object = _object;
   }
 
 
-  public CompanyResponse parentCompanyId(String parentCompanyId) {
+  public CompanyResponse parentCompanyId(@javax.annotation.Nullable String parentCompanyId) {
     this.parentCompanyId = parentCompanyId;
     return this;
   }
 
-   /**
+  /**
    * Id of the parent company
    * @return parentCompanyId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PARENT_COMPANY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -224,20 +232,20 @@ public class CompanyResponse {
 
   @JsonProperty(JSON_PROPERTY_PARENT_COMPANY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentCompanyId(String parentCompanyId) {
+  public void setParentCompanyId(@javax.annotation.Nullable String parentCompanyId) {
     this.parentCompanyId = parentCompanyId;
   }
 
 
-  public CompanyResponse useParentFiscalData(Boolean useParentFiscalData) {
+  public CompanyResponse useParentFiscalData(@javax.annotation.Nullable Boolean useParentFiscalData) {
     this.useParentFiscalData = useParentFiscalData;
     return this;
   }
 
-   /**
+  /**
    * Whether the parent company&#39;s fiscal data is to be used for liquidation and tax purposes
    * @return useParentFiscalData
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_USE_PARENT_FISCAL_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -249,20 +257,20 @@ public class CompanyResponse {
 
   @JsonProperty(JSON_PROPERTY_USE_PARENT_FISCAL_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUseParentFiscalData(Boolean useParentFiscalData) {
+  public void setUseParentFiscalData(@javax.annotation.Nullable Boolean useParentFiscalData) {
     this.useParentFiscalData = useParentFiscalData;
   }
 
 
-  public CompanyResponse payoutDestination(CompanyPayoutDestinationResponse payoutDestination) {
+  public CompanyResponse payoutDestination(@javax.annotation.Nullable CompanyPayoutDestinationResponse payoutDestination) {
     this.payoutDestination = payoutDestination;
     return this;
   }
 
-   /**
+  /**
    * Get payoutDestination
    * @return payoutDestination
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYOUT_DESTINATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -274,20 +282,20 @@ public class CompanyResponse {
 
   @JsonProperty(JSON_PROPERTY_PAYOUT_DESTINATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPayoutDestination(CompanyPayoutDestinationResponse payoutDestination) {
+  public void setPayoutDestination(@javax.annotation.Nullable CompanyPayoutDestinationResponse payoutDestination) {
     this.payoutDestination = payoutDestination;
   }
 
 
-  public CompanyResponse fiscalInfo(CompanyFiscalInfoResponse fiscalInfo) {
+  public CompanyResponse fiscalInfo(@javax.annotation.Nullable CompanyFiscalInfoResponse fiscalInfo) {
     this.fiscalInfo = fiscalInfo;
     return this;
   }
 
-   /**
+  /**
    * Get fiscalInfo
    * @return fiscalInfo
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FISCAL_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -299,7 +307,7 @@ public class CompanyResponse {
 
   @JsonProperty(JSON_PROPERTY_FISCAL_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiscalInfo(CompanyFiscalInfoResponse fiscalInfo) {
+  public void setFiscalInfo(@javax.annotation.Nullable CompanyFiscalInfoResponse fiscalInfo) {
     this.fiscalInfo = fiscalInfo;
   }
 

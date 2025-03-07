@@ -27,33 +27,35 @@ import com.conekta.JSON;
 
 
 /**
- * PaymentMethodCashResponseAllOfAgreements
+ * PaymentMethodCashAgreements
  */
 @JsonPropertyOrder({
-  PaymentMethodCashResponseAllOfAgreements.JSON_PROPERTY_AGREEMENT,
-  PaymentMethodCashResponseAllOfAgreements.JSON_PROPERTY_PROVIDER
+  PaymentMethodCashAgreements.JSON_PROPERTY_AGREEMENT,
+  PaymentMethodCashAgreements.JSON_PROPERTY_PROVIDER
 })
-@JsonTypeName("payment_method_cash_response_allOf_agreements")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
-public class PaymentMethodCashResponseAllOfAgreements {
+@JsonTypeName("payment_method_cash_agreements")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+public class PaymentMethodCashAgreements {
   public static final String JSON_PROPERTY_AGREEMENT = "agreement";
+  @javax.annotation.Nullable
   private String agreement;
 
   public static final String JSON_PROPERTY_PROVIDER = "provider";
+  @javax.annotation.Nullable
   private String provider;
 
-  public PaymentMethodCashResponseAllOfAgreements() { 
+  public PaymentMethodCashAgreements() { 
   }
 
-  public PaymentMethodCashResponseAllOfAgreements agreement(String agreement) {
+  public PaymentMethodCashAgreements agreement(@javax.annotation.Nullable String agreement) {
     this.agreement = agreement;
     return this;
   }
 
-   /**
+  /**
    * Agreement number, you can use this number to pay in the store/bbva
    * @return agreement
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AGREEMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -65,20 +67,20 @@ public class PaymentMethodCashResponseAllOfAgreements {
 
   @JsonProperty(JSON_PROPERTY_AGREEMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgreement(String agreement) {
+  public void setAgreement(@javax.annotation.Nullable String agreement) {
     this.agreement = agreement;
   }
 
 
-  public PaymentMethodCashResponseAllOfAgreements provider(String provider) {
+  public PaymentMethodCashAgreements provider(@javax.annotation.Nullable String provider) {
     this.provider = provider;
     return this;
   }
 
-   /**
+  /**
    * Provider name, you can use this to know where to pay
    * @return provider
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PROVIDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -90,13 +92,13 @@ public class PaymentMethodCashResponseAllOfAgreements {
 
   @JsonProperty(JSON_PROPERTY_PROVIDER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProvider(String provider) {
+  public void setProvider(@javax.annotation.Nullable String provider) {
     this.provider = provider;
   }
 
 
   /**
-   * Return true if this payment_method_cash_response_allOf_agreements object is equal to o.
+   * Return true if this payment_method_cash_agreements object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -106,9 +108,9 @@ public class PaymentMethodCashResponseAllOfAgreements {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PaymentMethodCashResponseAllOfAgreements paymentMethodCashResponseAllOfAgreements = (PaymentMethodCashResponseAllOfAgreements) o;
-    return Objects.equals(this.agreement, paymentMethodCashResponseAllOfAgreements.agreement) &&
-        Objects.equals(this.provider, paymentMethodCashResponseAllOfAgreements.provider);
+    PaymentMethodCashAgreements paymentMethodCashAgreements = (PaymentMethodCashAgreements) o;
+    return Objects.equals(this.agreement, paymentMethodCashAgreements.agreement) &&
+        Objects.equals(this.provider, paymentMethodCashAgreements.provider);
   }
 
   @Override
@@ -119,7 +121,7 @@ public class PaymentMethodCashResponseAllOfAgreements {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaymentMethodCashResponseAllOfAgreements {\n");
+    sb.append("class PaymentMethodCashAgreements {\n");
     sb.append("    agreement: ").append(toIndentedString(agreement)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("}");
