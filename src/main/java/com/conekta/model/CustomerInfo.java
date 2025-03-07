@@ -37,35 +37,40 @@ import com.conekta.JSON;
   CustomerInfo.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("customer_info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CustomerInfo {
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @javax.annotation.Nonnull
   private String email;
 
   public static final String JSON_PROPERTY_PHONE = "phone";
+  @javax.annotation.Nonnull
   private String phone;
 
   public static final String JSON_PROPERTY_CORPORATE = "corporate";
+  @javax.annotation.Nullable
   private Boolean corporate;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public CustomerInfo() { 
   }
 
-  public CustomerInfo name(String name) {
+  public CustomerInfo name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -77,20 +82,20 @@ public class CustomerInfo {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public CustomerInfo email(String email) {
+  public CustomerInfo email(@javax.annotation.Nonnull String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * Get email
    * @return email
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -102,20 +107,20 @@ public class CustomerInfo {
 
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nonnull String email) {
     this.email = email;
   }
 
 
-  public CustomerInfo phone(String phone) {
+  public CustomerInfo phone(@javax.annotation.Nonnull String phone) {
     this.phone = phone;
     return this;
   }
 
-   /**
+  /**
    * Get phone
    * @return phone
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -127,20 +132,20 @@ public class CustomerInfo {
 
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPhone(String phone) {
+  public void setPhone(@javax.annotation.Nonnull String phone) {
     this.phone = phone;
   }
 
 
-  public CustomerInfo corporate(Boolean corporate) {
+  public CustomerInfo corporate(@javax.annotation.Nullable Boolean corporate) {
     this.corporate = corporate;
     return this;
   }
 
-   /**
+  /**
    * Get corporate
    * @return corporate
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CORPORATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -152,20 +157,20 @@ public class CustomerInfo {
 
   @JsonProperty(JSON_PROPERTY_CORPORATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCorporate(Boolean corporate) {
+  public void setCorporate(@javax.annotation.Nullable Boolean corporate) {
     this.corporate = corporate;
   }
 
 
-  public CustomerInfo _object(String _object) {
+  public CustomerInfo _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -177,7 +182,7 @@ public class CustomerInfo {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 

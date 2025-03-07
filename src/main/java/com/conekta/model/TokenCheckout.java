@@ -35,23 +35,24 @@ import com.conekta.JSON;
   TokenCheckout.JSON_PROPERTY_RETURNS_CONTROL_ON
 })
 @JsonTypeName("token_checkout")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class TokenCheckout {
   public static final String JSON_PROPERTY_RETURNS_CONTROL_ON = "returns_control_on";
+  @javax.annotation.Nullable
   private String returnsControlOn;
 
   public TokenCheckout() { 
   }
 
-  public TokenCheckout returnsControlOn(String returnsControlOn) {
+  public TokenCheckout returnsControlOn(@javax.annotation.Nullable String returnsControlOn) {
     this.returnsControlOn = returnsControlOn;
     return this;
   }
 
-   /**
+  /**
    * It is a value that allows identifying the returns control on.
    * @return returnsControlOn
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RETURNS_CONTROL_ON)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -63,7 +64,7 @@ public class TokenCheckout {
 
   @JsonProperty(JSON_PROPERTY_RETURNS_CONTROL_ON)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReturnsControlOn(String returnsControlOn) {
+  public void setReturnsControlOn(@javax.annotation.Nullable String returnsControlOn) {
     this.returnsControlOn = returnsControlOn;
   }
 

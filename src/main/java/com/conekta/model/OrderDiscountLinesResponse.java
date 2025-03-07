@@ -16,7 +16,7 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.ChargesDataResponse;
+import com.conekta.model.DiscountLinesDataResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -30,37 +30,40 @@ import com.conekta.JSON;
 
 
 /**
- * The charges associated with the order
+ * OrderDiscountLinesResponse
  */
 @JsonPropertyOrder({
-  OrderResponseCharges.JSON_PROPERTY_HAS_MORE,
-  OrderResponseCharges.JSON_PROPERTY_OBJECT,
-  OrderResponseCharges.JSON_PROPERTY_DATA
+  OrderDiscountLinesResponse.JSON_PROPERTY_HAS_MORE,
+  OrderDiscountLinesResponse.JSON_PROPERTY_OBJECT,
+  OrderDiscountLinesResponse.JSON_PROPERTY_DATA
 })
-@JsonTypeName("order_response_charges")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
-public class OrderResponseCharges {
+@JsonTypeName("order_discount_lines_response")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+public class OrderDiscountLinesResponse {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
+  @javax.annotation.Nonnull
   private Boolean hasMore;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<ChargesDataResponse> data = new ArrayList<>();
+  @javax.annotation.Nullable
+  private List<DiscountLinesDataResponse> data = new ArrayList<>();
 
-  public OrderResponseCharges() { 
+  public OrderDiscountLinesResponse() { 
   }
 
-  public OrderResponseCharges hasMore(Boolean hasMore) {
+  public OrderDiscountLinesResponse hasMore(@javax.annotation.Nonnull Boolean hasMore) {
     this.hasMore = hasMore;
     return this;
   }
 
-   /**
+  /**
    * Indicates if there are more pages to be requested
    * @return hasMore
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_HAS_MORE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -72,20 +75,20 @@ public class OrderResponseCharges {
 
   @JsonProperty(JSON_PROPERTY_HAS_MORE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setHasMore(Boolean hasMore) {
+  public void setHasMore(@javax.annotation.Nonnull Boolean hasMore) {
     this.hasMore = hasMore;
   }
 
 
-  public OrderResponseCharges _object(String _object) {
+  public OrderDiscountLinesResponse _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Object type, in this case is list
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -97,17 +100,17 @@ public class OrderResponseCharges {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public OrderResponseCharges data(List<ChargesDataResponse> data) {
+  public OrderDiscountLinesResponse data(@javax.annotation.Nullable List<DiscountLinesDataResponse> data) {
     this.data = data;
     return this;
   }
 
-  public OrderResponseCharges addDataItem(ChargesDataResponse dataItem) {
+  public OrderDiscountLinesResponse addDataItem(DiscountLinesDataResponse dataItem) {
     if (this.data == null) {
       this.data = new ArrayList<>();
     }
@@ -115,28 +118,28 @@ public class OrderResponseCharges {
     return this;
   }
 
-   /**
+  /**
    * Get data
    * @return data
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<ChargesDataResponse> getData() {
+  public List<DiscountLinesDataResponse> getData() {
     return data;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setData(List<ChargesDataResponse> data) {
+  public void setData(@javax.annotation.Nullable List<DiscountLinesDataResponse> data) {
     this.data = data;
   }
 
 
   /**
-   * Return true if this order_response_charges object is equal to o.
+   * Return true if this order_discount_lines_response object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -146,10 +149,10 @@ public class OrderResponseCharges {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrderResponseCharges orderResponseCharges = (OrderResponseCharges) o;
-    return Objects.equals(this.hasMore, orderResponseCharges.hasMore) &&
-        Objects.equals(this._object, orderResponseCharges._object) &&
-        Objects.equals(this.data, orderResponseCharges.data);
+    OrderDiscountLinesResponse orderDiscountLinesResponse = (OrderDiscountLinesResponse) o;
+    return Objects.equals(this.hasMore, orderDiscountLinesResponse.hasMore) &&
+        Objects.equals(this._object, orderDiscountLinesResponse._object) &&
+        Objects.equals(this.data, orderDiscountLinesResponse.data);
   }
 
   @Override
@@ -160,7 +163,7 @@ public class OrderResponseCharges {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrderResponseCharges {\n");
+    sb.append("class OrderDiscountLinesResponse {\n");
     sb.append("    hasMore: ").append(toIndentedString(hasMore)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");

@@ -39,36 +39,41 @@ import com.conekta.JSON;
   ShippingRequest.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("shipping_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ShippingRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nonnull
   private Long amount;
 
   public static final String JSON_PROPERTY_CARRIER = "carrier";
+  @javax.annotation.Nullable
   private String carrier;
 
   public static final String JSON_PROPERTY_TRACKING_NUMBER = "tracking_number";
+  @javax.annotation.Nullable
   private String trackingNumber;
 
   public static final String JSON_PROPERTY_METHOD = "method";
+  @javax.annotation.Nullable
   private String method;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata = new HashMap<>();
 
   public ShippingRequest() { 
   }
 
-  public ShippingRequest amount(Long amount) {
+  public ShippingRequest amount(@javax.annotation.Nonnull Long amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * Shipping amount in cents
    * minimum: 0
    * @return amount
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -80,20 +85,20 @@ public class ShippingRequest {
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAmount(Long amount) {
+  public void setAmount(@javax.annotation.Nonnull Long amount) {
     this.amount = amount;
   }
 
 
-  public ShippingRequest carrier(String carrier) {
+  public ShippingRequest carrier(@javax.annotation.Nullable String carrier) {
     this.carrier = carrier;
     return this;
   }
 
-   /**
+  /**
    * Carrier name for the shipment
    * @return carrier
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CARRIER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -105,20 +110,20 @@ public class ShippingRequest {
 
   @JsonProperty(JSON_PROPERTY_CARRIER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCarrier(String carrier) {
+  public void setCarrier(@javax.annotation.Nullable String carrier) {
     this.carrier = carrier;
   }
 
 
-  public ShippingRequest trackingNumber(String trackingNumber) {
+  public ShippingRequest trackingNumber(@javax.annotation.Nullable String trackingNumber) {
     this.trackingNumber = trackingNumber;
     return this;
   }
 
-   /**
+  /**
    * Tracking number can be used to track the shipment
    * @return trackingNumber
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRACKING_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -130,20 +135,20 @@ public class ShippingRequest {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingNumber(String trackingNumber) {
+  public void setTrackingNumber(@javax.annotation.Nullable String trackingNumber) {
     this.trackingNumber = trackingNumber;
   }
 
 
-  public ShippingRequest method(String method) {
+  public ShippingRequest method(@javax.annotation.Nullable String method) {
     this.method = method;
     return this;
   }
 
-   /**
+  /**
    * Method of shipment
    * @return method
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -155,12 +160,12 @@ public class ShippingRequest {
 
   @JsonProperty(JSON_PROPERTY_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMethod(String method) {
+  public void setMethod(@javax.annotation.Nullable String method) {
     this.method = method;
   }
 
 
-  public ShippingRequest metadata(Map<String, Object> metadata) {
+  public ShippingRequest metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -173,10 +178,10 @@ public class ShippingRequest {
     return this;
   }
 
-   /**
+  /**
    * Hash where the user can send additional information for each &#39;shipping&#39;.
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
@@ -188,7 +193,7 @@ public class ShippingRequest {
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 

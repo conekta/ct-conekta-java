@@ -39,41 +39,48 @@ import com.conekta.JSON;
   PaymentMethodSpeiRecurrent.JSON_PROPERTY_EXPIRES_AT
 })
 @JsonTypeName("payment_method_spei_recurrent")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PaymentMethodSpeiRecurrent {
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nonnull
   private String type;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public static final String JSON_PROPERTY_PARENT_ID = "parent_id";
+  @javax.annotation.Nullable
   private String parentId;
 
   public static final String JSON_PROPERTY_REFERENCE = "reference";
+  @javax.annotation.Nullable
   private String reference;
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nullable
   private String expiresAt;
 
   public PaymentMethodSpeiRecurrent() { 
   }
 
-  public PaymentMethodSpeiRecurrent type(String type) {
+  public PaymentMethodSpeiRecurrent type(@javax.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -85,20 +92,20 @@ public class PaymentMethodSpeiRecurrent {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
   }
 
 
-  public PaymentMethodSpeiRecurrent id(String id) {
+  public PaymentMethodSpeiRecurrent id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -110,20 +117,20 @@ public class PaymentMethodSpeiRecurrent {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public PaymentMethodSpeiRecurrent _object(String _object) {
+  public PaymentMethodSpeiRecurrent _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -135,20 +142,20 @@ public class PaymentMethodSpeiRecurrent {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public PaymentMethodSpeiRecurrent createdAt(Long createdAt) {
+  public PaymentMethodSpeiRecurrent createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -160,20 +167,20 @@ public class PaymentMethodSpeiRecurrent {
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public PaymentMethodSpeiRecurrent parentId(String parentId) {
+  public PaymentMethodSpeiRecurrent parentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
     return this;
   }
 
-   /**
+  /**
    * Get parentId
    * @return parentId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -185,20 +192,20 @@ public class PaymentMethodSpeiRecurrent {
 
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentId(String parentId) {
+  public void setParentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
   }
 
 
-  public PaymentMethodSpeiRecurrent reference(String reference) {
+  public PaymentMethodSpeiRecurrent reference(@javax.annotation.Nullable String reference) {
     this.reference = reference;
     return this;
   }
 
-   /**
+  /**
    * Get reference
    * @return reference
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -210,20 +217,20 @@ public class PaymentMethodSpeiRecurrent {
 
   @JsonProperty(JSON_PROPERTY_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReference(String reference) {
+  public void setReference(@javax.annotation.Nullable String reference) {
     this.reference = reference;
   }
 
 
-  public PaymentMethodSpeiRecurrent expiresAt(String expiresAt) {
+  public PaymentMethodSpeiRecurrent expiresAt(@javax.annotation.Nullable String expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
-   /**
+  /**
    * Get expiresAt
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -235,7 +242,7 @@ public class PaymentMethodSpeiRecurrent {
 
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(String expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable String expiresAt) {
     this.expiresAt = expiresAt;
   }
 

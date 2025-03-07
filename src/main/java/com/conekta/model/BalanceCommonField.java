@@ -34,26 +34,28 @@ import com.conekta.JSON;
   BalanceCommonField.JSON_PROPERTY_CURRENCY
 })
 @JsonTypeName("balance_common_field")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class BalanceCommonField {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nullable
   private Long amount;
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
+  @javax.annotation.Nullable
   private String currency;
 
   public BalanceCommonField() { 
   }
 
-  public BalanceCommonField amount(Long amount) {
+  public BalanceCommonField amount(@javax.annotation.Nullable Long amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * The balance&#39;s amount
    * @return amount
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -65,20 +67,20 @@ public class BalanceCommonField {
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAmount(Long amount) {
+  public void setAmount(@javax.annotation.Nullable Long amount) {
     this.amount = amount;
   }
 
 
-  public BalanceCommonField currency(String currency) {
+  public BalanceCommonField currency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * The balance&#39;s currency
    * @return currency
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -90,7 +92,7 @@ public class BalanceCommonField {
 
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCurrency(String currency) {
+  public void setCurrency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
   }
 

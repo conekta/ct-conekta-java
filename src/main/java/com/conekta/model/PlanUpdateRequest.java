@@ -36,33 +36,37 @@ import com.conekta.JSON;
   PlanUpdateRequest.JSON_PROPERTY_NAME
 })
 @JsonTypeName("plan_update_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PlanUpdateRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nullable
   private Integer amount;
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
+  @javax.annotation.Nullable
   private String currency;
 
   public static final String JSON_PROPERTY_EXPIRY_COUNT = "expiry_count";
+  @javax.annotation.Nullable
   private Integer expiryCount;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public PlanUpdateRequest() { 
   }
 
-  public PlanUpdateRequest amount(Integer amount) {
+  public PlanUpdateRequest amount(@javax.annotation.Nullable Integer amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * The amount in cents that will be charged on the interval specified.
    * minimum: 1
    * @return amount
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -74,20 +78,20 @@ public class PlanUpdateRequest {
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAmount(Integer amount) {
+  public void setAmount(@javax.annotation.Nullable Integer amount) {
     this.amount = amount;
   }
 
 
-  public PlanUpdateRequest currency(String currency) {
+  public PlanUpdateRequest currency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * ISO 4217 for currencies, for the Mexican peso it is MXN/USD
    * @return currency
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -99,20 +103,20 @@ public class PlanUpdateRequest {
 
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCurrency(String currency) {
+  public void setCurrency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
   }
 
 
-  public PlanUpdateRequest expiryCount(Integer expiryCount) {
+  public PlanUpdateRequest expiryCount(@javax.annotation.Nullable Integer expiryCount) {
     this.expiryCount = expiryCount;
     return this;
   }
 
-   /**
+  /**
    * Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.
    * @return expiryCount
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRY_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -124,20 +128,20 @@ public class PlanUpdateRequest {
 
   @JsonProperty(JSON_PROPERTY_EXPIRY_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiryCount(Integer expiryCount) {
+  public void setExpiryCount(@javax.annotation.Nullable Integer expiryCount) {
     this.expiryCount = expiryCount;
   }
 
 
-  public PlanUpdateRequest name(String name) {
+  public PlanUpdateRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The name of the plan.
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -149,7 +153,7 @@ public class PlanUpdateRequest {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 

@@ -44,50 +44,60 @@ import com.conekta.JSON;
   WebhookResponse.JSON_PROPERTY_URL
 })
 @JsonTypeName("webhook_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class WebhookResponse {
   public static final String JSON_PROPERTY_DELETED = "deleted";
+  @javax.annotation.Nullable
   private Boolean deleted;
 
   public static final String JSON_PROPERTY_DEVELOPMENT_ENABLED = "development_enabled";
+  @javax.annotation.Nullable
   private Boolean developmentEnabled;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
+  @javax.annotation.Nullable
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_PRODUCTION_ENABLED = "production_enabled";
+  @javax.annotation.Nullable
   private Boolean productionEnabled;
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private String status;
 
   public static final String JSON_PROPERTY_SUBSCRIBED_EVENTS = "subscribed_events";
+  @javax.annotation.Nullable
   private List<String> subscribedEvents = new ArrayList<>();
 
   public static final String JSON_PROPERTY_SYNCHRONOUS = "synchronous";
+  @javax.annotation.Nullable
   private Boolean synchronous;
 
   public static final String JSON_PROPERTY_URL = "url";
+  @javax.annotation.Nullable
   private String url;
 
   public WebhookResponse() { 
   }
 
-  public WebhookResponse deleted(Boolean deleted) {
+  public WebhookResponse deleted(@javax.annotation.Nullable Boolean deleted) {
     this.deleted = deleted;
     return this;
   }
 
-   /**
+  /**
    * Get deleted
    * @return deleted
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -99,20 +109,20 @@ public class WebhookResponse {
 
   @JsonProperty(JSON_PROPERTY_DELETED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDeleted(Boolean deleted) {
+  public void setDeleted(@javax.annotation.Nullable Boolean deleted) {
     this.deleted = deleted;
   }
 
 
-  public WebhookResponse developmentEnabled(Boolean developmentEnabled) {
+  public WebhookResponse developmentEnabled(@javax.annotation.Nullable Boolean developmentEnabled) {
     this.developmentEnabled = developmentEnabled;
     return this;
   }
 
-   /**
+  /**
    * Get developmentEnabled
    * @return developmentEnabled
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEVELOPMENT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -124,20 +134,20 @@ public class WebhookResponse {
 
   @JsonProperty(JSON_PROPERTY_DEVELOPMENT_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDevelopmentEnabled(Boolean developmentEnabled) {
+  public void setDevelopmentEnabled(@javax.annotation.Nullable Boolean developmentEnabled) {
     this.developmentEnabled = developmentEnabled;
   }
 
 
-  public WebhookResponse id(String id) {
+  public WebhookResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -149,20 +159,20 @@ public class WebhookResponse {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public WebhookResponse livemode(Boolean livemode) {
+  public WebhookResponse livemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
 
-   /**
+  /**
    * Get livemode
    * @return livemode
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -174,20 +184,20 @@ public class WebhookResponse {
 
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLivemode(Boolean livemode) {
+  public void setLivemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
   }
 
 
-  public WebhookResponse _object(String _object) {
+  public WebhookResponse _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -199,20 +209,20 @@ public class WebhookResponse {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
 
-  public WebhookResponse productionEnabled(Boolean productionEnabled) {
+  public WebhookResponse productionEnabled(@javax.annotation.Nullable Boolean productionEnabled) {
     this.productionEnabled = productionEnabled;
     return this;
   }
 
-   /**
+  /**
    * Get productionEnabled
    * @return productionEnabled
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PRODUCTION_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -224,20 +234,20 @@ public class WebhookResponse {
 
   @JsonProperty(JSON_PROPERTY_PRODUCTION_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProductionEnabled(Boolean productionEnabled) {
+  public void setProductionEnabled(@javax.annotation.Nullable Boolean productionEnabled) {
     this.productionEnabled = productionEnabled;
   }
 
 
-  public WebhookResponse status(String status) {
+  public WebhookResponse status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -249,12 +259,12 @@ public class WebhookResponse {
 
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nullable String status) {
     this.status = status;
   }
 
 
-  public WebhookResponse subscribedEvents(List<String> subscribedEvents) {
+  public WebhookResponse subscribedEvents(@javax.annotation.Nullable List<String> subscribedEvents) {
     this.subscribedEvents = subscribedEvents;
     return this;
   }
@@ -267,10 +277,10 @@ public class WebhookResponse {
     return this;
   }
 
-   /**
+  /**
    * Get subscribedEvents
    * @return subscribedEvents
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUBSCRIBED_EVENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -282,20 +292,20 @@ public class WebhookResponse {
 
   @JsonProperty(JSON_PROPERTY_SUBSCRIBED_EVENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubscribedEvents(List<String> subscribedEvents) {
+  public void setSubscribedEvents(@javax.annotation.Nullable List<String> subscribedEvents) {
     this.subscribedEvents = subscribedEvents;
   }
 
 
-  public WebhookResponse synchronous(Boolean synchronous) {
+  public WebhookResponse synchronous(@javax.annotation.Nullable Boolean synchronous) {
     this.synchronous = synchronous;
     return this;
   }
 
-   /**
+  /**
    * Get synchronous
    * @return synchronous
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SYNCHRONOUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -307,20 +317,20 @@ public class WebhookResponse {
 
   @JsonProperty(JSON_PROPERTY_SYNCHRONOUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSynchronous(Boolean synchronous) {
+  public void setSynchronous(@javax.annotation.Nullable Boolean synchronous) {
     this.synchronous = synchronous;
   }
 
 
-  public WebhookResponse url(String url) {
+  public WebhookResponse url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * Get url
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -332,7 +342,7 @@ public class WebhookResponse {
 
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 

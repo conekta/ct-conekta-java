@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**allowedPaymentMethods** | **List&lt;String&gt;** |  |  [optional] |
+|**allowedPaymentMethods** | **List&lt;String&gt;** | Are the payment methods available for this link |  [optional] |
 |**canNotExpire** | **Boolean** |  |  [optional] |
 |**emailsSent** | **Integer** |  |  [optional] |
 |**excludeCardNetworks** | **List&lt;Object&gt;** |  |  [optional] |

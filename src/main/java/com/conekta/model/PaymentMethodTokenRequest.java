@@ -34,26 +34,28 @@ import com.conekta.JSON;
   PaymentMethodTokenRequest.JSON_PROPERTY_TOKEN_ID
 })
 @JsonTypeName("payment_method_token_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PaymentMethodTokenRequest {
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nonnull
   private String type;
 
   public static final String JSON_PROPERTY_TOKEN_ID = "token_id";
+  @javax.annotation.Nonnull
   private String tokenId;
 
   public PaymentMethodTokenRequest() { 
   }
 
-  public PaymentMethodTokenRequest type(String type) {
+  public PaymentMethodTokenRequest type(@javax.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Type of payment method
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -65,20 +67,20 @@ public class PaymentMethodTokenRequest {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
   }
 
 
-  public PaymentMethodTokenRequest tokenId(String tokenId) {
+  public PaymentMethodTokenRequest tokenId(@javax.annotation.Nonnull String tokenId) {
     this.tokenId = tokenId;
     return this;
   }
 
-   /**
+  /**
    * Token id that will be used to create a \&quot;card\&quot; type payment method. See the (subscriptions)[https://developers.conekta.com/v2.1.0/reference/createsubscription] tutorial for more information on how to tokenize cards.
    * @return tokenId
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TOKEN_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -90,7 +92,7 @@ public class PaymentMethodTokenRequest {
 
   @JsonProperty(JSON_PROPERTY_TOKEN_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTokenId(String tokenId) {
+  public void setTokenId(@javax.annotation.Nonnull String tokenId) {
     this.tokenId = tokenId;
   }
 

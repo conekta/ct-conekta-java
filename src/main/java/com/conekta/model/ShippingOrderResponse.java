@@ -42,45 +42,53 @@ import com.conekta.JSON;
   ShippingOrderResponse.JSON_PROPERTY_PARENT_ID
 })
 @JsonTypeName("shipping_order_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ShippingOrderResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nonnull
   private Long amount;
 
   public static final String JSON_PROPERTY_CARRIER = "carrier";
+  @javax.annotation.Nullable
   private String carrier;
 
   public static final String JSON_PROPERTY_TRACKING_NUMBER = "tracking_number";
+  @javax.annotation.Nullable
   private String trackingNumber;
 
   public static final String JSON_PROPERTY_METHOD = "method";
+  @javax.annotation.Nullable
   private String method;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_PARENT_ID = "parent_id";
+  @javax.annotation.Nullable
   private String parentId;
 
   public ShippingOrderResponse() { 
   }
 
-  public ShippingOrderResponse amount(Long amount) {
+  public ShippingOrderResponse amount(@javax.annotation.Nonnull Long amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * Shipping amount in cents
    * minimum: 0
    * @return amount
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -92,20 +100,20 @@ public class ShippingOrderResponse {
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAmount(Long amount) {
+  public void setAmount(@javax.annotation.Nonnull Long amount) {
     this.amount = amount;
   }
 
 
-  public ShippingOrderResponse carrier(String carrier) {
+  public ShippingOrderResponse carrier(@javax.annotation.Nullable String carrier) {
     this.carrier = carrier;
     return this;
   }
 
-   /**
+  /**
    * Carrier name for the shipment
    * @return carrier
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CARRIER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -117,20 +125,20 @@ public class ShippingOrderResponse {
 
   @JsonProperty(JSON_PROPERTY_CARRIER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCarrier(String carrier) {
+  public void setCarrier(@javax.annotation.Nullable String carrier) {
     this.carrier = carrier;
   }
 
 
-  public ShippingOrderResponse trackingNumber(String trackingNumber) {
+  public ShippingOrderResponse trackingNumber(@javax.annotation.Nullable String trackingNumber) {
     this.trackingNumber = trackingNumber;
     return this;
   }
 
-   /**
+  /**
    * Tracking number can be used to track the shipment
    * @return trackingNumber
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRACKING_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -142,20 +150,20 @@ public class ShippingOrderResponse {
 
   @JsonProperty(JSON_PROPERTY_TRACKING_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingNumber(String trackingNumber) {
+  public void setTrackingNumber(@javax.annotation.Nullable String trackingNumber) {
     this.trackingNumber = trackingNumber;
   }
 
 
-  public ShippingOrderResponse method(String method) {
+  public ShippingOrderResponse method(@javax.annotation.Nullable String method) {
     this.method = method;
     return this;
   }
 
-   /**
+  /**
    * Method of shipment
    * @return method
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -167,12 +175,12 @@ public class ShippingOrderResponse {
 
   @JsonProperty(JSON_PROPERTY_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMethod(String method) {
+  public void setMethod(@javax.annotation.Nullable String method) {
     this.method = method;
   }
 
 
-  public ShippingOrderResponse metadata(Map<String, Object> metadata) {
+  public ShippingOrderResponse metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -185,10 +193,10 @@ public class ShippingOrderResponse {
     return this;
   }
 
-   /**
+  /**
    * Hash where the user can send additional information for each &#39;shipping&#39;.
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
@@ -200,20 +208,20 @@ public class ShippingOrderResponse {
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 
 
-  public ShippingOrderResponse id(String id) {
+  public ShippingOrderResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -225,20 +233,20 @@ public class ShippingOrderResponse {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public ShippingOrderResponse _object(String _object) {
+  public ShippingOrderResponse _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -250,20 +258,20 @@ public class ShippingOrderResponse {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
 
-  public ShippingOrderResponse parentId(String parentId) {
+  public ShippingOrderResponse parentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
     return this;
   }
 
-   /**
+  /**
    * Get parentId
    * @return parentId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -275,7 +283,7 @@ public class ShippingOrderResponse {
 
   @JsonProperty(JSON_PROPERTY_PARENT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentId(String parentId) {
+  public void setParentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
   }
 

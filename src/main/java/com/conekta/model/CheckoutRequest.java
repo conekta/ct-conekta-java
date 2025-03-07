@@ -45,45 +45,56 @@ import com.conekta.JSON;
   CheckoutRequest.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("checkout_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CheckoutRequest {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
+  @javax.annotation.Nonnull
   private List<String> allowedPaymentMethods = new ArrayList<>();
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nullable
   private Long expiresAt;
 
   public static final String JSON_PROPERTY_FAILURE_URL = "failure_url";
+  @javax.annotation.Nullable
   private String failureUrl;
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED = "monthly_installments_enabled";
+  @javax.annotation.Nullable
   private Boolean monthlyInstallmentsEnabled;
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS = "monthly_installments_options";
+  @javax.annotation.Nullable
   private List<Integer> monthlyInstallmentsOptions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_MAX_FAILED_RETRIES = "max_failed_retries";
+  @javax.annotation.Nullable
   private Integer maxFailedRetries;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_ON_DEMAND_ENABLED = "on_demand_enabled";
+  @javax.annotation.Nullable
   private Boolean onDemandEnabled;
 
   public static final String JSON_PROPERTY_REDIRECTION_TIME = "redirection_time";
+  @javax.annotation.Nullable
   private Integer redirectionTime;
 
   public static final String JSON_PROPERTY_SUCCESS_URL = "success_url";
+  @javax.annotation.Nullable
   private String successUrl;
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private String type;
 
   public CheckoutRequest() { 
   }
 
-  public CheckoutRequest allowedPaymentMethods(List<String> allowedPaymentMethods) {
+  public CheckoutRequest allowedPaymentMethods(@javax.annotation.Nonnull List<String> allowedPaymentMethods) {
     this.allowedPaymentMethods = allowedPaymentMethods;
     return this;
   }
@@ -96,10 +107,10 @@ public class CheckoutRequest {
     return this;
   }
 
-   /**
+  /**
    * Are the payment methods available for this link
    * @return allowedPaymentMethods
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ALLOWED_PAYMENT_METHODS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -111,20 +122,20 @@ public class CheckoutRequest {
 
   @JsonProperty(JSON_PROPERTY_ALLOWED_PAYMENT_METHODS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAllowedPaymentMethods(List<String> allowedPaymentMethods) {
+  public void setAllowedPaymentMethods(@javax.annotation.Nonnull List<String> allowedPaymentMethods) {
     this.allowedPaymentMethods = allowedPaymentMethods;
   }
 
 
-  public CheckoutRequest expiresAt(Long expiresAt) {
+  public CheckoutRequest expiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
-   /**
+  /**
    * Unix timestamp of checkout expiration
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -136,20 +147,20 @@ public class CheckoutRequest {
 
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(Long expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public CheckoutRequest failureUrl(String failureUrl) {
+  public CheckoutRequest failureUrl(@javax.annotation.Nullable String failureUrl) {
     this.failureUrl = failureUrl;
     return this;
   }
 
-   /**
+  /**
    * Redirection url back to the site in case of failed payment, applies only to HostedPayment.
    * @return failureUrl
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAILURE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -161,20 +172,20 @@ public class CheckoutRequest {
 
   @JsonProperty(JSON_PROPERTY_FAILURE_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFailureUrl(String failureUrl) {
+  public void setFailureUrl(@javax.annotation.Nullable String failureUrl) {
     this.failureUrl = failureUrl;
   }
 
 
-  public CheckoutRequest monthlyInstallmentsEnabled(Boolean monthlyInstallmentsEnabled) {
+  public CheckoutRequest monthlyInstallmentsEnabled(@javax.annotation.Nullable Boolean monthlyInstallmentsEnabled) {
     this.monthlyInstallmentsEnabled = monthlyInstallmentsEnabled;
     return this;
   }
 
-   /**
+  /**
    * Get monthlyInstallmentsEnabled
    * @return monthlyInstallmentsEnabled
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -186,12 +197,12 @@ public class CheckoutRequest {
 
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMonthlyInstallmentsEnabled(Boolean monthlyInstallmentsEnabled) {
+  public void setMonthlyInstallmentsEnabled(@javax.annotation.Nullable Boolean monthlyInstallmentsEnabled) {
     this.monthlyInstallmentsEnabled = monthlyInstallmentsEnabled;
   }
 
 
-  public CheckoutRequest monthlyInstallmentsOptions(List<Integer> monthlyInstallmentsOptions) {
+  public CheckoutRequest monthlyInstallmentsOptions(@javax.annotation.Nullable List<Integer> monthlyInstallmentsOptions) {
     this.monthlyInstallmentsOptions = monthlyInstallmentsOptions;
     return this;
   }
@@ -204,10 +215,10 @@ public class CheckoutRequest {
     return this;
   }
 
-   /**
+  /**
    * Get monthlyInstallmentsOptions
    * @return monthlyInstallmentsOptions
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -219,20 +230,20 @@ public class CheckoutRequest {
 
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMonthlyInstallmentsOptions(List<Integer> monthlyInstallmentsOptions) {
+  public void setMonthlyInstallmentsOptions(@javax.annotation.Nullable List<Integer> monthlyInstallmentsOptions) {
     this.monthlyInstallmentsOptions = monthlyInstallmentsOptions;
   }
 
 
-  public CheckoutRequest maxFailedRetries(Integer maxFailedRetries) {
+  public CheckoutRequest maxFailedRetries(@javax.annotation.Nullable Integer maxFailedRetries) {
     this.maxFailedRetries = maxFailedRetries;
     return this;
   }
 
-   /**
+  /**
    * Number of retries allowed before the checkout is marked as failed
    * @return maxFailedRetries
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MAX_FAILED_RETRIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -244,20 +255,20 @@ public class CheckoutRequest {
 
   @JsonProperty(JSON_PROPERTY_MAX_FAILED_RETRIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMaxFailedRetries(Integer maxFailedRetries) {
+  public void setMaxFailedRetries(@javax.annotation.Nullable Integer maxFailedRetries) {
     this.maxFailedRetries = maxFailedRetries;
   }
 
 
-  public CheckoutRequest name(String name) {
+  public CheckoutRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Reason for payment
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -269,20 +280,20 @@ public class CheckoutRequest {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public CheckoutRequest onDemandEnabled(Boolean onDemandEnabled) {
+  public CheckoutRequest onDemandEnabled(@javax.annotation.Nullable Boolean onDemandEnabled) {
     this.onDemandEnabled = onDemandEnabled;
     return this;
   }
 
-   /**
+  /**
    * Get onDemandEnabled
    * @return onDemandEnabled
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ON_DEMAND_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -294,20 +305,20 @@ public class CheckoutRequest {
 
   @JsonProperty(JSON_PROPERTY_ON_DEMAND_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOnDemandEnabled(Boolean onDemandEnabled) {
+  public void setOnDemandEnabled(@javax.annotation.Nullable Boolean onDemandEnabled) {
     this.onDemandEnabled = onDemandEnabled;
   }
 
 
-  public CheckoutRequest redirectionTime(Integer redirectionTime) {
+  public CheckoutRequest redirectionTime(@javax.annotation.Nullable Integer redirectionTime) {
     this.redirectionTime = redirectionTime;
     return this;
   }
 
-   /**
+  /**
    * number of seconds to wait before redirecting to the success_url
    * @return redirectionTime
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REDIRECTION_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -319,20 +330,20 @@ public class CheckoutRequest {
 
   @JsonProperty(JSON_PROPERTY_REDIRECTION_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRedirectionTime(Integer redirectionTime) {
+  public void setRedirectionTime(@javax.annotation.Nullable Integer redirectionTime) {
     this.redirectionTime = redirectionTime;
   }
 
 
-  public CheckoutRequest successUrl(String successUrl) {
+  public CheckoutRequest successUrl(@javax.annotation.Nullable String successUrl) {
     this.successUrl = successUrl;
     return this;
   }
 
-   /**
+  /**
    * Redirection url back to the site in case of successful payment, applies only to HostedPayment
    * @return successUrl
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUCCESS_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -344,20 +355,20 @@ public class CheckoutRequest {
 
   @JsonProperty(JSON_PROPERTY_SUCCESS_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSuccessUrl(String successUrl) {
+  public void setSuccessUrl(@javax.annotation.Nullable String successUrl) {
     this.successUrl = successUrl;
   }
 
 
-  public CheckoutRequest type(String type) {
+  public CheckoutRequest type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * This field represents the type of checkout
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -369,7 +380,7 @@ public class CheckoutRequest {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 

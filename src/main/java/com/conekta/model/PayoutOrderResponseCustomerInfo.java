@@ -39,41 +39,48 @@ import com.conekta.JSON;
   PayoutOrderResponseCustomerInfo.JSON_PROPERTY_ID
 })
 @JsonTypeName("payout_order_response_customer_info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PayoutOrderResponseCustomerInfo {
   public static final String JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE = "customer_custom_reference";
+  @javax.annotation.Nullable
   private String customerCustomReference;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @javax.annotation.Nullable
   private String email;
 
   public static final String JSON_PROPERTY_PHONE = "phone";
+  @javax.annotation.Nullable
   private String phone;
 
   public static final String JSON_PROPERTY_CORPORATE = "corporate";
+  @javax.annotation.Nullable
   private Boolean corporate = false;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nonnull
   private String id;
 
   public PayoutOrderResponseCustomerInfo() { 
   }
 
-  public PayoutOrderResponseCustomerInfo customerCustomReference(String customerCustomReference) {
+  public PayoutOrderResponseCustomerInfo customerCustomReference(@javax.annotation.Nullable String customerCustomReference) {
     this.customerCustomReference = customerCustomReference;
     return this;
   }
 
-   /**
+  /**
    * Custom reference
    * @return customerCustomReference
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -85,20 +92,20 @@ public class PayoutOrderResponseCustomerInfo {
 
   @JsonProperty(JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomerCustomReference(String customerCustomReference) {
+  public void setCustomerCustomReference(@javax.annotation.Nullable String customerCustomReference) {
     this.customerCustomReference = customerCustomReference;
   }
 
 
-  public PayoutOrderResponseCustomerInfo name(String name) {
+  public PayoutOrderResponseCustomerInfo name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -110,20 +117,20 @@ public class PayoutOrderResponseCustomerInfo {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public PayoutOrderResponseCustomerInfo email(String email) {
+  public PayoutOrderResponseCustomerInfo email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * Get email
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -135,20 +142,20 @@ public class PayoutOrderResponseCustomerInfo {
 
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public PayoutOrderResponseCustomerInfo phone(String phone) {
+  public PayoutOrderResponseCustomerInfo phone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
     return this;
   }
 
-   /**
+  /**
    * Get phone
    * @return phone
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -160,20 +167,20 @@ public class PayoutOrderResponseCustomerInfo {
 
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPhone(String phone) {
+  public void setPhone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
   }
 
 
-  public PayoutOrderResponseCustomerInfo corporate(Boolean corporate) {
+  public PayoutOrderResponseCustomerInfo corporate(@javax.annotation.Nullable Boolean corporate) {
     this.corporate = corporate;
     return this;
   }
 
-   /**
+  /**
    * Get corporate
    * @return corporate
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CORPORATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -185,20 +192,20 @@ public class PayoutOrderResponseCustomerInfo {
 
   @JsonProperty(JSON_PROPERTY_CORPORATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCorporate(Boolean corporate) {
+  public void setCorporate(@javax.annotation.Nullable Boolean corporate) {
     this.corporate = corporate;
   }
 
 
-  public PayoutOrderResponseCustomerInfo _object(String _object) {
+  public PayoutOrderResponseCustomerInfo _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -210,20 +217,20 @@ public class PayoutOrderResponseCustomerInfo {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
 
-  public PayoutOrderResponseCustomerInfo id(String id) {
+  public PayoutOrderResponseCustomerInfo id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The id of the customer.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -235,7 +242,7 @@ public class PayoutOrderResponseCustomerInfo {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 

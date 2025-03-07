@@ -36,15 +36,16 @@ import com.conekta.JSON;
   OrdersResponse.JSON_PROPERTY_DATA
 })
 @JsonTypeName("orders_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class OrdersResponse {
   public static final String JSON_PROPERTY_DATA = "data";
+  @javax.annotation.Nonnull
   private List<OrderResponse> data = new ArrayList<>();
 
   public OrdersResponse() { 
   }
 
-  public OrdersResponse data(List<OrderResponse> data) {
+  public OrdersResponse data(@javax.annotation.Nonnull List<OrderResponse> data) {
     this.data = data;
     return this;
   }
@@ -57,10 +58,10 @@ public class OrdersResponse {
     return this;
   }
 
-   /**
+  /**
    * Get data
    * @return data
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -72,7 +73,7 @@ public class OrdersResponse {
 
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setData(List<OrderResponse> data) {
+  public void setData(@javax.annotation.Nonnull List<OrderResponse> data) {
     this.data = data;
   }
 

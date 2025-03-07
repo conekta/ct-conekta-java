@@ -35,26 +35,28 @@ import com.conekta.JSON;
   OrderNextActionResponseRedirectToUrl.JSON_PROPERTY_RETURN_URL
 })
 @JsonTypeName("order_next_action_response_redirect_to_url")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class OrderNextActionResponseRedirectToUrl {
   public static final String JSON_PROPERTY_URL = "url";
+  @javax.annotation.Nullable
   private URI url;
 
   public static final String JSON_PROPERTY_RETURN_URL = "return_url";
+  @javax.annotation.Nullable
   private URI returnUrl;
 
   public OrderNextActionResponseRedirectToUrl() { 
   }
 
-  public OrderNextActionResponseRedirectToUrl url(URI url) {
+  public OrderNextActionResponseRedirectToUrl url(@javax.annotation.Nullable URI url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * pay.conekta.com/{id} Indicates the url of the Conekta component to authenticate the flow through 3DS2.
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -66,20 +68,20 @@ public class OrderNextActionResponseRedirectToUrl {
 
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUrl(URI url) {
+  public void setUrl(@javax.annotation.Nullable URI url) {
     this.url = url;
   }
 
 
-  public OrderNextActionResponseRedirectToUrl returnUrl(URI returnUrl) {
+  public OrderNextActionResponseRedirectToUrl returnUrl(@javax.annotation.Nullable URI returnUrl) {
     this.returnUrl = returnUrl;
     return this;
   }
 
-   /**
+  /**
    * Indicates the url to which the 3DS2 flow returns at the end, when the integration is redirected.
    * @return returnUrl
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RETURN_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -91,7 +93,7 @@ public class OrderNextActionResponseRedirectToUrl {
 
   @JsonProperty(JSON_PROPERTY_RETURN_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReturnUrl(URI returnUrl) {
+  public void setReturnUrl(@javax.annotation.Nullable URI returnUrl) {
     this.returnUrl = returnUrl;
   }
 

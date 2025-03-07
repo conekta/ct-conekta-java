@@ -40,44 +40,52 @@ import com.conekta.JSON;
   CustomerShippingContactsResponseAddress.JSON_PROPERTY_RESIDENTIAL
 })
 @JsonTypeName("customer_shipping_contacts_response_address")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CustomerShippingContactsResponseAddress {
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_STREET1 = "street1";
+  @javax.annotation.Nullable
   private String street1;
 
   public static final String JSON_PROPERTY_STREET2 = "street2";
+  @javax.annotation.Nullable
   private String street2;
 
   public static final String JSON_PROPERTY_POSTAL_CODE = "postal_code";
+  @javax.annotation.Nullable
   private String postalCode;
 
   public static final String JSON_PROPERTY_CITY = "city";
+  @javax.annotation.Nullable
   private String city;
 
   public static final String JSON_PROPERTY_STATE = "state";
+  @javax.annotation.Nullable
   private String state;
 
   public static final String JSON_PROPERTY_COUNTRY = "country";
+  @javax.annotation.Nullable
   private String country;
 
   public static final String JSON_PROPERTY_RESIDENTIAL = "residential";
+  @javax.annotation.Nullable
   private Boolean residential;
 
   public CustomerShippingContactsResponseAddress() { 
   }
 
-  public CustomerShippingContactsResponseAddress _object(String _object) {
+  public CustomerShippingContactsResponseAddress _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -89,20 +97,20 @@ public class CustomerShippingContactsResponseAddress {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
 
-  public CustomerShippingContactsResponseAddress street1(String street1) {
+  public CustomerShippingContactsResponseAddress street1(@javax.annotation.Nullable String street1) {
     this.street1 = street1;
     return this;
   }
 
-   /**
+  /**
    * Get street1
    * @return street1
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STREET1)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -114,20 +122,20 @@ public class CustomerShippingContactsResponseAddress {
 
   @JsonProperty(JSON_PROPERTY_STREET1)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStreet1(String street1) {
+  public void setStreet1(@javax.annotation.Nullable String street1) {
     this.street1 = street1;
   }
 
 
-  public CustomerShippingContactsResponseAddress street2(String street2) {
+  public CustomerShippingContactsResponseAddress street2(@javax.annotation.Nullable String street2) {
     this.street2 = street2;
     return this;
   }
 
-   /**
+  /**
    * Get street2
    * @return street2
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STREET2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -139,20 +147,20 @@ public class CustomerShippingContactsResponseAddress {
 
   @JsonProperty(JSON_PROPERTY_STREET2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStreet2(String street2) {
+  public void setStreet2(@javax.annotation.Nullable String street2) {
     this.street2 = street2;
   }
 
 
-  public CustomerShippingContactsResponseAddress postalCode(String postalCode) {
+  public CustomerShippingContactsResponseAddress postalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
 
-   /**
+  /**
    * Get postalCode
    * @return postalCode
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -164,20 +172,20 @@ public class CustomerShippingContactsResponseAddress {
 
   @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPostalCode(String postalCode) {
+  public void setPostalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
   }
 
 
-  public CustomerShippingContactsResponseAddress city(String city) {
+  public CustomerShippingContactsResponseAddress city(@javax.annotation.Nullable String city) {
     this.city = city;
     return this;
   }
 
-   /**
+  /**
    * Get city
    * @return city
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -189,20 +197,20 @@ public class CustomerShippingContactsResponseAddress {
 
   @JsonProperty(JSON_PROPERTY_CITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCity(String city) {
+  public void setCity(@javax.annotation.Nullable String city) {
     this.city = city;
   }
 
 
-  public CustomerShippingContactsResponseAddress state(String state) {
+  public CustomerShippingContactsResponseAddress state(@javax.annotation.Nullable String state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Get state
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -214,20 +222,20 @@ public class CustomerShippingContactsResponseAddress {
 
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setState(String state) {
+  public void setState(@javax.annotation.Nullable String state) {
     this.state = state;
   }
 
 
-  public CustomerShippingContactsResponseAddress country(String country) {
+  public CustomerShippingContactsResponseAddress country(@javax.annotation.Nullable String country) {
     this.country = country;
     return this;
   }
 
-   /**
+  /**
    * Get country
    * @return country
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -239,20 +247,20 @@ public class CustomerShippingContactsResponseAddress {
 
   @JsonProperty(JSON_PROPERTY_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCountry(String country) {
+  public void setCountry(@javax.annotation.Nullable String country) {
     this.country = country;
   }
 
 
-  public CustomerShippingContactsResponseAddress residential(Boolean residential) {
+  public CustomerShippingContactsResponseAddress residential(@javax.annotation.Nullable Boolean residential) {
     this.residential = residential;
     return this;
   }
 
-   /**
+  /**
    * Get residential
    * @return residential
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RESIDENTIAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -264,7 +272,7 @@ public class CustomerShippingContactsResponseAddress {
 
   @JsonProperty(JSON_PROPERTY_RESIDENTIAL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setResidential(Boolean residential) {
+  public void setResidential(@javax.annotation.Nullable Boolean residential) {
     this.residential = residential;
   }
 

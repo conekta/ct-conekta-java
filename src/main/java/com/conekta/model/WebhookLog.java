@@ -41,41 +41,48 @@ import com.conekta.JSON;
   WebhookLog.JSON_PROPERTY_RESPONSE_DATA,
   WebhookLog.JSON_PROPERTY_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class WebhookLog {
   public static final String JSON_PROPERTY_FAILED_ATTEMPTS = "failed_attempts";
+  @javax.annotation.Nullable
   private Integer failedAttempts;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_LAST_ATTEMPTED_AT = "last_attempted_at";
+  @javax.annotation.Nullable
   private Integer lastAttemptedAt;
 
   public static final String JSON_PROPERTY_LAST_HTTP_RESPONSE_STATUS = "last_http_response_status";
+  @javax.annotation.Nullable
   private Integer lastHttpResponseStatus;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_RESPONSE_DATA = "response_data";
+  @javax.annotation.Nullable
   private Map<String, Object> responseData = new HashMap<>();
 
   public static final String JSON_PROPERTY_URL = "url";
+  @javax.annotation.Nullable
   private URI url;
 
   public WebhookLog() { 
   }
 
-  public WebhookLog failedAttempts(Integer failedAttempts) {
+  public WebhookLog failedAttempts(@javax.annotation.Nullable Integer failedAttempts) {
     this.failedAttempts = failedAttempts;
     return this;
   }
 
-   /**
+  /**
    * Get failedAttempts
    * @return failedAttempts
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAILED_ATTEMPTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -87,20 +94,20 @@ public class WebhookLog {
 
   @JsonProperty(JSON_PROPERTY_FAILED_ATTEMPTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFailedAttempts(Integer failedAttempts) {
+  public void setFailedAttempts(@javax.annotation.Nullable Integer failedAttempts) {
     this.failedAttempts = failedAttempts;
   }
 
 
-  public WebhookLog id(String id) {
+  public WebhookLog id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -112,20 +119,20 @@ public class WebhookLog {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public WebhookLog lastAttemptedAt(Integer lastAttemptedAt) {
+  public WebhookLog lastAttemptedAt(@javax.annotation.Nullable Integer lastAttemptedAt) {
     this.lastAttemptedAt = lastAttemptedAt;
     return this;
   }
 
-   /**
+  /**
    * Get lastAttemptedAt
    * @return lastAttemptedAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST_ATTEMPTED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -137,20 +144,20 @@ public class WebhookLog {
 
   @JsonProperty(JSON_PROPERTY_LAST_ATTEMPTED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastAttemptedAt(Integer lastAttemptedAt) {
+  public void setLastAttemptedAt(@javax.annotation.Nullable Integer lastAttemptedAt) {
     this.lastAttemptedAt = lastAttemptedAt;
   }
 
 
-  public WebhookLog lastHttpResponseStatus(Integer lastHttpResponseStatus) {
+  public WebhookLog lastHttpResponseStatus(@javax.annotation.Nullable Integer lastHttpResponseStatus) {
     this.lastHttpResponseStatus = lastHttpResponseStatus;
     return this;
   }
 
-   /**
+  /**
    * Get lastHttpResponseStatus
    * @return lastHttpResponseStatus
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST_HTTP_RESPONSE_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -162,20 +169,20 @@ public class WebhookLog {
 
   @JsonProperty(JSON_PROPERTY_LAST_HTTP_RESPONSE_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastHttpResponseStatus(Integer lastHttpResponseStatus) {
+  public void setLastHttpResponseStatus(@javax.annotation.Nullable Integer lastHttpResponseStatus) {
     this.lastHttpResponseStatus = lastHttpResponseStatus;
   }
 
 
-  public WebhookLog _object(String _object) {
+  public WebhookLog _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -187,12 +194,12 @@ public class WebhookLog {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
 
-  public WebhookLog responseData(Map<String, Object> responseData) {
+  public WebhookLog responseData(@javax.annotation.Nullable Map<String, Object> responseData) {
     this.responseData = responseData;
     return this;
   }
@@ -205,10 +212,10 @@ public class WebhookLog {
     return this;
   }
 
-   /**
+  /**
    * Get responseData
    * @return responseData
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RESPONSE_DATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
@@ -220,20 +227,20 @@ public class WebhookLog {
 
   @JsonProperty(JSON_PROPERTY_RESPONSE_DATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setResponseData(Map<String, Object> responseData) {
+  public void setResponseData(@javax.annotation.Nullable Map<String, Object> responseData) {
     this.responseData = responseData;
   }
 
 
-  public WebhookLog url(URI url) {
+  public WebhookLog url(@javax.annotation.Nullable URI url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * Get url
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -245,7 +252,7 @@ public class WebhookLog {
 
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUrl(URI url) {
+  public void setUrl(@javax.annotation.Nullable URI url) {
     this.url = url;
   }
 

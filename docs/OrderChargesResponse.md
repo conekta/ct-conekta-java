@@ -1,6 +1,6 @@
 
 
-# OrderResponseCharges
+# OrderChargesResponse
 
 The charges associated with the order
 

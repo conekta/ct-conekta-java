@@ -37,30 +37,33 @@ import com.conekta.JSON;
   UpdateOrderTaxRequest.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("update_order_tax_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class UpdateOrderTaxRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nullable
   private Long amount;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata = new HashMap<>();
 
   public UpdateOrderTaxRequest() { 
   }
 
-  public UpdateOrderTaxRequest amount(Long amount) {
+  public UpdateOrderTaxRequest amount(@javax.annotation.Nullable Long amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * The amount to be collected for tax in cents
    * minimum: 0
    * @return amount
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -72,20 +75,20 @@ public class UpdateOrderTaxRequest {
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAmount(Long amount) {
+  public void setAmount(@javax.annotation.Nullable Long amount) {
     this.amount = amount;
   }
 
 
-  public UpdateOrderTaxRequest description(String description) {
+  public UpdateOrderTaxRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * description or tax&#39;s name
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -97,12 +100,12 @@ public class UpdateOrderTaxRequest {
 
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateOrderTaxRequest metadata(Map<String, Object> metadata) {
+  public UpdateOrderTaxRequest metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -115,10 +118,10 @@ public class UpdateOrderTaxRequest {
     return this;
   }
 
-   /**
+  /**
    * Get metadata
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -130,7 +133,7 @@ public class UpdateOrderTaxRequest {
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 

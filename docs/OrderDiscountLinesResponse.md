@@ -1,6 +1,6 @@
 
 
-# OrderResponseDiscountLines
+# OrderDiscountLinesResponse
 
 
 ## Properties

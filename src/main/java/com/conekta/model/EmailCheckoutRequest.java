@@ -33,23 +33,24 @@ import com.conekta.JSON;
   EmailCheckoutRequest.JSON_PROPERTY_EMAIL
 })
 @JsonTypeName("emailCheckout_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class EmailCheckoutRequest {
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @javax.annotation.Nonnull
   private String email;
 
   public EmailCheckoutRequest() { 
   }
 
-  public EmailCheckoutRequest email(String email) {
+  public EmailCheckoutRequest email(@javax.annotation.Nonnull String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * Get email
    * @return email
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -61,7 +62,7 @@ public class EmailCheckoutRequest {
 
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nonnull String email) {
     this.email = email;
   }
 

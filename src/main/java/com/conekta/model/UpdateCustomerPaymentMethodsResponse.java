@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.PaymentMethodCardResponse;
+import com.conekta.model.PaymentMethodCashAgreements;
 import com.conekta.model.PaymentMethodCashResponse;
 import com.conekta.model.PaymentMethodSpeiRecurrent;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -27,7 +28,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
@@ -58,7 +61,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.conekta.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 @JsonDeserialize(using = UpdateCustomerPaymentMethodsResponse.UpdateCustomerPaymentMethodsResponseDeserializer.class)
 @JsonSerialize(using = UpdateCustomerPaymentMethodsResponse.UpdateCustomerPaymentMethodsResponseSerializer.class)
 public class UpdateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema {
@@ -104,6 +107,10 @@ public class UpdateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashResponse.class);
                     newUpdateCustomerPaymentMethodsResponse.setActualInstance(deserialized);
                     return newUpdateCustomerPaymentMethodsResponse;
+                case "cash_recurrent":
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashResponse.class);
+                    newUpdateCustomerPaymentMethodsResponse.setActualInstance(deserialized);
+                    return newUpdateCustomerPaymentMethodsResponse;
                 case "oxxo_recurrent":
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashResponse.class);
                     newUpdateCustomerPaymentMethodsResponse.setActualInstance(deserialized);
@@ -125,7 +132,7 @@ public class UpdateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
                     newUpdateCustomerPaymentMethodsResponse.setActualInstance(deserialized);
                     return newUpdateCustomerPaymentMethodsResponse;
                 default:
-                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for UpdateCustomerPaymentMethodsResponse. Possible values: card cash oxxo_recurrent spei_recurrent payment_method_card_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
+                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for UpdateCustomerPaymentMethodsResponse. Possible values: card cash cash_recurrent oxxo_recurrent spei_recurrent payment_method_card_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
             }
 
             boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
@@ -197,7 +204,7 @@ public class UpdateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<>();
+    public static final Map<String, GenericType<?>> schemas = new HashMap<>();
 
     public UpdateCustomerPaymentMethodsResponse() {
         super("oneOf", Boolean.FALSE);
@@ -230,6 +237,7 @@ public class UpdateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
         Map<String, Class<?>> mappings = new HashMap<>();
         mappings.put("card", PaymentMethodCardResponse.class);
         mappings.put("cash", PaymentMethodCashResponse.class);
+        mappings.put("cash_recurrent", PaymentMethodCashResponse.class);
         mappings.put("oxxo_recurrent", PaymentMethodCashResponse.class);
         mappings.put("spei_recurrent", PaymentMethodSpeiRecurrent.class);
         mappings.put("payment_method_card_response", PaymentMethodCardResponse.class);
@@ -240,7 +248,7 @@ public class UpdateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, GenericType<?>> getSchemas() {
         return UpdateCustomerPaymentMethodsResponse.schemas;
     }
 

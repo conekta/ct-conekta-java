@@ -47,48 +47,60 @@ import com.conekta.JSON;
   Checkout.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("checkout")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Checkout {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
+  @javax.annotation.Nonnull
   private List<String> allowedPaymentMethods = new ArrayList<>();
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nonnull
   private Long expiresAt;
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED = "monthly_installments_enabled";
+  @javax.annotation.Nullable
   private Boolean monthlyInstallmentsEnabled;
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS = "monthly_installments_options";
+  @javax.annotation.Nullable
   private List<Integer> monthlyInstallmentsOptions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_THREE_DS_MODE = "three_ds_mode";
+  @javax.annotation.Nullable
   private String threeDsMode;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String JSON_PROPERTY_NEEDS_SHIPPING_CONTACT = "needs_shipping_contact";
+  @javax.annotation.Nullable
   private Boolean needsShippingContact;
 
   public static final String JSON_PROPERTY_ON_DEMAND_ENABLED = "on_demand_enabled";
+  @javax.annotation.Nullable
   private Boolean onDemandEnabled;
 
   public static final String JSON_PROPERTY_ORDER_TEMPLATE = "order_template";
+  @javax.annotation.Nonnull
   private CheckoutOrderTemplate orderTemplate;
 
   public static final String JSON_PROPERTY_PAYMENTS_LIMIT_COUNT = "payments_limit_count";
+  @javax.annotation.Nullable
   private Integer paymentsLimitCount;
 
   public static final String JSON_PROPERTY_RECURRENT = "recurrent";
+  @javax.annotation.Nonnull
   private Boolean recurrent;
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nonnull
   private String type;
 
   public Checkout() { 
   }
 
-  public Checkout allowedPaymentMethods(List<String> allowedPaymentMethods) {
+  public Checkout allowedPaymentMethods(@javax.annotation.Nonnull List<String> allowedPaymentMethods) {
     this.allowedPaymentMethods = allowedPaymentMethods;
     return this;
   }
@@ -101,10 +113,10 @@ public class Checkout {
     return this;
   }
 
-   /**
+  /**
    * Those are the payment methods that will be available for the link
    * @return allowedPaymentMethods
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ALLOWED_PAYMENT_METHODS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -116,20 +128,20 @@ public class Checkout {
 
   @JsonProperty(JSON_PROPERTY_ALLOWED_PAYMENT_METHODS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAllowedPaymentMethods(List<String> allowedPaymentMethods) {
+  public void setAllowedPaymentMethods(@javax.annotation.Nonnull List<String> allowedPaymentMethods) {
     this.allowedPaymentMethods = allowedPaymentMethods;
   }
 
 
-  public Checkout expiresAt(Long expiresAt) {
+  public Checkout expiresAt(@javax.annotation.Nonnull Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
-   /**
+  /**
    * It is the time when the link will expire. It is expressed in seconds since the Unix epoch. The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs) 
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -141,20 +153,20 @@ public class Checkout {
 
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setExpiresAt(Long expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nonnull Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public Checkout monthlyInstallmentsEnabled(Boolean monthlyInstallmentsEnabled) {
+  public Checkout monthlyInstallmentsEnabled(@javax.annotation.Nullable Boolean monthlyInstallmentsEnabled) {
     this.monthlyInstallmentsEnabled = monthlyInstallmentsEnabled;
     return this;
   }
 
-   /**
+  /**
    * This flag allows you to specify if months without interest will be active.
    * @return monthlyInstallmentsEnabled
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -166,12 +178,12 @@ public class Checkout {
 
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMonthlyInstallmentsEnabled(Boolean monthlyInstallmentsEnabled) {
+  public void setMonthlyInstallmentsEnabled(@javax.annotation.Nullable Boolean monthlyInstallmentsEnabled) {
     this.monthlyInstallmentsEnabled = monthlyInstallmentsEnabled;
   }
 
 
-  public Checkout monthlyInstallmentsOptions(List<Integer> monthlyInstallmentsOptions) {
+  public Checkout monthlyInstallmentsOptions(@javax.annotation.Nullable List<Integer> monthlyInstallmentsOptions) {
     this.monthlyInstallmentsOptions = monthlyInstallmentsOptions;
     return this;
   }
@@ -184,10 +196,10 @@ public class Checkout {
     return this;
   }
 
-   /**
+  /**
    * This field allows you to specify the number of months without interest.
    * @return monthlyInstallmentsOptions
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -199,20 +211,20 @@ public class Checkout {
 
   @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMonthlyInstallmentsOptions(List<Integer> monthlyInstallmentsOptions) {
+  public void setMonthlyInstallmentsOptions(@javax.annotation.Nullable List<Integer> monthlyInstallmentsOptions) {
     this.monthlyInstallmentsOptions = monthlyInstallmentsOptions;
   }
 
 
-  public Checkout threeDsMode(String threeDsMode) {
+  public Checkout threeDsMode(@javax.annotation.Nullable String threeDsMode) {
     this.threeDsMode = threeDsMode;
     return this;
   }
 
-   /**
+  /**
    * Indicates the 3DS2 mode for the order, either smart or strict.
    * @return threeDsMode
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_THREE_DS_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -224,20 +236,20 @@ public class Checkout {
 
   @JsonProperty(JSON_PROPERTY_THREE_DS_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setThreeDsMode(String threeDsMode) {
+  public void setThreeDsMode(@javax.annotation.Nullable String threeDsMode) {
     this.threeDsMode = threeDsMode;
   }
 
 
-  public Checkout name(String name) {
+  public Checkout name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Reason for charge
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -249,20 +261,20 @@ public class Checkout {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public Checkout needsShippingContact(Boolean needsShippingContact) {
+  public Checkout needsShippingContact(@javax.annotation.Nullable Boolean needsShippingContact) {
     this.needsShippingContact = needsShippingContact;
     return this;
   }
 
-   /**
+  /**
    * This flag allows you to fill in the shipping information at checkout.
    * @return needsShippingContact
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NEEDS_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -274,20 +286,20 @@ public class Checkout {
 
   @JsonProperty(JSON_PROPERTY_NEEDS_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNeedsShippingContact(Boolean needsShippingContact) {
+  public void setNeedsShippingContact(@javax.annotation.Nullable Boolean needsShippingContact) {
     this.needsShippingContact = needsShippingContact;
   }
 
 
-  public Checkout onDemandEnabled(Boolean onDemandEnabled) {
+  public Checkout onDemandEnabled(@javax.annotation.Nullable Boolean onDemandEnabled) {
     this.onDemandEnabled = onDemandEnabled;
     return this;
   }
 
-   /**
+  /**
    * This flag allows you to specify if the link will be on demand.
    * @return onDemandEnabled
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ON_DEMAND_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -299,20 +311,20 @@ public class Checkout {
 
   @JsonProperty(JSON_PROPERTY_ON_DEMAND_ENABLED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOnDemandEnabled(Boolean onDemandEnabled) {
+  public void setOnDemandEnabled(@javax.annotation.Nullable Boolean onDemandEnabled) {
     this.onDemandEnabled = onDemandEnabled;
   }
 
 
-  public Checkout orderTemplate(CheckoutOrderTemplate orderTemplate) {
+  public Checkout orderTemplate(@javax.annotation.Nonnull CheckoutOrderTemplate orderTemplate) {
     this.orderTemplate = orderTemplate;
     return this;
   }
 
-   /**
+  /**
    * Get orderTemplate
    * @return orderTemplate
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ORDER_TEMPLATE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -324,20 +336,20 @@ public class Checkout {
 
   @JsonProperty(JSON_PROPERTY_ORDER_TEMPLATE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setOrderTemplate(CheckoutOrderTemplate orderTemplate) {
+  public void setOrderTemplate(@javax.annotation.Nonnull CheckoutOrderTemplate orderTemplate) {
     this.orderTemplate = orderTemplate;
   }
 
 
-  public Checkout paymentsLimitCount(Integer paymentsLimitCount) {
+  public Checkout paymentsLimitCount(@javax.annotation.Nullable Integer paymentsLimitCount) {
     this.paymentsLimitCount = paymentsLimitCount;
     return this;
   }
 
-   /**
+  /**
    * It is the number of payments that can be made through the link.
    * @return paymentsLimitCount
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENTS_LIMIT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -349,20 +361,20 @@ public class Checkout {
 
   @JsonProperty(JSON_PROPERTY_PAYMENTS_LIMIT_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPaymentsLimitCount(Integer paymentsLimitCount) {
+  public void setPaymentsLimitCount(@javax.annotation.Nullable Integer paymentsLimitCount) {
     this.paymentsLimitCount = paymentsLimitCount;
   }
 
 
-  public Checkout recurrent(Boolean recurrent) {
+  public Checkout recurrent(@javax.annotation.Nonnull Boolean recurrent) {
     this.recurrent = recurrent;
     return this;
   }
 
-   /**
+  /**
    * false: single use. true: multiple payments
    * @return recurrent
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_RECURRENT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -374,20 +386,20 @@ public class Checkout {
 
   @JsonProperty(JSON_PROPERTY_RECURRENT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRecurrent(Boolean recurrent) {
+  public void setRecurrent(@javax.annotation.Nonnull Boolean recurrent) {
     this.recurrent = recurrent;
   }
 
 
-  public Checkout type(String type) {
+  public Checkout type(@javax.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * It is the type of link that will be created. It must be a valid type.
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -399,7 +411,7 @@ public class Checkout {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
   }
 

@@ -57,68 +57,84 @@ import com.conekta.JSON;
   UpdateCustomer.JSON_PROPERTY_SUBSCRIPTION
 })
 @JsonTypeName("update_customer")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class UpdateCustomer {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
+  @javax.annotation.Nullable
   private UpdateCustomerAntifraudInfo antifraudInfo;
 
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "date_of_birth";
+  @javax.annotation.Nullable
   private String dateOfBirth;
 
   public static final String JSON_PROPERTY_DEFAULT_PAYMENT_SOURCE_ID = "default_payment_source_id";
+  @javax.annotation.Nullable
   private String defaultPaymentSourceId;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @javax.annotation.Nullable
   private String email;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_PHONE = "phone";
+  @javax.annotation.Nullable
   private String phone;
 
   public static final String JSON_PROPERTY_PLAN_ID = "plan_id";
+  @javax.annotation.Nullable
   private String planId;
 
   public static final String JSON_PROPERTY_DEFAULT_SHIPPING_CONTACT_ID = "default_shipping_contact_id";
+  @javax.annotation.Nullable
   private String defaultShippingContactId;
 
   public static final String JSON_PROPERTY_CORPORATE = "corporate";
+  @javax.annotation.Nullable
   private Boolean corporate = false;
 
   public static final String JSON_PROPERTY_CUSTOM_REFERENCE = "custom_reference";
+  @javax.annotation.Nullable
   private String customReference;
 
   public static final String JSON_PROPERTY_FISCAL_ENTITIES = "fiscal_entities";
+  @javax.annotation.Nullable
   private List<CustomerFiscalEntitiesRequest> fiscalEntities = new ArrayList<>();
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_NATIONAL_ID = "national_id";
+  @javax.annotation.Nullable
   private String nationalId;
 
   public static final String JSON_PROPERTY_PAYMENT_SOURCES = "payment_sources";
+  @javax.annotation.Nullable
   private List<CustomerPaymentMethodsRequest> paymentSources = new ArrayList<>();
 
   public static final String JSON_PROPERTY_SHIPPING_CONTACTS = "shipping_contacts";
+  @javax.annotation.Nullable
   private List<CustomerShippingContacts> shippingContacts = new ArrayList<>();
 
   public static final String JSON_PROPERTY_SUBSCRIPTION = "subscription";
+  @javax.annotation.Nullable
   private SubscriptionRequest subscription;
 
   public UpdateCustomer() { 
   }
 
-  public UpdateCustomer antifraudInfo(UpdateCustomerAntifraudInfo antifraudInfo) {
+  public UpdateCustomer antifraudInfo(@javax.annotation.Nullable UpdateCustomerAntifraudInfo antifraudInfo) {
     this.antifraudInfo = antifraudInfo;
     return this;
   }
 
-   /**
+  /**
    * Get antifraudInfo
    * @return antifraudInfo
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ANTIFRAUD_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -130,20 +146,20 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_ANTIFRAUD_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAntifraudInfo(UpdateCustomerAntifraudInfo antifraudInfo) {
+  public void setAntifraudInfo(@javax.annotation.Nullable UpdateCustomerAntifraudInfo antifraudInfo) {
     this.antifraudInfo = antifraudInfo;
   }
 
 
-  public UpdateCustomer dateOfBirth(String dateOfBirth) {
+  public UpdateCustomer dateOfBirth(@javax.annotation.Nullable String dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
 
-   /**
+  /**
    * It is a parameter that allows to identify the date of birth of the client.
    * @return dateOfBirth
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -155,20 +171,20 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_DATE_OF_BIRTH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDateOfBirth(String dateOfBirth) {
+  public void setDateOfBirth(@javax.annotation.Nullable String dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
 
-  public UpdateCustomer defaultPaymentSourceId(String defaultPaymentSourceId) {
+  public UpdateCustomer defaultPaymentSourceId(@javax.annotation.Nullable String defaultPaymentSourceId) {
     this.defaultPaymentSourceId = defaultPaymentSourceId;
     return this;
   }
 
-   /**
+  /**
    * It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id)
    * @return defaultPaymentSourceId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT_PAYMENT_SOURCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -180,20 +196,20 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_DEFAULT_PAYMENT_SOURCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDefaultPaymentSourceId(String defaultPaymentSourceId) {
+  public void setDefaultPaymentSourceId(@javax.annotation.Nullable String defaultPaymentSourceId) {
     this.defaultPaymentSourceId = defaultPaymentSourceId;
   }
 
 
-  public UpdateCustomer email(String email) {
+  public UpdateCustomer email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * An email address is a series of customizable characters followed by a universal Internet symbol, the at symbol (@), the name of a host server, and a web domain ending (.mx, .com, .org, . net, etc).
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -205,20 +221,20 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public UpdateCustomer name(String name) {
+  public UpdateCustomer name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Client&#39;s name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -230,20 +246,20 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateCustomer phone(String phone) {
+  public UpdateCustomer phone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
     return this;
   }
 
-   /**
+  /**
    * Is the customer&#39;s phone number
    * @return phone
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -255,20 +271,20 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_PHONE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPhone(String phone) {
+  public void setPhone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
   }
 
 
-  public UpdateCustomer planId(String planId) {
+  public UpdateCustomer planId(@javax.annotation.Nullable String planId) {
     this.planId = planId;
     return this;
   }
 
-   /**
+  /**
    * Contains the ID of a plan, which could together with name, email and phone create a client directly to a subscription
    * @return planId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PLAN_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -280,20 +296,20 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_PLAN_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPlanId(String planId) {
+  public void setPlanId(@javax.annotation.Nullable String planId) {
     this.planId = planId;
   }
 
 
-  public UpdateCustomer defaultShippingContactId(String defaultShippingContactId) {
+  public UpdateCustomer defaultShippingContactId(@javax.annotation.Nullable String defaultShippingContactId) {
     this.defaultShippingContactId = defaultShippingContactId;
     return this;
   }
 
-   /**
+  /**
    * It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact)
    * @return defaultShippingContactId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEFAULT_SHIPPING_CONTACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -305,20 +321,20 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_DEFAULT_SHIPPING_CONTACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDefaultShippingContactId(String defaultShippingContactId) {
+  public void setDefaultShippingContactId(@javax.annotation.Nullable String defaultShippingContactId) {
     this.defaultShippingContactId = defaultShippingContactId;
   }
 
 
-  public UpdateCustomer corporate(Boolean corporate) {
+  public UpdateCustomer corporate(@javax.annotation.Nullable Boolean corporate) {
     this.corporate = corporate;
     return this;
   }
 
-   /**
+  /**
    * It is a value that allows identifying if the email is corporate or not.
    * @return corporate
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CORPORATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -330,20 +346,20 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_CORPORATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCorporate(Boolean corporate) {
+  public void setCorporate(@javax.annotation.Nullable Boolean corporate) {
     this.corporate = corporate;
   }
 
 
-  public UpdateCustomer customReference(String customReference) {
+  public UpdateCustomer customReference(@javax.annotation.Nullable String customReference) {
     this.customReference = customReference;
     return this;
   }
 
-   /**
+  /**
    * It is an undefined value.
    * @return customReference
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOM_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -355,12 +371,12 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_CUSTOM_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomReference(String customReference) {
+  public void setCustomReference(@javax.annotation.Nullable String customReference) {
     this.customReference = customReference;
   }
 
 
-  public UpdateCustomer fiscalEntities(List<CustomerFiscalEntitiesRequest> fiscalEntities) {
+  public UpdateCustomer fiscalEntities(@javax.annotation.Nullable List<CustomerFiscalEntitiesRequest> fiscalEntities) {
     this.fiscalEntities = fiscalEntities;
     return this;
   }
@@ -373,10 +389,10 @@ public class UpdateCustomer {
     return this;
   }
 
-   /**
+  /**
    * Get fiscalEntities
    * @return fiscalEntities
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -388,12 +404,12 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiscalEntities(List<CustomerFiscalEntitiesRequest> fiscalEntities) {
+  public void setFiscalEntities(@javax.annotation.Nullable List<CustomerFiscalEntitiesRequest> fiscalEntities) {
     this.fiscalEntities = fiscalEntities;
   }
 
 
-  public UpdateCustomer metadata(Map<String, Object> metadata) {
+  public UpdateCustomer metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -406,10 +422,10 @@ public class UpdateCustomer {
     return this;
   }
 
-   /**
+  /**
    * Get metadata
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
@@ -421,20 +437,20 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 
 
-  public UpdateCustomer nationalId(String nationalId) {
+  public UpdateCustomer nationalId(@javax.annotation.Nullable String nationalId) {
     this.nationalId = nationalId;
     return this;
   }
 
-   /**
+  /**
    * It is a parameter that allows to identify the national identification number of the client.
    * @return nationalId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NATIONAL_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -446,12 +462,12 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_NATIONAL_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNationalId(String nationalId) {
+  public void setNationalId(@javax.annotation.Nullable String nationalId) {
     this.nationalId = nationalId;
   }
 
 
-  public UpdateCustomer paymentSources(List<CustomerPaymentMethodsRequest> paymentSources) {
+  public UpdateCustomer paymentSources(@javax.annotation.Nullable List<CustomerPaymentMethodsRequest> paymentSources) {
     this.paymentSources = paymentSources;
     return this;
   }
@@ -464,10 +480,10 @@ public class UpdateCustomer {
     return this;
   }
 
-   /**
+  /**
    * Contains details of the payment methods that the customer has active or has used in Conekta
    * @return paymentSources
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENT_SOURCES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -479,12 +495,12 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_PAYMENT_SOURCES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPaymentSources(List<CustomerPaymentMethodsRequest> paymentSources) {
+  public void setPaymentSources(@javax.annotation.Nullable List<CustomerPaymentMethodsRequest> paymentSources) {
     this.paymentSources = paymentSources;
   }
 
 
-  public UpdateCustomer shippingContacts(List<CustomerShippingContacts> shippingContacts) {
+  public UpdateCustomer shippingContacts(@javax.annotation.Nullable List<CustomerShippingContacts> shippingContacts) {
     this.shippingContacts = shippingContacts;
     return this;
   }
@@ -497,10 +513,10 @@ public class UpdateCustomer {
     return this;
   }
 
-   /**
+  /**
    * Contains the detail of the shipping addresses that the client has active or has used in Conekta
    * @return shippingContacts
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -512,20 +528,20 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setShippingContacts(List<CustomerShippingContacts> shippingContacts) {
+  public void setShippingContacts(@javax.annotation.Nullable List<CustomerShippingContacts> shippingContacts) {
     this.shippingContacts = shippingContacts;
   }
 
 
-  public UpdateCustomer subscription(SubscriptionRequest subscription) {
+  public UpdateCustomer subscription(@javax.annotation.Nullable SubscriptionRequest subscription) {
     this.subscription = subscription;
     return this;
   }
 
-   /**
+  /**
    * Get subscription
    * @return subscription
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUBSCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -537,7 +553,7 @@ public class UpdateCustomer {
 
   @JsonProperty(JSON_PROPERTY_SUBSCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubscription(SubscriptionRequest subscription) {
+  public void setSubscription(@javax.annotation.Nullable SubscriptionRequest subscription) {
     this.subscription = subscription;
   }
 

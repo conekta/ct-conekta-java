@@ -43,50 +43,60 @@ import com.conekta.JSON;
   TransfersResponse.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("transfers_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class TransfersResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nullable
   private Long amount;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nullable
   private Long createdAt;
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
+  @javax.annotation.Nullable
   private String currency;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
+  @javax.annotation.Nullable
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_METHOD = "method";
+  @javax.annotation.Nullable
   private TransferMethodResponse method;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_STATEMENT_DESCRIPTION = "statement_description";
+  @javax.annotation.Nullable
   private String statementDescription;
 
   public static final String JSON_PROPERTY_STATEMENT_REFERENCE = "statement_reference";
+  @javax.annotation.Nullable
   private String statementReference;
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private String status;
 
   public TransfersResponse() { 
   }
 
-  public TransfersResponse amount(Long amount) {
+  public TransfersResponse amount(@javax.annotation.Nullable Long amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * Amount in cents of the transfer.
    * @return amount
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -98,20 +108,20 @@ public class TransfersResponse {
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAmount(Long amount) {
+  public void setAmount(@javax.annotation.Nullable Long amount) {
     this.amount = amount;
   }
 
 
-  public TransfersResponse createdAt(Long createdAt) {
+  public TransfersResponse createdAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Date and time of creation of the transfer.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -123,20 +133,20 @@ public class TransfersResponse {
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public TransfersResponse currency(String currency) {
+  public TransfersResponse currency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * The currency of the transfer. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)
    * @return currency
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -148,20 +158,20 @@ public class TransfersResponse {
 
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCurrency(String currency) {
+  public void setCurrency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
   }
 
 
-  public TransfersResponse id(String id) {
+  public TransfersResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Unique identifier of the transfer.
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -173,20 +183,20 @@ public class TransfersResponse {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public TransfersResponse livemode(Boolean livemode) {
+  public TransfersResponse livemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
 
-   /**
+  /**
    * Indicates whether the transfer was created in live mode or test mode.
    * @return livemode
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -198,20 +208,20 @@ public class TransfersResponse {
 
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLivemode(Boolean livemode) {
+  public void setLivemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
   }
 
 
-  public TransfersResponse method(TransferMethodResponse method) {
+  public TransfersResponse method(@javax.annotation.Nullable TransferMethodResponse method) {
     this.method = method;
     return this;
   }
 
-   /**
+  /**
    * Get method
    * @return method
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -223,20 +233,20 @@ public class TransfersResponse {
 
   @JsonProperty(JSON_PROPERTY_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMethod(TransferMethodResponse method) {
+  public void setMethod(@javax.annotation.Nullable TransferMethodResponse method) {
     this.method = method;
   }
 
 
-  public TransfersResponse _object(String _object) {
+  public TransfersResponse _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Object name, which is transfer.
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -248,20 +258,20 @@ public class TransfersResponse {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
 
-  public TransfersResponse statementDescription(String statementDescription) {
+  public TransfersResponse statementDescription(@javax.annotation.Nullable String statementDescription) {
     this.statementDescription = statementDescription;
     return this;
   }
 
-   /**
+  /**
    * Description of the transfer.
    * @return statementDescription
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATEMENT_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -273,20 +283,20 @@ public class TransfersResponse {
 
   @JsonProperty(JSON_PROPERTY_STATEMENT_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatementDescription(String statementDescription) {
+  public void setStatementDescription(@javax.annotation.Nullable String statementDescription) {
     this.statementDescription = statementDescription;
   }
 
 
-  public TransfersResponse statementReference(String statementReference) {
+  public TransfersResponse statementReference(@javax.annotation.Nullable String statementReference) {
     this.statementReference = statementReference;
     return this;
   }
 
-   /**
+  /**
    * Reference number of the transfer.
    * @return statementReference
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATEMENT_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -298,20 +308,20 @@ public class TransfersResponse {
 
   @JsonProperty(JSON_PROPERTY_STATEMENT_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatementReference(String statementReference) {
+  public void setStatementReference(@javax.annotation.Nullable String statementReference) {
     this.statementReference = statementReference;
   }
 
 
-  public TransfersResponse status(String status) {
+  public TransfersResponse status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Code indicating transfer status.
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -323,7 +333,7 @@ public class TransfersResponse {
 
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nullable String status) {
     this.status = status;
   }
 

@@ -21,7 +21,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PaymentMethodsApi {
   private ApiClient apiClient;
 
@@ -61,7 +61,8 @@ public class PaymentMethodsApi {
    * @return CreateCustomerPaymentMethodsResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -84,7 +85,8 @@ public class PaymentMethodsApi {
    * @return ApiResponse&lt;CreateCustomerPaymentMethodsResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -104,7 +106,7 @@ public class PaymentMethodsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/payment_sources"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -133,7 +135,8 @@ public class PaymentMethodsApi {
    * @return UpdateCustomerPaymentMethodsResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -156,7 +159,8 @@ public class PaymentMethodsApi {
    * @return ApiResponse&lt;UpdateCustomerPaymentMethodsResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -176,8 +180,8 @@ public class PaymentMethodsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/payment_sources/{payment_method_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{payment_method_id}", apiClient.escapeString(paymentMethodId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{payment_method_id}", apiClient.escapeString(paymentMethodId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -209,7 +213,8 @@ public class PaymentMethodsApi {
    * @return GetPaymentMethodResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -234,7 +239,8 @@ public class PaymentMethodsApi {
    * @return ApiResponse&lt;GetPaymentMethodResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -250,7 +256,7 @@ public class PaymentMethodsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/payment_sources"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
@@ -288,7 +294,8 @@ public class PaymentMethodsApi {
    * @return UpdateCustomerPaymentMethodsResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -312,7 +319,8 @@ public class PaymentMethodsApi {
    * @return ApiResponse&lt;UpdateCustomerPaymentMethodsResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -335,8 +343,8 @@ public class PaymentMethodsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/payment_sources/{payment_method_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{payment_method_id}", apiClient.escapeString(paymentMethodId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{payment_method_id}", apiClient.escapeString(paymentMethodId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

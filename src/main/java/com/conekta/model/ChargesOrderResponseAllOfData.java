@@ -53,77 +53,95 @@ import com.conekta.JSON;
   ChargesOrderResponseAllOfData.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("charges_order_response_allOf_data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ChargesOrderResponseAllOfData {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nonnull
   private Integer amount;
 
   public static final String JSON_PROPERTY_CHANNEL = "channel";
+  @javax.annotation.Nullable
   private ChargeResponseChannel channel;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
+  @javax.annotation.Nonnull
   private String currency;
 
   public static final String JSON_PROPERTY_CUSTOMER_ID = "customer_id";
+  @javax.annotation.Nullable
   private String customerId;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public static final String JSON_PROPERTY_DEVICE_FINGERPRINT = "device_fingerprint";
+  @javax.annotation.Nullable
   private String deviceFingerprint;
 
   public static final String JSON_PROPERTY_FAILURE_CODE = "failure_code";
+  @javax.annotation.Nullable
   private String failureCode;
 
   public static final String JSON_PROPERTY_FAILURE_MESSAGE = "failure_message";
+  @javax.annotation.Nullable
   private String failureMessage;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
+  @javax.annotation.Nonnull
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_ORDER_ID = "order_id";
+  @javax.annotation.Nonnull
   private String orderId;
 
   public static final String JSON_PROPERTY_PAID_AT = "paid_at";
+  @javax.annotation.Nullable
   private Long paidAt;
 
   public static final String JSON_PROPERTY_PAYMENT_METHOD = "payment_method";
+  @javax.annotation.Nullable
   private ChargeResponsePaymentMethod paymentMethod;
 
   public static final String JSON_PROPERTY_REFERENCE_ID = "reference_id";
+  @javax.annotation.Nullable
   private String referenceId;
 
   public static final String JSON_PROPERTY_REFUNDS = "refunds";
+  @javax.annotation.Nullable
   private ChargeResponseRefunds refunds;
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nonnull
   private String status;
 
   public ChargesOrderResponseAllOfData() { 
   }
 
-  public ChargesOrderResponseAllOfData amount(Integer amount) {
+  public ChargesOrderResponseAllOfData amount(@javax.annotation.Nonnull Integer amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * Get amount
    * @return amount
-  **/
-  @javax.annotation.Nullable
+   */
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_AMOUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getAmount() {
     return amount;
@@ -131,21 +149,21 @@ public class ChargesOrderResponseAllOfData {
 
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAmount(Integer amount) {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setAmount(@javax.annotation.Nonnull Integer amount) {
     this.amount = amount;
   }
 
 
-  public ChargesOrderResponseAllOfData channel(ChargeResponseChannel channel) {
+  public ChargesOrderResponseAllOfData channel(@javax.annotation.Nullable ChargeResponseChannel channel) {
     this.channel = channel;
     return this;
   }
 
-   /**
+  /**
    * Get channel
    * @return channel
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -157,23 +175,23 @@ public class ChargesOrderResponseAllOfData {
 
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChannel(ChargeResponseChannel channel) {
+  public void setChannel(@javax.annotation.Nullable ChargeResponseChannel channel) {
     this.channel = channel;
   }
 
 
-  public ChargesOrderResponseAllOfData createdAt(Long createdAt) {
+  public ChargesOrderResponseAllOfData createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
-  @javax.annotation.Nullable
+   */
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Long getCreatedAt() {
     return createdAt;
@@ -181,24 +199,24 @@ public class ChargesOrderResponseAllOfData {
 
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ChargesOrderResponseAllOfData currency(String currency) {
+  public ChargesOrderResponseAllOfData currency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * Get currency
    * @return currency
-  **/
-  @javax.annotation.Nullable
+   */
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CURRENCY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCurrency() {
     return currency;
@@ -206,21 +224,21 @@ public class ChargesOrderResponseAllOfData {
 
 
   @JsonProperty(JSON_PROPERTY_CURRENCY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCurrency(String currency) {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCurrency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
   }
 
 
-  public ChargesOrderResponseAllOfData customerId(String customerId) {
+  public ChargesOrderResponseAllOfData customerId(@javax.annotation.Nullable String customerId) {
     this.customerId = customerId;
     return this;
   }
 
-   /**
+  /**
    * Get customerId
    * @return customerId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -232,20 +250,20 @@ public class ChargesOrderResponseAllOfData {
 
   @JsonProperty(JSON_PROPERTY_CUSTOMER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomerId(String customerId) {
+  public void setCustomerId(@javax.annotation.Nullable String customerId) {
     this.customerId = customerId;
   }
 
 
-  public ChargesOrderResponseAllOfData description(String description) {
+  public ChargesOrderResponseAllOfData description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -257,20 +275,20 @@ public class ChargesOrderResponseAllOfData {
 
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ChargesOrderResponseAllOfData deviceFingerprint(String deviceFingerprint) {
+  public ChargesOrderResponseAllOfData deviceFingerprint(@javax.annotation.Nullable String deviceFingerprint) {
     this.deviceFingerprint = deviceFingerprint;
     return this;
   }
 
-   /**
+  /**
    * Get deviceFingerprint
    * @return deviceFingerprint
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DEVICE_FINGERPRINT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -282,20 +300,20 @@ public class ChargesOrderResponseAllOfData {
 
   @JsonProperty(JSON_PROPERTY_DEVICE_FINGERPRINT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDeviceFingerprint(String deviceFingerprint) {
+  public void setDeviceFingerprint(@javax.annotation.Nullable String deviceFingerprint) {
     this.deviceFingerprint = deviceFingerprint;
   }
 
 
-  public ChargesOrderResponseAllOfData failureCode(String failureCode) {
+  public ChargesOrderResponseAllOfData failureCode(@javax.annotation.Nullable String failureCode) {
     this.failureCode = failureCode;
     return this;
   }
 
-   /**
+  /**
    * Get failureCode
    * @return failureCode
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAILURE_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -307,20 +325,20 @@ public class ChargesOrderResponseAllOfData {
 
   @JsonProperty(JSON_PROPERTY_FAILURE_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFailureCode(String failureCode) {
+  public void setFailureCode(@javax.annotation.Nullable String failureCode) {
     this.failureCode = failureCode;
   }
 
 
-  public ChargesOrderResponseAllOfData failureMessage(String failureMessage) {
+  public ChargesOrderResponseAllOfData failureMessage(@javax.annotation.Nullable String failureMessage) {
     this.failureMessage = failureMessage;
     return this;
   }
 
-   /**
+  /**
    * Get failureMessage
    * @return failureMessage
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FAILURE_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -332,23 +350,23 @@ public class ChargesOrderResponseAllOfData {
 
   @JsonProperty(JSON_PROPERTY_FAILURE_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFailureMessage(String failureMessage) {
+  public void setFailureMessage(@javax.annotation.Nullable String failureMessage) {
     this.failureMessage = failureMessage;
   }
 
 
-  public ChargesOrderResponseAllOfData id(String id) {
+  public ChargesOrderResponseAllOfData id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Charge ID
    * @return id
-  **/
-  @javax.annotation.Nullable
+   */
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
     return id;
@@ -356,24 +374,24 @@ public class ChargesOrderResponseAllOfData {
 
 
   @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public ChargesOrderResponseAllOfData livemode(Boolean livemode) {
+  public ChargesOrderResponseAllOfData livemode(@javax.annotation.Nonnull Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
 
-   /**
+  /**
    * Whether the charge was made in live mode or not
    * @return livemode
-  **/
-  @javax.annotation.Nullable
+   */
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getLivemode() {
     return livemode;
@@ -381,24 +399,24 @@ public class ChargesOrderResponseAllOfData {
 
 
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLivemode(Boolean livemode) {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setLivemode(@javax.annotation.Nonnull Boolean livemode) {
     this.livemode = livemode;
   }
 
 
-  public ChargesOrderResponseAllOfData _object(String _object) {
+  public ChargesOrderResponseAllOfData _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
-  @javax.annotation.Nullable
+   */
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
     return _object;
@@ -406,24 +424,24 @@ public class ChargesOrderResponseAllOfData {
 
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public ChargesOrderResponseAllOfData orderId(String orderId) {
+  public ChargesOrderResponseAllOfData orderId(@javax.annotation.Nonnull String orderId) {
     this.orderId = orderId;
     return this;
   }
 
-   /**
+  /**
    * Order ID
    * @return orderId
-  **/
-  @javax.annotation.Nullable
+   */
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ORDER_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getOrderId() {
     return orderId;
@@ -431,21 +449,21 @@ public class ChargesOrderResponseAllOfData {
 
 
   @JsonProperty(JSON_PROPERTY_ORDER_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOrderId(String orderId) {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setOrderId(@javax.annotation.Nonnull String orderId) {
     this.orderId = orderId;
   }
 
 
-  public ChargesOrderResponseAllOfData paidAt(Long paidAt) {
+  public ChargesOrderResponseAllOfData paidAt(@javax.annotation.Nullable Long paidAt) {
     this.paidAt = paidAt;
     return this;
   }
 
-   /**
+  /**
    * Payment date
    * @return paidAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAID_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -457,20 +475,20 @@ public class ChargesOrderResponseAllOfData {
 
   @JsonProperty(JSON_PROPERTY_PAID_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPaidAt(Long paidAt) {
+  public void setPaidAt(@javax.annotation.Nullable Long paidAt) {
     this.paidAt = paidAt;
   }
 
 
-  public ChargesOrderResponseAllOfData paymentMethod(ChargeResponsePaymentMethod paymentMethod) {
+  public ChargesOrderResponseAllOfData paymentMethod(@javax.annotation.Nullable ChargeResponsePaymentMethod paymentMethod) {
     this.paymentMethod = paymentMethod;
     return this;
   }
 
-   /**
+  /**
    * Get paymentMethod
    * @return paymentMethod
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENT_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -482,20 +500,20 @@ public class ChargesOrderResponseAllOfData {
 
   @JsonProperty(JSON_PROPERTY_PAYMENT_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPaymentMethod(ChargeResponsePaymentMethod paymentMethod) {
+  public void setPaymentMethod(@javax.annotation.Nullable ChargeResponsePaymentMethod paymentMethod) {
     this.paymentMethod = paymentMethod;
   }
 
 
-  public ChargesOrderResponseAllOfData referenceId(String referenceId) {
+  public ChargesOrderResponseAllOfData referenceId(@javax.annotation.Nullable String referenceId) {
     this.referenceId = referenceId;
     return this;
   }
 
-   /**
+  /**
    * Reference ID of the charge
    * @return referenceId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFERENCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -507,20 +525,20 @@ public class ChargesOrderResponseAllOfData {
 
   @JsonProperty(JSON_PROPERTY_REFERENCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReferenceId(String referenceId) {
+  public void setReferenceId(@javax.annotation.Nullable String referenceId) {
     this.referenceId = referenceId;
   }
 
 
-  public ChargesOrderResponseAllOfData refunds(ChargeResponseRefunds refunds) {
+  public ChargesOrderResponseAllOfData refunds(@javax.annotation.Nullable ChargeResponseRefunds refunds) {
     this.refunds = refunds;
     return this;
   }
 
-   /**
+  /**
    * Get refunds
    * @return refunds
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_REFUNDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -532,23 +550,23 @@ public class ChargesOrderResponseAllOfData {
 
   @JsonProperty(JSON_PROPERTY_REFUNDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRefunds(ChargeResponseRefunds refunds) {
+  public void setRefunds(@javax.annotation.Nullable ChargeResponseRefunds refunds) {
     this.refunds = refunds;
   }
 
 
-  public ChargesOrderResponseAllOfData status(String status) {
+  public ChargesOrderResponseAllOfData status(@javax.annotation.Nonnull String status) {
     this.status = status;
     return this;
   }
 
-   /**
-   * Get status
+  /**
+   * Charge status
    * @return status
-  **/
-  @javax.annotation.Nullable
+   */
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getStatus() {
     return status;
@@ -556,8 +574,8 @@ public class ChargesOrderResponseAllOfData {
 
 
   @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(String status) {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setStatus(@javax.annotation.Nonnull String status) {
     this.status = status;
   }
 

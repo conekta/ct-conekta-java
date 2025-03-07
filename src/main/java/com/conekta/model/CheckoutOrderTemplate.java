@@ -42,32 +42,36 @@ import com.conekta.JSON;
   CheckoutOrderTemplate.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("checkout_order_template")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CheckoutOrderTemplate {
   public static final String JSON_PROPERTY_CURRENCY = "currency";
+  @javax.annotation.Nonnull
   private String currency;
 
   public static final String JSON_PROPERTY_CUSTOMER_INFO = "customer_info";
+  @javax.annotation.Nullable
   private CheckoutOrderTemplateCustomerInfo customerInfo;
 
   public static final String JSON_PROPERTY_LINE_ITEMS = "line_items";
+  @javax.annotation.Nonnull
   private List<Product> lineItems = new ArrayList<>();
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata = new HashMap<>();
 
   public CheckoutOrderTemplate() { 
   }
 
-  public CheckoutOrderTemplate currency(String currency) {
+  public CheckoutOrderTemplate currency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * It is the currency in which the order will be created. It must be a valid ISO 4217 currency code.
    * @return currency
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -79,20 +83,20 @@ public class CheckoutOrderTemplate {
 
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCurrency(String currency) {
+  public void setCurrency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
   }
 
 
-  public CheckoutOrderTemplate customerInfo(CheckoutOrderTemplateCustomerInfo customerInfo) {
+  public CheckoutOrderTemplate customerInfo(@javax.annotation.Nullable CheckoutOrderTemplateCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
     return this;
   }
 
-   /**
+  /**
    * Get customerInfo
    * @return customerInfo
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -104,12 +108,12 @@ public class CheckoutOrderTemplate {
 
   @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomerInfo(CheckoutOrderTemplateCustomerInfo customerInfo) {
+  public void setCustomerInfo(@javax.annotation.Nullable CheckoutOrderTemplateCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
   }
 
 
-  public CheckoutOrderTemplate lineItems(List<Product> lineItems) {
+  public CheckoutOrderTemplate lineItems(@javax.annotation.Nonnull List<Product> lineItems) {
     this.lineItems = lineItems;
     return this;
   }
@@ -122,10 +126,10 @@ public class CheckoutOrderTemplate {
     return this;
   }
 
-   /**
+  /**
    * They are the products to buy. Each contains the \&quot;unit price\&quot; and \&quot;quantity\&quot; parameters that are used to calculate the total amount of the order.
    * @return lineItems
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LINE_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -137,12 +141,12 @@ public class CheckoutOrderTemplate {
 
   @JsonProperty(JSON_PROPERTY_LINE_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLineItems(List<Product> lineItems) {
+  public void setLineItems(@javax.annotation.Nonnull List<Product> lineItems) {
     this.lineItems = lineItems;
   }
 
 
-  public CheckoutOrderTemplate metadata(Map<String, Object> metadata) {
+  public CheckoutOrderTemplate metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -155,10 +159,10 @@ public class CheckoutOrderTemplate {
     return this;
   }
 
-   /**
+  /**
    * It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format.
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
@@ -170,7 +174,7 @@ public class CheckoutOrderTemplate {
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 

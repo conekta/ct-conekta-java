@@ -34,26 +34,28 @@ import com.conekta.JSON;
   PaymentMethod.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("payment_method")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PaymentMethod {
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private String type;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public PaymentMethod() { 
   }
 
-  public PaymentMethod type(String type) {
+  public PaymentMethod type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -65,20 +67,20 @@ public class PaymentMethod {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public PaymentMethod _object(String _object) {
+  public PaymentMethod _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -90,7 +92,7 @@ public class PaymentMethod {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 

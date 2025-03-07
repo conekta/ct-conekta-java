@@ -50,74 +50,92 @@ import com.conekta.JSON;
   SubscriptionResponse.JSON_PROPERTY_TRIAL_END
 })
 @JsonTypeName("subscription_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class SubscriptionResponse {
   public static final String JSON_PROPERTY_BILLING_CYCLE_START = "billing_cycle_start";
+  @javax.annotation.Nullable
   private Long billingCycleStart;
 
   public static final String JSON_PROPERTY_BILLING_CYCLE_END = "billing_cycle_end";
+  @javax.annotation.Nullable
   private Long billingCycleEnd;
 
   public static final String JSON_PROPERTY_CANCELED_AT = "canceled_at";
+  @javax.annotation.Nullable
   private Long canceledAt;
 
   public static final String JSON_PROPERTY_CANCELED_REASON = "canceled_reason";
+  @javax.annotation.Nullable
   private String canceledReason;
 
   public static final String JSON_PROPERTY_CARD_ID = "card_id";
+  @javax.annotation.Nullable
   private String cardId;
 
   public static final String JSON_PROPERTY_CHARGE_ID = "charge_id";
+  @javax.annotation.Nullable
   private String chargeId;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nullable
   private Long createdAt;
 
   public static final String JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE = "customer_custom_reference";
+  @javax.annotation.Nullable
   private String customerCustomReference;
 
   public static final String JSON_PROPERTY_CUSTOMER_ID = "customer_id";
+  @javax.annotation.Nullable
   private String customerId;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_LAST_BILLING_CYCLE_ORDER_ID = "last_billing_cycle_order_id";
+  @javax.annotation.Nullable
   private String lastBillingCycleOrderId;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_PAUSED_AT = "paused_at";
+  @javax.annotation.Nullable
   private Long pausedAt;
 
   public static final String JSON_PROPERTY_PLAN_ID = "plan_id";
+  @javax.annotation.Nullable
   private String planId;
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private String status;
 
   public static final String JSON_PROPERTY_SUBSCRIPTION_START = "subscription_start";
+  @javax.annotation.Nullable
   private Integer subscriptionStart;
 
   public static final String JSON_PROPERTY_TRIAL_START = "trial_start";
+  @javax.annotation.Nullable
   private Long trialStart;
 
   public static final String JSON_PROPERTY_TRIAL_END = "trial_end";
+  @javax.annotation.Nullable
   private Long trialEnd;
 
   public SubscriptionResponse() { 
   }
 
-  public SubscriptionResponse billingCycleStart(Long billingCycleStart) {
+  public SubscriptionResponse billingCycleStart(@javax.annotation.Nullable Long billingCycleStart) {
     this.billingCycleStart = billingCycleStart;
     return this;
   }
 
-   /**
+  /**
    * Get billingCycleStart
    * @return billingCycleStart
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BILLING_CYCLE_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -129,20 +147,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_BILLING_CYCLE_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBillingCycleStart(Long billingCycleStart) {
+  public void setBillingCycleStart(@javax.annotation.Nullable Long billingCycleStart) {
     this.billingCycleStart = billingCycleStart;
   }
 
 
-  public SubscriptionResponse billingCycleEnd(Long billingCycleEnd) {
+  public SubscriptionResponse billingCycleEnd(@javax.annotation.Nullable Long billingCycleEnd) {
     this.billingCycleEnd = billingCycleEnd;
     return this;
   }
 
-   /**
+  /**
    * Get billingCycleEnd
    * @return billingCycleEnd
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BILLING_CYCLE_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -154,20 +172,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_BILLING_CYCLE_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBillingCycleEnd(Long billingCycleEnd) {
+  public void setBillingCycleEnd(@javax.annotation.Nullable Long billingCycleEnd) {
     this.billingCycleEnd = billingCycleEnd;
   }
 
 
-  public SubscriptionResponse canceledAt(Long canceledAt) {
+  public SubscriptionResponse canceledAt(@javax.annotation.Nullable Long canceledAt) {
     this.canceledAt = canceledAt;
     return this;
   }
 
-   /**
+  /**
    * Get canceledAt
    * @return canceledAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CANCELED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -179,20 +197,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_CANCELED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCanceledAt(Long canceledAt) {
+  public void setCanceledAt(@javax.annotation.Nullable Long canceledAt) {
     this.canceledAt = canceledAt;
   }
 
 
-  public SubscriptionResponse canceledReason(String canceledReason) {
+  public SubscriptionResponse canceledReason(@javax.annotation.Nullable String canceledReason) {
     this.canceledReason = canceledReason;
     return this;
   }
 
-   /**
+  /**
    * Reason for cancellation. This field appears when the subscription status is &#39;canceled&#39;.
    * @return canceledReason
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CANCELED_REASON)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -204,20 +222,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_CANCELED_REASON)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCanceledReason(String canceledReason) {
+  public void setCanceledReason(@javax.annotation.Nullable String canceledReason) {
     this.canceledReason = canceledReason;
   }
 
 
-  public SubscriptionResponse cardId(String cardId) {
+  public SubscriptionResponse cardId(@javax.annotation.Nullable String cardId) {
     this.cardId = cardId;
     return this;
   }
 
-   /**
+  /**
    * Get cardId
    * @return cardId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CARD_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -229,20 +247,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_CARD_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCardId(String cardId) {
+  public void setCardId(@javax.annotation.Nullable String cardId) {
     this.cardId = cardId;
   }
 
 
-  public SubscriptionResponse chargeId(String chargeId) {
+  public SubscriptionResponse chargeId(@javax.annotation.Nullable String chargeId) {
     this.chargeId = chargeId;
     return this;
   }
 
-   /**
+  /**
    * Get chargeId
    * @return chargeId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHARGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -254,20 +272,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_CHARGE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChargeId(String chargeId) {
+  public void setChargeId(@javax.annotation.Nullable String chargeId) {
     this.chargeId = chargeId;
   }
 
 
-  public SubscriptionResponse createdAt(Long createdAt) {
+  public SubscriptionResponse createdAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -279,20 +297,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public SubscriptionResponse customerCustomReference(String customerCustomReference) {
+  public SubscriptionResponse customerCustomReference(@javax.annotation.Nullable String customerCustomReference) {
     this.customerCustomReference = customerCustomReference;
     return this;
   }
 
-   /**
+  /**
    * Get customerCustomReference
    * @return customerCustomReference
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -304,20 +322,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomerCustomReference(String customerCustomReference) {
+  public void setCustomerCustomReference(@javax.annotation.Nullable String customerCustomReference) {
     this.customerCustomReference = customerCustomReference;
   }
 
 
-  public SubscriptionResponse customerId(String customerId) {
+  public SubscriptionResponse customerId(@javax.annotation.Nullable String customerId) {
     this.customerId = customerId;
     return this;
   }
 
-   /**
+  /**
    * Get customerId
    * @return customerId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -329,20 +347,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_CUSTOMER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomerId(String customerId) {
+  public void setCustomerId(@javax.annotation.Nullable String customerId) {
     this.customerId = customerId;
   }
 
 
-  public SubscriptionResponse id(String id) {
+  public SubscriptionResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -354,20 +372,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public SubscriptionResponse lastBillingCycleOrderId(String lastBillingCycleOrderId) {
+  public SubscriptionResponse lastBillingCycleOrderId(@javax.annotation.Nullable String lastBillingCycleOrderId) {
     this.lastBillingCycleOrderId = lastBillingCycleOrderId;
     return this;
   }
 
-   /**
+  /**
    * Get lastBillingCycleOrderId
    * @return lastBillingCycleOrderId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST_BILLING_CYCLE_ORDER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -379,20 +397,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_LAST_BILLING_CYCLE_ORDER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastBillingCycleOrderId(String lastBillingCycleOrderId) {
+  public void setLastBillingCycleOrderId(@javax.annotation.Nullable String lastBillingCycleOrderId) {
     this.lastBillingCycleOrderId = lastBillingCycleOrderId;
   }
 
 
-  public SubscriptionResponse _object(String _object) {
+  public SubscriptionResponse _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -404,20 +422,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
 
-  public SubscriptionResponse pausedAt(Long pausedAt) {
+  public SubscriptionResponse pausedAt(@javax.annotation.Nullable Long pausedAt) {
     this.pausedAt = pausedAt;
     return this;
   }
 
-   /**
+  /**
    * Get pausedAt
    * @return pausedAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAUSED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -429,20 +447,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_PAUSED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPausedAt(Long pausedAt) {
+  public void setPausedAt(@javax.annotation.Nullable Long pausedAt) {
     this.pausedAt = pausedAt;
   }
 
 
-  public SubscriptionResponse planId(String planId) {
+  public SubscriptionResponse planId(@javax.annotation.Nullable String planId) {
     this.planId = planId;
     return this;
   }
 
-   /**
+  /**
    * Get planId
    * @return planId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PLAN_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -454,20 +472,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_PLAN_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPlanId(String planId) {
+  public void setPlanId(@javax.annotation.Nullable String planId) {
     this.planId = planId;
   }
 
 
-  public SubscriptionResponse status(String status) {
+  public SubscriptionResponse status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -479,20 +497,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nullable String status) {
     this.status = status;
   }
 
 
-  public SubscriptionResponse subscriptionStart(Integer subscriptionStart) {
+  public SubscriptionResponse subscriptionStart(@javax.annotation.Nullable Integer subscriptionStart) {
     this.subscriptionStart = subscriptionStart;
     return this;
   }
 
-   /**
+  /**
    * Get subscriptionStart
    * @return subscriptionStart
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SUBSCRIPTION_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -504,20 +522,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_SUBSCRIPTION_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubscriptionStart(Integer subscriptionStart) {
+  public void setSubscriptionStart(@javax.annotation.Nullable Integer subscriptionStart) {
     this.subscriptionStart = subscriptionStart;
   }
 
 
-  public SubscriptionResponse trialStart(Long trialStart) {
+  public SubscriptionResponse trialStart(@javax.annotation.Nullable Long trialStart) {
     this.trialStart = trialStart;
     return this;
   }
 
-   /**
+  /**
    * Get trialStart
    * @return trialStart
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRIAL_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -529,20 +547,20 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_TRIAL_START)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrialStart(Long trialStart) {
+  public void setTrialStart(@javax.annotation.Nullable Long trialStart) {
     this.trialStart = trialStart;
   }
 
 
-  public SubscriptionResponse trialEnd(Long trialEnd) {
+  public SubscriptionResponse trialEnd(@javax.annotation.Nullable Long trialEnd) {
     this.trialEnd = trialEnd;
     return this;
   }
 
-   /**
+  /**
    * Get trialEnd
    * @return trialEnd
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TRIAL_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -554,7 +572,7 @@ public class SubscriptionResponse {
 
   @JsonProperty(JSON_PROPERTY_TRIAL_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrialEnd(Long trialEnd) {
+  public void setTrialEnd(@javax.annotation.Nullable Long trialEnd) {
     this.trialEnd = trialEnd;
   }
 

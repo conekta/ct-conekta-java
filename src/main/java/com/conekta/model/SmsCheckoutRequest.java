@@ -33,23 +33,24 @@ import com.conekta.JSON;
   SmsCheckoutRequest.JSON_PROPERTY_PHONENUMBER
 })
 @JsonTypeName("smsCheckout_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class SmsCheckoutRequest {
   public static final String JSON_PROPERTY_PHONENUMBER = "phonenumber";
+  @javax.annotation.Nonnull
   private String phonenumber;
 
   public SmsCheckoutRequest() { 
   }
 
-  public SmsCheckoutRequest phonenumber(String phonenumber) {
+  public SmsCheckoutRequest phonenumber(@javax.annotation.Nonnull String phonenumber) {
     this.phonenumber = phonenumber;
     return this;
   }
 
-   /**
+  /**
    * Get phonenumber
    * @return phonenumber
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_PHONENUMBER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -61,7 +62,7 @@ public class SmsCheckoutRequest {
 
   @JsonProperty(JSON_PROPERTY_PHONENUMBER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPhonenumber(String phonenumber) {
+  public void setPhonenumber(@javax.annotation.Nonnull String phonenumber) {
     this.phonenumber = phonenumber;
   }
 

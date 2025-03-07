@@ -34,26 +34,28 @@ import com.conekta.JSON;
   PaymentMethodCashRequest.JSON_PROPERTY_EXPIRES_AT
 })
 @JsonTypeName("payment_method_cash_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PaymentMethodCashRequest {
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nonnull
   private String type;
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nullable
   private Long expiresAt;
 
   public PaymentMethodCashRequest() { 
   }
 
-  public PaymentMethodCashRequest type(String type) {
+  public PaymentMethodCashRequest type(@javax.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Type of payment method
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -65,20 +67,20 @@ public class PaymentMethodCashRequest {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
   }
 
 
-  public PaymentMethodCashRequest expiresAt(Long expiresAt) {
+  public PaymentMethodCashRequest expiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
-   /**
+  /**
    * Get expiresAt
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -90,7 +92,7 @@ public class PaymentMethodCashRequest {
 
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(Long expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 

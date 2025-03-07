@@ -35,29 +35,32 @@ import com.conekta.JSON;
   CreateRiskRulesData.JSON_PROPERTY_VALUE
 })
 @JsonTypeName("create_risk_rules_data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CreateRiskRulesData {
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nonnull
   private String description;
 
   public static final String JSON_PROPERTY_FIELD = "field";
+  @javax.annotation.Nonnull
   private String field;
 
   public static final String JSON_PROPERTY_VALUE = "value";
+  @javax.annotation.Nonnull
   private String value;
 
   public CreateRiskRulesData() { 
   }
 
-  public CreateRiskRulesData description(String description) {
+  public CreateRiskRulesData description(@javax.annotation.Nonnull String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Description of the rule
    * @return description
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -69,20 +72,20 @@ public class CreateRiskRulesData {
 
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nonnull String description) {
     this.description = description;
   }
 
 
-  public CreateRiskRulesData field(String field) {
+  public CreateRiskRulesData field(@javax.annotation.Nonnull String field) {
     this.field = field;
     return this;
   }
 
-   /**
+  /**
    * Field to be used for the rule
    * @return field
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_FIELD)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -94,20 +97,20 @@ public class CreateRiskRulesData {
 
   @JsonProperty(JSON_PROPERTY_FIELD)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setField(String field) {
+  public void setField(@javax.annotation.Nonnull String field) {
     this.field = field;
   }
 
 
-  public CreateRiskRulesData value(String value) {
+  public CreateRiskRulesData value(@javax.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
 
-   /**
+  /**
    * Value to be used for the rule
    * @return value
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -119,7 +122,7 @@ public class CreateRiskRulesData {
 
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setValue(String value) {
+  public void setValue(@javax.annotation.Nonnull String value) {
     this.value = value;
   }
 

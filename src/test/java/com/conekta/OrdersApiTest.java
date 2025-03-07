@@ -29,7 +29,6 @@ public class OrdersApiTest {
 
     /**
      * Cancel Order
-     *
      * Cancel an order that has been previously created.
      *
      * @throws ApiException if the Api call fails
@@ -44,7 +43,6 @@ public class OrdersApiTest {
 
     /**
      * Create order
-     *
      * Create a new order.
      *
      * @throws ApiException if the Api call fails
@@ -59,7 +57,7 @@ public class OrdersApiTest {
         customer.setCustomerId("cus_2tYENskzTjjgkGQLt");
         orderRequest.setCustomerInfo(new OrderRequestCustomerInfo(customer));
         ChargeRequest chargeRequest = new ChargeRequest();
-        chargeRequest.setAmount(1000);
+        chargeRequest.setAmount(1000L);
         orderRequest.setCharges(List.of(chargeRequest));
         String acceptLanguage = "es";
 
@@ -70,7 +68,6 @@ public class OrdersApiTest {
 
     /**
      * Get Order
-     *
      * Info for a specific order
      *
      * @throws ApiException if the Api call fails
@@ -85,7 +82,6 @@ public class OrdersApiTest {
 
     /**
      * Get a list of Orders
-     *
      * Get order details in the form of a list
      *
      * @throws ApiException if the Api call fails
@@ -102,7 +98,6 @@ public class OrdersApiTest {
 
     /**
      * Cancel Refund
-     *
      * A refunded order describes the items, amount, and reason an order is being refunded.
      *
      * @throws ApiException if the Api call fails
@@ -118,7 +113,6 @@ public class OrdersApiTest {
 
     /**
      * Refund Order
-     *
      * A refunded order describes the items, amount, and reason an order is being refunded.
      *
      * @throws ApiException if the Api call fails
@@ -135,7 +129,6 @@ public class OrdersApiTest {
 
     /**
      * Capture Order
-     *
      * Processes an order that has been previously authorized.
      *
      * @throws ApiException if the Api call fails
@@ -152,7 +145,6 @@ public class OrdersApiTest {
 
     /**
      * Update Order
-     *
      * Update an existing Order.
      *
      * @throws ApiException if the Api call fails

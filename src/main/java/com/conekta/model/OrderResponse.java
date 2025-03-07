@@ -16,13 +16,13 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.ChargeResponseChannel;
+import com.conekta.model.OrderChannelResponse;
+import com.conekta.model.OrderChargesResponse;
+import com.conekta.model.OrderDiscountLinesResponse;
 import com.conekta.model.OrderFiscalEntityResponse;
 import com.conekta.model.OrderNextActionResponse;
-import com.conekta.model.OrderResponseCharges;
 import com.conekta.model.OrderResponseCheckout;
 import com.conekta.model.OrderResponseCustomerInfo;
-import com.conekta.model.OrderResponseDiscountLines;
 import com.conekta.model.OrderResponseProducts;
 import com.conekta.model.OrderResponseShippingContact;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -64,83 +64,104 @@ import com.conekta.JSON;
   OrderResponse.JSON_PROPERTY_UPDATED_AT
 })
 @JsonTypeName("order_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class OrderResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nullable
   private Integer amount;
 
   public static final String JSON_PROPERTY_AMOUNT_REFUNDED = "amount_refunded";
+  @javax.annotation.Nullable
   private Integer amountRefunded;
 
   public static final String JSON_PROPERTY_CHANNEL = "channel";
-  private ChargeResponseChannel channel;
+  @javax.annotation.Nullable
+  private OrderChannelResponse channel;
 
   public static final String JSON_PROPERTY_CHARGES = "charges";
-  private OrderResponseCharges charges;
+  @javax.annotation.Nullable
+  private OrderChargesResponse charges;
 
   public static final String JSON_PROPERTY_CHECKOUT = "checkout";
+  @javax.annotation.Nullable
   private OrderResponseCheckout checkout;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nullable
   private Long createdAt;
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
+  @javax.annotation.Nullable
   private String currency;
 
   public static final String JSON_PROPERTY_CUSTOMER_INFO = "customer_info";
+  @javax.annotation.Nullable
   private OrderResponseCustomerInfo customerInfo;
 
   public static final String JSON_PROPERTY_DISCOUNT_LINES = "discount_lines";
-  private OrderResponseDiscountLines discountLines;
+  @javax.annotation.Nullable
+  private OrderDiscountLinesResponse discountLines;
 
   public static final String JSON_PROPERTY_FISCAL_ENTITY = "fiscal_entity";
+  @javax.annotation.Nullable
   private OrderFiscalEntityResponse fiscalEntity;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_IS_REFUNDABLE = "is_refundable";
+  @javax.annotation.Nullable
   private Boolean isRefundable;
 
   public static final String JSON_PROPERTY_LINE_ITEMS = "line_items";
+  @javax.annotation.Nullable
   private OrderResponseProducts lineItems;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
+  @javax.annotation.Nullable
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_NEXT_ACTION = "next_action";
+  @javax.annotation.Nullable
   private OrderNextActionResponse nextAction;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_PAYMENT_STATUS = "payment_status";
+  @javax.annotation.Nullable
   private String paymentStatus;
 
   public static final String JSON_PROPERTY_PROCESSING_MODE = "processing_mode";
+  @javax.annotation.Nullable
   private String processingMode;
 
   public static final String JSON_PROPERTY_SHIPPING_CONTACT = "shipping_contact";
+  @javax.annotation.Nullable
   private OrderResponseShippingContact shippingContact;
 
   public static final String JSON_PROPERTY_UPDATED_AT = "updated_at";
+  @javax.annotation.Nullable
   private Long updatedAt;
 
   public OrderResponse() { 
   }
 
-  public OrderResponse amount(Integer amount) {
+  public OrderResponse amount(@javax.annotation.Nullable Integer amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * The total amount to be collected in cents
    * @return amount
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -152,20 +173,20 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAmount(Integer amount) {
+  public void setAmount(@javax.annotation.Nullable Integer amount) {
     this.amount = amount;
   }
 
 
-  public OrderResponse amountRefunded(Integer amountRefunded) {
+  public OrderResponse amountRefunded(@javax.annotation.Nullable Integer amountRefunded) {
     this.amountRefunded = amountRefunded;
     return this;
   }
 
-   /**
+  /**
    * The total amount refunded in cents
    * @return amountRefunded
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AMOUNT_REFUNDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -177,70 +198,70 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_AMOUNT_REFUNDED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAmountRefunded(Integer amountRefunded) {
+  public void setAmountRefunded(@javax.annotation.Nullable Integer amountRefunded) {
     this.amountRefunded = amountRefunded;
   }
 
 
-  public OrderResponse channel(ChargeResponseChannel channel) {
+  public OrderResponse channel(@javax.annotation.Nullable OrderChannelResponse channel) {
     this.channel = channel;
     return this;
   }
 
-   /**
+  /**
    * Get channel
    * @return channel
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public ChargeResponseChannel getChannel() {
+  public OrderChannelResponse getChannel() {
     return channel;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChannel(ChargeResponseChannel channel) {
+  public void setChannel(@javax.annotation.Nullable OrderChannelResponse channel) {
     this.channel = channel;
   }
 
 
-  public OrderResponse charges(OrderResponseCharges charges) {
+  public OrderResponse charges(@javax.annotation.Nullable OrderChargesResponse charges) {
     this.charges = charges;
     return this;
   }
 
-   /**
+  /**
    * Get charges
    * @return charges
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHARGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OrderResponseCharges getCharges() {
+  public OrderChargesResponse getCharges() {
     return charges;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CHARGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCharges(OrderResponseCharges charges) {
+  public void setCharges(@javax.annotation.Nullable OrderChargesResponse charges) {
     this.charges = charges;
   }
 
 
-  public OrderResponse checkout(OrderResponseCheckout checkout) {
+  public OrderResponse checkout(@javax.annotation.Nullable OrderResponseCheckout checkout) {
     this.checkout = checkout;
     return this;
   }
 
-   /**
+  /**
    * Get checkout
    * @return checkout
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHECKOUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -252,20 +273,20 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_CHECKOUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCheckout(OrderResponseCheckout checkout) {
+  public void setCheckout(@javax.annotation.Nullable OrderResponseCheckout checkout) {
     this.checkout = checkout;
   }
 
 
-  public OrderResponse createdAt(Long createdAt) {
+  public OrderResponse createdAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * The time at which the object was created in seconds since the Unix epoch
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -277,20 +298,20 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public OrderResponse currency(String currency) {
+  public OrderResponse currency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * The three-letter ISO 4217 currency code. The currency of the order.
    * @return currency
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -302,20 +323,20 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCurrency(String currency) {
+  public void setCurrency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
   }
 
 
-  public OrderResponse customerInfo(OrderResponseCustomerInfo customerInfo) {
+  public OrderResponse customerInfo(@javax.annotation.Nullable OrderResponseCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
     return this;
   }
 
-   /**
+  /**
    * Get customerInfo
    * @return customerInfo
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -327,45 +348,45 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomerInfo(OrderResponseCustomerInfo customerInfo) {
+  public void setCustomerInfo(@javax.annotation.Nullable OrderResponseCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
   }
 
 
-  public OrderResponse discountLines(OrderResponseDiscountLines discountLines) {
+  public OrderResponse discountLines(@javax.annotation.Nullable OrderDiscountLinesResponse discountLines) {
     this.discountLines = discountLines;
     return this;
   }
 
-   /**
+  /**
    * Get discountLines
    * @return discountLines
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OrderResponseDiscountLines getDiscountLines() {
+  public OrderDiscountLinesResponse getDiscountLines() {
     return discountLines;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDiscountLines(OrderResponseDiscountLines discountLines) {
+  public void setDiscountLines(@javax.annotation.Nullable OrderDiscountLinesResponse discountLines) {
     this.discountLines = discountLines;
   }
 
 
-  public OrderResponse fiscalEntity(OrderFiscalEntityResponse fiscalEntity) {
+  public OrderResponse fiscalEntity(@javax.annotation.Nullable OrderFiscalEntityResponse fiscalEntity) {
     this.fiscalEntity = fiscalEntity;
     return this;
   }
 
-   /**
+  /**
    * Get fiscalEntity
    * @return fiscalEntity
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -377,20 +398,20 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiscalEntity(OrderFiscalEntityResponse fiscalEntity) {
+  public void setFiscalEntity(@javax.annotation.Nullable OrderFiscalEntityResponse fiscalEntity) {
     this.fiscalEntity = fiscalEntity;
   }
 
 
-  public OrderResponse id(String id) {
+  public OrderResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -402,20 +423,20 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public OrderResponse isRefundable(Boolean isRefundable) {
+  public OrderResponse isRefundable(@javax.annotation.Nullable Boolean isRefundable) {
     this.isRefundable = isRefundable;
     return this;
   }
 
-   /**
+  /**
    * Get isRefundable
    * @return isRefundable
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_IS_REFUNDABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -427,20 +448,20 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_IS_REFUNDABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIsRefundable(Boolean isRefundable) {
+  public void setIsRefundable(@javax.annotation.Nullable Boolean isRefundable) {
     this.isRefundable = isRefundable;
   }
 
 
-  public OrderResponse lineItems(OrderResponseProducts lineItems) {
+  public OrderResponse lineItems(@javax.annotation.Nullable OrderResponseProducts lineItems) {
     this.lineItems = lineItems;
     return this;
   }
 
-   /**
+  /**
    * Get lineItems
    * @return lineItems
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LINE_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -452,20 +473,20 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_LINE_ITEMS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLineItems(OrderResponseProducts lineItems) {
+  public void setLineItems(@javax.annotation.Nullable OrderResponseProducts lineItems) {
     this.lineItems = lineItems;
   }
 
 
-  public OrderResponse livemode(Boolean livemode) {
+  public OrderResponse livemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
 
-   /**
+  /**
    * Whether the object exists in live mode or test mode
    * @return livemode
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -477,12 +498,12 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLivemode(Boolean livemode) {
+  public void setLivemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
   }
 
 
-  public OrderResponse metadata(Map<String, Object> metadata) {
+  public OrderResponse metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -495,10 +516,10 @@ public class OrderResponse {
     return this;
   }
 
-   /**
+  /**
    * Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
@@ -510,20 +531,20 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_METADATA)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 
 
-  public OrderResponse nextAction(OrderNextActionResponse nextAction) {
+  public OrderResponse nextAction(@javax.annotation.Nullable OrderNextActionResponse nextAction) {
     this.nextAction = nextAction;
     return this;
   }
 
-   /**
+  /**
    * Get nextAction
    * @return nextAction
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NEXT_ACTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -535,20 +556,20 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_NEXT_ACTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNextAction(OrderNextActionResponse nextAction) {
+  public void setNextAction(@javax.annotation.Nullable OrderNextActionResponse nextAction) {
     this.nextAction = nextAction;
   }
 
 
-  public OrderResponse _object(String _object) {
+  public OrderResponse _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * String representing the object’s type. Objects of the same type share the same value.
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -560,20 +581,20 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
 
-  public OrderResponse paymentStatus(String paymentStatus) {
+  public OrderResponse paymentStatus(@javax.annotation.Nullable String paymentStatus) {
     this.paymentStatus = paymentStatus;
     return this;
   }
 
-   /**
+  /**
    * The payment status of the order.
    * @return paymentStatus
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PAYMENT_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -585,20 +606,20 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_PAYMENT_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPaymentStatus(String paymentStatus) {
+  public void setPaymentStatus(@javax.annotation.Nullable String paymentStatus) {
     this.paymentStatus = paymentStatus;
   }
 
 
-  public OrderResponse processingMode(String processingMode) {
+  public OrderResponse processingMode(@javax.annotation.Nullable String processingMode) {
     this.processingMode = processingMode;
     return this;
   }
 
-   /**
+  /**
    * Indicates the processing mode for the order, either ecommerce, recurrent or validation.
    * @return processingMode
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PROCESSING_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -610,20 +631,20 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_PROCESSING_MODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProcessingMode(String processingMode) {
+  public void setProcessingMode(@javax.annotation.Nullable String processingMode) {
     this.processingMode = processingMode;
   }
 
 
-  public OrderResponse shippingContact(OrderResponseShippingContact shippingContact) {
+  public OrderResponse shippingContact(@javax.annotation.Nullable OrderResponseShippingContact shippingContact) {
     this.shippingContact = shippingContact;
     return this;
   }
 
-   /**
+  /**
    * Get shippingContact
    * @return shippingContact
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -635,20 +656,20 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setShippingContact(OrderResponseShippingContact shippingContact) {
+  public void setShippingContact(@javax.annotation.Nullable OrderResponseShippingContact shippingContact) {
     this.shippingContact = shippingContact;
   }
 
 
-  public OrderResponse updatedAt(Long updatedAt) {
+  public OrderResponse updatedAt(@javax.annotation.Nullable Long updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
 
-   /**
+  /**
    * The time at which the object was last updated in seconds since the Unix epoch
    * @return updatedAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -660,7 +681,7 @@ public class OrderResponse {
 
   @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUpdatedAt(Long updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable Long updatedAt) {
     this.updatedAt = updatedAt;
   }
 

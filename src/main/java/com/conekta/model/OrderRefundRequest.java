@@ -35,29 +35,32 @@ import com.conekta.JSON;
   OrderRefundRequest.JSON_PROPERTY_REASON
 })
 @JsonTypeName("orderRefund_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class OrderRefundRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nonnull
   private Integer amount;
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nullable
   private Long expiresAt;
 
   public static final String JSON_PROPERTY_REASON = "reason";
+  @javax.annotation.Nonnull
   private String reason;
 
   public OrderRefundRequest() { 
   }
 
-  public OrderRefundRequest amount(Integer amount) {
+  public OrderRefundRequest amount(@javax.annotation.Nonnull Integer amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * Amount to be refunded in cents
    * @return amount
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -69,20 +72,20 @@ public class OrderRefundRequest {
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAmount(Integer amount) {
+  public void setAmount(@javax.annotation.Nonnull Integer amount) {
     this.amount = amount;
   }
 
 
-  public OrderRefundRequest expiresAt(Long expiresAt) {
+  public OrderRefundRequest expiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
-   /**
+  /**
    * Get expiresAt
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -94,20 +97,20 @@ public class OrderRefundRequest {
 
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(Long expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public OrderRefundRequest reason(String reason) {
+  public OrderRefundRequest reason(@javax.annotation.Nonnull String reason) {
     this.reason = reason;
     return this;
   }
 
-   /**
+  /**
    * Reason for the refund
    * @return reason
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_REASON)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -119,7 +122,7 @@ public class OrderRefundRequest {
 
   @JsonProperty(JSON_PROPERTY_REASON)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setReason(String reason) {
+  public void setReason(@javax.annotation.Nonnull String reason) {
     this.reason = reason;
   }
 

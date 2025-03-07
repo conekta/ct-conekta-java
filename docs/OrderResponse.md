@@ -10,13 +10,13 @@ order response
 |------------ | ------------- | ------------- | -------------|
 |**amount** | **Integer** | The total amount to be collected in cents |  [optional] |
 |**amountRefunded** | **Integer** | The total amount refunded in cents |  [optional] |
-|**channel** | [**ChargeResponseChannel**](ChargeResponseChannel.md) |  |  [optional] |
-|**charges** | [**OrderResponseCharges**](OrderResponseCharges.md) |  |  [optional] |
+|**channel** | [**OrderChannelResponse**](OrderChannelResponse.md) |  |  [optional] |
+|**charges** | [**OrderChargesResponse**](OrderChargesResponse.md) |  |  [optional] |
 |**checkout** | [**OrderResponseCheckout**](OrderResponseCheckout.md) |  |  [optional] |
 |**createdAt** | **Long** | The time at which the object was created in seconds since the Unix epoch |  [optional] |
 |**currency** | **String** | The three-letter ISO 4217 currency code. The currency of the order. |  [optional] |
 |**customerInfo** | [**OrderResponseCustomerInfo**](OrderResponseCustomerInfo.md) |  |  [optional] |
-|**discountLines** | [**OrderResponseDiscountLines**](OrderResponseDiscountLines.md) |  |  [optional] |
+|**discountLines** | [**OrderDiscountLinesResponse**](OrderDiscountLinesResponse.md) |  |  [optional] |
 |**fiscalEntity** | [**OrderFiscalEntityResponse**](OrderFiscalEntityResponse.md) |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**isRefundable** | **Boolean** |  |  [optional] |

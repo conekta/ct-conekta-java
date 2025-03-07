@@ -41,13 +41,13 @@ import com.conekta.JSON;
   CompanyFiscalInfoAddressResponse.JSON_PROPERTY_INTERNAL_NUMBER
 })
 @JsonTypeName("company_fiscal_info_address_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CompanyFiscalInfoAddressResponse {
   /**
    * The resource&#39;s type
    */
   public enum ObjectEnum {
-    ADDRESS("address");
+    ADDRESS(String.valueOf("address"));
 
     private String value;
 
@@ -77,44 +77,53 @@ public class CompanyFiscalInfoAddressResponse {
   }
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private ObjectEnum _object;
 
   public static final String JSON_PROPERTY_STREET1 = "street1";
+  @javax.annotation.Nullable
   private String street1;
 
   public static final String JSON_PROPERTY_STREET2 = "street2";
+  @javax.annotation.Nullable
   private String street2;
 
   public static final String JSON_PROPERTY_CITY = "city";
+  @javax.annotation.Nullable
   private String city;
 
   public static final String JSON_PROPERTY_STATE = "state";
+  @javax.annotation.Nullable
   private String state;
 
   public static final String JSON_PROPERTY_COUNTRY = "country";
+  @javax.annotation.Nullable
   private String country;
 
   public static final String JSON_PROPERTY_POSTAL_CODE = "postal_code";
+  @javax.annotation.Nullable
   private String postalCode;
 
   public static final String JSON_PROPERTY_EXTERNAL_NUMBER = "external_number";
+  @javax.annotation.Nullable
   private String externalNumber;
 
   public static final String JSON_PROPERTY_INTERNAL_NUMBER = "internal_number";
+  @javax.annotation.Nullable
   private String internalNumber;
 
   public CompanyFiscalInfoAddressResponse() { 
   }
 
-  public CompanyFiscalInfoAddressResponse _object(ObjectEnum _object) {
+  public CompanyFiscalInfoAddressResponse _object(@javax.annotation.Nullable ObjectEnum _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * The resource&#39;s type
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -126,20 +135,20 @@ public class CompanyFiscalInfoAddressResponse {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(ObjectEnum _object) {
+  public void setObject(@javax.annotation.Nullable ObjectEnum _object) {
     this._object = _object;
   }
 
 
-  public CompanyFiscalInfoAddressResponse street1(String street1) {
+  public CompanyFiscalInfoAddressResponse street1(@javax.annotation.Nullable String street1) {
     this.street1 = street1;
     return this;
   }
 
-   /**
+  /**
    * Street Address
    * @return street1
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STREET1)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -151,20 +160,20 @@ public class CompanyFiscalInfoAddressResponse {
 
   @JsonProperty(JSON_PROPERTY_STREET1)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStreet1(String street1) {
+  public void setStreet1(@javax.annotation.Nullable String street1) {
     this.street1 = street1;
   }
 
 
-  public CompanyFiscalInfoAddressResponse street2(String street2) {
+  public CompanyFiscalInfoAddressResponse street2(@javax.annotation.Nullable String street2) {
     this.street2 = street2;
     return this;
   }
 
-   /**
+  /**
    * Colonia
    * @return street2
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STREET2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -176,20 +185,20 @@ public class CompanyFiscalInfoAddressResponse {
 
   @JsonProperty(JSON_PROPERTY_STREET2)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStreet2(String street2) {
+  public void setStreet2(@javax.annotation.Nullable String street2) {
     this.street2 = street2;
   }
 
 
-  public CompanyFiscalInfoAddressResponse city(String city) {
+  public CompanyFiscalInfoAddressResponse city(@javax.annotation.Nullable String city) {
     this.city = city;
     return this;
   }
 
-   /**
+  /**
    * City
    * @return city
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -201,20 +210,20 @@ public class CompanyFiscalInfoAddressResponse {
 
   @JsonProperty(JSON_PROPERTY_CITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCity(String city) {
+  public void setCity(@javax.annotation.Nullable String city) {
     this.city = city;
   }
 
 
-  public CompanyFiscalInfoAddressResponse state(String state) {
+  public CompanyFiscalInfoAddressResponse state(@javax.annotation.Nullable String state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * State
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -226,20 +235,20 @@ public class CompanyFiscalInfoAddressResponse {
 
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setState(String state) {
+  public void setState(@javax.annotation.Nullable String state) {
     this.state = state;
   }
 
 
-  public CompanyFiscalInfoAddressResponse country(String country) {
+  public CompanyFiscalInfoAddressResponse country(@javax.annotation.Nullable String country) {
     this.country = country;
     return this;
   }
 
-   /**
+  /**
    * Country
    * @return country
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -251,20 +260,20 @@ public class CompanyFiscalInfoAddressResponse {
 
   @JsonProperty(JSON_PROPERTY_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCountry(String country) {
+  public void setCountry(@javax.annotation.Nullable String country) {
     this.country = country;
   }
 
 
-  public CompanyFiscalInfoAddressResponse postalCode(String postalCode) {
+  public CompanyFiscalInfoAddressResponse postalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
 
-   /**
+  /**
    * Postal code
    * @return postalCode
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -276,20 +285,20 @@ public class CompanyFiscalInfoAddressResponse {
 
   @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPostalCode(String postalCode) {
+  public void setPostalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
   }
 
 
-  public CompanyFiscalInfoAddressResponse externalNumber(String externalNumber) {
+  public CompanyFiscalInfoAddressResponse externalNumber(@javax.annotation.Nullable String externalNumber) {
     this.externalNumber = externalNumber;
     return this;
   }
 
-   /**
+  /**
    * Street number
    * @return externalNumber
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EXTERNAL_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -301,20 +310,20 @@ public class CompanyFiscalInfoAddressResponse {
 
   @JsonProperty(JSON_PROPERTY_EXTERNAL_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExternalNumber(String externalNumber) {
+  public void setExternalNumber(@javax.annotation.Nullable String externalNumber) {
     this.externalNumber = externalNumber;
   }
 
 
-  public CompanyFiscalInfoAddressResponse internalNumber(String internalNumber) {
+  public CompanyFiscalInfoAddressResponse internalNumber(@javax.annotation.Nullable String internalNumber) {
     this.internalNumber = internalNumber;
     return this;
   }
 
-   /**
+  /**
    * Unit / apartment number
    * @return internalNumber
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_INTERNAL_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -326,7 +335,7 @@ public class CompanyFiscalInfoAddressResponse {
 
   @JsonProperty(JSON_PROPERTY_INTERNAL_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInternalNumber(String internalNumber) {
+  public void setInternalNumber(@javax.annotation.Nullable String internalNumber) {
     this.internalNumber = internalNumber;
   }
 

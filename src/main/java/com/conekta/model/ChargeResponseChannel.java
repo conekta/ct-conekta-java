@@ -36,32 +36,36 @@ import com.conekta.JSON;
   ChargeResponseChannel.JSON_PROPERTY_ID
 })
 @JsonTypeName("charge_response_channel")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ChargeResponseChannel {
   public static final String JSON_PROPERTY_SEGMENT = "segment";
+  @javax.annotation.Nullable
   private String segment;
 
   public static final String JSON_PROPERTY_CHECKOUT_REQUEST_ID = "checkout_request_id";
+  @javax.annotation.Nullable
   private String checkoutRequestId;
 
   public static final String JSON_PROPERTY_CHECKOUT_REQUEST_TYPE = "checkout_request_type";
+  @javax.annotation.Nullable
   private String checkoutRequestType;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public ChargeResponseChannel() { 
   }
 
-  public ChargeResponseChannel segment(String segment) {
+  public ChargeResponseChannel segment(@javax.annotation.Nullable String segment) {
     this.segment = segment;
     return this;
   }
 
-   /**
+  /**
    * Get segment
    * @return segment
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SEGMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -73,20 +77,20 @@ public class ChargeResponseChannel {
 
   @JsonProperty(JSON_PROPERTY_SEGMENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSegment(String segment) {
+  public void setSegment(@javax.annotation.Nullable String segment) {
     this.segment = segment;
   }
 
 
-  public ChargeResponseChannel checkoutRequestId(String checkoutRequestId) {
+  public ChargeResponseChannel checkoutRequestId(@javax.annotation.Nullable String checkoutRequestId) {
     this.checkoutRequestId = checkoutRequestId;
     return this;
   }
 
-   /**
+  /**
    * Get checkoutRequestId
    * @return checkoutRequestId
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHECKOUT_REQUEST_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -98,20 +102,20 @@ public class ChargeResponseChannel {
 
   @JsonProperty(JSON_PROPERTY_CHECKOUT_REQUEST_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCheckoutRequestId(String checkoutRequestId) {
+  public void setCheckoutRequestId(@javax.annotation.Nullable String checkoutRequestId) {
     this.checkoutRequestId = checkoutRequestId;
   }
 
 
-  public ChargeResponseChannel checkoutRequestType(String checkoutRequestType) {
+  public ChargeResponseChannel checkoutRequestType(@javax.annotation.Nullable String checkoutRequestType) {
     this.checkoutRequestType = checkoutRequestType;
     return this;
   }
 
-   /**
+  /**
    * Get checkoutRequestType
    * @return checkoutRequestType
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CHECKOUT_REQUEST_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -123,20 +127,20 @@ public class ChargeResponseChannel {
 
   @JsonProperty(JSON_PROPERTY_CHECKOUT_REQUEST_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCheckoutRequestType(String checkoutRequestType) {
+  public void setCheckoutRequestType(@javax.annotation.Nullable String checkoutRequestType) {
     this.checkoutRequestType = checkoutRequestType;
   }
 
 
-  public ChargeResponseChannel id(String id) {
+  public ChargeResponseChannel id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -148,7 +152,7 @@ public class ChargeResponseChannel {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 

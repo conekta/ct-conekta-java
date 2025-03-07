@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.PaymentMethodBankTransfer;
+import com.conekta.model.PaymentMethodBnplPayment;
 import com.conekta.model.PaymentMethodCard;
 import com.conekta.model.PaymentMethodCash;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -60,7 +61,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.conekta.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 @JsonDeserialize(using = ChargeResponsePaymentMethod.ChargeResponsePaymentMethodDeserializer.class)
 @JsonSerialize(using = ChargeResponsePaymentMethod.ChargeResponsePaymentMethodSerializer.class)
 public class ChargeResponsePaymentMethod extends AbstractOpenApiSchema {
@@ -102,6 +103,10 @@ public class ChargeResponsePaymentMethod extends AbstractOpenApiSchema {
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodBankTransfer.class);
                     newChargeResponsePaymentMethod.setActualInstance(deserialized);
                     return newChargeResponsePaymentMethod;
+                case "bnpl_payment":
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodBnplPayment.class);
+                    newChargeResponsePaymentMethod.setActualInstance(deserialized);
+                    return newChargeResponsePaymentMethod;
                 case "card_payment":
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCard.class);
                     newChargeResponsePaymentMethod.setActualInstance(deserialized);
@@ -114,6 +119,10 @@ public class ChargeResponsePaymentMethod extends AbstractOpenApiSchema {
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodBankTransfer.class);
                     newChargeResponsePaymentMethod.setActualInstance(deserialized);
                     return newChargeResponsePaymentMethod;
+                case "payment_method_bnpl_payment":
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodBnplPayment.class);
+                    newChargeResponsePaymentMethod.setActualInstance(deserialized);
+                    return newChargeResponsePaymentMethod;
                 case "payment_method_card":
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCard.class);
                     newChargeResponsePaymentMethod.setActualInstance(deserialized);
@@ -123,7 +132,7 @@ public class ChargeResponsePaymentMethod extends AbstractOpenApiSchema {
                     newChargeResponsePaymentMethod.setActualInstance(deserialized);
                     return newChargeResponsePaymentMethod;
                 default:
-                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for ChargeResponsePaymentMethod. Possible values: bank_transfer_payment card_payment cash_payment payment_method_bank_transfer payment_method_card payment_method_cash", discriminatorValue));
+                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for ChargeResponsePaymentMethod. Possible values: bank_transfer_payment bnpl_payment card_payment cash_payment payment_method_bank_transfer payment_method_bnpl_payment payment_method_card payment_method_cash", discriminatorValue));
             }
 
             boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
@@ -177,6 +186,22 @@ public class ChargeResponsePaymentMethod extends AbstractOpenApiSchema {
                 log.log(Level.FINER, "Input data does not match schema 'PaymentMethodBankTransfer'", e);
             }
 
+            // deserialize PaymentMethodBnplPayment
+            try {
+                boolean attemptParsing = true;
+                if (attemptParsing) {
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodBnplPayment.class);
+                    // TODO: there is no validation against JSON schema constraints
+                    // (min, max, enum, pattern...), this does not perform a strict JSON
+                    // validation, which means the 'match' count may be higher than it should be.
+                    match++;
+                    log.log(Level.FINER, "Input data matches schema 'PaymentMethodBnplPayment'");
+                }
+            } catch (Exception e) {
+                // deserialization failed, continue
+                log.log(Level.FINER, "Input data does not match schema 'PaymentMethodBnplPayment'", e);
+            }
+
             if (match == 1) {
                 ChargeResponsePaymentMethod ret = new ChargeResponsePaymentMethod();
                 ret.setActualInstance(deserialized);
@@ -195,7 +220,7 @@ public class ChargeResponsePaymentMethod extends AbstractOpenApiSchema {
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<>();
+    public static final Map<String, GenericType<?>> schemas = new HashMap<>();
 
     public ChargeResponsePaymentMethod() {
         super("oneOf", Boolean.FALSE);
@@ -216,8 +241,15 @@ public class ChargeResponsePaymentMethod extends AbstractOpenApiSchema {
         setActualInstance(o);
     }
 
+    public ChargeResponsePaymentMethod(PaymentMethodBnplPayment o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
     static {
         schemas.put("PaymentMethodBankTransfer", new GenericType<PaymentMethodBankTransfer>() {
+        });
+        schemas.put("PaymentMethodBnplPayment", new GenericType<PaymentMethodBnplPayment>() {
         });
         schemas.put("PaymentMethodCard", new GenericType<PaymentMethodCard>() {
         });
@@ -227,9 +259,11 @@ public class ChargeResponsePaymentMethod extends AbstractOpenApiSchema {
         // Initialize and register the discriminator mappings.
         Map<String, Class<?>> mappings = new HashMap<>();
         mappings.put("bank_transfer_payment", PaymentMethodBankTransfer.class);
+        mappings.put("bnpl_payment", PaymentMethodBnplPayment.class);
         mappings.put("card_payment", PaymentMethodCard.class);
         mappings.put("cash_payment", PaymentMethodCash.class);
         mappings.put("payment_method_bank_transfer", PaymentMethodBankTransfer.class);
+        mappings.put("payment_method_bnpl_payment", PaymentMethodBnplPayment.class);
         mappings.put("payment_method_card", PaymentMethodCard.class);
         mappings.put("payment_method_cash", PaymentMethodCash.class);
         mappings.put("charge_response_payment_method", ChargeResponsePaymentMethod.class);
@@ -237,14 +271,14 @@ public class ChargeResponsePaymentMethod extends AbstractOpenApiSchema {
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, GenericType<?>> getSchemas() {
         return ChargeResponsePaymentMethod.schemas;
     }
 
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * PaymentMethodBankTransfer, PaymentMethodCard, PaymentMethodCash
+     * PaymentMethodBankTransfer, PaymentMethodBnplPayment, PaymentMethodCard, PaymentMethodCash
      *
      * It could be an instance of the 'oneOf' schemas.
      * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
@@ -266,14 +300,19 @@ public class ChargeResponsePaymentMethod extends AbstractOpenApiSchema {
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be PaymentMethodBankTransfer, PaymentMethodCard, PaymentMethodCash");
+        if (JSON.isInstanceOf(PaymentMethodBnplPayment.class, instance, new HashSet<>())) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be PaymentMethodBankTransfer, PaymentMethodBnplPayment, PaymentMethodCard, PaymentMethodCash");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * PaymentMethodBankTransfer, PaymentMethodCard, PaymentMethodCash
+     * PaymentMethodBankTransfer, PaymentMethodBnplPayment, PaymentMethodCard, PaymentMethodCash
      *
-     * @return The actual instance (PaymentMethodBankTransfer, PaymentMethodCard, PaymentMethodCash)
+     * @return The actual instance (PaymentMethodBankTransfer, PaymentMethodBnplPayment, PaymentMethodCard, PaymentMethodCash)
      */
     @Override
     public Object getActualInstance() {
@@ -311,6 +350,17 @@ public class ChargeResponsePaymentMethod extends AbstractOpenApiSchema {
      */
     public PaymentMethodBankTransfer getPaymentMethodBankTransfer() throws ClassCastException {
         return (PaymentMethodBankTransfer)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `PaymentMethodBnplPayment`. If the actual instance is not `PaymentMethodBnplPayment`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `PaymentMethodBnplPayment`
+     * @throws ClassCastException if the instance is not `PaymentMethodBnplPayment`
+     */
+    public PaymentMethodBnplPayment getPaymentMethodBnplPayment() throws ClassCastException {
+        return (PaymentMethodBnplPayment)super.getActualInstance();
     }
 
 }

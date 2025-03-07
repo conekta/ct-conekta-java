@@ -4,6 +4,7 @@
 
 ## oneOf schemas
 * [PaymentMethodBankTransfer](PaymentMethodBankTransfer.md)
+* [PaymentMethodBnplPayment](PaymentMethodBnplPayment.md)
 * [PaymentMethodCard](PaymentMethodCard.md)
 * [PaymentMethodCash](PaymentMethodCash.md)
 
@@ -12,6 +13,7 @@
 // Import classes:
 import com.conekta.model.ChargeResponsePaymentMethod;
 import com.conekta.model.PaymentMethodBankTransfer;
+import com.conekta.model.PaymentMethodBnplPayment;
 import com.conekta.model.PaymentMethodCard;
 import com.conekta.model.PaymentMethodCash;
 
@@ -25,6 +27,13 @@ public class Example {
         exampleChargeResponsePaymentMethod.setActualInstance(examplePaymentMethodBankTransfer);
         // to get back the PaymentMethodBankTransfer set earlier
         PaymentMethodBankTransfer testPaymentMethodBankTransfer = (PaymentMethodBankTransfer) exampleChargeResponsePaymentMethod.getActualInstance();
+
+        // create a new PaymentMethodBnplPayment
+        PaymentMethodBnplPayment examplePaymentMethodBnplPayment = new PaymentMethodBnplPayment();
+        // set ChargeResponsePaymentMethod to PaymentMethodBnplPayment
+        exampleChargeResponsePaymentMethod.setActualInstance(examplePaymentMethodBnplPayment);
+        // to get back the PaymentMethodBnplPayment set earlier
+        PaymentMethodBnplPayment testPaymentMethodBnplPayment = (PaymentMethodBnplPayment) exampleChargeResponsePaymentMethod.getActualInstance();
 
         // create a new PaymentMethodCard
         PaymentMethodCard examplePaymentMethodCard = new PaymentMethodCard();

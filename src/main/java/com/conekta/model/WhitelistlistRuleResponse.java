@@ -36,32 +36,36 @@ import com.conekta.JSON;
   WhitelistlistRuleResponse.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("whitelistlist_rule_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class WhitelistlistRuleResponse {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_FIELD = "field";
+  @javax.annotation.Nullable
   private String field;
 
   public static final String JSON_PROPERTY_VALUE = "value";
+  @javax.annotation.Nullable
   private String value;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public WhitelistlistRuleResponse() { 
   }
 
-  public WhitelistlistRuleResponse id(String id) {
+  public WhitelistlistRuleResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Whitelist rule id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -73,20 +77,20 @@ public class WhitelistlistRuleResponse {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public WhitelistlistRuleResponse field(String field) {
+  public WhitelistlistRuleResponse field(@javax.annotation.Nullable String field) {
     this.field = field;
     return this;
   }
 
-   /**
+  /**
    * field used for whitelists rule
    * @return field
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FIELD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -98,20 +102,20 @@ public class WhitelistlistRuleResponse {
 
   @JsonProperty(JSON_PROPERTY_FIELD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setField(String field) {
+  public void setField(@javax.annotation.Nullable String field) {
     this.field = field;
   }
 
 
-  public WhitelistlistRuleResponse value(String value) {
+  public WhitelistlistRuleResponse value(@javax.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
 
-   /**
+  /**
    * value used for whitelists rule
    * @return value
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -123,20 +127,20 @@ public class WhitelistlistRuleResponse {
 
   @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setValue(String value) {
+  public void setValue(@javax.annotation.Nullable String value) {
     this.value = value;
   }
 
 
-  public WhitelistlistRuleResponse description(String description) {
+  public WhitelistlistRuleResponse description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * use an description for whitelisted rule
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -148,7 +152,7 @@ public class WhitelistlistRuleResponse {
 
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 

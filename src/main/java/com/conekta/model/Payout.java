@@ -34,23 +34,24 @@ import com.conekta.JSON;
   Payout.JSON_PROPERTY_PAYOUT_METHOD
 })
 @JsonTypeName("payout")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Payout {
   public static final String JSON_PROPERTY_PAYOUT_METHOD = "payout_method";
+  @javax.annotation.Nonnull
   private PayoutMethod payoutMethod;
 
   public Payout() { 
   }
 
-  public Payout payoutMethod(PayoutMethod payoutMethod) {
+  public Payout payoutMethod(@javax.annotation.Nonnull PayoutMethod payoutMethod) {
     this.payoutMethod = payoutMethod;
     return this;
   }
 
-   /**
+  /**
    * Get payoutMethod
    * @return payoutMethod
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_PAYOUT_METHOD)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -62,7 +63,7 @@ public class Payout {
 
   @JsonProperty(JSON_PROPERTY_PAYOUT_METHOD)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPayoutMethod(PayoutMethod payoutMethod) {
+  public void setPayoutMethod(@javax.annotation.Nonnull PayoutMethod payoutMethod) {
     this.payoutMethod = payoutMethod;
   }
 

@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.conekta</groupId>
   <artifactId>ct-conekta-java</artifactId>
-  <version>6.1.3</version>
+  <version>6.1.4</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "io.conekta:ct-conekta-java:6.1.3"
+     implementation "io.conekta:ct-conekta-java:6.1.4"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/ct-conekta-java-6.1.3.jar`
+- `target/ct-conekta-java-6.1.4.jar`
 - `target/lib/*.jar`
 
 ## Usage
@@ -333,8 +333,11 @@ Class | Method | HTTP request | Description
  - [LogsResponse](docs/LogsResponse.md)
  - [LogsResponseData](docs/LogsResponseData.md)
  - [OrderCaptureRequest](docs/OrderCaptureRequest.md)
+ - [OrderChannelResponse](docs/OrderChannelResponse.md)
+ - [OrderChargesResponse](docs/OrderChargesResponse.md)
  - [OrderCustomerInfoResponse](docs/OrderCustomerInfoResponse.md)
  - [OrderDiscountLinesRequest](docs/OrderDiscountLinesRequest.md)
+ - [OrderDiscountLinesResponse](docs/OrderDiscountLinesResponse.md)
  - [OrderFiscalEntityAddressResponse](docs/OrderFiscalEntityAddressResponse.md)
  - [OrderFiscalEntityRequest](docs/OrderFiscalEntityRequest.md)
  - [OrderFiscalEntityResponse](docs/OrderFiscalEntityResponse.md)
@@ -344,10 +347,8 @@ Class | Method | HTTP request | Description
  - [OrderRequest](docs/OrderRequest.md)
  - [OrderRequestCustomerInfo](docs/OrderRequestCustomerInfo.md)
  - [OrderResponse](docs/OrderResponse.md)
- - [OrderResponseCharges](docs/OrderResponseCharges.md)
  - [OrderResponseCheckout](docs/OrderResponseCheckout.md)
  - [OrderResponseCustomerInfo](docs/OrderResponseCustomerInfo.md)
- - [OrderResponseDiscountLines](docs/OrderResponseDiscountLines.md)
  - [OrderResponseProducts](docs/OrderResponseProducts.md)
  - [OrderResponseShippingContact](docs/OrderResponseShippingContact.md)
  - [OrderTaxRequest](docs/OrderTaxRequest.md)
@@ -359,10 +360,13 @@ Class | Method | HTTP request | Description
  - [Pagination](docs/Pagination.md)
  - [PaymentMethod](docs/PaymentMethod.md)
  - [PaymentMethodBankTransfer](docs/PaymentMethodBankTransfer.md)
+ - [PaymentMethodBnplPayment](docs/PaymentMethodBnplPayment.md)
+ - [PaymentMethodBnplRequest](docs/PaymentMethodBnplRequest.md)
  - [PaymentMethodCard](docs/PaymentMethodCard.md)
  - [PaymentMethodCardRequest](docs/PaymentMethodCardRequest.md)
  - [PaymentMethodCardResponse](docs/PaymentMethodCardResponse.md)
  - [PaymentMethodCash](docs/PaymentMethodCash.md)
+ - [PaymentMethodCashAgreements](docs/PaymentMethodCashAgreements.md)
  - [PaymentMethodCashRequest](docs/PaymentMethodCashRequest.md)
  - [PaymentMethodCashResponse](docs/PaymentMethodCashResponse.md)
  - [PaymentMethodGeneralRequest](docs/PaymentMethodGeneralRequest.md)

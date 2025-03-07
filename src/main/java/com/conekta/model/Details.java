@@ -36,15 +36,16 @@ import com.conekta.JSON;
   Details.JSON_PROPERTY_DETAILS
 })
 @JsonTypeName("details")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Details {
   public static final String JSON_PROPERTY_DETAILS = "details";
+  @javax.annotation.Nullable
   private List<DetailsError> details = new ArrayList<>();
 
   public Details() { 
   }
 
-  public Details details(List<DetailsError> details) {
+  public Details details(@javax.annotation.Nullable List<DetailsError> details) {
     this.details = details;
     return this;
   }
@@ -57,10 +58,10 @@ public class Details {
     return this;
   }
 
-   /**
+  /**
    * Get details
    * @return details
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DETAILS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -72,7 +73,7 @@ public class Details {
 
   @JsonProperty(JSON_PROPERTY_DETAILS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDetails(List<DetailsError> details) {
+  public void setDetails(@javax.annotation.Nullable List<DetailsError> details) {
     this.details = details;
   }
 

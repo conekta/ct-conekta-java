@@ -38,13 +38,13 @@ import com.conekta.JSON;
   CompanyPayoutDestinationResponse.JSON_PROPERTY_ACCOUNT_NUMBER
 })
 @JsonTypeName("company_payout_destination_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CompanyPayoutDestinationResponse {
   /**
    * The resource&#39;s type
    */
   public enum ObjectEnum {
-    PAYOUT_DESTINATION("payout_destination");
+    PAYOUT_DESTINATION(String.valueOf("payout_destination"));
 
     private String value;
 
@@ -74,22 +74,26 @@ public class CompanyPayoutDestinationResponse {
   }
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private ObjectEnum _object;
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
+  @javax.annotation.Nullable
   private String currency;
 
   public static final String JSON_PROPERTY_ACCOUNT_HOLDER_NAME = "account_holder_name";
+  @javax.annotation.Nullable
   private String accountHolderName;
 
   public static final String JSON_PROPERTY_BANK = "bank";
+  @javax.annotation.Nullable
   private String bank;
 
   /**
    * Type of the payout destination
    */
   public enum TypeEnum {
-    BANK_ACCOUNT("bank_account");
+    BANK_ACCOUNT(String.valueOf("bank_account"));
 
     private String value;
 
@@ -119,23 +123,25 @@ public class CompanyPayoutDestinationResponse {
   }
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public static final String JSON_PROPERTY_ACCOUNT_NUMBER = "account_number";
+  @javax.annotation.Nullable
   private String accountNumber;
 
   public CompanyPayoutDestinationResponse() { 
   }
 
-  public CompanyPayoutDestinationResponse _object(ObjectEnum _object) {
+  public CompanyPayoutDestinationResponse _object(@javax.annotation.Nullable ObjectEnum _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * The resource&#39;s type
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -147,20 +153,20 @@ public class CompanyPayoutDestinationResponse {
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(ObjectEnum _object) {
+  public void setObject(@javax.annotation.Nullable ObjectEnum _object) {
     this._object = _object;
   }
 
 
-  public CompanyPayoutDestinationResponse currency(String currency) {
+  public CompanyPayoutDestinationResponse currency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * currency of the receiving account
    * @return currency
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -172,20 +178,20 @@ public class CompanyPayoutDestinationResponse {
 
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCurrency(String currency) {
+  public void setCurrency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
   }
 
 
-  public CompanyPayoutDestinationResponse accountHolderName(String accountHolderName) {
+  public CompanyPayoutDestinationResponse accountHolderName(@javax.annotation.Nullable String accountHolderName) {
     this.accountHolderName = accountHolderName;
     return this;
   }
 
-   /**
+  /**
    * Name of the account holder
    * @return accountHolderName
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACCOUNT_HOLDER_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -197,20 +203,20 @@ public class CompanyPayoutDestinationResponse {
 
   @JsonProperty(JSON_PROPERTY_ACCOUNT_HOLDER_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccountHolderName(String accountHolderName) {
+  public void setAccountHolderName(@javax.annotation.Nullable String accountHolderName) {
     this.accountHolderName = accountHolderName;
   }
 
 
-  public CompanyPayoutDestinationResponse bank(String bank) {
+  public CompanyPayoutDestinationResponse bank(@javax.annotation.Nullable String bank) {
     this.bank = bank;
     return this;
   }
 
-   /**
+  /**
    * Name of the bank
    * @return bank
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BANK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -222,20 +228,20 @@ public class CompanyPayoutDestinationResponse {
 
   @JsonProperty(JSON_PROPERTY_BANK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBank(String bank) {
+  public void setBank(@javax.annotation.Nullable String bank) {
     this.bank = bank;
   }
 
 
-  public CompanyPayoutDestinationResponse type(TypeEnum type) {
+  public CompanyPayoutDestinationResponse type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Type of the payout destination
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -247,20 +253,20 @@ public class CompanyPayoutDestinationResponse {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public CompanyPayoutDestinationResponse accountNumber(String accountNumber) {
+  public CompanyPayoutDestinationResponse accountNumber(@javax.annotation.Nullable String accountNumber) {
     this.accountNumber = accountNumber;
     return this;
   }
 
-   /**
+  /**
    * Account number of the receiving account
    * @return accountNumber
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACCOUNT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -272,7 +278,7 @@ public class CompanyPayoutDestinationResponse {
 
   @JsonProperty(JSON_PROPERTY_ACCOUNT_NUMBER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccountNumber(String accountNumber) {
+  public void setAccountNumber(@javax.annotation.Nullable String accountNumber) {
     this.accountNumber = accountNumber;
   }
 
