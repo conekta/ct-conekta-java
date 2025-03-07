@@ -39,7 +39,7 @@ import com.conekta.JSON;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class ChargeRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
-  private Integer amount;
+  private Long amount;
 
   public static final String JSON_PROPERTY_PAYMENT_METHOD = "payment_method";
   private ChargeRequestPaymentMethod paymentMethod;
@@ -50,7 +50,7 @@ public class ChargeRequest {
   public ChargeRequest() { 
   }
 
-  public ChargeRequest amount(Integer amount) {
+  public ChargeRequest amount(Long amount) {
     this.amount = amount;
     return this;
   }
@@ -63,14 +63,14 @@ public class ChargeRequest {
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getAmount() {
+  public Long getAmount() {
     return amount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAmount(Integer amount) {
+  public void setAmount(Long amount) {
     this.amount = amount;
   }
 

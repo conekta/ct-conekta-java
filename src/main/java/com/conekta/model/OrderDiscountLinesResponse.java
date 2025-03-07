@@ -30,16 +30,16 @@ import com.conekta.JSON;
 
 
 /**
- * OrderResponseDiscountLines
+ * OrderDiscountLinesResponse
  */
 @JsonPropertyOrder({
-  OrderResponseDiscountLines.JSON_PROPERTY_HAS_MORE,
-  OrderResponseDiscountLines.JSON_PROPERTY_OBJECT,
-  OrderResponseDiscountLines.JSON_PROPERTY_DATA
+  OrderDiscountLinesResponse.JSON_PROPERTY_HAS_MORE,
+  OrderDiscountLinesResponse.JSON_PROPERTY_OBJECT,
+  OrderDiscountLinesResponse.JSON_PROPERTY_DATA
 })
-@JsonTypeName("order_response_discount_lines")
+@JsonTypeName("order_discount_lines_response")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
-public class OrderResponseDiscountLines {
+public class OrderDiscountLinesResponse {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   private Boolean hasMore;
 
@@ -49,10 +49,10 @@ public class OrderResponseDiscountLines {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<DiscountLinesDataResponse> data = new ArrayList<>();
 
-  public OrderResponseDiscountLines() { 
+  public OrderDiscountLinesResponse() { 
   }
 
-  public OrderResponseDiscountLines hasMore(Boolean hasMore) {
+  public OrderDiscountLinesResponse hasMore(Boolean hasMore) {
     this.hasMore = hasMore;
     return this;
   }
@@ -77,7 +77,7 @@ public class OrderResponseDiscountLines {
   }
 
 
-  public OrderResponseDiscountLines _object(String _object) {
+  public OrderDiscountLinesResponse _object(String _object) {
     this._object = _object;
     return this;
   }
@@ -102,12 +102,12 @@ public class OrderResponseDiscountLines {
   }
 
 
-  public OrderResponseDiscountLines data(List<DiscountLinesDataResponse> data) {
+  public OrderDiscountLinesResponse data(List<DiscountLinesDataResponse> data) {
     this.data = data;
     return this;
   }
 
-  public OrderResponseDiscountLines addDataItem(DiscountLinesDataResponse dataItem) {
+  public OrderDiscountLinesResponse addDataItem(DiscountLinesDataResponse dataItem) {
     if (this.data == null) {
       this.data = new ArrayList<>();
     }
@@ -136,7 +136,7 @@ public class OrderResponseDiscountLines {
 
 
   /**
-   * Return true if this order_response_discount_lines object is equal to o.
+   * Return true if this order_discount_lines_response object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -146,10 +146,10 @@ public class OrderResponseDiscountLines {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrderResponseDiscountLines orderResponseDiscountLines = (OrderResponseDiscountLines) o;
-    return Objects.equals(this.hasMore, orderResponseDiscountLines.hasMore) &&
-        Objects.equals(this._object, orderResponseDiscountLines._object) &&
-        Objects.equals(this.data, orderResponseDiscountLines.data);
+    OrderDiscountLinesResponse orderDiscountLinesResponse = (OrderDiscountLinesResponse) o;
+    return Objects.equals(this.hasMore, orderDiscountLinesResponse.hasMore) &&
+        Objects.equals(this._object, orderDiscountLinesResponse._object) &&
+        Objects.equals(this.data, orderDiscountLinesResponse.data);
   }
 
   @Override
@@ -160,7 +160,7 @@ public class OrderResponseDiscountLines {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrderResponseDiscountLines {\n");
+    sb.append("class OrderDiscountLinesResponse {\n");
     sb.append("    hasMore: ").append(toIndentedString(hasMore)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");

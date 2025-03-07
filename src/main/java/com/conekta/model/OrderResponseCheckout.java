@@ -167,7 +167,7 @@ public class OrderResponseCheckout {
   }
 
    /**
-   * Get allowedPaymentMethods
+   * Are the payment methods available for this link
    * @return allowedPaymentMethods
   **/
   @javax.annotation.Nullable

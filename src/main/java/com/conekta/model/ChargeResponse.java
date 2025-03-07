@@ -121,9 +121,9 @@ public class ChargeResponse {
    * Get amount
    * @return amount
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_AMOUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getAmount() {
     return amount;
@@ -131,7 +131,7 @@ public class ChargeResponse {
 
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setAmount(Integer amount) {
     this.amount = amount;
   }
@@ -171,9 +171,9 @@ public class ChargeResponse {
    * Get createdAt
    * @return createdAt
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Long getCreatedAt() {
     return createdAt;
@@ -181,7 +181,7 @@ public class ChargeResponse {
 
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCreatedAt(Long createdAt) {
     this.createdAt = createdAt;
   }
@@ -196,9 +196,9 @@ public class ChargeResponse {
    * Get currency
    * @return currency
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CURRENCY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCurrency() {
     return currency;
@@ -206,7 +206,7 @@ public class ChargeResponse {
 
 
   @JsonProperty(JSON_PROPERTY_CURRENCY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCurrency(String currency) {
     this.currency = currency;
   }
@@ -346,9 +346,9 @@ public class ChargeResponse {
    * Charge ID
    * @return id
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
     return id;
@@ -356,7 +356,7 @@ public class ChargeResponse {
 
 
   @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(String id) {
     this.id = id;
   }
@@ -371,9 +371,9 @@ public class ChargeResponse {
    * Whether the charge was made in live mode or not
    * @return livemode
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getLivemode() {
     return livemode;
@@ -381,7 +381,7 @@ public class ChargeResponse {
 
 
   @JsonProperty(JSON_PROPERTY_LIVEMODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLivemode(Boolean livemode) {
     this.livemode = livemode;
   }
@@ -396,9 +396,9 @@ public class ChargeResponse {
    * Get _object
    * @return _object
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
     return _object;
@@ -406,7 +406,7 @@ public class ChargeResponse {
 
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setObject(String _object) {
     this._object = _object;
   }
@@ -421,9 +421,9 @@ public class ChargeResponse {
    * Order ID
    * @return orderId
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ORDER_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getOrderId() {
     return orderId;
@@ -431,7 +431,7 @@ public class ChargeResponse {
 
 
   @JsonProperty(JSON_PROPERTY_ORDER_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setOrderId(String orderId) {
     this.orderId = orderId;
   }
@@ -543,12 +543,12 @@ public class ChargeResponse {
   }
 
    /**
-   * Get status
+   * Charge status
    * @return status
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getStatus() {
     return status;
@@ -556,7 +556,7 @@ public class ChargeResponse {
 
 
   @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setStatus(String status) {
     this.status = status;
   }

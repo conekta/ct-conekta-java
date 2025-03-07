@@ -16,12 +16,15 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
+import com.conekta.model.PaymentMethodCashResponseAllOfAgreements;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
@@ -35,6 +38,7 @@ import com.conekta.JSON;
   PaymentMethodCashResponse.JSON_PROPERTY_OBJECT,
   PaymentMethodCashResponse.JSON_PROPERTY_CREATED_AT,
   PaymentMethodCashResponse.JSON_PROPERTY_PARENT_ID,
+  PaymentMethodCashResponse.JSON_PROPERTY_AGREEMENTS,
   PaymentMethodCashResponse.JSON_PROPERTY_REFERENCE,
   PaymentMethodCashResponse.JSON_PROPERTY_BARCODE,
   PaymentMethodCashResponse.JSON_PROPERTY_BARCODE_URL,
@@ -58,6 +62,9 @@ public class PaymentMethodCashResponse {
 
   public static final String JSON_PROPERTY_PARENT_ID = "parent_id";
   private String parentId;
+
+  public static final String JSON_PROPERTY_AGREEMENTS = "agreements";
+  private List<PaymentMethodCashResponseAllOfAgreements> agreements = new ArrayList<>();
 
   public static final String JSON_PROPERTY_REFERENCE = "reference";
   private String reference;
@@ -202,6 +209,39 @@ public class PaymentMethodCashResponse {
   }
 
 
+  public PaymentMethodCashResponse agreements(List<PaymentMethodCashResponseAllOfAgreements> agreements) {
+    this.agreements = agreements;
+    return this;
+  }
+
+  public PaymentMethodCashResponse addAgreementsItem(PaymentMethodCashResponseAllOfAgreements agreementsItem) {
+    if (this.agreements == null) {
+      this.agreements = new ArrayList<>();
+    }
+    this.agreements.add(agreementsItem);
+    return this;
+  }
+
+   /**
+   * Get agreements
+   * @return agreements
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_AGREEMENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<PaymentMethodCashResponseAllOfAgreements> getAgreements() {
+    return agreements;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_AGREEMENTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAgreements(List<PaymentMethodCashResponseAllOfAgreements> agreements) {
+    this.agreements = agreements;
+  }
+
+
   public PaymentMethodCashResponse reference(String reference) {
     this.reference = reference;
     return this;
@@ -258,7 +298,7 @@ public class PaymentMethodCashResponse {
   }
 
    /**
-   * Get barcodeUrl
+   * URL to the barcode image, reference is the same as barcode
    * @return barcodeUrl
   **/
   @javax.annotation.Nullable
@@ -344,6 +384,7 @@ public class PaymentMethodCashResponse {
         Objects.equals(this._object, paymentMethodCashResponse._object) &&
         Objects.equals(this.createdAt, paymentMethodCashResponse.createdAt) &&
         Objects.equals(this.parentId, paymentMethodCashResponse.parentId) &&
+        Objects.equals(this.agreements, paymentMethodCashResponse.agreements) &&
         Objects.equals(this.reference, paymentMethodCashResponse.reference) &&
         Objects.equals(this.barcode, paymentMethodCashResponse.barcode) &&
         Objects.equals(this.barcodeUrl, paymentMethodCashResponse.barcodeUrl) &&
@@ -353,7 +394,7 @@ public class PaymentMethodCashResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, id, _object, createdAt, parentId, reference, barcode, barcodeUrl, expiresAt, provider);
+    return Objects.hash(type, id, _object, createdAt, parentId, agreements, reference, barcode, barcodeUrl, expiresAt, provider);
   }
 
   @Override
@@ -365,6 +406,7 @@ public class PaymentMethodCashResponse {
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
+    sb.append("    agreements: ").append(toIndentedString(agreements)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
     sb.append("    barcode: ").append(toIndentedString(barcode)).append("\n");
     sb.append("    barcodeUrl: ").append(toIndentedString(barcodeUrl)).append("\n");

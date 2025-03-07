@@ -33,13 +33,13 @@ import com.conekta.JSON;
  * The charges associated with the order
  */
 @JsonPropertyOrder({
-  OrderResponseCharges.JSON_PROPERTY_HAS_MORE,
-  OrderResponseCharges.JSON_PROPERTY_OBJECT,
-  OrderResponseCharges.JSON_PROPERTY_DATA
+  OrderChargesResponse.JSON_PROPERTY_HAS_MORE,
+  OrderChargesResponse.JSON_PROPERTY_OBJECT,
+  OrderChargesResponse.JSON_PROPERTY_DATA
 })
-@JsonTypeName("order_response_charges")
+@JsonTypeName("order_charges_response")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
-public class OrderResponseCharges {
+public class OrderChargesResponse {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   private Boolean hasMore;
 
@@ -49,10 +49,10 @@ public class OrderResponseCharges {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<ChargesDataResponse> data = new ArrayList<>();
 
-  public OrderResponseCharges() { 
+  public OrderChargesResponse() { 
   }
 
-  public OrderResponseCharges hasMore(Boolean hasMore) {
+  public OrderChargesResponse hasMore(Boolean hasMore) {
     this.hasMore = hasMore;
     return this;
   }
@@ -77,7 +77,7 @@ public class OrderResponseCharges {
   }
 
 
-  public OrderResponseCharges _object(String _object) {
+  public OrderChargesResponse _object(String _object) {
     this._object = _object;
     return this;
   }
@@ -102,12 +102,12 @@ public class OrderResponseCharges {
   }
 
 
-  public OrderResponseCharges data(List<ChargesDataResponse> data) {
+  public OrderChargesResponse data(List<ChargesDataResponse> data) {
     this.data = data;
     return this;
   }
 
-  public OrderResponseCharges addDataItem(ChargesDataResponse dataItem) {
+  public OrderChargesResponse addDataItem(ChargesDataResponse dataItem) {
     if (this.data == null) {
       this.data = new ArrayList<>();
     }
@@ -136,7 +136,7 @@ public class OrderResponseCharges {
 
 
   /**
-   * Return true if this order_response_charges object is equal to o.
+   * Return true if this order_charges_response object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -146,10 +146,10 @@ public class OrderResponseCharges {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrderResponseCharges orderResponseCharges = (OrderResponseCharges) o;
-    return Objects.equals(this.hasMore, orderResponseCharges.hasMore) &&
-        Objects.equals(this._object, orderResponseCharges._object) &&
-        Objects.equals(this.data, orderResponseCharges.data);
+    OrderChargesResponse orderChargesResponse = (OrderChargesResponse) o;
+    return Objects.equals(this.hasMore, orderChargesResponse.hasMore) &&
+        Objects.equals(this._object, orderChargesResponse._object) &&
+        Objects.equals(this.data, orderChargesResponse.data);
   }
 
   @Override
@@ -160,7 +160,7 @@ public class OrderResponseCharges {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrderResponseCharges {\n");
+    sb.append("class OrderChargesResponse {\n");
     sb.append("    hasMore: ").append(toIndentedString(hasMore)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");

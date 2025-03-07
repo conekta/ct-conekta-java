@@ -18,6 +18,7 @@ import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.PaymentMethodCardResponse;
 import com.conekta.model.PaymentMethodCashResponse;
+import com.conekta.model.PaymentMethodCashResponseAllOfAgreements;
 import com.conekta.model.PaymentMethodSpeiRecurrent;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -27,7 +28,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
@@ -104,6 +107,10 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashResponse.class);
                     newCustomerPaymentMethodsData.setActualInstance(deserialized);
                     return newCustomerPaymentMethodsData;
+                case "cash_recurrent":
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashResponse.class);
+                    newCustomerPaymentMethodsData.setActualInstance(deserialized);
+                    return newCustomerPaymentMethodsData;
                 case "oxxo_recurrent":
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashResponse.class);
                     newCustomerPaymentMethodsData.setActualInstance(deserialized);
@@ -125,7 +132,7 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
                     newCustomerPaymentMethodsData.setActualInstance(deserialized);
                     return newCustomerPaymentMethodsData;
                 default:
-                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for CustomerPaymentMethodsData. Possible values: card cash oxxo_recurrent spei_recurrent payment_method_card_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
+                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for CustomerPaymentMethodsData. Possible values: card cash cash_recurrent oxxo_recurrent spei_recurrent payment_method_card_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
             }
 
             boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
@@ -230,6 +237,7 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
         Map<String, Class<?>> mappings = new HashMap<>();
         mappings.put("card", PaymentMethodCardResponse.class);
         mappings.put("cash", PaymentMethodCashResponse.class);
+        mappings.put("cash_recurrent", PaymentMethodCashResponse.class);
         mappings.put("oxxo_recurrent", PaymentMethodCashResponse.class);
         mappings.put("spei_recurrent", PaymentMethodSpeiRecurrent.class);
         mappings.put("payment_method_card_response", PaymentMethodCardResponse.class);

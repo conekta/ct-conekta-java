@@ -16,13 +16,13 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.ChargeResponseChannel;
+import com.conekta.model.OrderChannelResponse;
+import com.conekta.model.OrderChargesResponse;
+import com.conekta.model.OrderDiscountLinesResponse;
 import com.conekta.model.OrderFiscalEntityResponse;
 import com.conekta.model.OrderNextActionResponse;
-import com.conekta.model.OrderResponseCharges;
 import com.conekta.model.OrderResponseCheckout;
 import com.conekta.model.OrderResponseCustomerInfo;
-import com.conekta.model.OrderResponseDiscountLines;
 import com.conekta.model.OrderResponseProducts;
 import com.conekta.model.OrderResponseShippingContact;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -73,10 +73,10 @@ public class OrderResponse {
   private Integer amountRefunded;
 
   public static final String JSON_PROPERTY_CHANNEL = "channel";
-  private ChargeResponseChannel channel;
+  private OrderChannelResponse channel;
 
   public static final String JSON_PROPERTY_CHARGES = "charges";
-  private OrderResponseCharges charges;
+  private OrderChargesResponse charges;
 
   public static final String JSON_PROPERTY_CHECKOUT = "checkout";
   private OrderResponseCheckout checkout;
@@ -91,7 +91,7 @@ public class OrderResponse {
   private OrderResponseCustomerInfo customerInfo;
 
   public static final String JSON_PROPERTY_DISCOUNT_LINES = "discount_lines";
-  private OrderResponseDiscountLines discountLines;
+  private OrderDiscountLinesResponse discountLines;
 
   public static final String JSON_PROPERTY_FISCAL_ENTITY = "fiscal_entity";
   private OrderFiscalEntityResponse fiscalEntity;
@@ -182,7 +182,7 @@ public class OrderResponse {
   }
 
 
-  public OrderResponse channel(ChargeResponseChannel channel) {
+  public OrderResponse channel(OrderChannelResponse channel) {
     this.channel = channel;
     return this;
   }
@@ -195,19 +195,19 @@ public class OrderResponse {
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public ChargeResponseChannel getChannel() {
+  public OrderChannelResponse getChannel() {
     return channel;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CHANNEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChannel(ChargeResponseChannel channel) {
+  public void setChannel(OrderChannelResponse channel) {
     this.channel = channel;
   }
 
 
-  public OrderResponse charges(OrderResponseCharges charges) {
+  public OrderResponse charges(OrderChargesResponse charges) {
     this.charges = charges;
     return this;
   }
@@ -220,14 +220,14 @@ public class OrderResponse {
   @JsonProperty(JSON_PROPERTY_CHARGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OrderResponseCharges getCharges() {
+  public OrderChargesResponse getCharges() {
     return charges;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CHARGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCharges(OrderResponseCharges charges) {
+  public void setCharges(OrderChargesResponse charges) {
     this.charges = charges;
   }
 
@@ -332,7 +332,7 @@ public class OrderResponse {
   }
 
 
-  public OrderResponse discountLines(OrderResponseDiscountLines discountLines) {
+  public OrderResponse discountLines(OrderDiscountLinesResponse discountLines) {
     this.discountLines = discountLines;
     return this;
   }
@@ -345,14 +345,14 @@ public class OrderResponse {
   @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OrderResponseDiscountLines getDiscountLines() {
+  public OrderDiscountLinesResponse getDiscountLines() {
     return discountLines;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDiscountLines(OrderResponseDiscountLines discountLines) {
+  public void setDiscountLines(OrderDiscountLinesResponse discountLines) {
     this.discountLines = discountLines;
   }
 
