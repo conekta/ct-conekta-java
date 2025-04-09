@@ -6,7 +6,7 @@ All URIs are relative to *https://api.conekta.io*
 |------------- | ------------- | -------------|
 | [**getEvent**](EventsApi.md#getEvent) | **GET** /events/{id} | Get Event |
 | [**getEvents**](EventsApi.md#getEvents) | **GET** /events | Get list of Events |
-| [**resendEvent**](EventsApi.md#resendEvent) | **POST** /events/{event_id}/webhook_logs/{webhook_log_id}/resend | Resend Event |
+| [**resendEvent**](EventsApi.md#resendEvent) | **POST** /events/{event_id}/resend | Resend Event |
 
 
 
@@ -76,7 +76,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+- **Accept**: application/vnd.conekta-v2.2.0+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -157,7 +157,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+- **Accept**: application/vnd.conekta-v2.2.0+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -169,11 +169,11 @@ public class Example {
 
 ## resendEvent
 
-> EventsResendResponse resendEvent(eventId, webhookLogId, acceptLanguage)
+> EventsResendResponse resendEvent(eventId, resendRequest, acceptLanguage)
 
 Resend Event
 
-Try to send an event
+Resend event to selected webhooks
 
 ### Example
 
@@ -197,10 +197,10 @@ public class Example {
 
         EventsApi apiInstance = new EventsApi(defaultClient);
         String eventId = "6463d6e35a4c3e001819e760"; // String | event identifier
-        String webhookLogId = "webhl_2tsv6NzWJHBWCkqGt"; // String | webhook log identifier
+        ResendRequest resendRequest = new ResendRequest(); // ResendRequest | requested fields for resend an event
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         try {
-            EventsResendResponse result = apiInstance.resendEvent(eventId, webhookLogId, acceptLanguage);
+            EventsResendResponse result = apiInstance.resendEvent(eventId, resendRequest, acceptLanguage);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EventsApi#resendEvent");
@@ -219,7 +219,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **eventId** | **String**| event identifier | |
-| **webhookLogId** | **String**| webhook log identifier | |
+| **resendRequest** | [**ResendRequest**](ResendRequest.md)| requested fields for resend an event | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 
 ### Return type
@@ -232,8 +232,8 @@ public class Example {
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.1.0+json
+- **Content-Type**: application/json
+- **Accept**: application/vnd.conekta-v2.2.0+json
 
 ### HTTP response details
 | Status code | Description | Response headers |

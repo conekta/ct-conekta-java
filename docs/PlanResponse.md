@@ -19,6 +19,8 @@ plans model
 |**name** | **String** |  |  [optional] |
 |**_object** | **String** |  |  [optional] |
 |**trialPeriodDays** | **Integer** |  |  [optional] |
+|**maxRetries** | **Integer** |  |  [optional] |
+|**retryDelayHours** | **Integer** |  |  [optional] |
 
 
 

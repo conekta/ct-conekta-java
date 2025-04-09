@@ -2,7 +2,7 @@
 
 Conekta API
 
-- API version: 2.1.0
+- API version: 2.2.0
 
 Conekta sdk
 
@@ -175,7 +175,7 @@ Class | Method | HTTP request | Description
 *DiscountsApi* | [**ordersUpdateDiscountLines**](docs/DiscountsApi.md#ordersUpdateDiscountLines) | **PUT** /orders/{id}/discount_lines/{discount_lines_id} | Update Discount
 *EventsApi* | [**getEvent**](docs/EventsApi.md#getEvent) | **GET** /events/{id} | Get Event
 *EventsApi* | [**getEvents**](docs/EventsApi.md#getEvents) | **GET** /events | Get list of Events
-*EventsApi* | [**resendEvent**](docs/EventsApi.md#resendEvent) | **POST** /events/{event_id}/webhook_logs/{webhook_log_id}/resend | Resend Event
+*EventsApi* | [**resendEvent**](docs/EventsApi.md#resendEvent) | **POST** /events/{event_id}/resend | Resend Event
 *LogsApi* | [**getLogById**](docs/LogsApi.md#getLogById) | **GET** /logs/{id} | Get Log
 *LogsApi* | [**getLogs**](docs/LogsApi.md#getLogs) | **GET** /logs | Get List Of Logs
 *OrdersApi* | [**cancelOrder**](docs/OrdersApi.md#cancelOrder) | **POST** /orders/{id}/cancel | Cancel Order
@@ -214,13 +214,22 @@ Class | Method | HTTP request | Description
 *ShippingsApi* | [**ordersCreateShipping**](docs/ShippingsApi.md#ordersCreateShipping) | **POST** /orders/{id}/shipping_lines | Create Shipping
 *ShippingsApi* | [**ordersDeleteShipping**](docs/ShippingsApi.md#ordersDeleteShipping) | **DELETE** /orders/{id}/shipping_lines/{shipping_id} | Delete Shipping
 *ShippingsApi* | [**ordersUpdateShipping**](docs/ShippingsApi.md#ordersUpdateShipping) | **PUT** /orders/{id}/shipping_lines/{shipping_id} | Update Shipping
-*SubscriptionsApi* | [**cancelSubscription**](docs/SubscriptionsApi.md#cancelSubscription) | **POST** /customers/{id}/subscription/cancel | Cancel Subscription
-*SubscriptionsApi* | [**createSubscription**](docs/SubscriptionsApi.md#createSubscription) | **POST** /customers/{id}/subscription | Create Subscription
-*SubscriptionsApi* | [**getAllEventsFromSubscription**](docs/SubscriptionsApi.md#getAllEventsFromSubscription) | **GET** /customers/{id}/subscription/events | Get Events By Subscription
-*SubscriptionsApi* | [**getSubscription**](docs/SubscriptionsApi.md#getSubscription) | **GET** /customers/{id}/subscription | Get Subscription
-*SubscriptionsApi* | [**pauseSubscription**](docs/SubscriptionsApi.md#pauseSubscription) | **POST** /customers/{id}/subscription/pause | Pause Subscription
-*SubscriptionsApi* | [**resumeSubscription**](docs/SubscriptionsApi.md#resumeSubscription) | **POST** /customers/{id}/subscription/resume | Resume Subscription
-*SubscriptionsApi* | [**updateSubscription**](docs/SubscriptionsApi.md#updateSubscription) | **PUT** /customers/{id}/subscription | Update Subscription
+*SubscriptionsApi* | [**cancelSubscription**](docs/SubscriptionsApi.md#cancelSubscription) | **POST** /customers/{id}/subscription/cancel | Cancel Subscription [Deprecated]
+*SubscriptionsApi* | [**createSubscription**](docs/SubscriptionsApi.md#createSubscription) | **POST** /customers/{id}/subscription | Create Subscription [Deprecated]
+*SubscriptionsApi* | [**getSubscription**](docs/SubscriptionsApi.md#getSubscription) | **GET** /customers/{id}/subscription | Get Subscription [Deprecated]
+*SubscriptionsApi* | [**getSubscriptionEvents**](docs/SubscriptionsApi.md#getSubscriptionEvents) | **GET** /customers/{id}/subscription/events | Get Subscription Events [Deprecated]
+*SubscriptionsApi* | [**pauseSubscription**](docs/SubscriptionsApi.md#pauseSubscription) | **POST** /customers/{id}/subscription/pause | Pause Subscription [Deprecated]
+*SubscriptionsApi* | [**resumeSubscription**](docs/SubscriptionsApi.md#resumeSubscription) | **POST** /customers/{id}/subscription/resume | Resume Subscription [Deprecated]
+*SubscriptionsApi* | [**subscriptionCancel**](docs/SubscriptionsApi.md#subscriptionCancel) | **POST** /customers/{customer_id}/subscriptions/{id}/cancel | Cancel Subscription
+*SubscriptionsApi* | [**subscriptionCreate**](docs/SubscriptionsApi.md#subscriptionCreate) | **POST** /customers/{customer_id}/subscriptions | Create Subscription
+*SubscriptionsApi* | [**subscriptionEvents**](docs/SubscriptionsApi.md#subscriptionEvents) | **GET** /customers/{customer_id}/subscriptions/{id}/events | Get Subscription Events
+*SubscriptionsApi* | [**subscriptionList**](docs/SubscriptionsApi.md#subscriptionList) | **GET** /customers/{customer_id}/subscriptions | List Subscriptions
+*SubscriptionsApi* | [**subscriptionPause**](docs/SubscriptionsApi.md#subscriptionPause) | **POST** /customers/{customer_id}/subscriptions/{id}/pause | Pause Subscription
+*SubscriptionsApi* | [**subscriptionResume**](docs/SubscriptionsApi.md#subscriptionResume) | **POST** /customers/{customer_id}/subscriptions/{id}/resume | Resume Subscription
+*SubscriptionsApi* | [**subscriptionUpdate**](docs/SubscriptionsApi.md#subscriptionUpdate) | **PUT** /customers/{customer_id}/subscriptions/{id} | Update Subscription
+*SubscriptionsApi* | [**subscriptionsGet**](docs/SubscriptionsApi.md#subscriptionsGet) | **GET** /customers/{customer_id}/subscriptions/{id} | Get Subscription
+*SubscriptionsApi* | [**subscriptionsRetry**](docs/SubscriptionsApi.md#subscriptionsRetry) | **POST** /customers/{customer_id}/subscriptions/{id}/retry | Retry Failed Payment
+*SubscriptionsApi* | [**updateSubscription**](docs/SubscriptionsApi.md#updateSubscription) | **PUT** /customers/{id}/subscription | Update Subscription [Deprecated]
 *TaxesApi* | [**ordersCreateTaxes**](docs/TaxesApi.md#ordersCreateTaxes) | **POST** /orders/{id}/tax_lines | Create Tax
 *TaxesApi* | [**ordersDeleteTaxes**](docs/TaxesApi.md#ordersDeleteTaxes) | **DELETE** /orders/{id}/tax_lines/{tax_id} | Delete Tax
 *TaxesApi* | [**ordersUpdateTaxes**](docs/TaxesApi.md#ordersUpdateTaxes) | **PUT** /orders/{id}/tax_lines/{tax_id} | Update Tax
@@ -366,9 +375,9 @@ Class | Method | HTTP request | Description
  - [PaymentMethodCardRequest](docs/PaymentMethodCardRequest.md)
  - [PaymentMethodCardResponse](docs/PaymentMethodCardResponse.md)
  - [PaymentMethodCash](docs/PaymentMethodCash.md)
- - [PaymentMethodCashAgreements](docs/PaymentMethodCashAgreements.md)
  - [PaymentMethodCashRequest](docs/PaymentMethodCashRequest.md)
  - [PaymentMethodCashResponse](docs/PaymentMethodCashResponse.md)
+ - [PaymentMethodCashResponseAllOfAgreements](docs/PaymentMethodCashResponseAllOfAgreements.md)
  - [PaymentMethodGeneralRequest](docs/PaymentMethodGeneralRequest.md)
  - [PaymentMethodResponse](docs/PaymentMethodResponse.md)
  - [PaymentMethodSpeiRecurrent](docs/PaymentMethodSpeiRecurrent.md)
@@ -387,6 +396,7 @@ Class | Method | HTTP request | Description
  - [Product](docs/Product.md)
  - [ProductDataResponse](docs/ProductDataResponse.md)
  - [ProductOrderResponse](docs/ProductOrderResponse.md)
+ - [ResendRequest](docs/ResendRequest.md)
  - [RiskRulesData](docs/RiskRulesData.md)
  - [RiskRulesList](docs/RiskRulesList.md)
  - [ShippingOrderResponse](docs/ShippingOrderResponse.md)

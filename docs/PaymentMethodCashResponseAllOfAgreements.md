@@ -1,6 +1,6 @@
 
 
-# PaymentMethodCashAgreements
+# PaymentMethodCashResponseAllOfAgreements
 
 
 ## Properties
