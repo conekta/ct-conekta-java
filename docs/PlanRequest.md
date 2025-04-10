@@ -16,6 +16,8 @@ a plan
 |**interval** | [**IntervalEnum**](#IntervalEnum) | The interval of time between each charge. |  |
 |**name** | **String** | The name of the plan. |  |
 |**trialPeriodDays** | **Integer** | The number of days the customer will have a free trial. |  [optional] |
+|**maxRetries** | **Integer** | (optional) Specifies the maximum number of retry attempts for a subscription payment before it is canceled. |  [optional] |
+|**retryDelayHours** | **Integer** | (optional)  Defines the number of hours between subscription payment retry attempts. |  [optional] |
 
 
 

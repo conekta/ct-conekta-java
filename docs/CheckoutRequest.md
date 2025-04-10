@@ -2,7 +2,7 @@
 
 # CheckoutRequest
 
-[Checkout](https://developers.conekta.com/v2.1.0/reference/payment-link) details 
+[Checkout](https://developers.conekta.com/v2.2.0/reference/payment-link) details 
 
 ## Properties
 

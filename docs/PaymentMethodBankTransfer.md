@@ -12,7 +12,7 @@
 |**bank** | **String** |  |  [optional] |
 |**clabe** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
-|**executedAt** | **Integer** |  |  [optional] |
+|**executedAt** | **String** |  |  [optional] |
 |**expiresAt** | **Long** |  |  [optional] |
 |**issuingAccountBank** | **String** |  |  [optional] |
 |**issuingAccountNumber** | **String** |  |  [optional] |

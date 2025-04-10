@@ -16,7 +16,6 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.OrderResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -30,55 +29,55 @@ import com.conekta.JSON;
 
 
 /**
- * OrdersResponse
+ * ResendRequest
  */
 @JsonPropertyOrder({
-  OrdersResponse.JSON_PROPERTY_DATA
+  ResendRequest.JSON_PROPERTY_WEBHOOKS_IDS
 })
-@JsonTypeName("orders_response")
+@JsonTypeName("resend_request")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
-public class OrdersResponse {
-  public static final String JSON_PROPERTY_DATA = "data";
-  private List<OrderResponse> data = new ArrayList<>();
+public class ResendRequest {
+  public static final String JSON_PROPERTY_WEBHOOKS_IDS = "webhooks_ids";
+  private List<String> webhooksIds = new ArrayList<>();
 
-  public OrdersResponse() { 
+  public ResendRequest() { 
   }
 
-  public OrdersResponse data(List<OrderResponse> data) {
-    this.data = data;
+  public ResendRequest webhooksIds(List<String> webhooksIds) {
+    this.webhooksIds = webhooksIds;
     return this;
   }
 
-  public OrdersResponse addDataItem(OrderResponse dataItem) {
-    if (this.data == null) {
-      this.data = new ArrayList<>();
+  public ResendRequest addWebhooksIdsItem(String webhooksIdsItem) {
+    if (this.webhooksIds == null) {
+      this.webhooksIds = new ArrayList<>();
     }
-    this.data.add(dataItem);
+    this.webhooksIds.add(webhooksIdsItem);
     return this;
   }
 
    /**
-   * Get data
-   * @return data
+   * webhooks ids to resend event
+   * @return webhooksIds
   **/
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonProperty(JSON_PROPERTY_WEBHOOKS_IDS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<OrderResponse> getData() {
-    return data;
+  public List<String> getWebhooksIds() {
+    return webhooksIds;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonProperty(JSON_PROPERTY_WEBHOOKS_IDS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setData(List<OrderResponse> data) {
-    this.data = data;
+  public void setWebhooksIds(List<String> webhooksIds) {
+    this.webhooksIds = webhooksIds;
   }
 
 
   /**
-   * Return true if this orders_response object is equal to o.
+   * Return true if this resend_request object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -88,20 +87,20 @@ public class OrdersResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrdersResponse ordersResponse = (OrdersResponse) o;
-    return Objects.equals(this.data, ordersResponse.data);
+    ResendRequest resendRequest = (ResendRequest) o;
+    return Objects.equals(this.webhooksIds, resendRequest.webhooksIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(data);
+    return Objects.hash(webhooksIds);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrdersResponse {\n");
-    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("class ResendRequest {\n");
+    sb.append("    webhooksIds: ").append(toIndentedString(webhooksIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

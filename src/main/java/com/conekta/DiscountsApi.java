@@ -20,7 +20,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class DiscountsApi {
   private ApiClient apiClient;
 
@@ -60,8 +60,7 @@ public class DiscountsApi {
    * @return DiscountLinesResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -83,8 +82,7 @@ public class DiscountsApi {
    * @return ApiResponse&lt;DiscountLinesResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -103,7 +101,7 @@ public class DiscountsApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/discount_lines"
-            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -114,7 +112,7 @@ public class DiscountsApi {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<DiscountLinesResponse> localVarReturnType = new GenericType<DiscountLinesResponse>() {};
@@ -132,8 +130,7 @@ public class DiscountsApi {
    * @return DiscountLinesResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -156,8 +153,7 @@ public class DiscountsApi {
    * @return ApiResponse&lt;DiscountLinesResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -177,8 +173,8 @@ public class DiscountsApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/discount_lines/{discount_lines_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
-            .replaceAll("\\{discount_lines_id}", apiClient.escapeString(discountLinesId.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id))
+            .replaceAll("\\{discount_lines_id}", apiClient.escapeString(discountLinesId));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -189,7 +185,7 @@ public class DiscountsApi {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<DiscountLinesResponse> localVarReturnType = new GenericType<DiscountLinesResponse>() {};
@@ -207,8 +203,7 @@ public class DiscountsApi {
    * @return DiscountLinesResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -231,8 +226,7 @@ public class DiscountsApi {
    * @return ApiResponse&lt;DiscountLinesResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -252,8 +246,8 @@ public class DiscountsApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/discount_lines/{discount_lines_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
-            .replaceAll("\\{discount_lines_id}", apiClient.escapeString(discountLinesId.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id))
+            .replaceAll("\\{discount_lines_id}", apiClient.escapeString(discountLinesId));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -264,7 +258,7 @@ public class DiscountsApi {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<DiscountLinesResponse> localVarReturnType = new GenericType<DiscountLinesResponse>() {};
@@ -285,8 +279,7 @@ public class DiscountsApi {
    * @return GetOrderDiscountLinesResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -310,8 +303,7 @@ public class DiscountsApi {
    * @return ApiResponse&lt;GetOrderDiscountLinesResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -326,7 +318,7 @@ public class DiscountsApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/discount_lines"
-            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id));
 
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
@@ -345,7 +337,7 @@ public class DiscountsApi {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<GetOrderDiscountLinesResponse> localVarReturnType = new GenericType<GetOrderDiscountLinesResponse>() {};
@@ -364,8 +356,7 @@ public class DiscountsApi {
    * @return DiscountLinesResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -389,8 +380,7 @@ public class DiscountsApi {
    * @return ApiResponse&lt;DiscountLinesResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -413,8 +403,8 @@ public class DiscountsApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/discount_lines/{discount_lines_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
-            .replaceAll("\\{discount_lines_id}", apiClient.escapeString(discountLinesId.toString()));
+            .replaceAll("\\{id}", apiClient.escapeString(id))
+            .replaceAll("\\{discount_lines_id}", apiClient.escapeString(discountLinesId));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -425,7 +415,7 @@ public class DiscountsApi {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.1.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<DiscountLinesResponse> localVarReturnType = new GenericType<DiscountLinesResponse>() {};

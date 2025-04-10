@@ -8,16 +8,14 @@ webhooks model
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**deleted** | **Boolean** |  |  [optional] |
-|**developmentEnabled** | **Boolean** |  |  [optional] |
-|**id** | **String** |  |  [optional] |
-|**livemode** | **Boolean** |  |  [optional] |
-|**_object** | **String** |  |  [optional] |
-|**productionEnabled** | **Boolean** |  |  [optional] |
-|**status** | **String** |  |  [optional] |
-|**subscribedEvents** | **List&lt;String&gt;** |  |  [optional] |
-|**synchronous** | **Boolean** |  |  [optional] |
-|**url** | **String** |  |  [optional] |
+|**id** | **String** | id of the webhook |  [optional] |
+|**description** | **String** | A name or brief explanation of what this webhook is used for |  [optional] |
+|**livemode** | **Boolean** | Indicates if the webhook is in production |  [optional] |
+|**active** | **Boolean** | Indicates if the webhook is actived or not |  [optional] |
+|**_object** | **String** | Object name, value is &#39;webhook&#39; |  [optional] |
+|**status** | **String** | Indicates if the webhook is ready to receive events or failing |  [optional] |
+|**subscribedEvents** | **List&lt;String&gt;** | lists the events that will be sent to the webhook |  [optional] |
+|**url** | **String** | url or endpoint of the webhook |  [optional] |
 
 
 
