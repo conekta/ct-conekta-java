@@ -33,6 +33,7 @@ import com.conekta.JSON;
  */
 @JsonPropertyOrder({
   CheckoutRequest.JSON_PROPERTY_ALLOWED_PAYMENT_METHODS,
+  CheckoutRequest.JSON_PROPERTY_PLAN_IDS,
   CheckoutRequest.JSON_PROPERTY_EXPIRES_AT,
   CheckoutRequest.JSON_PROPERTY_FAILURE_URL,
   CheckoutRequest.JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED,
@@ -47,8 +48,50 @@ import com.conekta.JSON;
 @JsonTypeName("checkout_request")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CheckoutRequest {
+  /**
+   * Gets or Sets allowedPaymentMethods
+   */
+  public enum AllowedPaymentMethodsEnum {
+    CASH("cash"),
+    
+    CARD("card"),
+    
+    BANK_TRANSFER("bank_transfer"),
+    
+    BNPL("bnpl");
+
+    private String value;
+
+    AllowedPaymentMethodsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static AllowedPaymentMethodsEnum fromValue(String value) {
+      for (AllowedPaymentMethodsEnum b : AllowedPaymentMethodsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
-  private List<String> allowedPaymentMethods = new ArrayList<>();
+  private List<AllowedPaymentMethodsEnum> allowedPaymentMethods = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_PLAN_IDS = "plan_ids";
+  private List<String> planIds = new ArrayList<>();
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
   private Long expiresAt;
@@ -83,12 +126,12 @@ public class CheckoutRequest {
   public CheckoutRequest() { 
   }
 
-  public CheckoutRequest allowedPaymentMethods(List<String> allowedPaymentMethods) {
+  public CheckoutRequest allowedPaymentMethods(List<AllowedPaymentMethodsEnum> allowedPaymentMethods) {
     this.allowedPaymentMethods = allowedPaymentMethods;
     return this;
   }
 
-  public CheckoutRequest addAllowedPaymentMethodsItem(String allowedPaymentMethodsItem) {
+  public CheckoutRequest addAllowedPaymentMethodsItem(AllowedPaymentMethodsEnum allowedPaymentMethodsItem) {
     if (this.allowedPaymentMethods == null) {
       this.allowedPaymentMethods = new ArrayList<>();
     }
@@ -97,22 +140,55 @@ public class CheckoutRequest {
   }
 
    /**
-   * Are the payment methods available for this link
+   * Are the payment methods available for this link. For subscriptions, only &#39;card&#39; is allowed due to the recurring nature of the payments.
    * @return allowedPaymentMethods
   **/
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ALLOWED_PAYMENT_METHODS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<String> getAllowedPaymentMethods() {
+  public List<AllowedPaymentMethodsEnum> getAllowedPaymentMethods() {
     return allowedPaymentMethods;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ALLOWED_PAYMENT_METHODS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAllowedPaymentMethods(List<String> allowedPaymentMethods) {
+  public void setAllowedPaymentMethods(List<AllowedPaymentMethodsEnum> allowedPaymentMethods) {
     this.allowedPaymentMethods = allowedPaymentMethods;
+  }
+
+
+  public CheckoutRequest planIds(List<String> planIds) {
+    this.planIds = planIds;
+    return this;
+  }
+
+  public CheckoutRequest addPlanIdsItem(String planIdsItem) {
+    if (this.planIds == null) {
+      this.planIds = new ArrayList<>();
+    }
+    this.planIds.add(planIdsItem);
+    return this;
+  }
+
+   /**
+   * List of plan IDs that will be available for subscription. This field is required for subscription payments.
+   * @return planIds
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PLAN_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<String> getPlanIds() {
+    return planIds;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PLAN_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPlanIds(List<String> planIds) {
+    this.planIds = planIds;
   }
 
 
@@ -387,6 +463,7 @@ public class CheckoutRequest {
     }
     CheckoutRequest checkoutRequest = (CheckoutRequest) o;
     return Objects.equals(this.allowedPaymentMethods, checkoutRequest.allowedPaymentMethods) &&
+        Objects.equals(this.planIds, checkoutRequest.planIds) &&
         Objects.equals(this.expiresAt, checkoutRequest.expiresAt) &&
         Objects.equals(this.failureUrl, checkoutRequest.failureUrl) &&
         Objects.equals(this.monthlyInstallmentsEnabled, checkoutRequest.monthlyInstallmentsEnabled) &&
@@ -401,7 +478,7 @@ public class CheckoutRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowedPaymentMethods, expiresAt, failureUrl, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, maxFailedRetries, name, onDemandEnabled, redirectionTime, successUrl, type);
+    return Objects.hash(allowedPaymentMethods, planIds, expiresAt, failureUrl, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, maxFailedRetries, name, onDemandEnabled, redirectionTime, successUrl, type);
   }
 
   @Override
@@ -409,6 +486,7 @@ public class CheckoutRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CheckoutRequest {\n");
     sb.append("    allowedPaymentMethods: ").append(toIndentedString(allowedPaymentMethods)).append("\n");
+    sb.append("    planIds: ").append(toIndentedString(planIds)).append("\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("    failureUrl: ").append(toIndentedString(failureUrl)).append("\n");
     sb.append("    monthlyInstallmentsEnabled: ").append(toIndentedString(monthlyInstallmentsEnabled)).append("\n");

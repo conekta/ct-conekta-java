@@ -20,7 +20,7 @@
 
 | Name | Value |
 |---- | -----|
-| KLARNA_BNPL | &quot;klarna_bnpl&quot; |
+| APLAZO_BNPL | &quot;aplazo_bnpl&quot; |
 | CREDITEA_BNPL | &quot;creditea_bnpl&quot; |
 
 

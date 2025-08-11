@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.conekta</groupId>
   <artifactId>ct-conekta-java</artifactId>
-  <version>7.0.0</version>
+  <version>7.0.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "io.conekta:ct-conekta-java:7.0.0"
+     implementation "io.conekta:ct-conekta-java:7.0.1"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/ct-conekta-java-7.0.0.jar`
+- `target/ct-conekta-java-7.0.1.jar`
 - `target/lib/*.jar`
 
 ## Usage
@@ -159,8 +159,12 @@ Class | Method | HTTP request | Description
 *ChargesApi* | [**ordersCreateCharge**](docs/ChargesApi.md#ordersCreateCharge) | **POST** /orders/{id}/charges | Create charge
 *ChargesApi* | [**ordersCreateCharges**](docs/ChargesApi.md#ordersCreateCharges) | **POST** /orders/{id}/add_charges | Create charges
 *ChargesApi* | [**updateCharge**](docs/ChargesApi.md#updateCharge) | **PUT** /charges/{id} | Update a charge
+*CompaniesApi* | [**createCompany**](docs/CompaniesApi.md#createCompany) | **POST** /companies | Create Company
 *CompaniesApi* | [**getCompanies**](docs/CompaniesApi.md#getCompanies) | **GET** /companies | Get List of Companies
 *CompaniesApi* | [**getCompany**](docs/CompaniesApi.md#getCompany) | **GET** /companies/{id} | Get Company
+*CompaniesApi* | [**getCompanyDocuments**](docs/CompaniesApi.md#getCompanyDocuments) | **GET** /companies/{company_id}/documents | Get Company Documents
+*CompaniesApi* | [**updateCompanyDocument**](docs/CompaniesApi.md#updateCompanyDocument) | **PATCH** /companies/{company_id}/document | Update Company Document
+*CompaniesApi* | [**uploadCompanyDocument**](docs/CompaniesApi.md#uploadCompanyDocument) | **POST** /companies/{company_id}/document | Upload Company Document
 *CustomersApi* | [**createCustomer**](docs/CustomersApi.md#createCustomer) | **POST** /customers | Create customer
 *CustomersApi* | [**createCustomerFiscalEntities**](docs/CustomersApi.md#createCustomerFiscalEntities) | **POST** /customers/{id}/fiscal_entities | Create Fiscal Entity
 *CustomersApi* | [**deleteCustomerById**](docs/CustomersApi.md#deleteCustomerById) | **DELETE** /customers/{id} | Delete Customer
@@ -280,10 +284,14 @@ Class | Method | HTTP request | Description
  - [CheckoutRequest](docs/CheckoutRequest.md)
  - [CheckoutResponse](docs/CheckoutResponse.md)
  - [CheckoutsResponse](docs/CheckoutsResponse.md)
- - [CompanyFiscalInfoAddressResponse](docs/CompanyFiscalInfoAddressResponse.md)
- - [CompanyFiscalInfoResponse](docs/CompanyFiscalInfoResponse.md)
- - [CompanyPayoutDestinationResponse](docs/CompanyPayoutDestinationResponse.md)
+ - [CompanyDocumentRequest](docs/CompanyDocumentRequest.md)
+ - [CompanyDocumentResponse](docs/CompanyDocumentResponse.md)
  - [CompanyResponse](docs/CompanyResponse.md)
+ - [CompanyResponseDocumentsInner](docs/CompanyResponseDocumentsInner.md)
+ - [CreateCompanyRequest](docs/CreateCompanyRequest.md)
+ - [CreateCompanyRequestBankAccountInfo](docs/CreateCompanyRequestBankAccountInfo.md)
+ - [CreateCompanyRequestComercialInfo](docs/CreateCompanyRequestComercialInfo.md)
+ - [CreateCompanyRequestFiscalInfo](docs/CreateCompanyRequestFiscalInfo.md)
  - [CreateCustomerFiscalEntitiesResponse](docs/CreateCustomerFiscalEntitiesResponse.md)
  - [CreateCustomerPaymentMethodsRequest](docs/CreateCustomerPaymentMethodsRequest.md)
  - [CreateCustomerPaymentMethodsResponse](docs/CreateCustomerPaymentMethodsResponse.md)

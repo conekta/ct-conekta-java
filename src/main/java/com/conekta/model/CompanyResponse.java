@@ -16,30 +16,32 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.CompanyFiscalInfoResponse;
-import com.conekta.model.CompanyPayoutDestinationResponse;
+import com.conekta.model.CompanyResponseDocumentsInner;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
 
 /**
- * Company model
+ * CompanyResponse
  */
 @JsonPropertyOrder({
   CompanyResponse.JSON_PROPERTY_ID,
-  CompanyResponse.JSON_PROPERTY_CREATED_AT,
   CompanyResponse.JSON_PROPERTY_NAME,
-  CompanyResponse.JSON_PROPERTY_OBJECT,
+  CompanyResponse.JSON_PROPERTY_ACTIVE,
+  CompanyResponse.JSON_PROPERTY_ACCOUNT_STATUS,
   CompanyResponse.JSON_PROPERTY_PARENT_COMPANY_ID,
-  CompanyResponse.JSON_PROPERTY_USE_PARENT_FISCAL_DATA,
-  CompanyResponse.JSON_PROPERTY_PAYOUT_DESTINATION,
-  CompanyResponse.JSON_PROPERTY_FISCAL_INFO
+  CompanyResponse.JSON_PROPERTY_ONBOARDING_STATUS,
+  CompanyResponse.JSON_PROPERTY_DOCUMENTS,
+  CompanyResponse.JSON_PROPERTY_CREATED_AT,
+  CompanyResponse.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("company_response")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
@@ -47,59 +49,29 @@ public class CompanyResponse {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
 
-  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
-  private Long createdAt;
-
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
-  /**
-   * The resource&#39;s type
-   */
-  public enum ObjectEnum {
-    COMPANY("company");
+  public static final String JSON_PROPERTY_ACTIVE = "active";
+  private Boolean active;
 
-    private String value;
-
-    ObjectEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static ObjectEnum fromValue(String value) {
-      for (ObjectEnum b : ObjectEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-  public static final String JSON_PROPERTY_OBJECT = "object";
-  private ObjectEnum _object;
+  public static final String JSON_PROPERTY_ACCOUNT_STATUS = "account_status";
+  private String accountStatus;
 
   public static final String JSON_PROPERTY_PARENT_COMPANY_ID = "parent_company_id";
   private String parentCompanyId;
 
-  public static final String JSON_PROPERTY_USE_PARENT_FISCAL_DATA = "use_parent_fiscal_data";
-  private Boolean useParentFiscalData;
+  public static final String JSON_PROPERTY_ONBOARDING_STATUS = "onboarding_status";
+  private String onboardingStatus;
 
-  public static final String JSON_PROPERTY_PAYOUT_DESTINATION = "payout_destination";
-  private CompanyPayoutDestinationResponse payoutDestination;
+  public static final String JSON_PROPERTY_DOCUMENTS = "documents";
+  private List<CompanyResponseDocumentsInner> documents = new ArrayList<>();
 
-  public static final String JSON_PROPERTY_FISCAL_INFO = "fiscal_info";
-  private CompanyFiscalInfoResponse fiscalInfo;
+  public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  private Long createdAt;
+
+  public static final String JSON_PROPERTY_OBJECT = "object";
+  private String _object;
 
   public CompanyResponse() { 
   }
@@ -110,12 +82,12 @@ public class CompanyResponse {
   }
 
    /**
-   * The child company&#39;s unique identifier
+   * The unique identifier for the company.
    * @return id
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
     return id;
@@ -123,34 +95,9 @@ public class CompanyResponse {
 
 
   @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(String id) {
     this.id = id;
-  }
-
-
-  public CompanyResponse createdAt(Long createdAt) {
-    this.createdAt = createdAt;
-    return this;
-  }
-
-   /**
-   * The resource&#39;s creation date (unix timestamp)
-   * @return createdAt
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getCreatedAt() {
-    return createdAt;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
-    this.createdAt = createdAt;
   }
 
 
@@ -160,12 +107,12 @@ public class CompanyResponse {
   }
 
    /**
-   * The child company&#39;s name
+   * The name of the company.
    * @return name
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getName() {
     return name;
@@ -173,34 +120,59 @@ public class CompanyResponse {
 
 
   @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setName(String name) {
     this.name = name;
   }
 
 
-  public CompanyResponse _object(ObjectEnum _object) {
-    this._object = _object;
+  public CompanyResponse active(Boolean active) {
+    this.active = active;
     return this;
   }
 
    /**
-   * The resource&#39;s type
-   * @return _object
+   * Indicates if the company is active.
+   * @return active
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public ObjectEnum getObject() {
-    return _object;
+  public Boolean getActive() {
+    return active;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(ObjectEnum _object) {
-    this._object = _object;
+  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setActive(Boolean active) {
+    this.active = active;
+  }
+
+
+  public CompanyResponse accountStatus(String accountStatus) {
+    this.accountStatus = accountStatus;
+    return this;
+  }
+
+   /**
+   * The current status of the company&#39;s account.
+   * @return accountStatus
+  **/
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ACCOUNT_STATUS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getAccountStatus() {
+    return accountStatus;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ACCOUNT_STATUS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setAccountStatus(String accountStatus) {
+    this.accountStatus = accountStatus;
   }
 
 
@@ -210,7 +182,7 @@ public class CompanyResponse {
   }
 
    /**
-   * Id of the parent company
+   * The identifier of the parent company, if any.
    * @return parentCompanyId
   **/
   @javax.annotation.Nullable
@@ -229,78 +201,111 @@ public class CompanyResponse {
   }
 
 
-  public CompanyResponse useParentFiscalData(Boolean useParentFiscalData) {
-    this.useParentFiscalData = useParentFiscalData;
+  public CompanyResponse onboardingStatus(String onboardingStatus) {
+    this.onboardingStatus = onboardingStatus;
     return this;
   }
 
    /**
-   * Whether the parent company&#39;s fiscal data is to be used for liquidation and tax purposes
-   * @return useParentFiscalData
+   * The current status of the company&#39;s onboarding process.
+   * @return onboardingStatus
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_USE_PARENT_FISCAL_DATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ONBOARDING_STATUS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public Boolean getUseParentFiscalData() {
-    return useParentFiscalData;
+  public String getOnboardingStatus() {
+    return onboardingStatus;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_USE_PARENT_FISCAL_DATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUseParentFiscalData(Boolean useParentFiscalData) {
-    this.useParentFiscalData = useParentFiscalData;
+  @JsonProperty(JSON_PROPERTY_ONBOARDING_STATUS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setOnboardingStatus(String onboardingStatus) {
+    this.onboardingStatus = onboardingStatus;
   }
 
 
-  public CompanyResponse payoutDestination(CompanyPayoutDestinationResponse payoutDestination) {
-    this.payoutDestination = payoutDestination;
+  public CompanyResponse documents(List<CompanyResponseDocumentsInner> documents) {
+    this.documents = documents;
+    return this;
+  }
+
+  public CompanyResponse addDocumentsItem(CompanyResponseDocumentsInner documentsItem) {
+    if (this.documents == null) {
+      this.documents = new ArrayList<>();
+    }
+    this.documents.add(documentsItem);
     return this;
   }
 
    /**
-   * Get payoutDestination
-   * @return payoutDestination
+   * A list of documents related to the company.
+   * @return documents
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PAYOUT_DESTINATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_DOCUMENTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public CompanyPayoutDestinationResponse getPayoutDestination() {
-    return payoutDestination;
+  public List<CompanyResponseDocumentsInner> getDocuments() {
+    return documents;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PAYOUT_DESTINATION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPayoutDestination(CompanyPayoutDestinationResponse payoutDestination) {
-    this.payoutDestination = payoutDestination;
+  @JsonProperty(JSON_PROPERTY_DOCUMENTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setDocuments(List<CompanyResponseDocumentsInner> documents) {
+    this.documents = documents;
   }
 
 
-  public CompanyResponse fiscalInfo(CompanyFiscalInfoResponse fiscalInfo) {
-    this.fiscalInfo = fiscalInfo;
+  public CompanyResponse createdAt(Long createdAt) {
+    this.createdAt = createdAt;
     return this;
   }
 
    /**
-   * Get fiscalInfo
-   * @return fiscalInfo
+   * Timestamp of when the company was created.
+   * @return createdAt
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FISCAL_INFO)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public CompanyFiscalInfoResponse getFiscalInfo() {
-    return fiscalInfo;
+  public Long getCreatedAt() {
+    return createdAt;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FISCAL_INFO)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiscalInfo(CompanyFiscalInfoResponse fiscalInfo) {
-    this.fiscalInfo = fiscalInfo;
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCreatedAt(Long createdAt) {
+    this.createdAt = createdAt;
+  }
+
+
+  public CompanyResponse _object(String _object) {
+    this._object = _object;
+    return this;
+  }
+
+   /**
+   * The type of object, typically \&quot;company\&quot;.
+   * @return _object
+  **/
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getObject() {
+    return _object;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setObject(String _object) {
+    this._object = _object;
   }
 
 
@@ -317,18 +322,19 @@ public class CompanyResponse {
     }
     CompanyResponse companyResponse = (CompanyResponse) o;
     return Objects.equals(this.id, companyResponse.id) &&
-        Objects.equals(this.createdAt, companyResponse.createdAt) &&
         Objects.equals(this.name, companyResponse.name) &&
-        Objects.equals(this._object, companyResponse._object) &&
+        Objects.equals(this.active, companyResponse.active) &&
+        Objects.equals(this.accountStatus, companyResponse.accountStatus) &&
         Objects.equals(this.parentCompanyId, companyResponse.parentCompanyId) &&
-        Objects.equals(this.useParentFiscalData, companyResponse.useParentFiscalData) &&
-        Objects.equals(this.payoutDestination, companyResponse.payoutDestination) &&
-        Objects.equals(this.fiscalInfo, companyResponse.fiscalInfo);
+        Objects.equals(this.onboardingStatus, companyResponse.onboardingStatus) &&
+        Objects.equals(this.documents, companyResponse.documents) &&
+        Objects.equals(this.createdAt, companyResponse.createdAt) &&
+        Objects.equals(this._object, companyResponse._object);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, name, _object, parentCompanyId, useParentFiscalData, payoutDestination, fiscalInfo);
+    return Objects.hash(id, name, active, accountStatus, parentCompanyId, onboardingStatus, documents, createdAt, _object);
   }
 
   @Override
@@ -336,13 +342,14 @@ public class CompanyResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class CompanyResponse {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
+    sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    accountStatus: ").append(toIndentedString(accountStatus)).append("\n");
     sb.append("    parentCompanyId: ").append(toIndentedString(parentCompanyId)).append("\n");
-    sb.append("    useParentFiscalData: ").append(toIndentedString(useParentFiscalData)).append("\n");
-    sb.append("    payoutDestination: ").append(toIndentedString(payoutDestination)).append("\n");
-    sb.append("    fiscalInfo: ").append(toIndentedString(fiscalInfo)).append("\n");
+    sb.append("    onboardingStatus: ").append(toIndentedString(onboardingStatus)).append("\n");
+    sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("}");
     return sb.toString();
   }
