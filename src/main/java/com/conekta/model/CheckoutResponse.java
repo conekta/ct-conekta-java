@@ -36,6 +36,7 @@ import com.conekta.JSON;
  */
 @JsonPropertyOrder({
   CheckoutResponse.JSON_PROPERTY_ALLOWED_PAYMENT_METHODS,
+  CheckoutResponse.JSON_PROPERTY_PLAN_IDS,
   CheckoutResponse.JSON_PROPERTY_CAN_NOT_EXPIRE,
   CheckoutResponse.JSON_PROPERTY_EMAILS_SENT,
   CheckoutResponse.JSON_PROPERTY_EXCLUDE_CARD_NETWORKS,
@@ -66,6 +67,9 @@ import com.conekta.JSON;
 public class CheckoutResponse {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
   private List<String> allowedPaymentMethods = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_PLAN_IDS = "plan_ids";
+  private List<String> planIds = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CAN_NOT_EXPIRE = "can_not_expire";
   private Boolean canNotExpire;
@@ -172,6 +176,39 @@ public class CheckoutResponse {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAllowedPaymentMethods(List<String> allowedPaymentMethods) {
     this.allowedPaymentMethods = allowedPaymentMethods;
+  }
+
+
+  public CheckoutResponse planIds(List<String> planIds) {
+    this.planIds = planIds;
+    return this;
+  }
+
+  public CheckoutResponse addPlanIdsItem(String planIdsItem) {
+    if (this.planIds == null) {
+      this.planIds = new ArrayList<>();
+    }
+    this.planIds.add(planIdsItem);
+    return this;
+  }
+
+   /**
+   * List of plan IDs that are available for subscription
+   * @return planIds
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PLAN_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<String> getPlanIds() {
+    return planIds;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PLAN_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPlanIds(List<String> planIds) {
+    this.planIds = planIds;
   }
 
 
@@ -812,6 +849,7 @@ public class CheckoutResponse {
     }
     CheckoutResponse checkoutResponse = (CheckoutResponse) o;
     return Objects.equals(this.allowedPaymentMethods, checkoutResponse.allowedPaymentMethods) &&
+        Objects.equals(this.planIds, checkoutResponse.planIds) &&
         Objects.equals(this.canNotExpire, checkoutResponse.canNotExpire) &&
         Objects.equals(this.emailsSent, checkoutResponse.emailsSent) &&
         Objects.equals(this.excludeCardNetworks, checkoutResponse.excludeCardNetworks) &&
@@ -840,7 +878,7 @@ public class CheckoutResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowedPaymentMethods, canNotExpire, emailsSent, excludeCardNetworks, expiresAt, failureUrl, force3dsFlow, id, livemode, metadata, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, name, needsShippingContact, _object, paidPaymentsCount, paymentsLimitCount, recurrent, slug, smsSent, startsAt, status, successUrl, type, url);
+    return Objects.hash(allowedPaymentMethods, planIds, canNotExpire, emailsSent, excludeCardNetworks, expiresAt, failureUrl, force3dsFlow, id, livemode, metadata, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, name, needsShippingContact, _object, paidPaymentsCount, paymentsLimitCount, recurrent, slug, smsSent, startsAt, status, successUrl, type, url);
   }
 
   @Override
@@ -848,6 +886,7 @@ public class CheckoutResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class CheckoutResponse {\n");
     sb.append("    allowedPaymentMethods: ").append(toIndentedString(allowedPaymentMethods)).append("\n");
+    sb.append("    planIds: ").append(toIndentedString(planIds)).append("\n");
     sb.append("    canNotExpire: ").append(toIndentedString(canNotExpire)).append("\n");
     sb.append("    emailsSent: ").append(toIndentedString(emailsSent)).append("\n");
     sb.append("    excludeCardNetworks: ").append(toIndentedString(excludeCardNetworks)).append("\n");

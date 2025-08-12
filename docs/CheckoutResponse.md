@@ -9,6 +9,7 @@ checkout response
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**allowedPaymentMethods** | **List&lt;String&gt;** | Are the payment methods available for this link |  [optional] |
+|**planIds** | **List&lt;String&gt;** | List of plan IDs that are available for subscription |  [optional] |
 |**canNotExpire** | **Boolean** |  |  [optional] |
 |**emailsSent** | **Integer** |  |  [optional] |
 |**excludeCardNetworks** | **List&lt;Object&gt;** |  |  [optional] |

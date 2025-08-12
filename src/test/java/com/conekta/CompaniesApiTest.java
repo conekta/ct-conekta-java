@@ -15,7 +15,10 @@ package com.conekta;
 
 import com.conekta.*;
 import com.conekta.auth.*;
+import com.conekta.model.CompanyDocumentRequest;
+import com.conekta.model.CompanyDocumentResponse;
 import com.conekta.model.CompanyResponse;
+import com.conekta.model.CreateCompanyRequest;
 import com.conekta.model.Error;
 import com.conekta.model.GetCompaniesResponse;
 
@@ -34,6 +37,20 @@ import java.util.Map;
 public class CompaniesApiTest {
 
     private final CompaniesApi api = new CompaniesApi();
+
+    /**
+     * Create Company
+     *
+     * Create a new company.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void createCompanyTest() throws ApiException {
+        //CreateCompanyRequest createCompanyRequest = null;
+        //CompanyResponse response = api.createCompany(createCompanyRequest);
+        // TODO: test validations
+    }
 
     /**
      * Get List of Companies
@@ -63,6 +80,53 @@ public class CompaniesApiTest {
         //String id = null;
         //String acceptLanguage = null;
         //CompanyResponse response = api.getCompany(id, acceptLanguage);
+        // TODO: test validations
+    }
+
+    /**
+     * Get Company Documents
+     *
+     * Retrieve a list of documents associated with a specific company.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getCompanyDocumentsTest() throws ApiException {
+        //String companyId = null;
+        //String acceptLanguage = null;
+        //List<CompanyDocumentResponse> response = api.getCompanyDocuments(companyId, acceptLanguage);
+        // TODO: test validations
+    }
+
+    /**
+     * Update Company Document
+     *
+     * Updates an existing document associated with a specific company.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void updateCompanyDocumentTest() throws ApiException {
+        //String companyId = null;
+        //CompanyDocumentRequest companyDocumentRequest = null;
+        //String acceptLanguage = null;
+        //CompanyDocumentResponse response = api.updateCompanyDocument(companyId, companyDocumentRequest, acceptLanguage);
+        // TODO: test validations
+    }
+
+    /**
+     * Upload Company Document
+     *
+     * Uploads a document associated with a specific company.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void uploadCompanyDocumentTest() throws ApiException {
+        //String companyId = null;
+        //CompanyDocumentRequest companyDocumentRequest = null;
+        //String acceptLanguage = null;
+        //CompanyDocumentResponse response = api.uploadCompanyDocument(companyId, companyDocumentRequest, acceptLanguage);
         // TODO: test validations
     }
 

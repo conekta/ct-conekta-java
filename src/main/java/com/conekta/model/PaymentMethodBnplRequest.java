@@ -56,7 +56,7 @@ public class PaymentMethodBnplRequest {
    * Product type of the payment method, use for the payment method to know the product type
    */
   public enum ProductTypeEnum {
-    KLARNA_BNPL("klarna_bnpl"),
+    APLAZO_BNPL("aplazo_bnpl"),
     
     CREDITEA_BNPL("creditea_bnpl");
 

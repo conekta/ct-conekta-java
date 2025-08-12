@@ -6,7 +6,7 @@
     "developerOrganization": "Conekta, Inc.",
     "developerOrganizationUrl": "https://www.conekta.io",
     "artifactUrl": "https://developers.conekta.com/",
-    "artifactVersion": "7.0.0",
+    "artifactVersion": "7.0.1",
     "modelPackage": "com.conekta.model",
     "licenseName": "MIT License",
     "invokerPackage": "com.conekta",
@@ -36,6 +36,6 @@
     "disallowAdditionalPropertiesIfNotPresent": true,
     "useOneOfDiscriminatorLookup": true,
     "serializationLibrary": "jackson",
-    "httpUserAgent": "Conekta/v2 JavaBindings/7.0.0",
+    "httpUserAgent": "Conekta/v2 JavaBindings/7.0.1",
     "openApiNullable" : false
 }

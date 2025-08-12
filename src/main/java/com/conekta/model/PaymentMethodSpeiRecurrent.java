@@ -35,6 +35,7 @@ import com.conekta.JSON;
   PaymentMethodSpeiRecurrent.JSON_PROPERTY_OBJECT,
   PaymentMethodSpeiRecurrent.JSON_PROPERTY_CREATED_AT,
   PaymentMethodSpeiRecurrent.JSON_PROPERTY_PARENT_ID,
+  PaymentMethodSpeiRecurrent.JSON_PROPERTY_BANK,
   PaymentMethodSpeiRecurrent.JSON_PROPERTY_REFERENCE,
   PaymentMethodSpeiRecurrent.JSON_PROPERTY_EXPIRES_AT
 })
@@ -55,6 +56,9 @@ public class PaymentMethodSpeiRecurrent {
 
   public static final String JSON_PROPERTY_PARENT_ID = "parent_id";
   private String parentId;
+
+  public static final String JSON_PROPERTY_BANK = "bank";
+  private String bank;
 
   public static final String JSON_PROPERTY_REFERENCE = "reference";
   private String reference;
@@ -190,6 +194,31 @@ public class PaymentMethodSpeiRecurrent {
   }
 
 
+  public PaymentMethodSpeiRecurrent bank(String bank) {
+    this.bank = bank;
+    return this;
+  }
+
+   /**
+   * Bank name for the SPEI payment method
+   * @return bank
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_BANK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getBank() {
+    return bank;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_BANK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBank(String bank) {
+    this.bank = bank;
+  }
+
+
   public PaymentMethodSpeiRecurrent reference(String reference) {
     this.reference = reference;
     return this;
@@ -257,13 +286,14 @@ public class PaymentMethodSpeiRecurrent {
         Objects.equals(this._object, paymentMethodSpeiRecurrent._object) &&
         Objects.equals(this.createdAt, paymentMethodSpeiRecurrent.createdAt) &&
         Objects.equals(this.parentId, paymentMethodSpeiRecurrent.parentId) &&
+        Objects.equals(this.bank, paymentMethodSpeiRecurrent.bank) &&
         Objects.equals(this.reference, paymentMethodSpeiRecurrent.reference) &&
         Objects.equals(this.expiresAt, paymentMethodSpeiRecurrent.expiresAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, id, _object, createdAt, parentId, reference, expiresAt);
+    return Objects.hash(type, id, _object, createdAt, parentId, bank, reference, expiresAt);
   }
 
   @Override
@@ -275,6 +305,7 @@ public class PaymentMethodSpeiRecurrent {
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
+    sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("}");
