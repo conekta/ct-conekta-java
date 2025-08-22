@@ -15,17 +15,13 @@ package com.conekta;
 
 import com.conekta.*;
 import com.conekta.auth.*;
-import com.conekta.model.Error;
-import com.conekta.model.GetOrdersResponse;
-import com.conekta.model.OrderCaptureRequest;
-import com.conekta.model.OrderRefundRequest;
-import com.conekta.model.OrderRequest;
-import com.conekta.model.OrderResponse;
-import com.conekta.model.OrderUpdateRequest;
+import com.conekta.model.*;
 
+import com.conekta.model.Error;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Disabled;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -178,6 +174,69 @@ public class OrdersApiTest {
         //String acceptLanguage = null;
         //OrderResponse response = api.updateOrder(id, orderUpdateRequest, acceptLanguage);
         // TODO: test validations
+    }
+
+    @Disabled()
+    @Test()
+    public void CreateOrderPbbTest() throws ApiException {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken(System.getenv("CONEKTA_PRIVATE_KEY"));
+        final OrdersApi api = new OrdersApi(defaultClient);
+        OrderRequest orderRequest = new OrderRequest();
+
+        ChargeRequest chargeRequest = new ChargeRequest();
+        PaymentMethodPbbRequest paymentMethodPbbRequest = new PaymentMethodPbbRequest()
+                .type("pay_by_bank")
+                .productType(PaymentMethodPbbRequest.ProductTypeEnum.BBVA_PAY_BY_BANK);
+
+        ChargeRequestPaymentMethod chargeRequestPaymentMethod = new ChargeRequestPaymentMethod();
+        chargeRequestPaymentMethod.setActualInstance(paymentMethodPbbRequest);
+        chargeRequest.setPaymentMethod(chargeRequestPaymentMethod);
+
+        List<ChargeRequest> charges = new ArrayList<>();
+        charges.add(chargeRequest);
+        orderRequest.setCharges(charges);
+
+        orderRequest.currency("MXN");
+
+        List<Product> products = new ArrayList<>();
+        products.add(new Product()
+                .name("test")
+                .tags(new ArrayList<>(List.of("valor1", "valor2", "valor3")))
+                .quantity(1)
+                .unitPrice(500000));
+        orderRequest.lineItems(products);
+
+        OrderRequestCustomerInfo customer = new OrderRequestCustomerInfo();
+        customer.setActualInstance(new CustomerInfo()
+                .name("test")
+                .email("test@test.com")
+                .phone("3143159054"));
+        orderRequest.setCustomerInfo(customer);
+
+        List<ShippingRequest> shippingLines = new ArrayList<>();
+        shippingLines.add(new ShippingRequest()
+                .amount(550L)
+                .method("Standard")
+                .carrier("Conekta")
+                .trackingNumber("1234567890"));
+        orderRequest.shippingLines(shippingLines);
+
+        orderRequest.shippingContact(new CustomerShippingContacts()
+                .phone("3143159054")
+                .receiver("fran carrero")
+                .address(new CustomerShippingContactsAddress()
+                        .city("cdmx")
+                        .country("mx")
+                        .postalCode("06100")
+                        .state("cdmx")
+                        .street1("calle 123")));
+
+        OrderResponse response = api.createOrder(orderRequest, "es", null);
+        System.out.println(response);
     }
 
 }
