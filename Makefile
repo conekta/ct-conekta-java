@@ -13,3 +13,5 @@ java:
 
 test:
 	mvn -B package --no-transfer-progress --file pom.xml
+deploy:
+	mvn -B deploy --no-transfer-progress --file pom.xml -DskipTests
