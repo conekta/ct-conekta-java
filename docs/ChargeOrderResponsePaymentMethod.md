@@ -7,6 +7,7 @@
 * [PaymentMethodBnplPayment](PaymentMethodBnplPayment.md)
 * [PaymentMethodCard](PaymentMethodCard.md)
 * [PaymentMethodCash](PaymentMethodCash.md)
+* [PaymentMethodPbbPayment](PaymentMethodPbbPayment.md)
 
 ## Example
 ```java
@@ -16,6 +17,7 @@ import com.conekta.model.PaymentMethodBankTransfer;
 import com.conekta.model.PaymentMethodBnplPayment;
 import com.conekta.model.PaymentMethodCard;
 import com.conekta.model.PaymentMethodCash;
+import com.conekta.model.PaymentMethodPbbPayment;
 
 public class Example {
     public static void main(String[] args) {
@@ -48,6 +50,13 @@ public class Example {
         exampleChargeOrderResponsePaymentMethod.setActualInstance(examplePaymentMethodCash);
         // to get back the PaymentMethodCash set earlier
         PaymentMethodCash testPaymentMethodCash = (PaymentMethodCash) exampleChargeOrderResponsePaymentMethod.getActualInstance();
+
+        // create a new PaymentMethodPbbPayment
+        PaymentMethodPbbPayment examplePaymentMethodPbbPayment = new PaymentMethodPbbPayment();
+        // set ChargeOrderResponsePaymentMethod to PaymentMethodPbbPayment
+        exampleChargeOrderResponsePaymentMethod.setActualInstance(examplePaymentMethodPbbPayment);
+        // to get back the PaymentMethodPbbPayment set earlier
+        PaymentMethodPbbPayment testPaymentMethodPbbPayment = (PaymentMethodPbbPayment) exampleChargeOrderResponsePaymentMethod.getActualInstance();
     }
 }
 ```

@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.conekta</groupId>
   <artifactId>ct-conekta-java</artifactId>
-  <version>7.0.1</version>
+  <version>7.0.2</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "io.conekta:ct-conekta-java:7.0.1"
+     implementation "io.conekta:ct-conekta-java:7.0.2"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/ct-conekta-java-7.0.1.jar`
+- `target/ct-conekta-java-7.0.2.jar`
 - `target/lib/*.jar`
 
 ## Usage
@@ -383,10 +383,13 @@ Class | Method | HTTP request | Description
  - [PaymentMethodCardRequest](docs/PaymentMethodCardRequest.md)
  - [PaymentMethodCardResponse](docs/PaymentMethodCardResponse.md)
  - [PaymentMethodCash](docs/PaymentMethodCash.md)
+ - [PaymentMethodCashRecurrentResponse](docs/PaymentMethodCashRecurrentResponse.md)
  - [PaymentMethodCashRequest](docs/PaymentMethodCashRequest.md)
  - [PaymentMethodCashResponse](docs/PaymentMethodCashResponse.md)
  - [PaymentMethodCashResponseAllOfAgreements](docs/PaymentMethodCashResponseAllOfAgreements.md)
  - [PaymentMethodGeneralRequest](docs/PaymentMethodGeneralRequest.md)
+ - [PaymentMethodPbbPayment](docs/PaymentMethodPbbPayment.md)
+ - [PaymentMethodPbbRequest](docs/PaymentMethodPbbRequest.md)
  - [PaymentMethodResponse](docs/PaymentMethodResponse.md)
  - [PaymentMethodSpeiRecurrent](docs/PaymentMethodSpeiRecurrent.md)
  - [PaymentMethodSpeiRequest](docs/PaymentMethodSpeiRequest.md)

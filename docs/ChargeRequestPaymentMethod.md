@@ -6,6 +6,7 @@
 * [PaymentMethodBnplRequest](PaymentMethodBnplRequest.md)
 * [PaymentMethodCardRequest](PaymentMethodCardRequest.md)
 * [PaymentMethodGeneralRequest](PaymentMethodGeneralRequest.md)
+* [PaymentMethodPbbRequest](PaymentMethodPbbRequest.md)
 
 ## Example
 ```java
@@ -14,6 +15,7 @@ import com.conekta.model.ChargeRequestPaymentMethod;
 import com.conekta.model.PaymentMethodBnplRequest;
 import com.conekta.model.PaymentMethodCardRequest;
 import com.conekta.model.PaymentMethodGeneralRequest;
+import com.conekta.model.PaymentMethodPbbRequest;
 
 public class Example {
     public static void main(String[] args) {
@@ -39,6 +41,13 @@ public class Example {
         exampleChargeRequestPaymentMethod.setActualInstance(examplePaymentMethodGeneralRequest);
         // to get back the PaymentMethodGeneralRequest set earlier
         PaymentMethodGeneralRequest testPaymentMethodGeneralRequest = (PaymentMethodGeneralRequest) exampleChargeRequestPaymentMethod.getActualInstance();
+
+        // create a new PaymentMethodPbbRequest
+        PaymentMethodPbbRequest examplePaymentMethodPbbRequest = new PaymentMethodPbbRequest();
+        // set ChargeRequestPaymentMethod to PaymentMethodPbbRequest
+        exampleChargeRequestPaymentMethod.setActualInstance(examplePaymentMethodPbbRequest);
+        // to get back the PaymentMethodPbbRequest set earlier
+        PaymentMethodPbbRequest testPaymentMethodPbbRequest = (PaymentMethodPbbRequest) exampleChargeRequestPaymentMethod.getActualInstance();
     }
 }
 ```
