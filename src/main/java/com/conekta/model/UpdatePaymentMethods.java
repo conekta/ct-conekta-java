@@ -30,13 +30,17 @@ import com.conekta.JSON;
  * UpdatePaymentMethods
  */
 @JsonPropertyOrder({
-  UpdatePaymentMethods.JSON_PROPERTY_NAME
+  UpdatePaymentMethods.JSON_PROPERTY_NAME,
+  UpdatePaymentMethods.JSON_PROPERTY_EXPIRES_AT
 })
 @JsonTypeName("update_payment_methods")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class UpdatePaymentMethods {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
+
+  public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  private Long expiresAt;
 
   public UpdatePaymentMethods() { 
   }
@@ -47,7 +51,7 @@ public class UpdatePaymentMethods {
   }
 
    /**
-   * Get name
+   * The name of the payment method holder
    * @return name
   **/
   @javax.annotation.Nullable
@@ -66,6 +70,32 @@ public class UpdatePaymentMethods {
   }
 
 
+  public UpdatePaymentMethods expiresAt(Long expiresAt) {
+    this.expiresAt = expiresAt;
+    return this;
+  }
+
+   /**
+   * The expiration date of the payment method in Unix timestamp format
+   * minimum: 1
+   * @return expiresAt
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getExpiresAt() {
+    return expiresAt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setExpiresAt(Long expiresAt) {
+    this.expiresAt = expiresAt;
+  }
+
+
   /**
    * Return true if this update_payment_methods object is equal to o.
    */
@@ -78,12 +108,13 @@ public class UpdatePaymentMethods {
       return false;
     }
     UpdatePaymentMethods updatePaymentMethods = (UpdatePaymentMethods) o;
-    return Objects.equals(this.name, updatePaymentMethods.name);
+    return Objects.equals(this.name, updatePaymentMethods.name) &&
+        Objects.equals(this.expiresAt, updatePaymentMethods.expiresAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(name, expiresAt);
   }
 
   @Override
@@ -91,6 +122,7 @@ public class UpdatePaymentMethods {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdatePaymentMethods {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

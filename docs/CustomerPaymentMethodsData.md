@@ -4,6 +4,7 @@
 
 ## oneOf schemas
 * [PaymentMethodCardResponse](PaymentMethodCardResponse.md)
+* [PaymentMethodCashRecurrentResponse](PaymentMethodCashRecurrentResponse.md)
 * [PaymentMethodCashResponse](PaymentMethodCashResponse.md)
 * [PaymentMethodSpeiRecurrent](PaymentMethodSpeiRecurrent.md)
 
@@ -12,6 +13,7 @@
 // Import classes:
 import com.conekta.model.CustomerPaymentMethodsData;
 import com.conekta.model.PaymentMethodCardResponse;
+import com.conekta.model.PaymentMethodCashRecurrentResponse;
 import com.conekta.model.PaymentMethodCashResponse;
 import com.conekta.model.PaymentMethodSpeiRecurrent;
 
@@ -25,6 +27,13 @@ public class Example {
         exampleCustomerPaymentMethodsData.setActualInstance(examplePaymentMethodCardResponse);
         // to get back the PaymentMethodCardResponse set earlier
         PaymentMethodCardResponse testPaymentMethodCardResponse = (PaymentMethodCardResponse) exampleCustomerPaymentMethodsData.getActualInstance();
+
+        // create a new PaymentMethodCashRecurrentResponse
+        PaymentMethodCashRecurrentResponse examplePaymentMethodCashRecurrentResponse = new PaymentMethodCashRecurrentResponse();
+        // set CustomerPaymentMethodsData to PaymentMethodCashRecurrentResponse
+        exampleCustomerPaymentMethodsData.setActualInstance(examplePaymentMethodCashRecurrentResponse);
+        // to get back the PaymentMethodCashRecurrentResponse set earlier
+        PaymentMethodCashRecurrentResponse testPaymentMethodCashRecurrentResponse = (PaymentMethodCashRecurrentResponse) exampleCustomerPaymentMethodsData.getActualInstance();
 
         // create a new PaymentMethodCashResponse
         PaymentMethodCashResponse examplePaymentMethodCashResponse = new PaymentMethodCashResponse();

@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.PaymentMethodCardResponse;
+import com.conekta.model.PaymentMethodCashRecurrentResponse;
 import com.conekta.model.PaymentMethodCashResponse;
 import com.conekta.model.PaymentMethodCashResponseAllOfAgreements;
 import com.conekta.model.PaymentMethodSpeiRecurrent;
@@ -108,11 +109,7 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
                     newCustomerPaymentMethodsData.setActualInstance(deserialized);
                     return newCustomerPaymentMethodsData;
                 case "cash_recurrent":
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashResponse.class);
-                    newCustomerPaymentMethodsData.setActualInstance(deserialized);
-                    return newCustomerPaymentMethodsData;
-                case "oxxo_recurrent":
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashResponse.class);
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashRecurrentResponse.class);
                     newCustomerPaymentMethodsData.setActualInstance(deserialized);
                     return newCustomerPaymentMethodsData;
                 case "spei_recurrent":
@@ -121,6 +118,10 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
                     return newCustomerPaymentMethodsData;
                 case "payment_method_card_response":
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCardResponse.class);
+                    newCustomerPaymentMethodsData.setActualInstance(deserialized);
+                    return newCustomerPaymentMethodsData;
+                case "payment_method_cash_recurrent_response":
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashRecurrentResponse.class);
                     newCustomerPaymentMethodsData.setActualInstance(deserialized);
                     return newCustomerPaymentMethodsData;
                 case "payment_method_cash_response":
@@ -132,7 +133,7 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
                     newCustomerPaymentMethodsData.setActualInstance(deserialized);
                     return newCustomerPaymentMethodsData;
                 default:
-                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for CustomerPaymentMethodsData. Possible values: card cash cash_recurrent oxxo_recurrent spei_recurrent payment_method_card_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
+                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for CustomerPaymentMethodsData. Possible values: card cash cash_recurrent spei_recurrent payment_method_card_response payment_method_cash_recurrent_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
             }
 
             boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
@@ -152,6 +153,22 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
             } catch (Exception e) {
                 // deserialization failed, continue
                 log.log(Level.FINER, "Input data does not match schema 'PaymentMethodCashResponse'", e);
+            }
+
+            // deserialize PaymentMethodCashRecurrentResponse
+            try {
+                boolean attemptParsing = true;
+                if (attemptParsing) {
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashRecurrentResponse.class);
+                    // TODO: there is no validation against JSON schema constraints
+                    // (min, max, enum, pattern...), this does not perform a strict JSON
+                    // validation, which means the 'match' count may be higher than it should be.
+                    match++;
+                    log.log(Level.FINER, "Input data matches schema 'PaymentMethodCashRecurrentResponse'");
+                }
+            } catch (Exception e) {
+                // deserialization failed, continue
+                log.log(Level.FINER, "Input data does not match schema 'PaymentMethodCashRecurrentResponse'", e);
             }
 
             // deserialize PaymentMethodCardResponse
@@ -215,6 +232,11 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
         setActualInstance(o);
     }
 
+    public CustomerPaymentMethodsData(PaymentMethodCashRecurrentResponse o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
     public CustomerPaymentMethodsData(PaymentMethodCardResponse o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
@@ -228,6 +250,8 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
     static {
         schemas.put("PaymentMethodCardResponse", new GenericType<PaymentMethodCardResponse>() {
         });
+        schemas.put("PaymentMethodCashRecurrentResponse", new GenericType<PaymentMethodCashRecurrentResponse>() {
+        });
         schemas.put("PaymentMethodCashResponse", new GenericType<PaymentMethodCashResponse>() {
         });
         schemas.put("PaymentMethodSpeiRecurrent", new GenericType<PaymentMethodSpeiRecurrent>() {
@@ -237,10 +261,10 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
         Map<String, Class<?>> mappings = new HashMap<>();
         mappings.put("card", PaymentMethodCardResponse.class);
         mappings.put("cash", PaymentMethodCashResponse.class);
-        mappings.put("cash_recurrent", PaymentMethodCashResponse.class);
-        mappings.put("oxxo_recurrent", PaymentMethodCashResponse.class);
+        mappings.put("cash_recurrent", PaymentMethodCashRecurrentResponse.class);
         mappings.put("spei_recurrent", PaymentMethodSpeiRecurrent.class);
         mappings.put("payment_method_card_response", PaymentMethodCardResponse.class);
+        mappings.put("payment_method_cash_recurrent_response", PaymentMethodCashRecurrentResponse.class);
         mappings.put("payment_method_cash_response", PaymentMethodCashResponse.class);
         mappings.put("payment_method_spei_recurrent", PaymentMethodSpeiRecurrent.class);
         mappings.put("customer_payment_methods_data", CustomerPaymentMethodsData.class);
@@ -255,7 +279,7 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * PaymentMethodCardResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrent
+     * PaymentMethodCardResponse, PaymentMethodCashRecurrentResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrent
      *
      * It could be an instance of the 'oneOf' schemas.
      * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
@@ -263,6 +287,11 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
     @Override
     public void setActualInstance(Object instance) {
         if (JSON.isInstanceOf(PaymentMethodCashResponse.class, instance, new HashSet<>())) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (JSON.isInstanceOf(PaymentMethodCashRecurrentResponse.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
@@ -277,14 +306,14 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be PaymentMethodCardResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrent");
+        throw new RuntimeException("Invalid instance type. Must be PaymentMethodCardResponse, PaymentMethodCashRecurrentResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrent");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * PaymentMethodCardResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrent
+     * PaymentMethodCardResponse, PaymentMethodCashRecurrentResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrent
      *
-     * @return The actual instance (PaymentMethodCardResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrent)
+     * @return The actual instance (PaymentMethodCardResponse, PaymentMethodCashRecurrentResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrent)
      */
     @Override
     public Object getActualInstance() {
@@ -300,6 +329,17 @@ public class CustomerPaymentMethodsData extends AbstractOpenApiSchema {
      */
     public PaymentMethodCashResponse getPaymentMethodCashResponse() throws ClassCastException {
         return (PaymentMethodCashResponse)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `PaymentMethodCashRecurrentResponse`. If the actual instance is not `PaymentMethodCashRecurrentResponse`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `PaymentMethodCashRecurrentResponse`
+     * @throws ClassCastException if the instance is not `PaymentMethodCashRecurrentResponse`
+     */
+    public PaymentMethodCashRecurrentResponse getPaymentMethodCashRecurrentResponse() throws ClassCastException {
+        return (PaymentMethodCashRecurrentResponse)super.getActualInstance();
     }
 
     /**
