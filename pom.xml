@@ -196,7 +196,7 @@
                             <goal>sign</goal>
                         </goals>
                         <configuration>
-                            <keyname>1CB9EF02</keyname>
+                            <keyname>02B623C1</keyname>
                             <passphraseServerId />
                         </configuration>
                     </execution>
