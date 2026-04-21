@@ -16,11 +16,11 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
+import com.conekta.model.CashAgreementsResponse;
 import com.conekta.model.PaymentMethodCardResponse;
 import com.conekta.model.PaymentMethodCashRecurrentResponse;
 import com.conekta.model.PaymentMethodCashResponse;
-import com.conekta.model.PaymentMethodCashResponseAllOfAgreements;
-import com.conekta.model.PaymentMethodSpeiRecurrent;
+import com.conekta.model.PaymentMethodSpeiRecurrentResponse;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -113,7 +113,7 @@ public class CreateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
                     newCreateCustomerPaymentMethodsResponse.setActualInstance(deserialized);
                     return newCreateCustomerPaymentMethodsResponse;
                 case "spei_recurrent":
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodSpeiRecurrent.class);
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodSpeiRecurrentResponse.class);
                     newCreateCustomerPaymentMethodsResponse.setActualInstance(deserialized);
                     return newCreateCustomerPaymentMethodsResponse;
                 case "payment_method_card_response":
@@ -128,12 +128,12 @@ public class CreateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashResponse.class);
                     newCreateCustomerPaymentMethodsResponse.setActualInstance(deserialized);
                     return newCreateCustomerPaymentMethodsResponse;
-                case "payment_method_spei_recurrent":
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodSpeiRecurrent.class);
+                case "payment_method_spei_recurrent_response":
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodSpeiRecurrentResponse.class);
                     newCreateCustomerPaymentMethodsResponse.setActualInstance(deserialized);
                     return newCreateCustomerPaymentMethodsResponse;
                 default:
-                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for CreateCustomerPaymentMethodsResponse. Possible values: card cash cash_recurrent spei_recurrent payment_method_card_response payment_method_cash_recurrent_response payment_method_cash_response payment_method_spei_recurrent", discriminatorValue));
+                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for CreateCustomerPaymentMethodsResponse. Possible values: card cash cash_recurrent spei_recurrent payment_method_card_response payment_method_cash_recurrent_response payment_method_cash_response payment_method_spei_recurrent_response", discriminatorValue));
             }
 
             boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
@@ -187,20 +187,20 @@ public class CreateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
                 log.log(Level.FINER, "Input data does not match schema 'PaymentMethodCardResponse'", e);
             }
 
-            // deserialize PaymentMethodSpeiRecurrent
+            // deserialize PaymentMethodSpeiRecurrentResponse
             try {
                 boolean attemptParsing = true;
                 if (attemptParsing) {
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodSpeiRecurrent.class);
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodSpeiRecurrentResponse.class);
                     // TODO: there is no validation against JSON schema constraints
                     // (min, max, enum, pattern...), this does not perform a strict JSON
                     // validation, which means the 'match' count may be higher than it should be.
                     match++;
-                    log.log(Level.FINER, "Input data matches schema 'PaymentMethodSpeiRecurrent'");
+                    log.log(Level.FINER, "Input data matches schema 'PaymentMethodSpeiRecurrentResponse'");
                 }
             } catch (Exception e) {
                 // deserialization failed, continue
-                log.log(Level.FINER, "Input data does not match schema 'PaymentMethodSpeiRecurrent'", e);
+                log.log(Level.FINER, "Input data does not match schema 'PaymentMethodSpeiRecurrentResponse'", e);
             }
 
             if (match == 1) {
@@ -242,7 +242,7 @@ public class CreateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
         setActualInstance(o);
     }
 
-    public CreateCustomerPaymentMethodsResponse(PaymentMethodSpeiRecurrent o) {
+    public CreateCustomerPaymentMethodsResponse(PaymentMethodSpeiRecurrentResponse o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
@@ -254,7 +254,7 @@ public class CreateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
         });
         schemas.put("PaymentMethodCashResponse", new GenericType<PaymentMethodCashResponse>() {
         });
-        schemas.put("PaymentMethodSpeiRecurrent", new GenericType<PaymentMethodSpeiRecurrent>() {
+        schemas.put("PaymentMethodSpeiRecurrentResponse", new GenericType<PaymentMethodSpeiRecurrentResponse>() {
         });
         JSON.registerDescendants(CreateCustomerPaymentMethodsResponse.class, Collections.unmodifiableMap(schemas));
         // Initialize and register the discriminator mappings.
@@ -262,11 +262,11 @@ public class CreateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
         mappings.put("card", PaymentMethodCardResponse.class);
         mappings.put("cash", PaymentMethodCashResponse.class);
         mappings.put("cash_recurrent", PaymentMethodCashRecurrentResponse.class);
-        mappings.put("spei_recurrent", PaymentMethodSpeiRecurrent.class);
+        mappings.put("spei_recurrent", PaymentMethodSpeiRecurrentResponse.class);
         mappings.put("payment_method_card_response", PaymentMethodCardResponse.class);
         mappings.put("payment_method_cash_recurrent_response", PaymentMethodCashRecurrentResponse.class);
         mappings.put("payment_method_cash_response", PaymentMethodCashResponse.class);
-        mappings.put("payment_method_spei_recurrent", PaymentMethodSpeiRecurrent.class);
+        mappings.put("payment_method_spei_recurrent_response", PaymentMethodSpeiRecurrentResponse.class);
         mappings.put("create_customer_payment_methods_response", CreateCustomerPaymentMethodsResponse.class);
         JSON.registerDiscriminator(CreateCustomerPaymentMethodsResponse.class, "type", mappings);
     }
@@ -279,7 +279,7 @@ public class CreateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * PaymentMethodCardResponse, PaymentMethodCashRecurrentResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrent
+     * PaymentMethodCardResponse, PaymentMethodCashRecurrentResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrentResponse
      *
      * It could be an instance of the 'oneOf' schemas.
      * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
@@ -301,19 +301,19 @@ public class CreateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
             return;
         }
 
-        if (JSON.isInstanceOf(PaymentMethodSpeiRecurrent.class, instance, new HashSet<>())) {
+        if (JSON.isInstanceOf(PaymentMethodSpeiRecurrentResponse.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be PaymentMethodCardResponse, PaymentMethodCashRecurrentResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrent");
+        throw new RuntimeException("Invalid instance type. Must be PaymentMethodCardResponse, PaymentMethodCashRecurrentResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrentResponse");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * PaymentMethodCardResponse, PaymentMethodCashRecurrentResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrent
+     * PaymentMethodCardResponse, PaymentMethodCashRecurrentResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrentResponse
      *
-     * @return The actual instance (PaymentMethodCardResponse, PaymentMethodCashRecurrentResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrent)
+     * @return The actual instance (PaymentMethodCardResponse, PaymentMethodCashRecurrentResponse, PaymentMethodCashResponse, PaymentMethodSpeiRecurrentResponse)
      */
     @Override
     public Object getActualInstance() {
@@ -354,14 +354,14 @@ public class CreateCustomerPaymentMethodsResponse extends AbstractOpenApiSchema 
     }
 
     /**
-     * Get the actual instance of `PaymentMethodSpeiRecurrent`. If the actual instance is not `PaymentMethodSpeiRecurrent`,
+     * Get the actual instance of `PaymentMethodSpeiRecurrentResponse`. If the actual instance is not `PaymentMethodSpeiRecurrentResponse`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `PaymentMethodSpeiRecurrent`
-     * @throws ClassCastException if the instance is not `PaymentMethodSpeiRecurrent`
+     * @return The actual instance of `PaymentMethodSpeiRecurrentResponse`
+     * @throws ClassCastException if the instance is not `PaymentMethodSpeiRecurrentResponse`
      */
-    public PaymentMethodSpeiRecurrent getPaymentMethodSpeiRecurrent() throws ClassCastException {
-        return (PaymentMethodSpeiRecurrent)super.getActualInstance();
+    public PaymentMethodSpeiRecurrentResponse getPaymentMethodSpeiRecurrentResponse() throws ClassCastException {
+        return (PaymentMethodSpeiRecurrentResponse)super.getActualInstance();
     }
 
 }

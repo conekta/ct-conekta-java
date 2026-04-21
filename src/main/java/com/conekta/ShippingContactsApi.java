@@ -8,9 +8,9 @@ import com.conekta.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import com.conekta.model.CustomerShippingContacts;
+import com.conekta.model.CustomerShippingContactsRequest;
 import com.conekta.model.CustomerShippingContactsResponse;
-import com.conekta.model.CustomerUpdateShippingContacts;
+import com.conekta.model.CustomerUpdateShippingContactsRequest;
 import com.conekta.model.Error;
 
 import java.util.ArrayList;
@@ -53,7 +53,7 @@ public class ShippingContactsApi {
    * Create a shipping contacts
    * Create a shipping contacts for a customer.
    * @param id Identifier of the resource (required)
-   * @param customerShippingContacts requested field for customer shippings contacts (required)
+   * @param customerShippingContactsRequest requested field for customer shippings contacts (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return CustomerShippingContactsResponse
@@ -68,15 +68,15 @@ public class ShippingContactsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CustomerShippingContactsResponse createCustomerShippingContacts(String id, CustomerShippingContacts customerShippingContacts, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    return createCustomerShippingContactsWithHttpInfo(id, customerShippingContacts, acceptLanguage, xChildCompanyId).getData();
+  public CustomerShippingContactsResponse createCustomerShippingContacts(String id, CustomerShippingContactsRequest customerShippingContactsRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+    return createCustomerShippingContactsWithHttpInfo(id, customerShippingContactsRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
   /**
    * Create a shipping contacts
    * Create a shipping contacts for a customer.
    * @param id Identifier of the resource (required)
-   * @param customerShippingContacts requested field for customer shippings contacts (required)
+   * @param customerShippingContactsRequest requested field for customer shippings contacts (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return ApiResponse&lt;CustomerShippingContactsResponse&gt;
@@ -91,13 +91,13 @@ public class ShippingContactsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CustomerShippingContactsResponse> createCustomerShippingContactsWithHttpInfo(String id, CustomerShippingContacts customerShippingContacts, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CustomerShippingContactsResponse> createCustomerShippingContactsWithHttpInfo(String id, CustomerShippingContactsRequest customerShippingContactsRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling createCustomerShippingContacts");
     }
-    if (customerShippingContacts == null) {
-      throw new ApiException(400, "Missing the required parameter 'customerShippingContacts' when calling createCustomerShippingContacts");
+    if (customerShippingContactsRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'customerShippingContactsRequest' when calling createCustomerShippingContacts");
     }
 
     // Path parameters
@@ -117,7 +117,7 @@ public class ShippingContactsApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<CustomerShippingContactsResponse> localVarReturnType = new GenericType<CustomerShippingContactsResponse>() {};
-    return apiClient.invokeAPI("ShippingContactsApi.createCustomerShippingContacts", localVarPath, "POST", new ArrayList<>(), customerShippingContacts,
+    return apiClient.invokeAPI("ShippingContactsApi.createCustomerShippingContacts", localVarPath, "POST", new ArrayList<>(), customerShippingContactsRequest,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
@@ -199,7 +199,7 @@ public class ShippingContactsApi {
    * Update shipping contact that corresponds to a customer ID.
    * @param id Identifier of the resource (required)
    * @param shippingContactsId identifier (required)
-   * @param customerUpdateShippingContacts requested field for customer update shippings contacts (required)
+   * @param customerUpdateShippingContactsRequest requested field for customer update shippings contacts (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return CustomerShippingContactsResponse
@@ -214,8 +214,8 @@ public class ShippingContactsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CustomerShippingContactsResponse updateCustomerShippingContacts(String id, String shippingContactsId, CustomerUpdateShippingContacts customerUpdateShippingContacts, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    return updateCustomerShippingContactsWithHttpInfo(id, shippingContactsId, customerUpdateShippingContacts, acceptLanguage, xChildCompanyId).getData();
+  public CustomerShippingContactsResponse updateCustomerShippingContacts(String id, String shippingContactsId, CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+    return updateCustomerShippingContactsWithHttpInfo(id, shippingContactsId, customerUpdateShippingContactsRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
   /**
@@ -223,7 +223,7 @@ public class ShippingContactsApi {
    * Update shipping contact that corresponds to a customer ID.
    * @param id Identifier of the resource (required)
    * @param shippingContactsId identifier (required)
-   * @param customerUpdateShippingContacts requested field for customer update shippings contacts (required)
+   * @param customerUpdateShippingContactsRequest requested field for customer update shippings contacts (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return ApiResponse&lt;CustomerShippingContactsResponse&gt;
@@ -238,7 +238,7 @@ public class ShippingContactsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CustomerShippingContactsResponse> updateCustomerShippingContactsWithHttpInfo(String id, String shippingContactsId, CustomerUpdateShippingContacts customerUpdateShippingContacts, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CustomerShippingContactsResponse> updateCustomerShippingContactsWithHttpInfo(String id, String shippingContactsId, CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateCustomerShippingContacts");
@@ -246,8 +246,8 @@ public class ShippingContactsApi {
     if (shippingContactsId == null) {
       throw new ApiException(400, "Missing the required parameter 'shippingContactsId' when calling updateCustomerShippingContacts");
     }
-    if (customerUpdateShippingContacts == null) {
-      throw new ApiException(400, "Missing the required parameter 'customerUpdateShippingContacts' when calling updateCustomerShippingContacts");
+    if (customerUpdateShippingContactsRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'customerUpdateShippingContactsRequest' when calling updateCustomerShippingContacts");
     }
 
     // Path parameters
@@ -268,7 +268,7 @@ public class ShippingContactsApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<CustomerShippingContactsResponse> localVarReturnType = new GenericType<CustomerShippingContactsResponse>() {};
-    return apiClient.invokeAPI("ShippingContactsApi.updateCustomerShippingContacts", localVarPath, "PUT", new ArrayList<>(), customerUpdateShippingContacts,
+    return apiClient.invokeAPI("ShippingContactsApi.updateCustomerShippingContacts", localVarPath, "PUT", new ArrayList<>(), customerUpdateShippingContactsRequest,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

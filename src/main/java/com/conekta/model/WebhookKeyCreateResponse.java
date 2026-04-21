@@ -37,7 +37,7 @@ import com.conekta.JSON;
   WebhookKeyCreateResponse.JSON_PROPERTY_OBJECT,
   WebhookKeyCreateResponse.JSON_PROPERTY_PUBLIC_KEY
 })
-@JsonTypeName("webhook-key_create_response")
+@JsonTypeName("webhook_key_create_response")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WebhookKeyCreateResponse {
   public static final String JSON_PROPERTY_ACTIVE = "active";
@@ -212,7 +212,7 @@ public class WebhookKeyCreateResponse {
 
 
   /**
-   * Return true if this webhook-key_create_response object is equal to o.
+   * Return true if this webhook_key_create_response object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

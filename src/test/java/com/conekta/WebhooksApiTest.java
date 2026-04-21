@@ -17,9 +17,9 @@ import com.conekta.*;
 import com.conekta.auth.*;
 import com.conekta.model.Error;
 import com.conekta.model.GetWebhooksResponse;
+import com.conekta.model.UpdateWebhook;
 import com.conekta.model.WebhookRequest;
 import com.conekta.model.WebhookResponse;
-import com.conekta.model.WebhookUpdateRequest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -35,100 +35,49 @@ import java.util.Map;
  */
 public class WebhooksApiTest {
 
-    private final WebhooksApi api = new WebhooksApi();
+    private static final String WEBHOOK_ID = "641b1d5662d7e00001eaa46b";
 
-    /**
-     * Create Webhook
-     *
-     * What we do at Conekta translates into events. For example, an event of interest to us occurs at the time a payment is successfully processed. At that moment we will be interested in doing several things: Send an email to the buyer, generate an invoice, start the process of shipping the product, etc.
-     *
-     * @throws ApiException if the Api call fails
-     */
+    private final WebhooksApi api = new WebhooksApi(TestUtils.apiClient());
+
     @Test
     public void createWebhookTest() throws ApiException {
-        //WebhookRequest webhookRequest = null;
-        //String acceptLanguage = null;
-        //WebhookResponse response = api.createWebhook(webhookRequest, acceptLanguage);
-        // TODO: test validations
+        WebhookRequest webhookRequest = new WebhookRequest()
+                .url("https://webhook.site/0b8c9fa8-92c3-4a04-beea-a7ec037f6466");
+        WebhookResponse response = api.createWebhook(webhookRequest, "es");
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Delete Webhook
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void deleteWebhookTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //WebhookResponse response = api.deleteWebhook(id, acceptLanguage);
-        // TODO: test validations
+        WebhookResponse response = api.deleteWebhook(WEBHOOK_ID, "es");
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get Webhook
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getWebhookTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //WebhookResponse response = api.getWebhook(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        WebhookResponse response = api.getWebhook(WEBHOOK_ID, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get List of Webhooks
-     *
-     * Consume the list of webhooks you have, each environment supports 10 webhooks (For production and testing)
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getWebhooksTest() throws ApiException {
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //Integer limit = null;
-        //String search = null;
-        //String url = null;
-        //String next = null;
-        //String previous = null;
-        //GetWebhooksResponse response = api.getWebhooks(acceptLanguage, xChildCompanyId, limit, search, url, next, previous);
-        // TODO: test validations
+        GetWebhooksResponse response = api.getWebhooks("es", null, 20, null, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Test Webhook
-     *
-     * Send a webhook.ping event
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void testWebhookTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //WebhookResponse response = api.testWebhook(id, acceptLanguage);
-        // TODO: test validations
+        WebhookResponse response = api.testWebhook(WEBHOOK_ID, "es");
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update Webhook
-     *
-     * updates an existing webhook
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void updateWebhookTest() throws ApiException {
-        //String id = null;
-        //WebhookUpdateRequest webhookUpdateRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //WebhookResponse response = api.updateWebhook(id, webhookUpdateRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        UpdateWebhook updateWebhook = new UpdateWebhook()
+                .url("https://webhook.site/0b8c9fa8-92c3-4a04-beea-a7ec037f6466")
+                .active(true);
+        WebhookResponse response = api.updateWebhook(WEBHOOK_ID, updateWebhook, "es", null);
+        Assertions.assertNotNull(response);
     }
 
 }

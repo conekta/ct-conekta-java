@@ -45,8 +45,41 @@ public class PaymentMethodBnplPayment {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
 
+  /**
+   * Gets or Sets _object
+   */
+  public enum ObjectEnum {
+    BNPL_PAYMENT("bnpl_payment");
+
+    private String value;
+
+    ObjectEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static ObjectEnum fromValue(String value) {
+      for (ObjectEnum b : ObjectEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
   public static final String JSON_PROPERTY_OBJECT = "object";
-  private String _object;
+  private ObjectEnum _object;
 
   public static final String JSON_PROPERTY_CANCEL_URL = "cancel_url";
   private String cancelUrl;
@@ -94,7 +127,7 @@ public class PaymentMethodBnplPayment {
   }
 
 
-  public PaymentMethodBnplPayment _object(String _object) {
+  public PaymentMethodBnplPayment _object(ObjectEnum _object) {
     this._object = _object;
     return this;
   }
@@ -107,14 +140,14 @@ public class PaymentMethodBnplPayment {
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public String getObject() {
+  public ObjectEnum getObject() {
     return _object;
   }
 
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(ObjectEnum _object) {
     this._object = _object;
   }
 

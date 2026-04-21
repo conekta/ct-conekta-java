@@ -12,13 +12,13 @@ checkout response
 |**planIds** | **List&lt;String&gt;** | List of plan IDs that are available for subscription |  [optional] |
 |**canNotExpire** | **Boolean** |  |  [optional] |
 |**emailsSent** | **Integer** |  |  [optional] |
-|**excludeCardNetworks** | **List&lt;Object&gt;** |  |  [optional] |
+|**excludeCardNetworks** | [**List&lt;ExcludeCardNetworksEnum&gt;**](#List&lt;ExcludeCardNetworksEnum&gt;) |  |  [optional] |
 |**expiresAt** | **Long** |  |  [optional] |
 |**failureUrl** | **String** |  |  [optional] |
 |**force3dsFlow** | **Boolean** |  |  [optional] |
 |**id** | **String** |  |  |
 |**livemode** | **Boolean** |  |  |
-|**metadata** | **Map&lt;String, Object&gt;** |  |  [optional] |
+|**metadata** |  |  |  [optional] |
 |**monthlyInstallmentsEnabled** | **Boolean** |  |  [optional] |
 |**monthlyInstallmentsOptions** | **List&lt;Integer&gt;** |  |  [optional] |
 |**name** | **String** | Reason for charge |  |
@@ -31,9 +31,19 @@ checkout response
 |**smsSent** | **Integer** |  |  [optional] |
 |**startsAt** | **Integer** |  |  [optional] |
 |**status** | **String** |  |  [optional] |
-|**successUrl** | **String** |  |  [optional] |
+|**successUrl** | **String** | The URL to redirect to after a successful payment. |  [optional] |
 |**type** | **String** |  |  [optional] |
 |**url** | **URI** |  |  [optional] |
+
+
+
+## Enum: List&lt;ExcludeCardNetworksEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| VISA | &quot;visa&quot; |
+| MASTERCARD | &quot;mastercard&quot; |
+| AMEX | &quot;amex&quot; |
 
 
 

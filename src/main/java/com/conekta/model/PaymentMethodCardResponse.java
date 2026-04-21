@@ -41,6 +41,7 @@ import com.conekta.JSON;
   PaymentMethodCardResponse.JSON_PROPERTY_EXP_MONTH,
   PaymentMethodCardResponse.JSON_PROPERTY_EXP_YEAR,
   PaymentMethodCardResponse.JSON_PROPERTY_BRAND,
+  PaymentMethodCardResponse.JSON_PROPERTY_ISSUER,
   PaymentMethodCardResponse.JSON_PROPERTY_NAME,
   PaymentMethodCardResponse.JSON_PROPERTY_DEFAULT,
   PaymentMethodCardResponse.JSON_PROPERTY_VISIBLE_ON_CHECKOUT,
@@ -81,6 +82,9 @@ public class PaymentMethodCardResponse {
 
   public static final String JSON_PROPERTY_BRAND = "brand";
   private String brand;
+
+  public static final String JSON_PROPERTY_ISSUER = "issuer";
+  private String issuer;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -372,6 +376,31 @@ public class PaymentMethodCardResponse {
   }
 
 
+  public PaymentMethodCardResponse issuer(String issuer) {
+    this.issuer = issuer;
+    return this;
+  }
+
+   /**
+   * Name of the institution that issued the card
+   * @return issuer
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ISSUER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getIssuer() {
+    return issuer;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ISSUER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setIssuer(String issuer) {
+    this.issuer = issuer;
+  }
+
+
   public PaymentMethodCardResponse name(String name) {
     this.name = name;
     return this;
@@ -495,6 +524,7 @@ public class PaymentMethodCardResponse {
         Objects.equals(this.expMonth, paymentMethodCardResponse.expMonth) &&
         Objects.equals(this.expYear, paymentMethodCardResponse.expYear) &&
         Objects.equals(this.brand, paymentMethodCardResponse.brand) &&
+        Objects.equals(this.issuer, paymentMethodCardResponse.issuer) &&
         Objects.equals(this.name, paymentMethodCardResponse.name) &&
         Objects.equals(this._default, paymentMethodCardResponse._default) &&
         Objects.equals(this.visibleOnCheckout, paymentMethodCardResponse.visibleOnCheckout) &&
@@ -503,7 +533,7 @@ public class PaymentMethodCardResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, id, _object, createdAt, parentId, last4, bin, cardType, expMonth, expYear, brand, name, _default, visibleOnCheckout, paymentSourceStatus);
+    return Objects.hash(type, id, _object, createdAt, parentId, last4, bin, cardType, expMonth, expYear, brand, issuer, name, _default, visibleOnCheckout, paymentSourceStatus);
   }
 
   @Override
@@ -521,6 +551,7 @@ public class PaymentMethodCardResponse {
     sb.append("    expMonth: ").append(toIndentedString(expMonth)).append("\n");
     sb.append("    expYear: ").append(toIndentedString(expYear)).append("\n");
     sb.append("    brand: ").append(toIndentedString(brand)).append("\n");
+    sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("    visibleOnCheckout: ").append(toIndentedString(visibleOnCheckout)).append("\n");

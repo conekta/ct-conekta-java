@@ -19,8 +19,9 @@ import com.conekta.model.CreateCustomerPaymentMethodsRequest;
 import com.conekta.model.CreateCustomerPaymentMethodsResponse;
 import com.conekta.model.Error;
 import com.conekta.model.GetPaymentMethodResponse;
+import com.conekta.model.PaymentMethodCashRequest;
 import com.conekta.model.UpdateCustomerPaymentMethodsResponse;
-import com.conekta.model.UpdatePaymentMethods;
+import com.conekta.model.UpdatePaymentMethodsCard;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -36,78 +37,39 @@ import java.util.Map;
  */
 public class PaymentMethodsApiTest {
 
-    private final PaymentMethodsApi api = new PaymentMethodsApi();
+    private final PaymentMethodsApi api = new PaymentMethodsApi(TestUtils.apiClient());
 
-    /**
-     * Create Payment Method
-     *
-     * Create a payment method for a customer.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void createCustomerPaymentMethodsTest() throws ApiException {
-        //String id = null;
-        //CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //CreateCustomerPaymentMethodsResponse response = api.createCustomerPaymentMethods(id, createCustomerPaymentMethodsRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest =
+                new CreateCustomerPaymentMethodsRequest();
+        createCustomerPaymentMethodsRequest.setActualInstance(
+                new PaymentMethodCashRequest().type("cash_recurrent"));
+        CreateCustomerPaymentMethodsResponse response = api.createCustomerPaymentMethods(
+                "cus_2tXyF9BwPG14UMkkg", createCustomerPaymentMethodsRequest, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Delete Payment Method
-     *
-     * Delete an existing payment method
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void deleteCustomerPaymentMethodsTest() throws ApiException {
-        //String id = null;
-        //String paymentMethodId = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //UpdateCustomerPaymentMethodsResponse response = api.deleteCustomerPaymentMethods(id, paymentMethodId, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        UpdateCustomerPaymentMethodsResponse response = api.deleteCustomerPaymentMethods(
+                "cus_2tZWxbTPtQgGJGh8P", "src_2tZWxbTPtQgGJGh8R", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get Payment Methods
-     *
-     * Get a list of Payment Methods
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getCustomerPaymentMethodsTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //Integer limit = null;
-        //String next = null;
-        //String previous = null;
-        //String search = null;
-        //GetPaymentMethodResponse response = api.getCustomerPaymentMethods(id, acceptLanguage, xChildCompanyId, limit, next, previous, search);
-        // TODO: test validations
+        GetPaymentMethodResponse response = api.getCustomerPaymentMethods(
+                "src_2tbd5Bgy67RL9oycM", "es", null, 20, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update Payment Method
-     *
-     * Gets a payment Method that corresponds to a customer ID.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void updateCustomerPaymentMethodsTest() throws ApiException {
-        //String id = null;
-        //String paymentMethodId = null;
-        //UpdatePaymentMethods updatePaymentMethods = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //UpdateCustomerPaymentMethodsResponse response = api.updateCustomerPaymentMethods(id, paymentMethodId, updatePaymentMethods, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        UpdatePaymentMethodsCard updatePaymentMethodsCard = new UpdatePaymentMethodsCard().name("Card Holder");
+        UpdateCustomerPaymentMethodsResponse response = api.updateCustomerPaymentMethods(
+                "cus_2tZWxbTPtQgGJGh8P", "src_2tZWxbTPtQgGJGh8R", updatePaymentMethodsCard, "es", null);
+        Assertions.assertNotNull(response);
     }
 
 }

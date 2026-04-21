@@ -27,9 +27,10 @@ import com.conekta.JSON;
 
 
 /**
- * Address of the person who will receive the order
+ * CustomerShippingContactsAddress
  */
 @JsonPropertyOrder({
+  CustomerShippingContactsAddress.JSON_PROPERTY_OBJECT,
   CustomerShippingContactsAddress.JSON_PROPERTY_STREET1,
   CustomerShippingContactsAddress.JSON_PROPERTY_STREET2,
   CustomerShippingContactsAddress.JSON_PROPERTY_POSTAL_CODE,
@@ -41,6 +42,9 @@ import com.conekta.JSON;
 @JsonTypeName("customer_shipping_contacts_address")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CustomerShippingContactsAddress {
+  public static final String JSON_PROPERTY_OBJECT = "object";
+  private String _object;
+
   public static final String JSON_PROPERTY_STREET1 = "street1";
   private String street1;
 
@@ -64,6 +68,31 @@ public class CustomerShippingContactsAddress {
 
   public CustomerShippingContactsAddress() { 
   }
+
+  public CustomerShippingContactsAddress _object(String _object) {
+    this._object = _object;
+    return this;
+  }
+
+   /**
+   * Get _object
+   * @return _object
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getObject() {
+    return _object;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setObject(String _object) {
+    this._object = _object;
+  }
+
 
   public CustomerShippingContactsAddress street1(String street1) {
     this.street1 = street1;
@@ -196,7 +225,7 @@ public class CustomerShippingContactsAddress {
   }
 
    /**
-   * this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+   * Get country
    * @return country
   **/
   @javax.annotation.Nullable
@@ -252,7 +281,8 @@ public class CustomerShippingContactsAddress {
       return false;
     }
     CustomerShippingContactsAddress customerShippingContactsAddress = (CustomerShippingContactsAddress) o;
-    return Objects.equals(this.street1, customerShippingContactsAddress.street1) &&
+    return Objects.equals(this._object, customerShippingContactsAddress._object) &&
+        Objects.equals(this.street1, customerShippingContactsAddress.street1) &&
         Objects.equals(this.street2, customerShippingContactsAddress.street2) &&
         Objects.equals(this.postalCode, customerShippingContactsAddress.postalCode) &&
         Objects.equals(this.city, customerShippingContactsAddress.city) &&
@@ -263,13 +293,14 @@ public class CustomerShippingContactsAddress {
 
   @Override
   public int hashCode() {
-    return Objects.hash(street1, street2, postalCode, city, state, country, residential);
+    return Objects.hash(_object, street1, street2, postalCode, city, state, country, residential);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CustomerShippingContactsAddress {\n");
+    sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    street1: ").append(toIndentedString(street1)).append("\n");
     sb.append("    street2: ").append(toIndentedString(street2)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");

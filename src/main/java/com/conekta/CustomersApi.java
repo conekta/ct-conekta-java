@@ -10,13 +10,13 @@ import javax.ws.rs.core.GenericType;
 
 import com.conekta.model.CreateCustomerFiscalEntitiesResponse;
 import com.conekta.model.Customer;
-import com.conekta.model.CustomerFiscalEntitiesRequest;
 import com.conekta.model.CustomerResponse;
-import com.conekta.model.CustomerUpdateFiscalEntitiesRequest;
 import com.conekta.model.CustomersResponse;
 import com.conekta.model.Error;
+import com.conekta.model.FiscalEntityRequest;
 import com.conekta.model.UpdateCustomer;
 import com.conekta.model.UpdateCustomerFiscalEntitiesResponse;
+import com.conekta.model.UpdateFiscalEntityRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -121,7 +121,7 @@ public class CustomersApi {
    * Create Fiscal Entity
    * Create Fiscal entity resource that corresponds to a customer ID.
    * @param id Identifier of the resource (required)
-   * @param customerFiscalEntitiesRequest requested field for customer fiscal entities (required)
+   * @param fiscalEntityRequest requested field for customer fiscal entities (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return CreateCustomerFiscalEntitiesResponse
@@ -136,15 +136,15 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CreateCustomerFiscalEntitiesResponse createCustomerFiscalEntities(String id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    return createCustomerFiscalEntitiesWithHttpInfo(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId).getData();
+  public CreateCustomerFiscalEntitiesResponse createCustomerFiscalEntities(String id, FiscalEntityRequest fiscalEntityRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+    return createCustomerFiscalEntitiesWithHttpInfo(id, fiscalEntityRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
   /**
    * Create Fiscal Entity
    * Create Fiscal entity resource that corresponds to a customer ID.
    * @param id Identifier of the resource (required)
-   * @param customerFiscalEntitiesRequest requested field for customer fiscal entities (required)
+   * @param fiscalEntityRequest requested field for customer fiscal entities (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return ApiResponse&lt;CreateCustomerFiscalEntitiesResponse&gt;
@@ -159,13 +159,13 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CreateCustomerFiscalEntitiesResponse> createCustomerFiscalEntitiesWithHttpInfo(String id, CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CreateCustomerFiscalEntitiesResponse> createCustomerFiscalEntitiesWithHttpInfo(String id, FiscalEntityRequest fiscalEntityRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling createCustomerFiscalEntities");
     }
-    if (customerFiscalEntitiesRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'customerFiscalEntitiesRequest' when calling createCustomerFiscalEntities");
+    if (fiscalEntityRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'fiscalEntityRequest' when calling createCustomerFiscalEntities");
     }
 
     // Path parameters
@@ -185,7 +185,7 @@ public class CustomersApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<CreateCustomerFiscalEntitiesResponse> localVarReturnType = new GenericType<CreateCustomerFiscalEntitiesResponse>() {};
-    return apiClient.invokeAPI("CustomersApi.createCustomerFiscalEntities", localVarPath, "POST", new ArrayList<>(), customerFiscalEntitiesRequest,
+    return apiClient.invokeAPI("CustomersApi.createCustomerFiscalEntities", localVarPath, "POST", new ArrayList<>(), fiscalEntityRequest,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
@@ -466,7 +466,7 @@ public class CustomersApi {
    * Update Fiscal Entity resource that corresponds to a customer ID.
    * @param id Identifier of the resource (required)
    * @param fiscalEntitiesId identifier (required)
-   * @param customerUpdateFiscalEntitiesRequest requested field for customer update fiscal entities (required)
+   * @param updateFiscalEntityRequest requested field for customer update fiscal entities (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return UpdateCustomerFiscalEntitiesResponse
@@ -481,8 +481,8 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public UpdateCustomerFiscalEntitiesResponse updateCustomerFiscalEntities(String id, String fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    return updateCustomerFiscalEntitiesWithHttpInfo(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId).getData();
+  public UpdateCustomerFiscalEntitiesResponse updateCustomerFiscalEntities(String id, String fiscalEntitiesId, UpdateFiscalEntityRequest updateFiscalEntityRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+    return updateCustomerFiscalEntitiesWithHttpInfo(id, fiscalEntitiesId, updateFiscalEntityRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
   /**
@@ -490,7 +490,7 @@ public class CustomersApi {
    * Update Fiscal Entity resource that corresponds to a customer ID.
    * @param id Identifier of the resource (required)
    * @param fiscalEntitiesId identifier (required)
-   * @param customerUpdateFiscalEntitiesRequest requested field for customer update fiscal entities (required)
+   * @param updateFiscalEntityRequest requested field for customer update fiscal entities (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return ApiResponse&lt;UpdateCustomerFiscalEntitiesResponse&gt;
@@ -505,7 +505,7 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<UpdateCustomerFiscalEntitiesResponse> updateCustomerFiscalEntitiesWithHttpInfo(String id, String fiscalEntitiesId, CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<UpdateCustomerFiscalEntitiesResponse> updateCustomerFiscalEntitiesWithHttpInfo(String id, String fiscalEntitiesId, UpdateFiscalEntityRequest updateFiscalEntityRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateCustomerFiscalEntities");
@@ -513,8 +513,8 @@ public class CustomersApi {
     if (fiscalEntitiesId == null) {
       throw new ApiException(400, "Missing the required parameter 'fiscalEntitiesId' when calling updateCustomerFiscalEntities");
     }
-    if (customerUpdateFiscalEntitiesRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'customerUpdateFiscalEntitiesRequest' when calling updateCustomerFiscalEntities");
+    if (updateFiscalEntityRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateFiscalEntityRequest' when calling updateCustomerFiscalEntities");
     }
 
     // Path parameters
@@ -535,7 +535,7 @@ public class CustomersApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<UpdateCustomerFiscalEntitiesResponse> localVarReturnType = new GenericType<UpdateCustomerFiscalEntitiesResponse>() {};
-    return apiClient.invokeAPI("CustomersApi.updateCustomerFiscalEntities", localVarPath, "PUT", new ArrayList<>(), customerUpdateFiscalEntitiesRequest,
+    return apiClient.invokeAPI("CustomersApi.updateCustomerFiscalEntities", localVarPath, "PUT", new ArrayList<>(), updateFiscalEntityRequest,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

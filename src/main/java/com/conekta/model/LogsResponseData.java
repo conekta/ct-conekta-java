@@ -92,13 +92,13 @@ public class LogsResponseData {
   private Object requestBody;
 
   public static final String JSON_PROPERTY_REQUEST_HEADERS = "request_headers";
-  private Map<String, String> requestHeaders = new HashMap<>();
+  private Map<String, String> requestHeaders;
 
   public static final String JSON_PROPERTY_RESPONSE_BODY = "response_body";
   private Object responseBody;
 
   public static final String JSON_PROPERTY_RESPONSE_HEADERS = "response_headers";
-  private Map<String, String> responseHeaders = new HashMap<>();
+  private Map<String, String> responseHeaders;
 
   public static final String JSON_PROPERTY_SEARCHABLE_TAGS = "searchable_tags";
   private List<String> searchableTags = new ArrayList<>();
@@ -326,21 +326,13 @@ public class LogsResponseData {
     return this;
   }
 
-  public LogsResponseData putQueryStringItem(String key, Object queryStringItem) {
-    if (this.queryString == null) {
-      this.queryString = new HashMap<>();
-    }
-    this.queryString.put(key, queryStringItem);
-    return this;
-  }
-
    /**
    * Get queryString
    * @return queryString
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_QUERY_STRING)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getQueryString() {
     return queryString;
@@ -348,7 +340,7 @@ public class LogsResponseData {
 
 
   @JsonProperty(JSON_PROPERTY_QUERY_STRING)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQueryString(Map<String, Object> queryString) {
     this.queryString = queryString;
   }
@@ -409,14 +401,6 @@ public class LogsResponseData {
     return this;
   }
 
-  public LogsResponseData putRequestHeadersItem(String key, String requestHeadersItem) {
-    if (this.requestHeaders == null) {
-      this.requestHeaders = new HashMap<>();
-    }
-    this.requestHeaders.put(key, requestHeadersItem);
-    return this;
-  }
-
    /**
    * Get requestHeaders
    * @return requestHeaders
@@ -464,14 +448,6 @@ public class LogsResponseData {
 
   public LogsResponseData responseHeaders(Map<String, String> responseHeaders) {
     this.responseHeaders = responseHeaders;
-    return this;
-  }
-
-  public LogsResponseData putResponseHeadersItem(String key, String responseHeadersItem) {
-    if (this.responseHeaders == null) {
-      this.responseHeaders = new HashMap<>();
-    }
-    this.responseHeaders.put(key, responseHeadersItem);
     return this;
   }
 

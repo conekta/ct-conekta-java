@@ -197,21 +197,13 @@ public class WebhookLog {
     return this;
   }
 
-  public WebhookLog putResponseDataItem(String key, Object responseDataItem) {
-    if (this.responseData == null) {
-      this.responseData = new HashMap<>();
-    }
-    this.responseData.put(key, responseDataItem);
-    return this;
-  }
-
    /**
    * Get responseData
    * @return responseData
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_RESPONSE_DATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getResponseData() {
     return responseData;
@@ -219,7 +211,7 @@ public class WebhookLog {
 
 
   @JsonProperty(JSON_PROPERTY_RESPONSE_DATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setResponseData(Map<String, Object> responseData) {
     this.responseData = responseData;
   }

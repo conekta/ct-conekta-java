@@ -58,6 +58,10 @@ public class PaymentMethodBnplRequest {
   public enum ProductTypeEnum {
     APLAZO_BNPL("aplazo_bnpl"),
     
+    AZTECA_BNPL("azteca_bnpl"),
+    
+    COPPEL_BNPL("coppel_bnpl"),
+    
     CREDITEA_BNPL("creditea_bnpl");
 
     private String value;

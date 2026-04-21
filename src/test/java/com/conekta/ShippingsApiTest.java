@@ -33,58 +33,35 @@ import java.util.Map;
  */
 public class ShippingsApiTest {
 
-    private final ShippingsApi api = new ShippingsApi();
+    private static final String ORDER_ID = "ord_2tVyWPnCPWbrV37mW";
+    private static final String SHIPPING_ID = "ship_lin_2tVzNuDGSaDwreMg6";
 
-    /**
-     * Create Shipping
-     *
-     * Create new shipping for an existing orden
-     *
-     * @throws ApiException if the Api call fails
-     */
+    private final ShippingsApi api = new ShippingsApi(TestUtils.apiClient());
+
+    private ShippingRequest buildShippingRequest() {
+        return new ShippingRequest()
+                .amount(550L)
+                .method("Standard")
+                .carrier("Conekta")
+                .trackingNumber("1234567890");
+    }
+
     @Test
     public void ordersCreateShippingTest() throws ApiException {
-        //String id = null;
-        //ShippingRequest shippingRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //ShippingOrderResponse response = api.ordersCreateShipping(id, shippingRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        ShippingOrderResponse response = api.ordersCreateShipping(ORDER_ID, buildShippingRequest(), "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Delete Shipping
-     *
-     * Delete shipping
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void ordersDeleteShippingTest() throws ApiException {
-        //String id = null;
-        //String shippingId = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //ShippingOrderResponse response = api.ordersDeleteShipping(id, shippingId, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        ShippingOrderResponse response = api.ordersDeleteShipping(ORDER_ID, SHIPPING_ID, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update Shipping
-     *
-     * Update existing shipping for an existing orden
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void ordersUpdateShippingTest() throws ApiException {
-        //String id = null;
-        //String shippingId = null;
-        //ShippingRequest shippingRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //ShippingOrderResponse response = api.ordersUpdateShipping(id, shippingId, shippingRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        ShippingOrderResponse response = api.ordersUpdateShipping(ORDER_ID, SHIPPING_ID, buildShippingRequest(), "es", null);
+        Assertions.assertNotNull(response);
     }
 
 }

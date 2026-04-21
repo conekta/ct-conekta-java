@@ -17,7 +17,7 @@ import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.CustomerInfo;
-import com.conekta.model.CustomerInfoJustCustomerId;
+import com.conekta.model.CustomerInfoCustomerId;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -107,20 +107,20 @@ public class OrderRequestCustomerInfo extends AbstractOpenApiSchema {
                 log.log(Level.FINER, "Input data does not match schema 'CustomerInfo'", e);
             }
 
-            // deserialize CustomerInfoJustCustomerId
+            // deserialize CustomerInfoCustomerId
             try {
                 boolean attemptParsing = true;
                 if (attemptParsing) {
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(CustomerInfoJustCustomerId.class);
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(CustomerInfoCustomerId.class);
                     // TODO: there is no validation against JSON schema constraints
                     // (min, max, enum, pattern...), this does not perform a strict JSON
                     // validation, which means the 'match' count may be higher than it should be.
                     match++;
-                    log.log(Level.FINER, "Input data matches schema 'CustomerInfoJustCustomerId'");
+                    log.log(Level.FINER, "Input data matches schema 'CustomerInfoCustomerId'");
                 }
             } catch (Exception e) {
                 // deserialization failed, continue
-                log.log(Level.FINER, "Input data does not match schema 'CustomerInfoJustCustomerId'", e);
+                log.log(Level.FINER, "Input data does not match schema 'CustomerInfoCustomerId'", e);
             }
 
             if (match == 1) {
@@ -152,7 +152,7 @@ public class OrderRequestCustomerInfo extends AbstractOpenApiSchema {
         setActualInstance(o);
     }
 
-    public OrderRequestCustomerInfo(CustomerInfoJustCustomerId o) {
+    public OrderRequestCustomerInfo(CustomerInfoCustomerId o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
@@ -160,7 +160,7 @@ public class OrderRequestCustomerInfo extends AbstractOpenApiSchema {
     static {
         schemas.put("CustomerInfo", new GenericType<CustomerInfo>() {
         });
-        schemas.put("CustomerInfoJustCustomerId", new GenericType<CustomerInfoJustCustomerId>() {
+        schemas.put("CustomerInfoCustomerId", new GenericType<CustomerInfoCustomerId>() {
         });
         JSON.registerDescendants(OrderRequestCustomerInfo.class, Collections.unmodifiableMap(schemas));
     }
@@ -173,7 +173,7 @@ public class OrderRequestCustomerInfo extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * CustomerInfo, CustomerInfoJustCustomerId
+     * CustomerInfo, CustomerInfoCustomerId
      *
      * It could be an instance of the 'oneOf' schemas.
      * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
@@ -185,19 +185,19 @@ public class OrderRequestCustomerInfo extends AbstractOpenApiSchema {
             return;
         }
 
-        if (JSON.isInstanceOf(CustomerInfoJustCustomerId.class, instance, new HashSet<>())) {
+        if (JSON.isInstanceOf(CustomerInfoCustomerId.class, instance, new HashSet<>())) {
             super.setActualInstance(instance);
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be CustomerInfo, CustomerInfoJustCustomerId");
+        throw new RuntimeException("Invalid instance type. Must be CustomerInfo, CustomerInfoCustomerId");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * CustomerInfo, CustomerInfoJustCustomerId
+     * CustomerInfo, CustomerInfoCustomerId
      *
-     * @return The actual instance (CustomerInfo, CustomerInfoJustCustomerId)
+     * @return The actual instance (CustomerInfo, CustomerInfoCustomerId)
      */
     @Override
     public Object getActualInstance() {
@@ -216,14 +216,14 @@ public class OrderRequestCustomerInfo extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `CustomerInfoJustCustomerId`. If the actual instance is not `CustomerInfoJustCustomerId`,
+     * Get the actual instance of `CustomerInfoCustomerId`. If the actual instance is not `CustomerInfoCustomerId`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `CustomerInfoJustCustomerId`
-     * @throws ClassCastException if the instance is not `CustomerInfoJustCustomerId`
+     * @return The actual instance of `CustomerInfoCustomerId`
+     * @throws ClassCastException if the instance is not `CustomerInfoCustomerId`
      */
-    public CustomerInfoJustCustomerId getCustomerInfoJustCustomerId() throws ClassCastException {
-        return (CustomerInfoJustCustomerId)super.getActualInstance();
+    public CustomerInfoCustomerId getCustomerInfoCustomerId() throws ClassCastException {
+        return (CustomerInfoCustomerId)super.getActualInstance();
     }
 
 }

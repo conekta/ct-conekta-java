@@ -16,7 +16,7 @@ package com.conekta;
 import com.conekta.*;
 import com.conekta.auth.*;
 import com.conekta.model.BlacklistRuleResponse;
-import com.conekta.model.CreateRiskRulesData;
+import com.conekta.model.CreateRuleWhitelistRequest;
 import com.conekta.model.DeletedBlacklistRuleResponse;
 import com.conekta.model.DeletedWhitelistRuleResponse;
 import com.conekta.model.Error;
@@ -37,88 +37,50 @@ import java.util.Map;
  */
 public class AntifraudApiTest {
 
-    private final AntifraudApi api = new AntifraudApi();
+    private final AntifraudApi api = new AntifraudApi(TestUtils.apiClient());
 
-    /**
-     * Create blacklisted rule
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void createRuleBlacklistTest() throws ApiException {
-        //CreateRiskRulesData createRiskRulesData = null;
-        //String acceptLanguage = null;
-        //BlacklistRuleResponse response = api.createRuleBlacklist(createRiskRulesData, acceptLanguage);
-        // TODO: test validations
+        CreateRuleWhitelistRequest createRuleWhitelistRequest = new CreateRuleWhitelistRequest()
+                .field("email")
+                .value("fcarrero_black@gmail.com")
+                .description("Test");
+        BlacklistRuleResponse response = api.createRuleBlacklist(createRuleWhitelistRequest, "es");
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Create whitelisted rule
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void createRuleWhitelistTest() throws ApiException {
-        //String acceptLanguage = null;
-        //CreateRiskRulesData createRiskRulesData = null;
-        //WhitelistlistRuleResponse response = api.createRuleWhitelist(acceptLanguage, createRiskRulesData);
-        // TODO: test validations
+        CreateRuleWhitelistRequest createRuleWhitelistRequest = new CreateRuleWhitelistRequest()
+                .field("email")
+                .value("fcarrero@gmail.com")
+                .description("Test");
+        WhitelistlistRuleResponse response = api.createRuleWhitelist("es", createRuleWhitelistRequest);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Delete blacklisted rule
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void deleteRuleBlacklistTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //DeletedBlacklistRuleResponse response = api.deleteRuleBlacklist(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        DeletedBlacklistRuleResponse response = api.deleteRuleBlacklist("618c3f2fdb8b8da9be376b1e", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Delete whitelisted rule
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void deleteRuleWhitelistTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //DeletedWhitelistRuleResponse response = api.deleteRuleWhitelist(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        DeletedWhitelistRuleResponse response = api.deleteRuleWhitelist("618c3f2fdb8b8da9be376afe", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get list of blacklisted rules
-     *
-     * Return all rules
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getRuleBlacklistTest() throws ApiException {
-        //String acceptLanguage = null;
-        //RiskRulesList response = api.getRuleBlacklist(acceptLanguage);
-        // TODO: test validations
+        RiskRulesList response = api.getRuleBlacklist("es");
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get a list of whitelisted rules
-     *
-     * Return all rules
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getRuleWhitelistTest() throws ApiException {
-        //String acceptLanguage = null;
-        //RiskRulesList response = api.getRuleWhitelist(acceptLanguage);
-        // TODO: test validations
+        RiskRulesList response = api.getRuleWhitelist("es");
+        Assertions.assertNotNull(response);
     }
 
 }

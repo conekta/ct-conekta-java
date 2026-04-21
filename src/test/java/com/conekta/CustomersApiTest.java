@@ -17,13 +17,17 @@ import com.conekta.*;
 import com.conekta.auth.*;
 import com.conekta.model.CreateCustomerFiscalEntitiesResponse;
 import com.conekta.model.Customer;
-import com.conekta.model.CustomerFiscalEntitiesRequest;
 import com.conekta.model.CustomerResponse;
-import com.conekta.model.CustomerUpdateFiscalEntitiesRequest;
+import com.conekta.model.CustomerShippingContactsAddress;
+import com.conekta.model.CustomerShippingContactsRequest;
+import com.conekta.model.CustomerShippingContactsRequestAddress;
 import com.conekta.model.CustomersResponse;
 import com.conekta.model.Error;
+import com.conekta.model.FiscalEntityRequest;
+import com.conekta.model.FiscalEntityRequestAddress;
 import com.conekta.model.UpdateCustomer;
 import com.conekta.model.UpdateCustomerFiscalEntitiesResponse;
+import com.conekta.model.UpdateFiscalEntityRequest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -39,125 +43,73 @@ import java.util.Map;
  */
 public class CustomersApiTest {
 
-    private final CustomersApi api = new CustomersApi();
+    private final CustomersApi api = new CustomersApi(TestUtils.apiClient());
 
-    /**
-     * Create customer
-     *
-     * The purpose of business is to create and keep a customer, you will learn what elements you need to create a customer. Remember the credit and debit card tokenization process: [https://developers.conekta.com/page/web-checkout-tokenizer](https://developers.conekta.com/page/web-checkout-tokenizer) 
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void createCustomerTest() throws ApiException {
-        //Customer customer = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //CustomerResponse response = api.createCustomer(customer, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        Customer customer = new Customer()
+                .name("test")
+                .email("test@conekta.com")
+                .phone("+5215555555555")
+                .customReference("dotnet_12345678");
+        CustomerResponse response = api.createCustomer(customer, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Create Fiscal Entity
-     *
-     * Create Fiscal entity resource that corresponds to a customer ID.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void createCustomerFiscalEntitiesTest() throws ApiException {
-        //String id = null;
-        //CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //CreateCustomerFiscalEntitiesResponse response = api.createCustomerFiscalEntities(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        FiscalEntityRequest fiscalEntityRequest = new FiscalEntityRequest()
+                .email("test@conekta.com")
+                .phone("+5215555555555")
+                .companyName("Conekta")
+                .taxId("XAXX010101000")
+                .address(new FiscalEntityRequestAddress()
+                        .city("CDMX")
+                        .country("mx")
+                        .postalCode("06100")
+                        .state("CDMX")
+                        .street1("Calle 123"));
+        CreateCustomerFiscalEntitiesResponse response = api.createCustomerFiscalEntities(
+                "cus_2tXyF9BwPG14UMkkg", fiscalEntityRequest, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Delete Customer
-     *
-     * Deleted a customer resource that corresponds to a customer ID.
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("Mockoon sample response payment_sources entry is an ambiguous oneOf that fails SDK deserialization")
     @Test
     public void deleteCustomerByIdTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //CustomerResponse response = api.deleteCustomerById(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        CustomerResponse response = api.deleteCustomerById("cus_2tXyF9BwPG14UMkkg", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get Customer
-     *
-     * Gets a customer resource that corresponds to a customer ID.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getCustomerByIdTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //CustomerResponse response = api.getCustomerById(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        CustomerResponse response = api.getCustomerById("cus_2tXx8KUxw6311kEbs", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get a list of customers
-     *
-     * The purpose of business is to create and maintain a client, you will learn what elements you need to obtain a list of clients, which can be paged.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getCustomersTest() throws ApiException {
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //Integer limit = null;
-        //String search = null;
-        //String next = null;
-        //String previous = null;
-        //CustomersResponse response = api.getCustomers(acceptLanguage, xChildCompanyId, limit, search, next, previous);
-        // TODO: test validations
+        CustomersResponse response = api.getCustomers("es", null, 21, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update customer
-     *
-     * You can update customer-related data
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void updateCustomerTest() throws ApiException {
-        //String id = null;
-        //UpdateCustomer updateCustomer = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //CustomerResponse response = api.updateCustomer(id, updateCustomer, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        UpdateCustomer updateCustomer = new UpdateCustomer().name("updated name");
+        CustomerResponse response = api.updateCustomer("cus_2tYENskzTjjgkGQLt", updateCustomer, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update  Fiscal Entity
-     *
-     * Update Fiscal Entity resource that corresponds to a customer ID.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void updateCustomerFiscalEntitiesTest() throws ApiException {
-        //String id = null;
-        //String fiscalEntitiesId = null;
-        //CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //UpdateCustomerFiscalEntitiesResponse response = api.updateCustomerFiscalEntities(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        UpdateFiscalEntityRequest updateFiscalEntityRequest = new UpdateFiscalEntityRequest().companyName("Conekta SA");
+        UpdateCustomerFiscalEntitiesResponse response = api.updateCustomerFiscalEntities(
+                "cus_2tYENskzTjjgkGQLt",
+                "fis_ent_2tYENskzTjjgkGQLr",
+                updateFiscalEntityRequest,
+                "es",
+                null);
+        Assertions.assertNotNull(response);
     }
 
 }

@@ -9,7 +9,7 @@ event model
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**createdAt** | **Long** |  |  [optional] |
-|**data** | **Map&lt;String, Object&gt;** |  |  [optional] |
+|**data** |  |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**livemode** | **Boolean** |  |  [optional] |
 |**_object** | **String** |  |  [optional] |

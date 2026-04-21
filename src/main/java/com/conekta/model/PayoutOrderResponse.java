@@ -58,7 +58,7 @@ public class PayoutOrderResponse {
   private List<String> allowedPayoutMethods = new ArrayList<>();
 
   public static final String JSON_PROPERTY_AMOUNT = "amount";
-  private Integer amount;
+  private Long amount;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private Long createdAt;
@@ -132,7 +132,7 @@ public class PayoutOrderResponse {
   }
 
 
-  public PayoutOrderResponse amount(Integer amount) {
+  public PayoutOrderResponse amount(Long amount) {
     this.amount = amount;
     return this;
   }
@@ -145,14 +145,14 @@ public class PayoutOrderResponse {
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public Integer getAmount() {
+  public Long getAmount() {
     return amount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAmount(Integer amount) {
+  public void setAmount(Long amount) {
     this.amount = amount;
   }
 
@@ -241,9 +241,9 @@ public class PayoutOrderResponse {
    * The expiration date of the payout order.
    * @return expiresAt
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Long getExpiresAt() {
     return expiresAt;
@@ -251,7 +251,7 @@ public class PayoutOrderResponse {
 
 
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setExpiresAt(Long expiresAt) {
     this.expiresAt = expiresAt;
   }
@@ -337,21 +337,13 @@ public class PayoutOrderResponse {
     return this;
   }
 
-  public PayoutOrderResponse putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<>();
-    }
-    this.metadata.put(key, metadataItem);
-    return this;
-  }
-
    /**
    * The metadata of the payout order.
    * @return metadata
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
     return metadata;
@@ -359,7 +351,7 @@ public class PayoutOrderResponse {
 
 
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
   }
@@ -432,9 +424,9 @@ public class PayoutOrderResponse {
    * The status of the payout order.
    * @return status
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getStatus() {
     return status;
@@ -442,7 +434,7 @@ public class PayoutOrderResponse {
 
 
   @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setStatus(String status) {
     this.status = status;
   }

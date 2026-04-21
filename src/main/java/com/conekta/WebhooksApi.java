@@ -10,9 +10,9 @@ import javax.ws.rs.core.GenericType;
 
 import com.conekta.model.Error;
 import com.conekta.model.GetWebhooksResponse;
+import com.conekta.model.UpdateWebhook;
 import com.conekta.model.WebhookRequest;
 import com.conekta.model.WebhookResponse;
-import com.conekta.model.WebhookUpdateRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -364,7 +364,7 @@ public class WebhooksApi {
    * Update Webhook
    * updates an existing webhook
    * @param id Identifier of the resource (required)
-   * @param webhookUpdateRequest requested fields in order to update a webhook (required)
+   * @param updateWebhook requested fields in order to update a webhook (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return WebhookResponse
@@ -378,15 +378,15 @@ public class WebhooksApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public WebhookResponse updateWebhook(String id, WebhookUpdateRequest webhookUpdateRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    return updateWebhookWithHttpInfo(id, webhookUpdateRequest, acceptLanguage, xChildCompanyId).getData();
+  public WebhookResponse updateWebhook(String id, UpdateWebhook updateWebhook, String acceptLanguage, String xChildCompanyId) throws ApiException {
+    return updateWebhookWithHttpInfo(id, updateWebhook, acceptLanguage, xChildCompanyId).getData();
   }
 
   /**
    * Update Webhook
    * updates an existing webhook
    * @param id Identifier of the resource (required)
-   * @param webhookUpdateRequest requested fields in order to update a webhook (required)
+   * @param updateWebhook requested fields in order to update a webhook (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return ApiResponse&lt;WebhookResponse&gt;
@@ -400,13 +400,13 @@ public class WebhooksApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<WebhookResponse> updateWebhookWithHttpInfo(String id, WebhookUpdateRequest webhookUpdateRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<WebhookResponse> updateWebhookWithHttpInfo(String id, UpdateWebhook updateWebhook, String acceptLanguage, String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateWebhook");
     }
-    if (webhookUpdateRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'webhookUpdateRequest' when calling updateWebhook");
+    if (updateWebhook == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateWebhook' when calling updateWebhook");
     }
 
     // Path parameters
@@ -426,7 +426,7 @@ public class WebhooksApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<WebhookResponse> localVarReturnType = new GenericType<WebhookResponse>() {};
-    return apiClient.invokeAPI("WebhooksApi.updateWebhook", localVarPath, "PUT", new ArrayList<>(), webhookUpdateRequest,
+    return apiClient.invokeAPI("WebhooksApi.updateWebhook", localVarPath, "PUT", new ArrayList<>(), updateWebhook,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

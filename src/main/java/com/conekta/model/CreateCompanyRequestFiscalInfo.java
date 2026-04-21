@@ -33,7 +33,7 @@ import com.conekta.JSON;
   CreateCompanyRequestFiscalInfo.JSON_PROPERTY_BUSINESS_PHONE,
   CreateCompanyRequestFiscalInfo.JSON_PROPERTY_FISCAL_TYPE
 })
-@JsonTypeName("create_company_request_fiscal_info")
+@JsonTypeName("Create_Company_Request_fiscal_info")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CreateCompanyRequestFiscalInfo {
   public static final String JSON_PROPERTY_BUSINESS_PHONE = "business_phone";
@@ -96,7 +96,7 @@ public class CreateCompanyRequestFiscalInfo {
 
 
   /**
-   * Return true if this create_company_request_fiscal_info object is equal to o.
+   * Return true if this Create_Company_Request_fiscal_info object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

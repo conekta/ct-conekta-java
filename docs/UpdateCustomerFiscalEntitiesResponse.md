@@ -7,11 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**address** | [**CustomerAddress**](CustomerAddress.md) |  |  |
+|**address** | [**FiscalEntityRequestAddress**](FiscalEntityRequestAddress.md) |  |  |
 |**taxId** | **String** |  |  [optional] |
 |**email** | **String** |  |  [optional] |
 |**phone** | **String** |  |  [optional] |
-|**metadata** | **Map&lt;String, Object&gt;** |  |  [optional] |
+|**metadata** |  |  |  [optional] |
 |**companyName** | **String** |  |  [optional] |
 |**id** | **String** |  |  |
 |**_object** | **String** |  |  |

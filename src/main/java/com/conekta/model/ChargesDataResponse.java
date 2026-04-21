@@ -19,6 +19,7 @@ import java.util.HashMap;
 import com.conekta.model.ChargeResponseChannel;
 import com.conekta.model.ChargeResponsePaymentMethod;
 import com.conekta.model.ChargeResponseRefunds;
+import com.conekta.model.ChargebackResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -50,6 +51,7 @@ import com.conekta.JSON;
   ChargesDataResponse.JSON_PROPERTY_PAYMENT_METHOD,
   ChargesDataResponse.JSON_PROPERTY_REFERENCE_ID,
   ChargesDataResponse.JSON_PROPERTY_REFUNDS,
+  ChargesDataResponse.JSON_PROPERTY_CHARGEBACK,
   ChargesDataResponse.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("charges_data_response")
@@ -105,6 +107,9 @@ public class ChargesDataResponse {
 
   public static final String JSON_PROPERTY_REFUNDS = "refunds";
   private ChargeResponseRefunds refunds;
+
+  public static final String JSON_PROPERTY_CHARGEBACK = "chargeback";
+  private ChargebackResponse chargeback;
 
   public static final String JSON_PROPERTY_STATUS = "status";
   private String status;
@@ -443,7 +448,7 @@ public class ChargesDataResponse {
   }
 
    /**
-   * Payment date
+   * charge Payment date
    * @return paidAt
   **/
   @javax.annotation.Nullable
@@ -537,6 +542,31 @@ public class ChargesDataResponse {
   }
 
 
+  public ChargesDataResponse chargeback(ChargebackResponse chargeback) {
+    this.chargeback = chargeback;
+    return this;
+  }
+
+   /**
+   * Get chargeback
+   * @return chargeback
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CHARGEBACK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public ChargebackResponse getChargeback() {
+    return chargeback;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CHARGEBACK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setChargeback(ChargebackResponse chargeback) {
+    this.chargeback = chargeback;
+  }
+
+
   public ChargesDataResponse status(String status) {
     this.status = status;
     return this;
@@ -591,12 +621,13 @@ public class ChargesDataResponse {
         Objects.equals(this.paymentMethod, chargesDataResponse.paymentMethod) &&
         Objects.equals(this.referenceId, chargesDataResponse.referenceId) &&
         Objects.equals(this.refunds, chargesDataResponse.refunds) &&
+        Objects.equals(this.chargeback, chargesDataResponse.chargeback) &&
         Objects.equals(this.status, chargesDataResponse.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, channel, createdAt, currency, customerId, description, deviceFingerprint, failureCode, failureMessage, id, livemode, _object, orderId, paidAt, paymentMethod, referenceId, refunds, status);
+    return Objects.hash(amount, channel, createdAt, currency, customerId, description, deviceFingerprint, failureCode, failureMessage, id, livemode, _object, orderId, paidAt, paymentMethod, referenceId, refunds, chargeback, status);
   }
 
   @Override
@@ -620,6 +651,7 @@ public class ChargesDataResponse {
     sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
     sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
     sb.append("    refunds: ").append(toIndentedString(refunds)).append("\n");
+    sb.append("    chargeback: ").append(toIndentedString(chargeback)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();

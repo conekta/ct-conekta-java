@@ -1,0 +1,33 @@
+
+
+# LogResponseForRequest
+
+log model
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**createdAt** | **Long** |  |  |
+|**id** | **String** |  |  |
+|**ipAddress** | **String** |  |  [optional] |
+|**livemode** | **Boolean** |  |  |
+|**loggableId** | **String** |  |  [optional] |
+|**loggableType** | **String** |  |  [optional] |
+|**method** | **String** |  |  [optional] |
+|**oauthTokenId** | **String** |  |  [optional] |
+|**queryString** |  |  |  [optional] |
+|**related** | **String** |  |  [optional] |
+|**requestBody** | **Object** |  |  [optional] |
+|**requestHeaders** |  |  |  [optional] |
+|**responseBody** | **Object** |  |  [optional] |
+|**responseHeaders** |  |  |  [optional] |
+|**searchableTags** | **List&lt;String&gt;** |  |  [optional] |
+|**status** | **String** |  |  [optional] |
+|**updatedAt** | **String** |  |  [optional] |
+|**url** | **String** |  |  [optional] |
+|**userAccountId** | **String** |  |  [optional] |
+|**version** | **String** |  |  [optional] |
+
+
+

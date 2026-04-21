@@ -169,7 +169,7 @@ public class Example {
 
 ## resendEvent
 
-> EventsResendResponse resendEvent(eventId, resendRequest, acceptLanguage)
+> EventsResendResponse resendEvent(eventId, resendEventRequest, acceptLanguage)
 
 Resend Event
 
@@ -197,10 +197,10 @@ public class Example {
 
         EventsApi apiInstance = new EventsApi(defaultClient);
         String eventId = "6463d6e35a4c3e001819e760"; // String | event identifier
-        ResendRequest resendRequest = new ResendRequest(); // ResendRequest | requested fields for resend an event
+        ResendEventRequest resendEventRequest = new ResendEventRequest(); // ResendEventRequest | requested fields for resend an event
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         try {
-            EventsResendResponse result = apiInstance.resendEvent(eventId, resendRequest, acceptLanguage);
+            EventsResendResponse result = apiInstance.resendEvent(eventId, resendEventRequest, acceptLanguage);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EventsApi#resendEvent");
@@ -219,7 +219,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **eventId** | **String**| event identifier | |
-| **resendRequest** | [**ResendRequest**](ResendRequest.md)| requested fields for resend an event | |
+| **resendEventRequest** | [**ResendEventRequest**](ResendEventRequest.md)| requested fields for resend an event | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 
 ### Return type

@@ -36,98 +36,55 @@ import java.util.Map;
  */
 public class CompaniesApiTest {
 
-    private final CompaniesApi api = new CompaniesApi();
+    private final CompaniesApi api = new CompaniesApi(TestUtils.apiClient());
 
-    /**
-     * Create Company
-     *
-     * Create a new company.
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("endpoint POST /companies not provided by Mockoon mock")
     @Test
     public void createCompanyTest() throws ApiException {
-        //CreateCompanyRequest createCompanyRequest = null;
-        //CompanyResponse response = api.createCompany(createCompanyRequest);
-        // TODO: test validations
+        CreateCompanyRequest createCompanyRequest = new CreateCompanyRequest();
+        CompanyResponse response = api.createCompany(createCompanyRequest);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get List of Companies
-     *
-     * Consume the list of child companies.  This is used for holding companies with several child entities.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getCompaniesTest() throws ApiException {
-        //String acceptLanguage = null;
-        //Integer limit = null;
-        //String search = null;
-        //String next = null;
-        //String previous = null;
-        //GetCompaniesResponse response = api.getCompanies(acceptLanguage, limit, search, next, previous);
-        // TODO: test validations
+        GetCompaniesResponse response = api.getCompanies("es", 20, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get Company
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getCompanyTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //CompanyResponse response = api.getCompany(id, acceptLanguage);
-        // TODO: test validations
+        CompanyResponse response = api.getCompany("6441bb27659a060465da7335", "es");
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get Company Documents
-     *
-     * Retrieve a list of documents associated with a specific company.
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("endpoint GET /companies/{company_id}/documents not provided by Mockoon mock")
     @Test
     public void getCompanyDocumentsTest() throws ApiException {
-        //String companyId = null;
-        //String acceptLanguage = null;
-        //List<CompanyDocumentResponse> response = api.getCompanyDocuments(companyId, acceptLanguage);
-        // TODO: test validations
+        List<CompanyDocumentResponse> response = api.getCompanyDocuments("6441bb27659a060465da7335", "es");
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update Company Document
-     *
-     * Updates an existing document associated with a specific company.
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Test
+    public void getCurrentCompanyTest() throws ApiException {
+        CompanyResponse response = api.getCurrentCompany("es");
+        Assertions.assertNotNull(response);
+    }
+
+    @Disabled("endpoint PATCH /companies/{company_id}/document not provided by Mockoon mock")
     @Test
     public void updateCompanyDocumentTest() throws ApiException {
-        //String companyId = null;
-        //CompanyDocumentRequest companyDocumentRequest = null;
-        //String acceptLanguage = null;
-        //CompanyDocumentResponse response = api.updateCompanyDocument(companyId, companyDocumentRequest, acceptLanguage);
-        // TODO: test validations
+        CompanyDocumentRequest companyDocumentRequest = new CompanyDocumentRequest();
+        CompanyDocumentResponse response = api.updateCompanyDocument("6441bb27659a060465da7335", companyDocumentRequest, "es");
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Upload Company Document
-     *
-     * Uploads a document associated with a specific company.
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("endpoint POST /companies/{company_id}/document not provided by Mockoon mock")
     @Test
     public void uploadCompanyDocumentTest() throws ApiException {
-        //String companyId = null;
-        //CompanyDocumentRequest companyDocumentRequest = null;
-        //String acceptLanguage = null;
-        //CompanyDocumentResponse response = api.uploadCompanyDocument(companyId, companyDocumentRequest, acceptLanguage);
-        // TODO: test validations
+        CompanyDocumentRequest companyDocumentRequest = new CompanyDocumentRequest();
+        CompanyDocumentResponse response = api.uploadCompanyDocument("6441bb27659a060465da7335", companyDocumentRequest, "es");
+        Assertions.assertNotNull(response);
     }
 
 }

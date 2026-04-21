@@ -9,7 +9,7 @@ import com.conekta.Pair;
 import javax.ws.rs.core.GenericType;
 
 import com.conekta.model.Error;
-import com.conekta.model.Token;
+import com.conekta.model.TokenRequest;
 import com.conekta.model.TokenResponse;
 
 import java.util.ArrayList;
@@ -50,8 +50,8 @@ public class TokensApi {
 
   /**
    * Create Token
-   * Generate a payment token, to associate it with a card 
-   * @param token requested field for token (required)
+   * Generate a payment token, to associate it with a card, Endpoint could be use directly only for PCI compliance account 
+   * @param tokenRequest requested field for token (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @return TokenResponse
    * @throws ApiException if fails to make API call
@@ -64,14 +64,14 @@ public class TokensApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public TokenResponse createToken(Token token, String acceptLanguage) throws ApiException {
-    return createTokenWithHttpInfo(token, acceptLanguage).getData();
+  public TokenResponse createToken(TokenRequest tokenRequest, String acceptLanguage) throws ApiException {
+    return createTokenWithHttpInfo(tokenRequest, acceptLanguage).getData();
   }
 
   /**
    * Create Token
-   * Generate a payment token, to associate it with a card 
-   * @param token requested field for token (required)
+   * Generate a payment token, to associate it with a card, Endpoint could be use directly only for PCI compliance account 
+   * @param tokenRequest requested field for token (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @return ApiResponse&lt;TokenResponse&gt;
    * @throws ApiException if fails to make API call
@@ -84,10 +84,10 @@ public class TokensApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<TokenResponse> createTokenWithHttpInfo(Token token, String acceptLanguage) throws ApiException {
+  public ApiResponse<TokenResponse> createTokenWithHttpInfo(TokenRequest tokenRequest, String acceptLanguage) throws ApiException {
     // Check required parameters
-    if (token == null) {
-      throw new ApiException(400, "Missing the required parameter 'token' when calling createToken");
+    if (tokenRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'tokenRequest' when calling createToken");
     }
 
     // Header parameters
@@ -100,7 +100,7 @@ public class TokensApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<TokenResponse> localVarReturnType = new GenericType<TokenResponse>() {};
-    return apiClient.invokeAPI("TokensApi.createToken", "/tokens", "POST", new ArrayList<>(), token,
+    return apiClient.invokeAPI("TokensApi.createToken", "/tokens", "POST", new ArrayList<>(), tokenRequest,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

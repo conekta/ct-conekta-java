@@ -21,32 +21,15 @@ jobs:
       matrix:
         java: [ '11' ]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v6
     - name: Set up JDK
       uses: actions/setup-java@v5
       with:
         java-version: ${{ matrix.java }}
         distribution: 'zulu'
         cache: maven
-    - uses: nyurik/action-setup-nginx@v1
-      id: nginx
-      with:
-        conf-file-text: |
-          events {}
-          http {
-            server {
-              listen 80;
-              location / {
-                proxy_pass http://localhost:3000;
-                proxy_set_header Host \$host;
-                proxy_set_header X-Real-IP \$remote_addr;
-                proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
-                proxy_set_header X-Forwarded-Proto \$scheme;
-              }
-            }
-          }
     - name: Run Mockoon CLI
-      uses: mockoon/cli-action@v2
+      uses: mockoon/cli-action@v3
       with:
         version: 'latest'
         data-file: 'https://raw.githubusercontent.com/conekta/openapi/main/mocks/conekta_api.json'

@@ -77,8 +77,45 @@ public class CheckoutResponse {
   public static final String JSON_PROPERTY_EMAILS_SENT = "emails_sent";
   private Integer emailsSent;
 
+  /**
+   * Gets or Sets excludeCardNetworks
+   */
+  public enum ExcludeCardNetworksEnum {
+    VISA("visa"),
+    
+    MASTERCARD("mastercard"),
+    
+    AMEX("amex");
+
+    private String value;
+
+    ExcludeCardNetworksEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static ExcludeCardNetworksEnum fromValue(String value) {
+      for (ExcludeCardNetworksEnum b : ExcludeCardNetworksEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
   public static final String JSON_PROPERTY_EXCLUDE_CARD_NETWORKS = "exclude_card_networks";
-  private List<Object> excludeCardNetworks = new ArrayList<>();
+  private List<ExcludeCardNetworksEnum> excludeCardNetworks = new ArrayList<>();
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
   private Long expiresAt;
@@ -262,12 +299,12 @@ public class CheckoutResponse {
   }
 
 
-  public CheckoutResponse excludeCardNetworks(List<Object> excludeCardNetworks) {
+  public CheckoutResponse excludeCardNetworks(List<ExcludeCardNetworksEnum> excludeCardNetworks) {
     this.excludeCardNetworks = excludeCardNetworks;
     return this;
   }
 
-  public CheckoutResponse addExcludeCardNetworksItem(Object excludeCardNetworksItem) {
+  public CheckoutResponse addExcludeCardNetworksItem(ExcludeCardNetworksEnum excludeCardNetworksItem) {
     if (this.excludeCardNetworks == null) {
       this.excludeCardNetworks = new ArrayList<>();
     }
@@ -283,14 +320,14 @@ public class CheckoutResponse {
   @JsonProperty(JSON_PROPERTY_EXCLUDE_CARD_NETWORKS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<Object> getExcludeCardNetworks() {
+  public List<ExcludeCardNetworksEnum> getExcludeCardNetworks() {
     return excludeCardNetworks;
   }
 
 
   @JsonProperty(JSON_PROPERTY_EXCLUDE_CARD_NETWORKS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExcludeCardNetworks(List<Object> excludeCardNetworks) {
+  public void setExcludeCardNetworks(List<ExcludeCardNetworksEnum> excludeCardNetworks) {
     this.excludeCardNetworks = excludeCardNetworks;
   }
 
@@ -425,21 +462,13 @@ public class CheckoutResponse {
     return this;
   }
 
-  public CheckoutResponse putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<>();
-    }
-    this.metadata.put(key, metadataItem);
-    return this;
-  }
-
    /**
    * Get metadata
    * @return metadata
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
     return metadata;
@@ -447,7 +476,7 @@ public class CheckoutResponse {
 
 
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
   }
@@ -767,7 +796,7 @@ public class CheckoutResponse {
   }
 
    /**
-   * Get successUrl
+   * The URL to redirect to after a successful payment.
    * @return successUrl
   **/
   @javax.annotation.Nullable

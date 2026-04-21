@@ -33,15 +33,18 @@ import com.conekta.JSON;
  * PayoutOrdersResponse
  */
 @JsonPropertyOrder({
+  PayoutOrdersResponse.JSON_PROPERTY_DATA,
   PayoutOrdersResponse.JSON_PROPERTY_HAS_MORE,
   PayoutOrdersResponse.JSON_PROPERTY_OBJECT,
   PayoutOrdersResponse.JSON_PROPERTY_NEXT_PAGE_URL,
-  PayoutOrdersResponse.JSON_PROPERTY_PREVIOUS_PAGE_URL,
-  PayoutOrdersResponse.JSON_PROPERTY_DATA
+  PayoutOrdersResponse.JSON_PROPERTY_PREVIOUS_PAGE_URL
 })
 @JsonTypeName("payout_orders_response")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class PayoutOrdersResponse {
+  public static final String JSON_PROPERTY_DATA = "data";
+  private List<PayoutOrderResponse> data = new ArrayList<>();
+
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   private Boolean hasMore;
 
@@ -54,11 +57,41 @@ public class PayoutOrdersResponse {
   public static final String JSON_PROPERTY_PREVIOUS_PAGE_URL = "previous_page_url";
   private String previousPageUrl;
 
-  public static final String JSON_PROPERTY_DATA = "data";
-  private List<PayoutOrderResponse> data = new ArrayList<>();
-
   public PayoutOrdersResponse() { 
   }
+
+  public PayoutOrdersResponse data(List<PayoutOrderResponse> data) {
+    this.data = data;
+    return this;
+  }
+
+  public PayoutOrdersResponse addDataItem(PayoutOrderResponse dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<>();
+    }
+    this.data.add(dataItem);
+    return this;
+  }
+
+   /**
+   * Get data
+   * @return data
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<PayoutOrderResponse> getData() {
+    return data;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setData(List<PayoutOrderResponse> data) {
+    this.data = data;
+  }
+
 
   public PayoutOrdersResponse hasMore(Boolean hasMore) {
     this.hasMore = hasMore;
@@ -160,39 +193,6 @@ public class PayoutOrdersResponse {
   }
 
 
-  public PayoutOrdersResponse data(List<PayoutOrderResponse> data) {
-    this.data = data;
-    return this;
-  }
-
-  public PayoutOrdersResponse addDataItem(PayoutOrderResponse dataItem) {
-    if (this.data == null) {
-      this.data = new ArrayList<>();
-    }
-    this.data.add(dataItem);
-    return this;
-  }
-
-   /**
-   * Get data
-   * @return data
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<PayoutOrderResponse> getData() {
-    return data;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_DATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setData(List<PayoutOrderResponse> data) {
-    this.data = data;
-  }
-
-
   /**
    * Return true if this payout_orders_response object is equal to o.
    */
@@ -205,27 +205,27 @@ public class PayoutOrdersResponse {
       return false;
     }
     PayoutOrdersResponse payoutOrdersResponse = (PayoutOrdersResponse) o;
-    return Objects.equals(this.hasMore, payoutOrdersResponse.hasMore) &&
+    return Objects.equals(this.data, payoutOrdersResponse.data) &&
+        Objects.equals(this.hasMore, payoutOrdersResponse.hasMore) &&
         Objects.equals(this._object, payoutOrdersResponse._object) &&
         Objects.equals(this.nextPageUrl, payoutOrdersResponse.nextPageUrl) &&
-        Objects.equals(this.previousPageUrl, payoutOrdersResponse.previousPageUrl) &&
-        Objects.equals(this.data, payoutOrdersResponse.data);
+        Objects.equals(this.previousPageUrl, payoutOrdersResponse.previousPageUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hasMore, _object, nextPageUrl, previousPageUrl, data);
+    return Objects.hash(data, hasMore, _object, nextPageUrl, previousPageUrl);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PayoutOrdersResponse {\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    hasMore: ").append(toIndentedString(hasMore)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    nextPageUrl: ").append(toIndentedString(nextPageUrl)).append("\n");
     sb.append("    previousPageUrl: ").append(toIndentedString(previousPageUrl)).append("\n");
-    sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();
   }

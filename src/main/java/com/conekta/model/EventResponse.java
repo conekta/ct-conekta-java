@@ -104,21 +104,13 @@ public class EventResponse {
     return this;
   }
 
-  public EventResponse putDataItem(String key, Object dataItem) {
-    if (this.data == null) {
-      this.data = new HashMap<>();
-    }
-    this.data.put(key, dataItem);
-    return this;
-  }
-
    /**
    * Get data
    * @return data
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getData() {
     return data;
@@ -126,7 +118,7 @@ public class EventResponse {
 
 
   @JsonProperty(JSON_PROPERTY_DATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setData(Map<String, Object> data) {
     this.data = data;
   }

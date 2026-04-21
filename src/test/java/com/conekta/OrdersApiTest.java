@@ -15,13 +15,24 @@ package com.conekta;
 
 import com.conekta.*;
 import com.conekta.auth.*;
-import com.conekta.model.*;
-
+import com.conekta.model.ChargeRequest;
+import com.conekta.model.ChargeRequestPaymentMethod;
+import com.conekta.model.CustomerInfoCustomerId;
 import com.conekta.model.Error;
+import com.conekta.model.GetOrdersResponse;
+import com.conekta.model.OrderCaptureRequest;
+import com.conekta.model.OrderRefundRequest;
+import com.conekta.model.OrderRequest;
+import com.conekta.model.OrderRequestCustomerInfo;
+import com.conekta.model.OrderResponse;
+import com.conekta.model.OrderUpdate;
+import com.conekta.model.OrderUpdateCustomerInfo;
+import com.conekta.model.PaymentMethodGeneralRequest;
+import com.conekta.model.Product;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Disabled;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,210 +44,78 @@ import java.util.Map;
  */
 public class OrdersApiTest {
 
-    private final OrdersApi api = new OrdersApi();
+    private final OrdersApi api = new OrdersApi(TestUtils.apiClient());
 
-    /**
-     * Cancel Order
-     *
-     * Cancel an order that has been previously created.
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("Mockoon sample response body has malformed tax_lines that fails SDK deserialization")
     @Test
     public void cancelOrderTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //OrderResponse response = api.cancelOrder(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        OrderResponse response = api.cancelOrder("ord_2tqaGQYZyvBsMKEgs", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Create order
-     *
-     * Create a new order.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void createOrderTest() throws ApiException {
-        //OrderRequest orderRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //OrderResponse response = api.createOrder(orderRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        ChargeRequestPaymentMethod paymentMethod = new ChargeRequestPaymentMethod();
+        paymentMethod.setActualInstance(
+                new PaymentMethodGeneralRequest().type("card").tokenId("tok_2znsHppi6bHeDPSHi"));
+
+        OrderRequestCustomerInfo customerInfo = new OrderRequestCustomerInfo();
+        customerInfo.setActualInstance(new CustomerInfoCustomerId().customerId("cus_2tKcHxhTz7xU5SymF"));
+
+        OrderRequest orderRequest = new OrderRequest()
+                .currency("MXN")
+                .threeDsMode("smart")
+                .customerInfo(customerInfo)
+                .addChargesItem(new ChargeRequest().amount(1000L).paymentMethod(paymentMethod))
+                .addLineItemsItem(new Product().name("test").quantity(1).unitPrice(1000));
+        OrderResponse response = api.createOrder(orderRequest, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get Order
-     *
-     * Info for a specific order
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getOrderByIdTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //OrderResponse response = api.getOrderById(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        OrderResponse response = api.getOrderById("ord_2tUyGSk9TNWUcyvjn", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get a list of Orders
-     *
-     * Get order details in the form of a list
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("Mockoon sample response body has malformed tax_lines that fails SDK deserialization")
     @Test
     public void getOrdersTest() throws ApiException {
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //Integer limit = null;
-        //String search = null;
-        //String next = null;
-        //String previous = null;
-        //String paymentStatus = null;
-        //String lastPaymentInfoStatus = null;
-        //Long createdAt = null;
-        //Long createdAtGte = null;
-        //Long createdAtLte = null;
-        //Long updatedAtGte = null;
-        //Long updatedAtLte = null;
-        //GetOrdersResponse response = api.getOrders(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte);
-        // TODO: test validations
+        GetOrdersResponse response = api.getOrders(
+                "es", null, 20, null, null, null, null, null, null, null, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Cancel Refund
-     *
-     * A refunded order describes the items, amount, and reason an order is being refunded.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void orderCancelRefundTest() throws ApiException {
-        //String id = null;
-        //String refundId = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //OrderResponse response = api.orderCancelRefund(id, refundId, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        OrderResponse response = api.orderCancelRefund(
+                "ord_2tV52JvSom2w3E8bX", "ref_test_01", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Refund Order
-     *
-     * A refunded order describes the items, amount, and reason an order is being refunded.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void orderRefundTest() throws ApiException {
-        //String id = null;
-        //OrderRefundRequest orderRefundRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //OrderResponse response = api.orderRefund(id, orderRefundRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        OrderRefundRequest orderRefundRequest = new OrderRefundRequest()
+                .amount(1000)
+                .reason("requested_by_client");
+        OrderResponse response = api.orderRefund(
+                "ord_2tV52JvSom2w3E8bX", orderRefundRequest, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Capture Order
-     *
-     * Processes an order that has been previously authorized.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void ordersCreateCaptureTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //OrderCaptureRequest orderCaptureRequest = null;
-        //OrderResponse response = api.ordersCreateCapture(id, acceptLanguage, xChildCompanyId, orderCaptureRequest);
-        // TODO: test validations
+        OrderCaptureRequest orderCaptureRequest = new OrderCaptureRequest().amount(1000L);
+        OrderResponse response = api.ordersCreateCapture(
+                "ord_2tVKoTd79XK1GqJme", "es", null, orderCaptureRequest);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update Order
-     *
-     * Update an existing Order.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void updateOrderTest() throws ApiException {
-        //String id = null;
-        //OrderUpdateRequest orderUpdateRequest = null;
-        //String acceptLanguage = null;
-        //OrderResponse response = api.updateOrder(id, orderUpdateRequest, acceptLanguage);
-        // TODO: test validations
-    }
-
-    @Disabled()
-    @Test()
-    public void CreateOrderPbbTest() throws ApiException {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-        // Configure HTTP bearer authorization: bearerAuth
-        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-        bearerAuth.setBearerToken(System.getenv("CONEKTA_PRIVATE_KEY"));
-        final OrdersApi api = new OrdersApi(defaultClient);
-        OrderRequest orderRequest = new OrderRequest();
-
-        ChargeRequest chargeRequest = new ChargeRequest();
-        PaymentMethodPbbRequest paymentMethodPbbRequest = new PaymentMethodPbbRequest()
-                .type("pay_by_bank")
-                .productType(PaymentMethodPbbRequest.ProductTypeEnum.BBVA_PAY_BY_BANK);
-
-        ChargeRequestPaymentMethod chargeRequestPaymentMethod = new ChargeRequestPaymentMethod();
-        chargeRequestPaymentMethod.setActualInstance(paymentMethodPbbRequest);
-        chargeRequest.setPaymentMethod(chargeRequestPaymentMethod);
-
-        List<ChargeRequest> charges = new ArrayList<>();
-        charges.add(chargeRequest);
-        orderRequest.setCharges(charges);
-
-        orderRequest.currency("MXN");
-
-        List<Product> products = new ArrayList<>();
-        products.add(new Product()
-                .name("test")
-                .tags(new ArrayList<>(List.of("valor1", "valor2", "valor3")))
-                .quantity(1)
-                .unitPrice(500000));
-        orderRequest.lineItems(products);
-
-        OrderRequestCustomerInfo customer = new OrderRequestCustomerInfo();
-        customer.setActualInstance(new CustomerInfo()
-                .name("test")
-                .email("test@test.com")
-                .phone("3143159054"));
-        orderRequest.setCustomerInfo(customer);
-
-        List<ShippingRequest> shippingLines = new ArrayList<>();
-        shippingLines.add(new ShippingRequest()
-                .amount(550L)
-                .method("Standard")
-                .carrier("Conekta")
-                .trackingNumber("1234567890"));
-        orderRequest.shippingLines(shippingLines);
-
-        orderRequest.shippingContact(new CustomerShippingContacts()
-                .phone("3143159054")
-                .receiver("fran carrero")
-                .address(new CustomerShippingContactsAddress()
-                        .city("cdmx")
-                        .country("mx")
-                        .postalCode("06100")
-                        .state("cdmx")
-                        .street1("calle 123")));
-
-        OrderResponse response = api.createOrder(orderRequest, "es", null);
-        System.out.println(response);
+        OrderUpdate orderUpdate = new OrderUpdate().currency("MXN");
+        OrderResponse response = api.updateOrder("ord_2tVPCGRXnMXKdvcsj", orderUpdate, "es");
+        Assertions.assertNotNull(response);
     }
 
 }

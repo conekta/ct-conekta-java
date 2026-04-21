@@ -15,9 +15,10 @@ package com.conekta;
 
 import com.conekta.*;
 import com.conekta.auth.*;
-import com.conekta.model.CustomerShippingContacts;
+import com.conekta.model.CustomerShippingContactsRequest;
+import com.conekta.model.CustomerShippingContactsRequestAddress;
 import com.conekta.model.CustomerShippingContactsResponse;
-import com.conekta.model.CustomerUpdateShippingContacts;
+import com.conekta.model.CustomerUpdateShippingContactsRequest;
 import com.conekta.model.Error;
 
 import org.junit.jupiter.api.Assertions;
@@ -34,58 +35,45 @@ import java.util.Map;
  */
 public class ShippingContactsApiTest {
 
-    private final ShippingContactsApi api = new ShippingContactsApi();
+    private final ShippingContactsApi api = new ShippingContactsApi(TestUtils.apiClient());
 
-    /**
-     * Create a shipping contacts
-     *
-     * Create a shipping contacts for a customer.
-     *
-     * @throws ApiException if the Api call fails
-     */
+    private CustomerShippingContactsRequestAddress sampleAddress() {
+        return new CustomerShippingContactsRequestAddress()
+                .city("CDMX")
+                .country("mx")
+                .postalCode("06100")
+                .state("CDMX")
+                .street1("Calle 123");
+    }
+
     @Test
     public void createCustomerShippingContactsTest() throws ApiException {
-        //String id = null;
-        //CustomerShippingContacts customerShippingContacts = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //CustomerShippingContactsResponse response = api.createCustomerShippingContacts(id, customerShippingContacts, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        CustomerShippingContactsRequest customerShippingContactsRequest = new CustomerShippingContactsRequest()
+                .phone("1234567890")
+                .receiver("Receiver")
+                .address(sampleAddress());
+        CustomerShippingContactsResponse response = api.createCustomerShippingContacts(
+                "cus_2tXyF9BwPG14UMkkg", customerShippingContactsRequest, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Delete shipping contacts
-     *
-     * Delete shipping contact that corresponds to a customer ID.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void deleteCustomerShippingContactsTest() throws ApiException {
-        //String id = null;
-        //String shippingContactsId = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //CustomerShippingContactsResponse response = api.deleteCustomerShippingContacts(id, shippingContactsId, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        CustomerShippingContactsResponse response = api.deleteCustomerShippingContacts(
+                "cus_2tZWxbTPtQgGJGh8P", "ship_cont_2tZWzJPBf87C6TcoQ", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update shipping contacts
-     *
-     * Update shipping contact that corresponds to a customer ID.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void updateCustomerShippingContactsTest() throws ApiException {
-        //String id = null;
-        //String shippingContactsId = null;
-        //CustomerUpdateShippingContacts customerUpdateShippingContacts = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //CustomerShippingContactsResponse response = api.updateCustomerShippingContacts(id, shippingContactsId, customerUpdateShippingContacts, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest =
+                new CustomerUpdateShippingContactsRequest()
+                        .phone("+5215555555555")
+                        .receiver("Updated Receiver");
+        CustomerShippingContactsResponse response = api.updateCustomerShippingContacts(
+                "cus_2tZWxbTPtQgGJGh8P", "ship_cont_2tZWzJPBf87C6TcoQ",
+                customerUpdateShippingContactsRequest, "es", null);
+        Assertions.assertNotNull(response);
     }
 
 }

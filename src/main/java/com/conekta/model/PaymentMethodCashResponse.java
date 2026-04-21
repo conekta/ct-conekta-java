@@ -16,7 +16,7 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.PaymentMethodCashResponseAllOfAgreements;
+import com.conekta.model.CashAgreementsResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -64,7 +64,7 @@ public class PaymentMethodCashResponse {
   private String parentId;
 
   public static final String JSON_PROPERTY_AGREEMENTS = "agreements";
-  private List<PaymentMethodCashResponseAllOfAgreements> agreements = new ArrayList<>();
+  private List<CashAgreementsResponse> agreements = new ArrayList<>();
 
   public static final String JSON_PROPERTY_REFERENCE = "reference";
   private String reference;
@@ -209,12 +209,12 @@ public class PaymentMethodCashResponse {
   }
 
 
-  public PaymentMethodCashResponse agreements(List<PaymentMethodCashResponseAllOfAgreements> agreements) {
+  public PaymentMethodCashResponse agreements(List<CashAgreementsResponse> agreements) {
     this.agreements = agreements;
     return this;
   }
 
-  public PaymentMethodCashResponse addAgreementsItem(PaymentMethodCashResponseAllOfAgreements agreementsItem) {
+  public PaymentMethodCashResponse addAgreementsItem(CashAgreementsResponse agreementsItem) {
     if (this.agreements == null) {
       this.agreements = new ArrayList<>();
     }
@@ -230,14 +230,14 @@ public class PaymentMethodCashResponse {
   @JsonProperty(JSON_PROPERTY_AGREEMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<PaymentMethodCashResponseAllOfAgreements> getAgreements() {
+  public List<CashAgreementsResponse> getAgreements() {
     return agreements;
   }
 
 
   @JsonProperty(JSON_PROPERTY_AGREEMENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgreements(List<PaymentMethodCashResponseAllOfAgreements> agreements) {
+  public void setAgreements(List<CashAgreementsResponse> agreements) {
     this.agreements = agreements;
   }
 

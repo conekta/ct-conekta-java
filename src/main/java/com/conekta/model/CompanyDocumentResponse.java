@@ -34,7 +34,6 @@ import com.conekta.JSON;
   CompanyDocumentResponse.JSON_PROPERTY_FILE_NAME,
   CompanyDocumentResponse.JSON_PROPERTY_STATUS
 })
-@JsonTypeName("company_document_response")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CompanyDocumentResponse {
   /**
@@ -176,7 +175,7 @@ public class CompanyDocumentResponse {
 
 
   /**
-   * Return true if this company_document_response object is equal to o.
+   * Return true if this CompanyDocumentResponse object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

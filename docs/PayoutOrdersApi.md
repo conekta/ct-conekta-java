@@ -88,7 +88,7 @@ public class Example {
 
 ## createPayoutOrder
 
-> PayoutOrderResponse createPayoutOrder(payoutOrder, acceptLanguage)
+> PayoutOrderResponse createPayoutOrder(payoutOrderRequest, acceptLanguage)
 
 Create payout order
 
@@ -115,10 +115,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         PayoutOrdersApi apiInstance = new PayoutOrdersApi(defaultClient);
-        PayoutOrder payoutOrder = new PayoutOrder(); // PayoutOrder | requested field for payout order
+        PayoutOrderRequest payoutOrderRequest = new PayoutOrderRequest(); // PayoutOrderRequest | requested field for payout order
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         try {
-            PayoutOrderResponse result = apiInstance.createPayoutOrder(payoutOrder, acceptLanguage);
+            PayoutOrderResponse result = apiInstance.createPayoutOrder(payoutOrderRequest, acceptLanguage);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PayoutOrdersApi#createPayoutOrder");
@@ -136,7 +136,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **payoutOrder** | [**PayoutOrder**](PayoutOrder.md)| requested field for payout order | |
+| **payoutOrderRequest** | [**PayoutOrderRequest**](PayoutOrderRequest.md)| requested field for payout order | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 
 ### Return type

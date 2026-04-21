@@ -17,6 +17,8 @@ import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.CheckoutOrderTemplateCustomerInfo;
+import com.conekta.model.OrderDiscountLinesRequest;
+import com.conekta.model.OrderTaxRequest;
 import com.conekta.model.Product;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -39,8 +41,9 @@ import com.conekta.JSON;
   CheckoutOrderTemplate.JSON_PROPERTY_CURRENCY,
   CheckoutOrderTemplate.JSON_PROPERTY_CUSTOMER_INFO,
   CheckoutOrderTemplate.JSON_PROPERTY_LINE_ITEMS,
-  CheckoutOrderTemplate.JSON_PROPERTY_PLAN_IDS,
-  CheckoutOrderTemplate.JSON_PROPERTY_METADATA
+  CheckoutOrderTemplate.JSON_PROPERTY_METADATA,
+  CheckoutOrderTemplate.JSON_PROPERTY_TAX_LINES,
+  CheckoutOrderTemplate.JSON_PROPERTY_DISCOUNT_LINES
 })
 @JsonTypeName("checkout_order_template")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
@@ -54,11 +57,14 @@ public class CheckoutOrderTemplate {
   public static final String JSON_PROPERTY_LINE_ITEMS = "line_items";
   private List<Product> lineItems = new ArrayList<>();
 
-  public static final String JSON_PROPERTY_PLAN_IDS = "plan_ids";
-  private List<String> planIds = new ArrayList<>();
-
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Map<String, Object> metadata = new HashMap<>();
+
+  public static final String JSON_PROPERTY_TAX_LINES = "tax_lines";
+  private List<OrderTaxRequest> taxLines = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_DISCOUNT_LINES = "discount_lines";
+  private List<OrderDiscountLinesRequest> discountLines = new ArrayList<>();
 
   public CheckoutOrderTemplate() { 
   }
@@ -146,49 +152,8 @@ public class CheckoutOrderTemplate {
   }
 
 
-  public CheckoutOrderTemplate planIds(List<String> planIds) {
-    this.planIds = planIds;
-    return this;
-  }
-
-  public CheckoutOrderTemplate addPlanIdsItem(String planIdsItem) {
-    if (this.planIds == null) {
-      this.planIds = new ArrayList<>();
-    }
-    this.planIds.add(planIdsItem);
-    return this;
-  }
-
-   /**
-   * It is a list of plan IDs that will be associated with the order.
-   * @return planIds
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PLAN_IDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<String> getPlanIds() {
-    return planIds;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_PLAN_IDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPlanIds(List<String> planIds) {
-    this.planIds = planIds;
-  }
-
-
   public CheckoutOrderTemplate metadata(Map<String, Object> metadata) {
     this.metadata = metadata;
-    return this;
-  }
-
-  public CheckoutOrderTemplate putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<>();
-    }
-    this.metadata.put(key, metadataItem);
     return this;
   }
 
@@ -198,7 +163,7 @@ public class CheckoutOrderTemplate {
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
     return metadata;
@@ -206,9 +171,75 @@ public class CheckoutOrderTemplate {
 
 
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
+  }
+
+
+  public CheckoutOrderTemplate taxLines(List<OrderTaxRequest> taxLines) {
+    this.taxLines = taxLines;
+    return this;
+  }
+
+  public CheckoutOrderTemplate addTaxLinesItem(OrderTaxRequest taxLinesItem) {
+    if (this.taxLines == null) {
+      this.taxLines = new ArrayList<>();
+    }
+    this.taxLines.add(taxLinesItem);
+    return this;
+  }
+
+   /**
+   * List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes) that are applied to the order.
+   * @return taxLines
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TAX_LINES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<OrderTaxRequest> getTaxLines() {
+    return taxLines;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TAX_LINES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTaxLines(List<OrderTaxRequest> taxLines) {
+    this.taxLines = taxLines;
+  }
+
+
+  public CheckoutOrderTemplate discountLines(List<OrderDiscountLinesRequest> discountLines) {
+    this.discountLines = discountLines;
+    return this;
+  }
+
+  public CheckoutOrderTemplate addDiscountLinesItem(OrderDiscountLinesRequest discountLinesItem) {
+    if (this.discountLines == null) {
+      this.discountLines = new ArrayList<>();
+    }
+    this.discountLines.add(discountLinesItem);
+    return this;
+  }
+
+   /**
+   * List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order.
+   * @return discountLines
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<OrderDiscountLinesRequest> getDiscountLines() {
+    return discountLines;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDiscountLines(List<OrderDiscountLinesRequest> discountLines) {
+    this.discountLines = discountLines;
   }
 
 
@@ -227,13 +258,14 @@ public class CheckoutOrderTemplate {
     return Objects.equals(this.currency, checkoutOrderTemplate.currency) &&
         Objects.equals(this.customerInfo, checkoutOrderTemplate.customerInfo) &&
         Objects.equals(this.lineItems, checkoutOrderTemplate.lineItems) &&
-        Objects.equals(this.planIds, checkoutOrderTemplate.planIds) &&
-        Objects.equals(this.metadata, checkoutOrderTemplate.metadata);
+        Objects.equals(this.metadata, checkoutOrderTemplate.metadata) &&
+        Objects.equals(this.taxLines, checkoutOrderTemplate.taxLines) &&
+        Objects.equals(this.discountLines, checkoutOrderTemplate.discountLines);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(currency, customerInfo, lineItems, planIds, metadata);
+    return Objects.hash(currency, customerInfo, lineItems, metadata, taxLines, discountLines);
   }
 
   @Override
@@ -243,8 +275,9 @@ public class CheckoutOrderTemplate {
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    customerInfo: ").append(toIndentedString(customerInfo)).append("\n");
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
-    sb.append("    planIds: ").append(toIndentedString(planIds)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    taxLines: ").append(toIndentedString(taxLines)).append("\n");
+    sb.append("    discountLines: ").append(toIndentedString(discountLines)).append("\n");
     sb.append("}");
     return sb.toString();
   }

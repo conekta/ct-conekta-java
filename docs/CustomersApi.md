@@ -96,7 +96,7 @@ public class Example {
 
 ## createCustomerFiscalEntities
 
-> CreateCustomerFiscalEntitiesResponse createCustomerFiscalEntities(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId)
+> CreateCustomerFiscalEntitiesResponse createCustomerFiscalEntities(id, fiscalEntityRequest, acceptLanguage, xChildCompanyId)
 
 Create Fiscal Entity
 
@@ -124,11 +124,11 @@ public class Example {
 
         CustomersApi apiInstance = new CustomersApi(defaultClient);
         String id = "6307a60c41de27127515a575"; // String | Identifier of the resource
-        CustomerFiscalEntitiesRequest customerFiscalEntitiesRequest = new CustomerFiscalEntitiesRequest(); // CustomerFiscalEntitiesRequest | requested field for customer fiscal entities
+        FiscalEntityRequest fiscalEntityRequest = new FiscalEntityRequest(); // FiscalEntityRequest | requested field for customer fiscal entities
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
         try {
-            CreateCustomerFiscalEntitiesResponse result = apiInstance.createCustomerFiscalEntities(id, customerFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
+            CreateCustomerFiscalEntitiesResponse result = apiInstance.createCustomerFiscalEntities(id, fiscalEntityRequest, acceptLanguage, xChildCompanyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CustomersApi#createCustomerFiscalEntities");
@@ -147,7 +147,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **String**| Identifier of the resource | |
-| **customerFiscalEntitiesRequest** | [**CustomerFiscalEntitiesRequest**](CustomerFiscalEntitiesRequest.md)| requested field for customer fiscal entities | |
+| **fiscalEntityRequest** | [**FiscalEntityRequest**](FiscalEntityRequest.md)| requested field for customer fiscal entities | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
 
@@ -493,7 +493,7 @@ public class Example {
 
 ## updateCustomerFiscalEntities
 
-> UpdateCustomerFiscalEntitiesResponse updateCustomerFiscalEntities(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId)
+> UpdateCustomerFiscalEntitiesResponse updateCustomerFiscalEntities(id, fiscalEntitiesId, updateFiscalEntityRequest, acceptLanguage, xChildCompanyId)
 
 Update  Fiscal Entity
 
@@ -522,11 +522,11 @@ public class Example {
         CustomersApi apiInstance = new CustomersApi(defaultClient);
         String id = "6307a60c41de27127515a575"; // String | Identifier of the resource
         String fiscalEntitiesId = "fis_ent_2tQ8HkkfbauaKP9Ho"; // String | identifier
-        CustomerUpdateFiscalEntitiesRequest customerUpdateFiscalEntitiesRequest = new CustomerUpdateFiscalEntitiesRequest(); // CustomerUpdateFiscalEntitiesRequest | requested field for customer update fiscal entities
+        UpdateFiscalEntityRequest updateFiscalEntityRequest = new UpdateFiscalEntityRequest(); // UpdateFiscalEntityRequest | requested field for customer update fiscal entities
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
         try {
-            UpdateCustomerFiscalEntitiesResponse result = apiInstance.updateCustomerFiscalEntities(id, fiscalEntitiesId, customerUpdateFiscalEntitiesRequest, acceptLanguage, xChildCompanyId);
+            UpdateCustomerFiscalEntitiesResponse result = apiInstance.updateCustomerFiscalEntities(id, fiscalEntitiesId, updateFiscalEntityRequest, acceptLanguage, xChildCompanyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CustomersApi#updateCustomerFiscalEntities");
@@ -546,7 +546,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **String**| Identifier of the resource | |
 | **fiscalEntitiesId** | **String**| identifier | |
-| **customerUpdateFiscalEntitiesRequest** | [**CustomerUpdateFiscalEntitiesRequest**](CustomerUpdateFiscalEntitiesRequest.md)| requested field for customer update fiscal entities | |
+| **updateFiscalEntityRequest** | [**UpdateFiscalEntityRequest**](UpdateFiscalEntityRequest.md)| requested field for customer update fiscal entities | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
 

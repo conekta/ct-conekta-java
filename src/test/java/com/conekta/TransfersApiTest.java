@@ -33,41 +33,18 @@ import java.util.Map;
  */
 public class TransfersApiTest {
 
-    private final TransfersApi api = new TransfersApi();
+    private final TransfersApi api = new TransfersApi(TestUtils.apiClient());
 
-    /**
-     * Get Transfer
-     *
-     * Get the details of a Transfer
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getTransferTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //TransferResponse response = api.getTransfer(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        TransferResponse response = api.getTransfer("64462930651b2600017b6d43", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get a list of transfers
-     *
-     * Get transfers details in the form of a list
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getTransfersTest() throws ApiException {
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //Integer limit = null;
-        //String search = null;
-        //String next = null;
-        //String previous = null;
-        //GetTransfersResponse response = api.getTransfers(acceptLanguage, xChildCompanyId, limit, search, next, previous);
-        // TODO: test validations
+        GetTransfersResponse response = api.getTransfers("es", null, 5, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
 }

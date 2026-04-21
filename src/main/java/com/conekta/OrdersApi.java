@@ -14,7 +14,7 @@ import com.conekta.model.OrderCaptureRequest;
 import com.conekta.model.OrderRefundRequest;
 import com.conekta.model.OrderRequest;
 import com.conekta.model.OrderResponse;
-import com.conekta.model.OrderUpdateRequest;
+import com.conekta.model.OrderUpdate;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -560,7 +560,7 @@ public class OrdersApi {
    * Update Order
    * Update an existing Order.
    * @param id Identifier of the resource (required)
-   * @param orderUpdateRequest requested field for an order (required)
+   * @param orderUpdate requested field for an order (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @return OrderResponse
    * @throws ApiException if fails to make API call
@@ -574,15 +574,15 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public OrderResponse updateOrder(String id, OrderUpdateRequest orderUpdateRequest, String acceptLanguage) throws ApiException {
-    return updateOrderWithHttpInfo(id, orderUpdateRequest, acceptLanguage).getData();
+  public OrderResponse updateOrder(String id, OrderUpdate orderUpdate, String acceptLanguage) throws ApiException {
+    return updateOrderWithHttpInfo(id, orderUpdate, acceptLanguage).getData();
   }
 
   /**
    * Update Order
    * Update an existing Order.
    * @param id Identifier of the resource (required)
-   * @param orderUpdateRequest requested field for an order (required)
+   * @param orderUpdate requested field for an order (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @return ApiResponse&lt;OrderResponse&gt;
    * @throws ApiException if fails to make API call
@@ -596,13 +596,13 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<OrderResponse> updateOrderWithHttpInfo(String id, OrderUpdateRequest orderUpdateRequest, String acceptLanguage) throws ApiException {
+  public ApiResponse<OrderResponse> updateOrderWithHttpInfo(String id, OrderUpdate orderUpdate, String acceptLanguage) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateOrder");
     }
-    if (orderUpdateRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'orderUpdateRequest' when calling updateOrder");
+    if (orderUpdate == null) {
+      throw new ApiException(400, "Missing the required parameter 'orderUpdate' when calling updateOrder");
     }
 
     // Path parameters
@@ -619,7 +619,7 @@ public class OrdersApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<OrderResponse> localVarReturnType = new GenericType<OrderResponse>() {};
-    return apiClient.invokeAPI("OrdersApi.updateOrder", localVarPath, "PUT", new ArrayList<>(), orderUpdateRequest,
+    return apiClient.invokeAPI("OrdersApi.updateOrder", localVarPath, "PUT", new ArrayList<>(), orderUpdate,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

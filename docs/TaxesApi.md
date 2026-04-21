@@ -12,7 +12,7 @@ All URIs are relative to *https://api.conekta.io*
 
 ## ordersCreateTaxes
 
-> UpdateOrderTaxResponse ordersCreateTaxes(id, orderTaxRequest, acceptLanguage, xChildCompanyId)
+> OrderTaxResponse ordersCreateTaxes(id, orderTaxRequest, acceptLanguage, xChildCompanyId)
 
 Create Tax
 
@@ -44,7 +44,7 @@ public class Example {
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
         try {
-            UpdateOrderTaxResponse result = apiInstance.ordersCreateTaxes(id, orderTaxRequest, acceptLanguage, xChildCompanyId);
+            OrderTaxResponse result = apiInstance.ordersCreateTaxes(id, orderTaxRequest, acceptLanguage, xChildCompanyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TaxesApi#ordersCreateTaxes");
@@ -69,7 +69,7 @@ public class Example {
 
 ### Return type
 
-[**UpdateOrderTaxResponse**](UpdateOrderTaxResponse.md)
+[**OrderTaxResponse**](OrderTaxResponse.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ public class Example {
 
 ## ordersDeleteTaxes
 
-> UpdateOrderTaxResponse ordersDeleteTaxes(id, taxId, acceptLanguage, xChildCompanyId)
+> OrderTaxResponse ordersDeleteTaxes(id, taxId, acceptLanguage, xChildCompanyId)
 
 Delete Tax
 
@@ -123,7 +123,7 @@ public class Example {
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
         try {
-            UpdateOrderTaxResponse result = apiInstance.ordersDeleteTaxes(id, taxId, acceptLanguage, xChildCompanyId);
+            OrderTaxResponse result = apiInstance.ordersDeleteTaxes(id, taxId, acceptLanguage, xChildCompanyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TaxesApi#ordersDeleteTaxes");
@@ -148,7 +148,7 @@ public class Example {
 
 ### Return type
 
-[**UpdateOrderTaxResponse**](UpdateOrderTaxResponse.md)
+[**OrderTaxResponse**](OrderTaxResponse.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ public class Example {
 
 ## ordersUpdateTaxes
 
-> UpdateOrderTaxResponse ordersUpdateTaxes(id, taxId, updateOrderTaxRequest, acceptLanguage, xChildCompanyId)
+> OrderTaxResponse ordersUpdateTaxes(id, taxId, ordersUpdateTaxesRequest, acceptLanguage, xChildCompanyId)
 
 Update Tax
 
@@ -200,11 +200,11 @@ public class Example {
         TaxesApi apiInstance = new TaxesApi(defaultClient);
         String id = "6307a60c41de27127515a575"; // String | Identifier of the resource
         String taxId = "tax_lin_2tQ974hSHcsdeSZHG"; // String | identifier
-        UpdateOrderTaxRequest updateOrderTaxRequest = new UpdateOrderTaxRequest(); // UpdateOrderTaxRequest | requested field for taxes
+        OrdersUpdateTaxesRequest ordersUpdateTaxesRequest = new OrdersUpdateTaxesRequest(); // OrdersUpdateTaxesRequest | requested field for taxes
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
         try {
-            UpdateOrderTaxResponse result = apiInstance.ordersUpdateTaxes(id, taxId, updateOrderTaxRequest, acceptLanguage, xChildCompanyId);
+            OrderTaxResponse result = apiInstance.ordersUpdateTaxes(id, taxId, ordersUpdateTaxesRequest, acceptLanguage, xChildCompanyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TaxesApi#ordersUpdateTaxes");
@@ -224,13 +224,13 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **String**| Identifier of the resource | |
 | **taxId** | **String**| identifier | |
-| **updateOrderTaxRequest** | [**UpdateOrderTaxRequest**](UpdateOrderTaxRequest.md)| requested field for taxes | |
+| **ordersUpdateTaxesRequest** | [**OrdersUpdateTaxesRequest**](OrdersUpdateTaxesRequest.md)| requested field for taxes | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
 
 ### Return type
 
-[**UpdateOrderTaxResponse**](UpdateOrderTaxResponse.md)
+[**OrderTaxResponse**](OrderTaxResponse.md)
 
 ### Authorization
 

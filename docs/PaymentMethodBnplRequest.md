@@ -21,6 +21,8 @@
 | Name | Value |
 |---- | -----|
 | APLAZO_BNPL | &quot;aplazo_bnpl&quot; |
+| AZTECA_BNPL | &quot;azteca_bnpl&quot; |
+| COPPEL_BNPL | &quot;coppel_bnpl&quot; |
 | CREDITEA_BNPL | &quot;creditea_bnpl&quot; |
 
 

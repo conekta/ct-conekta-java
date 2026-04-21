@@ -11,7 +11,7 @@ All URIs are relative to *https://api.conekta.io*
 
 ## getLogById
 
-> LogResponse getLogById(id, acceptLanguage, xChildCompanyId)
+> LogResponseForRequest getLogById(id, acceptLanguage, xChildCompanyId)
 
 Get Log
 
@@ -42,7 +42,7 @@ public class Example {
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
         try {
-            LogResponse result = apiInstance.getLogById(id, acceptLanguage, xChildCompanyId);
+            LogResponseForRequest result = apiInstance.getLogById(id, acceptLanguage, xChildCompanyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling LogsApi#getLogById");
@@ -66,7 +66,7 @@ public class Example {
 
 ### Return type
 
-[**LogResponse**](LogResponse.md)
+[**LogResponseForRequest**](LogResponseForRequest.md)
 
 ### Authorization
 
@@ -88,7 +88,7 @@ public class Example {
 
 ## getLogs
 
-> LogsResponse getLogs(acceptLanguage, xChildCompanyId, limit, search, next, previous)
+> LogsResponseForRequest getLogs(acceptLanguage, xChildCompanyId, limit, search, next, previous)
 
 Get List Of Logs
 
@@ -122,7 +122,7 @@ public class Example {
         String next = "next_example"; // String | next page
         String previous = "previous_example"; // String | previous page
         try {
-            LogsResponse result = apiInstance.getLogs(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+            LogsResponseForRequest result = apiInstance.getLogs(acceptLanguage, xChildCompanyId, limit, search, next, previous);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling LogsApi#getLogs");
@@ -149,7 +149,7 @@ public class Example {
 
 ### Return type
 
-[**LogsResponse**](LogsResponse.md)
+[**LogsResponseForRequest**](LogsResponseForRequest.md)
 
 ### Authorization
 

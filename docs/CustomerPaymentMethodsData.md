@@ -6,7 +6,7 @@
 * [PaymentMethodCardResponse](PaymentMethodCardResponse.md)
 * [PaymentMethodCashRecurrentResponse](PaymentMethodCashRecurrentResponse.md)
 * [PaymentMethodCashResponse](PaymentMethodCashResponse.md)
-* [PaymentMethodSpeiRecurrent](PaymentMethodSpeiRecurrent.md)
+* [PaymentMethodSpeiRecurrentResponse](PaymentMethodSpeiRecurrentResponse.md)
 
 ## Example
 ```java
@@ -15,7 +15,7 @@ import com.conekta.model.CustomerPaymentMethodsData;
 import com.conekta.model.PaymentMethodCardResponse;
 import com.conekta.model.PaymentMethodCashRecurrentResponse;
 import com.conekta.model.PaymentMethodCashResponse;
-import com.conekta.model.PaymentMethodSpeiRecurrent;
+import com.conekta.model.PaymentMethodSpeiRecurrentResponse;
 
 public class Example {
     public static void main(String[] args) {
@@ -42,12 +42,12 @@ public class Example {
         // to get back the PaymentMethodCashResponse set earlier
         PaymentMethodCashResponse testPaymentMethodCashResponse = (PaymentMethodCashResponse) exampleCustomerPaymentMethodsData.getActualInstance();
 
-        // create a new PaymentMethodSpeiRecurrent
-        PaymentMethodSpeiRecurrent examplePaymentMethodSpeiRecurrent = new PaymentMethodSpeiRecurrent();
-        // set CustomerPaymentMethodsData to PaymentMethodSpeiRecurrent
-        exampleCustomerPaymentMethodsData.setActualInstance(examplePaymentMethodSpeiRecurrent);
-        // to get back the PaymentMethodSpeiRecurrent set earlier
-        PaymentMethodSpeiRecurrent testPaymentMethodSpeiRecurrent = (PaymentMethodSpeiRecurrent) exampleCustomerPaymentMethodsData.getActualInstance();
+        // create a new PaymentMethodSpeiRecurrentResponse
+        PaymentMethodSpeiRecurrentResponse examplePaymentMethodSpeiRecurrentResponse = new PaymentMethodSpeiRecurrentResponse();
+        // set CustomerPaymentMethodsData to PaymentMethodSpeiRecurrentResponse
+        exampleCustomerPaymentMethodsData.setActualInstance(examplePaymentMethodSpeiRecurrentResponse);
+        // to get back the PaymentMethodSpeiRecurrentResponse set earlier
+        PaymentMethodSpeiRecurrentResponse testPaymentMethodSpeiRecurrentResponse = (PaymentMethodSpeiRecurrentResponse) exampleCustomerPaymentMethodsData.getActualInstance();
     }
 }
 ```

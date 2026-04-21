@@ -9,7 +9,7 @@ import com.conekta.Pair;
 import javax.ws.rs.core.GenericType;
 
 import com.conekta.model.BlacklistRuleResponse;
-import com.conekta.model.CreateRiskRulesData;
+import com.conekta.model.CreateRuleWhitelistRequest;
 import com.conekta.model.DeletedBlacklistRuleResponse;
 import com.conekta.model.DeletedWhitelistRuleResponse;
 import com.conekta.model.Error;
@@ -55,7 +55,7 @@ public class AntifraudApi {
   /**
    * Create blacklisted rule
    * 
-   * @param createRiskRulesData requested field for blacklist rule (required)
+   * @param createRuleWhitelistRequest requested field for blacklist rule (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @return BlacklistRuleResponse
    * @throws ApiException if fails to make API call
@@ -67,14 +67,14 @@ public class AntifraudApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public BlacklistRuleResponse createRuleBlacklist(CreateRiskRulesData createRiskRulesData, String acceptLanguage) throws ApiException {
-    return createRuleBlacklistWithHttpInfo(createRiskRulesData, acceptLanguage).getData();
+  public BlacklistRuleResponse createRuleBlacklist(CreateRuleWhitelistRequest createRuleWhitelistRequest, String acceptLanguage) throws ApiException {
+    return createRuleBlacklistWithHttpInfo(createRuleWhitelistRequest, acceptLanguage).getData();
   }
 
   /**
    * Create blacklisted rule
    * 
-   * @param createRiskRulesData requested field for blacklist rule (required)
+   * @param createRuleWhitelistRequest requested field for blacklist rule (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @return ApiResponse&lt;BlacklistRuleResponse&gt;
    * @throws ApiException if fails to make API call
@@ -86,10 +86,10 @@ public class AntifraudApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<BlacklistRuleResponse> createRuleBlacklistWithHttpInfo(CreateRiskRulesData createRiskRulesData, String acceptLanguage) throws ApiException {
+  public ApiResponse<BlacklistRuleResponse> createRuleBlacklistWithHttpInfo(CreateRuleWhitelistRequest createRuleWhitelistRequest, String acceptLanguage) throws ApiException {
     // Check required parameters
-    if (createRiskRulesData == null) {
-      throw new ApiException(400, "Missing the required parameter 'createRiskRulesData' when calling createRuleBlacklist");
+    if (createRuleWhitelistRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createRuleWhitelistRequest' when calling createRuleBlacklist");
     }
 
     // Header parameters
@@ -102,7 +102,7 @@ public class AntifraudApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<BlacklistRuleResponse> localVarReturnType = new GenericType<BlacklistRuleResponse>() {};
-    return apiClient.invokeAPI("AntifraudApi.createRuleBlacklist", "/antifraud/blacklists", "POST", new ArrayList<>(), createRiskRulesData,
+    return apiClient.invokeAPI("AntifraudApi.createRuleBlacklist", "/antifraud/blacklists", "POST", new ArrayList<>(), createRuleWhitelistRequest,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
@@ -110,7 +110,7 @@ public class AntifraudApi {
    * Create whitelisted rule
    * 
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
-   * @param createRiskRulesData  (optional)
+   * @param createRuleWhitelistRequest  (optional)
    * @return WhitelistlistRuleResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -122,15 +122,15 @@ public class AntifraudApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public WhitelistlistRuleResponse createRuleWhitelist(String acceptLanguage, CreateRiskRulesData createRiskRulesData) throws ApiException {
-    return createRuleWhitelistWithHttpInfo(acceptLanguage, createRiskRulesData).getData();
+  public WhitelistlistRuleResponse createRuleWhitelist(String acceptLanguage, CreateRuleWhitelistRequest createRuleWhitelistRequest) throws ApiException {
+    return createRuleWhitelistWithHttpInfo(acceptLanguage, createRuleWhitelistRequest).getData();
   }
 
   /**
    * Create whitelisted rule
    * 
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
-   * @param createRiskRulesData  (optional)
+   * @param createRuleWhitelistRequest  (optional)
    * @return ApiResponse&lt;WhitelistlistRuleResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -142,7 +142,7 @@ public class AntifraudApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<WhitelistlistRuleResponse> createRuleWhitelistWithHttpInfo(String acceptLanguage, CreateRiskRulesData createRiskRulesData) throws ApiException {
+  public ApiResponse<WhitelistlistRuleResponse> createRuleWhitelistWithHttpInfo(String acceptLanguage, CreateRuleWhitelistRequest createRuleWhitelistRequest) throws ApiException {
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
     if (acceptLanguage != null) {
@@ -153,7 +153,7 @@ public class AntifraudApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<WhitelistlistRuleResponse> localVarReturnType = new GenericType<WhitelistlistRuleResponse>() {};
-    return apiClient.invokeAPI("AntifraudApi.createRuleWhitelist", "/antifraud/whitelists", "POST", new ArrayList<>(), createRiskRulesData,
+    return apiClient.invokeAPI("AntifraudApi.createRuleWhitelist", "/antifraud/whitelists", "POST", new ArrayList<>(), createRuleWhitelistRequest,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

@@ -12,7 +12,7 @@ All URIs are relative to *https://api.conekta.io*
 
 ## createCustomerShippingContacts
 
-> CustomerShippingContactsResponse createCustomerShippingContacts(id, customerShippingContacts, acceptLanguage, xChildCompanyId)
+> CustomerShippingContactsResponse createCustomerShippingContacts(id, customerShippingContactsRequest, acceptLanguage, xChildCompanyId)
 
 Create a shipping contacts
 
@@ -40,11 +40,11 @@ public class Example {
 
         ShippingContactsApi apiInstance = new ShippingContactsApi(defaultClient);
         String id = "6307a60c41de27127515a575"; // String | Identifier of the resource
-        CustomerShippingContacts customerShippingContacts = new CustomerShippingContacts(); // CustomerShippingContacts | requested field for customer shippings contacts
+        CustomerShippingContactsRequest customerShippingContactsRequest = new CustomerShippingContactsRequest(); // CustomerShippingContactsRequest | requested field for customer shippings contacts
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
         try {
-            CustomerShippingContactsResponse result = apiInstance.createCustomerShippingContacts(id, customerShippingContacts, acceptLanguage, xChildCompanyId);
+            CustomerShippingContactsResponse result = apiInstance.createCustomerShippingContacts(id, customerShippingContactsRequest, acceptLanguage, xChildCompanyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ShippingContactsApi#createCustomerShippingContacts");
@@ -63,7 +63,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **String**| Identifier of the resource | |
-| **customerShippingContacts** | [**CustomerShippingContacts**](CustomerShippingContacts.md)| requested field for customer shippings contacts | |
+| **customerShippingContactsRequest** | [**CustomerShippingContactsRequest**](CustomerShippingContactsRequest.md)| requested field for customer shippings contacts | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
 
@@ -172,7 +172,7 @@ public class Example {
 
 ## updateCustomerShippingContacts
 
-> CustomerShippingContactsResponse updateCustomerShippingContacts(id, shippingContactsId, customerUpdateShippingContacts, acceptLanguage, xChildCompanyId)
+> CustomerShippingContactsResponse updateCustomerShippingContacts(id, shippingContactsId, customerUpdateShippingContactsRequest, acceptLanguage, xChildCompanyId)
 
 Update shipping contacts
 
@@ -201,11 +201,11 @@ public class Example {
         ShippingContactsApi apiInstance = new ShippingContactsApi(defaultClient);
         String id = "6307a60c41de27127515a575"; // String | Identifier of the resource
         String shippingContactsId = "6307a60c41de27127515a575"; // String | identifier
-        CustomerUpdateShippingContacts customerUpdateShippingContacts = new CustomerUpdateShippingContacts(); // CustomerUpdateShippingContacts | requested field for customer update shippings contacts
+        CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest = new CustomerUpdateShippingContactsRequest(); // CustomerUpdateShippingContactsRequest | requested field for customer update shippings contacts
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
         try {
-            CustomerShippingContactsResponse result = apiInstance.updateCustomerShippingContacts(id, shippingContactsId, customerUpdateShippingContacts, acceptLanguage, xChildCompanyId);
+            CustomerShippingContactsResponse result = apiInstance.updateCustomerShippingContacts(id, shippingContactsId, customerUpdateShippingContactsRequest, acceptLanguage, xChildCompanyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ShippingContactsApi#updateCustomerShippingContacts");
@@ -225,7 +225,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **String**| Identifier of the resource | |
 | **shippingContactsId** | **String**| identifier | |
-| **customerUpdateShippingContacts** | [**CustomerUpdateShippingContacts**](CustomerUpdateShippingContacts.md)| requested field for customer update shippings contacts | |
+| **customerUpdateShippingContactsRequest** | [**CustomerUpdateShippingContactsRequest**](CustomerUpdateShippingContactsRequest.md)| requested field for customer update shippings contacts | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
 

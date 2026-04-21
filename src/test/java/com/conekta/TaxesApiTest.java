@@ -17,8 +17,8 @@ import com.conekta.*;
 import com.conekta.auth.*;
 import com.conekta.model.Error;
 import com.conekta.model.OrderTaxRequest;
-import com.conekta.model.UpdateOrderTaxRequest;
-import com.conekta.model.UpdateOrderTaxResponse;
+import com.conekta.model.OrderTaxResponse;
+import com.conekta.model.OrdersUpdateTaxesRequest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -34,58 +34,29 @@ import java.util.Map;
  */
 public class TaxesApiTest {
 
-    private final TaxesApi api = new TaxesApi();
+    private static final String ORDER_ID = "ord_2tVyWPnCPWbrV37mW";
+    private static final String TAX_ID = "tax_lin_2tVzVp6AAptCRHhgt";
 
-    /**
-     * Create Tax
-     *
-     * Create new taxes for an existing orden
-     *
-     * @throws ApiException if the Api call fails
-     */
+    private final TaxesApi api = new TaxesApi(TestUtils.apiClient());
+
     @Test
     public void ordersCreateTaxesTest() throws ApiException {
-        //String id = null;
-        //OrderTaxRequest orderTaxRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //UpdateOrderTaxResponse response = api.ordersCreateTaxes(id, orderTaxRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        OrderTaxRequest orderTaxRequest = new OrderTaxRequest().amount(160L).description("IVA");
+        OrderTaxResponse response = api.ordersCreateTaxes(ORDER_ID, orderTaxRequest, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Delete Tax
-     *
-     * Delete taxes for an existing orden
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void ordersDeleteTaxesTest() throws ApiException {
-        //String id = null;
-        //String taxId = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //UpdateOrderTaxResponse response = api.ordersDeleteTaxes(id, taxId, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        OrderTaxResponse response = api.ordersDeleteTaxes(ORDER_ID, TAX_ID, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update Tax
-     *
-     * Update taxes for an existing orden
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void ordersUpdateTaxesTest() throws ApiException {
-        //String id = null;
-        //String taxId = null;
-        //UpdateOrderTaxRequest updateOrderTaxRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //UpdateOrderTaxResponse response = api.ordersUpdateTaxes(id, taxId, updateOrderTaxRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        OrdersUpdateTaxesRequest ordersUpdateTaxesRequest = new OrdersUpdateTaxesRequest().amount(200L);
+        OrderTaxResponse response = api.ordersUpdateTaxes(ORDER_ID, TAX_ID, ordersUpdateTaxesRequest, "es", null);
+        Assertions.assertNotNull(response);
     }
 
 }

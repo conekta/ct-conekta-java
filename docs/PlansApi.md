@@ -322,7 +322,7 @@ public class Example {
 
 ## updatePlan
 
-> PlanResponse updatePlan(id, planUpdateRequest, acceptLanguage, xChildCompanyId)
+> PlanResponse updatePlan(id, updatePlan, acceptLanguage, xChildCompanyId)
 
 Update Plan
 
@@ -348,11 +348,11 @@ public class Example {
 
         PlansApi apiInstance = new PlansApi(defaultClient);
         String id = "6307a60c41de27127515a575"; // String | Identifier of the resource
-        PlanUpdateRequest planUpdateRequest = new PlanUpdateRequest(); // PlanUpdateRequest | requested field for plan
+        UpdatePlan updatePlan = new UpdatePlan(); // UpdatePlan | requested field for plan
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
         try {
-            PlanResponse result = apiInstance.updatePlan(id, planUpdateRequest, acceptLanguage, xChildCompanyId);
+            PlanResponse result = apiInstance.updatePlan(id, updatePlan, acceptLanguage, xChildCompanyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PlansApi#updatePlan");
@@ -371,7 +371,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **String**| Identifier of the resource | |
-| **planUpdateRequest** | [**PlanUpdateRequest**](PlanUpdateRequest.md)| requested field for plan | |
+| **updatePlan** | [**UpdatePlan**](UpdatePlan.md)| requested field for plan | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
 

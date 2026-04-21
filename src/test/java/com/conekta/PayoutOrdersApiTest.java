@@ -16,7 +16,7 @@ package com.conekta;
 import com.conekta.*;
 import com.conekta.auth.*;
 import com.conekta.model.Error;
-import com.conekta.model.PayoutOrder;
+import com.conekta.model.PayoutOrderRequest;
 import com.conekta.model.PayoutOrderResponse;
 import com.conekta.model.PayoutOrdersResponse;
 
@@ -34,69 +34,32 @@ import java.util.Map;
  */
 public class PayoutOrdersApiTest {
 
-    private final PayoutOrdersApi api = new PayoutOrdersApi();
+    private final PayoutOrdersApi api = new PayoutOrdersApi(TestUtils.apiClient());
 
-    /**
-     * Cancel Payout Order
-     *
-     * Cancel a payout Order resource that corresponds to a payout order ID.
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("endpoint POST /payout_orders/{id}/cancel not provided by Mockoon mock")
     @Test
     public void cancelPayoutOrderByIdTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //PayoutOrderResponse response = api.cancelPayoutOrderById(id, acceptLanguage);
-        // TODO: test validations
+        PayoutOrderResponse response = api.cancelPayoutOrderById("f2654d66-d740-457a-9a8c-f96b5196f44e", "es");
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Create payout order
-     *
-     * Create a new payout order.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void createPayoutOrderTest() throws ApiException {
-        //PayoutOrder payoutOrder = null;
-        //String acceptLanguage = null;
-        //PayoutOrderResponse response = api.createPayoutOrder(payoutOrder, acceptLanguage);
-        // TODO: test validations
+        PayoutOrderRequest payoutOrderRequest = new PayoutOrderRequest().amount(3000L).currency("MXN");
+        PayoutOrderResponse response = api.createPayoutOrder(payoutOrderRequest, "es");
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get Payout Order
-     *
-     * Gets a payout Order resource that corresponds to a payout order ID.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getPayoutOrderByIdTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //PayoutOrderResponse response = api.getPayoutOrderById(id, acceptLanguage);
-        // TODO: test validations
+        PayoutOrderResponse response = api.getPayoutOrderById("f2654d66-d740-457a-9a8c-f96b5196f44e", "es");
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get a list of Payout Orders
-     *
-     * Get Payout order details in the form of a list
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getPayoutOrdersTest() throws ApiException {
-        //String acceptLanguage = null;
-        //Integer limit = null;
-        //String search = null;
-        //String next = null;
-        //String previous = null;
-        //PayoutOrdersResponse response = api.getPayoutOrders(acceptLanguage, limit, search, next, previous);
-        // TODO: test validations
+        PayoutOrdersResponse response = api.getPayoutOrders("es", 20, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
 }

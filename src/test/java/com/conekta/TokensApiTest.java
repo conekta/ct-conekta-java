@@ -16,7 +16,8 @@ package com.conekta;
 import com.conekta.*;
 import com.conekta.auth.*;
 import com.conekta.model.Error;
-import com.conekta.model.Token;
+import com.conekta.model.TokenRequest;
+import com.conekta.model.TokenRequestCheckout;
 import com.conekta.model.TokenResponse;
 
 import org.junit.jupiter.api.Assertions;
@@ -33,21 +34,14 @@ import java.util.Map;
  */
 public class TokensApiTest {
 
-    private final TokensApi api = new TokensApi();
+    private final TokensApi api = new TokensApi(TestUtils.apiClient());
 
-    /**
-     * Create Token
-     *
-     * Generate a payment token, to associate it with a card 
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void createTokenTest() throws ApiException {
-        //Token token = null;
-        //String acceptLanguage = null;
-        //TokenResponse response = api.createToken(token, acceptLanguage);
-        // TODO: test validations
+        TokenRequest tokenRequest = new TokenRequest()
+                .checkout(new TokenRequestCheckout().returnsControlOn("Token"));
+        TokenResponse response = api.createToken(tokenRequest, "es");
+        Assertions.assertNotNull(response);
     }
 
 }

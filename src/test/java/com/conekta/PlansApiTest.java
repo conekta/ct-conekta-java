@@ -19,7 +19,7 @@ import com.conekta.model.Error;
 import com.conekta.model.GetPlansResponse;
 import com.conekta.model.PlanRequest;
 import com.conekta.model.PlanResponse;
-import com.conekta.model.PlanUpdateRequest;
+import com.conekta.model.UpdatePlan;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -35,81 +35,45 @@ import java.util.Map;
  */
 public class PlansApiTest {
 
-    private final PlansApi api = new PlansApi();
+    private static final String PLAN_ID = "plan_2tZb5q8Z3PYpg6SJd";
 
-    /**
-     * Create Plan
-     *
-     * Create a new plan for an existing order
-     *
-     * @throws ApiException if the Api call fails
-     */
+    private final PlansApi api = new PlansApi(TestUtils.apiClient());
+
     @Test
     public void createPlanTest() throws ApiException {
-        //PlanRequest planRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //PlanResponse response = api.createPlan(planRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        PlanRequest planRequest = new PlanRequest()
+                .name("Plan Mensual")
+                .amount(10000)
+                .currency("MXN")
+                .frequency(1)
+                .interval(PlanRequest.IntervalEnum.MONTH);
+        PlanResponse response = api.createPlan(planRequest, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Delete Plan
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void deletePlanTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //PlanResponse response = api.deletePlan(id, acceptLanguage);
-        // TODO: test validations
+        PlanResponse response = api.deletePlan(PLAN_ID, "es");
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get Plan
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getPlanTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //PlanResponse response = api.getPlan(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        PlanResponse response = api.getPlan(PLAN_ID, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get A List of Plans
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getPlansTest() throws ApiException {
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //Integer limit = null;
-        //String search = null;
-        //String next = null;
-        //String previous = null;
-        //GetPlansResponse response = api.getPlans(acceptLanguage, xChildCompanyId, limit, search, next, previous);
-        // TODO: test validations
+        GetPlansResponse response = api.getPlans("es", null, 20, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update Plan
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void updatePlanTest() throws ApiException {
-        //String id = null;
-        //PlanUpdateRequest planUpdateRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //PlanResponse response = api.updatePlan(id, planUpdateRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        UpdatePlan updatePlan = new UpdatePlan().name("Updated Plan");
+        PlanResponse response = api.updatePlan(PLAN_ID, updatePlan, "es", null);
+        Assertions.assertNotNull(response);
     }
 
 }

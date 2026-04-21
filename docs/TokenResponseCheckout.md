@@ -16,7 +16,7 @@
 |**force3dsFlow** | **Boolean** | Indicates if the checkout forces the 3DS flow. |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**livemode** | **Boolean** |  |  [optional] |
-|**metadata** | **Map&lt;String, Object&gt;** |  |  [optional] |
+|**metadata** |  |  |  [optional] |
 |**monthlyInstallmentsEnabled** | **Boolean** | Indicates if the checkout allows monthly installments. |  [optional] |
 |**monthlyInstallmentsOptions** | **List&lt;Integer&gt;** | List of monthly installments options. |  [optional] |
 |**name** | **String** |  |  [optional] |
