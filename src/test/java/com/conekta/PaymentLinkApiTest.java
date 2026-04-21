@@ -10,26 +10,16 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
 import com.conekta.model.Checkout;
 import com.conekta.model.CheckoutResponse;
 import com.conekta.model.CheckoutsResponse;
 import com.conekta.model.EmailCheckoutRequest;
-import com.conekta.model.Error;
 import com.conekta.model.SmsCheckoutRequest;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for PaymentLinkApi

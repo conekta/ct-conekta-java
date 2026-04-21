@@ -10,19 +10,12 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
 import com.conekta.model.CreateCustomerFiscalEntitiesResponse;
 import com.conekta.model.Customer;
 import com.conekta.model.CustomerResponse;
-import com.conekta.model.CustomerShippingContactsAddress;
-import com.conekta.model.CustomerShippingContactsRequest;
-import com.conekta.model.CustomerShippingContactsRequestAddress;
 import com.conekta.model.CustomersResponse;
-import com.conekta.model.Error;
 import com.conekta.model.FiscalEntityRequest;
 import com.conekta.model.FiscalEntityRequestAddress;
 import com.conekta.model.UpdateCustomer;
@@ -32,11 +25,6 @@ import com.conekta.model.UpdateFiscalEntityRequest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for CustomersApi
@@ -53,11 +41,18 @@ public class CustomersApiTest {
                 .phone("+5215555555555")
                 .customReference("dotnet_12345678");
         CustomerResponse response = api.createCustomer(customer, "es", null);
-        Assertions.assertNotNull(response);
+        Assertions.assertAll("create customer",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertNotNull(response.getId()),
+                () -> Assertions.assertEquals("customer", response.getObject()),
+                () -> Assertions.assertEquals("dotnet_12345678", response.getCustomReference()),
+                () -> Assertions.assertNotNull(response.getDefaultFiscalEntityId()),
+                () -> Assertions.assertNotNull(response.getDefaultShippingContactId()));
     }
 
     @Test
     public void createCustomerFiscalEntitiesTest() throws ApiException {
+        String customerId = "cus_2tXyF9BwPG14UMkkg";
         FiscalEntityRequest fiscalEntityRequest = new FiscalEntityRequest()
                 .email("test@conekta.com")
                 .phone("+5215555555555")
@@ -70,8 +65,14 @@ public class CustomersApiTest {
                         .state("CDMX")
                         .street1("Calle 123"));
         CreateCustomerFiscalEntitiesResponse response = api.createCustomerFiscalEntities(
-                "cus_2tXyF9BwPG14UMkkg", fiscalEntityRequest, "es", null);
-        Assertions.assertNotNull(response);
+                customerId, fiscalEntityRequest, "es", null);
+        Assertions.assertAll("create fiscal entity",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertNotNull(response.getId()),
+                () -> Assertions.assertEquals("fiscal_entity", response.getObject()),
+                () -> Assertions.assertEquals(customerId, response.getParentId()),
+                () -> Assertions.assertFalse(response.getDefault()),
+                () -> Assertions.assertNotNull(response.getAddress()));
     }
 
     @Disabled("Mockoon sample response payment_sources entry is an ambiguous oneOf that fails SDK deserialization")
@@ -83,33 +84,57 @@ public class CustomersApiTest {
 
     @Test
     public void getCustomerByIdTest() throws ApiException {
-        CustomerResponse response = api.getCustomerById("cus_2tXx8KUxw6311kEbs", "es", null);
-        Assertions.assertNotNull(response);
+        String customerId = "cus_2tXx8KUxw6311kEbs";
+        CustomerResponse response = api.getCustomerById(customerId, "es", null);
+        Assertions.assertAll("get customer",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertEquals(customerId, response.getId()),
+                () -> Assertions.assertEquals("customer", response.getObject()),
+                () -> Assertions.assertNotNull(response.getEmail()),
+                () -> Assertions.assertNotNull(response.getName()),
+                () -> Assertions.assertTrue(response.getCorporate()));
     }
 
     @Test
     public void getCustomersTest() throws ApiException {
         CustomersResponse response = api.getCustomers("es", null, 21, null, null, null);
-        Assertions.assertNotNull(response);
+        Assertions.assertAll("customers list",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertEquals("list", response.getObject()),
+                () -> Assertions.assertTrue(response.getHasMore()),
+                () -> Assertions.assertNotNull(response.getNextPageUrl()),
+                () -> Assertions.assertNotNull(response.getData()),
+                () -> Assertions.assertFalse(response.getData().isEmpty()),
+                () -> Assertions.assertNotNull(response.getData().get(0).getId()));
     }
 
     @Test
     public void updateCustomerTest() throws ApiException {
+        String customerId = "cus_2tYENskzTjjgkGQLt";
         UpdateCustomer updateCustomer = new UpdateCustomer().name("updated name");
-        CustomerResponse response = api.updateCustomer("cus_2tYENskzTjjgkGQLt", updateCustomer, "es", null);
-        Assertions.assertNotNull(response);
+        CustomerResponse response = api.updateCustomer(customerId, updateCustomer, "es", null);
+        Assertions.assertAll("update customer",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertEquals(customerId, response.getId()),
+                () -> Assertions.assertEquals("customer", response.getObject()),
+                () -> Assertions.assertNotNull(response.getEmail()),
+                () -> Assertions.assertEquals("fis_ent_2tYENskzTjjgkGQLr", response.getDefaultFiscalEntityId()));
     }
 
     @Test
     public void updateCustomerFiscalEntitiesTest() throws ApiException {
+        String customerId = "cus_2tYENskzTjjgkGQLt";
+        String fiscalEntityId = "fis_ent_2tYENskzTjjgkGQLr";
         UpdateFiscalEntityRequest updateFiscalEntityRequest = new UpdateFiscalEntityRequest().companyName("Conekta SA");
         UpdateCustomerFiscalEntitiesResponse response = api.updateCustomerFiscalEntities(
-                "cus_2tYENskzTjjgkGQLt",
-                "fis_ent_2tYENskzTjjgkGQLr",
-                updateFiscalEntityRequest,
-                "es",
-                null);
-        Assertions.assertNotNull(response);
+                customerId, fiscalEntityId, updateFiscalEntityRequest, "es", null);
+        Assertions.assertAll("update fiscal entity",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertEquals(fiscalEntityId, response.getId()),
+                () -> Assertions.assertEquals("fiscal_entity", response.getObject()),
+                () -> Assertions.assertEquals(customerId, response.getParentId()),
+                () -> Assertions.assertTrue(response.getDefault()),
+                () -> Assertions.assertNotNull(response.getTaxId()));
     }
 
 }

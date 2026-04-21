@@ -10,27 +10,17 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
 import com.conekta.model.CreateCustomerPaymentMethodsRequest;
 import com.conekta.model.CreateCustomerPaymentMethodsResponse;
-import com.conekta.model.Error;
 import com.conekta.model.GetPaymentMethodResponse;
 import com.conekta.model.PaymentMethodCashRequest;
 import com.conekta.model.UpdateCustomerPaymentMethodsResponse;
 import com.conekta.model.UpdatePaymentMethodsCard;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for PaymentMethodsApi

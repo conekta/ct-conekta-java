@@ -10,15 +10,11 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
 import com.conekta.model.ChargeRequest;
 import com.conekta.model.ChargeRequestPaymentMethod;
 import com.conekta.model.CustomerInfoCustomerId;
-import com.conekta.model.Error;
 import com.conekta.model.GetOrdersResponse;
 import com.conekta.model.OrderCaptureRequest;
 import com.conekta.model.OrderRefundRequest;
@@ -26,18 +22,12 @@ import com.conekta.model.OrderRequest;
 import com.conekta.model.OrderRequestCustomerInfo;
 import com.conekta.model.OrderResponse;
 import com.conekta.model.OrderUpdate;
-import com.conekta.model.OrderUpdateCustomerInfo;
 import com.conekta.model.PaymentMethodGeneralRequest;
 import com.conekta.model.Product;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for OrdersApi
@@ -69,13 +59,28 @@ public class OrdersApiTest {
                 .addChargesItem(new ChargeRequest().amount(1000L).paymentMethod(paymentMethod))
                 .addLineItemsItem(new Product().name("test").quantity(1).unitPrice(1000));
         OrderResponse response = api.createOrder(orderRequest, "es", null);
-        Assertions.assertNotNull(response);
+        Assertions.assertAll("created order",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertNotNull(response.getId()),
+                () -> Assertions.assertEquals("order", response.getObject()),
+                () -> Assertions.assertEquals("MXN", response.getCurrency()),
+                () -> Assertions.assertEquals("paid", response.getPaymentStatus()),
+                () -> Assertions.assertNotNull(response.getCharges()),
+                () -> Assertions.assertNotNull(response.getCharges().getData()),
+                () -> Assertions.assertFalse(response.getCharges().getData().isEmpty()));
     }
 
     @Test
     public void getOrderByIdTest() throws ApiException {
         OrderResponse response = api.getOrderById("ord_2tUyGSk9TNWUcyvjn", "es", null);
-        Assertions.assertNotNull(response);
+        Assertions.assertAll("order by id",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertNotNull(response.getId()),
+                () -> Assertions.assertEquals("order", response.getObject()),
+                () -> Assertions.assertEquals("MXN", response.getCurrency()),
+                () -> Assertions.assertEquals(10000, response.getAmount()),
+                () -> Assertions.assertEquals(0, response.getAmountRefunded()),
+                () -> Assertions.assertEquals("pending_payment", response.getPaymentStatus()));
     }
 
     @Disabled("Mockoon sample response body has malformed tax_lines that fails SDK deserialization")
@@ -88,34 +93,57 @@ public class OrdersApiTest {
 
     @Test
     public void orderCancelRefundTest() throws ApiException {
-        OrderResponse response = api.orderCancelRefund(
-                "ord_2tV52JvSom2w3E8bX", "ref_test_01", "es", null);
-        Assertions.assertNotNull(response);
+        String orderId = "ord_2tV52JvSom2w3E8bX";
+        OrderResponse response = api.orderCancelRefund(orderId, "ref_test_01", "es", null);
+        Assertions.assertAll("cancel refund",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertEquals(orderId, response.getId()),
+                () -> Assertions.assertEquals("order", response.getObject()),
+                () -> Assertions.assertEquals("MXN", response.getCurrency()));
     }
 
     @Test
     public void orderRefundTest() throws ApiException {
+        String orderId = "ord_2tV52JvSom2w3E8bX";
         OrderRefundRequest orderRefundRequest = new OrderRefundRequest()
                 .amount(1000)
                 .reason("requested_by_client");
-        OrderResponse response = api.orderRefund(
-                "ord_2tV52JvSom2w3E8bX", orderRefundRequest, "es", null);
-        Assertions.assertNotNull(response);
+        OrderResponse response = api.orderRefund(orderId, orderRefundRequest, "es", null);
+        Assertions.assertAll("refund",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertEquals(orderId, response.getId()),
+                () -> Assertions.assertEquals("order", response.getObject()),
+                () -> Assertions.assertEquals("MXN", response.getCurrency()),
+                () -> Assertions.assertEquals("partially_refunded", response.getPaymentStatus()),
+                () -> Assertions.assertTrue(response.getAmountRefunded() > 0));
     }
 
     @Test
     public void ordersCreateCaptureTest() throws ApiException {
+        String orderId = "ord_2tVKoTd79XK1GqJme";
         OrderCaptureRequest orderCaptureRequest = new OrderCaptureRequest().amount(1000L);
-        OrderResponse response = api.ordersCreateCapture(
-                "ord_2tVKoTd79XK1GqJme", "es", null, orderCaptureRequest);
-        Assertions.assertNotNull(response);
+        OrderResponse response = api.ordersCreateCapture(orderId, "es", null, orderCaptureRequest);
+        Assertions.assertAll("capture",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertEquals(orderId, response.getId()),
+                () -> Assertions.assertEquals("order", response.getObject()),
+                () -> Assertions.assertEquals("paid", response.getPaymentStatus()),
+                () -> Assertions.assertEquals(40000, response.getAmount()),
+                () -> Assertions.assertEquals("MXN", response.getCurrency()));
     }
 
     @Test
     public void updateOrderTest() throws ApiException {
+        String orderId = "ord_2tVPCGRXnMXKdvcsj";
         OrderUpdate orderUpdate = new OrderUpdate().currency("MXN");
-        OrderResponse response = api.updateOrder("ord_2tVPCGRXnMXKdvcsj", orderUpdate, "es");
-        Assertions.assertNotNull(response);
+        OrderResponse response = api.updateOrder(orderId, orderUpdate, "es");
+        Assertions.assertAll("update order",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertEquals(orderId, response.getId()),
+                () -> Assertions.assertEquals("order", response.getObject()),
+                () -> Assertions.assertEquals("MXN", response.getCurrency()),
+                () -> Assertions.assertEquals(82000, response.getAmount()),
+                () -> Assertions.assertFalse(response.getIsRefundable()));
     }
 
 }

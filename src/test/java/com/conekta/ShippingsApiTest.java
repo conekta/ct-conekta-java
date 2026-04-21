@@ -10,23 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
-import com.conekta.model.Error;
 import com.conekta.model.ShippingOrderResponse;
 import com.conekta.model.ShippingRequest;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for ShippingsApi

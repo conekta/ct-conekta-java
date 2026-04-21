@@ -10,12 +10,8 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
-import com.conekta.model.Error;
 import com.conekta.model.GetWebhookKeysResponse;
 import com.conekta.model.WebhookKeyCreateResponse;
 import com.conekta.model.WebhookKeyDeleteResponse;
@@ -24,13 +20,7 @@ import com.conekta.model.WebhookKeyResponse;
 import com.conekta.model.WebhookKeyUpdateRequest;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for WebhookKeysApi

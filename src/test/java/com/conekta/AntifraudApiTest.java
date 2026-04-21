@@ -10,27 +10,17 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
 import com.conekta.model.BlacklistRuleResponse;
 import com.conekta.model.CreateRuleWhitelistRequest;
 import com.conekta.model.DeletedBlacklistRuleResponse;
 import com.conekta.model.DeletedWhitelistRuleResponse;
-import com.conekta.model.Error;
 import com.conekta.model.RiskRulesList;
 import com.conekta.model.WhitelistlistRuleResponse;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for AntifraudApi

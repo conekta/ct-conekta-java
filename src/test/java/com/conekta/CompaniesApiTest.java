@@ -10,26 +10,19 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
 import com.conekta.model.CompanyDocumentRequest;
 import com.conekta.model.CompanyDocumentResponse;
 import com.conekta.model.CompanyResponse;
 import com.conekta.model.CreateCompanyRequest;
-import com.conekta.model.Error;
 import com.conekta.model.GetCompaniesResponse;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for CompaniesApi
