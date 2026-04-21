@@ -10,64 +10,31 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
-import com.conekta.model.Error;
-import com.conekta.model.LogResponse;
-import com.conekta.model.LogsResponse;
+import com.conekta.model.LogResponseForRequest;
+import com.conekta.model.LogsResponseForRequest;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for LogsApi
  */
 public class LogsApiTest {
 
-    private final LogsApi api = new LogsApi();
+    private final LogsApi api = new LogsApi(TestUtils.apiClient());
 
-    /**
-     * Get Log
-     *
-     * Get the details of a specific log
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getLogByIdTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //LogResponse response = api.getLogById(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        LogResponseForRequest response = api.getLogById("6419dd15b985080001fc280e", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get List Of Logs
-     *
-     * Get log details in the form of a list
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getLogsTest() throws ApiException {
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //Integer limit = null;
-        //String search = null;
-        //String next = null;
-        //String previous = null;
-        //LogsResponse response = api.getLogs(acceptLanguage, xChildCompanyId, limit, search, next, previous);
-        // TODO: test validations
+        LogsResponseForRequest response = api.getLogs("es", null, 20, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
 }

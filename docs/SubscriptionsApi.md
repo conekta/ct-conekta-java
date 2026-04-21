@@ -982,7 +982,7 @@ public class Example {
 
 ## subscriptionUpdate
 
-> SubscriptionResponse subscriptionUpdate(customerId, id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId)
+> SubscriptionResponse subscriptionUpdate(customerId, id, updatesASubscription, acceptLanguage, xChildCompanyId)
 
 Update Subscription
 
@@ -1011,11 +1011,11 @@ public class Example {
         SubscriptionsApi apiInstance = new SubscriptionsApi(defaultClient);
         String customerId = "cus_2tGzG1GxtDAZHEGPH"; // String | Identifier of the customer resource
         String id = "sub_2tGzG1GxtDAZHEGPH"; // String | Identifier of the subscription resource
-        SubscriptionUpdateRequest subscriptionUpdateRequest = new SubscriptionUpdateRequest(); // SubscriptionUpdateRequest | requested field for update a subscription
+        UpdatesASubscription updatesASubscription = new UpdatesASubscription(); // UpdatesASubscription | requested field for update a subscription
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
         try {
-            SubscriptionResponse result = apiInstance.subscriptionUpdate(customerId, id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId);
+            SubscriptionResponse result = apiInstance.subscriptionUpdate(customerId, id, updatesASubscription, acceptLanguage, xChildCompanyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SubscriptionsApi#subscriptionUpdate");
@@ -1035,7 +1035,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **customerId** | **String**| Identifier of the customer resource | |
 | **id** | **String**| Identifier of the subscription resource | |
-| **subscriptionUpdateRequest** | [**SubscriptionUpdateRequest**](SubscriptionUpdateRequest.md)| requested field for update a subscription | |
+| **updatesASubscription** | [**UpdatesASubscription**](UpdatesASubscription.md)| requested field for update a subscription | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
 
@@ -1215,15 +1215,15 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | successful |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
+| **422** | parameter validation error |  -  |
 | **401** | authentication error |  -  |
 | **404** | not found entity |  -  |
-| **422** | parameter validation error |  -  |
 | **500** | internal server error |  -  |
 
 
 ## updateSubscription
 
-> SubscriptionResponse updateSubscription(id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId)
+> SubscriptionResponse updateSubscription(id, updatesASubscription, acceptLanguage, xChildCompanyId)
 
 Update Subscription [Deprecated]
 
@@ -1251,11 +1251,11 @@ public class Example {
 
         SubscriptionsApi apiInstance = new SubscriptionsApi(defaultClient);
         String id = "6307a60c41de27127515a575"; // String | Identifier of the resource
-        SubscriptionUpdateRequest subscriptionUpdateRequest = new SubscriptionUpdateRequest(); // SubscriptionUpdateRequest | requested field for update a subscription
+        UpdatesASubscription updatesASubscription = new UpdatesASubscription(); // UpdatesASubscription | requested field for update a subscription
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
         try {
-            SubscriptionResponse result = apiInstance.updateSubscription(id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId);
+            SubscriptionResponse result = apiInstance.updateSubscription(id, updatesASubscription, acceptLanguage, xChildCompanyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SubscriptionsApi#updateSubscription");
@@ -1274,7 +1274,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **String**| Identifier of the resource | |
-| **subscriptionUpdateRequest** | [**SubscriptionUpdateRequest**](SubscriptionUpdateRequest.md)| requested field for update a subscription | |
+| **updatesASubscription** | [**UpdatesASubscription**](UpdatesASubscription.md)| requested field for update a subscription | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
 

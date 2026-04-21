@@ -10,12 +10,8 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
-import com.conekta.model.Error;
 import com.conekta.model.GetWebhookKeysResponse;
 import com.conekta.model.WebhookKeyCreateResponse;
 import com.conekta.model.WebhookKeyDeleteResponse;
@@ -24,96 +20,45 @@ import com.conekta.model.WebhookKeyResponse;
 import com.conekta.model.WebhookKeyUpdateRequest;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for WebhookKeysApi
  */
 public class WebhookKeysApiTest {
 
-    private final WebhookKeysApi api = new WebhookKeysApi();
+    private final WebhookKeysApi api = new WebhookKeysApi(TestUtils.apiClient());
 
-    /**
-     * Create Webhook Key
-     *
-     * Create a webhook key
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void createWebhookKeyTest() throws ApiException {
-        //String acceptLanguage = null;
-        //WebhookKeyRequest webhookKeyRequest = null;
-        //WebhookKeyCreateResponse response = api.createWebhookKey(acceptLanguage, webhookKeyRequest);
-        // TODO: test validations
+        WebhookKeyRequest webhookKeyRequest = new WebhookKeyRequest().active(true);
+        WebhookKeyCreateResponse response = api.createWebhookKey("es", webhookKeyRequest);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Delete Webhook key
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void deleteWebhookKeyTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //WebhookKeyDeleteResponse response = api.deleteWebhookKey(id, acceptLanguage);
-        // TODO: test validations
+        WebhookKeyDeleteResponse response = api.deleteWebhookKey("645a59da22e7da0001cad283", "es");
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get Webhook Key
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getWebhookKeyTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //WebhookKeyResponse response = api.getWebhookKey(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        WebhookKeyResponse response = api.getWebhookKey("645a5eb022e7da0001cad2a4", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get List of Webhook Keys
-     *
-     * Consume the list of webhook keys you have
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getWebhookKeysTest() throws ApiException {
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //Integer limit = null;
-        //String search = null;
-        //String next = null;
-        //String previous = null;
-        //GetWebhookKeysResponse response = api.getWebhookKeys(acceptLanguage, xChildCompanyId, limit, search, next, previous);
-        // TODO: test validations
+        GetWebhookKeysResponse response = api.getWebhookKeys("es", null, 2, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update Webhook Key
-     *
-     * updates an existing webhook key
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void updateWebhookKeyTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //WebhookKeyUpdateRequest webhookKeyUpdateRequest = null;
-        //WebhookKeyResponse response = api.updateWebhookKey(id, acceptLanguage, webhookKeyUpdateRequest);
-        // TODO: test validations
+        WebhookKeyUpdateRequest webhookKeyUpdateRequest = new WebhookKeyUpdateRequest().active(false);
+        WebhookKeyResponse response = api.updateWebhookKey("645a613622e7da0001cad882", "es", webhookKeyUpdateRequest);
+        Assertions.assertNotNull(response);
     }
 
 }

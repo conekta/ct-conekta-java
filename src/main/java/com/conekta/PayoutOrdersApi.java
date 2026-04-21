@@ -9,7 +9,7 @@ import com.conekta.Pair;
 import javax.ws.rs.core.GenericType;
 
 import com.conekta.model.Error;
-import com.conekta.model.PayoutOrder;
+import com.conekta.model.PayoutOrderRequest;
 import com.conekta.model.PayoutOrderResponse;
 import com.conekta.model.PayoutOrdersResponse;
 
@@ -112,7 +112,7 @@ public class PayoutOrdersApi {
   /**
    * Create payout order
    * Create a new payout order.
-   * @param payoutOrder requested field for payout order (required)
+   * @param payoutOrderRequest requested field for payout order (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @return PayoutOrderResponse
    * @throws ApiException if fails to make API call
@@ -127,14 +127,14 @@ public class PayoutOrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public PayoutOrderResponse createPayoutOrder(PayoutOrder payoutOrder, String acceptLanguage) throws ApiException {
-    return createPayoutOrderWithHttpInfo(payoutOrder, acceptLanguage).getData();
+  public PayoutOrderResponse createPayoutOrder(PayoutOrderRequest payoutOrderRequest, String acceptLanguage) throws ApiException {
+    return createPayoutOrderWithHttpInfo(payoutOrderRequest, acceptLanguage).getData();
   }
 
   /**
    * Create payout order
    * Create a new payout order.
-   * @param payoutOrder requested field for payout order (required)
+   * @param payoutOrderRequest requested field for payout order (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @return ApiResponse&lt;PayoutOrderResponse&gt;
    * @throws ApiException if fails to make API call
@@ -149,10 +149,10 @@ public class PayoutOrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<PayoutOrderResponse> createPayoutOrderWithHttpInfo(PayoutOrder payoutOrder, String acceptLanguage) throws ApiException {
+  public ApiResponse<PayoutOrderResponse> createPayoutOrderWithHttpInfo(PayoutOrderRequest payoutOrderRequest, String acceptLanguage) throws ApiException {
     // Check required parameters
-    if (payoutOrder == null) {
-      throw new ApiException(400, "Missing the required parameter 'payoutOrder' when calling createPayoutOrder");
+    if (payoutOrderRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'payoutOrderRequest' when calling createPayoutOrder");
     }
 
     // Header parameters
@@ -165,7 +165,7 @@ public class PayoutOrdersApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<PayoutOrderResponse> localVarReturnType = new GenericType<PayoutOrderResponse>() {};
-    return apiClient.invokeAPI("PayoutOrdersApi.createPayoutOrder", "/payout_orders", "POST", new ArrayList<>(), payoutOrder,
+    return apiClient.invokeAPI("PayoutOrdersApi.createPayoutOrder", "/payout_orders", "POST", new ArrayList<>(), payoutOrderRequest,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

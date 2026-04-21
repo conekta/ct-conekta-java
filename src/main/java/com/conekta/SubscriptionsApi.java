@@ -12,7 +12,7 @@ import com.conekta.model.Error;
 import com.conekta.model.SubscriptionEventsResponse;
 import com.conekta.model.SubscriptionRequest;
 import com.conekta.model.SubscriptionResponse;
-import com.conekta.model.SubscriptionUpdateRequest;
+import com.conekta.model.UpdatesASubscription;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -934,7 +934,7 @@ public class SubscriptionsApi {
    * Update a specific subscription
    * @param customerId Identifier of the customer resource (required)
    * @param id Identifier of the subscription resource (required)
-   * @param subscriptionUpdateRequest requested field for update a subscription (required)
+   * @param updatesASubscription requested field for update a subscription (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return SubscriptionResponse
@@ -949,8 +949,8 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public SubscriptionResponse subscriptionUpdate(String customerId, String id, SubscriptionUpdateRequest subscriptionUpdateRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    return subscriptionUpdateWithHttpInfo(customerId, id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId).getData();
+  public SubscriptionResponse subscriptionUpdate(String customerId, String id, UpdatesASubscription updatesASubscription, String acceptLanguage, String xChildCompanyId) throws ApiException {
+    return subscriptionUpdateWithHttpInfo(customerId, id, updatesASubscription, acceptLanguage, xChildCompanyId).getData();
   }
 
   /**
@@ -958,7 +958,7 @@ public class SubscriptionsApi {
    * Update a specific subscription
    * @param customerId Identifier of the customer resource (required)
    * @param id Identifier of the subscription resource (required)
-   * @param subscriptionUpdateRequest requested field for update a subscription (required)
+   * @param updatesASubscription requested field for update a subscription (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return ApiResponse&lt;SubscriptionResponse&gt;
@@ -973,7 +973,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<SubscriptionResponse> subscriptionUpdateWithHttpInfo(String customerId, String id, SubscriptionUpdateRequest subscriptionUpdateRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<SubscriptionResponse> subscriptionUpdateWithHttpInfo(String customerId, String id, UpdatesASubscription updatesASubscription, String acceptLanguage, String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (customerId == null) {
       throw new ApiException(400, "Missing the required parameter 'customerId' when calling subscriptionUpdate");
@@ -981,8 +981,8 @@ public class SubscriptionsApi {
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling subscriptionUpdate");
     }
-    if (subscriptionUpdateRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'subscriptionUpdateRequest' when calling subscriptionUpdate");
+    if (updatesASubscription == null) {
+      throw new ApiException(400, "Missing the required parameter 'updatesASubscription' when calling subscriptionUpdate");
     }
 
     // Path parameters
@@ -1003,7 +1003,7 @@ public class SubscriptionsApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<SubscriptionResponse> localVarReturnType = new GenericType<SubscriptionResponse>() {};
-    return apiClient.invokeAPI("SubscriptionsApi.subscriptionUpdate", localVarPath, "PUT", new ArrayList<>(), subscriptionUpdateRequest,
+    return apiClient.invokeAPI("SubscriptionsApi.subscriptionUpdate", localVarPath, "PUT", new ArrayList<>(), updatesASubscription,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }
@@ -1091,9 +1091,9 @@ public class SubscriptionsApi {
      <table summary="Response Details" border="1">
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
+       <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
-       <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
@@ -1114,9 +1114,9 @@ public class SubscriptionsApi {
      <table summary="Response Details" border="1">
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
+       <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
-       <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
@@ -1155,7 +1155,7 @@ public class SubscriptionsApi {
    * Update Subscription [Deprecated]
    * DEPRECATED: This endpoint will be removed in version 2.3.0. You can modify the subscription to change the plans that your customers consume
    * @param id Identifier of the resource (required)
-   * @param subscriptionUpdateRequest requested field for update a subscription (required)
+   * @param updatesASubscription requested field for update a subscription (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return SubscriptionResponse
@@ -1172,15 +1172,15 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public SubscriptionResponse updateSubscription(String id, SubscriptionUpdateRequest subscriptionUpdateRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    return updateSubscriptionWithHttpInfo(id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId).getData();
+  public SubscriptionResponse updateSubscription(String id, UpdatesASubscription updatesASubscription, String acceptLanguage, String xChildCompanyId) throws ApiException {
+    return updateSubscriptionWithHttpInfo(id, updatesASubscription, acceptLanguage, xChildCompanyId).getData();
   }
 
   /**
    * Update Subscription [Deprecated]
    * DEPRECATED: This endpoint will be removed in version 2.3.0. You can modify the subscription to change the plans that your customers consume
    * @param id Identifier of the resource (required)
-   * @param subscriptionUpdateRequest requested field for update a subscription (required)
+   * @param updatesASubscription requested field for update a subscription (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return ApiResponse&lt;SubscriptionResponse&gt;
@@ -1197,13 +1197,13 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<SubscriptionResponse> updateSubscriptionWithHttpInfo(String id, SubscriptionUpdateRequest subscriptionUpdateRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<SubscriptionResponse> updateSubscriptionWithHttpInfo(String id, UpdatesASubscription updatesASubscription, String acceptLanguage, String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateSubscription");
     }
-    if (subscriptionUpdateRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'subscriptionUpdateRequest' when calling updateSubscription");
+    if (updatesASubscription == null) {
+      throw new ApiException(400, "Missing the required parameter 'updatesASubscription' when calling updateSubscription");
     }
 
     // Path parameters
@@ -1223,7 +1223,7 @@ public class SubscriptionsApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<SubscriptionResponse> localVarReturnType = new GenericType<SubscriptionResponse>() {};
-    return apiClient.invokeAPI("SubscriptionsApi.updateSubscription", localVarPath, "PUT", new ArrayList<>(), subscriptionUpdateRequest,
+    return apiClient.invokeAPI("SubscriptionsApi.updateSubscription", localVarPath, "PUT", new ArrayList<>(), updatesASubscription,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

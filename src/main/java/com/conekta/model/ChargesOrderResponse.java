@@ -16,7 +16,7 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.ChargesOrderResponseAllOfData;
+import com.conekta.model.ChargeResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -35,6 +35,8 @@ import com.conekta.JSON;
 @JsonPropertyOrder({
   ChargesOrderResponse.JSON_PROPERTY_HAS_MORE,
   ChargesOrderResponse.JSON_PROPERTY_OBJECT,
+  ChargesOrderResponse.JSON_PROPERTY_NEXT_PAGE_URL,
+  ChargesOrderResponse.JSON_PROPERTY_PREVIOUS_PAGE_URL,
   ChargesOrderResponse.JSON_PROPERTY_DATA
 })
 @JsonTypeName("charges_order_response")
@@ -46,8 +48,14 @@ public class ChargesOrderResponse {
   public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;
 
+  public static final String JSON_PROPERTY_NEXT_PAGE_URL = "next_page_url";
+  private String nextPageUrl;
+
+  public static final String JSON_PROPERTY_PREVIOUS_PAGE_URL = "previous_page_url";
+  private String previousPageUrl;
+
   public static final String JSON_PROPERTY_DATA = "data";
-  private List<ChargesOrderResponseAllOfData> data = new ArrayList<>();
+  private List<ChargeResponse> data = new ArrayList<>();
 
   public ChargesOrderResponse() { 
   }
@@ -102,12 +110,62 @@ public class ChargesOrderResponse {
   }
 
 
-  public ChargesOrderResponse data(List<ChargesOrderResponseAllOfData> data) {
+  public ChargesOrderResponse nextPageUrl(String nextPageUrl) {
+    this.nextPageUrl = nextPageUrl;
+    return this;
+  }
+
+   /**
+   * URL of the next page.
+   * @return nextPageUrl
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_NEXT_PAGE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getNextPageUrl() {
+    return nextPageUrl;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_NEXT_PAGE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setNextPageUrl(String nextPageUrl) {
+    this.nextPageUrl = nextPageUrl;
+  }
+
+
+  public ChargesOrderResponse previousPageUrl(String previousPageUrl) {
+    this.previousPageUrl = previousPageUrl;
+    return this;
+  }
+
+   /**
+   * Url of the previous page.
+   * @return previousPageUrl
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PREVIOUS_PAGE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getPreviousPageUrl() {
+    return previousPageUrl;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PREVIOUS_PAGE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPreviousPageUrl(String previousPageUrl) {
+    this.previousPageUrl = previousPageUrl;
+  }
+
+
+  public ChargesOrderResponse data(List<ChargeResponse> data) {
     this.data = data;
     return this;
   }
 
-  public ChargesOrderResponse addDataItem(ChargesOrderResponseAllOfData dataItem) {
+  public ChargesOrderResponse addDataItem(ChargeResponse dataItem) {
     if (this.data == null) {
       this.data = new ArrayList<>();
     }
@@ -123,14 +181,14 @@ public class ChargesOrderResponse {
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<ChargesOrderResponseAllOfData> getData() {
+  public List<ChargeResponse> getData() {
     return data;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setData(List<ChargesOrderResponseAllOfData> data) {
+  public void setData(List<ChargeResponse> data) {
     this.data = data;
   }
 
@@ -149,12 +207,14 @@ public class ChargesOrderResponse {
     ChargesOrderResponse chargesOrderResponse = (ChargesOrderResponse) o;
     return Objects.equals(this.hasMore, chargesOrderResponse.hasMore) &&
         Objects.equals(this._object, chargesOrderResponse._object) &&
+        Objects.equals(this.nextPageUrl, chargesOrderResponse.nextPageUrl) &&
+        Objects.equals(this.previousPageUrl, chargesOrderResponse.previousPageUrl) &&
         Objects.equals(this.data, chargesOrderResponse.data);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hasMore, _object, data);
+    return Objects.hash(hasMore, _object, nextPageUrl, previousPageUrl, data);
   }
 
   @Override
@@ -163,6 +223,8 @@ public class ChargesOrderResponse {
     sb.append("class ChargesOrderResponse {\n");
     sb.append("    hasMore: ").append(toIndentedString(hasMore)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
+    sb.append("    nextPageUrl: ").append(toIndentedString(nextPageUrl)).append("\n");
+    sb.append("    previousPageUrl: ").append(toIndentedString(previousPageUrl)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();

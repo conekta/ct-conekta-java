@@ -10,115 +10,61 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
 import com.conekta.model.ApiKeyCreateResponse;
 import com.conekta.model.ApiKeyRequest;
 import com.conekta.model.ApiKeyResponse;
 import com.conekta.model.ApiKeyUpdateRequest;
 import com.conekta.model.DeleteApiKeysResponse;
-import com.conekta.model.Error;
 import com.conekta.model.GetApiKeysResponse;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for ApiKeysApi
  */
 public class ApiKeysApiTest {
 
-    private final ApiKeysApi api = new ApiKeysApi();
+    private static final String API_KEY_ID = "64625cc9f3e02c00163f5e4d";
 
-    /**
-     * Create Api Key
-     *
-     * Create a api key
-     *
-     * @throws ApiException if the Api call fails
-     */
+    private final ApiKeysApi api = new ApiKeysApi(TestUtils.apiClient());
+
     @Test
     public void createApiKeyTest() throws ApiException {
-        //ApiKeyRequest apiKeyRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //ApiKeyCreateResponse response = api.createApiKey(apiKeyRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        ApiKeyRequest apiKeyRequest = new ApiKeyRequest()
+                .description("java test key")
+                .role("private");
+        ApiKeyCreateResponse response = api.createApiKey(apiKeyRequest, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Delete Api Key
-     *
-     * Deletes a api key that corresponds to a api key ID
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void deleteApiKeyTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //DeleteApiKeysResponse response = api.deleteApiKey(id, acceptLanguage);
-        // TODO: test validations
+        DeleteApiKeysResponse response = api.deleteApiKey(API_KEY_ID, "es");
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get Api Key
-     *
-     * Gets a api key that corresponds to a api key ID
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getApiKeyTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //ApiKeyResponse response = api.getApiKey(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        ApiKeyResponse response = api.getApiKey(API_KEY_ID, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get list of Api Keys
-     *
-     * Consume the list of api keys you have
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getApiKeysTest() throws ApiException {
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //Integer limit = null;
-        //String next = null;
-        //String previous = null;
-        //String search = null;
-        //GetApiKeysResponse response = api.getApiKeys(acceptLanguage, xChildCompanyId, limit, next, previous, search);
-        // TODO: test validations
+        GetApiKeysResponse response = api.getApiKeys("es", null, 20, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update Api Key
-     *
-     * Update an existing api key
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void updateApiKeyTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //ApiKeyUpdateRequest apiKeyUpdateRequest = null;
-        //ApiKeyResponse response = api.updateApiKey(id, acceptLanguage, apiKeyUpdateRequest);
-        // TODO: test validations
+        ApiKeyUpdateRequest apiKeyUpdateRequest = new ApiKeyUpdateRequest()
+                .active(true)
+                .description("updated description");
+        ApiKeyResponse response = api.updateApiKey(API_KEY_ID, "es", apiKeyUpdateRequest);
+        Assertions.assertNotNull(response);
     }
 
 }

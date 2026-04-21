@@ -13,7 +13,7 @@ Alias of cash response used when type=cash_recurrent
 |**_object** | **String** |  |  |
 |**createdAt** | **Long** |  |  |
 |**parentId** | **String** |  |  [optional] |
-|**agreements** | [**List&lt;PaymentMethodCashResponseAllOfAgreements&gt;**](PaymentMethodCashResponseAllOfAgreements.md) |  |  [optional] |
+|**agreements** | [**List&lt;CashAgreementsResponse&gt;**](CashAgreementsResponse.md) |  |  [optional] |
 |**reference** | **String** |  |  [optional] |
 |**barcode** | **String** |  |  [optional] |
 |**barcodeUrl** | **String** | URL to the barcode image, reference is the same as barcode |  [optional] |

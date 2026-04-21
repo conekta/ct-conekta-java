@@ -48,7 +48,7 @@ import com.conekta.JSON;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class UpdateProduct {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
-  private Map<String, Object> antifraudInfo = new HashMap<>();
+  private Map<String, Object> antifraudInfo;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
@@ -72,21 +72,13 @@ public class UpdateProduct {
   private String brand;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
-  private Map<String, String> metadata = new HashMap<>();
+  private Map<String, String> metadata;
 
   public UpdateProduct() { 
   }
 
   public UpdateProduct antifraudInfo(Map<String, Object> antifraudInfo) {
     this.antifraudInfo = antifraudInfo;
-    return this;
-  }
-
-  public UpdateProduct putAntifraudInfoItem(String key, Object antifraudInfoItem) {
-    if (this.antifraudInfo == null) {
-      this.antifraudInfo = new HashMap<>();
-    }
-    this.antifraudInfo.put(key, antifraudInfoItem);
     return this;
   }
 
@@ -297,14 +289,6 @@ public class UpdateProduct {
 
   public UpdateProduct metadata(Map<String, String> metadata) {
     this.metadata = metadata;
-    return this;
-  }
-
-  public UpdateProduct putMetadataItem(String key, String metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<>();
-    }
-    this.metadata.put(key, metadataItem);
     return this;
   }
 

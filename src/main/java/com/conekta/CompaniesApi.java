@@ -281,6 +281,53 @@ public class CompaniesApi {
                                localVarAuthNames, localVarReturnType, false);
   }
   /**
+   * Get Current Company
+   * Retrieves information about the currently authenticated company. This endpoint returns the same data as the standard company endpoint but automatically uses the current company&#39;s context.
+   * @param acceptLanguage Use for knowing which language to use (optional, default to es)
+   * @return CompanyResponse
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
+       <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
+       <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
+     </table>
+   */
+  public CompanyResponse getCurrentCompany(String acceptLanguage) throws ApiException {
+    return getCurrentCompanyWithHttpInfo(acceptLanguage).getData();
+  }
+
+  /**
+   * Get Current Company
+   * Retrieves information about the currently authenticated company. This endpoint returns the same data as the standard company endpoint but automatically uses the current company&#39;s context.
+   * @param acceptLanguage Use for knowing which language to use (optional, default to es)
+   * @return ApiResponse&lt;CompanyResponse&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
+       <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
+       <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<CompanyResponse> getCurrentCompanyWithHttpInfo(String acceptLanguage) throws ApiException {
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
+      localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+    }
+
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
+    GenericType<CompanyResponse> localVarReturnType = new GenericType<CompanyResponse>() {};
+    return apiClient.invokeAPI("CompaniesApi.getCurrentCompany", "/companies/current", "GET", new ArrayList<>(), null,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+  /**
    * Update Company Document
    * Updates an existing document associated with a specific company.
    * @param companyId The unique identifier of the company. (required)

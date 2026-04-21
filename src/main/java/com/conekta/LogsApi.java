@@ -9,8 +9,8 @@ import com.conekta.Pair;
 import javax.ws.rs.core.GenericType;
 
 import com.conekta.model.Error;
-import com.conekta.model.LogResponse;
-import com.conekta.model.LogsResponse;
+import com.conekta.model.LogResponseForRequest;
+import com.conekta.model.LogsResponseForRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,7 +54,7 @@ public class LogsApi {
    * @param id Identifier of the resource (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
-   * @return LogResponse
+   * @return LogResponseForRequest
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -65,7 +65,7 @@ public class LogsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public LogResponse getLogById(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public LogResponseForRequest getLogById(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
     return getLogByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -75,7 +75,7 @@ public class LogsApi {
    * @param id Identifier of the resource (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
-   * @return ApiResponse&lt;LogResponse&gt;
+   * @return ApiResponse&lt;LogResponseForRequest&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -86,7 +86,7 @@ public class LogsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<LogResponse> getLogByIdWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<LogResponseForRequest> getLogByIdWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getLogById");
@@ -108,7 +108,7 @@ public class LogsApi {
     String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
-    GenericType<LogResponse> localVarReturnType = new GenericType<LogResponse>() {};
+    GenericType<LogResponseForRequest> localVarReturnType = new GenericType<LogResponseForRequest>() {};
     return apiClient.invokeAPI("LogsApi.getLogById", localVarPath, "GET", new ArrayList<>(), null,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
@@ -122,7 +122,7 @@ public class LogsApi {
    * @param search General order search, e.g. by mail, reference etc. (optional)
    * @param next next page (optional)
    * @param previous previous page (optional)
-   * @return LogsResponse
+   * @return LogsResponseForRequest
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -132,7 +132,7 @@ public class LogsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public LogsResponse getLogs(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public LogsResponseForRequest getLogs(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
     return getLogsWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous).getData();
   }
 
@@ -145,7 +145,7 @@ public class LogsApi {
    * @param search General order search, e.g. by mail, reference etc. (optional)
    * @param next next page (optional)
    * @param previous previous page (optional)
-   * @return ApiResponse&lt;LogsResponse&gt;
+   * @return ApiResponse&lt;LogsResponseForRequest&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -155,7 +155,7 @@ public class LogsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<LogsResponse> getLogsWithHttpInfo(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public ApiResponse<LogsResponseForRequest> getLogsWithHttpInfo(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "limit", limit)
@@ -176,7 +176,7 @@ public class LogsApi {
     String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
-    GenericType<LogsResponse> localVarReturnType = new GenericType<LogsResponse>() {};
+    GenericType<LogsResponseForRequest> localVarReturnType = new GenericType<LogsResponseForRequest>() {};
     return apiClient.invokeAPI("LogsApi.getLogs", "/logs", "GET", localVarQueryParams, null,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);

@@ -30,17 +30,20 @@ import com.conekta.JSON;
  * The customer information of the payout order.
  */
 @JsonPropertyOrder({
+  PayoutOrderResponseCustomerInfo.JSON_PROPERTY_ID,
   PayoutOrderResponseCustomerInfo.JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE,
   PayoutOrderResponseCustomerInfo.JSON_PROPERTY_NAME,
   PayoutOrderResponseCustomerInfo.JSON_PROPERTY_EMAIL,
   PayoutOrderResponseCustomerInfo.JSON_PROPERTY_PHONE,
   PayoutOrderResponseCustomerInfo.JSON_PROPERTY_CORPORATE,
-  PayoutOrderResponseCustomerInfo.JSON_PROPERTY_OBJECT,
-  PayoutOrderResponseCustomerInfo.JSON_PROPERTY_ID
+  PayoutOrderResponseCustomerInfo.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("payout_order_response_customer_info")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class PayoutOrderResponseCustomerInfo {
+  public static final String JSON_PROPERTY_ID = "id";
+  private String id;
+
   public static final String JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE = "customer_custom_reference";
   private String customerCustomReference;
 
@@ -59,11 +62,33 @@ public class PayoutOrderResponseCustomerInfo {
   public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;
 
-  public static final String JSON_PROPERTY_ID = "id";
-  private String id;
-
   public PayoutOrderResponseCustomerInfo() { 
   }
+
+  public PayoutOrderResponseCustomerInfo id(String id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * The id of the customer.
+   * @return id
+  **/
+  @javax.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getId() {
+    return id;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setId(String id) {
+    this.id = id;
+  }
+
 
   public PayoutOrderResponseCustomerInfo customerCustomReference(String customerCustomReference) {
     this.customerCustomReference = customerCustomReference;
@@ -215,31 +240,6 @@ public class PayoutOrderResponseCustomerInfo {
   }
 
 
-  public PayoutOrderResponseCustomerInfo id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * The id of the customer.
-   * @return id
-  **/
-  @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getId() {
-    return id;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
-    this.id = id;
-  }
-
-
   /**
    * Return true if this payout_order_response_customer_info object is equal to o.
    */
@@ -252,31 +252,31 @@ public class PayoutOrderResponseCustomerInfo {
       return false;
     }
     PayoutOrderResponseCustomerInfo payoutOrderResponseCustomerInfo = (PayoutOrderResponseCustomerInfo) o;
-    return Objects.equals(this.customerCustomReference, payoutOrderResponseCustomerInfo.customerCustomReference) &&
+    return Objects.equals(this.id, payoutOrderResponseCustomerInfo.id) &&
+        Objects.equals(this.customerCustomReference, payoutOrderResponseCustomerInfo.customerCustomReference) &&
         Objects.equals(this.name, payoutOrderResponseCustomerInfo.name) &&
         Objects.equals(this.email, payoutOrderResponseCustomerInfo.email) &&
         Objects.equals(this.phone, payoutOrderResponseCustomerInfo.phone) &&
         Objects.equals(this.corporate, payoutOrderResponseCustomerInfo.corporate) &&
-        Objects.equals(this._object, payoutOrderResponseCustomerInfo._object) &&
-        Objects.equals(this.id, payoutOrderResponseCustomerInfo.id);
+        Objects.equals(this._object, payoutOrderResponseCustomerInfo._object);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customerCustomReference, name, email, phone, corporate, _object, id);
+    return Objects.hash(id, customerCustomReference, name, email, phone, corporate, _object);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PayoutOrderResponseCustomerInfo {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    customerCustomReference: ").append(toIndentedString(customerCustomReference)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    corporate: ").append(toIndentedString(corporate)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }

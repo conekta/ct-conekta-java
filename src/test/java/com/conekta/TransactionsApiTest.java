@@ -10,67 +10,32 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
-import com.conekta.model.Error;
 import com.conekta.model.GetTransactionsResponse;
 import com.conekta.model.TransactionResponse;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for TransactionsApi
  */
 public class TransactionsApiTest {
 
-    private final TransactionsApi api = new TransactionsApi();
+    private final TransactionsApi api = new TransactionsApi(TestUtils.apiClient());
 
-    /**
-     * Get transaction
-     *
-     * Get the details of a transaction
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getTransactionTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //TransactionResponse response = api.getTransaction(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        TransactionResponse response = api.getTransaction("6456b6dfac0fd40001a64eb8", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get List transactions
-     *
-     * Get transaction details in the form of a list
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getTransactionsTest() throws ApiException {
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //Integer limit = null;
-        //String next = null;
-        //String previous = null;
-        //String id = null;
-        //String chargeId = null;
-        //String type = null;
-        //String currency = null;
-        //GetTransactionsResponse response = api.getTransactions(acceptLanguage, xChildCompanyId, limit, next, previous, id, chargeId, type, currency);
-        // TODO: test validations
+        GetTransactionsResponse response = api.getTransactions(
+                "es", null, 2, null, null, null, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
 }

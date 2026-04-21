@@ -16,22 +16,25 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
+import com.conekta.model.DiscountLinesResponse;
 import com.conekta.model.OrderChannelResponse;
 import com.conekta.model.OrderChargesResponse;
-import com.conekta.model.OrderDiscountLinesResponse;
 import com.conekta.model.OrderFiscalEntityResponse;
 import com.conekta.model.OrderNextActionResponse;
 import com.conekta.model.OrderResponseCheckout;
 import com.conekta.model.OrderResponseCustomerInfo;
 import com.conekta.model.OrderResponseProducts;
 import com.conekta.model.OrderResponseShippingContact;
+import com.conekta.model.OrderTaxResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
@@ -50,6 +53,7 @@ import com.conekta.JSON;
   OrderResponse.JSON_PROPERTY_CURRENCY,
   OrderResponse.JSON_PROPERTY_CUSTOMER_INFO,
   OrderResponse.JSON_PROPERTY_DISCOUNT_LINES,
+  OrderResponse.JSON_PROPERTY_TAX_LINES,
   OrderResponse.JSON_PROPERTY_FISCAL_ENTITY,
   OrderResponse.JSON_PROPERTY_ID,
   OrderResponse.JSON_PROPERTY_IS_REFUNDABLE,
@@ -91,7 +95,10 @@ public class OrderResponse {
   private OrderResponseCustomerInfo customerInfo;
 
   public static final String JSON_PROPERTY_DISCOUNT_LINES = "discount_lines";
-  private OrderDiscountLinesResponse discountLines;
+  private List<DiscountLinesResponse> discountLines = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_TAX_LINES = "tax_lines";
+  private List<OrderTaxResponse> taxLines = new ArrayList<>();
 
   public static final String JSON_PROPERTY_FISCAL_ENTITY = "fiscal_entity";
   private OrderFiscalEntityResponse fiscalEntity;
@@ -332,28 +339,69 @@ public class OrderResponse {
   }
 
 
-  public OrderResponse discountLines(OrderDiscountLinesResponse discountLines) {
+  public OrderResponse discountLines(List<DiscountLinesResponse> discountLines) {
     this.discountLines = discountLines;
     return this;
   }
 
+  public OrderResponse addDiscountLinesItem(DiscountLinesResponse discountLinesItem) {
+    if (this.discountLines == null) {
+      this.discountLines = new ArrayList<>();
+    }
+    this.discountLines.add(discountLinesItem);
+    return this;
+  }
+
    /**
-   * Get discountLines
+   * List of discounts that are applied to the order
    * @return discountLines
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OrderDiscountLinesResponse getDiscountLines() {
+  public List<DiscountLinesResponse> getDiscountLines() {
     return discountLines;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDiscountLines(OrderDiscountLinesResponse discountLines) {
+  public void setDiscountLines(List<DiscountLinesResponse> discountLines) {
     this.discountLines = discountLines;
+  }
+
+
+  public OrderResponse taxLines(List<OrderTaxResponse> taxLines) {
+    this.taxLines = taxLines;
+    return this;
+  }
+
+  public OrderResponse addTaxLinesItem(OrderTaxResponse taxLinesItem) {
+    if (this.taxLines == null) {
+      this.taxLines = new ArrayList<>();
+    }
+    this.taxLines.add(taxLinesItem);
+    return this;
+  }
+
+   /**
+   * List of taxes that are applied to the order
+   * @return taxLines
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TAX_LINES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<OrderTaxResponse> getTaxLines() {
+    return taxLines;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TAX_LINES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTaxLines(List<OrderTaxResponse> taxLines) {
+    this.taxLines = taxLines;
   }
 
 
@@ -487,21 +535,13 @@ public class OrderResponse {
     return this;
   }
 
-  public OrderResponse putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<>();
-    }
-    this.metadata.put(key, metadataItem);
-    return this;
-  }
-
    /**
    * Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
    * @return metadata
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
     return metadata;
@@ -509,7 +549,7 @@ public class OrderResponse {
 
 
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
   }
@@ -686,6 +726,7 @@ public class OrderResponse {
         Objects.equals(this.currency, orderResponse.currency) &&
         Objects.equals(this.customerInfo, orderResponse.customerInfo) &&
         Objects.equals(this.discountLines, orderResponse.discountLines) &&
+        Objects.equals(this.taxLines, orderResponse.taxLines) &&
         Objects.equals(this.fiscalEntity, orderResponse.fiscalEntity) &&
         Objects.equals(this.id, orderResponse.id) &&
         Objects.equals(this.isRefundable, orderResponse.isRefundable) &&
@@ -702,7 +743,7 @@ public class OrderResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, amountRefunded, channel, charges, checkout, createdAt, currency, customerInfo, discountLines, fiscalEntity, id, isRefundable, lineItems, livemode, metadata, nextAction, _object, paymentStatus, processingMode, shippingContact, updatedAt);
+    return Objects.hash(amount, amountRefunded, channel, charges, checkout, createdAt, currency, customerInfo, discountLines, taxLines, fiscalEntity, id, isRefundable, lineItems, livemode, metadata, nextAction, _object, paymentStatus, processingMode, shippingContact, updatedAt);
   }
 
   @Override
@@ -718,6 +759,7 @@ public class OrderResponse {
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    customerInfo: ").append(toIndentedString(customerInfo)).append("\n");
     sb.append("    discountLines: ").append(toIndentedString(discountLines)).append("\n");
+    sb.append("    taxLines: ").append(toIndentedString(taxLines)).append("\n");
     sb.append("    fiscalEntity: ").append(toIndentedString(fiscalEntity)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    isRefundable: ").append(toIndentedString(isRefundable)).append("\n");

@@ -32,7 +32,7 @@ import com.conekta.JSON;
 @JsonPropertyOrder({
   CreateCompanyRequestBankAccountInfo.JSON_PROPERTY_CLABE
 })
-@JsonTypeName("create_company_request_bank_account_info")
+@JsonTypeName("Create_Company_Request_bank_account_info")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CreateCompanyRequestBankAccountInfo {
   public static final String JSON_PROPERTY_CLABE = "clabe";
@@ -67,7 +67,7 @@ public class CreateCompanyRequestBankAccountInfo {
 
 
   /**
-   * Return true if this create_company_request_bank_account_info object is equal to o.
+   * Return true if this Create_Company_Request_bank_account_info object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

@@ -16,7 +16,7 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.CompanyResponseDocumentsInner;
+import com.conekta.model.CompanyDocumentResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -41,7 +41,9 @@ import com.conekta.JSON;
   CompanyResponse.JSON_PROPERTY_ONBOARDING_STATUS,
   CompanyResponse.JSON_PROPERTY_DOCUMENTS,
   CompanyResponse.JSON_PROPERTY_CREATED_AT,
-  CompanyResponse.JSON_PROPERTY_OBJECT
+  CompanyResponse.JSON_PROPERTY_OBJECT,
+  CompanyResponse.JSON_PROPERTY_THREE_DS_ENABLED,
+  CompanyResponse.JSON_PROPERTY_THREE_DS_MODE
 })
 @JsonTypeName("company_response")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
@@ -65,13 +67,54 @@ public class CompanyResponse {
   private String onboardingStatus;
 
   public static final String JSON_PROPERTY_DOCUMENTS = "documents";
-  private List<CompanyResponseDocumentsInner> documents = new ArrayList<>();
+  private List<CompanyDocumentResponse> documents = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private Long createdAt;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;
+
+  public static final String JSON_PROPERTY_THREE_DS_ENABLED = "three_ds_enabled";
+  private Boolean threeDsEnabled;
+
+  /**
+   * The 3DS mode for the company, either &#39;smart&#39; or &#39;strict&#39;. This property is only applicable when three_ds_enabled is true. When three_ds_enabled is false, this field will be null.
+   */
+  public enum ThreeDsModeEnum {
+    SMART("smart"),
+    
+    STRICT("strict");
+
+    private String value;
+
+    ThreeDsModeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static ThreeDsModeEnum fromValue(String value) {
+      for (ThreeDsModeEnum b : ThreeDsModeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
+  public static final String JSON_PROPERTY_THREE_DS_MODE = "three_ds_mode";
+  private ThreeDsModeEnum threeDsMode;
 
   public CompanyResponse() { 
   }
@@ -226,12 +269,12 @@ public class CompanyResponse {
   }
 
 
-  public CompanyResponse documents(List<CompanyResponseDocumentsInner> documents) {
+  public CompanyResponse documents(List<CompanyDocumentResponse> documents) {
     this.documents = documents;
     return this;
   }
 
-  public CompanyResponse addDocumentsItem(CompanyResponseDocumentsInner documentsItem) {
+  public CompanyResponse addDocumentsItem(CompanyDocumentResponse documentsItem) {
     if (this.documents == null) {
       this.documents = new ArrayList<>();
     }
@@ -247,14 +290,14 @@ public class CompanyResponse {
   @JsonProperty(JSON_PROPERTY_DOCUMENTS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<CompanyResponseDocumentsInner> getDocuments() {
+  public List<CompanyDocumentResponse> getDocuments() {
     return documents;
   }
 
 
   @JsonProperty(JSON_PROPERTY_DOCUMENTS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDocuments(List<CompanyResponseDocumentsInner> documents) {
+  public void setDocuments(List<CompanyDocumentResponse> documents) {
     this.documents = documents;
   }
 
@@ -309,6 +352,56 @@ public class CompanyResponse {
   }
 
 
+  public CompanyResponse threeDsEnabled(Boolean threeDsEnabled) {
+    this.threeDsEnabled = threeDsEnabled;
+    return this;
+  }
+
+   /**
+   * Indicates if 3DS authentication is enabled for the company.
+   * @return threeDsEnabled
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_THREE_DS_ENABLED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getThreeDsEnabled() {
+    return threeDsEnabled;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_THREE_DS_ENABLED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setThreeDsEnabled(Boolean threeDsEnabled) {
+    this.threeDsEnabled = threeDsEnabled;
+  }
+
+
+  public CompanyResponse threeDsMode(ThreeDsModeEnum threeDsMode) {
+    this.threeDsMode = threeDsMode;
+    return this;
+  }
+
+   /**
+   * The 3DS mode for the company, either &#39;smart&#39; or &#39;strict&#39;. This property is only applicable when three_ds_enabled is true. When three_ds_enabled is false, this field will be null.
+   * @return threeDsMode
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_THREE_DS_MODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public ThreeDsModeEnum getThreeDsMode() {
+    return threeDsMode;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_THREE_DS_MODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setThreeDsMode(ThreeDsModeEnum threeDsMode) {
+    this.threeDsMode = threeDsMode;
+  }
+
+
   /**
    * Return true if this company_response object is equal to o.
    */
@@ -329,12 +422,14 @@ public class CompanyResponse {
         Objects.equals(this.onboardingStatus, companyResponse.onboardingStatus) &&
         Objects.equals(this.documents, companyResponse.documents) &&
         Objects.equals(this.createdAt, companyResponse.createdAt) &&
-        Objects.equals(this._object, companyResponse._object);
+        Objects.equals(this._object, companyResponse._object) &&
+        Objects.equals(this.threeDsEnabled, companyResponse.threeDsEnabled) &&
+        Objects.equals(this.threeDsMode, companyResponse.threeDsMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, active, accountStatus, parentCompanyId, onboardingStatus, documents, createdAt, _object);
+    return Objects.hash(id, name, active, accountStatus, parentCompanyId, onboardingStatus, documents, createdAt, _object, threeDsEnabled, threeDsMode);
   }
 
   @Override
@@ -350,6 +445,8 @@ public class CompanyResponse {
     sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
+    sb.append("    threeDsEnabled: ").append(toIndentedString(threeDsEnabled)).append("\n");
+    sb.append("    threeDsMode: ").append(toIndentedString(threeDsMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

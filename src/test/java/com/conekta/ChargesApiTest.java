@@ -10,99 +10,89 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
 import com.conekta.model.ChargeOrderResponse;
 import com.conekta.model.ChargeRequest;
+import com.conekta.model.ChargeRequestPaymentMethod;
 import com.conekta.model.ChargeResponse;
 import com.conekta.model.ChargeUpdateRequest;
 import com.conekta.model.ChargesOrderResponse;
-import com.conekta.model.Error;
 import com.conekta.model.GetChargesResponse;
+import com.conekta.model.PaymentMethodGeneralRequest;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for ChargesApi
  */
 public class ChargesApiTest {
 
-    private final ChargesApi api = new ChargesApi();
+    private final ChargesApi api = new ChargesApi(TestUtils.apiClient());
 
-    /**
-     * Get A List of Charges
-     *
-     * @throws ApiException if the Api call fails
-     */
+    private ChargeRequest buildCashChargeRequest() {
+        ChargeRequestPaymentMethod paymentMethod = new ChargeRequestPaymentMethod();
+        paymentMethod.setActualInstance(new PaymentMethodGeneralRequest().type("cash"));
+        return new ChargeRequest()
+                .amount(1000L)
+                .paymentMethod(paymentMethod);
+    }
+
     @Test
     public void getChargesTest() throws ApiException {
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //Integer limit = null;
-        //String search = null;
-        //String next = null;
-        //String previous = null;
-        //GetChargesResponse response = api.getCharges(acceptLanguage, xChildCompanyId, limit, search, next, previous);
-        // TODO: test validations
+        GetChargesResponse response = api.getCharges("es", null, 20, null, null, null);
+        Assertions.assertAll("charges list",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertEquals("list", response.getObject()),
+                () -> Assertions.assertTrue(response.getHasMore()),
+                () -> Assertions.assertNotNull(response.getNextPageUrl()),
+                () -> Assertions.assertNotNull(response.getData()),
+                () -> Assertions.assertFalse(response.getData().isEmpty()),
+                () -> Assertions.assertNotNull(response.getData().get(0).getId()));
     }
 
-    /**
-     * Create charge
-     *
-     * Create charge for an existing orden
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void ordersCreateChargeTest() throws ApiException {
-        //String id = null;
-        //ChargeRequest chargeRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //ChargeOrderResponse response = api.ordersCreateCharge(id, chargeRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        ChargeOrderResponse response = api.ordersCreateCharge(
+                "ord_2tVKxbhNzfUnGjnXG",
+                buildCashChargeRequest(),
+                "es",
+                null);
+        Assertions.assertAll("charge on order",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertNotNull(response.getId()),
+                () -> Assertions.assertEquals("charge", response.getObject()),
+                () -> Assertions.assertEquals("MXN", response.getCurrency()),
+                () -> Assertions.assertNotNull(response.getPaymentMethod()));
     }
 
-    /**
-     * Create charges
-     *
-     * Create charges for an existing orden
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void ordersCreateChargesTest() throws ApiException {
-        //String id = null;
-        //ChargeRequest chargeRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //ChargesOrderResponse response = api.ordersCreateCharges(id, chargeRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        ChargesOrderResponse response = api.ordersCreateCharges(
+                "ord_2wrW9arie9fUG4MfD",
+                buildCashChargeRequest(),
+                "es",
+                null);
+        Assertions.assertAll("charges list on order",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertEquals("list", response.getObject()),
+                () -> Assertions.assertNotNull(response.getData()),
+                () -> Assertions.assertFalse(response.getData().isEmpty()),
+                () -> Assertions.assertNotNull(response.getData().get(0).getId()));
     }
 
-    /**
-     * Update a charge
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void updateChargeTest() throws ApiException {
-        //String id = null;
-        //ChargeUpdateRequest chargeUpdateRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //ChargeResponse response = api.updateCharge(id, chargeUpdateRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        String chargeId = "6524722f28c7ba0016a5b17d";
+        ChargeUpdateRequest chargeUpdateRequest = new ChargeUpdateRequest().referenceId("ref_9876");
+        ChargeResponse response = api.updateCharge(chargeId, chargeUpdateRequest, "es", null);
+        Assertions.assertAll("charge update",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertEquals(chargeId, response.getId()),
+                () -> Assertions.assertEquals("charge", response.getObject()),
+                () -> Assertions.assertEquals("MXN", response.getCurrency()),
+                () -> Assertions.assertNotNull(response.getStatus()));
     }
 
 }

@@ -258,7 +258,7 @@ public class Example {
 
 ## updateCustomerPaymentMethods
 
-> UpdateCustomerPaymentMethodsResponse updateCustomerPaymentMethods(id, paymentMethodId, updatePaymentMethods, acceptLanguage, xChildCompanyId)
+> UpdateCustomerPaymentMethodsResponse updateCustomerPaymentMethods(id, paymentMethodId, updatePaymentMethodsCard, acceptLanguage, xChildCompanyId)
 
 Update Payment Method
 
@@ -287,11 +287,11 @@ public class Example {
         PaymentMethodsApi apiInstance = new PaymentMethodsApi(defaultClient);
         String id = "6307a60c41de27127515a575"; // String | Identifier of the resource
         String paymentMethodId = "src_2tQ974hSHcsdeSZHG"; // String | Identifier of the payment method
-        UpdatePaymentMethods updatePaymentMethods = new UpdatePaymentMethods(); // UpdatePaymentMethods | requested field for customer payment methods
+        UpdatePaymentMethodsCard updatePaymentMethodsCard = new UpdatePaymentMethodsCard(); // UpdatePaymentMethodsCard | requested field for customer payment methods
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
         try {
-            UpdateCustomerPaymentMethodsResponse result = apiInstance.updateCustomerPaymentMethods(id, paymentMethodId, updatePaymentMethods, acceptLanguage, xChildCompanyId);
+            UpdateCustomerPaymentMethodsResponse result = apiInstance.updateCustomerPaymentMethods(id, paymentMethodId, updatePaymentMethodsCard, acceptLanguage, xChildCompanyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PaymentMethodsApi#updateCustomerPaymentMethods");
@@ -311,7 +311,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **id** | **String**| Identifier of the resource | |
 | **paymentMethodId** | **String**| Identifier of the payment method | |
-| **updatePaymentMethods** | [**UpdatePaymentMethods**](UpdatePaymentMethods.md)| requested field for customer payment methods | |
+| **updatePaymentMethodsCard** | [**UpdatePaymentMethodsCard**](UpdatePaymentMethodsCard.md)| requested field for customer payment methods | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
 

@@ -35,6 +35,8 @@ import com.conekta.JSON;
 @JsonPropertyOrder({
   OrderChargesResponse.JSON_PROPERTY_HAS_MORE,
   OrderChargesResponse.JSON_PROPERTY_OBJECT,
+  OrderChargesResponse.JSON_PROPERTY_NEXT_PAGE_URL,
+  OrderChargesResponse.JSON_PROPERTY_PREVIOUS_PAGE_URL,
   OrderChargesResponse.JSON_PROPERTY_DATA
 })
 @JsonTypeName("order_charges_response")
@@ -45,6 +47,12 @@ public class OrderChargesResponse {
 
   public static final String JSON_PROPERTY_OBJECT = "object";
   private String _object;
+
+  public static final String JSON_PROPERTY_NEXT_PAGE_URL = "next_page_url";
+  private String nextPageUrl;
+
+  public static final String JSON_PROPERTY_PREVIOUS_PAGE_URL = "previous_page_url";
+  private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
   private List<ChargesDataResponse> data = new ArrayList<>();
@@ -102,6 +110,56 @@ public class OrderChargesResponse {
   }
 
 
+  public OrderChargesResponse nextPageUrl(String nextPageUrl) {
+    this.nextPageUrl = nextPageUrl;
+    return this;
+  }
+
+   /**
+   * URL of the next page.
+   * @return nextPageUrl
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_NEXT_PAGE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getNextPageUrl() {
+    return nextPageUrl;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_NEXT_PAGE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setNextPageUrl(String nextPageUrl) {
+    this.nextPageUrl = nextPageUrl;
+  }
+
+
+  public OrderChargesResponse previousPageUrl(String previousPageUrl) {
+    this.previousPageUrl = previousPageUrl;
+    return this;
+  }
+
+   /**
+   * Url of the previous page.
+   * @return previousPageUrl
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PREVIOUS_PAGE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getPreviousPageUrl() {
+    return previousPageUrl;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PREVIOUS_PAGE_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPreviousPageUrl(String previousPageUrl) {
+    this.previousPageUrl = previousPageUrl;
+  }
+
+
   public OrderChargesResponse data(List<ChargesDataResponse> data) {
     this.data = data;
     return this;
@@ -149,12 +207,14 @@ public class OrderChargesResponse {
     OrderChargesResponse orderChargesResponse = (OrderChargesResponse) o;
     return Objects.equals(this.hasMore, orderChargesResponse.hasMore) &&
         Objects.equals(this._object, orderChargesResponse._object) &&
+        Objects.equals(this.nextPageUrl, orderChargesResponse.nextPageUrl) &&
+        Objects.equals(this.previousPageUrl, orderChargesResponse.previousPageUrl) &&
         Objects.equals(this.data, orderChargesResponse.data);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hasMore, _object, data);
+    return Objects.hash(hasMore, _object, nextPageUrl, previousPageUrl, data);
   }
 
   @Override
@@ -163,6 +223,8 @@ public class OrderChargesResponse {
     sb.append("class OrderChargesResponse {\n");
     sb.append("    hasMore: ").append(toIndentedString(hasMore)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
+    sb.append("    nextPageUrl: ").append(toIndentedString(nextPageUrl)).append("\n");
+    sb.append("    previousPageUrl: ").append(toIndentedString(previousPageUrl)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();

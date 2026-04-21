@@ -82,21 +82,13 @@ public class Product {
     return this;
   }
 
-  public Product putAntifraudInfoItem(String key, Object antifraudInfoItem) {
-    if (this.antifraudInfo == null) {
-      this.antifraudInfo = new HashMap<>();
-    }
-    this.antifraudInfo.put(key, antifraudInfoItem);
-    return this;
-  }
-
    /**
    * Get antifraudInfo
    * @return antifraudInfo
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ANTIFRAUD_INFO)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getAntifraudInfo() {
     return antifraudInfo;
@@ -104,7 +96,7 @@ public class Product {
 
 
   @JsonProperty(JSON_PROPERTY_ANTIFRAUD_INFO)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAntifraudInfo(Map<String, Object> antifraudInfo) {
     this.antifraudInfo = antifraudInfo;
   }
@@ -165,21 +157,13 @@ public class Product {
     return this;
   }
 
-  public Product putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<>();
-    }
-    this.metadata.put(key, metadataItem);
-    return this;
-  }
-
    /**
    * It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
    * @return metadata
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
     return metadata;
@@ -187,7 +171,7 @@ public class Product {
 
 
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
   }

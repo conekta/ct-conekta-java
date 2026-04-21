@@ -15,12 +15,12 @@
 |**loggableType** | **String** |  |  [optional] |
 |**method** | **String** |  |  [optional] |
 |**oauthTokenId** | **String** |  |  [optional] |
-|**queryString** | **Map&lt;String, Object&gt;** |  |  [optional] |
+|**queryString** |  |  |  [optional] |
 |**related** | **String** |  |  [optional] |
 |**requestBody** | **Object** |  |  [optional] |
-|**requestHeaders** | **Map&lt;String, String&gt;** |  |  [optional] |
+|**requestHeaders** |  |  |  [optional] |
 |**responseBody** | **Object** |  |  [optional] |
-|**responseHeaders** | **Map&lt;String, String&gt;** |  |  [optional] |
+|**responseHeaders** |  |  |  [optional] |
 |**searchableTags** | **List&lt;String&gt;** |  |  [optional] |
 |**status** | **String** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |

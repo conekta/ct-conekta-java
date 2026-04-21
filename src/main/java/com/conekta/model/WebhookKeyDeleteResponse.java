@@ -37,7 +37,7 @@ import com.conekta.JSON;
   WebhookKeyDeleteResponse.JSON_PROPERTY_LIVEMODE,
   WebhookKeyDeleteResponse.JSON_PROPERTY_OBJECT
 })
-@JsonTypeName("webhook-key_delete_response")
+@JsonTypeName("webhook_key_delete_response")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class WebhookKeyDeleteResponse {
   public static final String JSON_PROPERTY_ACTIVE = "active";
@@ -212,7 +212,7 @@ public class WebhookKeyDeleteResponse {
 
 
   /**
-   * Return true if this webhook-key_delete_response object is equal to o.
+   * Return true if this webhook_key_delete_response object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

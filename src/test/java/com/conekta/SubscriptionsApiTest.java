@@ -10,305 +10,138 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
-import com.conekta.model.Error;
 import com.conekta.model.SubscriptionEventsResponse;
 import com.conekta.model.SubscriptionRequest;
 import com.conekta.model.SubscriptionResponse;
-import com.conekta.model.SubscriptionUpdateRequest;
+import com.conekta.model.UpdatesASubscription;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for SubscriptionsApi
  */
 public class SubscriptionsApiTest {
 
-    private final SubscriptionsApi api = new SubscriptionsApi();
+    private static final String CUSTOMER_ID = "cus_2tZWxbTPtQgGJGh8P";
+    private static final String SUBSCRIPTION_EVENTS_CUSTOMER_ID = "cus_2rKpeXQpapLonfVke";
 
-    /**
-     * Cancel Subscription [Deprecated]
-     *
-     * DEPRECATED: This endpoint will be removed in version 2.3.0.
-     *
-     * @throws ApiException if the Api call fails
-     */
+    private final SubscriptionsApi api = new SubscriptionsApi(TestUtils.apiClient());
+
     @Test
     public void cancelSubscriptionTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //SubscriptionResponse response = api.cancelSubscription(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        SubscriptionResponse response = api.cancelSubscription(CUSTOMER_ID, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Create Subscription [Deprecated]
-     *
-     * DEPRECATED: This endpoint will be removed in version 2.3.0. You can create the subscription to include the plans that your customers consume
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void createSubscriptionTest() throws ApiException {
-        //String id = null;
-        //SubscriptionRequest subscriptionRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //SubscriptionResponse response = api.createSubscription(id, subscriptionRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        SubscriptionRequest subscriptionRequest = new SubscriptionRequest()
+                .planId("plan_2tZb5q8Z3PYpg6SJd");
+        SubscriptionResponse response = api.createSubscription(CUSTOMER_ID, subscriptionRequest, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get Subscription [Deprecated]
-     *
-     * DEPRECATED: This endpoint will be removed in version 2.3.0.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getSubscriptionTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //SubscriptionResponse response = api.getSubscription(id, acceptLanguage);
-        // TODO: test validations
+        SubscriptionResponse response = api.getSubscription(CUSTOMER_ID, "es");
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get Subscription Events [Deprecated]
-     *
-     * DEPRECATED: This endpoint will be removed in version 2.3.0. You can get the events of the subscription(s) of a client, with the customer id
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getSubscriptionEventsTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //SubscriptionEventsResponse response = api.getSubscriptionEvents(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        SubscriptionEventsResponse response = api.getSubscriptionEvents(
+                SUBSCRIPTION_EVENTS_CUSTOMER_ID, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Pause Subscription [Deprecated]
-     *
-     * DEPRECATED: This endpoint will be removed in version 2.3.0.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void pauseSubscriptionTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //SubscriptionResponse response = api.pauseSubscription(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        SubscriptionResponse response = api.pauseSubscription(CUSTOMER_ID, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Resume Subscription [Deprecated]
-     *
-     * DEPRECATED: This endpoint will be removed in version 2.3.0.
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void resumeSubscriptionTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //SubscriptionResponse response = api.resumeSubscription(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        SubscriptionResponse response = api.resumeSubscription(CUSTOMER_ID, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Cancel Subscription
-     *
-     * Cancel a specific subscription
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("endpoint POST /customers/{customer_id}/subscriptions/{id}/cancel not provided by Mockoon mock")
     @Test
     public void subscriptionCancelTest() throws ApiException {
-        //String customerId = null;
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //SubscriptionResponse response = api.subscriptionCancel(customerId, id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        SubscriptionResponse response = api.subscriptionCancel(CUSTOMER_ID, "sub_test", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Create Subscription
-     *
-     * Create a new subscription for a customer (keeps existing subscriptions active)
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("endpoint POST /customers/{customer_id}/subscriptions not provided by Mockoon mock")
     @Test
     public void subscriptionCreateTest() throws ApiException {
-        //String customerId = null;
-        //SubscriptionRequest subscriptionRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //SubscriptionResponse response = api.subscriptionCreate(customerId, subscriptionRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        SubscriptionRequest subscriptionRequest = new SubscriptionRequest()
+                .planId("plan_2tZb5q8Z3PYpg6SJd");
+        SubscriptionResponse response = api.subscriptionCreate(CUSTOMER_ID, subscriptionRequest, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get Subscription Events
-     *
-     * Get events for a specific subscription
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("endpoint GET /customers/{customer_id}/subscriptions/{id}/events not provided by Mockoon mock")
     @Test
     public void subscriptionEventsTest() throws ApiException {
-        //String customerId = null;
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //Integer limit = null;
-        //String search = null;
-        //String next = null;
-        //String previous = null;
-        //SubscriptionEventsResponse response = api.subscriptionEvents(customerId, id, acceptLanguage, xChildCompanyId, limit, search, next, previous);
-        // TODO: test validations
+        SubscriptionEventsResponse response = api.subscriptionEvents(
+                CUSTOMER_ID, "sub_test", "es", null, 20, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * List Subscriptions
-     *
-     * Get a list of subscriptions for a customer
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("endpoint GET /customers/{customer_id}/subscriptions not provided by Mockoon mock")
     @Test
     public void subscriptionListTest() throws ApiException {
-        //String customerId = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //Integer limit = null;
-        //String search = null;
-        //String next = null;
-        //String previous = null;
-        //SubscriptionResponse response = api.subscriptionList(customerId, acceptLanguage, xChildCompanyId, limit, search, next, previous);
-        // TODO: test validations
+        SubscriptionResponse response = api.subscriptionList(CUSTOMER_ID, "es", null, 20, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Pause Subscription
-     *
-     * Pause a specific subscription
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("endpoint POST /customers/{customer_id}/subscriptions/{id}/pause not provided by Mockoon mock")
     @Test
     public void subscriptionPauseTest() throws ApiException {
-        //String customerId = null;
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //SubscriptionResponse response = api.subscriptionPause(customerId, id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        SubscriptionResponse response = api.subscriptionPause(CUSTOMER_ID, "sub_test", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Resume Subscription
-     *
-     * Resume a specific paused subscription
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("endpoint POST /customers/{customer_id}/subscriptions/{id}/resume not provided by Mockoon mock")
     @Test
     public void subscriptionResumeTest() throws ApiException {
-        //String customerId = null;
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //SubscriptionResponse response = api.subscriptionResume(customerId, id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        SubscriptionResponse response = api.subscriptionResume(CUSTOMER_ID, "sub_test", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update Subscription
-     *
-     * Update a specific subscription
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("endpoint PUT /customers/{customer_id}/subscriptions/{id} not provided by Mockoon mock")
     @Test
     public void subscriptionUpdateTest() throws ApiException {
-        //String customerId = null;
-        //String id = null;
-        //SubscriptionUpdateRequest subscriptionUpdateRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //SubscriptionResponse response = api.subscriptionUpdate(customerId, id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        UpdatesASubscription updatesASubscription = new UpdatesASubscription().planId("plan_x");
+        SubscriptionResponse response = api.subscriptionUpdate(CUSTOMER_ID, "sub_test", updatesASubscription, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get Subscription
-     *
-     * Retrieve a specific subscription
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("endpoint GET /customers/{customer_id}/subscriptions/{id} not provided by Mockoon mock")
     @Test
     public void subscriptionsGetTest() throws ApiException {
-        //String customerId = null;
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //SubscriptionResponse response = api.subscriptionsGet(customerId, id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        SubscriptionResponse response = api.subscriptionsGet(CUSTOMER_ID, "sub_test", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Retry Failed Payment
-     *
-     * Retry a failed payment for a specific subscription
-     *
-     * @throws ApiException if the Api call fails
-     */
+    @Disabled("endpoint POST /customers/{customer_id}/subscriptions/{id}/retry not provided by Mockoon mock")
     @Test
     public void subscriptionsRetryTest() throws ApiException {
-        //String customerId = null;
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //SubscriptionResponse response = api.subscriptionsRetry(customerId, id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        SubscriptionResponse response = api.subscriptionsRetry(CUSTOMER_ID, "sub_test", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update Subscription [Deprecated]
-     *
-     * DEPRECATED: This endpoint will be removed in version 2.3.0. You can modify the subscription to change the plans that your customers consume
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void updateSubscriptionTest() throws ApiException {
-        //String id = null;
-        //SubscriptionUpdateRequest subscriptionUpdateRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //SubscriptionResponse response = api.updateSubscription(id, subscriptionUpdateRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        UpdatesASubscription updatesASubscription = new UpdatesASubscription().planId("plan_2tZb5q8Z3PYpg6SJd");
+        SubscriptionResponse response = api.updateSubscription(CUSTOMER_ID, updatesASubscription, "es", null);
+        Assertions.assertNotNull(response);
     }
 
 }

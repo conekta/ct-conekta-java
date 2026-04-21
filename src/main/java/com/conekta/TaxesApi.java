@@ -10,8 +10,8 @@ import javax.ws.rs.core.GenericType;
 
 import com.conekta.model.Error;
 import com.conekta.model.OrderTaxRequest;
-import com.conekta.model.UpdateOrderTaxRequest;
-import com.conekta.model.UpdateOrderTaxResponse;
+import com.conekta.model.OrderTaxResponse;
+import com.conekta.model.OrdersUpdateTaxesRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,7 +56,7 @@ public class TaxesApi {
    * @param orderTaxRequest requested field for a taxes (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
-   * @return UpdateOrderTaxResponse
+   * @return OrderTaxResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -67,7 +67,7 @@ public class TaxesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public UpdateOrderTaxResponse ordersCreateTaxes(String id, OrderTaxRequest orderTaxRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public OrderTaxResponse ordersCreateTaxes(String id, OrderTaxRequest orderTaxRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
     return ordersCreateTaxesWithHttpInfo(id, orderTaxRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -78,7 +78,7 @@ public class TaxesApi {
    * @param orderTaxRequest requested field for a taxes (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
-   * @return ApiResponse&lt;UpdateOrderTaxResponse&gt;
+   * @return ApiResponse&lt;OrderTaxResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -89,7 +89,7 @@ public class TaxesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<UpdateOrderTaxResponse> ordersCreateTaxesWithHttpInfo(String id, OrderTaxRequest orderTaxRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<OrderTaxResponse> ordersCreateTaxesWithHttpInfo(String id, OrderTaxRequest orderTaxRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersCreateTaxes");
@@ -114,7 +114,7 @@ public class TaxesApi {
     String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
-    GenericType<UpdateOrderTaxResponse> localVarReturnType = new GenericType<UpdateOrderTaxResponse>() {};
+    GenericType<OrderTaxResponse> localVarReturnType = new GenericType<OrderTaxResponse>() {};
     return apiClient.invokeAPI("TaxesApi.ordersCreateTaxes", localVarPath, "POST", new ArrayList<>(), orderTaxRequest,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
@@ -126,7 +126,7 @@ public class TaxesApi {
    * @param taxId identifier (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
-   * @return UpdateOrderTaxResponse
+   * @return OrderTaxResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -138,7 +138,7 @@ public class TaxesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public UpdateOrderTaxResponse ordersDeleteTaxes(String id, String taxId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public OrderTaxResponse ordersDeleteTaxes(String id, String taxId, String acceptLanguage, String xChildCompanyId) throws ApiException {
     return ordersDeleteTaxesWithHttpInfo(id, taxId, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -149,7 +149,7 @@ public class TaxesApi {
    * @param taxId identifier (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
-   * @return ApiResponse&lt;UpdateOrderTaxResponse&gt;
+   * @return ApiResponse&lt;OrderTaxResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -161,7 +161,7 @@ public class TaxesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<UpdateOrderTaxResponse> ordersDeleteTaxesWithHttpInfo(String id, String taxId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<OrderTaxResponse> ordersDeleteTaxesWithHttpInfo(String id, String taxId, String acceptLanguage, String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersDeleteTaxes");
@@ -187,7 +187,7 @@ public class TaxesApi {
     String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
-    GenericType<UpdateOrderTaxResponse> localVarReturnType = new GenericType<UpdateOrderTaxResponse>() {};
+    GenericType<OrderTaxResponse> localVarReturnType = new GenericType<OrderTaxResponse>() {};
     return apiClient.invokeAPI("TaxesApi.ordersDeleteTaxes", localVarPath, "DELETE", new ArrayList<>(), null,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
@@ -197,10 +197,10 @@ public class TaxesApi {
    * Update taxes for an existing orden
    * @param id Identifier of the resource (required)
    * @param taxId identifier (required)
-   * @param updateOrderTaxRequest requested field for taxes (required)
+   * @param ordersUpdateTaxesRequest requested field for taxes (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
-   * @return UpdateOrderTaxResponse
+   * @return OrderTaxResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -212,8 +212,8 @@ public class TaxesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public UpdateOrderTaxResponse ordersUpdateTaxes(String id, String taxId, UpdateOrderTaxRequest updateOrderTaxRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    return ordersUpdateTaxesWithHttpInfo(id, taxId, updateOrderTaxRequest, acceptLanguage, xChildCompanyId).getData();
+  public OrderTaxResponse ordersUpdateTaxes(String id, String taxId, OrdersUpdateTaxesRequest ordersUpdateTaxesRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+    return ordersUpdateTaxesWithHttpInfo(id, taxId, ordersUpdateTaxesRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
   /**
@@ -221,10 +221,10 @@ public class TaxesApi {
    * Update taxes for an existing orden
    * @param id Identifier of the resource (required)
    * @param taxId identifier (required)
-   * @param updateOrderTaxRequest requested field for taxes (required)
+   * @param ordersUpdateTaxesRequest requested field for taxes (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
-   * @return ApiResponse&lt;UpdateOrderTaxResponse&gt;
+   * @return ApiResponse&lt;OrderTaxResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -236,7 +236,7 @@ public class TaxesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<UpdateOrderTaxResponse> ordersUpdateTaxesWithHttpInfo(String id, String taxId, UpdateOrderTaxRequest updateOrderTaxRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<OrderTaxResponse> ordersUpdateTaxesWithHttpInfo(String id, String taxId, OrdersUpdateTaxesRequest ordersUpdateTaxesRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersUpdateTaxes");
@@ -244,8 +244,8 @@ public class TaxesApi {
     if (taxId == null) {
       throw new ApiException(400, "Missing the required parameter 'taxId' when calling ordersUpdateTaxes");
     }
-    if (updateOrderTaxRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'updateOrderTaxRequest' when calling ordersUpdateTaxes");
+    if (ordersUpdateTaxesRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'ordersUpdateTaxesRequest' when calling ordersUpdateTaxes");
     }
 
     // Path parameters
@@ -265,8 +265,8 @@ public class TaxesApi {
     String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
-    GenericType<UpdateOrderTaxResponse> localVarReturnType = new GenericType<UpdateOrderTaxResponse>() {};
-    return apiClient.invokeAPI("TaxesApi.ordersUpdateTaxes", localVarPath, "PUT", new ArrayList<>(), updateOrderTaxRequest,
+    GenericType<OrderTaxResponse> localVarReturnType = new GenericType<OrderTaxResponse>() {};
+    return apiClient.invokeAPI("TaxesApi.ordersUpdateTaxes", localVarPath, "PUT", new ArrayList<>(), ordersUpdateTaxesRequest,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

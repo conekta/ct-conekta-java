@@ -16,13 +16,14 @@ order response
 |**createdAt** | **Long** | The time at which the object was created in seconds since the Unix epoch |  [optional] |
 |**currency** | **String** | The three-letter ISO 4217 currency code. The currency of the order. |  [optional] |
 |**customerInfo** | [**OrderResponseCustomerInfo**](OrderResponseCustomerInfo.md) |  |  [optional] |
-|**discountLines** | [**OrderDiscountLinesResponse**](OrderDiscountLinesResponse.md) |  |  [optional] |
+|**discountLines** | [**List&lt;DiscountLinesResponse&gt;**](DiscountLinesResponse.md) | List of discounts that are applied to the order |  [optional] |
+|**taxLines** | [**List&lt;OrderTaxResponse&gt;**](OrderTaxResponse.md) | List of taxes that are applied to the order |  [optional] |
 |**fiscalEntity** | [**OrderFiscalEntityResponse**](OrderFiscalEntityResponse.md) |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**isRefundable** | **Boolean** |  |  [optional] |
 |**lineItems** | [**OrderResponseProducts**](OrderResponseProducts.md) |  |  [optional] |
 |**livemode** | **Boolean** | Whether the object exists in live mode or test mode |  [optional] |
-|**metadata** | **Map&lt;String, Object&gt;** | Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format. |  [optional] |
+|**metadata** |  | Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format. |  [optional] |
 |**nextAction** | [**OrderNextActionResponse**](OrderNextActionResponse.md) |  |  [optional] |
 |**_object** | **String** | String representing the object’s type. Objects of the same type share the same value. |  [optional] |
 |**paymentStatus** | **String** | The payment status of the order. |  [optional] |

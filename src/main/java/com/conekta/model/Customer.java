@@ -17,9 +17,9 @@ import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.CustomerAntifraudInfo;
-import com.conekta.model.CustomerFiscalEntitiesRequest;
 import com.conekta.model.CustomerPaymentMethodsRequest;
-import com.conekta.model.CustomerShippingContacts;
+import com.conekta.model.CustomerShippingContactsRequest;
+import com.conekta.model.FiscalEntityRequest;
 import com.conekta.model.SubscriptionRequest;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -81,7 +81,7 @@ public class Customer {
   private String defaultShippingContactId;
 
   public static final String JSON_PROPERTY_FISCAL_ENTITIES = "fiscal_entities";
-  private List<CustomerFiscalEntitiesRequest> fiscalEntities = new ArrayList<>();
+  private List<FiscalEntityRequest> fiscalEntities = new ArrayList<>();
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
   private Map<String, Object> metadata = new HashMap<>();
@@ -102,7 +102,7 @@ public class Customer {
   private String planId;
 
   public static final String JSON_PROPERTY_SHIPPING_CONTACTS = "shipping_contacts";
-  private List<CustomerShippingContacts> shippingContacts = new ArrayList<>();
+  private List<CustomerShippingContactsRequest> shippingContacts = new ArrayList<>();
 
   public static final String JSON_PROPERTY_SUBSCRIPTION = "subscription";
   private SubscriptionRequest subscription;
@@ -285,12 +285,12 @@ public class Customer {
   }
 
 
-  public Customer fiscalEntities(List<CustomerFiscalEntitiesRequest> fiscalEntities) {
+  public Customer fiscalEntities(List<FiscalEntityRequest> fiscalEntities) {
     this.fiscalEntities = fiscalEntities;
     return this;
   }
 
-  public Customer addFiscalEntitiesItem(CustomerFiscalEntitiesRequest fiscalEntitiesItem) {
+  public Customer addFiscalEntitiesItem(FiscalEntityRequest fiscalEntitiesItem) {
     if (this.fiscalEntities == null) {
       this.fiscalEntities = new ArrayList<>();
     }
@@ -306,14 +306,14 @@ public class Customer {
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<CustomerFiscalEntitiesRequest> getFiscalEntities() {
+  public List<FiscalEntityRequest> getFiscalEntities() {
     return fiscalEntities;
   }
 
 
   @JsonProperty(JSON_PROPERTY_FISCAL_ENTITIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiscalEntities(List<CustomerFiscalEntitiesRequest> fiscalEntities) {
+  public void setFiscalEntities(List<FiscalEntityRequest> fiscalEntities) {
     this.fiscalEntities = fiscalEntities;
   }
 
@@ -323,21 +323,13 @@ public class Customer {
     return this;
   }
 
-  public Customer putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<>();
-    }
-    this.metadata.put(key, metadataItem);
-    return this;
-  }
-
    /**
    * Get metadata
    * @return metadata
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
     return metadata;
@@ -345,7 +337,7 @@ public class Customer {
 
 
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
   }
@@ -484,12 +476,12 @@ public class Customer {
   }
 
 
-  public Customer shippingContacts(List<CustomerShippingContacts> shippingContacts) {
+  public Customer shippingContacts(List<CustomerShippingContactsRequest> shippingContacts) {
     this.shippingContacts = shippingContacts;
     return this;
   }
 
-  public Customer addShippingContactsItem(CustomerShippingContacts shippingContactsItem) {
+  public Customer addShippingContactsItem(CustomerShippingContactsRequest shippingContactsItem) {
     if (this.shippingContacts == null) {
       this.shippingContacts = new ArrayList<>();
     }
@@ -505,14 +497,14 @@ public class Customer {
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<CustomerShippingContacts> getShippingContacts() {
+  public List<CustomerShippingContactsRequest> getShippingContacts() {
     return shippingContacts;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setShippingContacts(List<CustomerShippingContacts> shippingContacts) {
+  public void setShippingContacts(List<CustomerShippingContactsRequest> shippingContacts) {
     this.shippingContacts = shippingContacts;
   }
 

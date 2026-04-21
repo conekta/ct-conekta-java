@@ -20,10 +20,11 @@
 |**livemode** | **Boolean** | Whether the charge was made in live mode or not |  |
 |**_object** | **String** |  |  |
 |**orderId** | **String** | Order ID |  |
-|**paidAt** | **Long** | Payment date |  [optional] |
+|**paidAt** | **Long** | charge Payment date |  [optional] |
 |**paymentMethod** | [**ChargeResponsePaymentMethod**](ChargeResponsePaymentMethod.md) |  |  [optional] |
 |**referenceId** | **String** | Reference ID of the charge |  [optional] |
 |**refunds** | [**ChargeResponseRefunds**](ChargeResponseRefunds.md) |  |  [optional] |
+|**chargeback** | [**ChargebackResponse**](ChargebackResponse.md) |  |  [optional] |
 |**status** | **String** | Charge status |  |
 
 

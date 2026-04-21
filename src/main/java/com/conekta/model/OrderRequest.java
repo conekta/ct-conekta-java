@@ -17,8 +17,8 @@ import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
 import com.conekta.model.ChargeRequest;
-import com.conekta.model.CheckoutRequest;
-import com.conekta.model.CustomerShippingContacts;
+import com.conekta.model.CustomerShippingContactsRequest;
+import com.conekta.model.OrderCheckoutRequest;
 import com.conekta.model.OrderDiscountLinesRequest;
 import com.conekta.model.OrderFiscalEntityRequest;
 import com.conekta.model.OrderRequestCustomerInfo;
@@ -68,7 +68,7 @@ public class OrderRequest {
   private List<ChargeRequest> charges = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CHECKOUT = "checkout";
-  private CheckoutRequest checkout;
+  private OrderCheckoutRequest checkout;
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
   private String currency;
@@ -92,7 +92,7 @@ public class OrderRequest {
   private Boolean needsShippingContact;
 
   public static final String JSON_PROPERTY_PRE_AUTHORIZE = "pre_authorize";
-  private Boolean preAuthorize = false;
+  private Boolean preAuthorize;
 
   public static final String JSON_PROPERTY_PROCESSING_MODE = "processing_mode";
   private String processingMode;
@@ -101,7 +101,7 @@ public class OrderRequest {
   private URI returnUrl;
 
   public static final String JSON_PROPERTY_SHIPPING_CONTACT = "shipping_contact";
-  private CustomerShippingContacts shippingContact;
+  private CustomerShippingContactsRequest shippingContact;
 
   public static final String JSON_PROPERTY_SHIPPING_LINES = "shipping_lines";
   private List<ShippingRequest> shippingLines = new ArrayList<>();
@@ -148,7 +148,7 @@ public class OrderRequest {
   }
 
 
-  public OrderRequest checkout(CheckoutRequest checkout) {
+  public OrderRequest checkout(OrderCheckoutRequest checkout) {
     this.checkout = checkout;
     return this;
   }
@@ -161,14 +161,14 @@ public class OrderRequest {
   @JsonProperty(JSON_PROPERTY_CHECKOUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public CheckoutRequest getCheckout() {
+  public OrderCheckoutRequest getCheckout() {
     return checkout;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CHECKOUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCheckout(CheckoutRequest checkout) {
+  public void setCheckout(OrderCheckoutRequest checkout) {
     this.checkout = checkout;
   }
 
@@ -237,7 +237,7 @@ public class OrderRequest {
   }
 
    /**
-   * List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order. You must have at least one discount.
+   * List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order.
    * @return discountLines
   **/
   @javax.annotation.Nullable
@@ -319,21 +319,13 @@ public class OrderRequest {
     return this;
   }
 
-  public OrderRequest putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<>();
-    }
-    this.metadata.put(key, metadataItem);
-    return this;
-  }
-
    /**
    * Metadata associated with the order
    * @return metadata
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
     return metadata;
@@ -341,7 +333,7 @@ public class OrderRequest {
 
 
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
   }
@@ -447,7 +439,7 @@ public class OrderRequest {
   }
 
 
-  public OrderRequest shippingContact(CustomerShippingContacts shippingContact) {
+  public OrderRequest shippingContact(CustomerShippingContactsRequest shippingContact) {
     this.shippingContact = shippingContact;
     return this;
   }
@@ -460,14 +452,14 @@ public class OrderRequest {
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public CustomerShippingContacts getShippingContact() {
+  public CustomerShippingContactsRequest getShippingContact() {
     return shippingContact;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SHIPPING_CONTACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setShippingContact(CustomerShippingContacts shippingContact) {
+  public void setShippingContact(CustomerShippingContactsRequest shippingContact) {
     this.shippingContact = shippingContact;
   }
 
@@ -544,7 +536,7 @@ public class OrderRequest {
   }
 
    /**
-   * Indicates the 3DS2 mode for the order, either smart or strict.
+   * Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null.
    * @return threeDsMode
   **/
   @javax.annotation.Nullable

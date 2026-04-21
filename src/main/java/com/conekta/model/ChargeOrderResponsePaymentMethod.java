@@ -116,7 +116,7 @@ public class ChargeOrderResponsePaymentMethod extends AbstractOpenApiSchema {
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCash.class);
                     newChargeOrderResponsePaymentMethod.setActualInstance(deserialized);
                     return newChargeOrderResponsePaymentMethod;
-                case "pbb_payment":
+                case "pay_by_bank_payment":
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodPbbPayment.class);
                     newChargeOrderResponsePaymentMethod.setActualInstance(deserialized);
                     return newChargeOrderResponsePaymentMethod;
@@ -141,7 +141,7 @@ public class ChargeOrderResponsePaymentMethod extends AbstractOpenApiSchema {
                     newChargeOrderResponsePaymentMethod.setActualInstance(deserialized);
                     return newChargeOrderResponsePaymentMethod;
                 default:
-                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for ChargeOrderResponsePaymentMethod. Possible values: bank_transfer_payment bnpl_payment card_payment cash_payment pbb_payment payment_method_bank_transfer payment_method_bnpl_payment payment_method_card payment_method_cash payment_method_pbb_payment", discriminatorValue));
+                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for ChargeOrderResponsePaymentMethod. Possible values: bank_transfer_payment bnpl_payment card_payment cash_payment pay_by_bank_payment payment_method_bank_transfer payment_method_bnpl_payment payment_method_card payment_method_cash payment_method_pbb_payment", discriminatorValue));
             }
 
             boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
@@ -294,7 +294,7 @@ public class ChargeOrderResponsePaymentMethod extends AbstractOpenApiSchema {
         mappings.put("bnpl_payment", PaymentMethodBnplPayment.class);
         mappings.put("card_payment", PaymentMethodCard.class);
         mappings.put("cash_payment", PaymentMethodCash.class);
-        mappings.put("pbb_payment", PaymentMethodPbbPayment.class);
+        mappings.put("pay_by_bank_payment", PaymentMethodPbbPayment.class);
         mappings.put("payment_method_bank_transfer", PaymentMethodBankTransfer.class);
         mappings.put("payment_method_bnpl_payment", PaymentMethodBnplPayment.class);
         mappings.put("payment_method_card", PaymentMethodCard.class);

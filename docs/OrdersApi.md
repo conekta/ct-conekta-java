@@ -589,7 +589,7 @@ public class Example {
 
 ## updateOrder
 
-> OrderResponse updateOrder(id, orderUpdateRequest, acceptLanguage)
+> OrderResponse updateOrder(id, orderUpdate, acceptLanguage)
 
 Update Order
 
@@ -617,10 +617,10 @@ public class Example {
 
         OrdersApi apiInstance = new OrdersApi(defaultClient);
         String id = "6307a60c41de27127515a575"; // String | Identifier of the resource
-        OrderUpdateRequest orderUpdateRequest = new OrderUpdateRequest(); // OrderUpdateRequest | requested field for an order
+        OrderUpdate orderUpdate = new OrderUpdate(); // OrderUpdate | requested field for an order
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         try {
-            OrderResponse result = apiInstance.updateOrder(id, orderUpdateRequest, acceptLanguage);
+            OrderResponse result = apiInstance.updateOrder(id, orderUpdate, acceptLanguage);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OrdersApi#updateOrder");
@@ -639,7 +639,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **String**| Identifier of the resource | |
-| **orderUpdateRequest** | [**OrderUpdateRequest**](OrderUpdateRequest.md)| requested field for an order | |
+| **orderUpdate** | [**OrderUpdate**](OrderUpdate.md)| requested field for an order | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 
 ### Return type

@@ -13,7 +13,7 @@ import com.conekta.model.CreateCustomerPaymentMethodsResponse;
 import com.conekta.model.Error;
 import com.conekta.model.GetPaymentMethodResponse;
 import com.conekta.model.UpdateCustomerPaymentMethodsResponse;
-import com.conekta.model.UpdatePaymentMethods;
+import com.conekta.model.UpdatePaymentMethodsCard;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -282,7 +282,7 @@ public class PaymentMethodsApi {
    * Gets a payment Method that corresponds to a customer ID.
    * @param id Identifier of the resource (required)
    * @param paymentMethodId Identifier of the payment method (required)
-   * @param updatePaymentMethods requested field for customer payment methods (required)
+   * @param updatePaymentMethodsCard requested field for customer payment methods (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return UpdateCustomerPaymentMethodsResponse
@@ -297,8 +297,8 @@ public class PaymentMethodsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public UpdateCustomerPaymentMethodsResponse updateCustomerPaymentMethods(String id, String paymentMethodId, UpdatePaymentMethods updatePaymentMethods, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    return updateCustomerPaymentMethodsWithHttpInfo(id, paymentMethodId, updatePaymentMethods, acceptLanguage, xChildCompanyId).getData();
+  public UpdateCustomerPaymentMethodsResponse updateCustomerPaymentMethods(String id, String paymentMethodId, UpdatePaymentMethodsCard updatePaymentMethodsCard, String acceptLanguage, String xChildCompanyId) throws ApiException {
+    return updateCustomerPaymentMethodsWithHttpInfo(id, paymentMethodId, updatePaymentMethodsCard, acceptLanguage, xChildCompanyId).getData();
   }
 
   /**
@@ -306,7 +306,7 @@ public class PaymentMethodsApi {
    * Gets a payment Method that corresponds to a customer ID.
    * @param id Identifier of the resource (required)
    * @param paymentMethodId Identifier of the payment method (required)
-   * @param updatePaymentMethods requested field for customer payment methods (required)
+   * @param updatePaymentMethodsCard requested field for customer payment methods (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return ApiResponse&lt;UpdateCustomerPaymentMethodsResponse&gt;
@@ -321,7 +321,7 @@ public class PaymentMethodsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<UpdateCustomerPaymentMethodsResponse> updateCustomerPaymentMethodsWithHttpInfo(String id, String paymentMethodId, UpdatePaymentMethods updatePaymentMethods, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<UpdateCustomerPaymentMethodsResponse> updateCustomerPaymentMethodsWithHttpInfo(String id, String paymentMethodId, UpdatePaymentMethodsCard updatePaymentMethodsCard, String acceptLanguage, String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateCustomerPaymentMethods");
@@ -329,8 +329,8 @@ public class PaymentMethodsApi {
     if (paymentMethodId == null) {
       throw new ApiException(400, "Missing the required parameter 'paymentMethodId' when calling updateCustomerPaymentMethods");
     }
-    if (updatePaymentMethods == null) {
-      throw new ApiException(400, "Missing the required parameter 'updatePaymentMethods' when calling updateCustomerPaymentMethods");
+    if (updatePaymentMethodsCard == null) {
+      throw new ApiException(400, "Missing the required parameter 'updatePaymentMethodsCard' when calling updateCustomerPaymentMethods");
     }
 
     // Path parameters
@@ -351,7 +351,7 @@ public class PaymentMethodsApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<UpdateCustomerPaymentMethodsResponse> localVarReturnType = new GenericType<UpdateCustomerPaymentMethodsResponse>() {};
-    return apiClient.invokeAPI("PaymentMethodsApi.updateCustomerPaymentMethods", localVarPath, "PUT", new ArrayList<>(), updatePaymentMethods,
+    return apiClient.invokeAPI("PaymentMethodsApi.updateCustomerPaymentMethods", localVarPath, "PUT", new ArrayList<>(), updatePaymentMethodsCard,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

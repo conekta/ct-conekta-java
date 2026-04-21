@@ -10,120 +10,63 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
 import com.conekta.model.DiscountLinesResponse;
-import com.conekta.model.Error;
 import com.conekta.model.GetOrderDiscountLinesResponse;
 import com.conekta.model.OrderDiscountLinesRequest;
 import com.conekta.model.UpdateOrderDiscountLinesRequest;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for DiscountsApi
  */
 public class DiscountsApiTest {
 
-    private final DiscountsApi api = new DiscountsApi();
+    private static final String ORDER_ID = "ord_2tVyWPnCPWbrV37mW";
+    private static final String DISCOUNT_LINE_ID = "dis_lin_2tVyahK8Nts7rKRMZ";
 
-    /**
-     * Create Discount
-     *
-     * Create discount lines for an existing orden
-     *
-     * @throws ApiException if the Api call fails
-     */
+    private final DiscountsApi api = new DiscountsApi(TestUtils.apiClient());
+
     @Test
     public void ordersCreateDiscountLineTest() throws ApiException {
-        //String id = null;
-        //OrderDiscountLinesRequest orderDiscountLinesRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //DiscountLinesResponse response = api.ordersCreateDiscountLine(id, orderDiscountLinesRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        OrderDiscountLinesRequest orderDiscountLinesRequest = new OrderDiscountLinesRequest()
+                .amount(500L)
+                .code("discount_code")
+                .type("loyalty");
+        DiscountLinesResponse response = api.ordersCreateDiscountLine(ORDER_ID, orderDiscountLinesRequest, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Delete Discount
-     *
-     * Delete an existing discount lines for an existing orden
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void ordersDeleteDiscountLinesTest() throws ApiException {
-        //String id = null;
-        //String discountLinesId = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //DiscountLinesResponse response = api.ordersDeleteDiscountLines(id, discountLinesId, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        DiscountLinesResponse response = api.ordersDeleteDiscountLines(ORDER_ID, DISCOUNT_LINE_ID, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get Discount
-     *
-     * Get an existing discount lines for an existing orden
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void ordersGetDiscountLineTest() throws ApiException {
-        //String id = null;
-        //String discountLinesId = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //DiscountLinesResponse response = api.ordersGetDiscountLine(id, discountLinesId, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        DiscountLinesResponse response = api.ordersGetDiscountLine(
+                "ord_2tkwrBmcvGnA9zdU9", "dis_lin_2tkwrBmcvGnA9zdU6", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get a List of Discount
-     *
-     * Get discount lines for an existing orden
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void ordersGetDiscountLinesTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //Integer limit = null;
-        //String search = null;
-        //String next = null;
-        //String previous = null;
-        //GetOrderDiscountLinesResponse response = api.ordersGetDiscountLines(id, acceptLanguage, xChildCompanyId, limit, search, next, previous);
-        // TODO: test validations
+        GetOrderDiscountLinesResponse response = api.ordersGetDiscountLines(ORDER_ID, "es", null, 20, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update Discount
-     *
-     * Update an existing discount lines for an existing orden
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void ordersUpdateDiscountLinesTest() throws ApiException {
-        //String id = null;
-        //String discountLinesId = null;
-        //UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //DiscountLinesResponse response = api.ordersUpdateDiscountLines(id, discountLinesId, updateOrderDiscountLinesRequest, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest = new UpdateOrderDiscountLinesRequest()
+                .amount(600L)
+                .type("loyalty");
+        DiscountLinesResponse response = api.ordersUpdateDiscountLines(
+                ORDER_ID, DISCOUNT_LINE_ID, updateOrderDiscountLinesRequest, "es", null);
+        Assertions.assertNotNull(response);
     }
 
 }

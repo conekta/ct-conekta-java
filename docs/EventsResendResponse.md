@@ -12,7 +12,7 @@ event model
 |**id** | **String** |  |  [optional] |
 |**lastAttemptedAt** | **Integer** |  |  [optional] |
 |**lastHttpResponseStatus** | **Integer** |  |  [optional] |
-|**responseData** | **Map&lt;String, Object&gt;** |  |  [optional] |
+|**responseData** |  |  |  [optional] |
 |**url** | **URI** |  |  [optional] |
 
 

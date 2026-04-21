@@ -75,8 +75,45 @@ public class OrderResponseCheckout {
   public static final String JSON_PROPERTY_EMAILS_SENT = "emails_sent";
   private Integer emailsSent;
 
+  /**
+   * Gets or Sets excludeCardNetworks
+   */
+  public enum ExcludeCardNetworksEnum {
+    VISA("visa"),
+    
+    MASTERCARD("mastercard"),
+    
+    AMEX("amex");
+
+    private String value;
+
+    ExcludeCardNetworksEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static ExcludeCardNetworksEnum fromValue(String value) {
+      for (ExcludeCardNetworksEnum b : ExcludeCardNetworksEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
   public static final String JSON_PROPERTY_EXCLUDE_CARD_NETWORKS = "exclude_card_networks";
-  private List<Object> excludeCardNetworks = new ArrayList<>();
+  private List<ExcludeCardNetworksEnum> excludeCardNetworks = new ArrayList<>();
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
   private Long expiresAt;
@@ -170,9 +207,9 @@ public class OrderResponseCheckout {
    * Are the payment methods available for this link
    * @return allowedPaymentMethods
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ALLOWED_PAYMENT_METHODS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<String> getAllowedPaymentMethods() {
     return allowedPaymentMethods;
@@ -180,7 +217,7 @@ public class OrderResponseCheckout {
 
 
   @JsonProperty(JSON_PROPERTY_ALLOWED_PAYMENT_METHODS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setAllowedPaymentMethods(List<String> allowedPaymentMethods) {
     this.allowedPaymentMethods = allowedPaymentMethods;
   }
@@ -236,12 +273,12 @@ public class OrderResponseCheckout {
   }
 
 
-  public OrderResponseCheckout excludeCardNetworks(List<Object> excludeCardNetworks) {
+  public OrderResponseCheckout excludeCardNetworks(List<ExcludeCardNetworksEnum> excludeCardNetworks) {
     this.excludeCardNetworks = excludeCardNetworks;
     return this;
   }
 
-  public OrderResponseCheckout addExcludeCardNetworksItem(Object excludeCardNetworksItem) {
+  public OrderResponseCheckout addExcludeCardNetworksItem(ExcludeCardNetworksEnum excludeCardNetworksItem) {
     if (this.excludeCardNetworks == null) {
       this.excludeCardNetworks = new ArrayList<>();
     }
@@ -257,14 +294,14 @@ public class OrderResponseCheckout {
   @JsonProperty(JSON_PROPERTY_EXCLUDE_CARD_NETWORKS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<Object> getExcludeCardNetworks() {
+  public List<ExcludeCardNetworksEnum> getExcludeCardNetworks() {
     return excludeCardNetworks;
   }
 
 
   @JsonProperty(JSON_PROPERTY_EXCLUDE_CARD_NETWORKS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExcludeCardNetworks(List<Object> excludeCardNetworks) {
+  public void setExcludeCardNetworks(List<ExcludeCardNetworksEnum> excludeCardNetworks) {
     this.excludeCardNetworks = excludeCardNetworks;
   }
 
@@ -353,9 +390,9 @@ public class OrderResponseCheckout {
    * Get id
    * @return id
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
     return id;
@@ -363,7 +400,7 @@ public class OrderResponseCheckout {
 
 
   @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(String id) {
     this.id = id;
   }
@@ -449,21 +486,13 @@ public class OrderResponseCheckout {
     return this;
   }
 
-  public OrderResponseCheckout putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<>();
-    }
-    this.metadata.put(key, metadataItem);
-    return this;
-  }
-
    /**
    * Get metadata
    * @return metadata
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
     return metadata;
@@ -471,7 +500,7 @@ public class OrderResponseCheckout {
 
 
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
   }
@@ -544,9 +573,9 @@ public class OrderResponseCheckout {
    * Get name
    * @return name
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getName() {
     return name;
@@ -554,7 +583,7 @@ public class OrderResponseCheckout {
 
 
   @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setName(String name) {
     this.name = name;
   }
@@ -594,9 +623,9 @@ public class OrderResponseCheckout {
    * Get _object
    * @return _object
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
     return _object;
@@ -604,7 +633,7 @@ public class OrderResponseCheckout {
 
 
   @JsonProperty(JSON_PROPERTY_OBJECT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setObject(String _object) {
     this._object = _object;
   }
@@ -766,7 +795,7 @@ public class OrderResponseCheckout {
   }
 
    /**
-   * Get successUrl
+   * Redirection url back to the site in case of successful payment, applies only to HostedPayment
    * @return successUrl
   **/
   @javax.annotation.Nullable
@@ -841,12 +870,12 @@ public class OrderResponseCheckout {
   }
 
    /**
-   * Get type
+   * This field represents the type of checkout, which determines the user experience during the payment process. &#39;HostedPayment&#39; will redirect the customer to a Conekta-hosted page to complete the payment, while &#39;Integration&#39; allows the payment process to be handled entirely on your site using Conekta&#39;s APIs and SDKs.
    * @return type
   **/
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getType() {
     return type;
@@ -854,7 +883,7 @@ public class OrderResponseCheckout {
 
 
   @JsonProperty(JSON_PROPERTY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setType(String type) {
     this.type = type;
   }
@@ -866,7 +895,7 @@ public class OrderResponseCheckout {
   }
 
    /**
-   * Get url
+   * Indicate the url of the Conekta component to complete the payment. For HostedPayment, this will be a Conekta-hosted page
    * @return url
   **/
   @javax.annotation.Nullable

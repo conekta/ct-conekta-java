@@ -16,7 +16,7 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.CustomerAddress;
+import com.conekta.model.FiscalEntityRequestAddress;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -49,7 +49,7 @@ import com.conekta.JSON;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CreateCustomerFiscalEntitiesResponse {
   public static final String JSON_PROPERTY_ADDRESS = "address";
-  private CustomerAddress address;
+  private FiscalEntityRequestAddress address;
 
   public static final String JSON_PROPERTY_TAX_ID = "tax_id";
   private String taxId;
@@ -61,7 +61,7 @@ public class CreateCustomerFiscalEntitiesResponse {
   private String phone;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
-  private Map<String, Object> metadata = new HashMap<>();
+  private Map<String, Object> metadata;
 
   public static final String JSON_PROPERTY_COMPANY_NAME = "company_name";
   private String companyName;
@@ -84,7 +84,7 @@ public class CreateCustomerFiscalEntitiesResponse {
   public CreateCustomerFiscalEntitiesResponse() { 
   }
 
-  public CreateCustomerFiscalEntitiesResponse address(CustomerAddress address) {
+  public CreateCustomerFiscalEntitiesResponse address(FiscalEntityRequestAddress address) {
     this.address = address;
     return this;
   }
@@ -97,14 +97,14 @@ public class CreateCustomerFiscalEntitiesResponse {
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public CustomerAddress getAddress() {
+  public FiscalEntityRequestAddress getAddress() {
     return address;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAddress(CustomerAddress address) {
+  public void setAddress(FiscalEntityRequestAddress address) {
     this.address = address;
   }
 
@@ -186,14 +186,6 @@ public class CreateCustomerFiscalEntitiesResponse {
 
   public CreateCustomerFiscalEntitiesResponse metadata(Map<String, Object> metadata) {
     this.metadata = metadata;
-    return this;
-  }
-
-  public CreateCustomerFiscalEntitiesResponse putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<>();
-    }
-    this.metadata.put(key, metadataItem);
     return this;
   }
 

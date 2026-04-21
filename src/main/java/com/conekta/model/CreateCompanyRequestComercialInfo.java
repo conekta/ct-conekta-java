@@ -35,7 +35,7 @@ import com.conekta.JSON;
   CreateCompanyRequestComercialInfo.JSON_PROPERTY_MERCHANT_SUPPORT_EMAIL,
   CreateCompanyRequestComercialInfo.JSON_PROPERTY_MERCHANT_SUPPORT_PHONE
 })
-@JsonTypeName("create_company_request_comercial_info")
+@JsonTypeName("Create_Company_Request_comercial_info")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class CreateCompanyRequestComercialInfo {
   public static final String JSON_PROPERTY_WEBSITE = "website";
@@ -154,7 +154,7 @@ public class CreateCompanyRequestComercialInfo {
 
 
   /**
-   * Return true if this create_company_request_comercial_info object is equal to o.
+   * Return true if this Create_Company_Request_comercial_info object is equal to o.
    */
   @Override
   public boolean equals(Object o) {

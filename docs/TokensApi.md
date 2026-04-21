@@ -10,11 +10,11 @@ All URIs are relative to *https://api.conekta.io*
 
 ## createToken
 
-> TokenResponse createToken(token, acceptLanguage)
+> TokenResponse createToken(tokenRequest, acceptLanguage)
 
 Create Token
 
-Generate a payment token, to associate it with a card
+Generate a payment token, to associate it with a card, Endpoint could be use directly only for PCI compliance account
 
 
 ### Example
@@ -38,10 +38,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         TokensApi apiInstance = new TokensApi(defaultClient);
-        Token token = new Token(); // Token | requested field for token
+        TokenRequest tokenRequest = new TokenRequest(); // TokenRequest | requested field for token
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         try {
-            TokenResponse result = apiInstance.createToken(token, acceptLanguage);
+            TokenResponse result = apiInstance.createToken(tokenRequest, acceptLanguage);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TokensApi#createToken");
@@ -59,7 +59,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **token** | [**Token**](Token.md)| requested field for token | |
+| **tokenRequest** | [**TokenRequest**](TokenRequest.md)| requested field for token | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 
 ### Return type

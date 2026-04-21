@@ -10,29 +10,19 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
 import com.conekta.model.BalanceResponse;
-import com.conekta.model.Error;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for BalancesApi
  */
 public class BalancesApiTest {
 
-    private final BalancesApi api = new BalancesApi();
+    private final BalancesApi api = new BalancesApi(TestUtils.apiClient());
 
     /**
      * Get a company&#39;s balance
@@ -43,9 +33,8 @@ public class BalancesApiTest {
      */
     @Test
     public void getBalanceTest() throws ApiException {
-        //String acceptLanguage = null;
-        //BalanceResponse response = api.getBalance(acceptLanguage);
-        // TODO: test validations
+        BalanceResponse response = api.getBalance("es");
+        Assertions.assertNotNull(response);
     }
 
 }

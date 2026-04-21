@@ -15,7 +15,7 @@ All URIs are relative to *https://api.conekta.io*
 
 ## createRuleBlacklist
 
-> BlacklistRuleResponse createRuleBlacklist(createRiskRulesData, acceptLanguage)
+> BlacklistRuleResponse createRuleBlacklist(createRuleWhitelistRequest, acceptLanguage)
 
 Create blacklisted rule
 
@@ -40,10 +40,10 @@ public class Example {
         bearerAuth.setBearerToken("BEARER TOKEN");
 
         AntifraudApi apiInstance = new AntifraudApi(defaultClient);
-        CreateRiskRulesData createRiskRulesData = new CreateRiskRulesData(); // CreateRiskRulesData | requested field for blacklist rule
+        CreateRuleWhitelistRequest createRuleWhitelistRequest = new CreateRuleWhitelistRequest(); // CreateRuleWhitelistRequest | requested field for blacklist rule
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         try {
-            BlacklistRuleResponse result = apiInstance.createRuleBlacklist(createRiskRulesData, acceptLanguage);
+            BlacklistRuleResponse result = apiInstance.createRuleBlacklist(createRuleWhitelistRequest, acceptLanguage);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AntifraudApi#createRuleBlacklist");
@@ -61,7 +61,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **createRiskRulesData** | [**CreateRiskRulesData**](CreateRiskRulesData.md)| requested field for blacklist rule | |
+| **createRuleWhitelistRequest** | [**CreateRuleWhitelistRequest**](CreateRuleWhitelistRequest.md)| requested field for blacklist rule | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 
 ### Return type
@@ -87,7 +87,7 @@ public class Example {
 
 ## createRuleWhitelist
 
-> WhitelistlistRuleResponse createRuleWhitelist(acceptLanguage, createRiskRulesData)
+> WhitelistlistRuleResponse createRuleWhitelist(acceptLanguage, createRuleWhitelistRequest)
 
 Create whitelisted rule
 
@@ -113,9 +113,9 @@ public class Example {
 
         AntifraudApi apiInstance = new AntifraudApi(defaultClient);
         String acceptLanguage = "es"; // String | Use for knowing which language to use
-        CreateRiskRulesData createRiskRulesData = new CreateRiskRulesData(); // CreateRiskRulesData | 
+        CreateRuleWhitelistRequest createRuleWhitelistRequest = new CreateRuleWhitelistRequest(); // CreateRuleWhitelistRequest | 
         try {
-            WhitelistlistRuleResponse result = apiInstance.createRuleWhitelist(acceptLanguage, createRiskRulesData);
+            WhitelistlistRuleResponse result = apiInstance.createRuleWhitelist(acceptLanguage, createRuleWhitelistRequest);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AntifraudApi#createRuleWhitelist");
@@ -134,7 +134,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
-| **createRiskRulesData** | [**CreateRiskRulesData**](CreateRiskRulesData.md)|  | [optional] |
+| **createRuleWhitelistRequest** | [**CreateRuleWhitelistRequest**](CreateRuleWhitelistRequest.md)|  | [optional] |
 
 ### Return type
 

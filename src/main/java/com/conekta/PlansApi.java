@@ -12,7 +12,7 @@ import com.conekta.model.Error;
 import com.conekta.model.GetPlansResponse;
 import com.conekta.model.PlanRequest;
 import com.conekta.model.PlanResponse;
-import com.conekta.model.PlanUpdateRequest;
+import com.conekta.model.UpdatePlan;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -314,7 +314,7 @@ public class PlansApi {
    * Update Plan
    * 
    * @param id Identifier of the resource (required)
-   * @param planUpdateRequest requested field for plan (required)
+   * @param updatePlan requested field for plan (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return PlanResponse
@@ -329,15 +329,15 @@ public class PlansApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public PlanResponse updatePlan(String id, PlanUpdateRequest planUpdateRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
-    return updatePlanWithHttpInfo(id, planUpdateRequest, acceptLanguage, xChildCompanyId).getData();
+  public PlanResponse updatePlan(String id, UpdatePlan updatePlan, String acceptLanguage, String xChildCompanyId) throws ApiException {
+    return updatePlanWithHttpInfo(id, updatePlan, acceptLanguage, xChildCompanyId).getData();
   }
 
   /**
    * Update Plan
    * 
    * @param id Identifier of the resource (required)
-   * @param planUpdateRequest requested field for plan (required)
+   * @param updatePlan requested field for plan (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
    * @return ApiResponse&lt;PlanResponse&gt;
@@ -352,13 +352,13 @@ public class PlansApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<PlanResponse> updatePlanWithHttpInfo(String id, PlanUpdateRequest planUpdateRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<PlanResponse> updatePlanWithHttpInfo(String id, UpdatePlan updatePlan, String acceptLanguage, String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updatePlan");
     }
-    if (planUpdateRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'planUpdateRequest' when calling updatePlan");
+    if (updatePlan == null) {
+      throw new ApiException(400, "Missing the required parameter 'updatePlan' when calling updatePlan");
     }
 
     // Path parameters
@@ -378,7 +378,7 @@ public class PlansApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<PlanResponse> localVarReturnType = new GenericType<PlanResponse>() {};
-    return apiClient.invokeAPI("PlansApi.updatePlan", localVarPath, "PUT", new ArrayList<>(), planUpdateRequest,
+    return apiClient.invokeAPI("PlansApi.updatePlan", localVarPath, "PUT", new ArrayList<>(), updatePlan,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

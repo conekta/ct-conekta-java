@@ -20,7 +20,7 @@ import com.conekta.model.CustomerAntifraudInfoResponse;
 import com.conekta.model.CustomerFiscalEntitiesResponse;
 import com.conekta.model.CustomerPaymentMethodsResponse;
 import com.conekta.model.CustomerResponseShippingContacts;
-import com.conekta.model.SubscriptionResponse;
+import com.conekta.model.CustomerSubscriptionResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -119,7 +119,7 @@ public class CustomerResponse {
   private CustomerResponseShippingContacts shippingContacts;
 
   public static final String JSON_PROPERTY_SUBSCRIPTION = "subscription";
-  private SubscriptionResponse subscription;
+  private CustomerSubscriptionResponse subscription;
 
   public CustomerResponse() { 
   }
@@ -479,21 +479,13 @@ public class CustomerResponse {
     return this;
   }
 
-  public CustomerResponse putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<>();
-    }
-    this.metadata.put(key, metadataItem);
-    return this;
-  }
-
    /**
    * Get metadata
    * @return metadata
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
     return metadata;
@@ -501,7 +493,7 @@ public class CustomerResponse {
 
 
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
   }
@@ -607,7 +599,7 @@ public class CustomerResponse {
   }
 
 
-  public CustomerResponse subscription(SubscriptionResponse subscription) {
+  public CustomerResponse subscription(CustomerSubscriptionResponse subscription) {
     this.subscription = subscription;
     return this;
   }
@@ -620,14 +612,14 @@ public class CustomerResponse {
   @JsonProperty(JSON_PROPERTY_SUBSCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public SubscriptionResponse getSubscription() {
+  public CustomerSubscriptionResponse getSubscription() {
     return subscription;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SUBSCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubscription(SubscriptionResponse subscription) {
+  public void setSubscription(CustomerSubscriptionResponse subscription) {
     this.subscription = subscription;
   }
 

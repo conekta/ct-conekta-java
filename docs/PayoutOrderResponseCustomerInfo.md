@@ -8,13 +8,13 @@ The customer information of the payout order.
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**id** | **String** | The id of the customer. |  |
 |**customerCustomReference** | **String** | Custom reference |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**email** | **String** |  |  [optional] |
 |**phone** | **String** |  |  [optional] |
 |**corporate** | **Boolean** |  |  [optional] |
 |**_object** | **String** |  |  [optional] |
-|**id** | **String** | The id of the customer. |  |
 
 
 

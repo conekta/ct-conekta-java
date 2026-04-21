@@ -34,6 +34,7 @@ import com.conekta.JSON;
  */
 @JsonPropertyOrder({
   Checkout.JSON_PROPERTY_ALLOWED_PAYMENT_METHODS,
+  Checkout.JSON_PROPERTY_EXCLUDE_CARD_NETWORKS,
   Checkout.JSON_PROPERTY_EXPIRES_AT,
   Checkout.JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED,
   Checkout.JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS,
@@ -41,8 +42,10 @@ import com.conekta.JSON;
   Checkout.JSON_PROPERTY_NAME,
   Checkout.JSON_PROPERTY_NEEDS_SHIPPING_CONTACT,
   Checkout.JSON_PROPERTY_ON_DEMAND_ENABLED,
+  Checkout.JSON_PROPERTY_PLAN_IDS,
   Checkout.JSON_PROPERTY_ORDER_TEMPLATE,
   Checkout.JSON_PROPERTY_PAYMENTS_LIMIT_COUNT,
+  Checkout.JSON_PROPERTY_SUCCESS_URL,
   Checkout.JSON_PROPERTY_RECURRENT,
   Checkout.JSON_PROPERTY_TYPE
 })
@@ -51,6 +54,46 @@ import com.conekta.JSON;
 public class Checkout {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
   private List<String> allowedPaymentMethods = new ArrayList<>();
+
+  /**
+   * Gets or Sets excludeCardNetworks
+   */
+  public enum ExcludeCardNetworksEnum {
+    VISA("visa"),
+    
+    MASTERCARD("mastercard"),
+    
+    AMEX("amex");
+
+    private String value;
+
+    ExcludeCardNetworksEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static ExcludeCardNetworksEnum fromValue(String value) {
+      for (ExcludeCardNetworksEnum b : ExcludeCardNetworksEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
+  public static final String JSON_PROPERTY_EXCLUDE_CARD_NETWORKS = "exclude_card_networks";
+  private List<ExcludeCardNetworksEnum> excludeCardNetworks = new ArrayList<>();
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
   private Long expiresAt;
@@ -73,11 +116,17 @@ public class Checkout {
   public static final String JSON_PROPERTY_ON_DEMAND_ENABLED = "on_demand_enabled";
   private Boolean onDemandEnabled;
 
+  public static final String JSON_PROPERTY_PLAN_IDS = "plan_ids";
+  private List<String> planIds = new ArrayList<>();
+
   public static final String JSON_PROPERTY_ORDER_TEMPLATE = "order_template";
   private CheckoutOrderTemplate orderTemplate;
 
   public static final String JSON_PROPERTY_PAYMENTS_LIMIT_COUNT = "payments_limit_count";
   private Integer paymentsLimitCount;
+
+  public static final String JSON_PROPERTY_SUCCESS_URL = "success_url";
+  private String successUrl;
 
   public static final String JSON_PROPERTY_RECURRENT = "recurrent";
   private Boolean recurrent;
@@ -121,13 +170,46 @@ public class Checkout {
   }
 
 
+  public Checkout excludeCardNetworks(List<ExcludeCardNetworksEnum> excludeCardNetworks) {
+    this.excludeCardNetworks = excludeCardNetworks;
+    return this;
+  }
+
+  public Checkout addExcludeCardNetworksItem(ExcludeCardNetworksEnum excludeCardNetworksItem) {
+    if (this.excludeCardNetworks == null) {
+      this.excludeCardNetworks = new ArrayList<>();
+    }
+    this.excludeCardNetworks.add(excludeCardNetworksItem);
+    return this;
+  }
+
+   /**
+   * List of card networks to exclude from the checkout. This field is only applicable for card payments.
+   * @return excludeCardNetworks
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_EXCLUDE_CARD_NETWORKS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<ExcludeCardNetworksEnum> getExcludeCardNetworks() {
+    return excludeCardNetworks;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_EXCLUDE_CARD_NETWORKS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setExcludeCardNetworks(List<ExcludeCardNetworksEnum> excludeCardNetworks) {
+    this.excludeCardNetworks = excludeCardNetworks;
+  }
+
+
   public Checkout expiresAt(Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
    /**
-   * It is the time when the link will expire. It is expressed in seconds since the Unix epoch. The valid range is from 2 to 365 days (the valid range will be taken from the next day of the creation date at 00:01 hrs) 
+   * It is the time when the link will expire.  It is expressed in seconds since the Unix epoch. The valid range is from 10 minutes to 365 days from the creation date. 
    * @return expiresAt
   **/
   @javax.annotation.Nonnull
@@ -210,7 +292,7 @@ public class Checkout {
   }
 
    /**
-   * Indicates the 3DS2 mode for the order, either smart or strict.
+   * Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null.
    * @return threeDsMode
   **/
   @javax.annotation.Nullable
@@ -304,6 +386,39 @@ public class Checkout {
   }
 
 
+  public Checkout planIds(List<String> planIds) {
+    this.planIds = planIds;
+    return this;
+  }
+
+  public Checkout addPlanIdsItem(String planIdsItem) {
+    if (this.planIds == null) {
+      this.planIds = new ArrayList<>();
+    }
+    this.planIds.add(planIdsItem);
+    return this;
+  }
+
+   /**
+   * It is a list of plan IDs that will be associated with the order.
+   * @return planIds
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PLAN_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<String> getPlanIds() {
+    return planIds;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PLAN_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPlanIds(List<String> planIds) {
+    this.planIds = planIds;
+  }
+
+
   public Checkout orderTemplate(CheckoutOrderTemplate orderTemplate) {
     this.orderTemplate = orderTemplate;
     return this;
@@ -336,6 +451,7 @@ public class Checkout {
 
    /**
    * It is the number of payments that can be made through the link.
+   * minimum: 1
    * @return paymentsLimitCount
   **/
   @javax.annotation.Nullable
@@ -351,6 +467,31 @@ public class Checkout {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPaymentsLimitCount(Integer paymentsLimitCount) {
     this.paymentsLimitCount = paymentsLimitCount;
+  }
+
+
+  public Checkout successUrl(String successUrl) {
+    this.successUrl = successUrl;
+    return this;
+  }
+
+   /**
+   * The URL to redirect to after a successful payment.
+   * @return successUrl
+  **/
+  @javax.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SUCCESS_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getSuccessUrl() {
+    return successUrl;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SUCCESS_URL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSuccessUrl(String successUrl) {
+    this.successUrl = successUrl;
   }
 
 
@@ -417,6 +558,7 @@ public class Checkout {
     }
     Checkout checkout = (Checkout) o;
     return Objects.equals(this.allowedPaymentMethods, checkout.allowedPaymentMethods) &&
+        Objects.equals(this.excludeCardNetworks, checkout.excludeCardNetworks) &&
         Objects.equals(this.expiresAt, checkout.expiresAt) &&
         Objects.equals(this.monthlyInstallmentsEnabled, checkout.monthlyInstallmentsEnabled) &&
         Objects.equals(this.monthlyInstallmentsOptions, checkout.monthlyInstallmentsOptions) &&
@@ -424,15 +566,17 @@ public class Checkout {
         Objects.equals(this.name, checkout.name) &&
         Objects.equals(this.needsShippingContact, checkout.needsShippingContact) &&
         Objects.equals(this.onDemandEnabled, checkout.onDemandEnabled) &&
+        Objects.equals(this.planIds, checkout.planIds) &&
         Objects.equals(this.orderTemplate, checkout.orderTemplate) &&
         Objects.equals(this.paymentsLimitCount, checkout.paymentsLimitCount) &&
+        Objects.equals(this.successUrl, checkout.successUrl) &&
         Objects.equals(this.recurrent, checkout.recurrent) &&
         Objects.equals(this.type, checkout.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowedPaymentMethods, expiresAt, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, threeDsMode, name, needsShippingContact, onDemandEnabled, orderTemplate, paymentsLimitCount, recurrent, type);
+    return Objects.hash(allowedPaymentMethods, excludeCardNetworks, expiresAt, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, threeDsMode, name, needsShippingContact, onDemandEnabled, planIds, orderTemplate, paymentsLimitCount, successUrl, recurrent, type);
   }
 
   @Override
@@ -440,6 +584,7 @@ public class Checkout {
     StringBuilder sb = new StringBuilder();
     sb.append("class Checkout {\n");
     sb.append("    allowedPaymentMethods: ").append(toIndentedString(allowedPaymentMethods)).append("\n");
+    sb.append("    excludeCardNetworks: ").append(toIndentedString(excludeCardNetworks)).append("\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("    monthlyInstallmentsEnabled: ").append(toIndentedString(monthlyInstallmentsEnabled)).append("\n");
     sb.append("    monthlyInstallmentsOptions: ").append(toIndentedString(monthlyInstallmentsOptions)).append("\n");
@@ -447,8 +592,10 @@ public class Checkout {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    needsShippingContact: ").append(toIndentedString(needsShippingContact)).append("\n");
     sb.append("    onDemandEnabled: ").append(toIndentedString(onDemandEnabled)).append("\n");
+    sb.append("    planIds: ").append(toIndentedString(planIds)).append("\n");
     sb.append("    orderTemplate: ").append(toIndentedString(orderTemplate)).append("\n");
     sb.append("    paymentsLimitCount: ").append(toIndentedString(paymentsLimitCount)).append("\n");
+    sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");
     sb.append("    recurrent: ").append(toIndentedString(recurrent)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");

@@ -11,12 +11,12 @@ Contains the detail of the shipping addresses that the client has active or has 
 |**phone** | **String** |  |  [optional] |
 |**receiver** | **String** |  |  [optional] |
 |**betweenStreets** | **String** |  |  [optional] |
-|**address** | [**CustomerShippingContactsResponseAddress**](CustomerShippingContactsResponseAddress.md) |  |  [optional] |
+|**address** | [**CustomerShippingContactsAddress**](CustomerShippingContactsAddress.md) |  |  [optional] |
 |**parentId** | **String** |  |  [optional] |
 |**_default** | **Boolean** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**createdAt** | **Long** |  |  [optional] |
-|**metadata** | **Map&lt;String, Object&gt;** | Metadata associated with the shipping contact |  [optional] |
+|**metadata** |  | Metadata associated with the shipping contact |  [optional] |
 |**_object** | **String** |  |  [optional] |
 |**deleted** | **Boolean** |  |  [optional] |
 

@@ -16,7 +16,7 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.CustomerShippingContactsAddress;
+import com.conekta.model.CustomerShippingContactsRequestAddress;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -58,7 +58,7 @@ public class CustomerShippingContactsDataResponse {
   private String betweenStreets;
 
   public static final String JSON_PROPERTY_ADDRESS = "address";
-  private CustomerShippingContactsAddress address;
+  private CustomerShippingContactsRequestAddress address;
 
   public static final String JSON_PROPERTY_PARENT_ID = "parent_id";
   private String parentId;
@@ -159,7 +159,7 @@ public class CustomerShippingContactsDataResponse {
   }
 
 
-  public CustomerShippingContactsDataResponse address(CustomerShippingContactsAddress address) {
+  public CustomerShippingContactsDataResponse address(CustomerShippingContactsRequestAddress address) {
     this.address = address;
     return this;
   }
@@ -172,14 +172,14 @@ public class CustomerShippingContactsDataResponse {
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public CustomerShippingContactsAddress getAddress() {
+  public CustomerShippingContactsRequestAddress getAddress() {
     return address;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAddress(CustomerShippingContactsAddress address) {
+  public void setAddress(CustomerShippingContactsRequestAddress address) {
     this.address = address;
   }
 
@@ -264,21 +264,13 @@ public class CustomerShippingContactsDataResponse {
     return this;
   }
 
-  public CustomerShippingContactsDataResponse putMetadataItem(String key, Object metadataItem) {
-    if (this.metadata == null) {
-      this.metadata = new HashMap<>();
-    }
-    this.metadata.put(key, metadataItem);
-    return this;
-  }
-
    /**
    * Metadata associated with the shipping contact
    * @return metadata
   **/
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
     return metadata;
@@ -286,7 +278,7 @@ public class CustomerShippingContactsDataResponse {
 
 
   @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
   }

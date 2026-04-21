@@ -12,7 +12,7 @@ import com.conekta.model.Error;
 import com.conekta.model.EventResponse;
 import com.conekta.model.EventsResendResponse;
 import com.conekta.model.GetEventsResponse;
-import com.conekta.model.ResendRequest;
+import com.conekta.model.ResendEventRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -187,7 +187,7 @@ public class EventsApi {
    * Resend Event
    * Resend event to selected webhooks
    * @param eventId event identifier (required)
-   * @param resendRequest requested fields for resend an event (required)
+   * @param resendEventRequest requested fields for resend an event (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @return EventsResendResponse
    * @throws ApiException if fails to make API call
@@ -200,15 +200,15 @@ public class EventsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public EventsResendResponse resendEvent(String eventId, ResendRequest resendRequest, String acceptLanguage) throws ApiException {
-    return resendEventWithHttpInfo(eventId, resendRequest, acceptLanguage).getData();
+  public EventsResendResponse resendEvent(String eventId, ResendEventRequest resendEventRequest, String acceptLanguage) throws ApiException {
+    return resendEventWithHttpInfo(eventId, resendEventRequest, acceptLanguage).getData();
   }
 
   /**
    * Resend Event
    * Resend event to selected webhooks
    * @param eventId event identifier (required)
-   * @param resendRequest requested fields for resend an event (required)
+   * @param resendEventRequest requested fields for resend an event (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @return ApiResponse&lt;EventsResendResponse&gt;
    * @throws ApiException if fails to make API call
@@ -221,13 +221,13 @@ public class EventsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<EventsResendResponse> resendEventWithHttpInfo(String eventId, ResendRequest resendRequest, String acceptLanguage) throws ApiException {
+  public ApiResponse<EventsResendResponse> resendEventWithHttpInfo(String eventId, ResendEventRequest resendEventRequest, String acceptLanguage) throws ApiException {
     // Check required parameters
     if (eventId == null) {
       throw new ApiException(400, "Missing the required parameter 'eventId' when calling resendEvent");
     }
-    if (resendRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'resendRequest' when calling resendEvent");
+    if (resendEventRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'resendEventRequest' when calling resendEvent");
     }
 
     // Path parameters
@@ -244,7 +244,7 @@ public class EventsApi {
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<EventsResendResponse> localVarReturnType = new GenericType<EventsResendResponse>() {};
-    return apiClient.invokeAPI("EventsApi.resendEvent", localVarPath, "POST", new ArrayList<>(), resendRequest,
+    return apiClient.invokeAPI("EventsApi.resendEvent", localVarPath, "POST", new ArrayList<>(), resendEventRequest,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

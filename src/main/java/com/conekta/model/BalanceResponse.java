@@ -16,7 +16,7 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.BalanceCommonField;
+import com.conekta.model.BalanceCommonFielsResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -48,44 +48,44 @@ import com.conekta.JSON;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
 public class BalanceResponse {
   public static final String JSON_PROPERTY_AVAILABLE = "available";
-  private List<BalanceCommonField> available = new ArrayList<>();
+  private List<BalanceCommonFielsResponse> available = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CASHOUT_RETENTION_AMOUNT = "cashout_retention_amount";
-  private List<BalanceCommonField> cashoutRetentionAmount = new ArrayList<>();
+  private List<BalanceCommonFielsResponse> cashoutRetentionAmount = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CONEKTA_RETENTION = "conekta_retention";
-  private List<BalanceCommonField> conektaRetention = new ArrayList<>();
+  private List<BalanceCommonFielsResponse> conektaRetention = new ArrayList<>();
 
   public static final String JSON_PROPERTY_GATEWAY = "gateway";
-  private List<BalanceCommonField> gateway = new ArrayList<>();
+  private List<BalanceCommonFielsResponse> gateway = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PENDING = "pending";
-  private List<BalanceCommonField> pending = new ArrayList<>();
+  private List<BalanceCommonFielsResponse> pending = new ArrayList<>();
 
   public static final String JSON_PROPERTY_RETAINED = "retained";
-  private List<BalanceCommonField> retained = new ArrayList<>();
+  private List<BalanceCommonFielsResponse> retained = new ArrayList<>();
 
   public static final String JSON_PROPERTY_RETENTION_AMOUNT = "retention_amount";
-  private List<BalanceCommonField> retentionAmount = new ArrayList<>();
+  private List<BalanceCommonFielsResponse> retentionAmount = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TARGET_COLLATERAL_AMOUNT = "target_collateral_amount";
   private Object targetCollateralAmount;
 
   public static final String JSON_PROPERTY_TARGET_RETENTION_AMOUNT = "target_retention_amount";
-  private List<BalanceCommonField> targetRetentionAmount = new ArrayList<>();
+  private List<BalanceCommonFielsResponse> targetRetentionAmount = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TEMPORARILY_RETAINED = "temporarily_retained";
-  private List<BalanceCommonField> temporarilyRetained = new ArrayList<>();
+  private List<BalanceCommonFielsResponse> temporarilyRetained = new ArrayList<>();
 
   public BalanceResponse() { 
   }
 
-  public BalanceResponse available(List<BalanceCommonField> available) {
+  public BalanceResponse available(List<BalanceCommonFielsResponse> available) {
     this.available = available;
     return this;
   }
 
-  public BalanceResponse addAvailableItem(BalanceCommonField availableItem) {
+  public BalanceResponse addAvailableItem(BalanceCommonFielsResponse availableItem) {
     if (this.available == null) {
       this.available = new ArrayList<>();
     }
@@ -101,24 +101,24 @@ public class BalanceResponse {
   @JsonProperty(JSON_PROPERTY_AVAILABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<BalanceCommonField> getAvailable() {
+  public List<BalanceCommonFielsResponse> getAvailable() {
     return available;
   }
 
 
   @JsonProperty(JSON_PROPERTY_AVAILABLE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAvailable(List<BalanceCommonField> available) {
+  public void setAvailable(List<BalanceCommonFielsResponse> available) {
     this.available = available;
   }
 
 
-  public BalanceResponse cashoutRetentionAmount(List<BalanceCommonField> cashoutRetentionAmount) {
+  public BalanceResponse cashoutRetentionAmount(List<BalanceCommonFielsResponse> cashoutRetentionAmount) {
     this.cashoutRetentionAmount = cashoutRetentionAmount;
     return this;
   }
 
-  public BalanceResponse addCashoutRetentionAmountItem(BalanceCommonField cashoutRetentionAmountItem) {
+  public BalanceResponse addCashoutRetentionAmountItem(BalanceCommonFielsResponse cashoutRetentionAmountItem) {
     if (this.cashoutRetentionAmount == null) {
       this.cashoutRetentionAmount = new ArrayList<>();
     }
@@ -134,24 +134,24 @@ public class BalanceResponse {
   @JsonProperty(JSON_PROPERTY_CASHOUT_RETENTION_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<BalanceCommonField> getCashoutRetentionAmount() {
+  public List<BalanceCommonFielsResponse> getCashoutRetentionAmount() {
     return cashoutRetentionAmount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CASHOUT_RETENTION_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCashoutRetentionAmount(List<BalanceCommonField> cashoutRetentionAmount) {
+  public void setCashoutRetentionAmount(List<BalanceCommonFielsResponse> cashoutRetentionAmount) {
     this.cashoutRetentionAmount = cashoutRetentionAmount;
   }
 
 
-  public BalanceResponse conektaRetention(List<BalanceCommonField> conektaRetention) {
+  public BalanceResponse conektaRetention(List<BalanceCommonFielsResponse> conektaRetention) {
     this.conektaRetention = conektaRetention;
     return this;
   }
 
-  public BalanceResponse addConektaRetentionItem(BalanceCommonField conektaRetentionItem) {
+  public BalanceResponse addConektaRetentionItem(BalanceCommonFielsResponse conektaRetentionItem) {
     if (this.conektaRetention == null) {
       this.conektaRetention = new ArrayList<>();
     }
@@ -167,24 +167,24 @@ public class BalanceResponse {
   @JsonProperty(JSON_PROPERTY_CONEKTA_RETENTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<BalanceCommonField> getConektaRetention() {
+  public List<BalanceCommonFielsResponse> getConektaRetention() {
     return conektaRetention;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CONEKTA_RETENTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setConektaRetention(List<BalanceCommonField> conektaRetention) {
+  public void setConektaRetention(List<BalanceCommonFielsResponse> conektaRetention) {
     this.conektaRetention = conektaRetention;
   }
 
 
-  public BalanceResponse gateway(List<BalanceCommonField> gateway) {
+  public BalanceResponse gateway(List<BalanceCommonFielsResponse> gateway) {
     this.gateway = gateway;
     return this;
   }
 
-  public BalanceResponse addGatewayItem(BalanceCommonField gatewayItem) {
+  public BalanceResponse addGatewayItem(BalanceCommonFielsResponse gatewayItem) {
     if (this.gateway == null) {
       this.gateway = new ArrayList<>();
     }
@@ -200,24 +200,24 @@ public class BalanceResponse {
   @JsonProperty(JSON_PROPERTY_GATEWAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<BalanceCommonField> getGateway() {
+  public List<BalanceCommonFielsResponse> getGateway() {
     return gateway;
   }
 
 
   @JsonProperty(JSON_PROPERTY_GATEWAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGateway(List<BalanceCommonField> gateway) {
+  public void setGateway(List<BalanceCommonFielsResponse> gateway) {
     this.gateway = gateway;
   }
 
 
-  public BalanceResponse pending(List<BalanceCommonField> pending) {
+  public BalanceResponse pending(List<BalanceCommonFielsResponse> pending) {
     this.pending = pending;
     return this;
   }
 
-  public BalanceResponse addPendingItem(BalanceCommonField pendingItem) {
+  public BalanceResponse addPendingItem(BalanceCommonFielsResponse pendingItem) {
     if (this.pending == null) {
       this.pending = new ArrayList<>();
     }
@@ -233,24 +233,24 @@ public class BalanceResponse {
   @JsonProperty(JSON_PROPERTY_PENDING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<BalanceCommonField> getPending() {
+  public List<BalanceCommonFielsResponse> getPending() {
     return pending;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PENDING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPending(List<BalanceCommonField> pending) {
+  public void setPending(List<BalanceCommonFielsResponse> pending) {
     this.pending = pending;
   }
 
 
-  public BalanceResponse retained(List<BalanceCommonField> retained) {
+  public BalanceResponse retained(List<BalanceCommonFielsResponse> retained) {
     this.retained = retained;
     return this;
   }
 
-  public BalanceResponse addRetainedItem(BalanceCommonField retainedItem) {
+  public BalanceResponse addRetainedItem(BalanceCommonFielsResponse retainedItem) {
     if (this.retained == null) {
       this.retained = new ArrayList<>();
     }
@@ -266,24 +266,24 @@ public class BalanceResponse {
   @JsonProperty(JSON_PROPERTY_RETAINED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<BalanceCommonField> getRetained() {
+  public List<BalanceCommonFielsResponse> getRetained() {
     return retained;
   }
 
 
   @JsonProperty(JSON_PROPERTY_RETAINED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRetained(List<BalanceCommonField> retained) {
+  public void setRetained(List<BalanceCommonFielsResponse> retained) {
     this.retained = retained;
   }
 
 
-  public BalanceResponse retentionAmount(List<BalanceCommonField> retentionAmount) {
+  public BalanceResponse retentionAmount(List<BalanceCommonFielsResponse> retentionAmount) {
     this.retentionAmount = retentionAmount;
     return this;
   }
 
-  public BalanceResponse addRetentionAmountItem(BalanceCommonField retentionAmountItem) {
+  public BalanceResponse addRetentionAmountItem(BalanceCommonFielsResponse retentionAmountItem) {
     if (this.retentionAmount == null) {
       this.retentionAmount = new ArrayList<>();
     }
@@ -299,14 +299,14 @@ public class BalanceResponse {
   @JsonProperty(JSON_PROPERTY_RETENTION_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<BalanceCommonField> getRetentionAmount() {
+  public List<BalanceCommonFielsResponse> getRetentionAmount() {
     return retentionAmount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_RETENTION_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRetentionAmount(List<BalanceCommonField> retentionAmount) {
+  public void setRetentionAmount(List<BalanceCommonFielsResponse> retentionAmount) {
     this.retentionAmount = retentionAmount;
   }
 
@@ -336,12 +336,12 @@ public class BalanceResponse {
   }
 
 
-  public BalanceResponse targetRetentionAmount(List<BalanceCommonField> targetRetentionAmount) {
+  public BalanceResponse targetRetentionAmount(List<BalanceCommonFielsResponse> targetRetentionAmount) {
     this.targetRetentionAmount = targetRetentionAmount;
     return this;
   }
 
-  public BalanceResponse addTargetRetentionAmountItem(BalanceCommonField targetRetentionAmountItem) {
+  public BalanceResponse addTargetRetentionAmountItem(BalanceCommonFielsResponse targetRetentionAmountItem) {
     if (this.targetRetentionAmount == null) {
       this.targetRetentionAmount = new ArrayList<>();
     }
@@ -357,24 +357,24 @@ public class BalanceResponse {
   @JsonProperty(JSON_PROPERTY_TARGET_RETENTION_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<BalanceCommonField> getTargetRetentionAmount() {
+  public List<BalanceCommonFielsResponse> getTargetRetentionAmount() {
     return targetRetentionAmount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TARGET_RETENTION_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTargetRetentionAmount(List<BalanceCommonField> targetRetentionAmount) {
+  public void setTargetRetentionAmount(List<BalanceCommonFielsResponse> targetRetentionAmount) {
     this.targetRetentionAmount = targetRetentionAmount;
   }
 
 
-  public BalanceResponse temporarilyRetained(List<BalanceCommonField> temporarilyRetained) {
+  public BalanceResponse temporarilyRetained(List<BalanceCommonFielsResponse> temporarilyRetained) {
     this.temporarilyRetained = temporarilyRetained;
     return this;
   }
 
-  public BalanceResponse addTemporarilyRetainedItem(BalanceCommonField temporarilyRetainedItem) {
+  public BalanceResponse addTemporarilyRetainedItem(BalanceCommonFielsResponse temporarilyRetainedItem) {
     if (this.temporarilyRetained == null) {
       this.temporarilyRetained = new ArrayList<>();
     }
@@ -390,14 +390,14 @@ public class BalanceResponse {
   @JsonProperty(JSON_PROPERTY_TEMPORARILY_RETAINED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public List<BalanceCommonField> getTemporarilyRetained() {
+  public List<BalanceCommonFielsResponse> getTemporarilyRetained() {
     return temporarilyRetained;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TEMPORARILY_RETAINED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTemporarilyRetained(List<BalanceCommonField> temporarilyRetained) {
+  public void setTemporarilyRetained(List<BalanceCommonFielsResponse> temporarilyRetained) {
     this.temporarilyRetained = temporarilyRetained;
   }
 

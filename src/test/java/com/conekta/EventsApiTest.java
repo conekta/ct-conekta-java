@@ -10,80 +10,41 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
-import com.conekta.model.Error;
 import com.conekta.model.EventResponse;
 import com.conekta.model.EventsResendResponse;
 import com.conekta.model.GetEventsResponse;
-import com.conekta.model.ResendRequest;
+import com.conekta.model.ResendEventRequest;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for EventsApi
  */
 public class EventsApiTest {
 
-    private final EventsApi api = new EventsApi();
+    private final EventsApi api = new EventsApi(TestUtils.apiClient());
 
-    /**
-     * Get Event
-     *
-     * Returns a single event
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getEventTest() throws ApiException {
-        //String id = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //EventResponse response = api.getEvent(id, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        EventResponse response = api.getEvent("63fe3d2ddf70970001cfb41a", "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Get list of Events
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void getEventsTest() throws ApiException {
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //Integer limit = null;
-        //String search = null;
-        //String next = null;
-        //String previous = null;
-        //GetEventsResponse response = api.getEvents(acceptLanguage, xChildCompanyId, limit, search, next, previous);
-        // TODO: test validations
+        GetEventsResponse response = api.getEvents("es", null, 20, null, null, null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Resend Event
-     *
-     * Resend event to selected webhooks
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void resendEventTest() throws ApiException {
-        //String eventId = null;
-        //ResendRequest resendRequest = null;
-        //String acceptLanguage = null;
-        //EventsResendResponse response = api.resendEvent(eventId, resendRequest, acceptLanguage);
-        // TODO: test validations
+        ResendEventRequest resendEventRequest = new ResendEventRequest()
+                .addWebhooksIdsItem("641b1d5662d7e00001eaa46b");
+        EventsResendResponse response = api.resendEvent("6463d6e35a4c3e001819e761", resendEventRequest, "es");
+        Assertions.assertNotNull(response);
     }
 
 }

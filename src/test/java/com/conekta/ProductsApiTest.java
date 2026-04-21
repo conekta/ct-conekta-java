@@ -10,82 +10,43 @@
  * Do not edit the class manually.
  */
 
-
 package com.conekta;
 
-import com.conekta.*;
-import com.conekta.auth.*;
-import com.conekta.model.Error;
 import com.conekta.model.Product;
 import com.conekta.model.ProductOrderResponse;
 import com.conekta.model.UpdateProduct;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for ProductsApi
  */
 public class ProductsApiTest {
 
-    private final ProductsApi api = new ProductsApi();
+    private static final String ORDER_ID = "ord_2tVyWPnCPWbrV37mW";
+    private static final String LINE_ITEM_ID = "line_item_2tVz8UkyWhSxLfUd7";
 
-    /**
-     * Create Product
-     *
-     * Create a new product for an existing order.
-     *
-     * @throws ApiException if the Api call fails
-     */
+    private final ProductsApi api = new ProductsApi(TestUtils.apiClient());
+
     @Test
     public void ordersCreateProductTest() throws ApiException {
-        //String id = null;
-        //Product product = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //ProductOrderResponse response = api.ordersCreateProduct(id, product, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        Product product = new Product().name("test").quantity(1).unitPrice(1000);
+        ProductOrderResponse response = api.ordersCreateProduct(ORDER_ID, product, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Delete Product
-     *
-     * Delete product for an existing orden
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void ordersDeleteProductTest() throws ApiException {
-        //String id = null;
-        //String lineItemId = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //ProductOrderResponse response = api.ordersDeleteProduct(id, lineItemId, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        ProductOrderResponse response = api.ordersDeleteProduct(ORDER_ID, LINE_ITEM_ID, "es", null);
+        Assertions.assertNotNull(response);
     }
 
-    /**
-     * Update Product
-     *
-     * Update an existing product for an existing orden
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void ordersUpdateProductTest() throws ApiException {
-        //String id = null;
-        //String lineItemId = null;
-        //UpdateProduct updateProduct = null;
-        //String acceptLanguage = null;
-        //String xChildCompanyId = null;
-        //ProductOrderResponse response = api.ordersUpdateProduct(id, lineItemId, updateProduct, acceptLanguage, xChildCompanyId);
-        // TODO: test validations
+        UpdateProduct updateProduct = new UpdateProduct().name("updated").quantity(2).unitPrice(2000L);
+        ProductOrderResponse response = api.ordersUpdateProduct(ORDER_ID, LINE_ITEM_ID, updateProduct, "es", null);
+        Assertions.assertNotNull(response);
     }
 
 }
