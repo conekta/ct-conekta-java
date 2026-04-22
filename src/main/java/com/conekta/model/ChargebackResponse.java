@@ -71,7 +71,9 @@ public class ChargebackResponse {
     
     RT_SENT("rt_sent"),
     
-    REPRESENTED("represented");
+    REPRESENTED("represented"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -96,7 +98,7 @@ public class ChargebackResponse {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 
@@ -107,6 +109,8 @@ public class ChargebackResponse {
    * Gets or Sets reason
    */
   public enum ReasonEnum {
+    UNRECOGNIZED("unrecognized"),
+    
     UNAUTHORIZED("unauthorized"),
     
     UNAUTHORIZED_BY_CLIENT("unauthorized_by_client"),
@@ -161,7 +165,9 @@ public class ChargebackResponse {
     
     CHIP_LIABILIATY_SHIFT("chip_liabiliaty_shift"),
     
-    CREDIT_NOT_PROCESSED("credit_not_processed");
+    CREDIT_NOT_PROCESSED("credit_not_processed"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -186,7 +192,7 @@ public class ChargebackResponse {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 
@@ -204,7 +210,9 @@ public class ChargebackResponse {
     
     CONTACTED("customer_contacted"),
     
-    UNREACHABLE("customer_unreachable");
+    UNREACHABLE("customer_unreachable"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -229,7 +237,7 @@ public class ChargebackResponse {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 

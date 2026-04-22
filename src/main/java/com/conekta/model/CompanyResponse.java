@@ -84,7 +84,9 @@ public class CompanyResponse {
   public enum ThreeDsModeEnum {
     SMART("smart"),
     
-    STRICT("strict");
+    STRICT("strict"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -109,7 +111,7 @@ public class CompanyResponse {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 

@@ -15,5 +15,7 @@
 
 * `ORDER_PENDING_PAYMENT` (value: `"order.pending_payment"`)
 
+* `UNKNOWN_DEFAULT_OPEN_API` (value: `"unknown_default_open_api"`)
+
 
 

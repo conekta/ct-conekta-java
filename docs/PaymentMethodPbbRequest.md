@@ -18,6 +18,7 @@
 | Name | Value |
 |---- | -----|
 | BBVA_PAY_BY_BANK | &quot;bbva_pay_by_bank&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

@@ -29,6 +29,7 @@ a plan
 | HALF_MONTH | &quot;half_month&quot; |
 | MONTH | &quot;month&quot; |
 | YEAR | &quot;year&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

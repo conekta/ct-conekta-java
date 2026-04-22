@@ -47,7 +47,9 @@ public class PaymentMethodPbbRequest {
    * Product type of the payment method, use for the payment method to know the product type
    */
   public enum ProductTypeEnum {
-    BBVA_PAY_BY_BANK("bbva_pay_by_bank");
+    BBVA_PAY_BY_BANK("bbva_pay_by_bank"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -72,7 +74,7 @@ public class PaymentMethodPbbRequest {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 

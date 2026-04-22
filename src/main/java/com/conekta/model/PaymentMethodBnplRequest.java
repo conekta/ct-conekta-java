@@ -62,7 +62,9 @@ public class PaymentMethodBnplRequest {
     
     COPPEL_BNPL("coppel_bnpl"),
     
-    CREDITEA_BNPL("creditea_bnpl");
+    CREDITEA_BNPL("creditea_bnpl"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -87,7 +89,7 @@ public class PaymentMethodBnplRequest {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 

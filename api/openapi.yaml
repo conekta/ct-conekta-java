@@ -16556,6 +16556,7 @@ components:
           type: string
         reason:
           enum:
+          - unrecognized
           - unauthorized
           - unauthorized_by_client
           - unrecognized_like_fraud

@@ -69,7 +69,9 @@ public class PlanRequest {
     
     MONTH("month"),
     
-    YEAR("year");
+    YEAR("year"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -94,7 +96,7 @@ public class PlanRequest {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 
