@@ -45,6 +45,7 @@
 | VISA | &quot;visa&quot; |
 | MASTERCARD | &quot;mastercard&quot; |
 | AMEX | &quot;amex&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

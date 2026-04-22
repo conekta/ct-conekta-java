@@ -62,7 +62,9 @@ public class OrderCheckoutRequest {
     
     BNPL("bnpl"),
     
-    PAY_BY_BANK("pay_by_bank");
+    PAY_BY_BANK("pay_by_bank"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -87,7 +89,7 @@ public class OrderCheckoutRequest {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 
@@ -102,7 +104,9 @@ public class OrderCheckoutRequest {
     
     MASTERCARD("mastercard"),
     
-    AMEX("amex");
+    AMEX("amex"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -127,7 +131,7 @@ public class OrderCheckoutRequest {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 
@@ -170,7 +174,9 @@ public class OrderCheckoutRequest {
   public enum TypeEnum {
     INTEGRATION("Integration"),
     
-    HOSTEDPAYMENT("HostedPayment");
+    HOSTEDPAYMENT("HostedPayment"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -195,7 +201,7 @@ public class OrderCheckoutRequest {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 

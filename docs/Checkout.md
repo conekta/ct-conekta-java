@@ -33,6 +33,7 @@ It is a sub-resource of the Order model that can be stipulated in order to confi
 | VISA | &quot;visa&quot; |
 | MASTERCARD | &quot;mastercard&quot; |
 | AMEX | &quot;amex&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

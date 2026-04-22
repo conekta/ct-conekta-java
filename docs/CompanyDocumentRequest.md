@@ -30,6 +30,7 @@ Request body for uploading a company document.
 | PERMIT_CASINO | &quot;permit_casino&quot; |
 | LICENSE_SANITATION | &quot;license_sanitation&quot; |
 | REGISTRATION_TOURISM | &quot;registration_tourism&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

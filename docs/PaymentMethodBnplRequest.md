@@ -24,6 +24,7 @@
 | AZTECA_BNPL | &quot;azteca_bnpl&quot; |
 | COPPEL_BNPL | &quot;coppel_bnpl&quot; |
 | CREDITEA_BNPL | &quot;creditea_bnpl&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

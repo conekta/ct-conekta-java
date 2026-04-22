@@ -35,6 +35,7 @@ Chargeback object
 | RT | &quot;rt&quot; |
 | RT_SENT | &quot;rt_sent&quot; |
 | REPRESENTED | &quot;represented&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -42,6 +43,7 @@ Chargeback object
 
 | Name | Value |
 |---- | -----|
+| UNRECOGNIZED | &quot;unrecognized&quot; |
 | UNAUTHORIZED | &quot;unauthorized&quot; |
 | UNAUTHORIZED_BY_CLIENT | &quot;unauthorized_by_client&quot; |
 | UNRECOGNIZED_LIKE_FRAUD | &quot;unrecognized_like_fraud&quot; |
@@ -70,6 +72,7 @@ Chargeback object
 | INCORRECT_AMOUNT | &quot;incorrect_amount&quot; |
 | CHIP_LIABILIATY_SHIFT | &quot;chip_liabiliaty_shift&quot; |
 | CREDIT_NOT_PROCESSED | &quot;credit_not_processed&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -80,6 +83,7 @@ Chargeback object
 | UNCONTACTED | &quot;customer_uncontacted&quot; |
 | CONTACTED | &quot;customer_contacted&quot; |
 | UNREACHABLE | &quot;customer_unreachable&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

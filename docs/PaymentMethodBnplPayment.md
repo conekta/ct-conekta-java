@@ -23,6 +23,7 @@
 | Name | Value |
 |---- | -----|
 | BNPL_PAYMENT | &quot;bnpl_payment&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

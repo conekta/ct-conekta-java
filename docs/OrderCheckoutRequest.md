@@ -33,6 +33,7 @@
 | BANK_TRANSFER | &quot;bank_transfer&quot; |
 | BNPL | &quot;bnpl&quot; |
 | PAY_BY_BANK | &quot;pay_by_bank&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -43,6 +44,7 @@
 | VISA | &quot;visa&quot; |
 | MASTERCARD | &quot;mastercard&quot; |
 | AMEX | &quot;amex&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 
@@ -52,6 +54,7 @@
 |---- | -----|
 | INTEGRATION | &quot;Integration&quot; |
 | HOSTEDPAYMENT | &quot;HostedPayment&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

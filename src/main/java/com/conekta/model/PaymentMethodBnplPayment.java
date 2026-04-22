@@ -49,7 +49,9 @@ public class PaymentMethodBnplPayment {
    * Gets or Sets _object
    */
   public enum ObjectEnum {
-    BNPL_PAYMENT("bnpl_payment");
+    BNPL_PAYMENT("bnpl_payment"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -74,7 +76,7 @@ public class PaymentMethodBnplPayment {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 

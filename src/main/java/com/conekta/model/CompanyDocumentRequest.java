@@ -60,7 +60,9 @@ public class CompanyDocumentRequest {
     
     LICENSE_SANITATION("license_sanitation"),
     
-    REGISTRATION_TOURISM("registration_tourism");
+    REGISTRATION_TOURISM("registration_tourism"),
+    
+    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
 
     private String value;
 
@@ -85,7 +87,7 @@ public class CompanyDocumentRequest {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return UNKNOWN_DEFAULT_OPEN_API;
     }
   }
 
