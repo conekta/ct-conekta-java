@@ -37,32 +37,35 @@ import com.conekta.JSON;
   OrdersUpdateTaxesRequest.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("ordersUpdateTaxes_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class OrdersUpdateTaxesRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nullable
   private Long amount;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata;
 
   public OrdersUpdateTaxesRequest() { 
   }
 
-  public OrdersUpdateTaxesRequest amount(Long amount) {
+  public OrdersUpdateTaxesRequest amount(@javax.annotation.Nullable Long amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * The amount to be collected for tax in cents
    * minimum: 0
    * @return amount
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getAmount() {
@@ -70,24 +73,24 @@ public class OrdersUpdateTaxesRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAmount(Long amount) {
+  public void setAmount(@javax.annotation.Nullable Long amount) {
     this.amount = amount;
   }
 
 
-  public OrdersUpdateTaxesRequest description(String description) {
+  public OrdersUpdateTaxesRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * description or tax&#39;s name
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
@@ -95,24 +98,24 @@ public class OrdersUpdateTaxesRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public OrdersUpdateTaxesRequest metadata(Map<String, Object> metadata) {
+  public OrdersUpdateTaxesRequest metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
 
-   /**
+  /**
    * Get metadata
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
@@ -120,9 +123,9 @@ public class OrdersUpdateTaxesRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 
@@ -165,10 +168,7 @@ public class OrdersUpdateTaxesRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

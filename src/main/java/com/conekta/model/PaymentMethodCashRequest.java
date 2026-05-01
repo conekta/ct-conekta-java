@@ -34,28 +34,30 @@ import com.conekta.JSON;
   PaymentMethodCashRequest.JSON_PROPERTY_EXPIRES_AT
 })
 @JsonTypeName("payment_method_cash_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class PaymentMethodCashRequest {
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nonnull
   private String type;
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nullable
   private Long expiresAt;
 
   public PaymentMethodCashRequest() { 
   }
 
-  public PaymentMethodCashRequest type(String type) {
+  public PaymentMethodCashRequest type(@javax.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Type of payment method
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getType() {
@@ -63,24 +65,24 @@ public class PaymentMethodCashRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
   }
 
 
-  public PaymentMethodCashRequest expiresAt(Long expiresAt) {
+  public PaymentMethodCashRequest expiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
-   /**
+  /**
    * Get expiresAt
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getExpiresAt() {
@@ -88,9 +90,9 @@ public class PaymentMethodCashRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(Long expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 
@@ -131,10 +133,7 @@ public class PaymentMethodCashRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

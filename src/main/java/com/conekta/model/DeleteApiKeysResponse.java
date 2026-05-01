@@ -42,52 +42,62 @@ import com.conekta.JSON;
   DeleteApiKeysResponse.JSON_PROPERTY_DELETED
 })
 @JsonTypeName("delete_api_keys_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class DeleteApiKeysResponse {
   public static final String JSON_PROPERTY_ACTIVE = "active";
+  @javax.annotation.Nullable
   private Boolean active;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nullable
   private Long createdAt;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
+  @javax.annotation.Nullable
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_PREFIX = "prefix";
+  @javax.annotation.Nullable
   private String prefix;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_LAST_USED_AT = "last_used_at";
+  @javax.annotation.Nullable
   private Long lastUsedAt;
 
   public static final String JSON_PROPERTY_ROLE = "role";
+  @javax.annotation.Nullable
   private String role;
 
   public static final String JSON_PROPERTY_DELETED = "deleted";
+  @javax.annotation.Nullable
   private Boolean deleted;
 
   public DeleteApiKeysResponse() { 
   }
 
-  public DeleteApiKeysResponse active(Boolean active) {
+  public DeleteApiKeysResponse active(@javax.annotation.Nullable Boolean active) {
     this.active = active;
     return this;
   }
 
-   /**
+  /**
    * Indicates if the api key is active
    * @return active
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonProperty(value = JSON_PROPERTY_ACTIVE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getActive() {
@@ -95,24 +105,24 @@ public class DeleteApiKeysResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonProperty(value = JSON_PROPERTY_ACTIVE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setActive(Boolean active) {
+  public void setActive(@javax.annotation.Nullable Boolean active) {
     this.active = active;
   }
 
 
-  public DeleteApiKeysResponse createdAt(Long createdAt) {
+  public DeleteApiKeysResponse createdAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Unix timestamp in seconds of when the api key was created
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getCreatedAt() {
@@ -120,24 +130,24 @@ public class DeleteApiKeysResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public DeleteApiKeysResponse description(String description) {
+  public DeleteApiKeysResponse description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * A name or brief explanation of what this api key is used for
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
@@ -145,24 +155,24 @@ public class DeleteApiKeysResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public DeleteApiKeysResponse livemode(Boolean livemode) {
+  public DeleteApiKeysResponse livemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
 
-   /**
+  /**
    * Indicates if the api key is in production
    * @return livemode
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getLivemode() {
@@ -170,24 +180,24 @@ public class DeleteApiKeysResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLivemode(Boolean livemode) {
+  public void setLivemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
   }
 
 
-  public DeleteApiKeysResponse prefix(String prefix) {
+  public DeleteApiKeysResponse prefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
     return this;
   }
 
-   /**
+  /**
    * The first few characters of the authentication_token
    * @return prefix
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PREFIX)
+  @JsonProperty(value = JSON_PROPERTY_PREFIX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPrefix() {
@@ -195,24 +205,24 @@ public class DeleteApiKeysResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PREFIX)
+  @JsonProperty(value = JSON_PROPERTY_PREFIX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPrefix(String prefix) {
+  public void setPrefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
   }
 
 
-  public DeleteApiKeysResponse id(String id) {
+  public DeleteApiKeysResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Unique identifier of the api key
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
@@ -220,24 +230,24 @@ public class DeleteApiKeysResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public DeleteApiKeysResponse _object(String _object) {
+  public DeleteApiKeysResponse _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Object name, value is &#39;api_key&#39;
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getObject() {
@@ -245,24 +255,24 @@ public class DeleteApiKeysResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
 
-  public DeleteApiKeysResponse lastUsedAt(Long lastUsedAt) {
+  public DeleteApiKeysResponse lastUsedAt(@javax.annotation.Nullable Long lastUsedAt) {
     this.lastUsedAt = lastUsedAt;
     return this;
   }
 
-   /**
+  /**
    * Unix timestamp in seconds with the api key was used
    * @return lastUsedAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LAST_USED_AT)
+  @JsonProperty(value = JSON_PROPERTY_LAST_USED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getLastUsedAt() {
@@ -270,24 +280,24 @@ public class DeleteApiKeysResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LAST_USED_AT)
+  @JsonProperty(value = JSON_PROPERTY_LAST_USED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastUsedAt(Long lastUsedAt) {
+  public void setLastUsedAt(@javax.annotation.Nullable Long lastUsedAt) {
     this.lastUsedAt = lastUsedAt;
   }
 
 
-  public DeleteApiKeysResponse role(String role) {
+  public DeleteApiKeysResponse role(@javax.annotation.Nullable String role) {
     this.role = role;
     return this;
   }
 
-   /**
+  /**
    * Indicates if the api key is private or public
    * @return role
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ROLE)
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getRole() {
@@ -295,24 +305,24 @@ public class DeleteApiKeysResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ROLE)
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRole(String role) {
+  public void setRole(@javax.annotation.Nullable String role) {
     this.role = role;
   }
 
 
-  public DeleteApiKeysResponse deleted(Boolean deleted) {
+  public DeleteApiKeysResponse deleted(@javax.annotation.Nullable Boolean deleted) {
     this.deleted = deleted;
     return this;
   }
 
-   /**
+  /**
    * Get deleted
    * @return deleted
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DELETED)
+  @JsonProperty(value = JSON_PROPERTY_DELETED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getDeleted() {
@@ -320,9 +330,9 @@ public class DeleteApiKeysResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DELETED)
+  @JsonProperty(value = JSON_PROPERTY_DELETED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDeleted(Boolean deleted) {
+  public void setDeleted(@javax.annotation.Nullable Boolean deleted) {
     this.deleted = deleted;
   }
 
@@ -379,10 +389,7 @@ public class DeleteApiKeysResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

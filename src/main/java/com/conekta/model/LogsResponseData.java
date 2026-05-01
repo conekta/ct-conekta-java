@@ -56,82 +56,102 @@ import com.conekta.JSON;
   LogsResponseData.JSON_PROPERTY_VERSION
 })
 @JsonTypeName("logs_response_data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class LogsResponseData {
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nullable
   private Long createdAt;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_IP_ADDRESS = "ip_address";
+  @javax.annotation.Nullable
   private String ipAddress;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
+  @javax.annotation.Nullable
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_LOGGABLE_ID = "loggable_id";
+  @javax.annotation.Nullable
   private String loggableId;
 
   public static final String JSON_PROPERTY_LOGGABLE_TYPE = "loggable_type";
+  @javax.annotation.Nullable
   private String loggableType;
 
   public static final String JSON_PROPERTY_METHOD = "method";
+  @javax.annotation.Nullable
   private String method;
 
   public static final String JSON_PROPERTY_OAUTH_TOKEN_ID = "oauth_token_id";
+  @javax.annotation.Nullable
   private String oauthTokenId;
 
   public static final String JSON_PROPERTY_QUERY_STRING = "query_string";
+  @javax.annotation.Nullable
   private Map<String, Object> queryString = new HashMap<>();
 
   public static final String JSON_PROPERTY_RELATED = "related";
+  @javax.annotation.Nullable
   private String related;
 
   public static final String JSON_PROPERTY_REQUEST_BODY = "request_body";
+  @javax.annotation.Nullable
   private Object requestBody;
 
   public static final String JSON_PROPERTY_REQUEST_HEADERS = "request_headers";
+  @javax.annotation.Nullable
   private Map<String, String> requestHeaders;
 
   public static final String JSON_PROPERTY_RESPONSE_BODY = "response_body";
+  @javax.annotation.Nullable
   private Object responseBody;
 
   public static final String JSON_PROPERTY_RESPONSE_HEADERS = "response_headers";
+  @javax.annotation.Nullable
   private Map<String, String> responseHeaders;
 
   public static final String JSON_PROPERTY_SEARCHABLE_TAGS = "searchable_tags";
+  @javax.annotation.Nullable
   private List<String> searchableTags = new ArrayList<>();
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private String status;
 
   public static final String JSON_PROPERTY_UPDATED_AT = "updated_at";
+  @javax.annotation.Nullable
   private String updatedAt;
 
   public static final String JSON_PROPERTY_URL = "url";
+  @javax.annotation.Nullable
   private String url;
 
   public static final String JSON_PROPERTY_USER_ACCOUNT_ID = "user_account_id";
+  @javax.annotation.Nullable
   private String userAccountId;
 
   public static final String JSON_PROPERTY_VERSION = "version";
+  @javax.annotation.Nullable
   private String version;
 
   public LogsResponseData() { 
   }
 
-  public LogsResponseData createdAt(Long createdAt) {
+  public LogsResponseData createdAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getCreatedAt() {
@@ -139,24 +159,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public LogsResponseData id(String id) {
+  public LogsResponseData id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
@@ -164,24 +184,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public LogsResponseData ipAddress(String ipAddress) {
+  public LogsResponseData ipAddress(@javax.annotation.Nullable String ipAddress) {
     this.ipAddress = ipAddress;
     return this;
   }
 
-   /**
+  /**
    * Get ipAddress
    * @return ipAddress
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_IP_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_IP_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIpAddress() {
@@ -189,24 +209,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_IP_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_IP_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIpAddress(String ipAddress) {
+  public void setIpAddress(@javax.annotation.Nullable String ipAddress) {
     this.ipAddress = ipAddress;
   }
 
 
-  public LogsResponseData livemode(Boolean livemode) {
+  public LogsResponseData livemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
 
-   /**
+  /**
    * Get livemode
    * @return livemode
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getLivemode() {
@@ -214,24 +234,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLivemode(Boolean livemode) {
+  public void setLivemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
   }
 
 
-  public LogsResponseData loggableId(String loggableId) {
+  public LogsResponseData loggableId(@javax.annotation.Nullable String loggableId) {
     this.loggableId = loggableId;
     return this;
   }
 
-   /**
+  /**
    * Get loggableId
    * @return loggableId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LOGGABLE_ID)
+  @JsonProperty(value = JSON_PROPERTY_LOGGABLE_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLoggableId() {
@@ -239,24 +259,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LOGGABLE_ID)
+  @JsonProperty(value = JSON_PROPERTY_LOGGABLE_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLoggableId(String loggableId) {
+  public void setLoggableId(@javax.annotation.Nullable String loggableId) {
     this.loggableId = loggableId;
   }
 
 
-  public LogsResponseData loggableType(String loggableType) {
+  public LogsResponseData loggableType(@javax.annotation.Nullable String loggableType) {
     this.loggableType = loggableType;
     return this;
   }
 
-   /**
+  /**
    * Get loggableType
    * @return loggableType
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LOGGABLE_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_LOGGABLE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLoggableType() {
@@ -264,24 +284,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LOGGABLE_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_LOGGABLE_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLoggableType(String loggableType) {
+  public void setLoggableType(@javax.annotation.Nullable String loggableType) {
     this.loggableType = loggableType;
   }
 
 
-  public LogsResponseData method(String method) {
+  public LogsResponseData method(@javax.annotation.Nullable String method) {
     this.method = method;
     return this;
   }
 
-   /**
+  /**
    * Get method
    * @return method
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_METHOD)
+  @JsonProperty(value = JSON_PROPERTY_METHOD, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMethod() {
@@ -289,24 +309,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_METHOD)
+  @JsonProperty(value = JSON_PROPERTY_METHOD, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMethod(String method) {
+  public void setMethod(@javax.annotation.Nullable String method) {
     this.method = method;
   }
 
 
-  public LogsResponseData oauthTokenId(String oauthTokenId) {
+  public LogsResponseData oauthTokenId(@javax.annotation.Nullable String oauthTokenId) {
     this.oauthTokenId = oauthTokenId;
     return this;
   }
 
-   /**
+  /**
    * Get oauthTokenId
    * @return oauthTokenId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OAUTH_TOKEN_ID)
+  @JsonProperty(value = JSON_PROPERTY_OAUTH_TOKEN_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getOauthTokenId() {
@@ -314,49 +334,57 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OAUTH_TOKEN_ID)
+  @JsonProperty(value = JSON_PROPERTY_OAUTH_TOKEN_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOauthTokenId(String oauthTokenId) {
+  public void setOauthTokenId(@javax.annotation.Nullable String oauthTokenId) {
     this.oauthTokenId = oauthTokenId;
   }
 
 
-  public LogsResponseData queryString(Map<String, Object> queryString) {
+  public LogsResponseData queryString(@javax.annotation.Nullable Map<String, Object> queryString) {
     this.queryString = queryString;
     return this;
   }
 
-   /**
+  public LogsResponseData putQueryStringItem(String key, Object queryStringItem) {
+    if (this.queryString == null) {
+      this.queryString = new HashMap<>();
+    }
+    this.queryString.put(key, queryStringItem);
+    return this;
+  }
+
+  /**
    * Get queryString
    * @return queryString
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_QUERY_STRING)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonProperty(value = JSON_PROPERTY_QUERY_STRING, required = false)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getQueryString() {
     return queryString;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_QUERY_STRING)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setQueryString(Map<String, Object> queryString) {
+  @JsonProperty(value = JSON_PROPERTY_QUERY_STRING, required = false)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQueryString(@javax.annotation.Nullable Map<String, Object> queryString) {
     this.queryString = queryString;
   }
 
 
-  public LogsResponseData related(String related) {
+  public LogsResponseData related(@javax.annotation.Nullable String related) {
     this.related = related;
     return this;
   }
 
-   /**
+  /**
    * Get related
    * @return related
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RELATED)
+  @JsonProperty(value = JSON_PROPERTY_RELATED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getRelated() {
@@ -364,24 +392,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RELATED)
+  @JsonProperty(value = JSON_PROPERTY_RELATED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRelated(String related) {
+  public void setRelated(@javax.annotation.Nullable String related) {
     this.related = related;
   }
 
 
-  public LogsResponseData requestBody(Object requestBody) {
+  public LogsResponseData requestBody(@javax.annotation.Nullable Object requestBody) {
     this.requestBody = requestBody;
     return this;
   }
 
-   /**
+  /**
    * Get requestBody
    * @return requestBody
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REQUEST_BODY)
+  @JsonProperty(value = JSON_PROPERTY_REQUEST_BODY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Object getRequestBody() {
@@ -389,24 +417,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REQUEST_BODY)
+  @JsonProperty(value = JSON_PROPERTY_REQUEST_BODY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRequestBody(Object requestBody) {
+  public void setRequestBody(@javax.annotation.Nullable Object requestBody) {
     this.requestBody = requestBody;
   }
 
 
-  public LogsResponseData requestHeaders(Map<String, String> requestHeaders) {
+  public LogsResponseData requestHeaders(@javax.annotation.Nullable Map<String, String> requestHeaders) {
     this.requestHeaders = requestHeaders;
     return this;
   }
 
-   /**
+  /**
    * Get requestHeaders
    * @return requestHeaders
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REQUEST_HEADERS)
+  @JsonProperty(value = JSON_PROPERTY_REQUEST_HEADERS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, String> getRequestHeaders() {
@@ -414,24 +442,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REQUEST_HEADERS)
+  @JsonProperty(value = JSON_PROPERTY_REQUEST_HEADERS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRequestHeaders(Map<String, String> requestHeaders) {
+  public void setRequestHeaders(@javax.annotation.Nullable Map<String, String> requestHeaders) {
     this.requestHeaders = requestHeaders;
   }
 
 
-  public LogsResponseData responseBody(Object responseBody) {
+  public LogsResponseData responseBody(@javax.annotation.Nullable Object responseBody) {
     this.responseBody = responseBody;
     return this;
   }
 
-   /**
+  /**
    * Get responseBody
    * @return responseBody
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RESPONSE_BODY)
+  @JsonProperty(value = JSON_PROPERTY_RESPONSE_BODY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Object getResponseBody() {
@@ -439,24 +467,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RESPONSE_BODY)
+  @JsonProperty(value = JSON_PROPERTY_RESPONSE_BODY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setResponseBody(Object responseBody) {
+  public void setResponseBody(@javax.annotation.Nullable Object responseBody) {
     this.responseBody = responseBody;
   }
 
 
-  public LogsResponseData responseHeaders(Map<String, String> responseHeaders) {
+  public LogsResponseData responseHeaders(@javax.annotation.Nullable Map<String, String> responseHeaders) {
     this.responseHeaders = responseHeaders;
     return this;
   }
 
-   /**
+  /**
    * Get responseHeaders
    * @return responseHeaders
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RESPONSE_HEADERS)
+  @JsonProperty(value = JSON_PROPERTY_RESPONSE_HEADERS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, String> getResponseHeaders() {
@@ -464,14 +492,14 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RESPONSE_HEADERS)
+  @JsonProperty(value = JSON_PROPERTY_RESPONSE_HEADERS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setResponseHeaders(Map<String, String> responseHeaders) {
+  public void setResponseHeaders(@javax.annotation.Nullable Map<String, String> responseHeaders) {
     this.responseHeaders = responseHeaders;
   }
 
 
-  public LogsResponseData searchableTags(List<String> searchableTags) {
+  public LogsResponseData searchableTags(@javax.annotation.Nullable List<String> searchableTags) {
     this.searchableTags = searchableTags;
     return this;
   }
@@ -484,12 +512,12 @@ public class LogsResponseData {
     return this;
   }
 
-   /**
+  /**
    * Get searchableTags
    * @return searchableTags
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SEARCHABLE_TAGS)
+  @JsonProperty(value = JSON_PROPERTY_SEARCHABLE_TAGS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getSearchableTags() {
@@ -497,24 +525,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SEARCHABLE_TAGS)
+  @JsonProperty(value = JSON_PROPERTY_SEARCHABLE_TAGS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSearchableTags(List<String> searchableTags) {
+  public void setSearchableTags(@javax.annotation.Nullable List<String> searchableTags) {
     this.searchableTags = searchableTags;
   }
 
 
-  public LogsResponseData status(String status) {
+  public LogsResponseData status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStatus() {
@@ -522,24 +550,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nullable String status) {
     this.status = status;
   }
 
 
-  public LogsResponseData updatedAt(String updatedAt) {
+  public LogsResponseData updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
 
-   /**
+  /**
    * Get updatedAt
    * @return updatedAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_UPDATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUpdatedAt() {
@@ -547,24 +575,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_UPDATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUpdatedAt(String updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public LogsResponseData url(String url) {
+  public LogsResponseData url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * Get url
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonProperty(value = JSON_PROPERTY_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUrl() {
@@ -572,24 +600,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonProperty(value = JSON_PROPERTY_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 
 
-  public LogsResponseData userAccountId(String userAccountId) {
+  public LogsResponseData userAccountId(@javax.annotation.Nullable String userAccountId) {
     this.userAccountId = userAccountId;
     return this;
   }
 
-   /**
+  /**
    * Get userAccountId
    * @return userAccountId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_USER_ACCOUNT_ID)
+  @JsonProperty(value = JSON_PROPERTY_USER_ACCOUNT_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUserAccountId() {
@@ -597,24 +625,24 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_USER_ACCOUNT_ID)
+  @JsonProperty(value = JSON_PROPERTY_USER_ACCOUNT_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserAccountId(String userAccountId) {
+  public void setUserAccountId(@javax.annotation.Nullable String userAccountId) {
     this.userAccountId = userAccountId;
   }
 
 
-  public LogsResponseData version(String version) {
+  public LogsResponseData version(@javax.annotation.Nullable String version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Get version
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VERSION)
+  @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getVersion() {
@@ -622,9 +650,9 @@ public class LogsResponseData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_VERSION)
+  @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setVersion(String version) {
+  public void setVersion(@javax.annotation.Nullable String version) {
     this.version = version;
   }
 
@@ -701,10 +729,7 @@ public class LogsResponseData {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

@@ -40,37 +40,42 @@ import com.conekta.JSON;
   CreateCompanyRequest.JSON_PROPERTY_BANK_ACCOUNT_INFO
 })
 @JsonTypeName("Create_Company_Request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CreateCompanyRequest {
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_TYPE_COMPANY = "type_company";
+  @javax.annotation.Nullable
   private String typeCompany;
 
   public static final String JSON_PROPERTY_COMERCIAL_INFO = "comercial_info";
+  @javax.annotation.Nullable
   private CreateCompanyRequestComercialInfo comercialInfo;
 
   public static final String JSON_PROPERTY_FISCAL_INFO = "fiscal_info";
+  @javax.annotation.Nullable
   private CreateCompanyRequestFiscalInfo fiscalInfo;
 
   public static final String JSON_PROPERTY_BANK_ACCOUNT_INFO = "bank_account_info";
+  @javax.annotation.Nullable
   private CreateCompanyRequestBankAccountInfo bankAccountInfo;
 
   public CreateCompanyRequest() { 
   }
 
-  public CreateCompanyRequest name(String name) {
+  public CreateCompanyRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The name of the company.
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
@@ -78,24 +83,24 @@ public class CreateCompanyRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public CreateCompanyRequest typeCompany(String typeCompany) {
+  public CreateCompanyRequest typeCompany(@javax.annotation.Nullable String typeCompany) {
     this.typeCompany = typeCompany;
     return this;
   }
 
-   /**
+  /**
    * The type of company, &#39;owner&#39;
    * @return typeCompany
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TYPE_COMPANY)
+  @JsonProperty(value = JSON_PROPERTY_TYPE_COMPANY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTypeCompany() {
@@ -103,24 +108,24 @@ public class CreateCompanyRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE_COMPANY)
+  @JsonProperty(value = JSON_PROPERTY_TYPE_COMPANY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTypeCompany(String typeCompany) {
+  public void setTypeCompany(@javax.annotation.Nullable String typeCompany) {
     this.typeCompany = typeCompany;
   }
 
 
-  public CreateCompanyRequest comercialInfo(CreateCompanyRequestComercialInfo comercialInfo) {
+  public CreateCompanyRequest comercialInfo(@javax.annotation.Nullable CreateCompanyRequestComercialInfo comercialInfo) {
     this.comercialInfo = comercialInfo;
     return this;
   }
 
-   /**
+  /**
    * Get comercialInfo
    * @return comercialInfo
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_COMERCIAL_INFO)
+  @JsonProperty(value = JSON_PROPERTY_COMERCIAL_INFO, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public CreateCompanyRequestComercialInfo getComercialInfo() {
@@ -128,24 +133,24 @@ public class CreateCompanyRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_COMERCIAL_INFO)
+  @JsonProperty(value = JSON_PROPERTY_COMERCIAL_INFO, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setComercialInfo(CreateCompanyRequestComercialInfo comercialInfo) {
+  public void setComercialInfo(@javax.annotation.Nullable CreateCompanyRequestComercialInfo comercialInfo) {
     this.comercialInfo = comercialInfo;
   }
 
 
-  public CreateCompanyRequest fiscalInfo(CreateCompanyRequestFiscalInfo fiscalInfo) {
+  public CreateCompanyRequest fiscalInfo(@javax.annotation.Nullable CreateCompanyRequestFiscalInfo fiscalInfo) {
     this.fiscalInfo = fiscalInfo;
     return this;
   }
 
-   /**
+  /**
    * Get fiscalInfo
    * @return fiscalInfo
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FISCAL_INFO)
+  @JsonProperty(value = JSON_PROPERTY_FISCAL_INFO, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public CreateCompanyRequestFiscalInfo getFiscalInfo() {
@@ -153,24 +158,24 @@ public class CreateCompanyRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FISCAL_INFO)
+  @JsonProperty(value = JSON_PROPERTY_FISCAL_INFO, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiscalInfo(CreateCompanyRequestFiscalInfo fiscalInfo) {
+  public void setFiscalInfo(@javax.annotation.Nullable CreateCompanyRequestFiscalInfo fiscalInfo) {
     this.fiscalInfo = fiscalInfo;
   }
 
 
-  public CreateCompanyRequest bankAccountInfo(CreateCompanyRequestBankAccountInfo bankAccountInfo) {
+  public CreateCompanyRequest bankAccountInfo(@javax.annotation.Nullable CreateCompanyRequestBankAccountInfo bankAccountInfo) {
     this.bankAccountInfo = bankAccountInfo;
     return this;
   }
 
-   /**
+  /**
    * Get bankAccountInfo
    * @return bankAccountInfo
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BANK_ACCOUNT_INFO)
+  @JsonProperty(value = JSON_PROPERTY_BANK_ACCOUNT_INFO, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public CreateCompanyRequestBankAccountInfo getBankAccountInfo() {
@@ -178,9 +183,9 @@ public class CreateCompanyRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_BANK_ACCOUNT_INFO)
+  @JsonProperty(value = JSON_PROPERTY_BANK_ACCOUNT_INFO, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBankAccountInfo(CreateCompanyRequestBankAccountInfo bankAccountInfo) {
+  public void setBankAccountInfo(@javax.annotation.Nullable CreateCompanyRequestBankAccountInfo bankAccountInfo) {
     this.bankAccountInfo = bankAccountInfo;
   }
 
@@ -227,10 +232,7 @@ public class CreateCompanyRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

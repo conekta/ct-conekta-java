@@ -34,28 +34,30 @@ import com.conekta.JSON;
   CreateCompanyRequestFiscalInfo.JSON_PROPERTY_FISCAL_TYPE
 })
 @JsonTypeName("Create_Company_Request_fiscal_info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CreateCompanyRequestFiscalInfo {
   public static final String JSON_PROPERTY_BUSINESS_PHONE = "business_phone";
+  @javax.annotation.Nullable
   private String businessPhone;
 
   public static final String JSON_PROPERTY_FISCAL_TYPE = "fiscal_type";
+  @javax.annotation.Nullable
   private String fiscalType;
 
   public CreateCompanyRequestFiscalInfo() { 
   }
 
-  public CreateCompanyRequestFiscalInfo businessPhone(String businessPhone) {
+  public CreateCompanyRequestFiscalInfo businessPhone(@javax.annotation.Nullable String businessPhone) {
     this.businessPhone = businessPhone;
     return this;
   }
 
-   /**
+  /**
    * The business phone number for fiscal purposes.
    * @return businessPhone
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BUSINESS_PHONE)
+  @JsonProperty(value = JSON_PROPERTY_BUSINESS_PHONE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBusinessPhone() {
@@ -63,24 +65,24 @@ public class CreateCompanyRequestFiscalInfo {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_BUSINESS_PHONE)
+  @JsonProperty(value = JSON_PROPERTY_BUSINESS_PHONE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBusinessPhone(String businessPhone) {
+  public void setBusinessPhone(@javax.annotation.Nullable String businessPhone) {
     this.businessPhone = businessPhone;
   }
 
 
-  public CreateCompanyRequestFiscalInfo fiscalType(String fiscalType) {
+  public CreateCompanyRequestFiscalInfo fiscalType(@javax.annotation.Nullable String fiscalType) {
     this.fiscalType = fiscalType;
     return this;
   }
 
-   /**
+  /**
    * The fiscal type of the company (e.g., &#39;moral&#39;, &#39;persona_fisica&#39;).
    * @return fiscalType
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FISCAL_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_FISCAL_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFiscalType() {
@@ -88,9 +90,9 @@ public class CreateCompanyRequestFiscalInfo {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FISCAL_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_FISCAL_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiscalType(String fiscalType) {
+  public void setFiscalType(@javax.annotation.Nullable String fiscalType) {
     this.fiscalType = fiscalType;
   }
 
@@ -131,10 +133,7 @@ public class CreateCompanyRequestFiscalInfo {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

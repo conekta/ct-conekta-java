@@ -39,43 +39,50 @@ import com.conekta.JSON;
   ChargeResponseRefundsData.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("charge_response_refunds_data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class ChargeResponseRefundsData {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nonnull
   private Long amount;
 
   public static final String JSON_PROPERTY_AUTH_CODE = "auth_code";
+  @javax.annotation.Nullable
   private String authCode;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nullable
   private Long expiresAt;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private String status;
 
   public ChargeResponseRefundsData() { 
   }
 
-  public ChargeResponseRefundsData amount(Long amount) {
+  public ChargeResponseRefundsData amount(@javax.annotation.Nonnull Long amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * Get amount
    * @return amount
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Long getAmount() {
@@ -83,24 +90,24 @@ public class ChargeResponseRefundsData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAmount(Long amount) {
+  public void setAmount(@javax.annotation.Nonnull Long amount) {
     this.amount = amount;
   }
 
 
-  public ChargeResponseRefundsData authCode(String authCode) {
+  public ChargeResponseRefundsData authCode(@javax.annotation.Nullable String authCode) {
     this.authCode = authCode;
     return this;
   }
 
-   /**
+  /**
    * Get authCode
    * @return authCode
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_AUTH_CODE)
+  @JsonProperty(value = JSON_PROPERTY_AUTH_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAuthCode() {
@@ -108,24 +115,24 @@ public class ChargeResponseRefundsData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_AUTH_CODE)
+  @JsonProperty(value = JSON_PROPERTY_AUTH_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthCode(String authCode) {
+  public void setAuthCode(@javax.annotation.Nullable String authCode) {
     this.authCode = authCode;
   }
 
 
-  public ChargeResponseRefundsData createdAt(Long createdAt) {
+  public ChargeResponseRefundsData createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Long getCreatedAt() {
@@ -133,24 +140,24 @@ public class ChargeResponseRefundsData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ChargeResponseRefundsData expiresAt(Long expiresAt) {
+  public ChargeResponseRefundsData expiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
-   /**
+  /**
    * refund expiration date
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getExpiresAt() {
@@ -158,24 +165,24 @@ public class ChargeResponseRefundsData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(Long expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public ChargeResponseRefundsData id(String id) {
+  public ChargeResponseRefundsData id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
@@ -183,24 +190,24 @@ public class ChargeResponseRefundsData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public ChargeResponseRefundsData _object(String _object) {
+  public ChargeResponseRefundsData _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
@@ -208,24 +215,24 @@ public class ChargeResponseRefundsData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public ChargeResponseRefundsData status(String status) {
+  public ChargeResponseRefundsData status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * refund status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStatus() {
@@ -233,9 +240,9 @@ public class ChargeResponseRefundsData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nullable String status) {
     this.status = status;
   }
 
@@ -286,10 +293,7 @@ public class ChargeResponseRefundsData {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

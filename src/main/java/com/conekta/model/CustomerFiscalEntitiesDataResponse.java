@@ -46,55 +46,66 @@ import com.conekta.JSON;
   CustomerFiscalEntitiesDataResponse.JSON_PROPERTY_DEFAULT
 })
 @JsonTypeName("customer_fiscal_entities_data_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CustomerFiscalEntitiesDataResponse {
   public static final String JSON_PROPERTY_ADDRESS = "address";
+  @javax.annotation.Nonnull
   private FiscalEntityRequestAddress address;
 
   public static final String JSON_PROPERTY_TAX_ID = "tax_id";
+  @javax.annotation.Nullable
   private String taxId;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @javax.annotation.Nullable
   private String email;
 
   public static final String JSON_PROPERTY_PHONE = "phone";
+  @javax.annotation.Nullable
   private String phone;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata;
 
   public static final String JSON_PROPERTY_COMPANY_NAME = "company_name";
+  @javax.annotation.Nullable
   private String companyName;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public static final String JSON_PROPERTY_PARENT_ID = "parent_id";
+  @javax.annotation.Nullable
   private String parentId;
 
   public static final String JSON_PROPERTY_DEFAULT = "default";
+  @javax.annotation.Nullable
   private Boolean _default;
 
   public CustomerFiscalEntitiesDataResponse() { 
   }
 
-  public CustomerFiscalEntitiesDataResponse address(FiscalEntityRequestAddress address) {
+  public CustomerFiscalEntitiesDataResponse address(@javax.annotation.Nonnull FiscalEntityRequestAddress address) {
     this.address = address;
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public FiscalEntityRequestAddress getAddress() {
@@ -102,24 +113,24 @@ public class CustomerFiscalEntitiesDataResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAddress(FiscalEntityRequestAddress address) {
+  public void setAddress(@javax.annotation.Nonnull FiscalEntityRequestAddress address) {
     this.address = address;
   }
 
 
-  public CustomerFiscalEntitiesDataResponse taxId(String taxId) {
+  public CustomerFiscalEntitiesDataResponse taxId(@javax.annotation.Nullable String taxId) {
     this.taxId = taxId;
     return this;
   }
 
-   /**
+  /**
    * Get taxId
    * @return taxId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TAX_ID)
+  @JsonProperty(value = JSON_PROPERTY_TAX_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTaxId() {
@@ -127,24 +138,24 @@ public class CustomerFiscalEntitiesDataResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TAX_ID)
+  @JsonProperty(value = JSON_PROPERTY_TAX_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTaxId(String taxId) {
+  public void setTaxId(@javax.annotation.Nullable String taxId) {
     this.taxId = taxId;
   }
 
 
-  public CustomerFiscalEntitiesDataResponse email(String email) {
+  public CustomerFiscalEntitiesDataResponse email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * Get email
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getEmail() {
@@ -152,24 +163,24 @@ public class CustomerFiscalEntitiesDataResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public CustomerFiscalEntitiesDataResponse phone(String phone) {
+  public CustomerFiscalEntitiesDataResponse phone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
     return this;
   }
 
-   /**
+  /**
    * Get phone
    * @return phone
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PHONE)
+  @JsonProperty(value = JSON_PROPERTY_PHONE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPhone() {
@@ -177,24 +188,24 @@ public class CustomerFiscalEntitiesDataResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PHONE)
+  @JsonProperty(value = JSON_PROPERTY_PHONE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPhone(String phone) {
+  public void setPhone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
   }
 
 
-  public CustomerFiscalEntitiesDataResponse metadata(Map<String, Object> metadata) {
+  public CustomerFiscalEntitiesDataResponse metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
 
-   /**
+  /**
    * Get metadata
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
@@ -202,24 +213,24 @@ public class CustomerFiscalEntitiesDataResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_METADATA)
+  @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 
 
-  public CustomerFiscalEntitiesDataResponse companyName(String companyName) {
+  public CustomerFiscalEntitiesDataResponse companyName(@javax.annotation.Nullable String companyName) {
     this.companyName = companyName;
     return this;
   }
 
-   /**
+  /**
    * Get companyName
    * @return companyName
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_COMPANY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_COMPANY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCompanyName() {
@@ -227,24 +238,24 @@ public class CustomerFiscalEntitiesDataResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_COMPANY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_COMPANY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCompanyName(String companyName) {
+  public void setCompanyName(@javax.annotation.Nullable String companyName) {
     this.companyName = companyName;
   }
 
 
-  public CustomerFiscalEntitiesDataResponse id(String id) {
+  public CustomerFiscalEntitiesDataResponse id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
@@ -252,24 +263,24 @@ public class CustomerFiscalEntitiesDataResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public CustomerFiscalEntitiesDataResponse _object(String _object) {
+  public CustomerFiscalEntitiesDataResponse _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
@@ -277,24 +288,24 @@ public class CustomerFiscalEntitiesDataResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public CustomerFiscalEntitiesDataResponse createdAt(Long createdAt) {
+  public CustomerFiscalEntitiesDataResponse createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Long getCreatedAt() {
@@ -302,24 +313,24 @@ public class CustomerFiscalEntitiesDataResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CustomerFiscalEntitiesDataResponse parentId(String parentId) {
+  public CustomerFiscalEntitiesDataResponse parentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
     return this;
   }
 
-   /**
+  /**
    * Get parentId
    * @return parentId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PARENT_ID)
+  @JsonProperty(value = JSON_PROPERTY_PARENT_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getParentId() {
@@ -327,24 +338,24 @@ public class CustomerFiscalEntitiesDataResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PARENT_ID)
+  @JsonProperty(value = JSON_PROPERTY_PARENT_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentId(String parentId) {
+  public void setParentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
   }
 
 
-  public CustomerFiscalEntitiesDataResponse _default(Boolean _default) {
+  public CustomerFiscalEntitiesDataResponse _default(@javax.annotation.Nullable Boolean _default) {
     this._default = _default;
     return this;
   }
 
-   /**
+  /**
    * Get _default
    * @return _default
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DEFAULT)
+  @JsonProperty(value = JSON_PROPERTY_DEFAULT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getDefault() {
@@ -352,9 +363,9 @@ public class CustomerFiscalEntitiesDataResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DEFAULT)
+  @JsonProperty(value = JSON_PROPERTY_DEFAULT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDefault(Boolean _default) {
+  public void setDefault(@javax.annotation.Nullable Boolean _default) {
     this._default = _default;
   }
 
@@ -413,10 +424,7 @@ public class CustomerFiscalEntitiesDataResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

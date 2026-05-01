@@ -22,7 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class ApiKeysApi {
   private ApiClient apiClient;
 
@@ -61,7 +61,8 @@ public class ApiKeysApi {
    * @return ApiKeyCreateResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Content-Type - The format of the response body <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -69,7 +70,7 @@ public class ApiKeysApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiKeyCreateResponse createApiKey(ApiKeyRequest apiKeyRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiKeyCreateResponse createApiKey(@javax.annotation.Nonnull ApiKeyRequest apiKeyRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return createApiKeyWithHttpInfo(apiKeyRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -82,7 +83,8 @@ public class ApiKeysApi {
    * @return ApiResponse&lt;ApiKeyCreateResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Content-Type - The format of the response body <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -90,7 +92,7 @@ public class ApiKeysApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<ApiKeyCreateResponse> createApiKeyWithHttpInfo(ApiKeyRequest apiKeyRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<ApiKeyCreateResponse> createApiKeyWithHttpInfo(@javax.annotation.Nonnull ApiKeyRequest apiKeyRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (apiKeyRequest == null) {
       throw new ApiException(400, "Missing the required parameter 'apiKeyRequest' when calling createApiKey");
@@ -121,7 +123,8 @@ public class ApiKeysApi {
    * @return DeleteApiKeysResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Content-Type - The format of the response body <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -129,7 +132,7 @@ public class ApiKeysApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public DeleteApiKeysResponse deleteApiKey(String id, String acceptLanguage) throws ApiException {
+  public DeleteApiKeysResponse deleteApiKey(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return deleteApiKeyWithHttpInfo(id, acceptLanguage).getData();
   }
 
@@ -141,7 +144,8 @@ public class ApiKeysApi {
    * @return ApiResponse&lt;DeleteApiKeysResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Content-Type - The format of the response body <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -149,7 +153,7 @@ public class ApiKeysApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<DeleteApiKeysResponse> deleteApiKeyWithHttpInfo(String id, String acceptLanguage) throws ApiException {
+  public ApiResponse<DeleteApiKeysResponse> deleteApiKeyWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling deleteApiKey");
@@ -157,7 +161,7 @@ public class ApiKeysApi {
 
     // Path parameters
     String localVarPath = "/api_keys/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -182,7 +186,8 @@ public class ApiKeysApi {
    * @return ApiKeyResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Content-Type - The format of the response body <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -190,7 +195,7 @@ public class ApiKeysApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiKeyResponse getApiKey(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiKeyResponse getApiKey(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return getApiKeyWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -203,7 +208,8 @@ public class ApiKeysApi {
    * @return ApiResponse&lt;ApiKeyResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Content-Type - The format of the response body <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -211,7 +217,7 @@ public class ApiKeysApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<ApiKeyResponse> getApiKeyWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<ApiKeyResponse> getApiKeyWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getApiKey");
@@ -219,7 +225,7 @@ public class ApiKeysApi {
 
     // Path parameters
     String localVarPath = "/api_keys/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -250,14 +256,15 @@ public class ApiKeysApi {
    * @return GetApiKeysResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Content-Type - The format of the response body <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public GetApiKeysResponse getApiKeys(String acceptLanguage, String xChildCompanyId, Integer limit, String next, String previous, String search) throws ApiException {
+  public GetApiKeysResponse getApiKeys(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous, @javax.annotation.Nullable String search) throws ApiException {
     return getApiKeysWithHttpInfo(acceptLanguage, xChildCompanyId, limit, next, previous, search).getData();
   }
 
@@ -273,14 +280,15 @@ public class ApiKeysApi {
    * @return ApiResponse&lt;GetApiKeysResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Content-Type - The format of the response body <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<GetApiKeysResponse> getApiKeysWithHttpInfo(String acceptLanguage, String xChildCompanyId, Integer limit, String next, String previous, String search) throws ApiException {
+  public ApiResponse<GetApiKeysResponse> getApiKeysWithHttpInfo(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous, @javax.annotation.Nullable String search) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "limit", limit)
@@ -315,7 +323,8 @@ public class ApiKeysApi {
    * @return ApiKeyResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
@@ -323,7 +332,7 @@ public class ApiKeysApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiKeyResponse updateApiKey(String id, String acceptLanguage, ApiKeyUpdateRequest apiKeyUpdateRequest) throws ApiException {
+  public ApiKeyResponse updateApiKey(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable ApiKeyUpdateRequest apiKeyUpdateRequest) throws ApiException {
     return updateApiKeyWithHttpInfo(id, acceptLanguage, apiKeyUpdateRequest).getData();
   }
 
@@ -336,7 +345,8 @@ public class ApiKeysApi {
    * @return ApiResponse&lt;ApiKeyResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
@@ -344,7 +354,7 @@ public class ApiKeysApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<ApiKeyResponse> updateApiKeyWithHttpInfo(String id, String acceptLanguage, ApiKeyUpdateRequest apiKeyUpdateRequest) throws ApiException {
+  public ApiResponse<ApiKeyResponse> updateApiKeyWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable ApiKeyUpdateRequest apiKeyUpdateRequest) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateApiKey");
@@ -352,7 +362,7 @@ public class ApiKeysApi {
 
     // Path parameters
     String localVarPath = "/api_keys/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

@@ -40,27 +40,32 @@ import com.conekta.JSON;
   CustomersResponse.JSON_PROPERTY_PREVIOUS_PAGE_URL
 })
 @JsonTypeName("customers_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CustomersResponse {
   public static final String JSON_PROPERTY_DATA = "data";
+  @javax.annotation.Nullable
   private List<CustomerResponse> data = new ArrayList<>();
 
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
+  @javax.annotation.Nonnull
   private Boolean hasMore;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_NEXT_PAGE_URL = "next_page_url";
+  @javax.annotation.Nullable
   private String nextPageUrl;
 
   public static final String JSON_PROPERTY_PREVIOUS_PAGE_URL = "previous_page_url";
+  @javax.annotation.Nullable
   private String previousPageUrl;
 
   public CustomersResponse() { 
   }
 
-  public CustomersResponse data(List<CustomerResponse> data) {
+  public CustomersResponse data(@javax.annotation.Nullable List<CustomerResponse> data) {
     this.data = data;
     return this;
   }
@@ -73,12 +78,12 @@ public class CustomersResponse {
     return this;
   }
 
-   /**
+  /**
    * Get data
    * @return data
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonProperty(value = JSON_PROPERTY_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<CustomerResponse> getData() {
@@ -86,24 +91,24 @@ public class CustomersResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonProperty(value = JSON_PROPERTY_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setData(List<CustomerResponse> data) {
+  public void setData(@javax.annotation.Nullable List<CustomerResponse> data) {
     this.data = data;
   }
 
 
-  public CustomersResponse hasMore(Boolean hasMore) {
+  public CustomersResponse hasMore(@javax.annotation.Nonnull Boolean hasMore) {
     this.hasMore = hasMore;
     return this;
   }
 
-   /**
+  /**
    * Indicates if there are more pages to be requested
    * @return hasMore
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_HAS_MORE)
+  @JsonProperty(value = JSON_PROPERTY_HAS_MORE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getHasMore() {
@@ -111,24 +116,24 @@ public class CustomersResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_HAS_MORE)
+  @JsonProperty(value = JSON_PROPERTY_HAS_MORE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setHasMore(Boolean hasMore) {
+  public void setHasMore(@javax.annotation.Nonnull Boolean hasMore) {
     this.hasMore = hasMore;
   }
 
 
-  public CustomersResponse _object(String _object) {
+  public CustomersResponse _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Object type, in this case is list
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
@@ -136,24 +141,24 @@ public class CustomersResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public CustomersResponse nextPageUrl(String nextPageUrl) {
+  public CustomersResponse nextPageUrl(@javax.annotation.Nullable String nextPageUrl) {
     this.nextPageUrl = nextPageUrl;
     return this;
   }
 
-   /**
+  /**
    * URL of the next page.
    * @return nextPageUrl
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NEXT_PAGE_URL)
+  @JsonProperty(value = JSON_PROPERTY_NEXT_PAGE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNextPageUrl() {
@@ -161,24 +166,24 @@ public class CustomersResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NEXT_PAGE_URL)
+  @JsonProperty(value = JSON_PROPERTY_NEXT_PAGE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNextPageUrl(String nextPageUrl) {
+  public void setNextPageUrl(@javax.annotation.Nullable String nextPageUrl) {
     this.nextPageUrl = nextPageUrl;
   }
 
 
-  public CustomersResponse previousPageUrl(String previousPageUrl) {
+  public CustomersResponse previousPageUrl(@javax.annotation.Nullable String previousPageUrl) {
     this.previousPageUrl = previousPageUrl;
     return this;
   }
 
-   /**
+  /**
    * Url of the previous page.
    * @return previousPageUrl
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PREVIOUS_PAGE_URL)
+  @JsonProperty(value = JSON_PROPERTY_PREVIOUS_PAGE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPreviousPageUrl() {
@@ -186,9 +191,9 @@ public class CustomersResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PREVIOUS_PAGE_URL)
+  @JsonProperty(value = JSON_PROPERTY_PREVIOUS_PAGE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPreviousPageUrl(String previousPageUrl) {
+  public void setPreviousPageUrl(@javax.annotation.Nullable String previousPageUrl) {
     this.previousPageUrl = previousPageUrl;
   }
 
@@ -235,10 +240,7 @@ public class CustomersResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

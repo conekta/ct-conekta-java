@@ -47,58 +47,70 @@ import com.conekta.JSON;
   CustomerPortalResponse.JSON_PROPERTY_PORTAL_URL
 })
 @JsonTypeName("customer_portal_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CustomerPortalResponse {
   public static final String JSON_PROPERTY_SLUG = "slug";
+  @javax.annotation.Nullable
   private String slug;
 
   public static final String JSON_PROPERTY_SUBSCRIPTION_ID = "subscription_id";
+  @javax.annotation.Nullable
   private String subscriptionId;
 
   public static final String JSON_PROPERTY_CUSTOMER_ID = "customer_id";
+  @javax.annotation.Nullable
   private String customerId;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
+  @javax.annotation.Nullable
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_SUBSCRIPTION = "subscription";
+  @javax.annotation.Nullable
   private SubscriptionDetails subscription;
 
   public static final String JSON_PROPERTY_CUSTOMER = "customer";
+  @javax.annotation.Nullable
   private CustomerDetails customer;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_COMPANY_ID = "company_id";
+  @javax.annotation.Nullable
   private String companyId;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nullable
   private Long createdAt;
 
   public static final String JSON_PROPERTY_UPDATED_AT = "updated_at";
+  @javax.annotation.Nullable
   private Long updatedAt;
 
   public static final String JSON_PROPERTY_PORTAL_URL = "portal_url";
+  @javax.annotation.Nullable
   private URI portalUrl;
 
   public CustomerPortalResponse() { 
   }
 
-  public CustomerPortalResponse slug(String slug) {
+  public CustomerPortalResponse slug(@javax.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
 
-   /**
+  /**
    * Unique slug identifier for the portal
    * @return slug
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SLUG)
+  @JsonProperty(value = JSON_PROPERTY_SLUG, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSlug() {
@@ -106,24 +118,24 @@ public class CustomerPortalResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SLUG)
+  @JsonProperty(value = JSON_PROPERTY_SLUG, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSlug(String slug) {
+  public void setSlug(@javax.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
 
-  public CustomerPortalResponse subscriptionId(String subscriptionId) {
+  public CustomerPortalResponse subscriptionId(@javax.annotation.Nullable String subscriptionId) {
     this.subscriptionId = subscriptionId;
     return this;
   }
 
-   /**
+  /**
    * Associated subscription ID
    * @return subscriptionId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SUBSCRIPTION_ID)
+  @JsonProperty(value = JSON_PROPERTY_SUBSCRIPTION_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSubscriptionId() {
@@ -131,24 +143,24 @@ public class CustomerPortalResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SUBSCRIPTION_ID)
+  @JsonProperty(value = JSON_PROPERTY_SUBSCRIPTION_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubscriptionId(String subscriptionId) {
+  public void setSubscriptionId(@javax.annotation.Nullable String subscriptionId) {
     this.subscriptionId = subscriptionId;
   }
 
 
-  public CustomerPortalResponse customerId(String customerId) {
+  public CustomerPortalResponse customerId(@javax.annotation.Nullable String customerId) {
     this.customerId = customerId;
     return this;
   }
 
-   /**
+  /**
    * Associated customer ID
    * @return customerId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CUSTOMER_ID)
+  @JsonProperty(value = JSON_PROPERTY_CUSTOMER_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomerId() {
@@ -156,24 +168,24 @@ public class CustomerPortalResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CUSTOMER_ID)
+  @JsonProperty(value = JSON_PROPERTY_CUSTOMER_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomerId(String customerId) {
+  public void setCustomerId(@javax.annotation.Nullable String customerId) {
     this.customerId = customerId;
   }
 
 
-  public CustomerPortalResponse livemode(Boolean livemode) {
+  public CustomerPortalResponse livemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
 
-   /**
+  /**
    * Whether this is a live or test mode portal
    * @return livemode
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getLivemode() {
@@ -181,24 +193,24 @@ public class CustomerPortalResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLivemode(Boolean livemode) {
+  public void setLivemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
   }
 
 
-  public CustomerPortalResponse subscription(SubscriptionDetails subscription) {
+  public CustomerPortalResponse subscription(@javax.annotation.Nullable SubscriptionDetails subscription) {
     this.subscription = subscription;
     return this;
   }
 
-   /**
+  /**
    * Get subscription
    * @return subscription
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SUBSCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_SUBSCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public SubscriptionDetails getSubscription() {
@@ -206,24 +218,24 @@ public class CustomerPortalResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SUBSCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_SUBSCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubscription(SubscriptionDetails subscription) {
+  public void setSubscription(@javax.annotation.Nullable SubscriptionDetails subscription) {
     this.subscription = subscription;
   }
 
 
-  public CustomerPortalResponse customer(CustomerDetails customer) {
+  public CustomerPortalResponse customer(@javax.annotation.Nullable CustomerDetails customer) {
     this.customer = customer;
     return this;
   }
 
-   /**
+  /**
    * Get customer
    * @return customer
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CUSTOMER)
+  @JsonProperty(value = JSON_PROPERTY_CUSTOMER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public CustomerDetails getCustomer() {
@@ -231,24 +243,24 @@ public class CustomerPortalResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CUSTOMER)
+  @JsonProperty(value = JSON_PROPERTY_CUSTOMER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomer(CustomerDetails customer) {
+  public void setCustomer(@javax.annotation.Nullable CustomerDetails customer) {
     this.customer = customer;
   }
 
 
-  public CustomerPortalResponse id(String id) {
+  public CustomerPortalResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Customer portal ID
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
@@ -256,24 +268,24 @@ public class CustomerPortalResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public CustomerPortalResponse companyId(String companyId) {
+  public CustomerPortalResponse companyId(@javax.annotation.Nullable String companyId) {
     this.companyId = companyId;
     return this;
   }
 
-   /**
+  /**
    * Associated company ID
    * @return companyId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_COMPANY_ID)
+  @JsonProperty(value = JSON_PROPERTY_COMPANY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCompanyId() {
@@ -281,24 +293,24 @@ public class CustomerPortalResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_COMPANY_ID)
+  @JsonProperty(value = JSON_PROPERTY_COMPANY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCompanyId(String companyId) {
+  public void setCompanyId(@javax.annotation.Nullable String companyId) {
     this.companyId = companyId;
   }
 
 
-  public CustomerPortalResponse _object(String _object) {
+  public CustomerPortalResponse _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getObject() {
@@ -306,24 +318,24 @@ public class CustomerPortalResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
 
-  public CustomerPortalResponse createdAt(Long createdAt) {
+  public CustomerPortalResponse createdAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Unix timestamp of creation
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getCreatedAt() {
@@ -331,24 +343,24 @@ public class CustomerPortalResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CustomerPortalResponse updatedAt(Long updatedAt) {
+  public CustomerPortalResponse updatedAt(@javax.annotation.Nullable Long updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
 
-   /**
+  /**
    * Unix timestamp of last update
    * @return updatedAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_UPDATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getUpdatedAt() {
@@ -356,24 +368,24 @@ public class CustomerPortalResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_UPDATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUpdatedAt(Long updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable Long updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public CustomerPortalResponse portalUrl(URI portalUrl) {
+  public CustomerPortalResponse portalUrl(@javax.annotation.Nullable URI portalUrl) {
     this.portalUrl = portalUrl;
     return this;
   }
 
-   /**
+  /**
    * URL to access the customer portal
    * @return portalUrl
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PORTAL_URL)
+  @JsonProperty(value = JSON_PROPERTY_PORTAL_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public URI getPortalUrl() {
@@ -381,9 +393,9 @@ public class CustomerPortalResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PORTAL_URL)
+  @JsonProperty(value = JSON_PROPERTY_PORTAL_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPortalUrl(URI portalUrl) {
+  public void setPortalUrl(@javax.annotation.Nullable URI portalUrl) {
     this.portalUrl = portalUrl;
   }
 
@@ -444,10 +456,7 @@ public class CustomerPortalResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

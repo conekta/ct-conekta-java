@@ -15,7 +15,7 @@
 |**loggableType** | **String** |  |  [optional] |
 |**method** | **String** |  |  [optional] |
 |**oauthTokenId** | **String** |  |  [optional] |
-|**queryString** |  |  |  [optional] |
+|**queryString** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**related** | **String** |  |  [optional] |
 |**requestBody** | **Object** |  |  [optional] |
 |**requestHeaders** |  |  |  [optional] |

@@ -46,34 +46,35 @@ import com.conekta.JSON;
   ChargebackResponse.JSON_PROPERTY_EVIDENCE_DUE_BY
 })
 @JsonTypeName("chargeback_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class ChargebackResponse {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   /**
    * Gets or Sets status
    */
   public enum StatusEnum {
-    WON("won"),
+    WON(String.valueOf("won")),
     
-    LOST("lost"),
+    LOST(String.valueOf("lost")),
     
-    ACTION_REQUIRED("action_required"),
+    ACTION_REQUIRED(String.valueOf("action_required")),
     
-    PENDING_REVIEW("pending_review"),
+    PENDING_REVIEW(String.valueOf("pending_review")),
     
-    UNDER_REVIEW("under_review"),
+    UNDER_REVIEW(String.valueOf("under_review")),
     
-    COVERED("covered"),
+    COVERED(String.valueOf("covered")),
     
-    RT("rt"),
+    RT(String.valueOf("rt")),
     
-    RT_SENT("rt_sent"),
+    RT_SENT(String.valueOf("rt_sent")),
     
-    REPRESENTED("represented"),
+    REPRESENTED(String.valueOf("represented")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -103,71 +104,72 @@ public class ChargebackResponse {
   }
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private StatusEnum status;
 
   /**
    * Gets or Sets reason
    */
   public enum ReasonEnum {
-    UNRECOGNIZED("unrecognized"),
+    UNRECOGNIZED(String.valueOf("unrecognized")),
     
-    UNAUTHORIZED("unauthorized"),
+    UNAUTHORIZED(String.valueOf("unauthorized")),
     
-    UNAUTHORIZED_BY_CLIENT("unauthorized_by_client"),
+    UNAUTHORIZED_BY_CLIENT(String.valueOf("unauthorized_by_client")),
     
-    UNRECOGNIZED_LIKE_FRAUD("unrecognized_like_fraud"),
+    UNRECOGNIZED_LIKE_FRAUD(String.valueOf("unrecognized_like_fraud")),
     
-    INSUFFICIENT_EVIDENCE("insufficient_evidence"),
+    INSUFFICIENT_EVIDENCE(String.valueOf("insufficient_evidence")),
     
-    ILLEGIBLE_EVIDENCE("illegible_evidence"),
+    ILLEGIBLE_EVIDENCE(String.valueOf("illegible_evidence")),
     
-    GENERAL("general"),
+    GENERAL(String.valueOf("general")),
     
-    LATE_EVIDENCE("late_evidence"),
+    LATE_EVIDENCE(String.valueOf("late_evidence")),
     
-    INCORRECT_EXCHANGE("incorrect_exchange"),
+    INCORRECT_EXCHANGE(String.valueOf("incorrect_exchange")),
     
-    FRAUDULENT_BUSINESS("fraudulent_business"),
+    FRAUDULENT_BUSINESS(String.valueOf("fraudulent_business")),
     
-    BILLING("billing"),
+    BILLING(String.valueOf("billing")),
     
-    TWICE_TRANSACTION("twice_transaction"),
+    TWICE_TRANSACTION(String.valueOf("twice_transaction")),
     
-    TRANSACTION_NOT_REFUNDED("transaction_not_refunded"),
+    TRANSACTION_NOT_REFUNDED(String.valueOf("transaction_not_refunded")),
     
-    BANK_DOC_REQUEST("bank_doc_request"),
+    BANK_DOC_REQUEST(String.valueOf("bank_doc_request")),
     
-    UNRECOGNIZED_PURCHASE("unrecognized_purchase"),
+    UNRECOGNIZED_PURCHASE(String.valueOf("unrecognized_purchase")),
     
-    SUBSCRIPTION_CANCELED("subscription_canceled"),
+    SUBSCRIPTION_CANCELED(String.valueOf("subscription_canceled")),
     
-    COPY_OF_PURCHASE("copy_of_purchase"),
+    COPY_OF_PURCHASE(String.valueOf("copy_of_purchase")),
     
-    DIFFERENTS_AMOUNTS("differents_amounts"),
+    DIFFERENTS_AMOUNTS(String.valueOf("differents_amounts")),
     
-    SUBSCRIPTION_NOT_REQUESTED("subscription_not_requested"),
+    SUBSCRIPTION_NOT_REQUESTED(String.valueOf("subscription_not_requested")),
     
-    DAMAGED_PRODUCTS("damaged_products"),
+    DAMAGED_PRODUCTS(String.valueOf("damaged_products")),
     
-    SHOW_DOCUMENTS("show_documents"),
+    SHOW_DOCUMENTS(String.valueOf("show_documents")),
     
-    DUPLICATE("duplicate"),
+    DUPLICATE(String.valueOf("duplicate")),
     
-    FRAUDULENT("fraudulent"),
+    FRAUDULENT(String.valueOf("fraudulent")),
     
-    SERVICE_CANCELED("service_canceled"),
+    SERVICE_CANCELED(String.valueOf("service_canceled")),
     
-    PRODUCT_UNACCEPTABLE("product_unacceptable"),
+    PRODUCT_UNACCEPTABLE(String.valueOf("product_unacceptable")),
     
-    PRODUCT_NOT_RECEIVED("product_not_received"),
+    PRODUCT_NOT_RECEIVED(String.valueOf("product_not_received")),
     
-    INCORRECT_AMOUNT("incorrect_amount"),
+    INCORRECT_AMOUNT(String.valueOf("incorrect_amount")),
     
-    CHIP_LIABILIATY_SHIFT("chip_liabiliaty_shift"),
+    CHIP_LIABILIATY_SHIFT(String.valueOf("chip_liabiliaty_shift")),
     
-    CREDIT_NOT_PROCESSED("credit_not_processed"),
+    CREDIT_NOT_PROCESSED(String.valueOf("credit_not_processed")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -197,22 +199,24 @@ public class ChargebackResponse {
   }
 
   public static final String JSON_PROPERTY_REASON = "reason";
+  @javax.annotation.Nullable
   private ReasonEnum reason;
 
   public static final String JSON_PROPERTY_NOTE = "note";
+  @javax.annotation.Nullable
   private String note;
 
   /**
    * Gets or Sets followupStatus
    */
   public enum FollowupStatusEnum {
-    UNCONTACTED("customer_uncontacted"),
+    CUSTOMER_UNCONTACTED(String.valueOf("customer_uncontacted")),
     
-    CONTACTED("customer_contacted"),
+    CUSTOMER_CONTACTED(String.valueOf("customer_contacted")),
     
-    UNREACHABLE("customer_unreachable"),
+    CUSTOMER_UNREACHABLE(String.valueOf("customer_unreachable")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -242,40 +246,47 @@ public class ChargebackResponse {
   }
 
   public static final String JSON_PROPERTY_FOLLOWUP_STATUS = "followup_status";
+  @javax.annotation.Nullable
   private FollowupStatusEnum followupStatus;
 
   public static final String JSON_PROPERTY_RESPONSE_FROM_CLIENT = "response_from_client";
+  @javax.annotation.Nullable
   private String responseFromClient;
 
   public static final String JSON_PROPERTY_FILES = "files";
+  @javax.annotation.Nullable
   private List<ChargebackFileResponse> files = new ArrayList<>();
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_CHARGE_ID = "charge_id";
+  @javax.annotation.Nullable
   private String chargeId;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nullable
   private Long createdAt;
 
   public static final String JSON_PROPERTY_EVIDENCE_DUE_BY = "evidence_due_by";
+  @javax.annotation.Nullable
   private Long evidenceDueBy;
 
   public ChargebackResponse() { 
   }
 
-  public ChargebackResponse id(String id) {
+  public ChargebackResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
@@ -283,24 +294,24 @@ public class ChargebackResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public ChargebackResponse status(StatusEnum status) {
+  public ChargebackResponse status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public StatusEnum getStatus() {
@@ -308,24 +319,24 @@ public class ChargebackResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public ChargebackResponse reason(ReasonEnum reason) {
+  public ChargebackResponse reason(@javax.annotation.Nullable ReasonEnum reason) {
     this.reason = reason;
     return this;
   }
 
-   /**
+  /**
    * Get reason
    * @return reason
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REASON)
+  @JsonProperty(value = JSON_PROPERTY_REASON, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public ReasonEnum getReason() {
@@ -333,24 +344,24 @@ public class ChargebackResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REASON)
+  @JsonProperty(value = JSON_PROPERTY_REASON, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReason(ReasonEnum reason) {
+  public void setReason(@javax.annotation.Nullable ReasonEnum reason) {
     this.reason = reason;
   }
 
 
-  public ChargebackResponse note(String note) {
+  public ChargebackResponse note(@javax.annotation.Nullable String note) {
     this.note = note;
     return this;
   }
 
-   /**
+  /**
    * Get note
    * @return note
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NOTE)
+  @JsonProperty(value = JSON_PROPERTY_NOTE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNote() {
@@ -358,24 +369,24 @@ public class ChargebackResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NOTE)
+  @JsonProperty(value = JSON_PROPERTY_NOTE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNote(String note) {
+  public void setNote(@javax.annotation.Nullable String note) {
     this.note = note;
   }
 
 
-  public ChargebackResponse followupStatus(FollowupStatusEnum followupStatus) {
+  public ChargebackResponse followupStatus(@javax.annotation.Nullable FollowupStatusEnum followupStatus) {
     this.followupStatus = followupStatus;
     return this;
   }
 
-   /**
+  /**
    * Get followupStatus
    * @return followupStatus
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FOLLOWUP_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_FOLLOWUP_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public FollowupStatusEnum getFollowupStatus() {
@@ -383,24 +394,24 @@ public class ChargebackResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FOLLOWUP_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_FOLLOWUP_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFollowupStatus(FollowupStatusEnum followupStatus) {
+  public void setFollowupStatus(@javax.annotation.Nullable FollowupStatusEnum followupStatus) {
     this.followupStatus = followupStatus;
   }
 
 
-  public ChargebackResponse responseFromClient(String responseFromClient) {
+  public ChargebackResponse responseFromClient(@javax.annotation.Nullable String responseFromClient) {
     this.responseFromClient = responseFromClient;
     return this;
   }
 
-   /**
+  /**
    * Get responseFromClient
    * @return responseFromClient
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RESPONSE_FROM_CLIENT)
+  @JsonProperty(value = JSON_PROPERTY_RESPONSE_FROM_CLIENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getResponseFromClient() {
@@ -408,14 +419,14 @@ public class ChargebackResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RESPONSE_FROM_CLIENT)
+  @JsonProperty(value = JSON_PROPERTY_RESPONSE_FROM_CLIENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setResponseFromClient(String responseFromClient) {
+  public void setResponseFromClient(@javax.annotation.Nullable String responseFromClient) {
     this.responseFromClient = responseFromClient;
   }
 
 
-  public ChargebackResponse files(List<ChargebackFileResponse> files) {
+  public ChargebackResponse files(@javax.annotation.Nullable List<ChargebackFileResponse> files) {
     this.files = files;
     return this;
   }
@@ -428,12 +439,12 @@ public class ChargebackResponse {
     return this;
   }
 
-   /**
+  /**
    * Get files
    * @return files
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FILES)
+  @JsonProperty(value = JSON_PROPERTY_FILES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ChargebackFileResponse> getFiles() {
@@ -441,24 +452,24 @@ public class ChargebackResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FILES)
+  @JsonProperty(value = JSON_PROPERTY_FILES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFiles(List<ChargebackFileResponse> files) {
+  public void setFiles(@javax.annotation.Nullable List<ChargebackFileResponse> files) {
     this.files = files;
   }
 
 
-  public ChargebackResponse _object(String _object) {
+  public ChargebackResponse _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getObject() {
@@ -466,24 +477,24 @@ public class ChargebackResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
 
-  public ChargebackResponse chargeId(String chargeId) {
+  public ChargebackResponse chargeId(@javax.annotation.Nullable String chargeId) {
     this.chargeId = chargeId;
     return this;
   }
 
-   /**
+  /**
    * Get chargeId
    * @return chargeId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CHARGE_ID)
+  @JsonProperty(value = JSON_PROPERTY_CHARGE_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getChargeId() {
@@ -491,24 +502,24 @@ public class ChargebackResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CHARGE_ID)
+  @JsonProperty(value = JSON_PROPERTY_CHARGE_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChargeId(String chargeId) {
+  public void setChargeId(@javax.annotation.Nullable String chargeId) {
     this.chargeId = chargeId;
   }
 
 
-  public ChargebackResponse createdAt(Long createdAt) {
+  public ChargebackResponse createdAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getCreatedAt() {
@@ -516,24 +527,24 @@ public class ChargebackResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ChargebackResponse evidenceDueBy(Long evidenceDueBy) {
+  public ChargebackResponse evidenceDueBy(@javax.annotation.Nullable Long evidenceDueBy) {
     this.evidenceDueBy = evidenceDueBy;
     return this;
   }
 
-   /**
+  /**
    * Get evidenceDueBy
    * @return evidenceDueBy
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EVIDENCE_DUE_BY)
+  @JsonProperty(value = JSON_PROPERTY_EVIDENCE_DUE_BY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getEvidenceDueBy() {
@@ -541,9 +552,9 @@ public class ChargebackResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EVIDENCE_DUE_BY)
+  @JsonProperty(value = JSON_PROPERTY_EVIDENCE_DUE_BY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEvidenceDueBy(Long evidenceDueBy) {
+  public void setEvidenceDueBy(@javax.annotation.Nullable Long evidenceDueBy) {
     this.evidenceDueBy = evidenceDueBy;
   }
 
@@ -602,10 +613,7 @@ public class ChargebackResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

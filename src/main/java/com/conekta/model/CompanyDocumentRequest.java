@@ -36,33 +36,33 @@ import com.conekta.JSON;
   CompanyDocumentRequest.JSON_PROPERTY_FILE_NAME,
   CompanyDocumentRequest.JSON_PROPERTY_FILE_DATA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CompanyDocumentRequest {
   /**
    * Classification of the document.  | Tipo de archivo              | Descripción                                               | | :--------------------------- | :-------------------------------------------------------- | | &#x60;id_legal_representative&#x60;      | identificación oficial frente                             | | &#x60;id_legal_representative_back&#x60; | identificación oficial atrás                              | | &#x60;cfdi&#x60;                         | Prueba de situación fiscal                                | | &#x60;constitutive_act_basic&#x60;       | Acta constitutiva                                         | | &#x60;proof_of_address&#x60;             | Comprobante de domicilio del negocio                      | | &#x60;power_of_attonery&#x60;            | Poderes de representación                                 | | &#x60;deposit_account_cover&#x60;        | Carátula de la cuenta de depósito                         | | &#x60;permit_casino&#x60;                | Permiso ante SEGOB                                        | | &#x60;license_sanitation&#x60;           | Licencia sanitaria de COFEPRIS                            | | &#x60;registration_tourism&#x60;         | Inscripción ante el Registro Nacional de Turismo (SECTUR) | 
    */
   public enum FileClassificationEnum {
-    ID_LEGAL_REPRESENTATIVE("id_legal_representative"),
+    ID_LEGAL_REPRESENTATIVE(String.valueOf("id_legal_representative")),
     
-    ID_LEGAL_REPRESENTATIVE_BACK("id_legal_representative_back"),
+    ID_LEGAL_REPRESENTATIVE_BACK(String.valueOf("id_legal_representative_back")),
     
-    CFDI("cfdi"),
+    CFDI(String.valueOf("cfdi")),
     
-    CONSTITUTIVE_ACT_BASIC("constitutive_act_basic"),
+    CONSTITUTIVE_ACT_BASIC(String.valueOf("constitutive_act_basic")),
     
-    PROOF_OF_ADDRESS("proof_of_address"),
+    PROOF_OF_ADDRESS(String.valueOf("proof_of_address")),
     
-    POWER_OF_ATTONERY("power_of_attonery"),
+    POWER_OF_ATTONERY(String.valueOf("power_of_attonery")),
     
-    DEPOSIT_ACCOUNT_COVER("deposit_account_cover"),
+    DEPOSIT_ACCOUNT_COVER(String.valueOf("deposit_account_cover")),
     
-    PERMIT_CASINO("permit_casino"),
+    PERMIT_CASINO(String.valueOf("permit_casino")),
     
-    LICENSE_SANITATION("license_sanitation"),
+    LICENSE_SANITATION(String.valueOf("license_sanitation")),
     
-    REGISTRATION_TOURISM("registration_tourism"),
+    REGISTRATION_TOURISM(String.valueOf("registration_tourism")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -92,34 +92,39 @@ public class CompanyDocumentRequest {
   }
 
   public static final String JSON_PROPERTY_FILE_CLASSIFICATION = "file_classification";
+  @javax.annotation.Nonnull
   private FileClassificationEnum fileClassification;
 
   public static final String JSON_PROPERTY_CONTENT_TYPE = "content_type";
+  @javax.annotation.Nonnull
   private String contentType;
 
   public static final String JSON_PROPERTY_INTERNATIONAL = "international";
+  @javax.annotation.Nullable
   private Boolean international;
 
   public static final String JSON_PROPERTY_FILE_NAME = "file_name";
+  @javax.annotation.Nonnull
   private String fileName;
 
   public static final String JSON_PROPERTY_FILE_DATA = "file_data";
+  @javax.annotation.Nonnull
   private byte[] fileData;
 
   public CompanyDocumentRequest() { 
   }
 
-  public CompanyDocumentRequest fileClassification(FileClassificationEnum fileClassification) {
+  public CompanyDocumentRequest fileClassification(@javax.annotation.Nonnull FileClassificationEnum fileClassification) {
     this.fileClassification = fileClassification;
     return this;
   }
 
-   /**
+  /**
    * Classification of the document.  | Tipo de archivo              | Descripción                                               | | :--------------------------- | :-------------------------------------------------------- | | &#x60;id_legal_representative&#x60;      | identificación oficial frente                             | | &#x60;id_legal_representative_back&#x60; | identificación oficial atrás                              | | &#x60;cfdi&#x60;                         | Prueba de situación fiscal                                | | &#x60;constitutive_act_basic&#x60;       | Acta constitutiva                                         | | &#x60;proof_of_address&#x60;             | Comprobante de domicilio del negocio                      | | &#x60;power_of_attonery&#x60;            | Poderes de representación                                 | | &#x60;deposit_account_cover&#x60;        | Carátula de la cuenta de depósito                         | | &#x60;permit_casino&#x60;                | Permiso ante SEGOB                                        | | &#x60;license_sanitation&#x60;           | Licencia sanitaria de COFEPRIS                            | | &#x60;registration_tourism&#x60;         | Inscripción ante el Registro Nacional de Turismo (SECTUR) | 
    * @return fileClassification
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FILE_CLASSIFICATION)
+  @JsonProperty(value = JSON_PROPERTY_FILE_CLASSIFICATION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public FileClassificationEnum getFileClassification() {
@@ -127,24 +132,24 @@ public class CompanyDocumentRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FILE_CLASSIFICATION)
+  @JsonProperty(value = JSON_PROPERTY_FILE_CLASSIFICATION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFileClassification(FileClassificationEnum fileClassification) {
+  public void setFileClassification(@javax.annotation.Nonnull FileClassificationEnum fileClassification) {
     this.fileClassification = fileClassification;
   }
 
 
-  public CompanyDocumentRequest contentType(String contentType) {
+  public CompanyDocumentRequest contentType(@javax.annotation.Nonnull String contentType) {
     this.contentType = contentType;
     return this;
   }
 
-   /**
+  /**
    * MIME type of the file. Allowed values depend on the &#x60;file_classification&#x60;. - &#x60;image/jpeg&#x60; - &#x60;image/png&#x60; - &#x60;application/pdf&#x60; 
    * @return contentType
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CONTENT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_CONTENT_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getContentType() {
@@ -152,24 +157,24 @@ public class CompanyDocumentRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CONTENT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_CONTENT_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setContentType(String contentType) {
+  public void setContentType(@javax.annotation.Nonnull String contentType) {
     this.contentType = contentType;
   }
 
 
-  public CompanyDocumentRequest international(Boolean international) {
+  public CompanyDocumentRequest international(@javax.annotation.Nullable Boolean international) {
     this.international = international;
     return this;
   }
 
-   /**
+  /**
    * Indicates if the document is international. Defaults to false.
    * @return international
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_INTERNATIONAL)
+  @JsonProperty(value = JSON_PROPERTY_INTERNATIONAL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getInternational() {
@@ -177,24 +182,24 @@ public class CompanyDocumentRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_INTERNATIONAL)
+  @JsonProperty(value = JSON_PROPERTY_INTERNATIONAL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInternational(Boolean international) {
+  public void setInternational(@javax.annotation.Nullable Boolean international) {
     this.international = international;
   }
 
 
-  public CompanyDocumentRequest fileName(String fileName) {
+  public CompanyDocumentRequest fileName(@javax.annotation.Nonnull String fileName) {
     this.fileName = fileName;
     return this;
   }
 
-   /**
+  /**
    * Name of the file being uploaded.
    * @return fileName
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FILE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FILE_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getFileName() {
@@ -202,24 +207,24 @@ public class CompanyDocumentRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FILE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FILE_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFileName(String fileName) {
+  public void setFileName(@javax.annotation.Nonnull String fileName) {
     this.fileName = fileName;
   }
 
 
-  public CompanyDocumentRequest fileData(byte[] fileData) {
+  public CompanyDocumentRequest fileData(@javax.annotation.Nonnull byte[] fileData) {
     this.fileData = fileData;
     return this;
   }
 
-   /**
+  /**
    * Base64 encoded content of the file.
    * @return fileData
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FILE_DATA)
+  @JsonProperty(value = JSON_PROPERTY_FILE_DATA, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public byte[] getFileData() {
@@ -227,9 +232,9 @@ public class CompanyDocumentRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FILE_DATA)
+  @JsonProperty(value = JSON_PROPERTY_FILE_DATA, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFileData(byte[] fileData) {
+  public void setFileData(@javax.annotation.Nonnull byte[] fileData) {
     this.fileData = fileData;
   }
 
@@ -276,10 +281,7 @@ public class CompanyDocumentRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

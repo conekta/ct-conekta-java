@@ -35,21 +35,23 @@ import com.conekta.JSON;
   PaymentMethodPbbRequest.JSON_PROPERTY_PRODUCT_TYPE
 })
 @JsonTypeName("payment_method_pbb_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class PaymentMethodPbbRequest {
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nonnull
   private String type;
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nullable
   private Long expiresAt;
 
   /**
    * Product type of the payment method, use for the payment method to know the product type
    */
   public enum ProductTypeEnum {
-    BBVA_PAY_BY_BANK("bbva_pay_by_bank"),
+    BBVA_PAY_BY_BANK(String.valueOf("bbva_pay_by_bank")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -79,22 +81,23 @@ public class PaymentMethodPbbRequest {
   }
 
   public static final String JSON_PROPERTY_PRODUCT_TYPE = "product_type";
+  @javax.annotation.Nonnull
   private ProductTypeEnum productType;
 
   public PaymentMethodPbbRequest() { 
   }
 
-  public PaymentMethodPbbRequest type(String type) {
+  public PaymentMethodPbbRequest type(@javax.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Type of the payment method
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getType() {
@@ -102,25 +105,25 @@ public class PaymentMethodPbbRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
   }
 
 
-  public PaymentMethodPbbRequest expiresAt(Long expiresAt) {
+  public PaymentMethodPbbRequest expiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
-   /**
+  /**
    * Expiration date of the payment method, in Unix timestamp format
    * minimum: 0
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getExpiresAt() {
@@ -128,24 +131,24 @@ public class PaymentMethodPbbRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(Long expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public PaymentMethodPbbRequest productType(ProductTypeEnum productType) {
+  public PaymentMethodPbbRequest productType(@javax.annotation.Nonnull ProductTypeEnum productType) {
     this.productType = productType;
     return this;
   }
 
-   /**
+  /**
    * Product type of the payment method, use for the payment method to know the product type
    * @return productType
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_PRODUCT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_PRODUCT_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public ProductTypeEnum getProductType() {
@@ -153,9 +156,9 @@ public class PaymentMethodPbbRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PRODUCT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_PRODUCT_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setProductType(ProductTypeEnum productType) {
+  public void setProductType(@javax.annotation.Nonnull ProductTypeEnum productType) {
     this.productType = productType;
   }
 
@@ -198,10 +201,7 @@ public class PaymentMethodPbbRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

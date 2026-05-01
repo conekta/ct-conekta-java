@@ -54,7 +54,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.conekta.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 @JsonDeserialize(using = OrderUpdateCustomerInfo.OrderUpdateCustomerInfoDeserializer.class)
 @JsonSerialize(using = OrderUpdateCustomerInfo.OrderUpdateCustomerInfoSerializer.class)
 public class OrderUpdateCustomerInfo extends AbstractOpenApiSchema {
@@ -86,7 +86,7 @@ public class OrderUpdateCustomerInfo extends AbstractOpenApiSchema {
 
         @Override
         public OrderUpdateCustomerInfo deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
-            JsonNode tree = jp.readValueAsTree();
+            JsonNode tree = ctxt.readTree(jp);
             Object deserialized = null;
             boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
             int match = 0;
@@ -128,7 +128,7 @@ public class OrderUpdateCustomerInfo extends AbstractOpenApiSchema {
                 ret.setActualInstance(deserialized);
                 return ret;
             }
-            throw new IOException(String.format("Failed deserialization for OrderUpdateCustomerInfo: %d classes match result, expected 1", match));
+            throw new IOException(String.format(java.util.Locale.ROOT, "Failed deserialization for OrderUpdateCustomerInfo: %d classes match result, expected 1", match));
         }
 
         /**
@@ -141,7 +141,7 @@ public class OrderUpdateCustomerInfo extends AbstractOpenApiSchema {
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<>();
+    public static final Map<String, GenericType<?>> schemas = new HashMap<>();
 
     public OrderUpdateCustomerInfo() {
         super("oneOf", Boolean.FALSE);
@@ -166,7 +166,7 @@ public class OrderUpdateCustomerInfo extends AbstractOpenApiSchema {
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, GenericType<?>> getSchemas() {
         return OrderUpdateCustomerInfo.schemas;
     }
 

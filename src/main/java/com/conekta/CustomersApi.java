@@ -24,7 +24,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CustomersApi {
   private ApiClient apiClient;
 
@@ -63,7 +63,8 @@ public class CustomersApi {
    * @return CustomerResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -72,7 +73,7 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CustomerResponse createCustomer(Customer customer, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public CustomerResponse createCustomer(@javax.annotation.Nonnull Customer customer, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return createCustomerWithHttpInfo(customer, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -85,7 +86,8 @@ public class CustomersApi {
    * @return ApiResponse&lt;CustomerResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -94,7 +96,7 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CustomerResponse> createCustomerWithHttpInfo(Customer customer, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CustomerResponse> createCustomerWithHttpInfo(@javax.annotation.Nonnull Customer customer, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (customer == null) {
       throw new ApiException(400, "Missing the required parameter 'customer' when calling createCustomer");
@@ -127,7 +129,8 @@ public class CustomersApi {
    * @return CreateCustomerFiscalEntitiesResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -136,7 +139,7 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CreateCustomerFiscalEntitiesResponse createCustomerFiscalEntities(String id, FiscalEntityRequest fiscalEntityRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public CreateCustomerFiscalEntitiesResponse createCustomerFiscalEntities(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull FiscalEntityRequest fiscalEntityRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return createCustomerFiscalEntitiesWithHttpInfo(id, fiscalEntityRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -150,7 +153,8 @@ public class CustomersApi {
    * @return ApiResponse&lt;CreateCustomerFiscalEntitiesResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -159,7 +163,7 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CreateCustomerFiscalEntitiesResponse> createCustomerFiscalEntitiesWithHttpInfo(String id, FiscalEntityRequest fiscalEntityRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CreateCustomerFiscalEntitiesResponse> createCustomerFiscalEntitiesWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull FiscalEntityRequest fiscalEntityRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling createCustomerFiscalEntities");
@@ -170,7 +174,7 @@ public class CustomersApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/fiscal_entities"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -198,7 +202,8 @@ public class CustomersApi {
    * @return CustomerResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -207,7 +212,7 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CustomerResponse deleteCustomerById(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public CustomerResponse deleteCustomerById(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return deleteCustomerByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -220,7 +225,8 @@ public class CustomersApi {
    * @return ApiResponse&lt;CustomerResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -229,7 +235,7 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CustomerResponse> deleteCustomerByIdWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CustomerResponse> deleteCustomerByIdWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling deleteCustomerById");
@@ -237,7 +243,7 @@ public class CustomersApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -265,7 +271,8 @@ public class CustomersApi {
    * @return CustomerResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -273,7 +280,7 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CustomerResponse getCustomerById(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public CustomerResponse getCustomerById(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return getCustomerByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -286,7 +293,8 @@ public class CustomersApi {
    * @return ApiResponse&lt;CustomerResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -294,7 +302,7 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CustomerResponse> getCustomerByIdWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CustomerResponse> getCustomerByIdWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getCustomerById");
@@ -302,7 +310,7 @@ public class CustomersApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -333,14 +341,15 @@ public class CustomersApi {
    * @return CustomersResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CustomersResponse getCustomers(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public CustomersResponse getCustomers(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     return getCustomersWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous).getData();
   }
 
@@ -356,14 +365,15 @@ public class CustomersApi {
    * @return ApiResponse&lt;CustomersResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CustomersResponse> getCustomersWithHttpInfo(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public ApiResponse<CustomersResponse> getCustomersWithHttpInfo(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "limit", limit)
@@ -399,7 +409,8 @@ public class CustomersApi {
    * @return CustomerResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -408,7 +419,7 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CustomerResponse updateCustomer(String id, UpdateCustomer updateCustomer, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public CustomerResponse updateCustomer(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCustomer updateCustomer, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return updateCustomerWithHttpInfo(id, updateCustomer, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -422,7 +433,8 @@ public class CustomersApi {
    * @return ApiResponse&lt;CustomerResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -431,7 +443,7 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CustomerResponse> updateCustomerWithHttpInfo(String id, UpdateCustomer updateCustomer, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CustomerResponse> updateCustomerWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCustomer updateCustomer, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateCustomer");
@@ -442,7 +454,7 @@ public class CustomersApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -472,7 +484,8 @@ public class CustomersApi {
    * @return UpdateCustomerFiscalEntitiesResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -481,7 +494,7 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public UpdateCustomerFiscalEntitiesResponse updateCustomerFiscalEntities(String id, String fiscalEntitiesId, UpdateFiscalEntityRequest updateFiscalEntityRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public UpdateCustomerFiscalEntitiesResponse updateCustomerFiscalEntities(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String fiscalEntitiesId, @javax.annotation.Nonnull UpdateFiscalEntityRequest updateFiscalEntityRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return updateCustomerFiscalEntitiesWithHttpInfo(id, fiscalEntitiesId, updateFiscalEntityRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -496,7 +509,8 @@ public class CustomersApi {
    * @return ApiResponse&lt;UpdateCustomerFiscalEntitiesResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -505,7 +519,7 @@ public class CustomersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<UpdateCustomerFiscalEntitiesResponse> updateCustomerFiscalEntitiesWithHttpInfo(String id, String fiscalEntitiesId, UpdateFiscalEntityRequest updateFiscalEntityRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<UpdateCustomerFiscalEntitiesResponse> updateCustomerFiscalEntitiesWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String fiscalEntitiesId, @javax.annotation.Nonnull UpdateFiscalEntityRequest updateFiscalEntityRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateCustomerFiscalEntities");
@@ -519,8 +533,8 @@ public class CustomersApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/fiscal_entities/{fiscal_entities_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{fiscal_entities_id}", apiClient.escapeString(fiscalEntitiesId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{fiscal_entities_id}", apiClient.escapeString(fiscalEntitiesId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

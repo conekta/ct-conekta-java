@@ -18,7 +18,7 @@ checkout response
 |**force3dsFlow** | **Boolean** |  |  [optional] |
 |**id** | **String** |  |  |
 |**livemode** | **Boolean** |  |  |
-|**metadata** |  |  |  [optional] |
+|**metadata** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**monthlyInstallmentsEnabled** | **Boolean** |  |  [optional] |
 |**monthlyInstallmentsOptions** | **List&lt;Integer&gt;** |  |  [optional] |
 |**name** | **String** | Reason for charge |  |

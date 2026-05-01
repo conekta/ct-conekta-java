@@ -62,7 +62,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.conekta.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 @JsonDeserialize(using = GetCustomerPaymentMethodDataResponse.GetCustomerPaymentMethodDataResponseDeserializer.class)
 @JsonSerialize(using = GetCustomerPaymentMethodDataResponse.GetCustomerPaymentMethodDataResponseSerializer.class)
 public class GetCustomerPaymentMethodDataResponse extends AbstractOpenApiSchema {
@@ -94,7 +94,7 @@ public class GetCustomerPaymentMethodDataResponse extends AbstractOpenApiSchema 
 
         @Override
         public GetCustomerPaymentMethodDataResponse deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
-            JsonNode tree = jp.readValueAsTree();
+            JsonNode tree = ctxt.readTree(jp);
             Object deserialized = null;
             GetCustomerPaymentMethodDataResponse newGetCustomerPaymentMethodDataResponse = new GetCustomerPaymentMethodDataResponse();
             Map<String, Object> result2 = tree.traverse(jp.getCodec()).readValueAs(new TypeReference<Map<String, Object>>() {});
@@ -116,24 +116,8 @@ public class GetCustomerPaymentMethodDataResponse extends AbstractOpenApiSchema 
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodSpeiRecurrentResponse.class);
                     newGetCustomerPaymentMethodDataResponse.setActualInstance(deserialized);
                     return newGetCustomerPaymentMethodDataResponse;
-                case "payment_method_card_response":
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCardResponse.class);
-                    newGetCustomerPaymentMethodDataResponse.setActualInstance(deserialized);
-                    return newGetCustomerPaymentMethodDataResponse;
-                case "payment_method_cash_recurrent_response":
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashRecurrentResponse.class);
-                    newGetCustomerPaymentMethodDataResponse.setActualInstance(deserialized);
-                    return newGetCustomerPaymentMethodDataResponse;
-                case "payment_method_cash_response":
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCashResponse.class);
-                    newGetCustomerPaymentMethodDataResponse.setActualInstance(deserialized);
-                    return newGetCustomerPaymentMethodDataResponse;
-                case "payment_method_spei_recurrent_response":
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodSpeiRecurrentResponse.class);
-                    newGetCustomerPaymentMethodDataResponse.setActualInstance(deserialized);
-                    return newGetCustomerPaymentMethodDataResponse;
                 default:
-                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for GetCustomerPaymentMethodDataResponse. Possible values: card cash cash_recurrent spei_recurrent payment_method_card_response payment_method_cash_recurrent_response payment_method_cash_response payment_method_spei_recurrent_response", discriminatorValue));
+                    log.log(Level.WARNING, String.format(java.util.Locale.ROOT, "Failed to lookup discriminator value `%s` for GetCustomerPaymentMethodDataResponse. Possible values: card cash cash_recurrent spei_recurrent", discriminatorValue));
             }
 
             boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
@@ -208,7 +192,7 @@ public class GetCustomerPaymentMethodDataResponse extends AbstractOpenApiSchema 
                 ret.setActualInstance(deserialized);
                 return ret;
             }
-            throw new IOException(String.format("Failed deserialization for GetCustomerPaymentMethodDataResponse: %d classes match result, expected 1", match));
+            throw new IOException(String.format(java.util.Locale.ROOT, "Failed deserialization for GetCustomerPaymentMethodDataResponse: %d classes match result, expected 1", match));
         }
 
         /**
@@ -221,7 +205,7 @@ public class GetCustomerPaymentMethodDataResponse extends AbstractOpenApiSchema 
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<>();
+    public static final Map<String, GenericType<?>> schemas = new HashMap<>();
 
     public GetCustomerPaymentMethodDataResponse() {
         super("oneOf", Boolean.FALSE);
@@ -263,16 +247,12 @@ public class GetCustomerPaymentMethodDataResponse extends AbstractOpenApiSchema 
         mappings.put("cash", PaymentMethodCashResponse.class);
         mappings.put("cash_recurrent", PaymentMethodCashRecurrentResponse.class);
         mappings.put("spei_recurrent", PaymentMethodSpeiRecurrentResponse.class);
-        mappings.put("payment_method_card_response", PaymentMethodCardResponse.class);
-        mappings.put("payment_method_cash_recurrent_response", PaymentMethodCashRecurrentResponse.class);
-        mappings.put("payment_method_cash_response", PaymentMethodCashResponse.class);
-        mappings.put("payment_method_spei_recurrent_response", PaymentMethodSpeiRecurrentResponse.class);
         mappings.put("get_customer_payment_method_data_response", GetCustomerPaymentMethodDataResponse.class);
         JSON.registerDiscriminator(GetCustomerPaymentMethodDataResponse.class, "type", mappings);
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, GenericType<?>> getSchemas() {
         return GetCustomerPaymentMethodDataResponse.schemas;
     }
 

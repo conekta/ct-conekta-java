@@ -46,47 +46,57 @@ import com.conekta.JSON;
   CompanyResponse.JSON_PROPERTY_THREE_DS_MODE
 })
 @JsonTypeName("company_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CompanyResponse {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String JSON_PROPERTY_ACTIVE = "active";
+  @javax.annotation.Nonnull
   private Boolean active;
 
   public static final String JSON_PROPERTY_ACCOUNT_STATUS = "account_status";
+  @javax.annotation.Nonnull
   private String accountStatus;
 
   public static final String JSON_PROPERTY_PARENT_COMPANY_ID = "parent_company_id";
+  @javax.annotation.Nullable
   private String parentCompanyId;
 
   public static final String JSON_PROPERTY_ONBOARDING_STATUS = "onboarding_status";
+  @javax.annotation.Nonnull
   private String onboardingStatus;
 
   public static final String JSON_PROPERTY_DOCUMENTS = "documents";
+  @javax.annotation.Nonnull
   private List<CompanyDocumentResponse> documents = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_THREE_DS_ENABLED = "three_ds_enabled";
+  @javax.annotation.Nullable
   private Boolean threeDsEnabled;
 
   /**
    * The 3DS mode for the company, either &#39;smart&#39; or &#39;strict&#39;. This property is only applicable when three_ds_enabled is true. When three_ds_enabled is false, this field will be null.
    */
   public enum ThreeDsModeEnum {
-    SMART("smart"),
+    SMART(String.valueOf("smart")),
     
-    STRICT("strict"),
+    STRICT(String.valueOf("strict")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -116,22 +126,23 @@ public class CompanyResponse {
   }
 
   public static final String JSON_PROPERTY_THREE_DS_MODE = "three_ds_mode";
+  @javax.annotation.Nullable
   private ThreeDsModeEnum threeDsMode;
 
   public CompanyResponse() { 
   }
 
-  public CompanyResponse id(String id) {
+  public CompanyResponse id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the company.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
@@ -139,24 +150,24 @@ public class CompanyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public CompanyResponse name(String name) {
+  public CompanyResponse name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The name of the company.
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getName() {
@@ -164,24 +175,24 @@ public class CompanyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public CompanyResponse active(Boolean active) {
+  public CompanyResponse active(@javax.annotation.Nonnull Boolean active) {
     this.active = active;
     return this;
   }
 
-   /**
+  /**
    * Indicates if the company is active.
    * @return active
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonProperty(value = JSON_PROPERTY_ACTIVE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getActive() {
@@ -189,24 +200,24 @@ public class CompanyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonProperty(value = JSON_PROPERTY_ACTIVE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setActive(Boolean active) {
+  public void setActive(@javax.annotation.Nonnull Boolean active) {
     this.active = active;
   }
 
 
-  public CompanyResponse accountStatus(String accountStatus) {
+  public CompanyResponse accountStatus(@javax.annotation.Nonnull String accountStatus) {
     this.accountStatus = accountStatus;
     return this;
   }
 
-   /**
+  /**
    * The current status of the company&#39;s account.
    * @return accountStatus
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_ACCOUNT_STATUS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getAccountStatus() {
@@ -214,24 +225,24 @@ public class CompanyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_ACCOUNT_STATUS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAccountStatus(String accountStatus) {
+  public void setAccountStatus(@javax.annotation.Nonnull String accountStatus) {
     this.accountStatus = accountStatus;
   }
 
 
-  public CompanyResponse parentCompanyId(String parentCompanyId) {
+  public CompanyResponse parentCompanyId(@javax.annotation.Nullable String parentCompanyId) {
     this.parentCompanyId = parentCompanyId;
     return this;
   }
 
-   /**
+  /**
    * The identifier of the parent company, if any.
    * @return parentCompanyId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PARENT_COMPANY_ID)
+  @JsonProperty(value = JSON_PROPERTY_PARENT_COMPANY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getParentCompanyId() {
@@ -239,24 +250,24 @@ public class CompanyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PARENT_COMPANY_ID)
+  @JsonProperty(value = JSON_PROPERTY_PARENT_COMPANY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentCompanyId(String parentCompanyId) {
+  public void setParentCompanyId(@javax.annotation.Nullable String parentCompanyId) {
     this.parentCompanyId = parentCompanyId;
   }
 
 
-  public CompanyResponse onboardingStatus(String onboardingStatus) {
+  public CompanyResponse onboardingStatus(@javax.annotation.Nonnull String onboardingStatus) {
     this.onboardingStatus = onboardingStatus;
     return this;
   }
 
-   /**
+  /**
    * The current status of the company&#39;s onboarding process.
    * @return onboardingStatus
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ONBOARDING_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_ONBOARDING_STATUS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getOnboardingStatus() {
@@ -264,14 +275,14 @@ public class CompanyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ONBOARDING_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_ONBOARDING_STATUS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setOnboardingStatus(String onboardingStatus) {
+  public void setOnboardingStatus(@javax.annotation.Nonnull String onboardingStatus) {
     this.onboardingStatus = onboardingStatus;
   }
 
 
-  public CompanyResponse documents(List<CompanyDocumentResponse> documents) {
+  public CompanyResponse documents(@javax.annotation.Nonnull List<CompanyDocumentResponse> documents) {
     this.documents = documents;
     return this;
   }
@@ -284,12 +295,12 @@ public class CompanyResponse {
     return this;
   }
 
-   /**
+  /**
    * A list of documents related to the company.
    * @return documents
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DOCUMENTS)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENTS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<CompanyDocumentResponse> getDocuments() {
@@ -297,24 +308,24 @@ public class CompanyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DOCUMENTS)
+  @JsonProperty(value = JSON_PROPERTY_DOCUMENTS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDocuments(List<CompanyDocumentResponse> documents) {
+  public void setDocuments(@javax.annotation.Nonnull List<CompanyDocumentResponse> documents) {
     this.documents = documents;
   }
 
 
-  public CompanyResponse createdAt(Long createdAt) {
+  public CompanyResponse createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Timestamp of when the company was created.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Long getCreatedAt() {
@@ -322,24 +333,24 @@ public class CompanyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CompanyResponse _object(String _object) {
+  public CompanyResponse _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * The type of object, typically \&quot;company\&quot;.
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
@@ -347,24 +358,24 @@ public class CompanyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public CompanyResponse threeDsEnabled(Boolean threeDsEnabled) {
+  public CompanyResponse threeDsEnabled(@javax.annotation.Nullable Boolean threeDsEnabled) {
     this.threeDsEnabled = threeDsEnabled;
     return this;
   }
 
-   /**
+  /**
    * Indicates if 3DS authentication is enabled for the company.
    * @return threeDsEnabled
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_THREE_DS_ENABLED)
+  @JsonProperty(value = JSON_PROPERTY_THREE_DS_ENABLED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getThreeDsEnabled() {
@@ -372,24 +383,24 @@ public class CompanyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_THREE_DS_ENABLED)
+  @JsonProperty(value = JSON_PROPERTY_THREE_DS_ENABLED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setThreeDsEnabled(Boolean threeDsEnabled) {
+  public void setThreeDsEnabled(@javax.annotation.Nullable Boolean threeDsEnabled) {
     this.threeDsEnabled = threeDsEnabled;
   }
 
 
-  public CompanyResponse threeDsMode(ThreeDsModeEnum threeDsMode) {
+  public CompanyResponse threeDsMode(@javax.annotation.Nullable ThreeDsModeEnum threeDsMode) {
     this.threeDsMode = threeDsMode;
     return this;
   }
 
-   /**
+  /**
    * The 3DS mode for the company, either &#39;smart&#39; or &#39;strict&#39;. This property is only applicable when three_ds_enabled is true. When three_ds_enabled is false, this field will be null.
    * @return threeDsMode
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_THREE_DS_MODE)
+  @JsonProperty(value = JSON_PROPERTY_THREE_DS_MODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public ThreeDsModeEnum getThreeDsMode() {
@@ -397,9 +408,9 @@ public class CompanyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_THREE_DS_MODE)
+  @JsonProperty(value = JSON_PROPERTY_THREE_DS_MODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setThreeDsMode(ThreeDsModeEnum threeDsMode) {
+  public void setThreeDsMode(@javax.annotation.Nullable ThreeDsModeEnum threeDsMode) {
     this.threeDsMode = threeDsMode;
   }
 
@@ -458,10 +469,7 @@ public class CompanyResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

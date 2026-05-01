@@ -36,34 +36,38 @@ import com.conekta.JSON;
   DeletedWhitelistRuleResponse.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("deleted_whitelist_rule_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class DeletedWhitelistRuleResponse {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_FIELD = "field";
+  @javax.annotation.Nullable
   private String field;
 
   public static final String JSON_PROPERTY_VALUE = "value";
+  @javax.annotation.Nullable
   private String value;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public DeletedWhitelistRuleResponse() { 
   }
 
-  public DeletedWhitelistRuleResponse id(String id) {
+  public DeletedWhitelistRuleResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Whitelist rule id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
@@ -71,24 +75,24 @@ public class DeletedWhitelistRuleResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public DeletedWhitelistRuleResponse field(String field) {
+  public DeletedWhitelistRuleResponse field(@javax.annotation.Nullable String field) {
     this.field = field;
     return this;
   }
 
-   /**
+  /**
    * field used for whitelists rule deleted
    * @return field
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FIELD)
+  @JsonProperty(value = JSON_PROPERTY_FIELD, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getField() {
@@ -96,24 +100,24 @@ public class DeletedWhitelistRuleResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FIELD)
+  @JsonProperty(value = JSON_PROPERTY_FIELD, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setField(String field) {
+  public void setField(@javax.annotation.Nullable String field) {
     this.field = field;
   }
 
 
-  public DeletedWhitelistRuleResponse value(String value) {
+  public DeletedWhitelistRuleResponse value(@javax.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
 
-   /**
+  /**
    * value used for whitelists rule deleted
    * @return value
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonProperty(value = JSON_PROPERTY_VALUE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getValue() {
@@ -121,24 +125,24 @@ public class DeletedWhitelistRuleResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonProperty(value = JSON_PROPERTY_VALUE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setValue(String value) {
+  public void setValue(@javax.annotation.Nullable String value) {
     this.value = value;
   }
 
 
-  public DeletedWhitelistRuleResponse description(String description) {
+  public DeletedWhitelistRuleResponse description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * use an description for whitelisted rule
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
@@ -146,9 +150,9 @@ public class DeletedWhitelistRuleResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
@@ -193,10 +197,7 @@ public class DeletedWhitelistRuleResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

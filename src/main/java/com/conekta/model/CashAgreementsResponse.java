@@ -34,28 +34,30 @@ import com.conekta.JSON;
   CashAgreementsResponse.JSON_PROPERTY_PROVIDER
 })
 @JsonTypeName("cash_agreements_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CashAgreementsResponse {
   public static final String JSON_PROPERTY_AGREEMENT = "agreement";
+  @javax.annotation.Nullable
   private String agreement;
 
   public static final String JSON_PROPERTY_PROVIDER = "provider";
+  @javax.annotation.Nullable
   private String provider;
 
   public CashAgreementsResponse() { 
   }
 
-  public CashAgreementsResponse agreement(String agreement) {
+  public CashAgreementsResponse agreement(@javax.annotation.Nullable String agreement) {
     this.agreement = agreement;
     return this;
   }
 
-   /**
+  /**
    * Agreement number, you can use this number to pay in the store/bbva
    * @return agreement
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_AGREEMENT)
+  @JsonProperty(value = JSON_PROPERTY_AGREEMENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAgreement() {
@@ -63,24 +65,24 @@ public class CashAgreementsResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_AGREEMENT)
+  @JsonProperty(value = JSON_PROPERTY_AGREEMENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgreement(String agreement) {
+  public void setAgreement(@javax.annotation.Nullable String agreement) {
     this.agreement = agreement;
   }
 
 
-  public CashAgreementsResponse provider(String provider) {
+  public CashAgreementsResponse provider(@javax.annotation.Nullable String provider) {
     this.provider = provider;
     return this;
   }
 
-   /**
+  /**
    * Provider name, you can use this to know where to pay
    * @return provider
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PROVIDER)
+  @JsonProperty(value = JSON_PROPERTY_PROVIDER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getProvider() {
@@ -88,9 +90,9 @@ public class CashAgreementsResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PROVIDER)
+  @JsonProperty(value = JSON_PROPERTY_PROVIDER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProvider(String provider) {
+  public void setProvider(@javax.annotation.Nullable String provider) {
     this.provider = provider;
   }
 
@@ -131,10 +133,7 @@ public class CashAgreementsResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

@@ -22,7 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class AntifraudApi {
   private ApiClient apiClient;
 
@@ -60,14 +60,15 @@ public class AntifraudApi {
    * @return BlacklistRuleResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successfully registered rule </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public BlacklistRuleResponse createRuleBlacklist(CreateRuleWhitelistRequest createRuleWhitelistRequest, String acceptLanguage) throws ApiException {
+  public BlacklistRuleResponse createRuleBlacklist(@javax.annotation.Nonnull CreateRuleWhitelistRequest createRuleWhitelistRequest, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return createRuleBlacklistWithHttpInfo(createRuleWhitelistRequest, acceptLanguage).getData();
   }
 
@@ -79,14 +80,15 @@ public class AntifraudApi {
    * @return ApiResponse&lt;BlacklistRuleResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successfully registered rule </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<BlacklistRuleResponse> createRuleBlacklistWithHttpInfo(CreateRuleWhitelistRequest createRuleWhitelistRequest, String acceptLanguage) throws ApiException {
+  public ApiResponse<BlacklistRuleResponse> createRuleBlacklistWithHttpInfo(@javax.annotation.Nonnull CreateRuleWhitelistRequest createRuleWhitelistRequest, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Check required parameters
     if (createRuleWhitelistRequest == null) {
       throw new ApiException(400, "Missing the required parameter 'createRuleWhitelistRequest' when calling createRuleBlacklist");
@@ -114,7 +116,8 @@ public class AntifraudApi {
    * @return WhitelistlistRuleResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successfully registered rule </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -122,7 +125,7 @@ public class AntifraudApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public WhitelistlistRuleResponse createRuleWhitelist(String acceptLanguage, CreateRuleWhitelistRequest createRuleWhitelistRequest) throws ApiException {
+  public WhitelistlistRuleResponse createRuleWhitelist(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable CreateRuleWhitelistRequest createRuleWhitelistRequest) throws ApiException {
     return createRuleWhitelistWithHttpInfo(acceptLanguage, createRuleWhitelistRequest).getData();
   }
 
@@ -134,7 +137,8 @@ public class AntifraudApi {
    * @return ApiResponse&lt;WhitelistlistRuleResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successfully registered rule </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -142,7 +146,7 @@ public class AntifraudApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<WhitelistlistRuleResponse> createRuleWhitelistWithHttpInfo(String acceptLanguage, CreateRuleWhitelistRequest createRuleWhitelistRequest) throws ApiException {
+  public ApiResponse<WhitelistlistRuleResponse> createRuleWhitelistWithHttpInfo(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable CreateRuleWhitelistRequest createRuleWhitelistRequest) throws ApiException {
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
     if (acceptLanguage != null) {
@@ -166,7 +170,8 @@ public class AntifraudApi {
    * @return DeletedBlacklistRuleResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successfully deleted rule </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -174,7 +179,7 @@ public class AntifraudApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public DeletedBlacklistRuleResponse deleteRuleBlacklist(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public DeletedBlacklistRuleResponse deleteRuleBlacklist(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return deleteRuleBlacklistWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -187,7 +192,8 @@ public class AntifraudApi {
    * @return ApiResponse&lt;DeletedBlacklistRuleResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successfully deleted rule </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -195,7 +201,7 @@ public class AntifraudApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<DeletedBlacklistRuleResponse> deleteRuleBlacklistWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<DeletedBlacklistRuleResponse> deleteRuleBlacklistWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling deleteRuleBlacklist");
@@ -203,7 +209,7 @@ public class AntifraudApi {
 
     // Path parameters
     String localVarPath = "/antifraud/blacklists/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -231,7 +237,8 @@ public class AntifraudApi {
    * @return DeletedWhitelistRuleResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successfully deleted rule </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -240,7 +247,7 @@ public class AntifraudApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public DeletedWhitelistRuleResponse deleteRuleWhitelist(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public DeletedWhitelistRuleResponse deleteRuleWhitelist(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return deleteRuleWhitelistWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -253,7 +260,8 @@ public class AntifraudApi {
    * @return ApiResponse&lt;DeletedWhitelistRuleResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successfully deleted rule </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -262,7 +270,7 @@ public class AntifraudApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<DeletedWhitelistRuleResponse> deleteRuleWhitelistWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<DeletedWhitelistRuleResponse> deleteRuleWhitelistWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling deleteRuleWhitelist");
@@ -270,7 +278,7 @@ public class AntifraudApi {
 
     // Path parameters
     String localVarPath = "/antifraud/whitelists/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -296,14 +304,15 @@ public class AntifraudApi {
    * @return RiskRulesList
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> All the rules </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public RiskRulesList getRuleBlacklist(String acceptLanguage) throws ApiException {
+  public RiskRulesList getRuleBlacklist(@javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return getRuleBlacklistWithHttpInfo(acceptLanguage).getData();
   }
 
@@ -314,14 +323,15 @@ public class AntifraudApi {
    * @return ApiResponse&lt;RiskRulesList&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> All the rules </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<RiskRulesList> getRuleBlacklistWithHttpInfo(String acceptLanguage) throws ApiException {
+  public ApiResponse<RiskRulesList> getRuleBlacklistWithHttpInfo(@javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
     if (acceptLanguage != null) {
@@ -343,7 +353,8 @@ public class AntifraudApi {
    * @return RiskRulesList
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> All the rules </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -351,7 +362,7 @@ public class AntifraudApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public RiskRulesList getRuleWhitelist(String acceptLanguage) throws ApiException {
+  public RiskRulesList getRuleWhitelist(@javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return getRuleWhitelistWithHttpInfo(acceptLanguage).getData();
   }
 
@@ -362,7 +373,8 @@ public class AntifraudApi {
    * @return ApiResponse&lt;RiskRulesList&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> All the rules </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -370,7 +382,7 @@ public class AntifraudApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<RiskRulesList> getRuleWhitelistWithHttpInfo(String acceptLanguage) throws ApiException {
+  public ApiResponse<RiskRulesList> getRuleWhitelistWithHttpInfo(@javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
     if (acceptLanguage != null) {

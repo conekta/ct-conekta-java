@@ -38,33 +38,37 @@ import com.conekta.JSON;
   PaymentMethodBnplRequest.JSON_PROPERTY_SUCCESS_URL
 })
 @JsonTypeName("payment_method_bnpl_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class PaymentMethodBnplRequest {
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nonnull
   private String type;
 
   public static final String JSON_PROPERTY_CANCEL_URL = "cancel_url";
+  @javax.annotation.Nonnull
   private String cancelUrl;
 
   public static final String JSON_PROPERTY_CAN_NOT_EXPIRE = "can_not_expire";
+  @javax.annotation.Nonnull
   private Boolean canNotExpire;
 
   public static final String JSON_PROPERTY_FAILURE_URL = "failure_url";
+  @javax.annotation.Nonnull
   private String failureUrl;
 
   /**
    * Product type of the payment method, use for the payment method to know the product type
    */
   public enum ProductTypeEnum {
-    APLAZO_BNPL("aplazo_bnpl"),
+    APLAZO_BNPL(String.valueOf("aplazo_bnpl")),
     
-    AZTECA_BNPL("azteca_bnpl"),
+    AZTECA_BNPL(String.valueOf("azteca_bnpl")),
     
-    COPPEL_BNPL("coppel_bnpl"),
+    COPPEL_BNPL(String.valueOf("coppel_bnpl")),
     
-    CREDITEA_BNPL("creditea_bnpl"),
+    CREDITEA_BNPL(String.valueOf("creditea_bnpl")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -94,25 +98,27 @@ public class PaymentMethodBnplRequest {
   }
 
   public static final String JSON_PROPERTY_PRODUCT_TYPE = "product_type";
+  @javax.annotation.Nonnull
   private ProductTypeEnum productType;
 
   public static final String JSON_PROPERTY_SUCCESS_URL = "success_url";
+  @javax.annotation.Nonnull
   private String successUrl;
 
   public PaymentMethodBnplRequest() { 
   }
 
-  public PaymentMethodBnplRequest type(String type) {
+  public PaymentMethodBnplRequest type(@javax.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Type of the payment method
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getType() {
@@ -120,24 +126,24 @@ public class PaymentMethodBnplRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
   }
 
 
-  public PaymentMethodBnplRequest cancelUrl(String cancelUrl) {
+  public PaymentMethodBnplRequest cancelUrl(@javax.annotation.Nonnull String cancelUrl) {
     this.cancelUrl = cancelUrl;
     return this;
   }
 
-   /**
+  /**
    * URL to redirect the customer after a canceled payment
    * @return cancelUrl
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CANCEL_URL)
+  @JsonProperty(value = JSON_PROPERTY_CANCEL_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCancelUrl() {
@@ -145,24 +151,24 @@ public class PaymentMethodBnplRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CANCEL_URL)
+  @JsonProperty(value = JSON_PROPERTY_CANCEL_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCancelUrl(String cancelUrl) {
+  public void setCancelUrl(@javax.annotation.Nonnull String cancelUrl) {
     this.cancelUrl = cancelUrl;
   }
 
 
-  public PaymentMethodBnplRequest canNotExpire(Boolean canNotExpire) {
+  public PaymentMethodBnplRequest canNotExpire(@javax.annotation.Nonnull Boolean canNotExpire) {
     this.canNotExpire = canNotExpire;
     return this;
   }
 
-   /**
+  /**
    * Indicates if the payment method can not expire
    * @return canNotExpire
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CAN_NOT_EXPIRE)
+  @JsonProperty(value = JSON_PROPERTY_CAN_NOT_EXPIRE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getCanNotExpire() {
@@ -170,24 +176,24 @@ public class PaymentMethodBnplRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CAN_NOT_EXPIRE)
+  @JsonProperty(value = JSON_PROPERTY_CAN_NOT_EXPIRE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCanNotExpire(Boolean canNotExpire) {
+  public void setCanNotExpire(@javax.annotation.Nonnull Boolean canNotExpire) {
     this.canNotExpire = canNotExpire;
   }
 
 
-  public PaymentMethodBnplRequest failureUrl(String failureUrl) {
+  public PaymentMethodBnplRequest failureUrl(@javax.annotation.Nonnull String failureUrl) {
     this.failureUrl = failureUrl;
     return this;
   }
 
-   /**
+  /**
    * URL to redirect the customer after a failed payment
    * @return failureUrl
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FAILURE_URL)
+  @JsonProperty(value = JSON_PROPERTY_FAILURE_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getFailureUrl() {
@@ -195,24 +201,24 @@ public class PaymentMethodBnplRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FAILURE_URL)
+  @JsonProperty(value = JSON_PROPERTY_FAILURE_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFailureUrl(String failureUrl) {
+  public void setFailureUrl(@javax.annotation.Nonnull String failureUrl) {
     this.failureUrl = failureUrl;
   }
 
 
-  public PaymentMethodBnplRequest productType(ProductTypeEnum productType) {
+  public PaymentMethodBnplRequest productType(@javax.annotation.Nonnull ProductTypeEnum productType) {
     this.productType = productType;
     return this;
   }
 
-   /**
+  /**
    * Product type of the payment method, use for the payment method to know the product type
    * @return productType
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_PRODUCT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_PRODUCT_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public ProductTypeEnum getProductType() {
@@ -220,24 +226,24 @@ public class PaymentMethodBnplRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PRODUCT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_PRODUCT_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setProductType(ProductTypeEnum productType) {
+  public void setProductType(@javax.annotation.Nonnull ProductTypeEnum productType) {
     this.productType = productType;
   }
 
 
-  public PaymentMethodBnplRequest successUrl(String successUrl) {
+  public PaymentMethodBnplRequest successUrl(@javax.annotation.Nonnull String successUrl) {
     this.successUrl = successUrl;
     return this;
   }
 
-   /**
+  /**
    * URL to redirect the customer after a successful payment
    * @return successUrl
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SUCCESS_URL)
+  @JsonProperty(value = JSON_PROPERTY_SUCCESS_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getSuccessUrl() {
@@ -245,9 +251,9 @@ public class PaymentMethodBnplRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SUCCESS_URL)
+  @JsonProperty(value = JSON_PROPERTY_SUCCESS_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSuccessUrl(String successUrl) {
+  public void setSuccessUrl(@javax.annotation.Nonnull String successUrl) {
     this.successUrl = successUrl;
   }
 
@@ -296,10 +302,7 @@ public class PaymentMethodBnplRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

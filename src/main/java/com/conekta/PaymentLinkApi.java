@@ -21,7 +21,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class PaymentLinkApi {
   private ApiClient apiClient;
 
@@ -60,7 +60,8 @@ public class PaymentLinkApi {
    * @return CheckoutResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -70,7 +71,7 @@ public class PaymentLinkApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CheckoutResponse cancelCheckout(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public CheckoutResponse cancelCheckout(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return cancelCheckoutWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -83,7 +84,8 @@ public class PaymentLinkApi {
    * @return ApiResponse&lt;CheckoutResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -93,7 +95,7 @@ public class PaymentLinkApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CheckoutResponse> cancelCheckoutWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CheckoutResponse> cancelCheckoutWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling cancelCheckout");
@@ -101,7 +103,7 @@ public class PaymentLinkApi {
 
     // Path parameters
     String localVarPath = "/checkouts/{id}/cancel"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -129,7 +131,8 @@ public class PaymentLinkApi {
    * @return CheckoutResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -138,7 +141,7 @@ public class PaymentLinkApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CheckoutResponse createCheckout(Checkout checkout, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public CheckoutResponse createCheckout(@javax.annotation.Nonnull Checkout checkout, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return createCheckoutWithHttpInfo(checkout, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -151,7 +154,8 @@ public class PaymentLinkApi {
    * @return ApiResponse&lt;CheckoutResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -160,7 +164,7 @@ public class PaymentLinkApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CheckoutResponse> createCheckoutWithHttpInfo(Checkout checkout, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CheckoutResponse> createCheckoutWithHttpInfo(@javax.annotation.Nonnull Checkout checkout, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (checkout == null) {
       throw new ApiException(400, "Missing the required parameter 'checkout' when calling createCheckout");
@@ -193,7 +197,8 @@ public class PaymentLinkApi {
    * @return CheckoutResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -203,7 +208,7 @@ public class PaymentLinkApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CheckoutResponse emailCheckout(String id, EmailCheckoutRequest emailCheckoutRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public CheckoutResponse emailCheckout(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull EmailCheckoutRequest emailCheckoutRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return emailCheckoutWithHttpInfo(id, emailCheckoutRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -217,7 +222,8 @@ public class PaymentLinkApi {
    * @return ApiResponse&lt;CheckoutResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -227,7 +233,7 @@ public class PaymentLinkApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CheckoutResponse> emailCheckoutWithHttpInfo(String id, EmailCheckoutRequest emailCheckoutRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CheckoutResponse> emailCheckoutWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull EmailCheckoutRequest emailCheckoutRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling emailCheckout");
@@ -238,7 +244,7 @@ public class PaymentLinkApi {
 
     // Path parameters
     String localVarPath = "/checkouts/{id}/email"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -266,7 +272,8 @@ public class PaymentLinkApi {
    * @return CheckoutResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -276,7 +283,7 @@ public class PaymentLinkApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CheckoutResponse getCheckout(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public CheckoutResponse getCheckout(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return getCheckoutWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -289,7 +296,8 @@ public class PaymentLinkApi {
    * @return ApiResponse&lt;CheckoutResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -299,7 +307,7 @@ public class PaymentLinkApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CheckoutResponse> getCheckoutWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CheckoutResponse> getCheckoutWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getCheckout");
@@ -307,7 +315,7 @@ public class PaymentLinkApi {
 
     // Path parameters
     String localVarPath = "/checkouts/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -338,7 +346,8 @@ public class PaymentLinkApi {
    * @return CheckoutsResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -347,7 +356,7 @@ public class PaymentLinkApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CheckoutsResponse getCheckouts(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public CheckoutsResponse getCheckouts(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     return getCheckoutsWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous).getData();
   }
 
@@ -363,7 +372,8 @@ public class PaymentLinkApi {
    * @return ApiResponse&lt;CheckoutsResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -372,7 +382,7 @@ public class PaymentLinkApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CheckoutsResponse> getCheckoutsWithHttpInfo(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public ApiResponse<CheckoutsResponse> getCheckoutsWithHttpInfo(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "limit", limit)
@@ -408,7 +418,8 @@ public class PaymentLinkApi {
    * @return CheckoutResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -418,7 +429,7 @@ public class PaymentLinkApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CheckoutResponse smsCheckout(String id, SmsCheckoutRequest smsCheckoutRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public CheckoutResponse smsCheckout(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull SmsCheckoutRequest smsCheckoutRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return smsCheckoutWithHttpInfo(id, smsCheckoutRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -432,7 +443,8 @@ public class PaymentLinkApi {
    * @return ApiResponse&lt;CheckoutResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -442,7 +454,7 @@ public class PaymentLinkApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CheckoutResponse> smsCheckoutWithHttpInfo(String id, SmsCheckoutRequest smsCheckoutRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CheckoutResponse> smsCheckoutWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull SmsCheckoutRequest smsCheckoutRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling smsCheckout");
@@ -453,7 +465,7 @@ public class PaymentLinkApi {
 
     // Path parameters
     String localVarPath = "/checkouts/{id}/sms"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

@@ -20,7 +20,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class PlansApi {
   private ApiClient apiClient;
 
@@ -59,7 +59,8 @@ public class PlansApi {
    * @return PlanResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -67,7 +68,7 @@ public class PlansApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public PlanResponse createPlan(PlanRequest planRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public PlanResponse createPlan(@javax.annotation.Nonnull PlanRequest planRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return createPlanWithHttpInfo(planRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -80,7 +81,8 @@ public class PlansApi {
    * @return ApiResponse&lt;PlanResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -88,7 +90,7 @@ public class PlansApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<PlanResponse> createPlanWithHttpInfo(PlanRequest planRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<PlanResponse> createPlanWithHttpInfo(@javax.annotation.Nonnull PlanRequest planRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (planRequest == null) {
       throw new ApiException(400, "Missing the required parameter 'planRequest' when calling createPlan");
@@ -119,7 +121,8 @@ public class PlansApi {
    * @return PlanResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -128,7 +131,7 @@ public class PlansApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public PlanResponse deletePlan(String id, String acceptLanguage) throws ApiException {
+  public PlanResponse deletePlan(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return deletePlanWithHttpInfo(id, acceptLanguage).getData();
   }
 
@@ -140,7 +143,8 @@ public class PlansApi {
    * @return ApiResponse&lt;PlanResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -149,7 +153,7 @@ public class PlansApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<PlanResponse> deletePlanWithHttpInfo(String id, String acceptLanguage) throws ApiException {
+  public ApiResponse<PlanResponse> deletePlanWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling deletePlan");
@@ -157,7 +161,7 @@ public class PlansApi {
 
     // Path parameters
     String localVarPath = "/plans/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -182,7 +186,8 @@ public class PlansApi {
    * @return PlanResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -191,7 +196,7 @@ public class PlansApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public PlanResponse getPlan(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public PlanResponse getPlan(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return getPlanWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -204,7 +209,8 @@ public class PlansApi {
    * @return ApiResponse&lt;PlanResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -213,7 +219,7 @@ public class PlansApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<PlanResponse> getPlanWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<PlanResponse> getPlanWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getPlan");
@@ -221,7 +227,7 @@ public class PlansApi {
 
     // Path parameters
     String localVarPath = "/plans/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -252,7 +258,8 @@ public class PlansApi {
    * @return GetPlansResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -260,7 +267,7 @@ public class PlansApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public GetPlansResponse getPlans(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public GetPlansResponse getPlans(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     return getPlansWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous).getData();
   }
 
@@ -276,7 +283,8 @@ public class PlansApi {
    * @return ApiResponse&lt;GetPlansResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -284,7 +292,7 @@ public class PlansApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<GetPlansResponse> getPlansWithHttpInfo(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public ApiResponse<GetPlansResponse> getPlansWithHttpInfo(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "limit", limit)
@@ -320,7 +328,8 @@ public class PlansApi {
    * @return PlanResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -329,7 +338,7 @@ public class PlansApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public PlanResponse updatePlan(String id, UpdatePlan updatePlan, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public PlanResponse updatePlan(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatePlan updatePlan, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return updatePlanWithHttpInfo(id, updatePlan, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -343,7 +352,8 @@ public class PlansApi {
    * @return ApiResponse&lt;PlanResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -352,7 +362,7 @@ public class PlansApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<PlanResponse> updatePlanWithHttpInfo(String id, UpdatePlan updatePlan, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<PlanResponse> updatePlanWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatePlan updatePlan, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updatePlan");
@@ -363,7 +373,7 @@ public class PlansApi {
 
     // Path parameters
     String localVarPath = "/plans/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

@@ -39,43 +39,50 @@ import com.conekta.JSON;
   RiskRulesData.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("risk_rules_data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class RiskRulesData {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_FIELD = "field";
+  @javax.annotation.Nullable
   private String field;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nullable
   private String createdAt;
 
   public static final String JSON_PROPERTY_VALUE = "value";
+  @javax.annotation.Nullable
   private String value;
 
   public static final String JSON_PROPERTY_IS_GLOBAL = "is_global";
+  @javax.annotation.Nullable
   private Boolean isGlobal;
 
   public static final String JSON_PROPERTY_IS_TEST = "is_test";
+  @javax.annotation.Nullable
   private Boolean isTest;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public RiskRulesData() { 
   }
 
-  public RiskRulesData id(String id) {
+  public RiskRulesData id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * rule id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
@@ -83,24 +90,24 @@ public class RiskRulesData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public RiskRulesData field(String field) {
+  public RiskRulesData field(@javax.annotation.Nullable String field) {
     this.field = field;
     return this;
   }
 
-   /**
+  /**
    * field to be used for the rule
    * @return field
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FIELD)
+  @JsonProperty(value = JSON_PROPERTY_FIELD, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getField() {
@@ -108,24 +115,24 @@ public class RiskRulesData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FIELD)
+  @JsonProperty(value = JSON_PROPERTY_FIELD, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setField(String field) {
+  public void setField(@javax.annotation.Nullable String field) {
     this.field = field;
   }
 
 
-  public RiskRulesData createdAt(String createdAt) {
+  public RiskRulesData createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * rule creation date
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCreatedAt() {
@@ -133,24 +140,24 @@ public class RiskRulesData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(String createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public RiskRulesData value(String value) {
+  public RiskRulesData value(@javax.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
 
-   /**
+  /**
    * value to be used for the rule
    * @return value
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonProperty(value = JSON_PROPERTY_VALUE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getValue() {
@@ -158,24 +165,24 @@ public class RiskRulesData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonProperty(value = JSON_PROPERTY_VALUE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setValue(String value) {
+  public void setValue(@javax.annotation.Nullable String value) {
     this.value = value;
   }
 
 
-  public RiskRulesData isGlobal(Boolean isGlobal) {
+  public RiskRulesData isGlobal(@javax.annotation.Nullable Boolean isGlobal) {
     this.isGlobal = isGlobal;
     return this;
   }
 
-   /**
+  /**
    * if the rule is global
    * @return isGlobal
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_IS_GLOBAL)
+  @JsonProperty(value = JSON_PROPERTY_IS_GLOBAL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsGlobal() {
@@ -183,24 +190,24 @@ public class RiskRulesData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_IS_GLOBAL)
+  @JsonProperty(value = JSON_PROPERTY_IS_GLOBAL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIsGlobal(Boolean isGlobal) {
+  public void setIsGlobal(@javax.annotation.Nullable Boolean isGlobal) {
     this.isGlobal = isGlobal;
   }
 
 
-  public RiskRulesData isTest(Boolean isTest) {
+  public RiskRulesData isTest(@javax.annotation.Nullable Boolean isTest) {
     this.isTest = isTest;
     return this;
   }
 
-   /**
+  /**
    * if the rule is test
    * @return isTest
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_IS_TEST)
+  @JsonProperty(value = JSON_PROPERTY_IS_TEST, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsTest() {
@@ -208,24 +215,24 @@ public class RiskRulesData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_IS_TEST)
+  @JsonProperty(value = JSON_PROPERTY_IS_TEST, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIsTest(Boolean isTest) {
+  public void setIsTest(@javax.annotation.Nullable Boolean isTest) {
     this.isTest = isTest;
   }
 
 
-  public RiskRulesData description(String description) {
+  public RiskRulesData description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * description of the rule
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
@@ -233,9 +240,9 @@ public class RiskRulesData {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
@@ -286,10 +293,7 @@ public class RiskRulesData {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

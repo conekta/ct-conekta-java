@@ -20,7 +20,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class SubscriptionsApi {
   private ApiClient apiClient;
 
@@ -59,7 +59,8 @@ public class SubscriptionsApi {
    * @return SubscriptionResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -69,7 +70,7 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public SubscriptionResponse cancelSubscription(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public SubscriptionResponse cancelSubscription(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return cancelSubscriptionWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -82,7 +83,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -92,7 +94,7 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<SubscriptionResponse> cancelSubscriptionWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<SubscriptionResponse> cancelSubscriptionWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling cancelSubscription");
@@ -100,7 +102,7 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/subscription/cancel"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -129,7 +131,8 @@ public class SubscriptionsApi {
    * @return SubscriptionResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -140,7 +143,7 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public SubscriptionResponse createSubscription(String id, SubscriptionRequest subscriptionRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public SubscriptionResponse createSubscription(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull SubscriptionRequest subscriptionRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return createSubscriptionWithHttpInfo(id, subscriptionRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -154,7 +157,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -165,7 +169,7 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<SubscriptionResponse> createSubscriptionWithHttpInfo(String id, SubscriptionRequest subscriptionRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<SubscriptionResponse> createSubscriptionWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull SubscriptionRequest subscriptionRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling createSubscription");
@@ -176,7 +180,7 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/subscription"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -203,7 +207,8 @@ public class SubscriptionsApi {
    * @return SubscriptionResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -213,7 +218,7 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public SubscriptionResponse getSubscription(String id, String acceptLanguage) throws ApiException {
+  public SubscriptionResponse getSubscription(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return getSubscriptionWithHttpInfo(id, acceptLanguage).getData();
   }
 
@@ -225,7 +230,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -235,7 +241,7 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<SubscriptionResponse> getSubscriptionWithHttpInfo(String id, String acceptLanguage) throws ApiException {
+  public ApiResponse<SubscriptionResponse> getSubscriptionWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getSubscription");
@@ -243,7 +249,7 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/subscription"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -268,7 +274,8 @@ public class SubscriptionsApi {
    * @return SubscriptionEventsResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -280,7 +287,7 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public SubscriptionEventsResponse getSubscriptionEvents(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public SubscriptionEventsResponse getSubscriptionEvents(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return getSubscriptionEventsWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -293,7 +300,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionEventsResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -305,7 +313,7 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<SubscriptionEventsResponse> getSubscriptionEventsWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<SubscriptionEventsResponse> getSubscriptionEventsWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getSubscriptionEvents");
@@ -313,7 +321,7 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/subscription/events"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -341,7 +349,8 @@ public class SubscriptionsApi {
    * @return SubscriptionResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -352,7 +361,7 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public SubscriptionResponse pauseSubscription(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public SubscriptionResponse pauseSubscription(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return pauseSubscriptionWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -365,7 +374,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -376,7 +386,7 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<SubscriptionResponse> pauseSubscriptionWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<SubscriptionResponse> pauseSubscriptionWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling pauseSubscription");
@@ -384,7 +394,7 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/subscription/pause"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -412,7 +422,8 @@ public class SubscriptionsApi {
    * @return SubscriptionResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -424,7 +435,7 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public SubscriptionResponse resumeSubscription(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public SubscriptionResponse resumeSubscription(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return resumeSubscriptionWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -437,7 +448,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -449,7 +461,7 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<SubscriptionResponse> resumeSubscriptionWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<SubscriptionResponse> resumeSubscriptionWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling resumeSubscription");
@@ -457,7 +469,7 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/subscription/resume"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -486,7 +498,8 @@ public class SubscriptionsApi {
    * @return SubscriptionResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -494,7 +507,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public SubscriptionResponse subscriptionCancel(String customerId, String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public SubscriptionResponse subscriptionCancel(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return subscriptionCancelWithHttpInfo(customerId, id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -508,7 +521,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -516,7 +530,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<SubscriptionResponse> subscriptionCancelWithHttpInfo(String customerId, String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<SubscriptionResponse> subscriptionCancelWithHttpInfo(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (customerId == null) {
       throw new ApiException(400, "Missing the required parameter 'customerId' when calling subscriptionCancel");
@@ -527,8 +541,8 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{customer_id}/subscriptions/{id}/cancel"
-            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId))
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId.toString()))
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -557,7 +571,8 @@ public class SubscriptionsApi {
    * @return SubscriptionResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -566,7 +581,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public SubscriptionResponse subscriptionCreate(String customerId, SubscriptionRequest subscriptionRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public SubscriptionResponse subscriptionCreate(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull SubscriptionRequest subscriptionRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return subscriptionCreateWithHttpInfo(customerId, subscriptionRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -580,7 +595,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -589,7 +605,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<SubscriptionResponse> subscriptionCreateWithHttpInfo(String customerId, SubscriptionRequest subscriptionRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<SubscriptionResponse> subscriptionCreateWithHttpInfo(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull SubscriptionRequest subscriptionRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (customerId == null) {
       throw new ApiException(400, "Missing the required parameter 'customerId' when calling subscriptionCreate");
@@ -600,7 +616,7 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{customer_id}/subscriptions"
-            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId));
+            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -633,7 +649,8 @@ public class SubscriptionsApi {
    * @return SubscriptionEventsResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -641,7 +658,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public SubscriptionEventsResponse subscriptionEvents(String customerId, String id, String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public SubscriptionEventsResponse subscriptionEvents(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     return subscriptionEventsWithHttpInfo(customerId, id, acceptLanguage, xChildCompanyId, limit, search, next, previous).getData();
   }
 
@@ -659,7 +676,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionEventsResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -667,7 +685,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<SubscriptionEventsResponse> subscriptionEventsWithHttpInfo(String customerId, String id, String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public ApiResponse<SubscriptionEventsResponse> subscriptionEventsWithHttpInfo(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     // Check required parameters
     if (customerId == null) {
       throw new ApiException(400, "Missing the required parameter 'customerId' when calling subscriptionEvents");
@@ -678,8 +696,8 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{customer_id}/subscriptions/{id}/events"
-            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId))
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId.toString()))
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
@@ -719,7 +737,8 @@ public class SubscriptionsApi {
    * @return SubscriptionResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -727,7 +746,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public SubscriptionResponse subscriptionList(String customerId, String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public SubscriptionResponse subscriptionList(@javax.annotation.Nonnull String customerId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     return subscriptionListWithHttpInfo(customerId, acceptLanguage, xChildCompanyId, limit, search, next, previous).getData();
   }
 
@@ -744,7 +763,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -752,7 +772,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<SubscriptionResponse> subscriptionListWithHttpInfo(String customerId, String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public ApiResponse<SubscriptionResponse> subscriptionListWithHttpInfo(@javax.annotation.Nonnull String customerId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     // Check required parameters
     if (customerId == null) {
       throw new ApiException(400, "Missing the required parameter 'customerId' when calling subscriptionList");
@@ -760,7 +780,7 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{customer_id}/subscriptions"
-            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId));
+            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId.toString()));
 
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
@@ -797,7 +817,8 @@ public class SubscriptionsApi {
    * @return SubscriptionResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -805,7 +826,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public SubscriptionResponse subscriptionPause(String customerId, String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public SubscriptionResponse subscriptionPause(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return subscriptionPauseWithHttpInfo(customerId, id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -819,7 +840,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -827,7 +849,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<SubscriptionResponse> subscriptionPauseWithHttpInfo(String customerId, String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<SubscriptionResponse> subscriptionPauseWithHttpInfo(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (customerId == null) {
       throw new ApiException(400, "Missing the required parameter 'customerId' when calling subscriptionPause");
@@ -838,8 +860,8 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{customer_id}/subscriptions/{id}/pause"
-            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId))
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId.toString()))
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -868,7 +890,8 @@ public class SubscriptionsApi {
    * @return SubscriptionResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -876,7 +899,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public SubscriptionResponse subscriptionResume(String customerId, String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public SubscriptionResponse subscriptionResume(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return subscriptionResumeWithHttpInfo(customerId, id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -890,7 +913,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -898,7 +922,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<SubscriptionResponse> subscriptionResumeWithHttpInfo(String customerId, String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<SubscriptionResponse> subscriptionResumeWithHttpInfo(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (customerId == null) {
       throw new ApiException(400, "Missing the required parameter 'customerId' when calling subscriptionResume");
@@ -909,8 +933,8 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{customer_id}/subscriptions/{id}/resume"
-            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId))
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId.toString()))
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -940,7 +964,8 @@ public class SubscriptionsApi {
    * @return SubscriptionResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -949,7 +974,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public SubscriptionResponse subscriptionUpdate(String customerId, String id, UpdatesASubscription updatesASubscription, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public SubscriptionResponse subscriptionUpdate(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatesASubscription updatesASubscription, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return subscriptionUpdateWithHttpInfo(customerId, id, updatesASubscription, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -964,7 +989,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -973,7 +999,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<SubscriptionResponse> subscriptionUpdateWithHttpInfo(String customerId, String id, UpdatesASubscription updatesASubscription, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<SubscriptionResponse> subscriptionUpdateWithHttpInfo(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatesASubscription updatesASubscription, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (customerId == null) {
       throw new ApiException(400, "Missing the required parameter 'customerId' when calling subscriptionUpdate");
@@ -987,8 +1013,8 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{customer_id}/subscriptions/{id}"
-            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId))
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId.toString()))
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -1017,7 +1043,8 @@ public class SubscriptionsApi {
    * @return SubscriptionResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -1025,7 +1052,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public SubscriptionResponse subscriptionsGet(String customerId, String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public SubscriptionResponse subscriptionsGet(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return subscriptionsGetWithHttpInfo(customerId, id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -1039,7 +1066,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -1047,7 +1075,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<SubscriptionResponse> subscriptionsGetWithHttpInfo(String customerId, String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<SubscriptionResponse> subscriptionsGetWithHttpInfo(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (customerId == null) {
       throw new ApiException(400, "Missing the required parameter 'customerId' when calling subscriptionsGet");
@@ -1058,8 +1086,8 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{customer_id}/subscriptions/{id}"
-            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId))
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId.toString()))
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -1088,7 +1116,8 @@ public class SubscriptionsApi {
    * @return SubscriptionResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -1097,7 +1126,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public SubscriptionResponse subscriptionsRetry(String customerId, String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public SubscriptionResponse subscriptionsRetry(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return subscriptionsRetryWithHttpInfo(customerId, id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -1111,7 +1140,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -1120,7 +1150,7 @@ public class SubscriptionsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<SubscriptionResponse> subscriptionsRetryWithHttpInfo(String customerId, String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<SubscriptionResponse> subscriptionsRetryWithHttpInfo(@javax.annotation.Nonnull String customerId, @javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (customerId == null) {
       throw new ApiException(400, "Missing the required parameter 'customerId' when calling subscriptionsRetry");
@@ -1131,8 +1161,8 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{customer_id}/subscriptions/{id}/retry"
-            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId))
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{customer_id}", apiClient.escapeString(customerId.toString()))
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -1161,7 +1191,8 @@ public class SubscriptionsApi {
    * @return SubscriptionResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -1172,7 +1203,7 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public SubscriptionResponse updateSubscription(String id, UpdatesASubscription updatesASubscription, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public SubscriptionResponse updateSubscription(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatesASubscription updatesASubscription, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return updateSubscriptionWithHttpInfo(id, updatesASubscription, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -1186,7 +1217,8 @@ public class SubscriptionsApi {
    * @return ApiResponse&lt;SubscriptionResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -1197,7 +1229,7 @@ public class SubscriptionsApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<SubscriptionResponse> updateSubscriptionWithHttpInfo(String id, UpdatesASubscription updatesASubscription, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<SubscriptionResponse> updateSubscriptionWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatesASubscription updatesASubscription, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateSubscription");
@@ -1208,7 +1240,7 @@ public class SubscriptionsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/subscription"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

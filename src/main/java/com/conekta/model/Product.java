@@ -45,74 +45,91 @@ import com.conekta.JSON;
   Product.JSON_PROPERTY_UNIT_PRICE
 })
 @JsonTypeName("product")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class Product {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
+  @javax.annotation.Nullable
   private Map<String, Object> antifraudInfo = new HashMap<>();
 
   public static final String JSON_PROPERTY_BRAND = "brand";
+  @javax.annotation.Nullable
   private String brand;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String JSON_PROPERTY_QUANTITY = "quantity";
+  @javax.annotation.Nonnull
   private Integer quantity;
 
   public static final String JSON_PROPERTY_SKU = "sku";
+  @javax.annotation.Nullable
   private String sku;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String JSON_PROPERTY_UNIT_PRICE = "unit_price";
+  @javax.annotation.Nonnull
   private Integer unitPrice;
 
   public Product() { 
   }
 
-  public Product antifraudInfo(Map<String, Object> antifraudInfo) {
+  public Product antifraudInfo(@javax.annotation.Nullable Map<String, Object> antifraudInfo) {
     this.antifraudInfo = antifraudInfo;
     return this;
   }
 
-   /**
+  public Product putAntifraudInfoItem(String key, Object antifraudInfoItem) {
+    if (this.antifraudInfo == null) {
+      this.antifraudInfo = new HashMap<>();
+    }
+    this.antifraudInfo.put(key, antifraudInfoItem);
+    return this;
+  }
+
+  /**
    * Get antifraudInfo
    * @return antifraudInfo
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ANTIFRAUD_INFO)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonProperty(value = JSON_PROPERTY_ANTIFRAUD_INFO, required = false)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getAntifraudInfo() {
     return antifraudInfo;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ANTIFRAUD_INFO)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAntifraudInfo(Map<String, Object> antifraudInfo) {
+  @JsonProperty(value = JSON_PROPERTY_ANTIFRAUD_INFO, required = false)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAntifraudInfo(@javax.annotation.Nullable Map<String, Object> antifraudInfo) {
     this.antifraudInfo = antifraudInfo;
   }
 
 
-  public Product brand(String brand) {
+  public Product brand(@javax.annotation.Nullable String brand) {
     this.brand = brand;
     return this;
   }
 
-   /**
+  /**
    * The brand of the item.
    * @return brand
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BRAND)
+  @JsonProperty(value = JSON_PROPERTY_BRAND, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBrand() {
@@ -120,24 +137,24 @@ public class Product {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_BRAND)
+  @JsonProperty(value = JSON_PROPERTY_BRAND, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBrand(String brand) {
+  public void setBrand(@javax.annotation.Nullable String brand) {
     this.brand = brand;
   }
 
 
-  public Product description(String description) {
+  public Product description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Short description of the item
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
@@ -145,49 +162,57 @@ public class Product {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Product metadata(Map<String, Object> metadata) {
+  public Product metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
 
-   /**
+  public Product putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
+  /**
    * It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
     return metadata;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 
 
-  public Product name(String name) {
+  public Product name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The name of the item. It will be displayed in the order.
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getName() {
@@ -195,25 +220,25 @@ public class Product {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public Product quantity(Integer quantity) {
+  public Product quantity(@javax.annotation.Nonnull Integer quantity) {
     this.quantity = quantity;
     return this;
   }
 
-   /**
+  /**
    * The quantity of the item in the order.
    * minimum: 1
    * @return quantity
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_QUANTITY)
+  @JsonProperty(value = JSON_PROPERTY_QUANTITY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getQuantity() {
@@ -221,24 +246,24 @@ public class Product {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_QUANTITY)
+  @JsonProperty(value = JSON_PROPERTY_QUANTITY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setQuantity(Integer quantity) {
+  public void setQuantity(@javax.annotation.Nonnull Integer quantity) {
     this.quantity = quantity;
   }
 
 
-  public Product sku(String sku) {
+  public Product sku(@javax.annotation.Nullable String sku) {
     this.sku = sku;
     return this;
   }
 
-   /**
+  /**
    * The stock keeping unit for the item. It is used to identify the item in the order.
    * @return sku
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SKU)
+  @JsonProperty(value = JSON_PROPERTY_SKU, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSku() {
@@ -246,14 +271,14 @@ public class Product {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SKU)
+  @JsonProperty(value = JSON_PROPERTY_SKU, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSku(String sku) {
+  public void setSku(@javax.annotation.Nullable String sku) {
     this.sku = sku;
   }
 
 
-  public Product tags(List<String> tags) {
+  public Product tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -266,12 +291,12 @@ public class Product {
     return this;
   }
 
-   /**
+  /**
    * List of tags for the item. It is used to identify the item in the order.
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TAGS)
+  @JsonProperty(value = JSON_PROPERTY_TAGS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getTags() {
@@ -279,25 +304,25 @@ public class Product {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TAGS)
+  @JsonProperty(value = JSON_PROPERTY_TAGS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public Product unitPrice(Integer unitPrice) {
+  public Product unitPrice(@javax.annotation.Nonnull Integer unitPrice) {
     this.unitPrice = unitPrice;
     return this;
   }
 
-   /**
+  /**
    * The price of the item in cents.
    * minimum: 0
    * @return unitPrice
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_UNIT_PRICE)
+  @JsonProperty(value = JSON_PROPERTY_UNIT_PRICE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getUnitPrice() {
@@ -305,9 +330,9 @@ public class Product {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_UNIT_PRICE)
+  @JsonProperty(value = JSON_PROPERTY_UNIT_PRICE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setUnitPrice(Integer unitPrice) {
+  public void setUnitPrice(@javax.annotation.Nonnull Integer unitPrice) {
     this.unitPrice = unitPrice;
   }
 
@@ -362,10 +387,7 @@ public class Product {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

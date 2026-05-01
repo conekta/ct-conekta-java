@@ -36,28 +36,30 @@ import com.conekta.JSON;
   WebhookRequest.JSON_PROPERTY_SUBSCRIBED_EVENTS
 })
 @JsonTypeName("webhook_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class WebhookRequest {
   public static final String JSON_PROPERTY_URL = "url";
+  @javax.annotation.Nonnull
   private String url;
 
   public static final String JSON_PROPERTY_SUBSCRIBED_EVENTS = "subscribed_events";
+  @javax.annotation.Nullable
   private List<String> subscribedEvents = new ArrayList<>();
 
   public WebhookRequest() { 
   }
 
-  public WebhookRequest url(String url) {
+  public WebhookRequest url(@javax.annotation.Nonnull String url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * Here you must place the URL of your Webhook remember that you must program what you will do with the events received. Also do not forget to handle the HTTPS protocol for greater security.
    * @return url
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonProperty(value = JSON_PROPERTY_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getUrl() {
@@ -65,14 +67,14 @@ public class WebhookRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonProperty(value = JSON_PROPERTY_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nonnull String url) {
     this.url = url;
   }
 
 
-  public WebhookRequest subscribedEvents(List<String> subscribedEvents) {
+  public WebhookRequest subscribedEvents(@javax.annotation.Nullable List<String> subscribedEvents) {
     this.subscribedEvents = subscribedEvents;
     return this;
   }
@@ -85,12 +87,12 @@ public class WebhookRequest {
     return this;
   }
 
-   /**
+  /**
    * events that will be sent to the webhook
    * @return subscribedEvents
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SUBSCRIBED_EVENTS)
+  @JsonProperty(value = JSON_PROPERTY_SUBSCRIBED_EVENTS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getSubscribedEvents() {
@@ -98,9 +100,9 @@ public class WebhookRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SUBSCRIBED_EVENTS)
+  @JsonProperty(value = JSON_PROPERTY_SUBSCRIBED_EVENTS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubscribedEvents(List<String> subscribedEvents) {
+  public void setSubscribedEvents(@javax.annotation.Nullable List<String> subscribedEvents) {
     this.subscribedEvents = subscribedEvents;
   }
 
@@ -141,10 +143,7 @@ public class WebhookRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

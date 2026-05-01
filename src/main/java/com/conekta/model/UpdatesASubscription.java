@@ -35,31 +35,34 @@ import com.conekta.JSON;
   UpdatesASubscription.JSON_PROPERTY_TRIAL_END
 })
 @JsonTypeName("updates_a_subscription")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class UpdatesASubscription {
   public static final String JSON_PROPERTY_PLAN_ID = "plan_id";
+  @javax.annotation.Nullable
   private String planId;
 
   public static final String JSON_PROPERTY_CARD_ID = "card_id";
+  @javax.annotation.Nullable
   private String cardId;
 
   public static final String JSON_PROPERTY_TRIAL_END = "trial_end";
+  @javax.annotation.Nullable
   private Integer trialEnd;
 
   public UpdatesASubscription() { 
   }
 
-  public UpdatesASubscription planId(String planId) {
+  public UpdatesASubscription planId(@javax.annotation.Nullable String planId) {
     this.planId = planId;
     return this;
   }
 
-   /**
+  /**
    * Get planId
    * @return planId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PLAN_ID)
+  @JsonProperty(value = JSON_PROPERTY_PLAN_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPlanId() {
@@ -67,24 +70,24 @@ public class UpdatesASubscription {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PLAN_ID)
+  @JsonProperty(value = JSON_PROPERTY_PLAN_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPlanId(String planId) {
+  public void setPlanId(@javax.annotation.Nullable String planId) {
     this.planId = planId;
   }
 
 
-  public UpdatesASubscription cardId(String cardId) {
+  public UpdatesASubscription cardId(@javax.annotation.Nullable String cardId) {
     this.cardId = cardId;
     return this;
   }
 
-   /**
+  /**
    * Get cardId
    * @return cardId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CARD_ID)
+  @JsonProperty(value = JSON_PROPERTY_CARD_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCardId() {
@@ -92,24 +95,24 @@ public class UpdatesASubscription {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CARD_ID)
+  @JsonProperty(value = JSON_PROPERTY_CARD_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCardId(String cardId) {
+  public void setCardId(@javax.annotation.Nullable String cardId) {
     this.cardId = cardId;
   }
 
 
-  public UpdatesASubscription trialEnd(Integer trialEnd) {
+  public UpdatesASubscription trialEnd(@javax.annotation.Nullable Integer trialEnd) {
     this.trialEnd = trialEnd;
     return this;
   }
 
-   /**
+  /**
    * Get trialEnd
    * @return trialEnd
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TRIAL_END)
+  @JsonProperty(value = JSON_PROPERTY_TRIAL_END, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getTrialEnd() {
@@ -117,9 +120,9 @@ public class UpdatesASubscription {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TRIAL_END)
+  @JsonProperty(value = JSON_PROPERTY_TRIAL_END, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrialEnd(Integer trialEnd) {
+  public void setTrialEnd(@javax.annotation.Nullable Integer trialEnd) {
     this.trialEnd = trialEnd;
   }
 
@@ -162,10 +165,7 @@ public class UpdatesASubscription {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

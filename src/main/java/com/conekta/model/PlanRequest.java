@@ -42,36 +42,41 @@ import com.conekta.JSON;
   PlanRequest.JSON_PROPERTY_RETRY_DELAY_HOURS
 })
 @JsonTypeName("plan_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class PlanRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nonnull
   private Integer amount;
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
+  @javax.annotation.Nullable
   private String currency;
 
   public static final String JSON_PROPERTY_EXPIRY_COUNT = "expiry_count";
+  @javax.annotation.Nullable
   private Integer expiryCount;
 
   public static final String JSON_PROPERTY_FREQUENCY = "frequency";
+  @javax.annotation.Nonnull
   private Integer frequency;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   /**
    * The interval of time between each charge.
    */
   public enum IntervalEnum {
-    WEEK("week"),
+    WEEK(String.valueOf("week")),
     
-    HALF_MONTH("half_month"),
+    HALF_MONTH(String.valueOf("half_month")),
     
-    MONTH("month"),
+    MONTH(String.valueOf("month")),
     
-    YEAR("year"),
+    YEAR(String.valueOf("year")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -101,35 +106,40 @@ public class PlanRequest {
   }
 
   public static final String JSON_PROPERTY_INTERVAL = "interval";
+  @javax.annotation.Nonnull
   private IntervalEnum interval;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String JSON_PROPERTY_TRIAL_PERIOD_DAYS = "trial_period_days";
+  @javax.annotation.Nullable
   private Integer trialPeriodDays;
 
   public static final String JSON_PROPERTY_MAX_RETRIES = "max_retries";
+  @javax.annotation.Nullable
   private Integer maxRetries;
 
   public static final String JSON_PROPERTY_RETRY_DELAY_HOURS = "retry_delay_hours";
+  @javax.annotation.Nullable
   private Integer retryDelayHours;
 
   public PlanRequest() { 
   }
 
-  public PlanRequest amount(Integer amount) {
+  public PlanRequest amount(@javax.annotation.Nonnull Integer amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * The amount in cents that will be charged on the interval specified.
    * minimum: 1
    * @return amount
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getAmount() {
@@ -137,24 +147,24 @@ public class PlanRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAmount(Integer amount) {
+  public void setAmount(@javax.annotation.Nonnull Integer amount) {
     this.amount = amount;
   }
 
 
-  public PlanRequest currency(String currency) {
+  public PlanRequest currency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * ISO 4217 for currencies, for the Mexican peso it is MXN/USD
    * @return currency
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CURRENCY)
+  @JsonProperty(value = JSON_PROPERTY_CURRENCY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCurrency() {
@@ -162,24 +172,24 @@ public class PlanRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CURRENCY)
+  @JsonProperty(value = JSON_PROPERTY_CURRENCY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCurrency(String currency) {
+  public void setCurrency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
   }
 
 
-  public PlanRequest expiryCount(Integer expiryCount) {
+  public PlanRequest expiryCount(@javax.annotation.Nullable Integer expiryCount) {
     this.expiryCount = expiryCount;
     return this;
   }
 
-   /**
+  /**
    * Number of repetitions of the frequency NUMBER OF CHARGES TO BE MADE, considering the interval and frequency, this evolves over time, but is subject to the expiration count.
    * @return expiryCount
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRY_COUNT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRY_COUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getExpiryCount() {
@@ -187,25 +197,25 @@ public class PlanRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXPIRY_COUNT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRY_COUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiryCount(Integer expiryCount) {
+  public void setExpiryCount(@javax.annotation.Nullable Integer expiryCount) {
     this.expiryCount = expiryCount;
   }
 
 
-  public PlanRequest frequency(Integer frequency) {
+  public PlanRequest frequency(@javax.annotation.Nonnull Integer frequency) {
     this.frequency = frequency;
     return this;
   }
 
-   /**
+  /**
    * Frequency of the charge, which together with the interval, can be every 3 weeks, every 4 months, every 2 years, every 5 fortnights
    * minimum: 1
    * @return frequency
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FREQUENCY)
+  @JsonProperty(value = JSON_PROPERTY_FREQUENCY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getFrequency() {
@@ -213,24 +223,24 @@ public class PlanRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FREQUENCY)
+  @JsonProperty(value = JSON_PROPERTY_FREQUENCY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFrequency(Integer frequency) {
+  public void setFrequency(@javax.annotation.Nonnull Integer frequency) {
     this.frequency = frequency;
   }
 
 
-  public PlanRequest id(String id) {
+  public PlanRequest id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * internal reference id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
@@ -238,24 +248,24 @@ public class PlanRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public PlanRequest interval(IntervalEnum interval) {
+  public PlanRequest interval(@javax.annotation.Nonnull IntervalEnum interval) {
     this.interval = interval;
     return this;
   }
 
-   /**
+  /**
    * The interval of time between each charge.
    * @return interval
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_INTERVAL)
+  @JsonProperty(value = JSON_PROPERTY_INTERVAL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public IntervalEnum getInterval() {
@@ -263,24 +273,24 @@ public class PlanRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_INTERVAL)
+  @JsonProperty(value = JSON_PROPERTY_INTERVAL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setInterval(IntervalEnum interval) {
+  public void setInterval(@javax.annotation.Nonnull IntervalEnum interval) {
     this.interval = interval;
   }
 
 
-  public PlanRequest name(String name) {
+  public PlanRequest name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The name of the plan.
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getName() {
@@ -288,24 +298,24 @@ public class PlanRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public PlanRequest trialPeriodDays(Integer trialPeriodDays) {
+  public PlanRequest trialPeriodDays(@javax.annotation.Nullable Integer trialPeriodDays) {
     this.trialPeriodDays = trialPeriodDays;
     return this;
   }
 
-   /**
+  /**
    * The number of days the customer will have a free trial.
    * @return trialPeriodDays
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TRIAL_PERIOD_DAYS)
+  @JsonProperty(value = JSON_PROPERTY_TRIAL_PERIOD_DAYS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getTrialPeriodDays() {
@@ -313,25 +323,25 @@ public class PlanRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TRIAL_PERIOD_DAYS)
+  @JsonProperty(value = JSON_PROPERTY_TRIAL_PERIOD_DAYS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrialPeriodDays(Integer trialPeriodDays) {
+  public void setTrialPeriodDays(@javax.annotation.Nullable Integer trialPeriodDays) {
     this.trialPeriodDays = trialPeriodDays;
   }
 
 
-  public PlanRequest maxRetries(Integer maxRetries) {
+  public PlanRequest maxRetries(@javax.annotation.Nullable Integer maxRetries) {
     this.maxRetries = maxRetries;
     return this;
   }
 
-   /**
+  /**
    * (optional) Specifies the maximum number of retry attempts for a subscription payment before it is canceled.
    * minimum: 3
    * @return maxRetries
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MAX_RETRIES)
+  @JsonProperty(value = JSON_PROPERTY_MAX_RETRIES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getMaxRetries() {
@@ -339,25 +349,25 @@ public class PlanRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MAX_RETRIES)
+  @JsonProperty(value = JSON_PROPERTY_MAX_RETRIES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMaxRetries(Integer maxRetries) {
+  public void setMaxRetries(@javax.annotation.Nullable Integer maxRetries) {
     this.maxRetries = maxRetries;
   }
 
 
-  public PlanRequest retryDelayHours(Integer retryDelayHours) {
+  public PlanRequest retryDelayHours(@javax.annotation.Nullable Integer retryDelayHours) {
     this.retryDelayHours = retryDelayHours;
     return this;
   }
 
-   /**
+  /**
    * (optional)  Defines the number of hours between subscription payment retry attempts.
    * minimum: 48
    * @return retryDelayHours
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RETRY_DELAY_HOURS)
+  @JsonProperty(value = JSON_PROPERTY_RETRY_DELAY_HOURS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getRetryDelayHours() {
@@ -365,9 +375,9 @@ public class PlanRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RETRY_DELAY_HOURS)
+  @JsonProperty(value = JSON_PROPERTY_RETRY_DELAY_HOURS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRetryDelayHours(Integer retryDelayHours) {
+  public void setRetryDelayHours(@javax.annotation.Nullable Integer retryDelayHours) {
     this.retryDelayHours = retryDelayHours;
   }
 
@@ -424,10 +434,7 @@ public class PlanRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

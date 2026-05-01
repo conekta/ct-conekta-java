@@ -22,7 +22,7 @@ customer response
 |**livemode** | **Boolean** | true if the object exists in live mode or the value false if the object exists in test mode |  |
 |**name** | **String** | Customer&#39;s name |  |
 |**nationalId** | **String** | It is a parameter that allows to identify the national identification number of the client. |  [optional] |
-|**metadata** |  |  |  [optional] |
+|**metadata** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**_object** | **String** |  |  |
 |**paymentSources** | [**CustomerPaymentMethodsResponse**](CustomerPaymentMethodsResponse.md) |  |  [optional] |
 |**phone** | **String** | Customer&#39;s phone number |  [optional] |

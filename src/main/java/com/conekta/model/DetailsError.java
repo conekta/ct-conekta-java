@@ -36,34 +36,38 @@ import com.conekta.JSON;
   DetailsError.JSON_PROPERTY_DEBUG_MESSAGE
 })
 @JsonTypeName("details_error")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class DetailsError {
   public static final String JSON_PROPERTY_CODE = "code";
+  @javax.annotation.Nullable
   private String code;
 
   public static final String JSON_PROPERTY_PARAM = "param";
+  @javax.annotation.Nullable
   private String param;
 
   public static final String JSON_PROPERTY_MESSAGE = "message";
+  @javax.annotation.Nullable
   private String message;
 
   public static final String JSON_PROPERTY_DEBUG_MESSAGE = "debug_message";
+  @javax.annotation.Nullable
   private String debugMessage;
 
   public DetailsError() { 
   }
 
-  public DetailsError code(String code) {
+  public DetailsError code(@javax.annotation.Nullable String code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * Get code
    * @return code
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonProperty(value = JSON_PROPERTY_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCode() {
@@ -71,24 +75,24 @@ public class DetailsError {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonProperty(value = JSON_PROPERTY_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCode(String code) {
+  public void setCode(@javax.annotation.Nullable String code) {
     this.code = code;
   }
 
 
-  public DetailsError param(String param) {
+  public DetailsError param(@javax.annotation.Nullable String param) {
     this.param = param;
     return this;
   }
 
-   /**
+  /**
    * Get param
    * @return param
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PARAM)
+  @JsonProperty(value = JSON_PROPERTY_PARAM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getParam() {
@@ -96,24 +100,24 @@ public class DetailsError {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PARAM)
+  @JsonProperty(value = JSON_PROPERTY_PARAM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParam(String param) {
+  public void setParam(@javax.annotation.Nullable String param) {
     this.param = param;
   }
 
 
-  public DetailsError message(String message) {
+  public DetailsError message(@javax.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
 
-   /**
+  /**
    * Get message
    * @return message
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonProperty(value = JSON_PROPERTY_MESSAGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMessage() {
@@ -121,24 +125,24 @@ public class DetailsError {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonProperty(value = JSON_PROPERTY_MESSAGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nullable String message) {
     this.message = message;
   }
 
 
-  public DetailsError debugMessage(String debugMessage) {
+  public DetailsError debugMessage(@javax.annotation.Nullable String debugMessage) {
     this.debugMessage = debugMessage;
     return this;
   }
 
-   /**
+  /**
    * Get debugMessage
    * @return debugMessage
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DEBUG_MESSAGE)
+  @JsonProperty(value = JSON_PROPERTY_DEBUG_MESSAGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDebugMessage() {
@@ -146,9 +150,9 @@ public class DetailsError {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DEBUG_MESSAGE)
+  @JsonProperty(value = JSON_PROPERTY_DEBUG_MESSAGE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDebugMessage(String debugMessage) {
+  public void setDebugMessage(@javax.annotation.Nullable String debugMessage) {
     this.debugMessage = debugMessage;
   }
 
@@ -193,10 +197,7 @@ public class DetailsError {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

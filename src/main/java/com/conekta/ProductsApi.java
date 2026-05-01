@@ -19,7 +19,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class ProductsApi {
   private ApiClient apiClient;
 
@@ -59,7 +59,8 @@ public class ProductsApi {
    * @return ProductOrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -67,7 +68,7 @@ public class ProductsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ProductOrderResponse ordersCreateProduct(String id, Product product, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ProductOrderResponse ordersCreateProduct(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull Product product, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return ordersCreateProductWithHttpInfo(id, product, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -81,7 +82,8 @@ public class ProductsApi {
    * @return ApiResponse&lt;ProductOrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -89,7 +91,7 @@ public class ProductsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<ProductOrderResponse> ordersCreateProductWithHttpInfo(String id, Product product, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<ProductOrderResponse> ordersCreateProductWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull Product product, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersCreateProduct");
@@ -100,7 +102,7 @@ public class ProductsApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/line_items"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -129,7 +131,8 @@ public class ProductsApi {
    * @return ProductOrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -138,7 +141,7 @@ public class ProductsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ProductOrderResponse ordersDeleteProduct(String id, String lineItemId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ProductOrderResponse ordersDeleteProduct(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String lineItemId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return ordersDeleteProductWithHttpInfo(id, lineItemId, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -152,7 +155,8 @@ public class ProductsApi {
    * @return ApiResponse&lt;ProductOrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -161,7 +165,7 @@ public class ProductsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<ProductOrderResponse> ordersDeleteProductWithHttpInfo(String id, String lineItemId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<ProductOrderResponse> ordersDeleteProductWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String lineItemId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersDeleteProduct");
@@ -172,8 +176,8 @@ public class ProductsApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/line_items/{line_item_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{line_item_id}", apiClient.escapeString(lineItemId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{line_item_id}", apiClient.escapeString(lineItemId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -203,7 +207,8 @@ public class ProductsApi {
    * @return ProductOrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -212,7 +217,7 @@ public class ProductsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ProductOrderResponse ordersUpdateProduct(String id, String lineItemId, UpdateProduct updateProduct, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ProductOrderResponse ordersUpdateProduct(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String lineItemId, @javax.annotation.Nonnull UpdateProduct updateProduct, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return ordersUpdateProductWithHttpInfo(id, lineItemId, updateProduct, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -227,7 +232,8 @@ public class ProductsApi {
    * @return ApiResponse&lt;ProductOrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -236,7 +242,7 @@ public class ProductsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<ProductOrderResponse> ordersUpdateProductWithHttpInfo(String id, String lineItemId, UpdateProduct updateProduct, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<ProductOrderResponse> ordersUpdateProductWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String lineItemId, @javax.annotation.Nonnull UpdateProduct updateProduct, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersUpdateProduct");
@@ -250,8 +256,8 @@ public class ProductsApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/line_items/{line_item_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{line_item_id}", apiClient.escapeString(lineItemId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{line_item_id}", apiClient.escapeString(lineItemId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

@@ -53,79 +53,98 @@ import com.conekta.JSON;
   PaymentMethodBankTransfer.JSON_PROPERTY_CUSTOMER_IP_ADDRESS
 })
 @JsonTypeName("payment_method_bank_transfer")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class PaymentMethodBankTransfer {
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private String type;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_BANK = "bank";
+  @javax.annotation.Nullable
   private String bank;
 
   public static final String JSON_PROPERTY_CLABE = "clabe";
+  @javax.annotation.Nullable
   private String clabe;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public static final String JSON_PROPERTY_EXECUTED_AT = "executed_at";
+  @javax.annotation.Nullable
   private String executedAt;
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nullable
   private Long expiresAt;
 
   public static final String JSON_PROPERTY_ISSUING_ACCOUNT_BANK = "issuing_account_bank";
+  @javax.annotation.Nullable
   private String issuingAccountBank;
 
   public static final String JSON_PROPERTY_ISSUING_ACCOUNT_NUMBER = "issuing_account_number";
+  @javax.annotation.Nullable
   private String issuingAccountNumber;
 
   public static final String JSON_PROPERTY_ISSUING_ACCOUNT_HOLDER_NAME = "issuing_account_holder_name";
+  @javax.annotation.Nullable
   private String issuingAccountHolderName;
 
   public static final String JSON_PROPERTY_ISSUING_ACCOUNT_TAX_ID = "issuing_account_tax_id";
+  @javax.annotation.Nullable
   private String issuingAccountTaxId;
 
   public static final String JSON_PROPERTY_PAYMENT_ATTEMPTS = "payment_attempts";
+  @javax.annotation.Nullable
   private List<Object> paymentAttempts = new ArrayList<>();
 
   public static final String JSON_PROPERTY_RECEIVING_ACCOUNT_HOLDER_NAME = "receiving_account_holder_name";
+  @javax.annotation.Nullable
   private String receivingAccountHolderName;
 
   public static final String JSON_PROPERTY_RECEIVING_ACCOUNT_NUMBER = "receiving_account_number";
+  @javax.annotation.Nullable
   private String receivingAccountNumber;
 
   public static final String JSON_PROPERTY_RECEIVING_ACCOUNT_BANK = "receiving_account_bank";
+  @javax.annotation.Nullable
   private String receivingAccountBank;
 
   public static final String JSON_PROPERTY_RECEIVING_ACCOUNT_TAX_ID = "receiving_account_tax_id";
+  @javax.annotation.Nullable
   private String receivingAccountTaxId;
 
   public static final String JSON_PROPERTY_REFERENCE_NUMBER = "reference_number";
+  @javax.annotation.Nullable
   private String referenceNumber;
 
   public static final String JSON_PROPERTY_TRACKING_CODE = "tracking_code";
+  @javax.annotation.Nullable
   private String trackingCode;
 
   public static final String JSON_PROPERTY_CUSTOMER_IP_ADDRESS = "customer_ip_address";
+  @javax.annotation.Nullable
   private String customerIpAddress;
 
   public PaymentMethodBankTransfer() { 
   }
 
-  public PaymentMethodBankTransfer type(String type) {
+  public PaymentMethodBankTransfer type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getType() {
@@ -133,24 +152,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public PaymentMethodBankTransfer _object(String _object) {
+  public PaymentMethodBankTransfer _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
@@ -158,24 +177,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public PaymentMethodBankTransfer bank(String bank) {
+  public PaymentMethodBankTransfer bank(@javax.annotation.Nullable String bank) {
     this.bank = bank;
     return this;
   }
 
-   /**
+  /**
    * Get bank
    * @return bank
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BANK)
+  @JsonProperty(value = JSON_PROPERTY_BANK, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBank() {
@@ -183,24 +202,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_BANK)
+  @JsonProperty(value = JSON_PROPERTY_BANK, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBank(String bank) {
+  public void setBank(@javax.annotation.Nullable String bank) {
     this.bank = bank;
   }
 
 
-  public PaymentMethodBankTransfer clabe(String clabe) {
+  public PaymentMethodBankTransfer clabe(@javax.annotation.Nullable String clabe) {
     this.clabe = clabe;
     return this;
   }
 
-   /**
+  /**
    * Get clabe
    * @return clabe
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CLABE)
+  @JsonProperty(value = JSON_PROPERTY_CLABE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getClabe() {
@@ -208,24 +227,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CLABE)
+  @JsonProperty(value = JSON_PROPERTY_CLABE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setClabe(String clabe) {
+  public void setClabe(@javax.annotation.Nullable String clabe) {
     this.clabe = clabe;
   }
 
 
-  public PaymentMethodBankTransfer description(String description) {
+  public PaymentMethodBankTransfer description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
@@ -233,24 +252,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public PaymentMethodBankTransfer executedAt(String executedAt) {
+  public PaymentMethodBankTransfer executedAt(@javax.annotation.Nullable String executedAt) {
     this.executedAt = executedAt;
     return this;
   }
 
-   /**
+  /**
    * Get executedAt
    * @return executedAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXECUTED_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXECUTED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getExecutedAt() {
@@ -258,24 +277,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXECUTED_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXECUTED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExecutedAt(String executedAt) {
+  public void setExecutedAt(@javax.annotation.Nullable String executedAt) {
     this.executedAt = executedAt;
   }
 
 
-  public PaymentMethodBankTransfer expiresAt(Long expiresAt) {
+  public PaymentMethodBankTransfer expiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
-   /**
+  /**
    * Get expiresAt
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getExpiresAt() {
@@ -283,24 +302,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(Long expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public PaymentMethodBankTransfer issuingAccountBank(String issuingAccountBank) {
+  public PaymentMethodBankTransfer issuingAccountBank(@javax.annotation.Nullable String issuingAccountBank) {
     this.issuingAccountBank = issuingAccountBank;
     return this;
   }
 
-   /**
+  /**
    * Get issuingAccountBank
    * @return issuingAccountBank
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_BANK)
+  @JsonProperty(value = JSON_PROPERTY_ISSUING_ACCOUNT_BANK, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIssuingAccountBank() {
@@ -308,24 +327,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_BANK)
+  @JsonProperty(value = JSON_PROPERTY_ISSUING_ACCOUNT_BANK, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIssuingAccountBank(String issuingAccountBank) {
+  public void setIssuingAccountBank(@javax.annotation.Nullable String issuingAccountBank) {
     this.issuingAccountBank = issuingAccountBank;
   }
 
 
-  public PaymentMethodBankTransfer issuingAccountNumber(String issuingAccountNumber) {
+  public PaymentMethodBankTransfer issuingAccountNumber(@javax.annotation.Nullable String issuingAccountNumber) {
     this.issuingAccountNumber = issuingAccountNumber;
     return this;
   }
 
-   /**
+  /**
    * Get issuingAccountNumber
    * @return issuingAccountNumber
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_ISSUING_ACCOUNT_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIssuingAccountNumber() {
@@ -333,24 +352,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_ISSUING_ACCOUNT_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIssuingAccountNumber(String issuingAccountNumber) {
+  public void setIssuingAccountNumber(@javax.annotation.Nullable String issuingAccountNumber) {
     this.issuingAccountNumber = issuingAccountNumber;
   }
 
 
-  public PaymentMethodBankTransfer issuingAccountHolderName(String issuingAccountHolderName) {
+  public PaymentMethodBankTransfer issuingAccountHolderName(@javax.annotation.Nullable String issuingAccountHolderName) {
     this.issuingAccountHolderName = issuingAccountHolderName;
     return this;
   }
 
-   /**
+  /**
    * Get issuingAccountHolderName
    * @return issuingAccountHolderName
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_HOLDER_NAME)
+  @JsonProperty(value = JSON_PROPERTY_ISSUING_ACCOUNT_HOLDER_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIssuingAccountHolderName() {
@@ -358,24 +377,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_HOLDER_NAME)
+  @JsonProperty(value = JSON_PROPERTY_ISSUING_ACCOUNT_HOLDER_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIssuingAccountHolderName(String issuingAccountHolderName) {
+  public void setIssuingAccountHolderName(@javax.annotation.Nullable String issuingAccountHolderName) {
     this.issuingAccountHolderName = issuingAccountHolderName;
   }
 
 
-  public PaymentMethodBankTransfer issuingAccountTaxId(String issuingAccountTaxId) {
+  public PaymentMethodBankTransfer issuingAccountTaxId(@javax.annotation.Nullable String issuingAccountTaxId) {
     this.issuingAccountTaxId = issuingAccountTaxId;
     return this;
   }
 
-   /**
+  /**
    * Get issuingAccountTaxId
    * @return issuingAccountTaxId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_TAX_ID)
+  @JsonProperty(value = JSON_PROPERTY_ISSUING_ACCOUNT_TAX_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getIssuingAccountTaxId() {
@@ -383,14 +402,14 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ISSUING_ACCOUNT_TAX_ID)
+  @JsonProperty(value = JSON_PROPERTY_ISSUING_ACCOUNT_TAX_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIssuingAccountTaxId(String issuingAccountTaxId) {
+  public void setIssuingAccountTaxId(@javax.annotation.Nullable String issuingAccountTaxId) {
     this.issuingAccountTaxId = issuingAccountTaxId;
   }
 
 
-  public PaymentMethodBankTransfer paymentAttempts(List<Object> paymentAttempts) {
+  public PaymentMethodBankTransfer paymentAttempts(@javax.annotation.Nullable List<Object> paymentAttempts) {
     this.paymentAttempts = paymentAttempts;
     return this;
   }
@@ -403,12 +422,12 @@ public class PaymentMethodBankTransfer {
     return this;
   }
 
-   /**
+  /**
    * Get paymentAttempts
    * @return paymentAttempts
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PAYMENT_ATTEMPTS)
+  @JsonProperty(value = JSON_PROPERTY_PAYMENT_ATTEMPTS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<Object> getPaymentAttempts() {
@@ -416,24 +435,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PAYMENT_ATTEMPTS)
+  @JsonProperty(value = JSON_PROPERTY_PAYMENT_ATTEMPTS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPaymentAttempts(List<Object> paymentAttempts) {
+  public void setPaymentAttempts(@javax.annotation.Nullable List<Object> paymentAttempts) {
     this.paymentAttempts = paymentAttempts;
   }
 
 
-  public PaymentMethodBankTransfer receivingAccountHolderName(String receivingAccountHolderName) {
+  public PaymentMethodBankTransfer receivingAccountHolderName(@javax.annotation.Nullable String receivingAccountHolderName) {
     this.receivingAccountHolderName = receivingAccountHolderName;
     return this;
   }
 
-   /**
+  /**
    * Get receivingAccountHolderName
    * @return receivingAccountHolderName
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_HOLDER_NAME)
+  @JsonProperty(value = JSON_PROPERTY_RECEIVING_ACCOUNT_HOLDER_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getReceivingAccountHolderName() {
@@ -441,24 +460,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_HOLDER_NAME)
+  @JsonProperty(value = JSON_PROPERTY_RECEIVING_ACCOUNT_HOLDER_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReceivingAccountHolderName(String receivingAccountHolderName) {
+  public void setReceivingAccountHolderName(@javax.annotation.Nullable String receivingAccountHolderName) {
     this.receivingAccountHolderName = receivingAccountHolderName;
   }
 
 
-  public PaymentMethodBankTransfer receivingAccountNumber(String receivingAccountNumber) {
+  public PaymentMethodBankTransfer receivingAccountNumber(@javax.annotation.Nullable String receivingAccountNumber) {
     this.receivingAccountNumber = receivingAccountNumber;
     return this;
   }
 
-   /**
+  /**
    * Get receivingAccountNumber
    * @return receivingAccountNumber
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_RECEIVING_ACCOUNT_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getReceivingAccountNumber() {
@@ -466,24 +485,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_RECEIVING_ACCOUNT_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReceivingAccountNumber(String receivingAccountNumber) {
+  public void setReceivingAccountNumber(@javax.annotation.Nullable String receivingAccountNumber) {
     this.receivingAccountNumber = receivingAccountNumber;
   }
 
 
-  public PaymentMethodBankTransfer receivingAccountBank(String receivingAccountBank) {
+  public PaymentMethodBankTransfer receivingAccountBank(@javax.annotation.Nullable String receivingAccountBank) {
     this.receivingAccountBank = receivingAccountBank;
     return this;
   }
 
-   /**
+  /**
    * Get receivingAccountBank
    * @return receivingAccountBank
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_BANK)
+  @JsonProperty(value = JSON_PROPERTY_RECEIVING_ACCOUNT_BANK, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getReceivingAccountBank() {
@@ -491,24 +510,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_BANK)
+  @JsonProperty(value = JSON_PROPERTY_RECEIVING_ACCOUNT_BANK, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReceivingAccountBank(String receivingAccountBank) {
+  public void setReceivingAccountBank(@javax.annotation.Nullable String receivingAccountBank) {
     this.receivingAccountBank = receivingAccountBank;
   }
 
 
-  public PaymentMethodBankTransfer receivingAccountTaxId(String receivingAccountTaxId) {
+  public PaymentMethodBankTransfer receivingAccountTaxId(@javax.annotation.Nullable String receivingAccountTaxId) {
     this.receivingAccountTaxId = receivingAccountTaxId;
     return this;
   }
 
-   /**
+  /**
    * Get receivingAccountTaxId
    * @return receivingAccountTaxId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_TAX_ID)
+  @JsonProperty(value = JSON_PROPERTY_RECEIVING_ACCOUNT_TAX_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getReceivingAccountTaxId() {
@@ -516,24 +535,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RECEIVING_ACCOUNT_TAX_ID)
+  @JsonProperty(value = JSON_PROPERTY_RECEIVING_ACCOUNT_TAX_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReceivingAccountTaxId(String receivingAccountTaxId) {
+  public void setReceivingAccountTaxId(@javax.annotation.Nullable String receivingAccountTaxId) {
     this.receivingAccountTaxId = receivingAccountTaxId;
   }
 
 
-  public PaymentMethodBankTransfer referenceNumber(String referenceNumber) {
+  public PaymentMethodBankTransfer referenceNumber(@javax.annotation.Nullable String referenceNumber) {
     this.referenceNumber = referenceNumber;
     return this;
   }
 
-   /**
+  /**
    * Get referenceNumber
    * @return referenceNumber
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REFERENCE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_REFERENCE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getReferenceNumber() {
@@ -541,24 +560,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REFERENCE_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_REFERENCE_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReferenceNumber(String referenceNumber) {
+  public void setReferenceNumber(@javax.annotation.Nullable String referenceNumber) {
     this.referenceNumber = referenceNumber;
   }
 
 
-  public PaymentMethodBankTransfer trackingCode(String trackingCode) {
+  public PaymentMethodBankTransfer trackingCode(@javax.annotation.Nullable String trackingCode) {
     this.trackingCode = trackingCode;
     return this;
   }
 
-   /**
+  /**
    * Get trackingCode
    * @return trackingCode
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TRACKING_CODE)
+  @JsonProperty(value = JSON_PROPERTY_TRACKING_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getTrackingCode() {
@@ -566,24 +585,24 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TRACKING_CODE)
+  @JsonProperty(value = JSON_PROPERTY_TRACKING_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTrackingCode(String trackingCode) {
+  public void setTrackingCode(@javax.annotation.Nullable String trackingCode) {
     this.trackingCode = trackingCode;
   }
 
 
-  public PaymentMethodBankTransfer customerIpAddress(String customerIpAddress) {
+  public PaymentMethodBankTransfer customerIpAddress(@javax.annotation.Nullable String customerIpAddress) {
     this.customerIpAddress = customerIpAddress;
     return this;
   }
 
-   /**
+  /**
    * Get customerIpAddress
    * @return customerIpAddress
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_CUSTOMER_IP_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomerIpAddress() {
@@ -591,9 +610,9 @@ public class PaymentMethodBankTransfer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_CUSTOMER_IP_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomerIpAddress(String customerIpAddress) {
+  public void setCustomerIpAddress(@javax.annotation.Nullable String customerIpAddress) {
     this.customerIpAddress = customerIpAddress;
   }
 
@@ -668,10 +687,7 @@ public class PaymentMethodBankTransfer {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

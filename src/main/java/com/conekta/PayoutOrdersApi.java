@@ -19,7 +19,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class PayoutOrdersApi {
   private ApiClient apiClient;
 
@@ -57,7 +57,8 @@ public class PayoutOrdersApi {
    * @return PayoutOrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -65,7 +66,7 @@ public class PayoutOrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public PayoutOrderResponse cancelPayoutOrderById(String id, String acceptLanguage) throws ApiException {
+  public PayoutOrderResponse cancelPayoutOrderById(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return cancelPayoutOrderByIdWithHttpInfo(id, acceptLanguage).getData();
   }
 
@@ -77,7 +78,8 @@ public class PayoutOrdersApi {
    * @return ApiResponse&lt;PayoutOrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -85,7 +87,7 @@ public class PayoutOrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<PayoutOrderResponse> cancelPayoutOrderByIdWithHttpInfo(String id, String acceptLanguage) throws ApiException {
+  public ApiResponse<PayoutOrderResponse> cancelPayoutOrderByIdWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling cancelPayoutOrderById");
@@ -93,7 +95,7 @@ public class PayoutOrdersApi {
 
     // Path parameters
     String localVarPath = "/payout_orders/{id}/cancel"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -117,7 +119,8 @@ public class PayoutOrdersApi {
    * @return PayoutOrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -127,7 +130,7 @@ public class PayoutOrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public PayoutOrderResponse createPayoutOrder(PayoutOrderRequest payoutOrderRequest, String acceptLanguage) throws ApiException {
+  public PayoutOrderResponse createPayoutOrder(@javax.annotation.Nonnull PayoutOrderRequest payoutOrderRequest, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return createPayoutOrderWithHttpInfo(payoutOrderRequest, acceptLanguage).getData();
   }
 
@@ -139,7 +142,8 @@ public class PayoutOrdersApi {
    * @return ApiResponse&lt;PayoutOrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -149,7 +153,7 @@ public class PayoutOrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<PayoutOrderResponse> createPayoutOrderWithHttpInfo(PayoutOrderRequest payoutOrderRequest, String acceptLanguage) throws ApiException {
+  public ApiResponse<PayoutOrderResponse> createPayoutOrderWithHttpInfo(@javax.annotation.Nonnull PayoutOrderRequest payoutOrderRequest, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Check required parameters
     if (payoutOrderRequest == null) {
       throw new ApiException(400, "Missing the required parameter 'payoutOrderRequest' when calling createPayoutOrder");
@@ -177,7 +181,8 @@ public class PayoutOrdersApi {
    * @return PayoutOrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -185,7 +190,7 @@ public class PayoutOrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public PayoutOrderResponse getPayoutOrderById(String id, String acceptLanguage) throws ApiException {
+  public PayoutOrderResponse getPayoutOrderById(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return getPayoutOrderByIdWithHttpInfo(id, acceptLanguage).getData();
   }
 
@@ -197,7 +202,8 @@ public class PayoutOrdersApi {
    * @return ApiResponse&lt;PayoutOrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -205,7 +211,7 @@ public class PayoutOrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<PayoutOrderResponse> getPayoutOrderByIdWithHttpInfo(String id, String acceptLanguage) throws ApiException {
+  public ApiResponse<PayoutOrderResponse> getPayoutOrderByIdWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getPayoutOrderById");
@@ -213,7 +219,7 @@ public class PayoutOrdersApi {
 
     // Path parameters
     String localVarPath = "/payout_orders/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -240,14 +246,15 @@ public class PayoutOrdersApi {
    * @return PayoutOrdersResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public PayoutOrdersResponse getPayoutOrders(String acceptLanguage, Integer limit, String search, String next, String previous) throws ApiException {
+  public PayoutOrdersResponse getPayoutOrders(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     return getPayoutOrdersWithHttpInfo(acceptLanguage, limit, search, next, previous).getData();
   }
 
@@ -262,14 +269,15 @@ public class PayoutOrdersApi {
    * @return ApiResponse&lt;PayoutOrdersResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<PayoutOrdersResponse> getPayoutOrdersWithHttpInfo(String acceptLanguage, Integer limit, String search, String next, String previous) throws ApiException {
+  public ApiResponse<PayoutOrdersResponse> getPayoutOrdersWithHttpInfo(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "limit", limit)

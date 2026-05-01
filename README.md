@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.conekta</groupId>
   <artifactId>ct-conekta-java</artifactId>
-  <version>7.1.2</version>
+  <version>7.2.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "io.conekta:ct-conekta-java:7.1.2"
+     implementation "io.conekta:ct-conekta-java:7.2.0"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/ct-conekta-java-7.1.2.jar`
+- `target/ct-conekta-java-7.2.0.jar`
 - `target/lib/*.jar`
 
 ## Usage

@@ -21,7 +21,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CompaniesApi {
   private ApiClient apiClient;
 
@@ -58,14 +58,15 @@ public class CompaniesApi {
    * @return CompanyResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 201 </td><td> Company created successfully </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CompanyResponse createCompany(CreateCompanyRequest createCompanyRequest) throws ApiException {
+  public CompanyResponse createCompany(@javax.annotation.Nonnull CreateCompanyRequest createCompanyRequest) throws ApiException {
     return createCompanyWithHttpInfo(createCompanyRequest).getData();
   }
 
@@ -76,14 +77,15 @@ public class CompaniesApi {
    * @return ApiResponse&lt;CompanyResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 201 </td><td> Company created successfully </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CompanyResponse> createCompanyWithHttpInfo(CreateCompanyRequest createCompanyRequest) throws ApiException {
+  public ApiResponse<CompanyResponse> createCompanyWithHttpInfo(@javax.annotation.Nonnull CreateCompanyRequest createCompanyRequest) throws ApiException {
     // Check required parameters
     if (createCompanyRequest == null) {
       throw new ApiException(400, "Missing the required parameter 'createCompanyRequest' when calling createCompany");
@@ -108,14 +110,15 @@ public class CompaniesApi {
    * @return GetCompaniesResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public GetCompaniesResponse getCompanies(String acceptLanguage, Integer limit, String search, String next, String previous) throws ApiException {
+  public GetCompaniesResponse getCompanies(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     return getCompaniesWithHttpInfo(acceptLanguage, limit, search, next, previous).getData();
   }
 
@@ -130,14 +133,15 @@ public class CompaniesApi {
    * @return ApiResponse&lt;GetCompaniesResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<GetCompaniesResponse> getCompaniesWithHttpInfo(String acceptLanguage, Integer limit, String search, String next, String previous) throws ApiException {
+  public ApiResponse<GetCompaniesResponse> getCompaniesWithHttpInfo(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "limit", limit)
@@ -168,7 +172,8 @@ public class CompaniesApi {
    * @return CompanyResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -176,7 +181,7 @@ public class CompaniesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CompanyResponse getCompany(String id, String acceptLanguage) throws ApiException {
+  public CompanyResponse getCompany(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return getCompanyWithHttpInfo(id, acceptLanguage).getData();
   }
 
@@ -188,7 +193,8 @@ public class CompaniesApi {
    * @return ApiResponse&lt;CompanyResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -196,7 +202,7 @@ public class CompaniesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CompanyResponse> getCompanyWithHttpInfo(String id, String acceptLanguage) throws ApiException {
+  public ApiResponse<CompanyResponse> getCompanyWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getCompany");
@@ -204,7 +210,7 @@ public class CompaniesApi {
 
     // Path parameters
     String localVarPath = "/companies/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -228,7 +234,8 @@ public class CompaniesApi {
    * @return List&lt;CompanyDocumentResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> A list of documents for the company. </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -236,7 +243,7 @@ public class CompaniesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public List<CompanyDocumentResponse> getCompanyDocuments(String companyId, String acceptLanguage) throws ApiException {
+  public List<CompanyDocumentResponse> getCompanyDocuments(@javax.annotation.Nonnull String companyId, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return getCompanyDocumentsWithHttpInfo(companyId, acceptLanguage).getData();
   }
 
@@ -248,7 +255,8 @@ public class CompaniesApi {
    * @return ApiResponse&lt;List&lt;CompanyDocumentResponse&gt;&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> A list of documents for the company. </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -256,7 +264,7 @@ public class CompaniesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<List<CompanyDocumentResponse>> getCompanyDocumentsWithHttpInfo(String companyId, String acceptLanguage) throws ApiException {
+  public ApiResponse<List<CompanyDocumentResponse>> getCompanyDocumentsWithHttpInfo(@javax.annotation.Nonnull String companyId, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Check required parameters
     if (companyId == null) {
       throw new ApiException(400, "Missing the required parameter 'companyId' when calling getCompanyDocuments");
@@ -264,7 +272,7 @@ public class CompaniesApi {
 
     // Path parameters
     String localVarPath = "/companies/{company_id}/documents"
-            .replaceAll("\\{company_id}", apiClient.escapeString(companyId));
+            .replaceAll("\\{company_id}", apiClient.escapeString(companyId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -287,14 +295,15 @@ public class CompaniesApi {
    * @return CompanyResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CompanyResponse getCurrentCompany(String acceptLanguage) throws ApiException {
+  public CompanyResponse getCurrentCompany(@javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return getCurrentCompanyWithHttpInfo(acceptLanguage).getData();
   }
 
@@ -305,14 +314,15 @@ public class CompaniesApi {
    * @return ApiResponse&lt;CompanyResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CompanyResponse> getCurrentCompanyWithHttpInfo(String acceptLanguage) throws ApiException {
+  public ApiResponse<CompanyResponse> getCurrentCompanyWithHttpInfo(@javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
     if (acceptLanguage != null) {
@@ -336,7 +346,8 @@ public class CompaniesApi {
    * @return CompanyDocumentResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> Document updated successfully. </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -344,7 +355,7 @@ public class CompaniesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CompanyDocumentResponse updateCompanyDocument(String companyId, CompanyDocumentRequest companyDocumentRequest, String acceptLanguage) throws ApiException {
+  public CompanyDocumentResponse updateCompanyDocument(@javax.annotation.Nonnull String companyId, @javax.annotation.Nonnull CompanyDocumentRequest companyDocumentRequest, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return updateCompanyDocumentWithHttpInfo(companyId, companyDocumentRequest, acceptLanguage).getData();
   }
 
@@ -357,7 +368,8 @@ public class CompaniesApi {
    * @return ApiResponse&lt;CompanyDocumentResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> Document updated successfully. </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -365,7 +377,7 @@ public class CompaniesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CompanyDocumentResponse> updateCompanyDocumentWithHttpInfo(String companyId, CompanyDocumentRequest companyDocumentRequest, String acceptLanguage) throws ApiException {
+  public ApiResponse<CompanyDocumentResponse> updateCompanyDocumentWithHttpInfo(@javax.annotation.Nonnull String companyId, @javax.annotation.Nonnull CompanyDocumentRequest companyDocumentRequest, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Check required parameters
     if (companyId == null) {
       throw new ApiException(400, "Missing the required parameter 'companyId' when calling updateCompanyDocument");
@@ -376,7 +388,7 @@ public class CompaniesApi {
 
     // Path parameters
     String localVarPath = "/companies/{company_id}/document"
-            .replaceAll("\\{company_id}", apiClient.escapeString(companyId));
+            .replaceAll("\\{company_id}", apiClient.escapeString(companyId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -401,7 +413,8 @@ public class CompaniesApi {
    * @return CompanyDocumentResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 201 </td><td> Document uploaded successfully. </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -409,7 +422,7 @@ public class CompaniesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CompanyDocumentResponse uploadCompanyDocument(String companyId, CompanyDocumentRequest companyDocumentRequest, String acceptLanguage) throws ApiException {
+  public CompanyDocumentResponse uploadCompanyDocument(@javax.annotation.Nonnull String companyId, @javax.annotation.Nonnull CompanyDocumentRequest companyDocumentRequest, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return uploadCompanyDocumentWithHttpInfo(companyId, companyDocumentRequest, acceptLanguage).getData();
   }
 
@@ -422,7 +435,8 @@ public class CompaniesApi {
    * @return ApiResponse&lt;CompanyDocumentResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 201 </td><td> Document uploaded successfully. </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -430,7 +444,7 @@ public class CompaniesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CompanyDocumentResponse> uploadCompanyDocumentWithHttpInfo(String companyId, CompanyDocumentRequest companyDocumentRequest, String acceptLanguage) throws ApiException {
+  public ApiResponse<CompanyDocumentResponse> uploadCompanyDocumentWithHttpInfo(@javax.annotation.Nonnull String companyId, @javax.annotation.Nonnull CompanyDocumentRequest companyDocumentRequest, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Check required parameters
     if (companyId == null) {
       throw new ApiException(400, "Missing the required parameter 'companyId' when calling uploadCompanyDocument");
@@ -441,7 +455,7 @@ public class CompaniesApi {
 
     // Path parameters
     String localVarPath = "/companies/{company_id}/document"
-            .replaceAll("\\{company_id}", apiClient.escapeString(companyId));
+            .replaceAll("\\{company_id}", apiClient.escapeString(companyId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

@@ -43,55 +43,66 @@ import com.conekta.JSON;
   ApiKeyResponse.JSON_PROPERTY_ROLE
 })
 @JsonTypeName("api_key_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class ApiKeyResponse {
   public static final String JSON_PROPERTY_ACTIVE = "active";
+  @javax.annotation.Nullable
   private Boolean active;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nullable
   private Long createdAt;
 
   public static final String JSON_PROPERTY_UPDATED_AT = "updated_at";
+  @javax.annotation.Nullable
   private Long updatedAt;
 
   public static final String JSON_PROPERTY_DEACTIVATED_AT = "deactivated_at";
+  @javax.annotation.Nullable
   private Long deactivatedAt;
 
   public static final String JSON_PROPERTY_LAST_USED_AT = "last_used_at";
+  @javax.annotation.Nullable
   private Long lastUsedAt;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nullable
   private String description;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
+  @javax.annotation.Nullable
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_PREFIX = "prefix";
+  @javax.annotation.Nullable
   private String prefix;
 
   public static final String JSON_PROPERTY_ROLE = "role";
+  @javax.annotation.Nullable
   private String role;
 
   public ApiKeyResponse() { 
   }
 
-  public ApiKeyResponse active(Boolean active) {
+  public ApiKeyResponse active(@javax.annotation.Nullable Boolean active) {
     this.active = active;
     return this;
   }
 
-   /**
+  /**
    * Indicates if the api key is active
    * @return active
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonProperty(value = JSON_PROPERTY_ACTIVE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getActive() {
@@ -99,24 +110,24 @@ public class ApiKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonProperty(value = JSON_PROPERTY_ACTIVE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setActive(Boolean active) {
+  public void setActive(@javax.annotation.Nullable Boolean active) {
     this.active = active;
   }
 
 
-  public ApiKeyResponse createdAt(Long createdAt) {
+  public ApiKeyResponse createdAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Unix timestamp in seconds of when the api key was created
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getCreatedAt() {
@@ -124,24 +135,24 @@ public class ApiKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ApiKeyResponse updatedAt(Long updatedAt) {
+  public ApiKeyResponse updatedAt(@javax.annotation.Nullable Long updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
 
-   /**
+  /**
    * Unix timestamp in seconds of when the api key was last updated
    * @return updatedAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_UPDATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getUpdatedAt() {
@@ -149,24 +160,24 @@ public class ApiKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_UPDATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUpdatedAt(Long updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable Long updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public ApiKeyResponse deactivatedAt(Long deactivatedAt) {
+  public ApiKeyResponse deactivatedAt(@javax.annotation.Nullable Long deactivatedAt) {
     this.deactivatedAt = deactivatedAt;
     return this;
   }
 
-   /**
+  /**
    * Unix timestamp in seconds of when the api key was deleted
    * @return deactivatedAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DEACTIVATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_DEACTIVATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getDeactivatedAt() {
@@ -174,24 +185,24 @@ public class ApiKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DEACTIVATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_DEACTIVATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDeactivatedAt(Long deactivatedAt) {
+  public void setDeactivatedAt(@javax.annotation.Nullable Long deactivatedAt) {
     this.deactivatedAt = deactivatedAt;
   }
 
 
-  public ApiKeyResponse lastUsedAt(Long lastUsedAt) {
+  public ApiKeyResponse lastUsedAt(@javax.annotation.Nullable Long lastUsedAt) {
     this.lastUsedAt = lastUsedAt;
     return this;
   }
 
-   /**
+  /**
    * Unix timestamp in seconds with the api key was used
    * @return lastUsedAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LAST_USED_AT)
+  @JsonProperty(value = JSON_PROPERTY_LAST_USED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getLastUsedAt() {
@@ -199,24 +210,24 @@ public class ApiKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LAST_USED_AT)
+  @JsonProperty(value = JSON_PROPERTY_LAST_USED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLastUsedAt(Long lastUsedAt) {
+  public void setLastUsedAt(@javax.annotation.Nullable Long lastUsedAt) {
     this.lastUsedAt = lastUsedAt;
   }
 
 
-  public ApiKeyResponse description(String description) {
+  public ApiKeyResponse description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * A name or brief explanation of what this api key is used for
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getDescription() {
@@ -224,24 +235,24 @@ public class ApiKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ApiKeyResponse id(String id) {
+  public ApiKeyResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Unique identifier of the api key
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
@@ -249,24 +260,24 @@ public class ApiKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public ApiKeyResponse livemode(Boolean livemode) {
+  public ApiKeyResponse livemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
 
-   /**
+  /**
    * Indicates if the api key is in production
    * @return livemode
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getLivemode() {
@@ -274,24 +285,24 @@ public class ApiKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLivemode(Boolean livemode) {
+  public void setLivemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
   }
 
 
-  public ApiKeyResponse _object(String _object) {
+  public ApiKeyResponse _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Object name, value is &#39;api_key&#39;
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getObject() {
@@ -299,24 +310,24 @@ public class ApiKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
 
-  public ApiKeyResponse prefix(String prefix) {
+  public ApiKeyResponse prefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
     return this;
   }
 
-   /**
+  /**
    * The first few characters of the authentication_token
    * @return prefix
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PREFIX)
+  @JsonProperty(value = JSON_PROPERTY_PREFIX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPrefix() {
@@ -324,24 +335,24 @@ public class ApiKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PREFIX)
+  @JsonProperty(value = JSON_PROPERTY_PREFIX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPrefix(String prefix) {
+  public void setPrefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
   }
 
 
-  public ApiKeyResponse role(String role) {
+  public ApiKeyResponse role(@javax.annotation.Nullable String role) {
     this.role = role;
     return this;
   }
 
-   /**
+  /**
    * Indicates if the api key is private or public
    * @return role
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ROLE)
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getRole() {
@@ -349,9 +360,9 @@ public class ApiKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ROLE)
+  @JsonProperty(value = JSON_PROPERTY_ROLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRole(String role) {
+  public void setRole(@javax.annotation.Nullable String role) {
     this.role = role;
   }
 
@@ -410,10 +421,7 @@ public class ApiKeyResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

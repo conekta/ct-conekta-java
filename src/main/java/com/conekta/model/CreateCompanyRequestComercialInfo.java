@@ -36,34 +36,38 @@ import com.conekta.JSON;
   CreateCompanyRequestComercialInfo.JSON_PROPERTY_MERCHANT_SUPPORT_PHONE
 })
 @JsonTypeName("Create_Company_Request_comercial_info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CreateCompanyRequestComercialInfo {
   public static final String JSON_PROPERTY_WEBSITE = "website";
+  @javax.annotation.Nullable
   private String website;
 
   public static final String JSON_PROPERTY_MCC = "mcc";
+  @javax.annotation.Nullable
   private String mcc;
 
   public static final String JSON_PROPERTY_MERCHANT_SUPPORT_EMAIL = "merchant_support_email";
+  @javax.annotation.Nullable
   private String merchantSupportEmail;
 
   public static final String JSON_PROPERTY_MERCHANT_SUPPORT_PHONE = "merchant_support_phone";
+  @javax.annotation.Nullable
   private String merchantSupportPhone;
 
   public CreateCompanyRequestComercialInfo() { 
   }
 
-  public CreateCompanyRequestComercialInfo website(String website) {
+  public CreateCompanyRequestComercialInfo website(@javax.annotation.Nullable String website) {
     this.website = website;
     return this;
   }
 
-   /**
+  /**
    * The company&#39;s website URL.
    * @return website
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_WEBSITE)
+  @JsonProperty(value = JSON_PROPERTY_WEBSITE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getWebsite() {
@@ -71,24 +75,24 @@ public class CreateCompanyRequestComercialInfo {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_WEBSITE)
+  @JsonProperty(value = JSON_PROPERTY_WEBSITE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWebsite(String website) {
+  public void setWebsite(@javax.annotation.Nullable String website) {
     this.website = website;
   }
 
 
-  public CreateCompanyRequestComercialInfo mcc(String mcc) {
+  public CreateCompanyRequestComercialInfo mcc(@javax.annotation.Nullable String mcc) {
     this.mcc = mcc;
     return this;
   }
 
-   /**
+  /**
    * The Merchant Category Code (MCC) for the company.
    * @return mcc
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MCC)
+  @JsonProperty(value = JSON_PROPERTY_MCC, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMcc() {
@@ -96,24 +100,24 @@ public class CreateCompanyRequestComercialInfo {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MCC)
+  @JsonProperty(value = JSON_PROPERTY_MCC, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMcc(String mcc) {
+  public void setMcc(@javax.annotation.Nullable String mcc) {
     this.mcc = mcc;
   }
 
 
-  public CreateCompanyRequestComercialInfo merchantSupportEmail(String merchantSupportEmail) {
+  public CreateCompanyRequestComercialInfo merchantSupportEmail(@javax.annotation.Nullable String merchantSupportEmail) {
     this.merchantSupportEmail = merchantSupportEmail;
     return this;
   }
 
-   /**
+  /**
    * Email address for merchant support.
    * @return merchantSupportEmail
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MERCHANT_SUPPORT_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_MERCHANT_SUPPORT_EMAIL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMerchantSupportEmail() {
@@ -121,24 +125,24 @@ public class CreateCompanyRequestComercialInfo {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MERCHANT_SUPPORT_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_MERCHANT_SUPPORT_EMAIL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMerchantSupportEmail(String merchantSupportEmail) {
+  public void setMerchantSupportEmail(@javax.annotation.Nullable String merchantSupportEmail) {
     this.merchantSupportEmail = merchantSupportEmail;
   }
 
 
-  public CreateCompanyRequestComercialInfo merchantSupportPhone(String merchantSupportPhone) {
+  public CreateCompanyRequestComercialInfo merchantSupportPhone(@javax.annotation.Nullable String merchantSupportPhone) {
     this.merchantSupportPhone = merchantSupportPhone;
     return this;
   }
 
-   /**
+  /**
    * Phone number for merchant support.
    * @return merchantSupportPhone
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MERCHANT_SUPPORT_PHONE)
+  @JsonProperty(value = JSON_PROPERTY_MERCHANT_SUPPORT_PHONE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getMerchantSupportPhone() {
@@ -146,9 +150,9 @@ public class CreateCompanyRequestComercialInfo {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MERCHANT_SUPPORT_PHONE)
+  @JsonProperty(value = JSON_PROPERTY_MERCHANT_SUPPORT_PHONE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMerchantSupportPhone(String merchantSupportPhone) {
+  public void setMerchantSupportPhone(@javax.annotation.Nullable String merchantSupportPhone) {
     this.merchantSupportPhone = merchantSupportPhone;
   }
 
@@ -193,10 +197,7 @@ public class CreateCompanyRequestComercialInfo {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

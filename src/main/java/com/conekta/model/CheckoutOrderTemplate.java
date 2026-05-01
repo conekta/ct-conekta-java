@@ -46,40 +46,46 @@ import com.conekta.JSON;
   CheckoutOrderTemplate.JSON_PROPERTY_DISCOUNT_LINES
 })
 @JsonTypeName("checkout_order_template")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CheckoutOrderTemplate {
   public static final String JSON_PROPERTY_CURRENCY = "currency";
+  @javax.annotation.Nonnull
   private String currency;
 
   public static final String JSON_PROPERTY_CUSTOMER_INFO = "customer_info";
+  @javax.annotation.Nullable
   private CheckoutOrderTemplateCustomerInfo customerInfo;
 
   public static final String JSON_PROPERTY_LINE_ITEMS = "line_items";
+  @javax.annotation.Nonnull
   private List<Product> lineItems = new ArrayList<>();
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_TAX_LINES = "tax_lines";
+  @javax.annotation.Nullable
   private List<OrderTaxRequest> taxLines = new ArrayList<>();
 
   public static final String JSON_PROPERTY_DISCOUNT_LINES = "discount_lines";
+  @javax.annotation.Nullable
   private List<OrderDiscountLinesRequest> discountLines = new ArrayList<>();
 
   public CheckoutOrderTemplate() { 
   }
 
-  public CheckoutOrderTemplate currency(String currency) {
+  public CheckoutOrderTemplate currency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * It is the currency in which the order will be created. It must be a valid ISO 4217 currency code.
    * @return currency
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CURRENCY)
+  @JsonProperty(value = JSON_PROPERTY_CURRENCY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCurrency() {
@@ -87,24 +93,24 @@ public class CheckoutOrderTemplate {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CURRENCY)
+  @JsonProperty(value = JSON_PROPERTY_CURRENCY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCurrency(String currency) {
+  public void setCurrency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
   }
 
 
-  public CheckoutOrderTemplate customerInfo(CheckoutOrderTemplateCustomerInfo customerInfo) {
+  public CheckoutOrderTemplate customerInfo(@javax.annotation.Nullable CheckoutOrderTemplateCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
     return this;
   }
 
-   /**
+  /**
    * Get customerInfo
    * @return customerInfo
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
+  @JsonProperty(value = JSON_PROPERTY_CUSTOMER_INFO, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public CheckoutOrderTemplateCustomerInfo getCustomerInfo() {
@@ -112,14 +118,14 @@ public class CheckoutOrderTemplate {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CUSTOMER_INFO)
+  @JsonProperty(value = JSON_PROPERTY_CUSTOMER_INFO, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomerInfo(CheckoutOrderTemplateCustomerInfo customerInfo) {
+  public void setCustomerInfo(@javax.annotation.Nullable CheckoutOrderTemplateCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
   }
 
 
-  public CheckoutOrderTemplate lineItems(List<Product> lineItems) {
+  public CheckoutOrderTemplate lineItems(@javax.annotation.Nonnull List<Product> lineItems) {
     this.lineItems = lineItems;
     return this;
   }
@@ -132,12 +138,12 @@ public class CheckoutOrderTemplate {
     return this;
   }
 
-   /**
+  /**
    * They are the products to buy. Each contains the \&quot;unit price\&quot; and \&quot;quantity\&quot; parameters that are used to calculate the total amount of the order.
    * @return lineItems
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LINE_ITEMS)
+  @JsonProperty(value = JSON_PROPERTY_LINE_ITEMS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<Product> getLineItems() {
@@ -145,39 +151,47 @@ public class CheckoutOrderTemplate {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LINE_ITEMS)
+  @JsonProperty(value = JSON_PROPERTY_LINE_ITEMS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLineItems(List<Product> lineItems) {
+  public void setLineItems(@javax.annotation.Nonnull List<Product> lineItems) {
     this.lineItems = lineItems;
   }
 
 
-  public CheckoutOrderTemplate metadata(Map<String, Object> metadata) {
+  public CheckoutOrderTemplate metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
 
-   /**
+  public CheckoutOrderTemplate putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
+  /**
    * It is a set of key-value pairs that you can attach to the order. It can be used to store additional information about the order in a structured format.
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
     return metadata;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 
 
-  public CheckoutOrderTemplate taxLines(List<OrderTaxRequest> taxLines) {
+  public CheckoutOrderTemplate taxLines(@javax.annotation.Nullable List<OrderTaxRequest> taxLines) {
     this.taxLines = taxLines;
     return this;
   }
@@ -190,12 +204,12 @@ public class CheckoutOrderTemplate {
     return this;
   }
 
-   /**
+  /**
    * List of [taxes](https://developers.conekta.com/v2.2.0/reference/orderscreatetaxes) that are applied to the order.
    * @return taxLines
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TAX_LINES)
+  @JsonProperty(value = JSON_PROPERTY_TAX_LINES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<OrderTaxRequest> getTaxLines() {
@@ -203,14 +217,14 @@ public class CheckoutOrderTemplate {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TAX_LINES)
+  @JsonProperty(value = JSON_PROPERTY_TAX_LINES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTaxLines(List<OrderTaxRequest> taxLines) {
+  public void setTaxLines(@javax.annotation.Nullable List<OrderTaxRequest> taxLines) {
     this.taxLines = taxLines;
   }
 
 
-  public CheckoutOrderTemplate discountLines(List<OrderDiscountLinesRequest> discountLines) {
+  public CheckoutOrderTemplate discountLines(@javax.annotation.Nullable List<OrderDiscountLinesRequest> discountLines) {
     this.discountLines = discountLines;
     return this;
   }
@@ -223,12 +237,12 @@ public class CheckoutOrderTemplate {
     return this;
   }
 
-   /**
+  /**
    * List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order.
    * @return discountLines
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
+  @JsonProperty(value = JSON_PROPERTY_DISCOUNT_LINES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<OrderDiscountLinesRequest> getDiscountLines() {
@@ -236,9 +250,9 @@ public class CheckoutOrderTemplate {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DISCOUNT_LINES)
+  @JsonProperty(value = JSON_PROPERTY_DISCOUNT_LINES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDiscountLines(List<OrderDiscountLinesRequest> discountLines) {
+  public void setDiscountLines(@javax.annotation.Nullable List<OrderDiscountLinesRequest> discountLines) {
     this.discountLines = discountLines;
   }
 
@@ -287,10 +301,7 @@ public class CheckoutOrderTemplate {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }
