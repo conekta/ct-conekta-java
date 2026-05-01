@@ -11,7 +11,7 @@
 |**allowedPaymentMethods** | [**List&lt;AllowedPaymentMethodsEnum&gt;**](#List&lt;AllowedPaymentMethodsEnum&gt;) | Are the payment methods available for this link. For subscriptions, only &#39;card&#39; is allowed due to the recurring nature of the payments. |  |
 |**excludeCardNetworks** | [**List&lt;ExcludeCardNetworksEnum&gt;**](#List&lt;ExcludeCardNetworksEnum&gt;) | List of card networks to exclude from the checkout. This field is only applicable for card payments. |  [optional] |
 |**planIds** | **List&lt;String&gt;** | List of plan IDs that will be available for subscription. This field is required for subscription payments. |  [optional] |
-|**expiresAt** | **Long** | Unix timestamp of checkout expiration |  [optional] |
+|**expiresAt** | **Long** | It is the time when the link will expire.  It is expressed in seconds since the Unix epoch. The valid range is from 5 minutes to 365 days from the creation date.  |  [optional] |
 |**failureUrl** | **URI** | Redirection url back to the site in case of failed payment, applies only to HostedPayment. |  [optional] |
 |**monthlyInstallmentsEnabled** | **Boolean** |  |  [optional] |
 |**monthlyInstallmentsOptions** | **List&lt;Integer&gt;** |  |  [optional] |

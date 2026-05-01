@@ -25,8 +25,6 @@ import com.conekta.model.OrderUpdate;
 import com.conekta.model.PaymentMethodGeneralRequest;
 import com.conekta.model.Product;
 
-import javax.ws.rs.ProcessingException;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -38,11 +36,30 @@ public class OrdersApiTest {
     private final OrdersApi api = new OrdersApi(TestUtils.apiClient());
 
     @Test
-    public void cancelOrderTest() {
-        // Upstream mock wraps tax_lines as a list-object; SDK model expects a plain array.
-        // Document the known shape mismatch until the mock fixture is fixed.
-        Assertions.assertThrows(ProcessingException.class,
-                () -> api.cancelOrder("ord_2tqaGQYZyvBsMKEgs", "es", null));
+    public void cancelOrderTest() throws ApiException {
+        String orderId = "ord_2tqaGQYZyvBsMKEgs";
+        OrderResponse response = api.cancelOrder(orderId, "es", null);
+        Assertions.assertAll("cancel order",
+                () -> Assertions.assertNotNull(response),
+                () -> Assertions.assertEquals(orderId, response.getId()),
+                () -> Assertions.assertEquals("order", response.getObject()),
+                () -> Assertions.assertEquals("MXN", response.getCurrency()),
+                () -> Assertions.assertEquals(40100, response.getAmount()),
+                () -> Assertions.assertEquals(0, response.getAmountRefunded()),
+                () -> Assertions.assertEquals("canceled", response.getPaymentStatus()),
+                () -> Assertions.assertFalse(response.getIsRefundable()),
+                () -> Assertions.assertNotNull(response.getTaxLines()),
+                () -> Assertions.assertEquals("list", response.getTaxLines().getObject()),
+                () -> Assertions.assertNotNull(response.getTaxLines().getData()),
+                () -> Assertions.assertFalse(response.getTaxLines().getData().isEmpty()),
+                () -> Assertions.assertNull(response.getShippingLines()),
+                () -> Assertions.assertNull(response.getDiscountLines()),
+                () -> Assertions.assertNotNull(response.getLineItems()),
+                () -> Assertions.assertNotNull(response.getLineItems().getData()),
+                () -> Assertions.assertFalse(response.getLineItems().getData().isEmpty()),
+                () -> Assertions.assertNotNull(response.getCharges()),
+                () -> Assertions.assertNotNull(response.getCharges().getData()),
+                () -> Assertions.assertFalse(response.getCharges().getData().isEmpty()));
     }
 
     @Test
@@ -67,6 +84,16 @@ public class OrdersApiTest {
                 () -> Assertions.assertEquals("order", response.getObject()),
                 () -> Assertions.assertEquals("MXN", response.getCurrency()),
                 () -> Assertions.assertEquals("paid", response.getPaymentStatus()),
+                () -> Assertions.assertEquals(2100, response.getAmount()),
+                () -> Assertions.assertEquals(0, response.getAmountRefunded()),
+                () -> Assertions.assertTrue(response.getIsRefundable()),
+                () -> Assertions.assertTrue(response.getLivemode()),
+                () -> Assertions.assertNull(response.getTaxLines()),
+                () -> Assertions.assertNull(response.getDiscountLines()),
+                () -> Assertions.assertNotNull(response.getShippingLines()),
+                () -> Assertions.assertEquals("list", response.getShippingLines().getObject()),
+                () -> Assertions.assertNotNull(response.getShippingLines().getData()),
+                () -> Assertions.assertFalse(response.getShippingLines().getData().isEmpty()),
                 () -> Assertions.assertNotNull(response.getCharges()),
                 () -> Assertions.assertNotNull(response.getCharges().getData()),
                 () -> Assertions.assertFalse(response.getCharges().getData().isEmpty()));
@@ -82,21 +109,36 @@ public class OrdersApiTest {
                 () -> Assertions.assertEquals("MXN", response.getCurrency()),
                 () -> Assertions.assertEquals(10000, response.getAmount()),
                 () -> Assertions.assertEquals(0, response.getAmountRefunded()),
-                () -> Assertions.assertEquals("pending_payment", response.getPaymentStatus()));
+                () -> Assertions.assertEquals("pending_payment", response.getPaymentStatus()),
+                () -> Assertions.assertTrue(response.getIsRefundable()),
+                () -> Assertions.assertFalse(response.getLivemode()),
+                () -> Assertions.assertNull(response.getTaxLines()),
+                () -> Assertions.assertNull(response.getDiscountLines()),
+                () -> Assertions.assertNotNull(response.getShippingLines()),
+                () -> Assertions.assertEquals("list", response.getShippingLines().getObject()),
+                () -> Assertions.assertFalse(response.getShippingLines().getHasMore()),
+                () -> Assertions.assertNotNull(response.getShippingLines().getData()),
+                () -> Assertions.assertEquals(1, response.getShippingLines().getData().size()),
+                () -> Assertions.assertNotNull(response.getLineItems()),
+                () -> Assertions.assertNotNull(response.getLineItems().getData()),
+                () -> Assertions.assertFalse(response.getLineItems().getData().isEmpty()),
+                () -> Assertions.assertNotNull(response.getCharges()),
+                () -> Assertions.assertNotNull(response.getCharges().getData()),
+                () -> Assertions.assertFalse(response.getCharges().getData().isEmpty()));
     }
 
     @Test
     public void getOrdersTest() throws ApiException {
-        // limit=19+next hits a mock fixture whose orders have clean tax_lines;
-        // the default limit=20 response has the known tax_lines shape issue.
         GetOrdersResponse response = api.getOrders(
-                "es", null, 19, null, "ord_2tNDyQbJacvUZiyfp", null, null, null, null, null, null, null, null);
+                "es", null, 20, null, null, null, null, null, null, null, null, null, null);
         Assertions.assertAll("orders list",
                 () -> Assertions.assertNotNull(response),
                 () -> Assertions.assertEquals("list", response.getObject()),
+                () -> Assertions.assertTrue(response.getHasMore()),
                 () -> Assertions.assertNotNull(response.getData()),
                 () -> Assertions.assertFalse(response.getData().isEmpty()),
-                () -> Assertions.assertNotNull(response.getData().get(0).getId()));
+                () -> Assertions.assertNotNull(response.getData().get(0).getId()),
+                () -> Assertions.assertEquals("order", response.getData().get(0).getObject()));
     }
 
     @Test
@@ -107,7 +149,11 @@ public class OrdersApiTest {
                 () -> Assertions.assertNotNull(response),
                 () -> Assertions.assertEquals(orderId, response.getId()),
                 () -> Assertions.assertEquals("order", response.getObject()),
-                () -> Assertions.assertEquals("MXN", response.getCurrency()));
+                () -> Assertions.assertEquals("MXN", response.getCurrency()),
+                () -> Assertions.assertEquals(40000, response.getAmount()),
+                () -> Assertions.assertEquals(15000, response.getAmountRefunded()),
+                () -> Assertions.assertEquals("partially_refunded", response.getPaymentStatus()),
+                () -> Assertions.assertTrue(response.getIsRefundable()));
     }
 
     @Test

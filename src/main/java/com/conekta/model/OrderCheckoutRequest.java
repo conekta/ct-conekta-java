@@ -316,7 +316,8 @@ public class OrderCheckoutRequest {
   }
 
    /**
-   * Unix timestamp of checkout expiration
+   * It is the time when the link will expire.  It is expressed in seconds since the Unix epoch. The valid range is from 5 minutes to 365 days from the creation date. 
+   * minimum: 1
    * @return expiresAt
   **/
   @javax.annotation.Nullable

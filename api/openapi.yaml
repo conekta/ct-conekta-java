@@ -19224,44 +19224,243 @@ components:
             example: cus_23874283647
             type: string
         title: customer_info_response
-    order_tax_response:
+    discount_lines_data_response:
       allOf:
-      - description: create new taxes for an existing order
+      - allOf:
+        - description: List of discounts that apply to the order.
+          properties:
+            amount:
+              description: "The amount to be deducted from the total sum of all payments,\
+                \ in cents."
+              example: 500
+              format: int64
+              minimum: 0
+              type: integer
+            code:
+              description: Discount code.
+              example: "123"
+              type: string
+            type:
+              description: "It can be 'loyalty', 'campaign', 'coupon' o 'sign'"
+              example: loyalty
+              type: string
+          required:
+          - amount
+          - code
+          - type
+          title: order_discount_lines_request
+          name: order_discount_lines_request
+        - properties:
+            id:
+              description: The discount line id
+              example: dis_lin_2tQQ58HPgPw7StE8z
+              type: string
+            object:
+              description: The object name
+              example: discount_line
+              type: string
+            parent_id:
+              description: The order id
+              example: ord_2tPAmKCEJqh8RE6nY
+              type: string
+          required:
+          - id
+          - object
+          - parent_id
+        title: discount_lines_response
+      title: discount_lines_data_response
+    order_discount_lines_response:
+      allOf:
+      - description: pagination metadata
         properties:
-          amount:
-            description: The amount to be collected for tax in cents
-            example: 100
-            format: int64
-            minimum: 0
-            type: integer
-          description:
-            description: description or tax's name
-            example: testing
-            minLength: 2
-            type: string
-          metadata:
-            additionalProperties: {}
-            example:
-              key: value
-            maxProperties: 100
-        required:
-        - amount
-        - description
-        title: order_tax_request
-      - properties:
-          id:
-            example: tax_lin_2tQ8dC5mg1UADmVPo
-            type: string
+          has_more:
+            description: Indicates if there are more pages to be requested
+            example: false
+            type: boolean
           object:
-            example: tax_line
+            description: "Object type, in this case is list"
+            example: list
             type: string
-          parent_id:
-            example: ord_2tPAmKCEJqh8RE6nY
+        required:
+        - has_more
+        - object
+        title: pagination metadata
+      - description: page metadata
+        properties:
+          next_page_url:
+            description: URL of the next page.
+            example: https://api.conekta.io/resources?limit=10&next=chrg_1
             type: string
-      description: create new taxes for an existing order response
-      required:
-      - id
-      title: order_tax_response
+            nullable: true
+          previous_page_url:
+            description: Url of the previous page.
+            example: https://api.conekta.io/resources?limit=10&previous=chrg_1
+            type: string
+            nullable: true
+        title: page metadata
+      - properties:
+          data:
+            items:
+              $ref: '#/components/schemas/discount_lines_data_response'
+            type: array
+      description: List of discounts that are applied to the order
+      title: order_discount_lines_response
+      nullable: true
+    tax_lines_data_response:
+      allOf:
+      - allOf:
+        - description: create new taxes for an existing order
+          properties:
+            amount:
+              description: The amount to be collected for tax in cents
+              example: 100
+              format: int64
+              minimum: 0
+              type: integer
+            description:
+              description: description or tax's name
+              example: testing
+              minLength: 2
+              type: string
+            metadata:
+              additionalProperties: {}
+              example:
+                key: value
+              maxProperties: 100
+          required:
+          - amount
+          - description
+          title: order_tax_request
+        - properties:
+            id:
+              example: tax_lin_2tQ8dC5mg1UADmVPo
+              type: string
+            object:
+              example: tax_line
+              type: string
+            parent_id:
+              example: ord_2tPAmKCEJqh8RE6nY
+              type: string
+        description: create new taxes for an existing order response
+        required:
+        - id
+        title: order_tax_response
+      title: tax_lines_data_response
+    order_tax_lines_response:
+      allOf:
+      - description: pagination metadata
+        properties:
+          has_more:
+            description: Indicates if there are more pages to be requested
+            example: false
+            type: boolean
+          object:
+            description: "Object type, in this case is list"
+            example: list
+            type: string
+        required:
+        - has_more
+        - object
+        title: pagination metadata
+      - description: page metadata
+        properties:
+          next_page_url:
+            description: URL of the next page.
+            example: https://api.conekta.io/resources?limit=10&next=chrg_1
+            type: string
+            nullable: true
+          previous_page_url:
+            description: Url of the previous page.
+            example: https://api.conekta.io/resources?limit=10&previous=chrg_1
+            type: string
+            nullable: true
+        title: page metadata
+      - properties:
+          data:
+            items:
+              $ref: '#/components/schemas/tax_lines_data_response'
+            type: array
+      description: List of taxes that are applied to the order
+      title: order_tax_lines_response
+      nullable: true
+    shipping_lines_data_response:
+      allOf:
+      - allOf:
+        - properties:
+            amount:
+              description: Shipping amount in cents
+              example: 100
+              format: int64
+              minimum: 0
+              type: integer
+            carrier:
+              description: Carrier name for the shipment
+              example: FEDEX
+              type: string
+            tracking_number:
+              description: Tracking number can be used to track the shipment
+              example: TRACK123
+              type: string
+            method:
+              description: Method of shipment
+              example: Same day
+              type: string
+            metadata:
+              additionalProperties: {}
+              description: Hash where the user can send additional information for
+                each 'shipping'.
+              example:
+                key: value
+              maxProperties: 100
+          required:
+          - amount
+          title: shipping_request
+        - properties:
+            id:
+              type: string
+            object:
+              type: string
+            parent_id:
+              type: string
+        title: shipping_order_response
+      title: shipping_lines_data_response
+    order_shipping_lines_response:
+      allOf:
+      - description: pagination metadata
+        properties:
+          has_more:
+            description: Indicates if there are more pages to be requested
+            example: false
+            type: boolean
+          object:
+            description: "Object type, in this case is list"
+            example: list
+            type: string
+        required:
+        - has_more
+        - object
+        title: pagination metadata
+      - description: page metadata
+        properties:
+          next_page_url:
+            description: URL of the next page.
+            example: https://api.conekta.io/resources?limit=10&next=chrg_1
+            type: string
+            nullable: true
+          previous_page_url:
+            description: Url of the previous page.
+            example: https://api.conekta.io/resources?limit=10&previous=chrg_1
+            type: string
+            nullable: true
+        title: page metadata
+      - properties:
+          data:
+            items:
+              $ref: '#/components/schemas/shipping_lines_data_response'
+            type: array
+      description: List of shipping costs applied to the order
+      title: order_shipping_lines_response
+      nullable: true
     order_fiscal_entity_address_response:
       allOf:
       - description: Address of the fiscal entity
@@ -19594,15 +19793,11 @@ components:
         customer_info:
           $ref: '#/components/schemas/order_response_customer_info'
         discount_lines:
-          description: List of discounts that are applied to the order
-          items:
-            $ref: '#/components/schemas/discount_lines_response'
-          type: array
+          $ref: '#/components/schemas/order_discount_lines_response'
         tax_lines:
-          description: List of taxes that are applied to the order
-          items:
-            $ref: '#/components/schemas/order_tax_response'
-          type: array
+          $ref: '#/components/schemas/order_tax_lines_response'
+        shipping_lines:
+          $ref: '#/components/schemas/order_shipping_lines_response'
         fiscal_entity:
           $ref: '#/components/schemas/order_fiscal_entity_response'
         id:
@@ -19731,8 +19926,11 @@ components:
             type: string
           type: array
         expires_at:
-          description: Unix timestamp of checkout expiration
+          description: "It is the time when the link will expire. \nIt is expressed\
+            \ in seconds since the Unix epoch. The valid range is from 5 minutes to\
+            \ 365 days from the creation date.\n"
           format: int64
+          minimum: 1
           type: integer
         failure_url:
           description: "Redirection url back to the site in case of failed payment,\
@@ -20803,10 +21001,11 @@ components:
           type: array
         expires_at:
           description: "It is the time when the link will expire. \nIt is expressed\
-            \ in seconds since the Unix epoch. The valid range is from 10 minutes\
-            \ to 365 days from the creation date.\n"
+            \ in seconds since the Unix epoch. The valid range is from 5 minutes to\
+            \ 365 days from the creation date.\n"
           example: 1680397724
           format: int64
+          minimum: 1
           type: integer
         monthly_installments_enabled:
           description: This flag allows you to specify if months without interest
@@ -21572,6 +21771,44 @@ components:
           format: uri
           type: string
       title: customer_portal_response
+    order_tax_response:
+      allOf:
+      - description: create new taxes for an existing order
+        properties:
+          amount:
+            description: The amount to be collected for tax in cents
+            example: 100
+            format: int64
+            minimum: 0
+            type: integer
+          description:
+            description: description or tax's name
+            example: testing
+            minLength: 2
+            type: string
+          metadata:
+            additionalProperties: {}
+            example:
+              key: value
+            maxProperties: 100
+        required:
+        - amount
+        - description
+        title: order_tax_request
+      - properties:
+          id:
+            example: tax_lin_2tQ8dC5mg1UADmVPo
+            type: string
+          object:
+            example: tax_line
+            type: string
+          parent_id:
+            example: ord_2tPAmKCEJqh8RE6nY
+            type: string
+      description: create new taxes for an existing order response
+      required:
+      - id
+      title: order_tax_response
     ordersUpdateTaxes_request:
       description: create new taxes for an existing order
       properties:
