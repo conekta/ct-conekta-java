@@ -39,43 +39,50 @@ import com.conekta.JSON;
   PaymentMethodCardRequest.JSON_PROPERTY_CUSTOMER_IP_ADDRESS
 })
 @JsonTypeName("payment_method_card_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class PaymentMethodCardRequest {
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nonnull
   private String type;
 
   public static final String JSON_PROPERTY_CVC = "cvc";
+  @javax.annotation.Nonnull
   private String cvc;
 
   public static final String JSON_PROPERTY_EXP_MONTH = "exp_month";
+  @javax.annotation.Nonnull
   private String expMonth;
 
   public static final String JSON_PROPERTY_EXP_YEAR = "exp_year";
+  @javax.annotation.Nonnull
   private String expYear;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String JSON_PROPERTY_NUMBER = "number";
+  @javax.annotation.Nonnull
   private String number;
 
   public static final String JSON_PROPERTY_CUSTOMER_IP_ADDRESS = "customer_ip_address";
+  @javax.annotation.Nullable
   private String customerIpAddress;
 
   public PaymentMethodCardRequest() { 
   }
 
-  public PaymentMethodCardRequest type(String type) {
+  public PaymentMethodCardRequest type(@javax.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Type of payment method
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getType() {
@@ -83,24 +90,24 @@ public class PaymentMethodCardRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
   }
 
 
-  public PaymentMethodCardRequest cvc(String cvc) {
+  public PaymentMethodCardRequest cvc(@javax.annotation.Nonnull String cvc) {
     this.cvc = cvc;
     return this;
   }
 
-   /**
+  /**
    * Card security code
    * @return cvc
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CVC)
+  @JsonProperty(value = JSON_PROPERTY_CVC, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCvc() {
@@ -108,24 +115,24 @@ public class PaymentMethodCardRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CVC)
+  @JsonProperty(value = JSON_PROPERTY_CVC, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCvc(String cvc) {
+  public void setCvc(@javax.annotation.Nonnull String cvc) {
     this.cvc = cvc;
   }
 
 
-  public PaymentMethodCardRequest expMonth(String expMonth) {
+  public PaymentMethodCardRequest expMonth(@javax.annotation.Nonnull String expMonth) {
     this.expMonth = expMonth;
     return this;
   }
 
-   /**
+  /**
    * Card expiration month
    * @return expMonth
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_EXP_MONTH)
+  @JsonProperty(value = JSON_PROPERTY_EXP_MONTH, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getExpMonth() {
@@ -133,24 +140,24 @@ public class PaymentMethodCardRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXP_MONTH)
+  @JsonProperty(value = JSON_PROPERTY_EXP_MONTH, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setExpMonth(String expMonth) {
+  public void setExpMonth(@javax.annotation.Nonnull String expMonth) {
     this.expMonth = expMonth;
   }
 
 
-  public PaymentMethodCardRequest expYear(String expYear) {
+  public PaymentMethodCardRequest expYear(@javax.annotation.Nonnull String expYear) {
     this.expYear = expYear;
     return this;
   }
 
-   /**
+  /**
    * Card expiration year
    * @return expYear
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_EXP_YEAR)
+  @JsonProperty(value = JSON_PROPERTY_EXP_YEAR, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getExpYear() {
@@ -158,24 +165,24 @@ public class PaymentMethodCardRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXP_YEAR)
+  @JsonProperty(value = JSON_PROPERTY_EXP_YEAR, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setExpYear(String expYear) {
+  public void setExpYear(@javax.annotation.Nonnull String expYear) {
     this.expYear = expYear;
   }
 
 
-  public PaymentMethodCardRequest name(String name) {
+  public PaymentMethodCardRequest name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Cardholder name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getName() {
@@ -183,24 +190,24 @@ public class PaymentMethodCardRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public PaymentMethodCardRequest number(String number) {
+  public PaymentMethodCardRequest number(@javax.annotation.Nonnull String number) {
     this.number = number;
     return this;
   }
 
-   /**
+  /**
    * Card number
    * @return number
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getNumber() {
@@ -208,24 +215,24 @@ public class PaymentMethodCardRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_NUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNumber(String number) {
+  public void setNumber(@javax.annotation.Nonnull String number) {
     this.number = number;
   }
 
 
-  public PaymentMethodCardRequest customerIpAddress(String customerIpAddress) {
+  public PaymentMethodCardRequest customerIpAddress(@javax.annotation.Nullable String customerIpAddress) {
     this.customerIpAddress = customerIpAddress;
     return this;
   }
 
-   /**
+  /**
    * Optional field used to capture the customer&#39;s IP address for fraud prevention and security monitoring purposes
    * @return customerIpAddress
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_CUSTOMER_IP_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomerIpAddress() {
@@ -233,9 +240,9 @@ public class PaymentMethodCardRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_CUSTOMER_IP_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomerIpAddress(String customerIpAddress) {
+  public void setCustomerIpAddress(@javax.annotation.Nullable String customerIpAddress) {
     this.customerIpAddress = customerIpAddress;
   }
 
@@ -286,10 +293,7 @@ public class PaymentMethodCardRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

@@ -17,7 +17,7 @@ payout order model response
 |**id** | **String** | The id of the payout order. |  |
 |**livemode** | **Boolean** | The live mode of the payout order. |  |
 |**_object** | **String** | The object of the payout order. |  |
-|**metadata** |  | The metadata of the payout order. |  [optional] |
+|**metadata** | **Map&lt;String, Object&gt;** | The metadata of the payout order. |  [optional] |
 |**payouts** | [**List&lt;PayoutOrderPayoutsItem&gt;**](PayoutOrderPayoutsItem.md) | The payout information of the payout order. |  |
 |**reason** | **String** | The reason for the payout order. |  |
 |**status** | **String** | The status of the payout order. |  |

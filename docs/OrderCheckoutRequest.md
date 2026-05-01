@@ -53,7 +53,7 @@
 | Name | Value |
 |---- | -----|
 | INTEGRATION | &quot;Integration&quot; |
-| HOSTEDPAYMENT | &quot;HostedPayment&quot; |
+| HOSTED_PAYMENT | &quot;HostedPayment&quot; |
 | UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 

@@ -243,6 +243,8 @@ src/main/java/com/conekta/PayoutOrdersApi.java
 src/main/java/com/conekta/PlansApi.java
 src/main/java/com/conekta/ProductsApi.java
 src/main/java/com/conekta/RFC3339DateFormat.java
+src/main/java/com/conekta/RFC3339InstantDeserializer.java
+src/main/java/com/conekta/RFC3339JavaTimeModule.java
 src/main/java/com/conekta/ServerConfiguration.java
 src/main/java/com/conekta/ServerVariable.java
 src/main/java/com/conekta/ShippingContactsApi.java

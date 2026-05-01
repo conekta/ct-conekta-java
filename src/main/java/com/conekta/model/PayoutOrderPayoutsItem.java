@@ -40,46 +40,54 @@ import com.conekta.JSON;
   PayoutOrderPayoutsItem.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("payout_order_payouts_item")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class PayoutOrderPayoutsItem {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nonnull
   private Integer amount;
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
+  @javax.annotation.Nonnull
   private String currency;
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nullable
   private Long expiresAt;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
+  @javax.annotation.Nonnull
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_PAYOUT_ORDER_ID = "payout_order_id";
+  @javax.annotation.Nullable
   private String payoutOrderId;
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private String status;
 
   public PayoutOrderPayoutsItem() { 
   }
 
-  public PayoutOrderPayoutsItem amount(Integer amount) {
+  public PayoutOrderPayoutsItem amount(@javax.annotation.Nonnull Integer amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * The amount of the payout.
    * @return amount
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getAmount() {
@@ -87,24 +95,24 @@ public class PayoutOrderPayoutsItem {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAmount(Integer amount) {
+  public void setAmount(@javax.annotation.Nonnull Integer amount) {
     this.amount = amount;
   }
 
 
-  public PayoutOrderPayoutsItem currency(String currency) {
+  public PayoutOrderPayoutsItem currency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * The currency in which the payout is made.
    * @return currency
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CURRENCY)
+  @JsonProperty(value = JSON_PROPERTY_CURRENCY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCurrency() {
@@ -112,24 +120,24 @@ public class PayoutOrderPayoutsItem {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CURRENCY)
+  @JsonProperty(value = JSON_PROPERTY_CURRENCY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCurrency(String currency) {
+  public void setCurrency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
   }
 
 
-  public PayoutOrderPayoutsItem expiresAt(Long expiresAt) {
+  public PayoutOrderPayoutsItem expiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
-   /**
+  /**
    * The expiration date of the payout.
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getExpiresAt() {
@@ -137,24 +145,24 @@ public class PayoutOrderPayoutsItem {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(Long expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public PayoutOrderPayoutsItem id(String id) {
+  public PayoutOrderPayoutsItem id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The id of the payout.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
@@ -162,24 +170,24 @@ public class PayoutOrderPayoutsItem {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public PayoutOrderPayoutsItem livemode(Boolean livemode) {
+  public PayoutOrderPayoutsItem livemode(@javax.annotation.Nonnull Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
 
-   /**
+  /**
    * The live mode of the payout.
    * @return livemode
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getLivemode() {
@@ -187,24 +195,24 @@ public class PayoutOrderPayoutsItem {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLivemode(Boolean livemode) {
+  public void setLivemode(@javax.annotation.Nonnull Boolean livemode) {
     this.livemode = livemode;
   }
 
 
-  public PayoutOrderPayoutsItem _object(String _object) {
+  public PayoutOrderPayoutsItem _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * The object of the payout.
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
@@ -212,24 +220,24 @@ public class PayoutOrderPayoutsItem {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public PayoutOrderPayoutsItem payoutOrderId(String payoutOrderId) {
+  public PayoutOrderPayoutsItem payoutOrderId(@javax.annotation.Nullable String payoutOrderId) {
     this.payoutOrderId = payoutOrderId;
     return this;
   }
 
-   /**
+  /**
    * The id of the payout order.
    * @return payoutOrderId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PAYOUT_ORDER_ID)
+  @JsonProperty(value = JSON_PROPERTY_PAYOUT_ORDER_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPayoutOrderId() {
@@ -237,24 +245,24 @@ public class PayoutOrderPayoutsItem {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PAYOUT_ORDER_ID)
+  @JsonProperty(value = JSON_PROPERTY_PAYOUT_ORDER_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPayoutOrderId(String payoutOrderId) {
+  public void setPayoutOrderId(@javax.annotation.Nullable String payoutOrderId) {
     this.payoutOrderId = payoutOrderId;
   }
 
 
-  public PayoutOrderPayoutsItem status(String status) {
+  public PayoutOrderPayoutsItem status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * The status of the payout.
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStatus() {
@@ -262,9 +270,9 @@ public class PayoutOrderPayoutsItem {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nullable String status) {
     this.status = status;
   }
 
@@ -317,10 +325,7 @@ public class PayoutOrderPayoutsItem {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

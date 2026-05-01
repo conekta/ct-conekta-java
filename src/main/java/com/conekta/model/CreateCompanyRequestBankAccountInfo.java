@@ -33,25 +33,26 @@ import com.conekta.JSON;
   CreateCompanyRequestBankAccountInfo.JSON_PROPERTY_CLABE
 })
 @JsonTypeName("Create_Company_Request_bank_account_info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CreateCompanyRequestBankAccountInfo {
   public static final String JSON_PROPERTY_CLABE = "clabe";
+  @javax.annotation.Nullable
   private String clabe;
 
   public CreateCompanyRequestBankAccountInfo() { 
   }
 
-  public CreateCompanyRequestBankAccountInfo clabe(String clabe) {
+  public CreateCompanyRequestBankAccountInfo clabe(@javax.annotation.Nullable String clabe) {
     this.clabe = clabe;
     return this;
   }
 
-   /**
+  /**
    * The 18-digit CLABE for the bank account.
    * @return clabe
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CLABE)
+  @JsonProperty(value = JSON_PROPERTY_CLABE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getClabe() {
@@ -59,9 +60,9 @@ public class CreateCompanyRequestBankAccountInfo {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CLABE)
+  @JsonProperty(value = JSON_PROPERTY_CLABE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setClabe(String clabe) {
+  public void setClabe(@javax.annotation.Nullable String clabe) {
     this.clabe = clabe;
   }
 
@@ -100,10 +101,7 @@ public class CreateCompanyRequestBankAccountInfo {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

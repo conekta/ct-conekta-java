@@ -19,7 +19,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class TaxesApi {
   private ApiClient apiClient;
 
@@ -59,7 +59,8 @@ public class TaxesApi {
    * @return OrderTaxResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -67,7 +68,7 @@ public class TaxesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public OrderTaxResponse ordersCreateTaxes(String id, OrderTaxRequest orderTaxRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public OrderTaxResponse ordersCreateTaxes(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull OrderTaxRequest orderTaxRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return ordersCreateTaxesWithHttpInfo(id, orderTaxRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -81,7 +82,8 @@ public class TaxesApi {
    * @return ApiResponse&lt;OrderTaxResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -89,7 +91,7 @@ public class TaxesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<OrderTaxResponse> ordersCreateTaxesWithHttpInfo(String id, OrderTaxRequest orderTaxRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<OrderTaxResponse> ordersCreateTaxesWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull OrderTaxRequest orderTaxRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersCreateTaxes");
@@ -100,7 +102,7 @@ public class TaxesApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/tax_lines"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -129,7 +131,8 @@ public class TaxesApi {
    * @return OrderTaxResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -138,7 +141,7 @@ public class TaxesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public OrderTaxResponse ordersDeleteTaxes(String id, String taxId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public OrderTaxResponse ordersDeleteTaxes(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String taxId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return ordersDeleteTaxesWithHttpInfo(id, taxId, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -152,7 +155,8 @@ public class TaxesApi {
    * @return ApiResponse&lt;OrderTaxResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -161,7 +165,7 @@ public class TaxesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<OrderTaxResponse> ordersDeleteTaxesWithHttpInfo(String id, String taxId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<OrderTaxResponse> ordersDeleteTaxesWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String taxId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersDeleteTaxes");
@@ -172,8 +176,8 @@ public class TaxesApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/tax_lines/{tax_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{tax_id}", apiClient.escapeString(taxId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{tax_id}", apiClient.escapeString(taxId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -203,7 +207,8 @@ public class TaxesApi {
    * @return OrderTaxResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -212,7 +217,7 @@ public class TaxesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public OrderTaxResponse ordersUpdateTaxes(String id, String taxId, OrdersUpdateTaxesRequest ordersUpdateTaxesRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public OrderTaxResponse ordersUpdateTaxes(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String taxId, @javax.annotation.Nonnull OrdersUpdateTaxesRequest ordersUpdateTaxesRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return ordersUpdateTaxesWithHttpInfo(id, taxId, ordersUpdateTaxesRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -227,7 +232,8 @@ public class TaxesApi {
    * @return ApiResponse&lt;OrderTaxResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -236,7 +242,7 @@ public class TaxesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<OrderTaxResponse> ordersUpdateTaxesWithHttpInfo(String id, String taxId, OrdersUpdateTaxesRequest ordersUpdateTaxesRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<OrderTaxResponse> ordersUpdateTaxesWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String taxId, @javax.annotation.Nonnull OrdersUpdateTaxesRequest ordersUpdateTaxesRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersUpdateTaxes");
@@ -250,8 +256,8 @@ public class TaxesApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/tax_lines/{tax_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{tax_id}", apiClient.escapeString(taxId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{tax_id}", apiClient.escapeString(taxId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

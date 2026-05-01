@@ -63,31 +63,35 @@ import com.conekta.JSON;
   CheckoutResponse.JSON_PROPERTY_URL
 })
 @JsonTypeName("checkout_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CheckoutResponse {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
+  @javax.annotation.Nullable
   private List<String> allowedPaymentMethods = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PLAN_IDS = "plan_ids";
+  @javax.annotation.Nullable
   private List<String> planIds = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CAN_NOT_EXPIRE = "can_not_expire";
+  @javax.annotation.Nullable
   private Boolean canNotExpire;
 
   public static final String JSON_PROPERTY_EMAILS_SENT = "emails_sent";
+  @javax.annotation.Nullable
   private Integer emailsSent;
 
   /**
    * Gets or Sets excludeCardNetworks
    */
   public enum ExcludeCardNetworksEnum {
-    VISA("visa"),
+    VISA(String.valueOf("visa")),
     
-    MASTERCARD("mastercard"),
+    MASTERCARD(String.valueOf("mastercard")),
     
-    AMEX("amex"),
+    AMEX(String.valueOf("amex")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -117,75 +121,97 @@ public class CheckoutResponse {
   }
 
   public static final String JSON_PROPERTY_EXCLUDE_CARD_NETWORKS = "exclude_card_networks";
+  @javax.annotation.Nullable
   private List<ExcludeCardNetworksEnum> excludeCardNetworks = new ArrayList<>();
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nullable
   private Long expiresAt;
 
   public static final String JSON_PROPERTY_FAILURE_URL = "failure_url";
+  @javax.annotation.Nullable
   private String failureUrl;
 
   public static final String JSON_PROPERTY_FORCE3DS_FLOW = "force_3ds_flow";
+  @javax.annotation.Nullable
   private Boolean force3dsFlow;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
+  @javax.annotation.Nonnull
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED = "monthly_installments_enabled";
+  @javax.annotation.Nullable
   private Boolean monthlyInstallmentsEnabled;
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS = "monthly_installments_options";
+  @javax.annotation.Nullable
   private List<Integer> monthlyInstallmentsOptions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String JSON_PROPERTY_NEEDS_SHIPPING_CONTACT = "needs_shipping_contact";
+  @javax.annotation.Nullable
   private Boolean needsShippingContact;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_PAID_PAYMENTS_COUNT = "paid_payments_count";
+  @javax.annotation.Nullable
   private Integer paidPaymentsCount;
 
   public static final String JSON_PROPERTY_PAYMENTS_LIMIT_COUNT = "payments_limit_count";
+  @javax.annotation.Nullable
   private Integer paymentsLimitCount;
 
   public static final String JSON_PROPERTY_RECURRENT = "recurrent";
+  @javax.annotation.Nullable
   private Boolean recurrent;
 
   public static final String JSON_PROPERTY_SLUG = "slug";
+  @javax.annotation.Nullable
   private String slug;
 
   public static final String JSON_PROPERTY_SMS_SENT = "sms_sent";
+  @javax.annotation.Nullable
   private Integer smsSent;
 
   public static final String JSON_PROPERTY_STARTS_AT = "starts_at";
+  @javax.annotation.Nullable
   private Integer startsAt;
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nullable
   private String status;
 
   public static final String JSON_PROPERTY_SUCCESS_URL = "success_url";
+  @javax.annotation.Nullable
   private String successUrl;
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private String type;
 
   public static final String JSON_PROPERTY_URL = "url";
+  @javax.annotation.Nullable
   private URI url;
 
   public CheckoutResponse() { 
   }
 
-  public CheckoutResponse allowedPaymentMethods(List<String> allowedPaymentMethods) {
+  public CheckoutResponse allowedPaymentMethods(@javax.annotation.Nullable List<String> allowedPaymentMethods) {
     this.allowedPaymentMethods = allowedPaymentMethods;
     return this;
   }
@@ -198,12 +224,12 @@ public class CheckoutResponse {
     return this;
   }
 
-   /**
+  /**
    * Are the payment methods available for this link
    * @return allowedPaymentMethods
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ALLOWED_PAYMENT_METHODS)
+  @JsonProperty(value = JSON_PROPERTY_ALLOWED_PAYMENT_METHODS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getAllowedPaymentMethods() {
@@ -211,14 +237,14 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ALLOWED_PAYMENT_METHODS)
+  @JsonProperty(value = JSON_PROPERTY_ALLOWED_PAYMENT_METHODS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAllowedPaymentMethods(List<String> allowedPaymentMethods) {
+  public void setAllowedPaymentMethods(@javax.annotation.Nullable List<String> allowedPaymentMethods) {
     this.allowedPaymentMethods = allowedPaymentMethods;
   }
 
 
-  public CheckoutResponse planIds(List<String> planIds) {
+  public CheckoutResponse planIds(@javax.annotation.Nullable List<String> planIds) {
     this.planIds = planIds;
     return this;
   }
@@ -231,12 +257,12 @@ public class CheckoutResponse {
     return this;
   }
 
-   /**
+  /**
    * List of plan IDs that are available for subscription
    * @return planIds
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PLAN_IDS)
+  @JsonProperty(value = JSON_PROPERTY_PLAN_IDS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getPlanIds() {
@@ -244,24 +270,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PLAN_IDS)
+  @JsonProperty(value = JSON_PROPERTY_PLAN_IDS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPlanIds(List<String> planIds) {
+  public void setPlanIds(@javax.annotation.Nullable List<String> planIds) {
     this.planIds = planIds;
   }
 
 
-  public CheckoutResponse canNotExpire(Boolean canNotExpire) {
+  public CheckoutResponse canNotExpire(@javax.annotation.Nullable Boolean canNotExpire) {
     this.canNotExpire = canNotExpire;
     return this;
   }
 
-   /**
+  /**
    * Get canNotExpire
    * @return canNotExpire
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CAN_NOT_EXPIRE)
+  @JsonProperty(value = JSON_PROPERTY_CAN_NOT_EXPIRE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getCanNotExpire() {
@@ -269,24 +295,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CAN_NOT_EXPIRE)
+  @JsonProperty(value = JSON_PROPERTY_CAN_NOT_EXPIRE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCanNotExpire(Boolean canNotExpire) {
+  public void setCanNotExpire(@javax.annotation.Nullable Boolean canNotExpire) {
     this.canNotExpire = canNotExpire;
   }
 
 
-  public CheckoutResponse emailsSent(Integer emailsSent) {
+  public CheckoutResponse emailsSent(@javax.annotation.Nullable Integer emailsSent) {
     this.emailsSent = emailsSent;
     return this;
   }
 
-   /**
+  /**
    * Get emailsSent
    * @return emailsSent
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EMAILS_SENT)
+  @JsonProperty(value = JSON_PROPERTY_EMAILS_SENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getEmailsSent() {
@@ -294,14 +320,14 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EMAILS_SENT)
+  @JsonProperty(value = JSON_PROPERTY_EMAILS_SENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmailsSent(Integer emailsSent) {
+  public void setEmailsSent(@javax.annotation.Nullable Integer emailsSent) {
     this.emailsSent = emailsSent;
   }
 
 
-  public CheckoutResponse excludeCardNetworks(List<ExcludeCardNetworksEnum> excludeCardNetworks) {
+  public CheckoutResponse excludeCardNetworks(@javax.annotation.Nullable List<ExcludeCardNetworksEnum> excludeCardNetworks) {
     this.excludeCardNetworks = excludeCardNetworks;
     return this;
   }
@@ -314,12 +340,12 @@ public class CheckoutResponse {
     return this;
   }
 
-   /**
+  /**
    * Get excludeCardNetworks
    * @return excludeCardNetworks
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXCLUDE_CARD_NETWORKS)
+  @JsonProperty(value = JSON_PROPERTY_EXCLUDE_CARD_NETWORKS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ExcludeCardNetworksEnum> getExcludeCardNetworks() {
@@ -327,24 +353,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXCLUDE_CARD_NETWORKS)
+  @JsonProperty(value = JSON_PROPERTY_EXCLUDE_CARD_NETWORKS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExcludeCardNetworks(List<ExcludeCardNetworksEnum> excludeCardNetworks) {
+  public void setExcludeCardNetworks(@javax.annotation.Nullable List<ExcludeCardNetworksEnum> excludeCardNetworks) {
     this.excludeCardNetworks = excludeCardNetworks;
   }
 
 
-  public CheckoutResponse expiresAt(Long expiresAt) {
+  public CheckoutResponse expiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
-   /**
+  /**
    * Get expiresAt
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getExpiresAt() {
@@ -352,24 +378,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(Long expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public CheckoutResponse failureUrl(String failureUrl) {
+  public CheckoutResponse failureUrl(@javax.annotation.Nullable String failureUrl) {
     this.failureUrl = failureUrl;
     return this;
   }
 
-   /**
+  /**
    * Get failureUrl
    * @return failureUrl
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FAILURE_URL)
+  @JsonProperty(value = JSON_PROPERTY_FAILURE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getFailureUrl() {
@@ -377,24 +403,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FAILURE_URL)
+  @JsonProperty(value = JSON_PROPERTY_FAILURE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFailureUrl(String failureUrl) {
+  public void setFailureUrl(@javax.annotation.Nullable String failureUrl) {
     this.failureUrl = failureUrl;
   }
 
 
-  public CheckoutResponse force3dsFlow(Boolean force3dsFlow) {
+  public CheckoutResponse force3dsFlow(@javax.annotation.Nullable Boolean force3dsFlow) {
     this.force3dsFlow = force3dsFlow;
     return this;
   }
 
-   /**
+  /**
    * Get force3dsFlow
    * @return force3dsFlow
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FORCE3DS_FLOW)
+  @JsonProperty(value = JSON_PROPERTY_FORCE3DS_FLOW, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getForce3dsFlow() {
@@ -402,24 +428,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FORCE3DS_FLOW)
+  @JsonProperty(value = JSON_PROPERTY_FORCE3DS_FLOW, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setForce3dsFlow(Boolean force3dsFlow) {
+  public void setForce3dsFlow(@javax.annotation.Nullable Boolean force3dsFlow) {
     this.force3dsFlow = force3dsFlow;
   }
 
 
-  public CheckoutResponse id(String id) {
+  public CheckoutResponse id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
@@ -427,24 +453,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public CheckoutResponse livemode(Boolean livemode) {
+  public CheckoutResponse livemode(@javax.annotation.Nonnull Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
 
-   /**
+  /**
    * Get livemode
    * @return livemode
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getLivemode() {
@@ -452,49 +478,57 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLivemode(Boolean livemode) {
+  public void setLivemode(@javax.annotation.Nonnull Boolean livemode) {
     this.livemode = livemode;
   }
 
 
-  public CheckoutResponse metadata(Map<String, Object> metadata) {
+  public CheckoutResponse metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
 
-   /**
+  public CheckoutResponse putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
+  /**
    * Get metadata
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
     return metadata;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 
 
-  public CheckoutResponse monthlyInstallmentsEnabled(Boolean monthlyInstallmentsEnabled) {
+  public CheckoutResponse monthlyInstallmentsEnabled(@javax.annotation.Nullable Boolean monthlyInstallmentsEnabled) {
     this.monthlyInstallmentsEnabled = monthlyInstallmentsEnabled;
     return this;
   }
 
-   /**
+  /**
    * Get monthlyInstallmentsEnabled
    * @return monthlyInstallmentsEnabled
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED)
+  @JsonProperty(value = JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getMonthlyInstallmentsEnabled() {
@@ -502,14 +536,14 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED)
+  @JsonProperty(value = JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMonthlyInstallmentsEnabled(Boolean monthlyInstallmentsEnabled) {
+  public void setMonthlyInstallmentsEnabled(@javax.annotation.Nullable Boolean monthlyInstallmentsEnabled) {
     this.monthlyInstallmentsEnabled = monthlyInstallmentsEnabled;
   }
 
 
-  public CheckoutResponse monthlyInstallmentsOptions(List<Integer> monthlyInstallmentsOptions) {
+  public CheckoutResponse monthlyInstallmentsOptions(@javax.annotation.Nullable List<Integer> monthlyInstallmentsOptions) {
     this.monthlyInstallmentsOptions = monthlyInstallmentsOptions;
     return this;
   }
@@ -522,12 +556,12 @@ public class CheckoutResponse {
     return this;
   }
 
-   /**
+  /**
    * Get monthlyInstallmentsOptions
    * @return monthlyInstallmentsOptions
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS)
+  @JsonProperty(value = JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<Integer> getMonthlyInstallmentsOptions() {
@@ -535,24 +569,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS)
+  @JsonProperty(value = JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMonthlyInstallmentsOptions(List<Integer> monthlyInstallmentsOptions) {
+  public void setMonthlyInstallmentsOptions(@javax.annotation.Nullable List<Integer> monthlyInstallmentsOptions) {
     this.monthlyInstallmentsOptions = monthlyInstallmentsOptions;
   }
 
 
-  public CheckoutResponse name(String name) {
+  public CheckoutResponse name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Reason for charge
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getName() {
@@ -560,24 +594,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public CheckoutResponse needsShippingContact(Boolean needsShippingContact) {
+  public CheckoutResponse needsShippingContact(@javax.annotation.Nullable Boolean needsShippingContact) {
     this.needsShippingContact = needsShippingContact;
     return this;
   }
 
-   /**
+  /**
    * Get needsShippingContact
    * @return needsShippingContact
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NEEDS_SHIPPING_CONTACT)
+  @JsonProperty(value = JSON_PROPERTY_NEEDS_SHIPPING_CONTACT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getNeedsShippingContact() {
@@ -585,24 +619,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NEEDS_SHIPPING_CONTACT)
+  @JsonProperty(value = JSON_PROPERTY_NEEDS_SHIPPING_CONTACT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNeedsShippingContact(Boolean needsShippingContact) {
+  public void setNeedsShippingContact(@javax.annotation.Nullable Boolean needsShippingContact) {
     this.needsShippingContact = needsShippingContact;
   }
 
 
-  public CheckoutResponse _object(String _object) {
+  public CheckoutResponse _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
@@ -610,24 +644,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public CheckoutResponse paidPaymentsCount(Integer paidPaymentsCount) {
+  public CheckoutResponse paidPaymentsCount(@javax.annotation.Nullable Integer paidPaymentsCount) {
     this.paidPaymentsCount = paidPaymentsCount;
     return this;
   }
 
-   /**
+  /**
    * Get paidPaymentsCount
    * @return paidPaymentsCount
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PAID_PAYMENTS_COUNT)
+  @JsonProperty(value = JSON_PROPERTY_PAID_PAYMENTS_COUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getPaidPaymentsCount() {
@@ -635,24 +669,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PAID_PAYMENTS_COUNT)
+  @JsonProperty(value = JSON_PROPERTY_PAID_PAYMENTS_COUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPaidPaymentsCount(Integer paidPaymentsCount) {
+  public void setPaidPaymentsCount(@javax.annotation.Nullable Integer paidPaymentsCount) {
     this.paidPaymentsCount = paidPaymentsCount;
   }
 
 
-  public CheckoutResponse paymentsLimitCount(Integer paymentsLimitCount) {
+  public CheckoutResponse paymentsLimitCount(@javax.annotation.Nullable Integer paymentsLimitCount) {
     this.paymentsLimitCount = paymentsLimitCount;
     return this;
   }
 
-   /**
+  /**
    * Get paymentsLimitCount
    * @return paymentsLimitCount
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PAYMENTS_LIMIT_COUNT)
+  @JsonProperty(value = JSON_PROPERTY_PAYMENTS_LIMIT_COUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getPaymentsLimitCount() {
@@ -660,24 +694,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PAYMENTS_LIMIT_COUNT)
+  @JsonProperty(value = JSON_PROPERTY_PAYMENTS_LIMIT_COUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPaymentsLimitCount(Integer paymentsLimitCount) {
+  public void setPaymentsLimitCount(@javax.annotation.Nullable Integer paymentsLimitCount) {
     this.paymentsLimitCount = paymentsLimitCount;
   }
 
 
-  public CheckoutResponse recurrent(Boolean recurrent) {
+  public CheckoutResponse recurrent(@javax.annotation.Nullable Boolean recurrent) {
     this.recurrent = recurrent;
     return this;
   }
 
-   /**
+  /**
    * Get recurrent
    * @return recurrent
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RECURRENT)
+  @JsonProperty(value = JSON_PROPERTY_RECURRENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getRecurrent() {
@@ -685,24 +719,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RECURRENT)
+  @JsonProperty(value = JSON_PROPERTY_RECURRENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRecurrent(Boolean recurrent) {
+  public void setRecurrent(@javax.annotation.Nullable Boolean recurrent) {
     this.recurrent = recurrent;
   }
 
 
-  public CheckoutResponse slug(String slug) {
+  public CheckoutResponse slug(@javax.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
 
-   /**
+  /**
    * Get slug
    * @return slug
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SLUG)
+  @JsonProperty(value = JSON_PROPERTY_SLUG, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSlug() {
@@ -710,24 +744,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SLUG)
+  @JsonProperty(value = JSON_PROPERTY_SLUG, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSlug(String slug) {
+  public void setSlug(@javax.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
 
-  public CheckoutResponse smsSent(Integer smsSent) {
+  public CheckoutResponse smsSent(@javax.annotation.Nullable Integer smsSent) {
     this.smsSent = smsSent;
     return this;
   }
 
-   /**
+  /**
    * Get smsSent
    * @return smsSent
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SMS_SENT)
+  @JsonProperty(value = JSON_PROPERTY_SMS_SENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getSmsSent() {
@@ -735,24 +769,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SMS_SENT)
+  @JsonProperty(value = JSON_PROPERTY_SMS_SENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSmsSent(Integer smsSent) {
+  public void setSmsSent(@javax.annotation.Nullable Integer smsSent) {
     this.smsSent = smsSent;
   }
 
 
-  public CheckoutResponse startsAt(Integer startsAt) {
+  public CheckoutResponse startsAt(@javax.annotation.Nullable Integer startsAt) {
     this.startsAt = startsAt;
     return this;
   }
 
-   /**
+  /**
    * Get startsAt
    * @return startsAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STARTS_AT)
+  @JsonProperty(value = JSON_PROPERTY_STARTS_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getStartsAt() {
@@ -760,24 +794,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STARTS_AT)
+  @JsonProperty(value = JSON_PROPERTY_STARTS_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartsAt(Integer startsAt) {
+  public void setStartsAt(@javax.annotation.Nullable Integer startsAt) {
     this.startsAt = startsAt;
   }
 
 
-  public CheckoutResponse status(String status) {
+  public CheckoutResponse status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStatus() {
@@ -785,24 +819,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nullable String status) {
     this.status = status;
   }
 
 
-  public CheckoutResponse successUrl(String successUrl) {
+  public CheckoutResponse successUrl(@javax.annotation.Nullable String successUrl) {
     this.successUrl = successUrl;
     return this;
   }
 
-   /**
+  /**
    * The URL to redirect to after a successful payment.
    * @return successUrl
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SUCCESS_URL)
+  @JsonProperty(value = JSON_PROPERTY_SUCCESS_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getSuccessUrl() {
@@ -810,24 +844,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SUCCESS_URL)
+  @JsonProperty(value = JSON_PROPERTY_SUCCESS_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSuccessUrl(String successUrl) {
+  public void setSuccessUrl(@javax.annotation.Nullable String successUrl) {
     this.successUrl = successUrl;
   }
 
 
-  public CheckoutResponse type(String type) {
+  public CheckoutResponse type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getType() {
@@ -835,24 +869,24 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public CheckoutResponse url(URI url) {
+  public CheckoutResponse url(@javax.annotation.Nullable URI url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * Get url
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonProperty(value = JSON_PROPERTY_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public URI getUrl() {
@@ -860,9 +894,9 @@ public class CheckoutResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonProperty(value = JSON_PROPERTY_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUrl(URI url) {
+  public void setUrl(@javax.annotation.Nullable URI url) {
     this.url = url;
   }
 
@@ -951,10 +985,7 @@ public class CheckoutResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

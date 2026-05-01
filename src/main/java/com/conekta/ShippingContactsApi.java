@@ -19,7 +19,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class ShippingContactsApi {
   private ApiClient apiClient;
 
@@ -59,7 +59,8 @@ public class ShippingContactsApi {
    * @return CustomerShippingContactsResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -68,7 +69,7 @@ public class ShippingContactsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CustomerShippingContactsResponse createCustomerShippingContacts(String id, CustomerShippingContactsRequest customerShippingContactsRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public CustomerShippingContactsResponse createCustomerShippingContacts(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull CustomerShippingContactsRequest customerShippingContactsRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return createCustomerShippingContactsWithHttpInfo(id, customerShippingContactsRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -82,7 +83,8 @@ public class ShippingContactsApi {
    * @return ApiResponse&lt;CustomerShippingContactsResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -91,7 +93,7 @@ public class ShippingContactsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CustomerShippingContactsResponse> createCustomerShippingContactsWithHttpInfo(String id, CustomerShippingContactsRequest customerShippingContactsRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CustomerShippingContactsResponse> createCustomerShippingContactsWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull CustomerShippingContactsRequest customerShippingContactsRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling createCustomerShippingContacts");
@@ -102,7 +104,7 @@ public class ShippingContactsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/shipping_contacts"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -131,7 +133,8 @@ public class ShippingContactsApi {
    * @return CustomerShippingContactsResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -140,7 +143,7 @@ public class ShippingContactsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CustomerShippingContactsResponse deleteCustomerShippingContacts(String id, String shippingContactsId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public CustomerShippingContactsResponse deleteCustomerShippingContacts(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String shippingContactsId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return deleteCustomerShippingContactsWithHttpInfo(id, shippingContactsId, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -154,7 +157,8 @@ public class ShippingContactsApi {
    * @return ApiResponse&lt;CustomerShippingContactsResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -163,7 +167,7 @@ public class ShippingContactsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CustomerShippingContactsResponse> deleteCustomerShippingContactsWithHttpInfo(String id, String shippingContactsId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CustomerShippingContactsResponse> deleteCustomerShippingContactsWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String shippingContactsId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling deleteCustomerShippingContacts");
@@ -174,8 +178,8 @@ public class ShippingContactsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/shipping_contacts/{shipping_contacts_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{shipping_contacts_id}", apiClient.escapeString(shippingContactsId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{shipping_contacts_id}", apiClient.escapeString(shippingContactsId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -205,7 +209,8 @@ public class ShippingContactsApi {
    * @return CustomerShippingContactsResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -214,7 +219,7 @@ public class ShippingContactsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CustomerShippingContactsResponse updateCustomerShippingContacts(String id, String shippingContactsId, CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public CustomerShippingContactsResponse updateCustomerShippingContacts(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String shippingContactsId, @javax.annotation.Nonnull CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return updateCustomerShippingContactsWithHttpInfo(id, shippingContactsId, customerUpdateShippingContactsRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -229,7 +234,8 @@ public class ShippingContactsApi {
    * @return ApiResponse&lt;CustomerShippingContactsResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -238,7 +244,7 @@ public class ShippingContactsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CustomerShippingContactsResponse> updateCustomerShippingContactsWithHttpInfo(String id, String shippingContactsId, CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CustomerShippingContactsResponse> updateCustomerShippingContactsWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String shippingContactsId, @javax.annotation.Nonnull CustomerUpdateShippingContactsRequest customerUpdateShippingContactsRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateCustomerShippingContacts");
@@ -252,8 +258,8 @@ public class ShippingContactsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/shipping_contacts/{shipping_contacts_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{shipping_contacts_id}", apiClient.escapeString(shippingContactsId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{shipping_contacts_id}", apiClient.escapeString(shippingContactsId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

@@ -45,61 +45,74 @@ import com.conekta.JSON;
   PaymentMethodCash.JSON_PROPERTY_CUSTOMER_IP_ADDRESS
 })
 @JsonTypeName("payment_method_cash")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class PaymentMethodCash {
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private String type;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_AGREEMENT = "agreement";
+  @javax.annotation.Nullable
   private String agreement;
 
   public static final String JSON_PROPERTY_AUTH_CODE = "auth_code";
+  @javax.annotation.Nullable
   private Integer authCode;
 
   public static final String JSON_PROPERTY_CASHIER_ID = "cashier_id";
+  @javax.annotation.Nullable
   private String cashierId;
 
   public static final String JSON_PROPERTY_REFERENCE = "reference";
+  @javax.annotation.Nullable
   private String reference;
 
   public static final String JSON_PROPERTY_BARCODE_URL = "barcode_url";
+  @javax.annotation.Nullable
   private String barcodeUrl;
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nullable
   private Long expiresAt;
 
   public static final String JSON_PROPERTY_PRODUCT_TYPE = "product_type";
+  @javax.annotation.Nullable
   private String productType;
 
   public static final String JSON_PROPERTY_SERVICE_NAME = "service_name";
+  @javax.annotation.Nullable
   private String serviceName;
 
   public static final String JSON_PROPERTY_STORE = "store";
+  @javax.annotation.Nullable
   private String store;
 
   public static final String JSON_PROPERTY_STORE_NAME = "store_name";
+  @javax.annotation.Nullable
   private String storeName;
 
   public static final String JSON_PROPERTY_CUSTOMER_IP_ADDRESS = "customer_ip_address";
+  @javax.annotation.Nullable
   private String customerIpAddress;
 
   public PaymentMethodCash() { 
   }
 
-  public PaymentMethodCash type(String type) {
+  public PaymentMethodCash type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getType() {
@@ -107,24 +120,24 @@ public class PaymentMethodCash {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public PaymentMethodCash _object(String _object) {
+  public PaymentMethodCash _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
@@ -132,24 +145,24 @@ public class PaymentMethodCash {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public PaymentMethodCash agreement(String agreement) {
+  public PaymentMethodCash agreement(@javax.annotation.Nullable String agreement) {
     this.agreement = agreement;
     return this;
   }
 
-   /**
+  /**
    * Agreement ID
    * @return agreement
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_AGREEMENT)
+  @JsonProperty(value = JSON_PROPERTY_AGREEMENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getAgreement() {
@@ -157,24 +170,24 @@ public class PaymentMethodCash {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_AGREEMENT)
+  @JsonProperty(value = JSON_PROPERTY_AGREEMENT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAgreement(String agreement) {
+  public void setAgreement(@javax.annotation.Nullable String agreement) {
     this.agreement = agreement;
   }
 
 
-  public PaymentMethodCash authCode(Integer authCode) {
+  public PaymentMethodCash authCode(@javax.annotation.Nullable Integer authCode) {
     this.authCode = authCode;
     return this;
   }
 
-   /**
+  /**
    * Get authCode
    * @return authCode
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_AUTH_CODE)
+  @JsonProperty(value = JSON_PROPERTY_AUTH_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getAuthCode() {
@@ -182,24 +195,24 @@ public class PaymentMethodCash {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_AUTH_CODE)
+  @JsonProperty(value = JSON_PROPERTY_AUTH_CODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAuthCode(Integer authCode) {
+  public void setAuthCode(@javax.annotation.Nullable Integer authCode) {
     this.authCode = authCode;
   }
 
 
-  public PaymentMethodCash cashierId(String cashierId) {
+  public PaymentMethodCash cashierId(@javax.annotation.Nullable String cashierId) {
     this.cashierId = cashierId;
     return this;
   }
 
-   /**
+  /**
    * Get cashierId
    * @return cashierId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CASHIER_ID)
+  @JsonProperty(value = JSON_PROPERTY_CASHIER_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCashierId() {
@@ -207,24 +220,24 @@ public class PaymentMethodCash {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CASHIER_ID)
+  @JsonProperty(value = JSON_PROPERTY_CASHIER_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCashierId(String cashierId) {
+  public void setCashierId(@javax.annotation.Nullable String cashierId) {
     this.cashierId = cashierId;
   }
 
 
-  public PaymentMethodCash reference(String reference) {
+  public PaymentMethodCash reference(@javax.annotation.Nullable String reference) {
     this.reference = reference;
     return this;
   }
 
-   /**
+  /**
    * Get reference
    * @return reference
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REFERENCE)
+  @JsonProperty(value = JSON_PROPERTY_REFERENCE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getReference() {
@@ -232,24 +245,24 @@ public class PaymentMethodCash {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REFERENCE)
+  @JsonProperty(value = JSON_PROPERTY_REFERENCE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReference(String reference) {
+  public void setReference(@javax.annotation.Nullable String reference) {
     this.reference = reference;
   }
 
 
-  public PaymentMethodCash barcodeUrl(String barcodeUrl) {
+  public PaymentMethodCash barcodeUrl(@javax.annotation.Nullable String barcodeUrl) {
     this.barcodeUrl = barcodeUrl;
     return this;
   }
 
-   /**
+  /**
    * Get barcodeUrl
    * @return barcodeUrl
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BARCODE_URL)
+  @JsonProperty(value = JSON_PROPERTY_BARCODE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBarcodeUrl() {
@@ -257,24 +270,24 @@ public class PaymentMethodCash {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_BARCODE_URL)
+  @JsonProperty(value = JSON_PROPERTY_BARCODE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBarcodeUrl(String barcodeUrl) {
+  public void setBarcodeUrl(@javax.annotation.Nullable String barcodeUrl) {
     this.barcodeUrl = barcodeUrl;
   }
 
 
-  public PaymentMethodCash expiresAt(Long expiresAt) {
+  public PaymentMethodCash expiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
-   /**
+  /**
    * Get expiresAt
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getExpiresAt() {
@@ -282,24 +295,24 @@ public class PaymentMethodCash {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(Long expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public PaymentMethodCash productType(String productType) {
+  public PaymentMethodCash productType(@javax.annotation.Nullable String productType) {
     this.productType = productType;
     return this;
   }
 
-   /**
+  /**
    * Product type, e.g. bbva_cash_in, cash_in, pespay_cash_in, etc.
    * @return productType
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PRODUCT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_PRODUCT_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getProductType() {
@@ -307,24 +320,24 @@ public class PaymentMethodCash {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PRODUCT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_PRODUCT_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProductType(String productType) {
+  public void setProductType(@javax.annotation.Nullable String productType) {
     this.productType = productType;
   }
 
 
-  public PaymentMethodCash serviceName(String serviceName) {
+  public PaymentMethodCash serviceName(@javax.annotation.Nullable String serviceName) {
     this.serviceName = serviceName;
     return this;
   }
 
-   /**
+  /**
    * Get serviceName
    * @return serviceName
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SERVICE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_SERVICE_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getServiceName() {
@@ -332,24 +345,24 @@ public class PaymentMethodCash {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SERVICE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_SERVICE_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setServiceName(String serviceName) {
+  public void setServiceName(@javax.annotation.Nullable String serviceName) {
     this.serviceName = serviceName;
   }
 
 
-  public PaymentMethodCash store(String store) {
+  public PaymentMethodCash store(@javax.annotation.Nullable String store) {
     this.store = store;
     return this;
   }
 
-   /**
+  /**
    * Get store
    * @return store
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STORE)
+  @JsonProperty(value = JSON_PROPERTY_STORE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStore() {
@@ -357,24 +370,24 @@ public class PaymentMethodCash {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STORE)
+  @JsonProperty(value = JSON_PROPERTY_STORE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStore(String store) {
+  public void setStore(@javax.annotation.Nullable String store) {
     this.store = store;
   }
 
 
-  public PaymentMethodCash storeName(String storeName) {
+  public PaymentMethodCash storeName(@javax.annotation.Nullable String storeName) {
     this.storeName = storeName;
     return this;
   }
 
-   /**
+  /**
    * Get storeName
    * @return storeName
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STORE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_STORE_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStoreName() {
@@ -382,24 +395,24 @@ public class PaymentMethodCash {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STORE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_STORE_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStoreName(String storeName) {
+  public void setStoreName(@javax.annotation.Nullable String storeName) {
     this.storeName = storeName;
   }
 
 
-  public PaymentMethodCash customerIpAddress(String customerIpAddress) {
+  public PaymentMethodCash customerIpAddress(@javax.annotation.Nullable String customerIpAddress) {
     this.customerIpAddress = customerIpAddress;
     return this;
   }
 
-   /**
+  /**
    * Get customerIpAddress
    * @return customerIpAddress
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_CUSTOMER_IP_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCustomerIpAddress() {
@@ -407,9 +420,9 @@ public class PaymentMethodCash {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CUSTOMER_IP_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_CUSTOMER_IP_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomerIpAddress(String customerIpAddress) {
+  public void setCustomerIpAddress(@javax.annotation.Nullable String customerIpAddress) {
     this.customerIpAddress = customerIpAddress;
   }
 
@@ -472,10 +485,7 @@ public class PaymentMethodCash {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

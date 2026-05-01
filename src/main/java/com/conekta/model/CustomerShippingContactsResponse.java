@@ -46,55 +46,66 @@ import com.conekta.JSON;
   CustomerShippingContactsResponse.JSON_PROPERTY_DELETED
 })
 @JsonTypeName("customer_shipping_contacts_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CustomerShippingContactsResponse {
   public static final String JSON_PROPERTY_PHONE = "phone";
+  @javax.annotation.Nullable
   private String phone;
 
   public static final String JSON_PROPERTY_RECEIVER = "receiver";
+  @javax.annotation.Nullable
   private String receiver;
 
   public static final String JSON_PROPERTY_BETWEEN_STREETS = "between_streets";
+  @javax.annotation.Nullable
   private String betweenStreets;
 
   public static final String JSON_PROPERTY_ADDRESS = "address";
+  @javax.annotation.Nullable
   private CustomerShippingContactsAddress address;
 
   public static final String JSON_PROPERTY_PARENT_ID = "parent_id";
+  @javax.annotation.Nullable
   private String parentId;
 
   public static final String JSON_PROPERTY_DEFAULT = "default";
+  @javax.annotation.Nullable
   private Boolean _default;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nullable
   private Long createdAt;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
+  @javax.annotation.Nullable
   private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_DELETED = "deleted";
+  @javax.annotation.Nullable
   private Boolean deleted;
 
   public CustomerShippingContactsResponse() { 
   }
 
-  public CustomerShippingContactsResponse phone(String phone) {
+  public CustomerShippingContactsResponse phone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
     return this;
   }
 
-   /**
+  /**
    * Get phone
    * @return phone
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PHONE)
+  @JsonProperty(value = JSON_PROPERTY_PHONE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPhone() {
@@ -102,24 +113,24 @@ public class CustomerShippingContactsResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PHONE)
+  @JsonProperty(value = JSON_PROPERTY_PHONE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPhone(String phone) {
+  public void setPhone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
   }
 
 
-  public CustomerShippingContactsResponse receiver(String receiver) {
+  public CustomerShippingContactsResponse receiver(@javax.annotation.Nullable String receiver) {
     this.receiver = receiver;
     return this;
   }
 
-   /**
+  /**
    * Get receiver
    * @return receiver
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RECEIVER)
+  @JsonProperty(value = JSON_PROPERTY_RECEIVER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getReceiver() {
@@ -127,24 +138,24 @@ public class CustomerShippingContactsResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RECEIVER)
+  @JsonProperty(value = JSON_PROPERTY_RECEIVER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReceiver(String receiver) {
+  public void setReceiver(@javax.annotation.Nullable String receiver) {
     this.receiver = receiver;
   }
 
 
-  public CustomerShippingContactsResponse betweenStreets(String betweenStreets) {
+  public CustomerShippingContactsResponse betweenStreets(@javax.annotation.Nullable String betweenStreets) {
     this.betweenStreets = betweenStreets;
     return this;
   }
 
-   /**
+  /**
    * Get betweenStreets
    * @return betweenStreets
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BETWEEN_STREETS)
+  @JsonProperty(value = JSON_PROPERTY_BETWEEN_STREETS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getBetweenStreets() {
@@ -152,24 +163,24 @@ public class CustomerShippingContactsResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_BETWEEN_STREETS)
+  @JsonProperty(value = JSON_PROPERTY_BETWEEN_STREETS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBetweenStreets(String betweenStreets) {
+  public void setBetweenStreets(@javax.annotation.Nullable String betweenStreets) {
     this.betweenStreets = betweenStreets;
   }
 
 
-  public CustomerShippingContactsResponse address(CustomerShippingContactsAddress address) {
+  public CustomerShippingContactsResponse address(@javax.annotation.Nullable CustomerShippingContactsAddress address) {
     this.address = address;
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public CustomerShippingContactsAddress getAddress() {
@@ -177,24 +188,24 @@ public class CustomerShippingContactsResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAddress(CustomerShippingContactsAddress address) {
+  public void setAddress(@javax.annotation.Nullable CustomerShippingContactsAddress address) {
     this.address = address;
   }
 
 
-  public CustomerShippingContactsResponse parentId(String parentId) {
+  public CustomerShippingContactsResponse parentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
     return this;
   }
 
-   /**
+  /**
    * Get parentId
    * @return parentId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PARENT_ID)
+  @JsonProperty(value = JSON_PROPERTY_PARENT_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getParentId() {
@@ -202,24 +213,24 @@ public class CustomerShippingContactsResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PARENT_ID)
+  @JsonProperty(value = JSON_PROPERTY_PARENT_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setParentId(String parentId) {
+  public void setParentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
   }
 
 
-  public CustomerShippingContactsResponse _default(Boolean _default) {
+  public CustomerShippingContactsResponse _default(@javax.annotation.Nullable Boolean _default) {
     this._default = _default;
     return this;
   }
 
-   /**
+  /**
    * Get _default
    * @return _default
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DEFAULT)
+  @JsonProperty(value = JSON_PROPERTY_DEFAULT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getDefault() {
@@ -227,24 +238,24 @@ public class CustomerShippingContactsResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DEFAULT)
+  @JsonProperty(value = JSON_PROPERTY_DEFAULT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDefault(Boolean _default) {
+  public void setDefault(@javax.annotation.Nullable Boolean _default) {
     this._default = _default;
   }
 
 
-  public CustomerShippingContactsResponse id(String id) {
+  public CustomerShippingContactsResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
@@ -252,24 +263,24 @@ public class CustomerShippingContactsResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public CustomerShippingContactsResponse createdAt(Long createdAt) {
+  public CustomerShippingContactsResponse createdAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getCreatedAt() {
@@ -277,49 +288,57 @@ public class CustomerShippingContactsResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CustomerShippingContactsResponse metadata(Map<String, Object> metadata) {
+  public CustomerShippingContactsResponse metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
 
-   /**
+  public CustomerShippingContactsResponse putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
+  /**
    * Metadata associated with the shipping contact
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
 
   public Map<String, Object> getMetadata() {
     return metadata;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_METADATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(Map<String, Object> metadata) {
+  @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
+  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 
 
-  public CustomerShippingContactsResponse _object(String _object) {
+  public CustomerShippingContactsResponse _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getObject() {
@@ -327,24 +346,24 @@ public class CustomerShippingContactsResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
 
-  public CustomerShippingContactsResponse deleted(Boolean deleted) {
+  public CustomerShippingContactsResponse deleted(@javax.annotation.Nullable Boolean deleted) {
     this.deleted = deleted;
     return this;
   }
 
-   /**
+  /**
    * Get deleted
    * @return deleted
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DELETED)
+  @JsonProperty(value = JSON_PROPERTY_DELETED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getDeleted() {
@@ -352,9 +371,9 @@ public class CustomerShippingContactsResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DELETED)
+  @JsonProperty(value = JSON_PROPERTY_DELETED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDeleted(Boolean deleted) {
+  public void setDeleted(@javax.annotation.Nullable Boolean deleted) {
     this.deleted = deleted;
   }
 
@@ -413,10 +432,7 @@ public class CustomerShippingContactsResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

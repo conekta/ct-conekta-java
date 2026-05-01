@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**amount** | **Long** | The amount to be collected for tax in cents |  |
 |**description** | **String** | description or tax&#39;s name |  |
-|**metadata** |  |  |  [optional] |
+|**metadata** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**id** | **String** |  |  |
 |**_object** | **String** |  |  [optional] |
 |**parentId** | **String** |  |  [optional] |

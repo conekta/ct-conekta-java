@@ -38,31 +38,34 @@ import com.conekta.JSON;
   CustomerFiscalEntitiesResponse.JSON_PROPERTY_DATA
 })
 @JsonTypeName("customer_fiscal_entities_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CustomerFiscalEntitiesResponse {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
+  @javax.annotation.Nonnull
   private Boolean hasMore;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_DATA = "data";
+  @javax.annotation.Nullable
   private List<CustomerFiscalEntitiesDataResponse> data = new ArrayList<>();
 
   public CustomerFiscalEntitiesResponse() { 
   }
 
-  public CustomerFiscalEntitiesResponse hasMore(Boolean hasMore) {
+  public CustomerFiscalEntitiesResponse hasMore(@javax.annotation.Nonnull Boolean hasMore) {
     this.hasMore = hasMore;
     return this;
   }
 
-   /**
+  /**
    * Indicates if there are more pages to be requested
    * @return hasMore
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_HAS_MORE)
+  @JsonProperty(value = JSON_PROPERTY_HAS_MORE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getHasMore() {
@@ -70,24 +73,24 @@ public class CustomerFiscalEntitiesResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_HAS_MORE)
+  @JsonProperty(value = JSON_PROPERTY_HAS_MORE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setHasMore(Boolean hasMore) {
+  public void setHasMore(@javax.annotation.Nonnull Boolean hasMore) {
     this.hasMore = hasMore;
   }
 
 
-  public CustomerFiscalEntitiesResponse _object(String _object) {
+  public CustomerFiscalEntitiesResponse _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Object type, in this case is list
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
@@ -95,14 +98,14 @@ public class CustomerFiscalEntitiesResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public CustomerFiscalEntitiesResponse data(List<CustomerFiscalEntitiesDataResponse> data) {
+  public CustomerFiscalEntitiesResponse data(@javax.annotation.Nullable List<CustomerFiscalEntitiesDataResponse> data) {
     this.data = data;
     return this;
   }
@@ -115,12 +118,12 @@ public class CustomerFiscalEntitiesResponse {
     return this;
   }
 
-   /**
+  /**
    * Get data
    * @return data
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonProperty(value = JSON_PROPERTY_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<CustomerFiscalEntitiesDataResponse> getData() {
@@ -128,9 +131,9 @@ public class CustomerFiscalEntitiesResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonProperty(value = JSON_PROPERTY_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setData(List<CustomerFiscalEntitiesDataResponse> data) {
+  public void setData(@javax.annotation.Nullable List<CustomerFiscalEntitiesDataResponse> data) {
     this.data = data;
   }
 
@@ -173,10 +176,7 @@ public class CustomerFiscalEntitiesResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

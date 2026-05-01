@@ -33,25 +33,26 @@ import com.conekta.JSON;
   SmsCheckoutRequest.JSON_PROPERTY_PHONENUMBER
 })
 @JsonTypeName("smsCheckout_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class SmsCheckoutRequest {
   public static final String JSON_PROPERTY_PHONENUMBER = "phonenumber";
+  @javax.annotation.Nonnull
   private String phonenumber;
 
   public SmsCheckoutRequest() { 
   }
 
-  public SmsCheckoutRequest phonenumber(String phonenumber) {
+  public SmsCheckoutRequest phonenumber(@javax.annotation.Nonnull String phonenumber) {
     this.phonenumber = phonenumber;
     return this;
   }
 
-   /**
+  /**
    * Get phonenumber
    * @return phonenumber
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_PHONENUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PHONENUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getPhonenumber() {
@@ -59,9 +60,9 @@ public class SmsCheckoutRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PHONENUMBER)
+  @JsonProperty(value = JSON_PROPERTY_PHONENUMBER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPhonenumber(String phonenumber) {
+  public void setPhonenumber(@javax.annotation.Nonnull String phonenumber) {
     this.phonenumber = phonenumber;
   }
 
@@ -100,10 +101,7 @@ public class SmsCheckoutRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

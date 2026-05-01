@@ -62,7 +62,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.conekta.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 @JsonDeserialize(using = ChargeOrderResponsePaymentMethod.ChargeOrderResponsePaymentMethodDeserializer.class)
 @JsonSerialize(using = ChargeOrderResponsePaymentMethod.ChargeOrderResponsePaymentMethodSerializer.class)
 public class ChargeOrderResponsePaymentMethod extends AbstractOpenApiSchema {
@@ -94,7 +94,7 @@ public class ChargeOrderResponsePaymentMethod extends AbstractOpenApiSchema {
 
         @Override
         public ChargeOrderResponsePaymentMethod deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
-            JsonNode tree = jp.readValueAsTree();
+            JsonNode tree = ctxt.readTree(jp);
             Object deserialized = null;
             ChargeOrderResponsePaymentMethod newChargeOrderResponsePaymentMethod = new ChargeOrderResponsePaymentMethod();
             Map<String, Object> result2 = tree.traverse(jp.getCodec()).readValueAs(new TypeReference<Map<String, Object>>() {});
@@ -120,28 +120,8 @@ public class ChargeOrderResponsePaymentMethod extends AbstractOpenApiSchema {
                     deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodPbbPayment.class);
                     newChargeOrderResponsePaymentMethod.setActualInstance(deserialized);
                     return newChargeOrderResponsePaymentMethod;
-                case "payment_method_bank_transfer":
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodBankTransfer.class);
-                    newChargeOrderResponsePaymentMethod.setActualInstance(deserialized);
-                    return newChargeOrderResponsePaymentMethod;
-                case "payment_method_bnpl_payment":
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodBnplPayment.class);
-                    newChargeOrderResponsePaymentMethod.setActualInstance(deserialized);
-                    return newChargeOrderResponsePaymentMethod;
-                case "payment_method_card":
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCard.class);
-                    newChargeOrderResponsePaymentMethod.setActualInstance(deserialized);
-                    return newChargeOrderResponsePaymentMethod;
-                case "payment_method_cash":
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodCash.class);
-                    newChargeOrderResponsePaymentMethod.setActualInstance(deserialized);
-                    return newChargeOrderResponsePaymentMethod;
-                case "payment_method_pbb_payment":
-                    deserialized = tree.traverse(jp.getCodec()).readValueAs(PaymentMethodPbbPayment.class);
-                    newChargeOrderResponsePaymentMethod.setActualInstance(deserialized);
-                    return newChargeOrderResponsePaymentMethod;
                 default:
-                    log.log(Level.WARNING, String.format("Failed to lookup discriminator value `%s` for ChargeOrderResponsePaymentMethod. Possible values: bank_transfer_payment bnpl_payment card_payment cash_payment pay_by_bank_payment payment_method_bank_transfer payment_method_bnpl_payment payment_method_card payment_method_cash payment_method_pbb_payment", discriminatorValue));
+                    log.log(Level.WARNING, String.format(java.util.Locale.ROOT, "Failed to lookup discriminator value `%s` for ChargeOrderResponsePaymentMethod. Possible values: bank_transfer_payment bnpl_payment card_payment cash_payment pay_by_bank_payment", discriminatorValue));
             }
 
             boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
@@ -232,7 +212,7 @@ public class ChargeOrderResponsePaymentMethod extends AbstractOpenApiSchema {
                 ret.setActualInstance(deserialized);
                 return ret;
             }
-            throw new IOException(String.format("Failed deserialization for ChargeOrderResponsePaymentMethod: %d classes match result, expected 1", match));
+            throw new IOException(String.format(java.util.Locale.ROOT, "Failed deserialization for ChargeOrderResponsePaymentMethod: %d classes match result, expected 1", match));
         }
 
         /**
@@ -245,7 +225,7 @@ public class ChargeOrderResponsePaymentMethod extends AbstractOpenApiSchema {
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<>();
+    public static final Map<String, GenericType<?>> schemas = new HashMap<>();
 
     public ChargeOrderResponsePaymentMethod() {
         super("oneOf", Boolean.FALSE);
@@ -295,17 +275,12 @@ public class ChargeOrderResponsePaymentMethod extends AbstractOpenApiSchema {
         mappings.put("card_payment", PaymentMethodCard.class);
         mappings.put("cash_payment", PaymentMethodCash.class);
         mappings.put("pay_by_bank_payment", PaymentMethodPbbPayment.class);
-        mappings.put("payment_method_bank_transfer", PaymentMethodBankTransfer.class);
-        mappings.put("payment_method_bnpl_payment", PaymentMethodBnplPayment.class);
-        mappings.put("payment_method_card", PaymentMethodCard.class);
-        mappings.put("payment_method_cash", PaymentMethodCash.class);
-        mappings.put("payment_method_pbb_payment", PaymentMethodPbbPayment.class);
         mappings.put("charge_order_response_payment_method", ChargeOrderResponsePaymentMethod.class);
         JSON.registerDiscriminator(ChargeOrderResponsePaymentMethod.class, "object", mappings);
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, GenericType<?>> getSchemas() {
         return ChargeOrderResponsePaymentMethod.schemas;
     }
 

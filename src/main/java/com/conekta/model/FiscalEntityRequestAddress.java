@@ -40,46 +40,54 @@ import com.conekta.JSON;
   FiscalEntityRequestAddress.JSON_PROPERTY_EXTERNAL_NUMBER
 })
 @JsonTypeName("fiscal_entity_request_address")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class FiscalEntityRequestAddress {
   public static final String JSON_PROPERTY_STREET1 = "street1";
+  @javax.annotation.Nonnull
   private String street1;
 
   public static final String JSON_PROPERTY_STREET2 = "street2";
+  @javax.annotation.Nullable
   private String street2;
 
   public static final String JSON_PROPERTY_POSTAL_CODE = "postal_code";
+  @javax.annotation.Nonnull
   private String postalCode;
 
   public static final String JSON_PROPERTY_CITY = "city";
+  @javax.annotation.Nonnull
   private String city;
 
   public static final String JSON_PROPERTY_STATE = "state";
+  @javax.annotation.Nullable
   private String state;
 
   public static final String JSON_PROPERTY_COUNTRY = "country";
+  @javax.annotation.Nullable
   private String country;
 
   public static final String JSON_PROPERTY_RESIDENTIAL = "residential";
+  @javax.annotation.Nullable
   private Boolean residential = false;
 
   public static final String JSON_PROPERTY_EXTERNAL_NUMBER = "external_number";
+  @javax.annotation.Nullable
   private String externalNumber;
 
   public FiscalEntityRequestAddress() { 
   }
 
-  public FiscalEntityRequestAddress street1(String street1) {
+  public FiscalEntityRequestAddress street1(@javax.annotation.Nonnull String street1) {
     this.street1 = street1;
     return this;
   }
 
-   /**
+  /**
    * Get street1
    * @return street1
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_STREET1)
+  @JsonProperty(value = JSON_PROPERTY_STREET1, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getStreet1() {
@@ -87,24 +95,24 @@ public class FiscalEntityRequestAddress {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STREET1)
+  @JsonProperty(value = JSON_PROPERTY_STREET1, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setStreet1(String street1) {
+  public void setStreet1(@javax.annotation.Nonnull String street1) {
     this.street1 = street1;
   }
 
 
-  public FiscalEntityRequestAddress street2(String street2) {
+  public FiscalEntityRequestAddress street2(@javax.annotation.Nullable String street2) {
     this.street2 = street2;
     return this;
   }
 
-   /**
+  /**
    * Get street2
    * @return street2
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STREET2)
+  @JsonProperty(value = JSON_PROPERTY_STREET2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getStreet2() {
@@ -112,24 +120,24 @@ public class FiscalEntityRequestAddress {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STREET2)
+  @JsonProperty(value = JSON_PROPERTY_STREET2, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStreet2(String street2) {
+  public void setStreet2(@javax.annotation.Nullable String street2) {
     this.street2 = street2;
   }
 
 
-  public FiscalEntityRequestAddress postalCode(String postalCode) {
+  public FiscalEntityRequestAddress postalCode(@javax.annotation.Nonnull String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
 
-   /**
+  /**
    * Get postalCode
    * @return postalCode
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
+  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getPostalCode() {
@@ -137,24 +145,24 @@ public class FiscalEntityRequestAddress {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
+  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPostalCode(String postalCode) {
+  public void setPostalCode(@javax.annotation.Nonnull String postalCode) {
     this.postalCode = postalCode;
   }
 
 
-  public FiscalEntityRequestAddress city(String city) {
+  public FiscalEntityRequestAddress city(@javax.annotation.Nonnull String city) {
     this.city = city;
     return this;
   }
 
-   /**
+  /**
    * Get city
    * @return city
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CITY)
+  @JsonProperty(value = JSON_PROPERTY_CITY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCity() {
@@ -162,24 +170,24 @@ public class FiscalEntityRequestAddress {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CITY)
+  @JsonProperty(value = JSON_PROPERTY_CITY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCity(String city) {
+  public void setCity(@javax.annotation.Nonnull String city) {
     this.city = city;
   }
 
 
-  public FiscalEntityRequestAddress state(String state) {
+  public FiscalEntityRequestAddress state(@javax.annotation.Nullable String state) {
     this.state = state;
     return this;
   }
 
-   /**
+  /**
    * Get state
    * @return state
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STATE)
+  @JsonProperty(value = JSON_PROPERTY_STATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getState() {
@@ -187,24 +195,24 @@ public class FiscalEntityRequestAddress {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STATE)
+  @JsonProperty(value = JSON_PROPERTY_STATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setState(String state) {
+  public void setState(@javax.annotation.Nullable String state) {
     this.state = state;
   }
 
 
-  public FiscalEntityRequestAddress country(String country) {
+  public FiscalEntityRequestAddress country(@javax.annotation.Nullable String country) {
     this.country = country;
     return this;
   }
 
-   /**
+  /**
    * this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
    * @return country
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_COUNTRY)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCountry() {
@@ -212,24 +220,24 @@ public class FiscalEntityRequestAddress {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_COUNTRY)
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCountry(String country) {
+  public void setCountry(@javax.annotation.Nullable String country) {
     this.country = country;
   }
 
 
-  public FiscalEntityRequestAddress residential(Boolean residential) {
+  public FiscalEntityRequestAddress residential(@javax.annotation.Nullable Boolean residential) {
     this.residential = residential;
     return this;
   }
 
-   /**
+  /**
    * Get residential
    * @return residential
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RESIDENTIAL)
+  @JsonProperty(value = JSON_PROPERTY_RESIDENTIAL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getResidential() {
@@ -237,24 +245,24 @@ public class FiscalEntityRequestAddress {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RESIDENTIAL)
+  @JsonProperty(value = JSON_PROPERTY_RESIDENTIAL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setResidential(Boolean residential) {
+  public void setResidential(@javax.annotation.Nullable Boolean residential) {
     this.residential = residential;
   }
 
 
-  public FiscalEntityRequestAddress externalNumber(String externalNumber) {
+  public FiscalEntityRequestAddress externalNumber(@javax.annotation.Nullable String externalNumber) {
     this.externalNumber = externalNumber;
     return this;
   }
 
-   /**
+  /**
    * Get externalNumber
    * @return externalNumber
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXTERNAL_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_EXTERNAL_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getExternalNumber() {
@@ -262,9 +270,9 @@ public class FiscalEntityRequestAddress {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXTERNAL_NUMBER)
+  @JsonProperty(value = JSON_PROPERTY_EXTERNAL_NUMBER, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExternalNumber(String externalNumber) {
+  public void setExternalNumber(@javax.annotation.Nullable String externalNumber) {
     this.externalNumber = externalNumber;
   }
 
@@ -317,10 +325,7 @@ public class FiscalEntityRequestAddress {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

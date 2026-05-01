@@ -35,31 +35,34 @@ import com.conekta.JSON;
   CreateRuleWhitelistRequest.JSON_PROPERTY_VALUE
 })
 @JsonTypeName("CreateRuleWhitelist_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CreateRuleWhitelistRequest {
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @javax.annotation.Nonnull
   private String description;
 
   public static final String JSON_PROPERTY_FIELD = "field";
+  @javax.annotation.Nonnull
   private String field;
 
   public static final String JSON_PROPERTY_VALUE = "value";
+  @javax.annotation.Nonnull
   private String value;
 
   public CreateRuleWhitelistRequest() { 
   }
 
-  public CreateRuleWhitelistRequest description(String description) {
+  public CreateRuleWhitelistRequest description(@javax.annotation.Nonnull String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Description of the rule
    * @return description
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getDescription() {
@@ -67,24 +70,24 @@ public class CreateRuleWhitelistRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nonnull String description) {
     this.description = description;
   }
 
 
-  public CreateRuleWhitelistRequest field(String field) {
+  public CreateRuleWhitelistRequest field(@javax.annotation.Nonnull String field) {
     this.field = field;
     return this;
   }
 
-   /**
+  /**
    * Field to be used for the rule
    * @return field
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FIELD)
+  @JsonProperty(value = JSON_PROPERTY_FIELD, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getField() {
@@ -92,24 +95,24 @@ public class CreateRuleWhitelistRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FIELD)
+  @JsonProperty(value = JSON_PROPERTY_FIELD, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setField(String field) {
+  public void setField(@javax.annotation.Nonnull String field) {
     this.field = field;
   }
 
 
-  public CreateRuleWhitelistRequest value(String value) {
+  public CreateRuleWhitelistRequest value(@javax.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
 
-   /**
+  /**
    * Value to be used for the rule
    * @return value
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getValue() {
@@ -117,9 +120,9 @@ public class CreateRuleWhitelistRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setValue(String value) {
+  public void setValue(@javax.annotation.Nonnull String value) {
     this.value = value;
   }
 
@@ -162,10 +165,7 @@ public class CreateRuleWhitelistRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

@@ -35,25 +35,26 @@ import com.conekta.JSON;
   TokenRequestCheckout.JSON_PROPERTY_RETURNS_CONTROL_ON
 })
 @JsonTypeName("token_request_checkout")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class TokenRequestCheckout {
   public static final String JSON_PROPERTY_RETURNS_CONTROL_ON = "returns_control_on";
+  @javax.annotation.Nullable
   private String returnsControlOn;
 
   public TokenRequestCheckout() { 
   }
 
-  public TokenRequestCheckout returnsControlOn(String returnsControlOn) {
+  public TokenRequestCheckout returnsControlOn(@javax.annotation.Nullable String returnsControlOn) {
     this.returnsControlOn = returnsControlOn;
     return this;
   }
 
-   /**
+  /**
    * It is a value that allows identifying the returns control on.
    * @return returnsControlOn
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RETURNS_CONTROL_ON)
+  @JsonProperty(value = JSON_PROPERTY_RETURNS_CONTROL_ON, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getReturnsControlOn() {
@@ -61,9 +62,9 @@ public class TokenRequestCheckout {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RETURNS_CONTROL_ON)
+  @JsonProperty(value = JSON_PROPERTY_RETURNS_CONTROL_ON, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReturnsControlOn(String returnsControlOn) {
+  public void setReturnsControlOn(@javax.annotation.Nullable String returnsControlOn) {
     this.returnsControlOn = returnsControlOn;
   }
 
@@ -102,10 +103,7 @@ public class TokenRequestCheckout {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

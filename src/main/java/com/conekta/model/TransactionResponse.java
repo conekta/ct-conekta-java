@@ -43,55 +43,66 @@ import com.conekta.JSON;
   TransactionResponse.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("transaction_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class TransactionResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
+  @javax.annotation.Nonnull
   private Long amount;
 
   public static final String JSON_PROPERTY_CHARGE = "charge";
+  @javax.annotation.Nonnull
   private String charge;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
+  @javax.annotation.Nonnull
   private String currency;
 
   public static final String JSON_PROPERTY_FEE = "fee";
+  @javax.annotation.Nonnull
   private Long fee;
 
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
+  @javax.annotation.Nonnull
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_NET = "net";
+  @javax.annotation.Nonnull
   private Long net;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nonnull
   private String status;
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nonnull
   private String type;
 
   public TransactionResponse() { 
   }
 
-  public TransactionResponse amount(Long amount) {
+  public TransactionResponse amount(@javax.annotation.Nonnull Long amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * The amount of the transaction.
    * @return amount
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Long getAmount() {
@@ -99,24 +110,24 @@ public class TransactionResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAmount(Long amount) {
+  public void setAmount(@javax.annotation.Nonnull Long amount) {
     this.amount = amount;
   }
 
 
-  public TransactionResponse charge(String charge) {
+  public TransactionResponse charge(@javax.annotation.Nonnull String charge) {
     this.charge = charge;
     return this;
   }
 
-   /**
+  /**
    * Randomly assigned unique order identifier associated with the charge.
    * @return charge
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CHARGE)
+  @JsonProperty(value = JSON_PROPERTY_CHARGE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCharge() {
@@ -124,24 +135,24 @@ public class TransactionResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CHARGE)
+  @JsonProperty(value = JSON_PROPERTY_CHARGE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCharge(String charge) {
+  public void setCharge(@javax.annotation.Nonnull String charge) {
     this.charge = charge;
   }
 
 
-  public TransactionResponse createdAt(Long createdAt) {
+  public TransactionResponse createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Date and time of creation of the transaction in Unix format.
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Long getCreatedAt() {
@@ -149,24 +160,24 @@ public class TransactionResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public TransactionResponse currency(String currency) {
+  public TransactionResponse currency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
+  /**
    * The currency of the transaction. It uses the 3-letter code of the [International Standard ISO 4217.](https://es.wikipedia.org/wiki/ISO_4217)
    * @return currency
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CURRENCY)
+  @JsonProperty(value = JSON_PROPERTY_CURRENCY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCurrency() {
@@ -174,24 +185,24 @@ public class TransactionResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CURRENCY)
+  @JsonProperty(value = JSON_PROPERTY_CURRENCY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCurrency(String currency) {
+  public void setCurrency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
   }
 
 
-  public TransactionResponse fee(Long fee) {
+  public TransactionResponse fee(@javax.annotation.Nonnull Long fee) {
     this.fee = fee;
     return this;
   }
 
-   /**
+  /**
    * The amount to be deducted for taxes and commissions.
    * @return fee
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FEE)
+  @JsonProperty(value = JSON_PROPERTY_FEE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Long getFee() {
@@ -199,24 +210,24 @@ public class TransactionResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FEE)
+  @JsonProperty(value = JSON_PROPERTY_FEE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFee(Long fee) {
+  public void setFee(@javax.annotation.Nonnull Long fee) {
     this.fee = fee;
   }
 
 
-  public TransactionResponse id(String id) {
+  public TransactionResponse id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Unique identifier of the transaction.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
@@ -224,24 +235,24 @@ public class TransactionResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public TransactionResponse livemode(Boolean livemode) {
+  public TransactionResponse livemode(@javax.annotation.Nonnull Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
 
-   /**
+  /**
    * Indicates whether the transaction was created in live mode or test mode.
    * @return livemode
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getLivemode() {
@@ -249,24 +260,24 @@ public class TransactionResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLivemode(Boolean livemode) {
+  public void setLivemode(@javax.annotation.Nonnull Boolean livemode) {
     this.livemode = livemode;
   }
 
 
-  public TransactionResponse net(Long net) {
+  public TransactionResponse net(@javax.annotation.Nonnull Long net) {
     this.net = net;
     return this;
   }
 
-   /**
+  /**
    * The net amount after deducting commissions and taxes.
    * @return net
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NET)
+  @JsonProperty(value = JSON_PROPERTY_NET, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Long getNet() {
@@ -274,24 +285,24 @@ public class TransactionResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NET)
+  @JsonProperty(value = JSON_PROPERTY_NET, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setNet(Long net) {
+  public void setNet(@javax.annotation.Nonnull Long net) {
     this.net = net;
   }
 
 
-  public TransactionResponse _object(String _object) {
+  public TransactionResponse _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Object name, which is transaction.
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
@@ -299,24 +310,24 @@ public class TransactionResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public TransactionResponse status(String status) {
+  public TransactionResponse status(@javax.annotation.Nonnull String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Code indicating transaction status.
    * @return status
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getStatus() {
@@ -324,24 +335,24 @@ public class TransactionResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nonnull String status) {
     this.status = status;
   }
 
 
-  public TransactionResponse type(String type) {
+  public TransactionResponse type(@javax.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Transaction Type
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getType() {
@@ -349,9 +360,9 @@ public class TransactionResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
   }
 
@@ -410,10 +421,7 @@ public class TransactionResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

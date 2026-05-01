@@ -40,21 +40,26 @@ import com.conekta.JSON;
   LogsResponseForRequest.JSON_PROPERTY_DATA
 })
 @JsonTypeName("logs_response_for_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class LogsResponseForRequest {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
+  @javax.annotation.Nullable
   private Boolean hasMore;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public static final String JSON_PROPERTY_NEXT_PAGE_URL = "next_page_url";
+  @javax.annotation.Nullable
   private String nextPageUrl;
 
   public static final String JSON_PROPERTY_PREVIOUS_PAGE_URL = "previous_page_url";
+  @javax.annotation.Nullable
   private String previousPageUrl;
 
   public static final String JSON_PROPERTY_DATA = "data";
+  @javax.annotation.Nullable
   private List<LogsResponseData> data = new ArrayList<>();
 
   public LogsResponseForRequest() { 
@@ -70,12 +75,12 @@ public class LogsResponseForRequest {
     this._object = _object;
   }
 
-   /**
+  /**
    * True, if there are more pages.
    * @return hasMore
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_HAS_MORE)
+  @JsonProperty(value = JSON_PROPERTY_HAS_MORE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getHasMore() {
@@ -85,12 +90,12 @@ public class LogsResponseForRequest {
 
 
 
-   /**
+  /**
    * The object type
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getObject() {
@@ -100,17 +105,17 @@ public class LogsResponseForRequest {
 
 
 
-  public LogsResponseForRequest nextPageUrl(String nextPageUrl) {
+  public LogsResponseForRequest nextPageUrl(@javax.annotation.Nullable String nextPageUrl) {
     this.nextPageUrl = nextPageUrl;
     return this;
   }
 
-   /**
+  /**
    * URL of the next page.
    * @return nextPageUrl
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NEXT_PAGE_URL)
+  @JsonProperty(value = JSON_PROPERTY_NEXT_PAGE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getNextPageUrl() {
@@ -118,24 +123,24 @@ public class LogsResponseForRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NEXT_PAGE_URL)
+  @JsonProperty(value = JSON_PROPERTY_NEXT_PAGE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNextPageUrl(String nextPageUrl) {
+  public void setNextPageUrl(@javax.annotation.Nullable String nextPageUrl) {
     this.nextPageUrl = nextPageUrl;
   }
 
 
-  public LogsResponseForRequest previousPageUrl(String previousPageUrl) {
+  public LogsResponseForRequest previousPageUrl(@javax.annotation.Nullable String previousPageUrl) {
     this.previousPageUrl = previousPageUrl;
     return this;
   }
 
-   /**
+  /**
    * Url of the previous page.
    * @return previousPageUrl
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PREVIOUS_PAGE_URL)
+  @JsonProperty(value = JSON_PROPERTY_PREVIOUS_PAGE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPreviousPageUrl() {
@@ -143,14 +148,14 @@ public class LogsResponseForRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PREVIOUS_PAGE_URL)
+  @JsonProperty(value = JSON_PROPERTY_PREVIOUS_PAGE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPreviousPageUrl(String previousPageUrl) {
+  public void setPreviousPageUrl(@javax.annotation.Nullable String previousPageUrl) {
     this.previousPageUrl = previousPageUrl;
   }
 
 
-  public LogsResponseForRequest data(List<LogsResponseData> data) {
+  public LogsResponseForRequest data(@javax.annotation.Nullable List<LogsResponseData> data) {
     this.data = data;
     return this;
   }
@@ -163,12 +168,12 @@ public class LogsResponseForRequest {
     return this;
   }
 
-   /**
+  /**
    * set to page results.
    * @return data
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonProperty(value = JSON_PROPERTY_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<LogsResponseData> getData() {
@@ -176,9 +181,9 @@ public class LogsResponseForRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonProperty(value = JSON_PROPERTY_DATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setData(List<LogsResponseData> data) {
+  public void setData(@javax.annotation.Nullable List<LogsResponseData> data) {
     this.data = data;
   }
 
@@ -225,10 +230,7 @@ public class LogsResponseForRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

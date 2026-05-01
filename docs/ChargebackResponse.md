@@ -80,9 +80,9 @@ Chargeback object
 
 | Name | Value |
 |---- | -----|
-| UNCONTACTED | &quot;customer_uncontacted&quot; |
-| CONTACTED | &quot;customer_contacted&quot; |
-| UNREACHABLE | &quot;customer_unreachable&quot; |
+| CUSTOMER_UNCONTACTED | &quot;customer_uncontacted&quot; |
+| CUSTOMER_CONTACTED | &quot;customer_contacted&quot; |
+| CUSTOMER_UNREACHABLE | &quot;customer_unreachable&quot; |
 | UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 

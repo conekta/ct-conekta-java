@@ -20,7 +20,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class WebhooksApi {
   private ApiClient apiClient;
 
@@ -58,14 +58,15 @@ public class WebhooksApi {
    * @return WebhookResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public WebhookResponse createWebhook(WebhookRequest webhookRequest, String acceptLanguage) throws ApiException {
+  public WebhookResponse createWebhook(@javax.annotation.Nonnull WebhookRequest webhookRequest, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return createWebhookWithHttpInfo(webhookRequest, acceptLanguage).getData();
   }
 
@@ -77,14 +78,15 @@ public class WebhooksApi {
    * @return ApiResponse&lt;WebhookResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<WebhookResponse> createWebhookWithHttpInfo(WebhookRequest webhookRequest, String acceptLanguage) throws ApiException {
+  public ApiResponse<WebhookResponse> createWebhookWithHttpInfo(@javax.annotation.Nonnull WebhookRequest webhookRequest, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Check required parameters
     if (webhookRequest == null) {
       throw new ApiException(400, "Missing the required parameter 'webhookRequest' when calling createWebhook");
@@ -112,7 +114,8 @@ public class WebhooksApi {
    * @return WebhookResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -120,7 +123,7 @@ public class WebhooksApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public WebhookResponse deleteWebhook(String id, String acceptLanguage) throws ApiException {
+  public WebhookResponse deleteWebhook(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return deleteWebhookWithHttpInfo(id, acceptLanguage).getData();
   }
 
@@ -132,7 +135,8 @@ public class WebhooksApi {
    * @return ApiResponse&lt;WebhookResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -140,7 +144,7 @@ public class WebhooksApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<WebhookResponse> deleteWebhookWithHttpInfo(String id, String acceptLanguage) throws ApiException {
+  public ApiResponse<WebhookResponse> deleteWebhookWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling deleteWebhook");
@@ -148,7 +152,7 @@ public class WebhooksApi {
 
     // Path parameters
     String localVarPath = "/webhooks/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -173,7 +177,8 @@ public class WebhooksApi {
    * @return WebhookResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -181,7 +186,7 @@ public class WebhooksApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public WebhookResponse getWebhook(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public WebhookResponse getWebhook(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return getWebhookWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -194,7 +199,8 @@ public class WebhooksApi {
    * @return ApiResponse&lt;WebhookResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -202,7 +208,7 @@ public class WebhooksApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<WebhookResponse> getWebhookWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<WebhookResponse> getWebhookWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getWebhook");
@@ -210,7 +216,7 @@ public class WebhooksApi {
 
     // Path parameters
     String localVarPath = "/webhooks/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -242,14 +248,15 @@ public class WebhooksApi {
    * @return GetWebhooksResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public GetWebhooksResponse getWebhooks(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String url, String next, String previous) throws ApiException {
+  public GetWebhooksResponse getWebhooks(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String url, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     return getWebhooksWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, url, next, previous).getData();
   }
 
@@ -266,14 +273,15 @@ public class WebhooksApi {
    * @return ApiResponse&lt;GetWebhooksResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<GetWebhooksResponse> getWebhooksWithHttpInfo(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String url, String next, String previous) throws ApiException {
+  public ApiResponse<GetWebhooksResponse> getWebhooksWithHttpInfo(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String url, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "limit", limit)
@@ -308,7 +316,8 @@ public class WebhooksApi {
    * @return WebhookResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -316,7 +325,7 @@ public class WebhooksApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public WebhookResponse testWebhook(String id, String acceptLanguage) throws ApiException {
+  public WebhookResponse testWebhook(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return testWebhookWithHttpInfo(id, acceptLanguage).getData();
   }
 
@@ -328,7 +337,8 @@ public class WebhooksApi {
    * @return ApiResponse&lt;WebhookResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -336,7 +346,7 @@ public class WebhooksApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<WebhookResponse> testWebhookWithHttpInfo(String id, String acceptLanguage) throws ApiException {
+  public ApiResponse<WebhookResponse> testWebhookWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling testWebhook");
@@ -344,7 +354,7 @@ public class WebhooksApi {
 
     // Path parameters
     String localVarPath = "/webhooks/{id}/test"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -370,7 +380,8 @@ public class WebhooksApi {
    * @return WebhookResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
@@ -378,7 +389,7 @@ public class WebhooksApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public WebhookResponse updateWebhook(String id, UpdateWebhook updateWebhook, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public WebhookResponse updateWebhook(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWebhook updateWebhook, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return updateWebhookWithHttpInfo(id, updateWebhook, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -392,7 +403,8 @@ public class WebhooksApi {
    * @return ApiResponse&lt;WebhookResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
@@ -400,7 +412,7 @@ public class WebhooksApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<WebhookResponse> updateWebhookWithHttpInfo(String id, UpdateWebhook updateWebhook, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<WebhookResponse> updateWebhookWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWebhook updateWebhook, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateWebhook");
@@ -411,7 +423,7 @@ public class WebhooksApi {
 
     // Path parameters
     String localVarPath = "/webhooks/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

@@ -37,31 +37,34 @@ import com.conekta.JSON;
   UpdateWebhook.JSON_PROPERTY_ACTIVE
 })
 @JsonTypeName("update_webhook")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class UpdateWebhook {
   public static final String JSON_PROPERTY_URL = "url";
+  @javax.annotation.Nullable
   private String url;
 
   public static final String JSON_PROPERTY_SUBSCRIBED_EVENTS = "subscribed_events";
+  @javax.annotation.Nullable
   private List<String> subscribedEvents = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ACTIVE = "active";
+  @javax.annotation.Nullable
   private Boolean active;
 
   public UpdateWebhook() { 
   }
 
-  public UpdateWebhook url(String url) {
+  public UpdateWebhook url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * Here you must place the URL of your Webhook remember that you must program what you will do with the events received. Also do not forget to handle the HTTPS protocol for greater security.
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonProperty(value = JSON_PROPERTY_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getUrl() {
@@ -69,14 +72,14 @@ public class UpdateWebhook {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonProperty(value = JSON_PROPERTY_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 
 
-  public UpdateWebhook subscribedEvents(List<String> subscribedEvents) {
+  public UpdateWebhook subscribedEvents(@javax.annotation.Nullable List<String> subscribedEvents) {
     this.subscribedEvents = subscribedEvents;
     return this;
   }
@@ -89,12 +92,12 @@ public class UpdateWebhook {
     return this;
   }
 
-   /**
+  /**
    * events that will be sent to the webhook
    * @return subscribedEvents
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SUBSCRIBED_EVENTS)
+  @JsonProperty(value = JSON_PROPERTY_SUBSCRIBED_EVENTS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getSubscribedEvents() {
@@ -102,24 +105,24 @@ public class UpdateWebhook {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SUBSCRIBED_EVENTS)
+  @JsonProperty(value = JSON_PROPERTY_SUBSCRIBED_EVENTS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSubscribedEvents(List<String> subscribedEvents) {
+  public void setSubscribedEvents(@javax.annotation.Nullable List<String> subscribedEvents) {
     this.subscribedEvents = subscribedEvents;
   }
 
 
-  public UpdateWebhook active(Boolean active) {
+  public UpdateWebhook active(@javax.annotation.Nullable Boolean active) {
     this.active = active;
     return this;
   }
 
-   /**
+  /**
    * whether the webhook is active or not
    * @return active
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonProperty(value = JSON_PROPERTY_ACTIVE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getActive() {
@@ -127,9 +130,9 @@ public class UpdateWebhook {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonProperty(value = JSON_PROPERTY_ACTIVE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setActive(Boolean active) {
+  public void setActive(@javax.annotation.Nullable Boolean active) {
     this.active = active;
   }
 
@@ -172,10 +175,7 @@ public class UpdateWebhook {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

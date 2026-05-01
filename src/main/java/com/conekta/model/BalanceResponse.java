@@ -45,42 +45,52 @@ import com.conekta.JSON;
   BalanceResponse.JSON_PROPERTY_TEMPORARILY_RETAINED
 })
 @JsonTypeName("balance_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class BalanceResponse {
   public static final String JSON_PROPERTY_AVAILABLE = "available";
+  @javax.annotation.Nullable
   private List<BalanceCommonFielsResponse> available = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CASHOUT_RETENTION_AMOUNT = "cashout_retention_amount";
+  @javax.annotation.Nullable
   private List<BalanceCommonFielsResponse> cashoutRetentionAmount = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CONEKTA_RETENTION = "conekta_retention";
+  @javax.annotation.Nullable
   private List<BalanceCommonFielsResponse> conektaRetention = new ArrayList<>();
 
   public static final String JSON_PROPERTY_GATEWAY = "gateway";
+  @javax.annotation.Nullable
   private List<BalanceCommonFielsResponse> gateway = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PENDING = "pending";
+  @javax.annotation.Nullable
   private List<BalanceCommonFielsResponse> pending = new ArrayList<>();
 
   public static final String JSON_PROPERTY_RETAINED = "retained";
+  @javax.annotation.Nullable
   private List<BalanceCommonFielsResponse> retained = new ArrayList<>();
 
   public static final String JSON_PROPERTY_RETENTION_AMOUNT = "retention_amount";
+  @javax.annotation.Nullable
   private List<BalanceCommonFielsResponse> retentionAmount = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TARGET_COLLATERAL_AMOUNT = "target_collateral_amount";
+  @javax.annotation.Nullable
   private Object targetCollateralAmount;
 
   public static final String JSON_PROPERTY_TARGET_RETENTION_AMOUNT = "target_retention_amount";
+  @javax.annotation.Nullable
   private List<BalanceCommonFielsResponse> targetRetentionAmount = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TEMPORARILY_RETAINED = "temporarily_retained";
+  @javax.annotation.Nullable
   private List<BalanceCommonFielsResponse> temporarilyRetained = new ArrayList<>();
 
   public BalanceResponse() { 
   }
 
-  public BalanceResponse available(List<BalanceCommonFielsResponse> available) {
+  public BalanceResponse available(@javax.annotation.Nullable List<BalanceCommonFielsResponse> available) {
     this.available = available;
     return this;
   }
@@ -93,12 +103,12 @@ public class BalanceResponse {
     return this;
   }
 
-   /**
+  /**
    * The balance&#39;s available
    * @return available
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_AVAILABLE)
+  @JsonProperty(value = JSON_PROPERTY_AVAILABLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<BalanceCommonFielsResponse> getAvailable() {
@@ -106,14 +116,14 @@ public class BalanceResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_AVAILABLE)
+  @JsonProperty(value = JSON_PROPERTY_AVAILABLE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAvailable(List<BalanceCommonFielsResponse> available) {
+  public void setAvailable(@javax.annotation.Nullable List<BalanceCommonFielsResponse> available) {
     this.available = available;
   }
 
 
-  public BalanceResponse cashoutRetentionAmount(List<BalanceCommonFielsResponse> cashoutRetentionAmount) {
+  public BalanceResponse cashoutRetentionAmount(@javax.annotation.Nullable List<BalanceCommonFielsResponse> cashoutRetentionAmount) {
     this.cashoutRetentionAmount = cashoutRetentionAmount;
     return this;
   }
@@ -126,12 +136,12 @@ public class BalanceResponse {
     return this;
   }
 
-   /**
+  /**
    * The balance&#39;s cashout retention amount
    * @return cashoutRetentionAmount
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CASHOUT_RETENTION_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_CASHOUT_RETENTION_AMOUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<BalanceCommonFielsResponse> getCashoutRetentionAmount() {
@@ -139,14 +149,14 @@ public class BalanceResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CASHOUT_RETENTION_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_CASHOUT_RETENTION_AMOUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCashoutRetentionAmount(List<BalanceCommonFielsResponse> cashoutRetentionAmount) {
+  public void setCashoutRetentionAmount(@javax.annotation.Nullable List<BalanceCommonFielsResponse> cashoutRetentionAmount) {
     this.cashoutRetentionAmount = cashoutRetentionAmount;
   }
 
 
-  public BalanceResponse conektaRetention(List<BalanceCommonFielsResponse> conektaRetention) {
+  public BalanceResponse conektaRetention(@javax.annotation.Nullable List<BalanceCommonFielsResponse> conektaRetention) {
     this.conektaRetention = conektaRetention;
     return this;
   }
@@ -159,12 +169,12 @@ public class BalanceResponse {
     return this;
   }
 
-   /**
+  /**
    * The balance&#39;s conekta retention
    * @return conektaRetention
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CONEKTA_RETENTION)
+  @JsonProperty(value = JSON_PROPERTY_CONEKTA_RETENTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<BalanceCommonFielsResponse> getConektaRetention() {
@@ -172,14 +182,14 @@ public class BalanceResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CONEKTA_RETENTION)
+  @JsonProperty(value = JSON_PROPERTY_CONEKTA_RETENTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setConektaRetention(List<BalanceCommonFielsResponse> conektaRetention) {
+  public void setConektaRetention(@javax.annotation.Nullable List<BalanceCommonFielsResponse> conektaRetention) {
     this.conektaRetention = conektaRetention;
   }
 
 
-  public BalanceResponse gateway(List<BalanceCommonFielsResponse> gateway) {
+  public BalanceResponse gateway(@javax.annotation.Nullable List<BalanceCommonFielsResponse> gateway) {
     this.gateway = gateway;
     return this;
   }
@@ -192,12 +202,12 @@ public class BalanceResponse {
     return this;
   }
 
-   /**
+  /**
    * The balance&#39;s gateway
    * @return gateway
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_GATEWAY)
+  @JsonProperty(value = JSON_PROPERTY_GATEWAY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<BalanceCommonFielsResponse> getGateway() {
@@ -205,14 +215,14 @@ public class BalanceResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_GATEWAY)
+  @JsonProperty(value = JSON_PROPERTY_GATEWAY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGateway(List<BalanceCommonFielsResponse> gateway) {
+  public void setGateway(@javax.annotation.Nullable List<BalanceCommonFielsResponse> gateway) {
     this.gateway = gateway;
   }
 
 
-  public BalanceResponse pending(List<BalanceCommonFielsResponse> pending) {
+  public BalanceResponse pending(@javax.annotation.Nullable List<BalanceCommonFielsResponse> pending) {
     this.pending = pending;
     return this;
   }
@@ -225,12 +235,12 @@ public class BalanceResponse {
     return this;
   }
 
-   /**
+  /**
    * The balance&#39;s pending
    * @return pending
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PENDING)
+  @JsonProperty(value = JSON_PROPERTY_PENDING, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<BalanceCommonFielsResponse> getPending() {
@@ -238,14 +248,14 @@ public class BalanceResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PENDING)
+  @JsonProperty(value = JSON_PROPERTY_PENDING, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPending(List<BalanceCommonFielsResponse> pending) {
+  public void setPending(@javax.annotation.Nullable List<BalanceCommonFielsResponse> pending) {
     this.pending = pending;
   }
 
 
-  public BalanceResponse retained(List<BalanceCommonFielsResponse> retained) {
+  public BalanceResponse retained(@javax.annotation.Nullable List<BalanceCommonFielsResponse> retained) {
     this.retained = retained;
     return this;
   }
@@ -258,12 +268,12 @@ public class BalanceResponse {
     return this;
   }
 
-   /**
+  /**
    * The balance&#39;s retained
    * @return retained
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RETAINED)
+  @JsonProperty(value = JSON_PROPERTY_RETAINED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<BalanceCommonFielsResponse> getRetained() {
@@ -271,14 +281,14 @@ public class BalanceResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RETAINED)
+  @JsonProperty(value = JSON_PROPERTY_RETAINED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRetained(List<BalanceCommonFielsResponse> retained) {
+  public void setRetained(@javax.annotation.Nullable List<BalanceCommonFielsResponse> retained) {
     this.retained = retained;
   }
 
 
-  public BalanceResponse retentionAmount(List<BalanceCommonFielsResponse> retentionAmount) {
+  public BalanceResponse retentionAmount(@javax.annotation.Nullable List<BalanceCommonFielsResponse> retentionAmount) {
     this.retentionAmount = retentionAmount;
     return this;
   }
@@ -291,12 +301,12 @@ public class BalanceResponse {
     return this;
   }
 
-   /**
+  /**
    * The balance&#39;s retention amount
    * @return retentionAmount
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RETENTION_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_RETENTION_AMOUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<BalanceCommonFielsResponse> getRetentionAmount() {
@@ -304,24 +314,24 @@ public class BalanceResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RETENTION_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_RETENTION_AMOUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRetentionAmount(List<BalanceCommonFielsResponse> retentionAmount) {
+  public void setRetentionAmount(@javax.annotation.Nullable List<BalanceCommonFielsResponse> retentionAmount) {
     this.retentionAmount = retentionAmount;
   }
 
 
-  public BalanceResponse targetCollateralAmount(Object targetCollateralAmount) {
+  public BalanceResponse targetCollateralAmount(@javax.annotation.Nullable Object targetCollateralAmount) {
     this.targetCollateralAmount = targetCollateralAmount;
     return this;
   }
 
-   /**
+  /**
    * The balance&#39;s target collateral amount
    * @return targetCollateralAmount
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TARGET_COLLATERAL_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_TARGET_COLLATERAL_AMOUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Object getTargetCollateralAmount() {
@@ -329,14 +339,14 @@ public class BalanceResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TARGET_COLLATERAL_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_TARGET_COLLATERAL_AMOUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTargetCollateralAmount(Object targetCollateralAmount) {
+  public void setTargetCollateralAmount(@javax.annotation.Nullable Object targetCollateralAmount) {
     this.targetCollateralAmount = targetCollateralAmount;
   }
 
 
-  public BalanceResponse targetRetentionAmount(List<BalanceCommonFielsResponse> targetRetentionAmount) {
+  public BalanceResponse targetRetentionAmount(@javax.annotation.Nullable List<BalanceCommonFielsResponse> targetRetentionAmount) {
     this.targetRetentionAmount = targetRetentionAmount;
     return this;
   }
@@ -349,12 +359,12 @@ public class BalanceResponse {
     return this;
   }
 
-   /**
+  /**
    * The balance&#39;s target retention amount
    * @return targetRetentionAmount
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TARGET_RETENTION_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_TARGET_RETENTION_AMOUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<BalanceCommonFielsResponse> getTargetRetentionAmount() {
@@ -362,14 +372,14 @@ public class BalanceResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TARGET_RETENTION_AMOUNT)
+  @JsonProperty(value = JSON_PROPERTY_TARGET_RETENTION_AMOUNT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTargetRetentionAmount(List<BalanceCommonFielsResponse> targetRetentionAmount) {
+  public void setTargetRetentionAmount(@javax.annotation.Nullable List<BalanceCommonFielsResponse> targetRetentionAmount) {
     this.targetRetentionAmount = targetRetentionAmount;
   }
 
 
-  public BalanceResponse temporarilyRetained(List<BalanceCommonFielsResponse> temporarilyRetained) {
+  public BalanceResponse temporarilyRetained(@javax.annotation.Nullable List<BalanceCommonFielsResponse> temporarilyRetained) {
     this.temporarilyRetained = temporarilyRetained;
     return this;
   }
@@ -382,12 +392,12 @@ public class BalanceResponse {
     return this;
   }
 
-   /**
+  /**
    * The balance&#39;s temporarily retained
    * @return temporarilyRetained
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TEMPORARILY_RETAINED)
+  @JsonProperty(value = JSON_PROPERTY_TEMPORARILY_RETAINED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<BalanceCommonFielsResponse> getTemporarilyRetained() {
@@ -395,9 +405,9 @@ public class BalanceResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TEMPORARILY_RETAINED)
+  @JsonProperty(value = JSON_PROPERTY_TEMPORARILY_RETAINED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTemporarilyRetained(List<BalanceCommonFielsResponse> temporarilyRetained) {
+  public void setTemporarilyRetained(@javax.annotation.Nullable List<BalanceCommonFielsResponse> temporarilyRetained) {
     this.temporarilyRetained = temporarilyRetained;
   }
 
@@ -454,10 +464,7 @@ public class BalanceResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

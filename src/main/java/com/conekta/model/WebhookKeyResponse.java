@@ -39,43 +39,50 @@ import com.conekta.JSON;
   WebhookKeyResponse.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("webhook_key_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class WebhookKeyResponse {
   public static final String JSON_PROPERTY_ID = "id";
+  @javax.annotation.Nullable
   private String id;
 
   public static final String JSON_PROPERTY_ACTIVE = "active";
+  @javax.annotation.Nullable
   private Boolean active;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
+  @javax.annotation.Nullable
   private Long createdAt;
 
   public static final String JSON_PROPERTY_DEACTIVATED_AT = "deactivated_at";
+  @javax.annotation.Nullable
   private Long deactivatedAt;
 
   public static final String JSON_PROPERTY_PUBLIC_KEY = "public_key";
+  @javax.annotation.Nullable
   private String publicKey;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
+  @javax.annotation.Nullable
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public WebhookKeyResponse() { 
   }
 
-  public WebhookKeyResponse id(String id) {
+  public WebhookKeyResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Unique identifier of the webhook key
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getId() {
@@ -83,24 +90,24 @@ public class WebhookKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public WebhookKeyResponse active(Boolean active) {
+  public WebhookKeyResponse active(@javax.annotation.Nullable Boolean active) {
     this.active = active;
     return this;
   }
 
-   /**
+  /**
    * Indicates if the webhook key is active
    * @return active
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonProperty(value = JSON_PROPERTY_ACTIVE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getActive() {
@@ -108,24 +115,24 @@ public class WebhookKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonProperty(value = JSON_PROPERTY_ACTIVE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setActive(Boolean active) {
+  public void setActive(@javax.annotation.Nullable Boolean active) {
     this.active = active;
   }
 
 
-  public WebhookKeyResponse createdAt(Long createdAt) {
+  public WebhookKeyResponse createdAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Unix timestamp in seconds with the creation date of the webhook key
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getCreatedAt() {
@@ -133,24 +140,24 @@ public class WebhookKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public WebhookKeyResponse deactivatedAt(Long deactivatedAt) {
+  public WebhookKeyResponse deactivatedAt(@javax.annotation.Nullable Long deactivatedAt) {
     this.deactivatedAt = deactivatedAt;
     return this;
   }
 
-   /**
+  /**
    * Unix timestamp in seconds with the deactivation date of the webhook key
    * @return deactivatedAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DEACTIVATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_DEACTIVATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getDeactivatedAt() {
@@ -158,24 +165,24 @@ public class WebhookKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DEACTIVATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_DEACTIVATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDeactivatedAt(Long deactivatedAt) {
+  public void setDeactivatedAt(@javax.annotation.Nullable Long deactivatedAt) {
     this.deactivatedAt = deactivatedAt;
   }
 
 
-  public WebhookKeyResponse publicKey(String publicKey) {
+  public WebhookKeyResponse publicKey(@javax.annotation.Nullable String publicKey) {
     this.publicKey = publicKey;
     return this;
   }
 
-   /**
+  /**
    * Public key to be used in the webhook
    * @return publicKey
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PUBLIC_KEY)
+  @JsonProperty(value = JSON_PROPERTY_PUBLIC_KEY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getPublicKey() {
@@ -183,24 +190,24 @@ public class WebhookKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PUBLIC_KEY)
+  @JsonProperty(value = JSON_PROPERTY_PUBLIC_KEY, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPublicKey(String publicKey) {
+  public void setPublicKey(@javax.annotation.Nullable String publicKey) {
     this.publicKey = publicKey;
   }
 
 
-  public WebhookKeyResponse livemode(Boolean livemode) {
+  public WebhookKeyResponse livemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
 
-   /**
+  /**
    * Indicates if the webhook key is in live mode
    * @return livemode
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getLivemode() {
@@ -208,24 +215,24 @@ public class WebhookKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LIVEMODE)
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLivemode(Boolean livemode) {
+  public void setLivemode(@javax.annotation.Nullable Boolean livemode) {
     this.livemode = livemode;
   }
 
 
-  public WebhookKeyResponse _object(String _object) {
+  public WebhookKeyResponse _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Object name, value is webhook_key
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getObject() {
@@ -233,9 +240,9 @@ public class WebhookKeyResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
@@ -286,10 +293,7 @@ public class WebhookKeyResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

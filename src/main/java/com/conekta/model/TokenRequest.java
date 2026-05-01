@@ -36,29 +36,31 @@ import com.conekta.JSON;
   TokenRequest.JSON_PROPERTY_CHECKOUT
 })
 @JsonTypeName("token_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class TokenRequest {
   public static final String JSON_PROPERTY_CARD = "card";
+  @javax.annotation.Nullable
   private TokenRequestCard card;
 
   public static final String JSON_PROPERTY_CHECKOUT = "checkout";
   @Deprecated
+  @javax.annotation.Nullable
   private TokenRequestCheckout checkout;
 
   public TokenRequest() { 
   }
 
-  public TokenRequest card(TokenRequestCard card) {
+  public TokenRequest card(@javax.annotation.Nullable TokenRequestCard card) {
     this.card = card;
     return this;
   }
 
-   /**
+  /**
    * Get card
    * @return card
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CARD)
+  @JsonProperty(value = JSON_PROPERTY_CARD, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public TokenRequestCard getCard() {
@@ -66,27 +68,27 @@ public class TokenRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CARD)
+  @JsonProperty(value = JSON_PROPERTY_CARD, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCard(TokenRequestCard card) {
+  public void setCard(@javax.annotation.Nullable TokenRequestCard card) {
     this.card = card;
   }
 
 
   @Deprecated
-  public TokenRequest checkout(TokenRequestCheckout checkout) {
+  public TokenRequest checkout(@javax.annotation.Nullable TokenRequestCheckout checkout) {
     this.checkout = checkout;
     return this;
   }
 
-   /**
+  /**
    * Get checkout
    * @return checkout
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CHECKOUT)
+  @JsonProperty(value = JSON_PROPERTY_CHECKOUT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public TokenRequestCheckout getCheckout() {
@@ -95,9 +97,9 @@ public class TokenRequest {
 
 
   @Deprecated
-  @JsonProperty(JSON_PROPERTY_CHECKOUT)
+  @JsonProperty(value = JSON_PROPERTY_CHECKOUT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCheckout(TokenRequestCheckout checkout) {
+  public void setCheckout(@javax.annotation.Nullable TokenRequestCheckout checkout) {
     this.checkout = checkout;
   }
 
@@ -138,10 +140,7 @@ public class TokenRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

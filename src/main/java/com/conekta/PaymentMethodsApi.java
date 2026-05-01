@@ -21,7 +21,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class PaymentMethodsApi {
   private ApiClient apiClient;
 
@@ -61,7 +61,8 @@ public class PaymentMethodsApi {
    * @return CreateCustomerPaymentMethodsResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -70,7 +71,7 @@ public class PaymentMethodsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CreateCustomerPaymentMethodsResponse createCustomerPaymentMethods(String id, CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public CreateCustomerPaymentMethodsResponse createCustomerPaymentMethods(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return createCustomerPaymentMethodsWithHttpInfo(id, createCustomerPaymentMethodsRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -84,7 +85,8 @@ public class PaymentMethodsApi {
    * @return ApiResponse&lt;CreateCustomerPaymentMethodsResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -93,7 +95,7 @@ public class PaymentMethodsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CreateCustomerPaymentMethodsResponse> createCustomerPaymentMethodsWithHttpInfo(String id, CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<CreateCustomerPaymentMethodsResponse> createCustomerPaymentMethodsWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull CreateCustomerPaymentMethodsRequest createCustomerPaymentMethodsRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling createCustomerPaymentMethods");
@@ -104,7 +106,7 @@ public class PaymentMethodsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/payment_sources"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -133,7 +135,8 @@ public class PaymentMethodsApi {
    * @return UpdateCustomerPaymentMethodsResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -142,7 +145,7 @@ public class PaymentMethodsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public UpdateCustomerPaymentMethodsResponse deleteCustomerPaymentMethods(String id, String paymentMethodId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public UpdateCustomerPaymentMethodsResponse deleteCustomerPaymentMethods(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String paymentMethodId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return deleteCustomerPaymentMethodsWithHttpInfo(id, paymentMethodId, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -156,7 +159,8 @@ public class PaymentMethodsApi {
    * @return ApiResponse&lt;UpdateCustomerPaymentMethodsResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -165,7 +169,7 @@ public class PaymentMethodsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<UpdateCustomerPaymentMethodsResponse> deleteCustomerPaymentMethodsWithHttpInfo(String id, String paymentMethodId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<UpdateCustomerPaymentMethodsResponse> deleteCustomerPaymentMethodsWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String paymentMethodId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling deleteCustomerPaymentMethods");
@@ -176,8 +180,8 @@ public class PaymentMethodsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/payment_sources/{payment_method_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{payment_method_id}", apiClient.escapeString(paymentMethodId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{payment_method_id}", apiClient.escapeString(paymentMethodId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -209,7 +213,8 @@ public class PaymentMethodsApi {
    * @return GetPaymentMethodResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -217,7 +222,7 @@ public class PaymentMethodsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public GetPaymentMethodResponse getCustomerPaymentMethods(String id, String acceptLanguage, String xChildCompanyId, Integer limit, String next, String previous, String search) throws ApiException {
+  public GetPaymentMethodResponse getCustomerPaymentMethods(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous, @javax.annotation.Nullable String search) throws ApiException {
     return getCustomerPaymentMethodsWithHttpInfo(id, acceptLanguage, xChildCompanyId, limit, next, previous, search).getData();
   }
 
@@ -234,7 +239,8 @@ public class PaymentMethodsApi {
    * @return ApiResponse&lt;GetPaymentMethodResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -242,7 +248,7 @@ public class PaymentMethodsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<GetPaymentMethodResponse> getCustomerPaymentMethodsWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId, Integer limit, String next, String previous, String search) throws ApiException {
+  public ApiResponse<GetPaymentMethodResponse> getCustomerPaymentMethodsWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous, @javax.annotation.Nullable String search) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getCustomerPaymentMethods");
@@ -250,7 +256,7 @@ public class PaymentMethodsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/payment_sources"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
@@ -288,7 +294,8 @@ public class PaymentMethodsApi {
    * @return UpdateCustomerPaymentMethodsResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -297,7 +304,7 @@ public class PaymentMethodsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public UpdateCustomerPaymentMethodsResponse updateCustomerPaymentMethods(String id, String paymentMethodId, UpdatePaymentMethodsCard updatePaymentMethodsCard, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public UpdateCustomerPaymentMethodsResponse updateCustomerPaymentMethods(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String paymentMethodId, @javax.annotation.Nonnull UpdatePaymentMethodsCard updatePaymentMethodsCard, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return updateCustomerPaymentMethodsWithHttpInfo(id, paymentMethodId, updatePaymentMethodsCard, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -312,7 +319,8 @@ public class PaymentMethodsApi {
    * @return ApiResponse&lt;UpdateCustomerPaymentMethodsResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -321,7 +329,7 @@ public class PaymentMethodsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<UpdateCustomerPaymentMethodsResponse> updateCustomerPaymentMethodsWithHttpInfo(String id, String paymentMethodId, UpdatePaymentMethodsCard updatePaymentMethodsCard, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<UpdateCustomerPaymentMethodsResponse> updateCustomerPaymentMethodsWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String paymentMethodId, @javax.annotation.Nonnull UpdatePaymentMethodsCard updatePaymentMethodsCard, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateCustomerPaymentMethods");
@@ -335,8 +343,8 @@ public class PaymentMethodsApi {
 
     // Path parameters
     String localVarPath = "/customers/{id}/payment_sources/{payment_method_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{payment_method_id}", apiClient.escapeString(paymentMethodId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{payment_method_id}", apiClient.escapeString(paymentMethodId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

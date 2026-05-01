@@ -35,28 +35,30 @@ import com.conekta.JSON;
   OrderNextActionResponse.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("order_next_action_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class OrderNextActionResponse {
   public static final String JSON_PROPERTY_REDIRECT_TO_URL = "redirect_to_url";
+  @javax.annotation.Nullable
   private OrderNextActionResponseRedirectToUrl redirectToUrl;
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private String type;
 
   public OrderNextActionResponse() { 
   }
 
-  public OrderNextActionResponse redirectToUrl(OrderNextActionResponseRedirectToUrl redirectToUrl) {
+  public OrderNextActionResponse redirectToUrl(@javax.annotation.Nullable OrderNextActionResponseRedirectToUrl redirectToUrl) {
     this.redirectToUrl = redirectToUrl;
     return this;
   }
 
-   /**
+  /**
    * Get redirectToUrl
    * @return redirectToUrl
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REDIRECT_TO_URL)
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_TO_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public OrderNextActionResponseRedirectToUrl getRedirectToUrl() {
@@ -64,24 +66,24 @@ public class OrderNextActionResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REDIRECT_TO_URL)
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_TO_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRedirectToUrl(OrderNextActionResponseRedirectToUrl redirectToUrl) {
+  public void setRedirectToUrl(@javax.annotation.Nullable OrderNextActionResponseRedirectToUrl redirectToUrl) {
     this.redirectToUrl = redirectToUrl;
   }
 
 
-  public OrderNextActionResponse type(String type) {
+  public OrderNextActionResponse type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Indicates the type of action to be taken
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getType() {
@@ -89,9 +91,9 @@ public class OrderNextActionResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
@@ -132,10 +134,7 @@ public class OrderNextActionResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

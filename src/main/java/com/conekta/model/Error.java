@@ -39,24 +39,28 @@ import com.conekta.JSON;
   Error.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("error")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class Error {
   public static final String JSON_PROPERTY_DETAILS = "details";
+  @javax.annotation.Nullable
   private List<DetailsError> details = new ArrayList<>();
 
   public static final String JSON_PROPERTY_LOG_ID = "log_id";
+  @javax.annotation.Nullable
   private String logId;
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private String type;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nullable
   private String _object;
 
   public Error() { 
   }
 
-  public Error details(List<DetailsError> details) {
+  public Error details(@javax.annotation.Nullable List<DetailsError> details) {
     this.details = details;
     return this;
   }
@@ -69,12 +73,12 @@ public class Error {
     return this;
   }
 
-   /**
+  /**
    * Get details
    * @return details
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DETAILS)
+  @JsonProperty(value = JSON_PROPERTY_DETAILS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<DetailsError> getDetails() {
@@ -82,24 +86,24 @@ public class Error {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DETAILS)
+  @JsonProperty(value = JSON_PROPERTY_DETAILS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDetails(List<DetailsError> details) {
+  public void setDetails(@javax.annotation.Nullable List<DetailsError> details) {
     this.details = details;
   }
 
 
-  public Error logId(String logId) {
+  public Error logId(@javax.annotation.Nullable String logId) {
     this.logId = logId;
     return this;
   }
 
-   /**
+  /**
    * log id
    * @return logId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LOG_ID)
+  @JsonProperty(value = JSON_PROPERTY_LOG_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getLogId() {
@@ -107,24 +111,24 @@ public class Error {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LOG_ID)
+  @JsonProperty(value = JSON_PROPERTY_LOG_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLogId(String logId) {
+  public void setLogId(@javax.annotation.Nullable String logId) {
     this.logId = logId;
   }
 
 
-  public Error type(String type) {
+  public Error type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getType() {
@@ -132,24 +136,24 @@ public class Error {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public Error _object(String _object) {
+  public Error _object(@javax.annotation.Nullable String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getObject() {
@@ -157,9 +161,9 @@ public class Error {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
   }
 
@@ -204,10 +208,7 @@ public class Error {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

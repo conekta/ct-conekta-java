@@ -20,7 +20,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class DiscountsApi {
   private ApiClient apiClient;
 
@@ -60,7 +60,8 @@ public class DiscountsApi {
    * @return DiscountLinesResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -68,7 +69,7 @@ public class DiscountsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public DiscountLinesResponse ordersCreateDiscountLine(String id, OrderDiscountLinesRequest orderDiscountLinesRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public DiscountLinesResponse ordersCreateDiscountLine(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull OrderDiscountLinesRequest orderDiscountLinesRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return ordersCreateDiscountLineWithHttpInfo(id, orderDiscountLinesRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -82,7 +83,8 @@ public class DiscountsApi {
    * @return ApiResponse&lt;DiscountLinesResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -90,7 +92,7 @@ public class DiscountsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<DiscountLinesResponse> ordersCreateDiscountLineWithHttpInfo(String id, OrderDiscountLinesRequest orderDiscountLinesRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<DiscountLinesResponse> ordersCreateDiscountLineWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull OrderDiscountLinesRequest orderDiscountLinesRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersCreateDiscountLine");
@@ -101,7 +103,7 @@ public class DiscountsApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/discount_lines"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -130,7 +132,8 @@ public class DiscountsApi {
    * @return DiscountLinesResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -139,7 +142,7 @@ public class DiscountsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public DiscountLinesResponse ordersDeleteDiscountLines(String id, String discountLinesId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public DiscountLinesResponse ordersDeleteDiscountLines(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String discountLinesId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return ordersDeleteDiscountLinesWithHttpInfo(id, discountLinesId, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -153,7 +156,8 @@ public class DiscountsApi {
    * @return ApiResponse&lt;DiscountLinesResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -162,7 +166,7 @@ public class DiscountsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<DiscountLinesResponse> ordersDeleteDiscountLinesWithHttpInfo(String id, String discountLinesId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<DiscountLinesResponse> ordersDeleteDiscountLinesWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String discountLinesId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersDeleteDiscountLines");
@@ -173,8 +177,8 @@ public class DiscountsApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/discount_lines/{discount_lines_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{discount_lines_id}", apiClient.escapeString(discountLinesId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{discount_lines_id}", apiClient.escapeString(discountLinesId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -203,7 +207,8 @@ public class DiscountsApi {
    * @return DiscountLinesResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -212,7 +217,7 @@ public class DiscountsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public DiscountLinesResponse ordersGetDiscountLine(String id, String discountLinesId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public DiscountLinesResponse ordersGetDiscountLine(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String discountLinesId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return ordersGetDiscountLineWithHttpInfo(id, discountLinesId, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -226,7 +231,8 @@ public class DiscountsApi {
    * @return ApiResponse&lt;DiscountLinesResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -235,7 +241,7 @@ public class DiscountsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<DiscountLinesResponse> ordersGetDiscountLineWithHttpInfo(String id, String discountLinesId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<DiscountLinesResponse> ordersGetDiscountLineWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String discountLinesId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersGetDiscountLine");
@@ -246,8 +252,8 @@ public class DiscountsApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/discount_lines/{discount_lines_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{discount_lines_id}", apiClient.escapeString(discountLinesId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{discount_lines_id}", apiClient.escapeString(discountLinesId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -279,14 +285,15 @@ public class DiscountsApi {
    * @return GetOrderDiscountLinesResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public GetOrderDiscountLinesResponse ordersGetDiscountLines(String id, String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public GetOrderDiscountLinesResponse ordersGetDiscountLines(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     return ordersGetDiscountLinesWithHttpInfo(id, acceptLanguage, xChildCompanyId, limit, search, next, previous).getData();
   }
 
@@ -303,14 +310,15 @@ public class DiscountsApi {
    * @return ApiResponse&lt;GetOrderDiscountLinesResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<GetOrderDiscountLinesResponse> ordersGetDiscountLinesWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous) throws ApiException {
+  public ApiResponse<GetOrderDiscountLinesResponse> ordersGetDiscountLinesWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersGetDiscountLines");
@@ -318,7 +326,7 @@ public class DiscountsApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/discount_lines"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
@@ -356,7 +364,8 @@ public class DiscountsApi {
    * @return DiscountLinesResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -365,7 +374,7 @@ public class DiscountsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public DiscountLinesResponse ordersUpdateDiscountLines(String id, String discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public DiscountLinesResponse ordersUpdateDiscountLines(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String discountLinesId, @javax.annotation.Nonnull UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return ordersUpdateDiscountLinesWithHttpInfo(id, discountLinesId, updateOrderDiscountLinesRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -380,7 +389,8 @@ public class DiscountsApi {
    * @return ApiResponse&lt;DiscountLinesResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -389,7 +399,7 @@ public class DiscountsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<DiscountLinesResponse> ordersUpdateDiscountLinesWithHttpInfo(String id, String discountLinesId, UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<DiscountLinesResponse> ordersUpdateDiscountLinesWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String discountLinesId, @javax.annotation.Nonnull UpdateOrderDiscountLinesRequest updateOrderDiscountLinesRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersUpdateDiscountLines");
@@ -403,8 +413,8 @@ public class DiscountsApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/discount_lines/{discount_lines_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{discount_lines_id}", apiClient.escapeString(discountLinesId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{discount_lines_id}", apiClient.escapeString(discountLinesId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

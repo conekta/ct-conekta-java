@@ -34,33 +34,33 @@ import com.conekta.JSON;
   CompanyDocumentResponse.JSON_PROPERTY_FILE_NAME,
   CompanyDocumentResponse.JSON_PROPERTY_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CompanyDocumentResponse {
   /**
    * Classification of the document.  | Tipo de archivo              | Descripción                                               | | :--------------------------- | :-------------------------------------------------------- | | &#x60;id_legal_representative&#x60;      | identificación oficial frente                             | | &#x60;id_legal_representative_back&#x60; | identificación oficial atrás                              | | &#x60;cfdi&#x60;                         | Prueba de situación fiscal                                | | &#x60;constitutive_act_basic&#x60;       | Acta constitutiva                                         | | &#x60;proof_of_address&#x60;             | Comprobante de domicilio del negocio                      | | &#x60;power_of_attonery&#x60;            | Poderes de representación                                 | | &#x60;deposit_account_cover&#x60;        | Carátula de la cuenta de depósito                         | | &#x60;permit_casino&#x60;                | Permiso ante SEGOB                                        | | &#x60;license_sanitation&#x60;           | Licencia sanitaria de COFEPRIS                            | | &#x60;registration_tourism&#x60;         | Inscripción ante el Registro Nacional de Turismo (SECTUR) | 
    */
   public enum FileClassificationEnum {
-    ID_LEGAL_REPRESENTATIVE("id_legal_representative"),
+    ID_LEGAL_REPRESENTATIVE(String.valueOf("id_legal_representative")),
     
-    ID_LEGAL_REPRESENTATIVE_BACK("id_legal_representative_back"),
+    ID_LEGAL_REPRESENTATIVE_BACK(String.valueOf("id_legal_representative_back")),
     
-    CFDI("cfdi"),
+    CFDI(String.valueOf("cfdi")),
     
-    CONSTITUTIVE_ACT_BASIC("constitutive_act_basic"),
+    CONSTITUTIVE_ACT_BASIC(String.valueOf("constitutive_act_basic")),
     
-    PROOF_OF_ADDRESS("proof_of_address"),
+    PROOF_OF_ADDRESS(String.valueOf("proof_of_address")),
     
-    POWER_OF_ATTONERY("power_of_attonery"),
+    POWER_OF_ATTONERY(String.valueOf("power_of_attonery")),
     
-    DEPOSIT_ACCOUNT_COVER("deposit_account_cover"),
+    DEPOSIT_ACCOUNT_COVER(String.valueOf("deposit_account_cover")),
     
-    PERMIT_CASINO("permit_casino"),
+    PERMIT_CASINO(String.valueOf("permit_casino")),
     
-    LICENSE_SANITATION("license_sanitation"),
+    LICENSE_SANITATION(String.valueOf("license_sanitation")),
     
-    REGISTRATION_TOURISM("registration_tourism"),
+    REGISTRATION_TOURISM(String.valueOf("registration_tourism")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -90,28 +90,31 @@ public class CompanyDocumentResponse {
   }
 
   public static final String JSON_PROPERTY_FILE_CLASSIFICATION = "file_classification";
+  @javax.annotation.Nonnull
   private FileClassificationEnum fileClassification;
 
   public static final String JSON_PROPERTY_FILE_NAME = "file_name";
+  @javax.annotation.Nonnull
   private String fileName;
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @javax.annotation.Nonnull
   private String status;
 
   public CompanyDocumentResponse() { 
   }
 
-  public CompanyDocumentResponse fileClassification(FileClassificationEnum fileClassification) {
+  public CompanyDocumentResponse fileClassification(@javax.annotation.Nonnull FileClassificationEnum fileClassification) {
     this.fileClassification = fileClassification;
     return this;
   }
 
-   /**
+  /**
    * Classification of the document.  | Tipo de archivo              | Descripción                                               | | :--------------------------- | :-------------------------------------------------------- | | &#x60;id_legal_representative&#x60;      | identificación oficial frente                             | | &#x60;id_legal_representative_back&#x60; | identificación oficial atrás                              | | &#x60;cfdi&#x60;                         | Prueba de situación fiscal                                | | &#x60;constitutive_act_basic&#x60;       | Acta constitutiva                                         | | &#x60;proof_of_address&#x60;             | Comprobante de domicilio del negocio                      | | &#x60;power_of_attonery&#x60;            | Poderes de representación                                 | | &#x60;deposit_account_cover&#x60;        | Carátula de la cuenta de depósito                         | | &#x60;permit_casino&#x60;                | Permiso ante SEGOB                                        | | &#x60;license_sanitation&#x60;           | Licencia sanitaria de COFEPRIS                            | | &#x60;registration_tourism&#x60;         | Inscripción ante el Registro Nacional de Turismo (SECTUR) | 
    * @return fileClassification
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FILE_CLASSIFICATION)
+  @JsonProperty(value = JSON_PROPERTY_FILE_CLASSIFICATION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public FileClassificationEnum getFileClassification() {
@@ -119,24 +122,24 @@ public class CompanyDocumentResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FILE_CLASSIFICATION)
+  @JsonProperty(value = JSON_PROPERTY_FILE_CLASSIFICATION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFileClassification(FileClassificationEnum fileClassification) {
+  public void setFileClassification(@javax.annotation.Nonnull FileClassificationEnum fileClassification) {
     this.fileClassification = fileClassification;
   }
 
 
-  public CompanyDocumentResponse fileName(String fileName) {
+  public CompanyDocumentResponse fileName(@javax.annotation.Nonnull String fileName) {
     this.fileName = fileName;
     return this;
   }
 
-   /**
+  /**
    * Name of the file as stored or processed.
    * @return fileName
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FILE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FILE_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getFileName() {
@@ -144,24 +147,24 @@ public class CompanyDocumentResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FILE_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FILE_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFileName(String fileName) {
+  public void setFileName(@javax.annotation.Nonnull String fileName) {
     this.fileName = fileName;
   }
 
 
-  public CompanyDocumentResponse status(String status) {
+  public CompanyDocumentResponse status(@javax.annotation.Nonnull String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Current status of the document.
    * @return status
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getStatus() {
@@ -169,9 +172,9 @@ public class CompanyDocumentResponse {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nonnull String status) {
     this.status = status;
   }
 
@@ -214,10 +217,7 @@ public class CompanyDocumentResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

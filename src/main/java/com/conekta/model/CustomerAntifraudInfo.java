@@ -34,28 +34,30 @@ import com.conekta.JSON;
   CustomerAntifraudInfo.JSON_PROPERTY_FIRST_PAID_AT
 })
 @JsonTypeName("customer_antifraud_info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CustomerAntifraudInfo {
   public static final String JSON_PROPERTY_ACCOUNT_CREATED_AT = "account_created_at";
+  @javax.annotation.Nullable
   private Long accountCreatedAt;
 
   public static final String JSON_PROPERTY_FIRST_PAID_AT = "first_paid_at";
+  @javax.annotation.Nullable
   private Long firstPaidAt;
 
   public CustomerAntifraudInfo() { 
   }
 
-  public CustomerAntifraudInfo accountCreatedAt(Long accountCreatedAt) {
+  public CustomerAntifraudInfo accountCreatedAt(@javax.annotation.Nullable Long accountCreatedAt) {
     this.accountCreatedAt = accountCreatedAt;
     return this;
   }
 
-   /**
+  /**
    * Get accountCreatedAt
    * @return accountCreatedAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_ACCOUNT_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getAccountCreatedAt() {
@@ -63,24 +65,24 @@ public class CustomerAntifraudInfo {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ACCOUNT_CREATED_AT)
+  @JsonProperty(value = JSON_PROPERTY_ACCOUNT_CREATED_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAccountCreatedAt(Long accountCreatedAt) {
+  public void setAccountCreatedAt(@javax.annotation.Nullable Long accountCreatedAt) {
     this.accountCreatedAt = accountCreatedAt;
   }
 
 
-  public CustomerAntifraudInfo firstPaidAt(Long firstPaidAt) {
+  public CustomerAntifraudInfo firstPaidAt(@javax.annotation.Nullable Long firstPaidAt) {
     this.firstPaidAt = firstPaidAt;
     return this;
   }
 
-   /**
+  /**
    * Get firstPaidAt
    * @return firstPaidAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FIRST_PAID_AT)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_PAID_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getFirstPaidAt() {
@@ -88,9 +90,9 @@ public class CustomerAntifraudInfo {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FIRST_PAID_AT)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_PAID_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFirstPaidAt(Long firstPaidAt) {
+  public void setFirstPaidAt(@javax.annotation.Nullable Long firstPaidAt) {
     this.firstPaidAt = firstPaidAt;
   }
 
@@ -131,10 +133,7 @@ public class CustomerAntifraudInfo {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

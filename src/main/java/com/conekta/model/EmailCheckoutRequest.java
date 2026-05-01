@@ -33,25 +33,26 @@ import com.conekta.JSON;
   EmailCheckoutRequest.JSON_PROPERTY_EMAIL
 })
 @JsonTypeName("emailCheckout_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class EmailCheckoutRequest {
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @javax.annotation.Nonnull
   private String email;
 
   public EmailCheckoutRequest() { 
   }
 
-  public EmailCheckoutRequest email(String email) {
+  public EmailCheckoutRequest email(@javax.annotation.Nonnull String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * Get email
    * @return email
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getEmail() {
@@ -59,9 +60,9 @@ public class EmailCheckoutRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nonnull String email) {
     this.email = email;
   }
 
@@ -100,10 +101,7 @@ public class EmailCheckoutRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

@@ -22,7 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class OrdersApi {
   private ApiClient apiClient;
 
@@ -61,7 +61,8 @@ public class OrdersApi {
    * @return OrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -71,7 +72,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public OrderResponse cancelOrder(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public OrderResponse cancelOrder(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return cancelOrderWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -84,7 +85,8 @@ public class OrdersApi {
    * @return ApiResponse&lt;OrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -94,7 +96,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<OrderResponse> cancelOrderWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<OrderResponse> cancelOrderWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling cancelOrder");
@@ -102,7 +104,7 @@ public class OrdersApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/cancel"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -130,7 +132,8 @@ public class OrdersApi {
    * @return OrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -139,7 +142,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public OrderResponse createOrder(OrderRequest orderRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public OrderResponse createOrder(@javax.annotation.Nonnull OrderRequest orderRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return createOrderWithHttpInfo(orderRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -152,7 +155,8 @@ public class OrdersApi {
    * @return ApiResponse&lt;OrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
@@ -161,7 +165,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<OrderResponse> createOrderWithHttpInfo(OrderRequest orderRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<OrderResponse> createOrderWithHttpInfo(@javax.annotation.Nonnull OrderRequest orderRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (orderRequest == null) {
       throw new ApiException(400, "Missing the required parameter 'orderRequest' when calling createOrder");
@@ -193,7 +197,8 @@ public class OrdersApi {
    * @return OrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -201,7 +206,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public OrderResponse getOrderById(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public OrderResponse getOrderById(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return getOrderByIdWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -214,7 +219,8 @@ public class OrdersApi {
    * @return ApiResponse&lt;OrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -222,7 +228,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<OrderResponse> getOrderByIdWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<OrderResponse> getOrderByIdWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling getOrderById");
@@ -230,7 +236,7 @@ public class OrdersApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -268,14 +274,15 @@ public class OrdersApi {
    * @return GetOrdersResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public GetOrdersResponse getOrders(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous, String paymentStatus, String lastPaymentInfoStatus, Long createdAt, Long createdAtGte, Long createdAtLte, Long updatedAtGte, Long updatedAtLte) throws ApiException {
+  public GetOrdersResponse getOrders(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous, @javax.annotation.Nullable String paymentStatus, @javax.annotation.Nullable String lastPaymentInfoStatus, @javax.annotation.Nullable Long createdAt, @javax.annotation.Nullable Long createdAtGte, @javax.annotation.Nullable Long createdAtLte, @javax.annotation.Nullable Long updatedAtGte, @javax.annotation.Nullable Long updatedAtLte) throws ApiException {
     return getOrdersWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte).getData();
   }
 
@@ -298,14 +305,15 @@ public class OrdersApi {
    * @return ApiResponse&lt;GetOrdersResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<GetOrdersResponse> getOrdersWithHttpInfo(String acceptLanguage, String xChildCompanyId, Integer limit, String search, String next, String previous, String paymentStatus, String lastPaymentInfoStatus, Long createdAt, Long createdAtGte, Long createdAtLte, Long updatedAtGte, Long updatedAtLte) throws ApiException {
+  public ApiResponse<GetOrdersResponse> getOrdersWithHttpInfo(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous, @javax.annotation.Nullable String paymentStatus, @javax.annotation.Nullable String lastPaymentInfoStatus, @javax.annotation.Nullable Long createdAt, @javax.annotation.Nullable Long createdAtGte, @javax.annotation.Nullable Long createdAtLte, @javax.annotation.Nullable Long updatedAtGte, @javax.annotation.Nullable Long updatedAtLte) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "limit", limit)
@@ -348,7 +356,8 @@ public class OrdersApi {
    * @return OrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -358,7 +367,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public OrderResponse orderCancelRefund(String id, String refundId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public OrderResponse orderCancelRefund(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String refundId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return orderCancelRefundWithHttpInfo(id, refundId, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -372,7 +381,8 @@ public class OrdersApi {
    * @return ApiResponse&lt;OrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -382,7 +392,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<OrderResponse> orderCancelRefundWithHttpInfo(String id, String refundId, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<OrderResponse> orderCancelRefundWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String refundId, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling orderCancelRefund");
@@ -393,8 +403,8 @@ public class OrdersApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/refunds/{refund_id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id))
-            .replaceAll("\\{refund_id}", apiClient.escapeString(refundId));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{refund_id}", apiClient.escapeString(refundId.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -423,7 +433,8 @@ public class OrdersApi {
    * @return OrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -433,7 +444,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public OrderResponse orderRefund(String id, OrderRefundRequest orderRefundRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public OrderResponse orderRefund(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull OrderRefundRequest orderRefundRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     return orderRefundWithHttpInfo(id, orderRefundRequest, acceptLanguage, xChildCompanyId).getData();
   }
 
@@ -447,7 +458,8 @@ public class OrdersApi {
    * @return ApiResponse&lt;OrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -457,7 +469,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<OrderResponse> orderRefundWithHttpInfo(String id, OrderRefundRequest orderRefundRequest, String acceptLanguage, String xChildCompanyId) throws ApiException {
+  public ApiResponse<OrderResponse> orderRefundWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull OrderRefundRequest orderRefundRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling orderRefund");
@@ -468,7 +480,7 @@ public class OrdersApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/refunds"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -497,7 +509,8 @@ public class OrdersApi {
    * @return OrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -506,7 +519,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public OrderResponse ordersCreateCapture(String id, String acceptLanguage, String xChildCompanyId, OrderCaptureRequest orderCaptureRequest) throws ApiException {
+  public OrderResponse ordersCreateCapture(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable OrderCaptureRequest orderCaptureRequest) throws ApiException {
     return ordersCreateCaptureWithHttpInfo(id, acceptLanguage, xChildCompanyId, orderCaptureRequest).getData();
   }
 
@@ -520,7 +533,8 @@ public class OrdersApi {
    * @return ApiResponse&lt;OrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -529,7 +543,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<OrderResponse> ordersCreateCaptureWithHttpInfo(String id, String acceptLanguage, String xChildCompanyId, OrderCaptureRequest orderCaptureRequest) throws ApiException {
+  public ApiResponse<OrderResponse> ordersCreateCaptureWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable OrderCaptureRequest orderCaptureRequest) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersCreateCapture");
@@ -537,7 +551,7 @@ public class OrdersApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}/capture"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
@@ -565,7 +579,8 @@ public class OrdersApi {
    * @return OrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -574,7 +589,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public OrderResponse updateOrder(String id, OrderUpdate orderUpdate, String acceptLanguage) throws ApiException {
+  public OrderResponse updateOrder(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull OrderUpdate orderUpdate, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     return updateOrderWithHttpInfo(id, orderUpdate, acceptLanguage).getData();
   }
 
@@ -587,7 +602,8 @@ public class OrdersApi {
    * @return ApiResponse&lt;OrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
        <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
        <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
@@ -596,7 +612,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<OrderResponse> updateOrderWithHttpInfo(String id, OrderUpdate orderUpdate, String acceptLanguage) throws ApiException {
+  public ApiResponse<OrderResponse> updateOrderWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull OrderUpdate orderUpdate, @javax.annotation.Nullable String acceptLanguage) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling updateOrder");
@@ -607,7 +623,7 @@ public class OrdersApi {
 
     // Path parameters
     String localVarPath = "/orders/{id}"
-            .replaceAll("\\{id}", apiClient.escapeString(id));
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

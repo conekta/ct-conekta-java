@@ -39,43 +39,50 @@ import com.conekta.JSON;
   PaymentMethodPbbPayment.JSON_PROPERTY_REFERENCE
 })
 @JsonTypeName("payment_method_pbb_payment")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class PaymentMethodPbbPayment {
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private String type;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_DEEP_LINK = "deep_link";
+  @javax.annotation.Nonnull
   private String deepLink;
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nonnull
   private Long expiresAt;
 
   public static final String JSON_PROPERTY_PRODUCT_TYPE = "product_type";
+  @javax.annotation.Nonnull
   private String productType;
 
   public static final String JSON_PROPERTY_REDIRECT_URL = "redirect_url";
+  @javax.annotation.Nonnull
   private String redirectUrl;
 
   public static final String JSON_PROPERTY_REFERENCE = "reference";
+  @javax.annotation.Nonnull
   private String reference;
 
   public PaymentMethodPbbPayment() { 
   }
 
-  public PaymentMethodPbbPayment type(String type) {
+  public PaymentMethodPbbPayment type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getType() {
@@ -83,24 +90,24 @@ public class PaymentMethodPbbPayment {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public PaymentMethodPbbPayment _object(String _object) {
+  public PaymentMethodPbbPayment _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
 
-   /**
+  /**
    * Get _object
    * @return _object
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
@@ -108,24 +115,24 @@ public class PaymentMethodPbbPayment {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_OBJECT)
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setObject(String _object) {
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 
 
-  public PaymentMethodPbbPayment deepLink(String deepLink) {
+  public PaymentMethodPbbPayment deepLink(@javax.annotation.Nonnull String deepLink) {
     this.deepLink = deepLink;
     return this;
   }
 
-   /**
+  /**
    * Deep link for the payment, use for mobile apps/flows
    * @return deepLink
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DEEP_LINK)
+  @JsonProperty(value = JSON_PROPERTY_DEEP_LINK, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getDeepLink() {
@@ -133,25 +140,25 @@ public class PaymentMethodPbbPayment {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DEEP_LINK)
+  @JsonProperty(value = JSON_PROPERTY_DEEP_LINK, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDeepLink(String deepLink) {
+  public void setDeepLink(@javax.annotation.Nonnull String deepLink) {
     this.deepLink = deepLink;
   }
 
 
-  public PaymentMethodPbbPayment expiresAt(Long expiresAt) {
+  public PaymentMethodPbbPayment expiresAt(@javax.annotation.Nonnull Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
-   /**
+  /**
    * Expiration date of the charge
    * minimum: 0
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Long getExpiresAt() {
@@ -159,24 +166,24 @@ public class PaymentMethodPbbPayment {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setExpiresAt(Long expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nonnull Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public PaymentMethodPbbPayment productType(String productType) {
+  public PaymentMethodPbbPayment productType(@javax.annotation.Nonnull String productType) {
     this.productType = productType;
     return this;
   }
 
-   /**
+  /**
    * Product type of the charge
    * @return productType
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_PRODUCT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_PRODUCT_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getProductType() {
@@ -184,24 +191,24 @@ public class PaymentMethodPbbPayment {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PRODUCT_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_PRODUCT_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setProductType(String productType) {
+  public void setProductType(@javax.annotation.Nonnull String productType) {
     this.productType = productType;
   }
 
 
-  public PaymentMethodPbbPayment redirectUrl(String redirectUrl) {
+  public PaymentMethodPbbPayment redirectUrl(@javax.annotation.Nonnull String redirectUrl) {
     this.redirectUrl = redirectUrl;
     return this;
   }
 
-   /**
+  /**
    * URL to redirect the customer to complete the payment
    * @return redirectUrl
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_REDIRECT_URL)
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getRedirectUrl() {
@@ -209,24 +216,24 @@ public class PaymentMethodPbbPayment {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REDIRECT_URL)
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRedirectUrl(String redirectUrl) {
+  public void setRedirectUrl(@javax.annotation.Nonnull String redirectUrl) {
     this.redirectUrl = redirectUrl;
   }
 
 
-  public PaymentMethodPbbPayment reference(String reference) {
+  public PaymentMethodPbbPayment reference(@javax.annotation.Nonnull String reference) {
     this.reference = reference;
     return this;
   }
 
-   /**
+  /**
    * Reference for the payment
    * @return reference
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_REFERENCE)
+  @JsonProperty(value = JSON_PROPERTY_REFERENCE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getReference() {
@@ -234,9 +241,9 @@ public class PaymentMethodPbbPayment {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REFERENCE)
+  @JsonProperty(value = JSON_PROPERTY_REFERENCE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setReference(String reference) {
+  public void setReference(@javax.annotation.Nonnull String reference) {
     this.reference = reference;
   }
 
@@ -287,10 +294,7 @@ public class PaymentMethodPbbPayment {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

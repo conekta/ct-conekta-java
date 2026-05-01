@@ -33,25 +33,26 @@ import com.conekta.JSON;
   ChargeUpdateRequest.JSON_PROPERTY_REFERENCE_ID
 })
 @JsonTypeName("charge_update_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class ChargeUpdateRequest {
   public static final String JSON_PROPERTY_REFERENCE_ID = "reference_id";
+  @javax.annotation.Nullable
   private String referenceId;
 
   public ChargeUpdateRequest() { 
   }
 
-  public ChargeUpdateRequest referenceId(String referenceId) {
+  public ChargeUpdateRequest referenceId(@javax.annotation.Nullable String referenceId) {
     this.referenceId = referenceId;
     return this;
   }
 
-   /**
+  /**
    * custom reference id
    * @return referenceId
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REFERENCE_ID)
+  @JsonProperty(value = JSON_PROPERTY_REFERENCE_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getReferenceId() {
@@ -59,9 +60,9 @@ public class ChargeUpdateRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REFERENCE_ID)
+  @JsonProperty(value = JSON_PROPERTY_REFERENCE_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReferenceId(String referenceId) {
+  public void setReferenceId(@javax.annotation.Nullable String referenceId) {
     this.referenceId = referenceId;
   }
 
@@ -100,10 +101,7 @@ public class ChargeUpdateRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }
