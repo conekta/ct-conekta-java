@@ -10,7 +10,7 @@ It is a sub-resource of the Order model that can be stipulated in order to confi
 |------------ | ------------- | ------------- | -------------|
 |**allowedPaymentMethods** | **List&lt;String&gt;** | Those are the payment methods that will be available for the link |  |
 |**excludeCardNetworks** | [**List&lt;ExcludeCardNetworksEnum&gt;**](#List&lt;ExcludeCardNetworksEnum&gt;) | List of card networks to exclude from the checkout. This field is only applicable for card payments. |  [optional] |
-|**expiresAt** | **Long** | It is the time when the link will expire.  It is expressed in seconds since the Unix epoch. The valid range is from 10 minutes to 365 days from the creation date.  |  |
+|**expiresAt** | **Long** | It is the time when the link will expire.  It is expressed in seconds since the Unix epoch. The valid range is from 5 minutes to 365 days from the creation date.  |  |
 |**monthlyInstallmentsEnabled** | **Boolean** | This flag allows you to specify if months without interest will be active. |  [optional] |
 |**monthlyInstallmentsOptions** | **List&lt;Integer&gt;** | This field allows you to specify the number of months without interest. |  [optional] |
 |**threeDsMode** | **String** | Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null. |  [optional] |

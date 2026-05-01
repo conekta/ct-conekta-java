@@ -74,6 +74,7 @@ docs/DeleteApiKeysResponse.md
 docs/DeletedBlacklistRuleResponse.md
 docs/DeletedWhitelistRuleResponse.md
 docs/DetailsError.md
+docs/DiscountLinesDataResponse.md
 docs/DiscountLinesResponse.md
 docs/DiscountsApi.md
 docs/EmailCheckoutRequest.md
@@ -107,6 +108,7 @@ docs/OrderChannelResponse.md
 docs/OrderChargesResponse.md
 docs/OrderCheckoutRequest.md
 docs/OrderDiscountLinesRequest.md
+docs/OrderDiscountLinesResponse.md
 docs/OrderFiscalEntityAddressResponse.md
 docs/OrderFiscalEntityRequest.md
 docs/OrderFiscalEntityResponse.md
@@ -120,6 +122,8 @@ docs/OrderResponseCheckout.md
 docs/OrderResponseCustomerInfo.md
 docs/OrderResponseProducts.md
 docs/OrderResponseShippingContact.md
+docs/OrderShippingLinesResponse.md
+docs/OrderTaxLinesResponse.md
 docs/OrderTaxRequest.md
 docs/OrderTaxResponse.md
 docs/OrderUpdate.md
@@ -165,6 +169,7 @@ docs/ResendEventRequest.md
 docs/RiskRulesData.md
 docs/RiskRulesList.md
 docs/ShippingContactsApi.md
+docs/ShippingLinesDataResponse.md
 docs/ShippingOrderResponse.md
 docs/ShippingRequest.md
 docs/ShippingsApi.md
@@ -177,6 +182,7 @@ docs/SubscriptionRequest.md
 docs/SubscriptionResponse.md
 docs/SubscriptionsApi.md
 docs/SubscriptionsCustomerPortalApi.md
+docs/TaxLinesDataResponse.md
 docs/TaxesApi.md
 docs/TokenRequest.md
 docs/TokenRequestCard.md
@@ -319,6 +325,7 @@ src/main/java/com/conekta/model/DeleteApiKeysResponse.java
 src/main/java/com/conekta/model/DeletedBlacklistRuleResponse.java
 src/main/java/com/conekta/model/DeletedWhitelistRuleResponse.java
 src/main/java/com/conekta/model/DetailsError.java
+src/main/java/com/conekta/model/DiscountLinesDataResponse.java
 src/main/java/com/conekta/model/DiscountLinesResponse.java
 src/main/java/com/conekta/model/EmailCheckoutRequest.java
 src/main/java/com/conekta/model/Error.java
@@ -349,6 +356,7 @@ src/main/java/com/conekta/model/OrderChannelResponse.java
 src/main/java/com/conekta/model/OrderChargesResponse.java
 src/main/java/com/conekta/model/OrderCheckoutRequest.java
 src/main/java/com/conekta/model/OrderDiscountLinesRequest.java
+src/main/java/com/conekta/model/OrderDiscountLinesResponse.java
 src/main/java/com/conekta/model/OrderFiscalEntityAddressResponse.java
 src/main/java/com/conekta/model/OrderFiscalEntityRequest.java
 src/main/java/com/conekta/model/OrderFiscalEntityResponse.java
@@ -362,6 +370,8 @@ src/main/java/com/conekta/model/OrderResponseCheckout.java
 src/main/java/com/conekta/model/OrderResponseCustomerInfo.java
 src/main/java/com/conekta/model/OrderResponseProducts.java
 src/main/java/com/conekta/model/OrderResponseShippingContact.java
+src/main/java/com/conekta/model/OrderShippingLinesResponse.java
+src/main/java/com/conekta/model/OrderTaxLinesResponse.java
 src/main/java/com/conekta/model/OrderTaxRequest.java
 src/main/java/com/conekta/model/OrderTaxResponse.java
 src/main/java/com/conekta/model/OrderUpdate.java
@@ -400,6 +410,7 @@ src/main/java/com/conekta/model/ProductOrderResponse.java
 src/main/java/com/conekta/model/ResendEventRequest.java
 src/main/java/com/conekta/model/RiskRulesData.java
 src/main/java/com/conekta/model/RiskRulesList.java
+src/main/java/com/conekta/model/ShippingLinesDataResponse.java
 src/main/java/com/conekta/model/ShippingOrderResponse.java
 src/main/java/com/conekta/model/ShippingRequest.java
 src/main/java/com/conekta/model/SmsCheckoutRequest.java
@@ -409,6 +420,7 @@ src/main/java/com/conekta/model/SubscriptionDetailsPlan.java
 src/main/java/com/conekta/model/SubscriptionEventsResponse.java
 src/main/java/com/conekta/model/SubscriptionRequest.java
 src/main/java/com/conekta/model/SubscriptionResponse.java
+src/main/java/com/conekta/model/TaxLinesDataResponse.java
 src/main/java/com/conekta/model/TokenRequest.java
 src/main/java/com/conekta/model/TokenRequestCard.java
 src/main/java/com/conekta/model/TokenRequestCheckout.java
