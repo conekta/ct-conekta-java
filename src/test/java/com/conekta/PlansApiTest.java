@@ -55,7 +55,7 @@ public class PlansApiTest {
 
     @Test
     public void getPlansTest() throws ApiException {
-        GetPlansResponse response = api.getPlans("es", null, 20, null, null, null), null, null);
+        GetPlansResponse response = api.getPlans("es", null, 20, null, null, null, null, null);
         Assertions.assertNotNull(response);
     }
 
