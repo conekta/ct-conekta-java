@@ -37,7 +37,7 @@ import com.conekta.JSON;
   UpdateWebhook.JSON_PROPERTY_ACTIVE
 })
 @JsonTypeName("update_webhook")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class UpdateWebhook {
   public static final String JSON_PROPERTY_URL = "url";
   @javax.annotation.Nullable

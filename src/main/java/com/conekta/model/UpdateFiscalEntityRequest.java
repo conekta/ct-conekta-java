@@ -41,7 +41,7 @@ import com.conekta.JSON;
   UpdateFiscalEntityRequest.JSON_PROPERTY_COMPANY_NAME
 })
 @JsonTypeName("update_fiscal_entity_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class UpdateFiscalEntityRequest {
   public static final String JSON_PROPERTY_ADDRESS = "address";
   @javax.annotation.Nullable

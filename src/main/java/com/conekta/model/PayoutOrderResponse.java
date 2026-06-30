@@ -52,7 +52,7 @@ import com.conekta.JSON;
   PayoutOrderResponse.JSON_PROPERTY_UPDATED_AT
 })
 @JsonTypeName("payout_order_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class PayoutOrderResponse {
   public static final String JSON_PROPERTY_ALLOWED_PAYOUT_METHODS = "allowed_payout_methods";
   @javax.annotation.Nonnull

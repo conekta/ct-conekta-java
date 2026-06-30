@@ -40,7 +40,7 @@ import com.conekta.JSON;
   PayoutOrderPayoutsItem.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("payout_order_payouts_item")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class PayoutOrderPayoutsItem {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   @javax.annotation.Nonnull

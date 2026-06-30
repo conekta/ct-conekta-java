@@ -36,7 +36,7 @@ import com.conekta.JSON;
   OrderChannelResponse.JSON_PROPERTY_ID
 })
 @JsonTypeName("order_channel_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class OrderChannelResponse {
   public static final String JSON_PROPERTY_SEGMENT = "segment";
   @javax.annotation.Nullable

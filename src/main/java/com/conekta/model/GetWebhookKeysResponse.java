@@ -40,7 +40,7 @@ import com.conekta.JSON;
   GetWebhookKeysResponse.JSON_PROPERTY_DATA
 })
 @JsonTypeName("get_webhook_keys_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class GetWebhookKeysResponse {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   @javax.annotation.Nonnull

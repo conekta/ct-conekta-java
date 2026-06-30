@@ -38,7 +38,7 @@ import com.conekta.JSON;
   PaymentMethodBnplRequest.JSON_PROPERTY_SUCCESS_URL
 })
 @JsonTypeName("payment_method_bnpl_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class PaymentMethodBnplRequest {
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nonnull

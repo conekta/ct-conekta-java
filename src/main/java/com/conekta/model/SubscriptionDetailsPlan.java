@@ -42,7 +42,7 @@ import com.conekta.JSON;
   SubscriptionDetailsPlan.JSON_PROPERTY_CREATED_AT
 })
 @JsonTypeName("subscription_details_plan")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class SubscriptionDetailsPlan {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable

@@ -34,7 +34,7 @@ import com.conekta.JSON;
   CreateCompanyRequestFiscalInfo.JSON_PROPERTY_FISCAL_TYPE
 })
 @JsonTypeName("Create_Company_Request_fiscal_info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class CreateCompanyRequestFiscalInfo {
   public static final String JSON_PROPERTY_BUSINESS_PHONE = "business_phone";
   @javax.annotation.Nullable

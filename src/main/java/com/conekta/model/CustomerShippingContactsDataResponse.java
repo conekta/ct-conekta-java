@@ -46,7 +46,7 @@ import com.conekta.JSON;
   CustomerShippingContactsDataResponse.JSON_PROPERTY_CREATED_AT
 })
 @JsonTypeName("customer_shipping_contacts_data_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class CustomerShippingContactsDataResponse {
   public static final String JSON_PROPERTY_PHONE = "phone";
   @javax.annotation.Nullable

@@ -34,7 +34,7 @@ import com.conekta.JSON;
   CashAgreementsResponse.JSON_PROPERTY_PROVIDER
 })
 @JsonTypeName("cash_agreements_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class CashAgreementsResponse {
   public static final String JSON_PROPERTY_AGREEMENT = "agreement";
   @javax.annotation.Nullable

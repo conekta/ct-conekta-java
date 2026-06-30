@@ -36,7 +36,7 @@ import com.conekta.JSON;
   CustomerDetails.JSON_PROPERTY_EMAIL
 })
 @JsonTypeName("customer_details")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class CustomerDetails {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable

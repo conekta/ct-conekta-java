@@ -62,7 +62,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.conekta.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 @JsonDeserialize(using = GetCustomerPaymentMethodDataResponse.GetCustomerPaymentMethodDataResponseDeserializer.class)
 @JsonSerialize(using = GetCustomerPaymentMethodDataResponse.GetCustomerPaymentMethodDataResponseSerializer.class)
 public class GetCustomerPaymentMethodDataResponse extends AbstractOpenApiSchema {

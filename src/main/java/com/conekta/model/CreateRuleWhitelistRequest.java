@@ -35,7 +35,7 @@ import com.conekta.JSON;
   CreateRuleWhitelistRequest.JSON_PROPERTY_VALUE
 })
 @JsonTypeName("CreateRuleWhitelist_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class CreateRuleWhitelistRequest {
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nonnull

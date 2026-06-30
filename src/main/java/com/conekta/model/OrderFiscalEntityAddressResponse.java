@@ -40,7 +40,7 @@ import com.conekta.JSON;
   OrderFiscalEntityAddressResponse.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("order_fiscal_entity_address_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class OrderFiscalEntityAddressResponse {
   public static final String JSON_PROPERTY_STREET1 = "street1";
   @javax.annotation.Nonnull

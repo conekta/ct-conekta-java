@@ -38,7 +38,7 @@ import com.conekta.JSON;
   TokenRequestCard.JSON_PROPERTY_NUMBER
 })
 @JsonTypeName("token_request_card")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class TokenRequestCard {
   public static final String JSON_PROPERTY_CVC = "cvc";
   @javax.annotation.Nonnull

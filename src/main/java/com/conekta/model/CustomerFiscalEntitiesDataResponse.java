@@ -46,7 +46,7 @@ import com.conekta.JSON;
   CustomerFiscalEntitiesDataResponse.JSON_PROPERTY_DEFAULT
 })
 @JsonTypeName("customer_fiscal_entities_data_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class CustomerFiscalEntitiesDataResponse {
   public static final String JSON_PROPERTY_ADDRESS = "address";
   @javax.annotation.Nonnull

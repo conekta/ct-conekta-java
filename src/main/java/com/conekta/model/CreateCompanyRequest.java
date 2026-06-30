@@ -40,7 +40,7 @@ import com.conekta.JSON;
   CreateCompanyRequest.JSON_PROPERTY_BANK_ACCOUNT_INFO
 })
 @JsonTypeName("Create_Company_Request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class CreateCompanyRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable

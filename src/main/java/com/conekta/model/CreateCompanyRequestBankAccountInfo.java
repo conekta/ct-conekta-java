@@ -33,7 +33,7 @@ import com.conekta.JSON;
   CreateCompanyRequestBankAccountInfo.JSON_PROPERTY_CLABE
 })
 @JsonTypeName("Create_Company_Request_bank_account_info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class CreateCompanyRequestBankAccountInfo {
   public static final String JSON_PROPERTY_CLABE = "clabe";
   @javax.annotation.Nullable

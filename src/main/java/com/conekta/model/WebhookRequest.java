@@ -36,7 +36,7 @@ import com.conekta.JSON;
   WebhookRequest.JSON_PROPERTY_SUBSCRIBED_EVENTS
 })
 @JsonTypeName("webhook_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class WebhookRequest {
   public static final String JSON_PROPERTY_URL = "url";
   @javax.annotation.Nonnull

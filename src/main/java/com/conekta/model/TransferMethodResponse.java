@@ -40,7 +40,7 @@ import com.conekta.JSON;
   TransferMethodResponse.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("transfer_method_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class TransferMethodResponse {
   public static final String JSON_PROPERTY_ACCOUNT_HOLDER = "account_holder";
   @javax.annotation.Nullable

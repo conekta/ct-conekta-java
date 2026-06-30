@@ -40,7 +40,7 @@ import com.conekta.JSON;
   GetPlansResponse.JSON_PROPERTY_DATA
 })
 @JsonTypeName("get_plans_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class GetPlansResponse {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   @javax.annotation.Nonnull

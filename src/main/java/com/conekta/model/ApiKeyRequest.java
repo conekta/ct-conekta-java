@@ -34,7 +34,7 @@ import com.conekta.JSON;
   ApiKeyRequest.JSON_PROPERTY_ROLE
 })
 @JsonTypeName("api_key_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ApiKeyRequest {
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable

@@ -46,7 +46,7 @@ import com.conekta.JSON;
   PayoutOrderRequest.JSON_PROPERTY_REASON
 })
 @JsonTypeName("payout_order_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class PayoutOrderRequest {
   public static final String JSON_PROPERTY_ALLOWED_PAYOUT_METHODS = "allowed_payout_methods";
   @javax.annotation.Nonnull

@@ -35,7 +35,7 @@ import com.conekta.JSON;
   OrderNextActionResponse.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("order_next_action_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class OrderNextActionResponse {
   public static final String JSON_PROPERTY_REDIRECT_TO_URL = "redirect_to_url";
   @javax.annotation.Nullable

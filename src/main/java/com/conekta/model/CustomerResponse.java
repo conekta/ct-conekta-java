@@ -59,7 +59,7 @@ import com.conekta.JSON;
   CustomerResponse.JSON_PROPERTY_SUBSCRIPTION
 })
 @JsonTypeName("customer_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class CustomerResponse {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
   @javax.annotation.Nullable

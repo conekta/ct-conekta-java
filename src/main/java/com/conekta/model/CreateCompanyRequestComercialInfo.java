@@ -36,7 +36,7 @@ import com.conekta.JSON;
   CreateCompanyRequestComercialInfo.JSON_PROPERTY_MERCHANT_SUPPORT_PHONE
 })
 @JsonTypeName("Create_Company_Request_comercial_info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class CreateCompanyRequestComercialInfo {
   public static final String JSON_PROPERTY_WEBSITE = "website";
   @javax.annotation.Nullable

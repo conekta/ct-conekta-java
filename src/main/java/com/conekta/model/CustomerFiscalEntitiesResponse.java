@@ -38,7 +38,7 @@ import com.conekta.JSON;
   CustomerFiscalEntitiesResponse.JSON_PROPERTY_DATA
 })
 @JsonTypeName("customer_fiscal_entities_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class CustomerFiscalEntitiesResponse {
   public static final String JSON_PROPERTY_HAS_MORE = "has_more";
   @javax.annotation.Nonnull

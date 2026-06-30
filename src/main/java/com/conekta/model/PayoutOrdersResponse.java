@@ -40,7 +40,7 @@ import com.conekta.JSON;
   PayoutOrdersResponse.JSON_PROPERTY_PREVIOUS_PAGE_URL
 })
 @JsonTypeName("payout_orders_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class PayoutOrdersResponse {
   public static final String JSON_PROPERTY_DATA = "data";
   @javax.annotation.Nullable

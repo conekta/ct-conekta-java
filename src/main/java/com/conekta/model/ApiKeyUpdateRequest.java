@@ -34,7 +34,7 @@ import com.conekta.JSON;
   ApiKeyUpdateRequest.JSON_PROPERTY_DESCRIPTION
 })
 @JsonTypeName("api_key_update_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ApiKeyUpdateRequest {
   public static final String JSON_PROPERTY_ACTIVE = "active";
   @javax.annotation.Nullable

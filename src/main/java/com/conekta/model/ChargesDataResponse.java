@@ -55,7 +55,7 @@ import com.conekta.JSON;
   ChargesDataResponse.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("charges_data_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ChargesDataResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   @javax.annotation.Nonnull

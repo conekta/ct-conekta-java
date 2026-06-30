@@ -46,7 +46,7 @@ import com.conekta.JSON;
   PaymentMethodCashRecurrentResponse.JSON_PROPERTY_PROVIDER
 })
 @JsonTypeName("payment_method_cash_recurrent_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class PaymentMethodCashRecurrentResponse {
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nonnull

@@ -44,7 +44,7 @@ import com.conekta.JSON;
   ApiKeyCreateResponse.JSON_PROPERTY_ROLE
 })
 @JsonTypeName("api_key_create_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ApiKeyCreateResponse {
   public static final String JSON_PROPERTY_AUTHENTICATION_TOKEN = "authentication_token";
   @javax.annotation.Nullable

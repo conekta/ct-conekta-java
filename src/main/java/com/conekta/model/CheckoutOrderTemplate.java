@@ -46,7 +46,7 @@ import com.conekta.JSON;
   CheckoutOrderTemplate.JSON_PROPERTY_DISCOUNT_LINES
 })
 @JsonTypeName("checkout_order_template")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class CheckoutOrderTemplate {
   public static final String JSON_PROPERTY_CURRENCY = "currency";
   @javax.annotation.Nonnull

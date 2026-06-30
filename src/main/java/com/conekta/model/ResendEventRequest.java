@@ -35,7 +35,7 @@ import com.conekta.JSON;
   ResendEventRequest.JSON_PROPERTY_WEBHOOKS_IDS
 })
 @JsonTypeName("resendEvent_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ResendEventRequest {
   public static final String JSON_PROPERTY_WEBHOOKS_IDS = "webhooks_ids";
   @javax.annotation.Nonnull

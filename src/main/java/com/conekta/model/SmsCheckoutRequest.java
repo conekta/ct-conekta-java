@@ -33,7 +33,7 @@ import com.conekta.JSON;
   SmsCheckoutRequest.JSON_PROPERTY_PHONENUMBER
 })
 @JsonTypeName("smsCheckout_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class SmsCheckoutRequest {
   public static final String JSON_PROPERTY_PHONENUMBER = "phonenumber";
   @javax.annotation.Nonnull

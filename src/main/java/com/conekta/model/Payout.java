@@ -34,7 +34,7 @@ import com.conekta.JSON;
   Payout.JSON_PROPERTY_PAYOUT_METHOD
 })
 @JsonTypeName("payout")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class Payout {
   public static final String JSON_PROPERTY_PAYOUT_METHOD = "payout_method";
   @javax.annotation.Nonnull

@@ -45,7 +45,7 @@ import com.conekta.JSON;
   BalanceResponse.JSON_PROPERTY_TEMPORARILY_RETAINED
 })
 @JsonTypeName("balance_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class BalanceResponse {
   public static final String JSON_PROPERTY_AVAILABLE = "available";
   @javax.annotation.Nullable

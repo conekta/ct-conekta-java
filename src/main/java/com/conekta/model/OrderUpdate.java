@@ -57,7 +57,7 @@ import com.conekta.JSON;
   OrderUpdate.JSON_PROPERTY_TAX_LINES
 })
 @JsonTypeName("order_update")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class OrderUpdate {
   public static final String JSON_PROPERTY_CHARGES = "charges";
   @javax.annotation.Nullable

@@ -34,7 +34,7 @@ import com.conekta.JSON;
   UpdatePaymentMethodsCard.JSON_PROPERTY_EXPIRES_AT
 })
 @JsonTypeName("update_payment_methods_card")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class UpdatePaymentMethodsCard {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable

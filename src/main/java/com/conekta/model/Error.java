@@ -39,7 +39,7 @@ import com.conekta.JSON;
   Error.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("error")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class Error {
   public static final String JSON_PROPERTY_DETAILS = "details";
   @javax.annotation.Nullable

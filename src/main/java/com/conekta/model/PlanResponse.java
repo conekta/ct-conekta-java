@@ -45,7 +45,7 @@ import com.conekta.JSON;
   PlanResponse.JSON_PROPERTY_RETRY_DELAY_HOURS
 })
 @JsonTypeName("plan_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class PlanResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   @javax.annotation.Nullable

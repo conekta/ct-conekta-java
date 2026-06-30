@@ -35,7 +35,7 @@ import com.conekta.JSON;
   UpdateOrderDiscountLinesRequest.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("update_order_discount_lines_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class UpdateOrderDiscountLinesRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   @javax.annotation.Nullable

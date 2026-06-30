@@ -46,7 +46,7 @@ import com.conekta.JSON;
   OrderResponseShippingContact.JSON_PROPERTY_DELETED
 })
 @JsonTypeName("order_response_shipping_contact")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class OrderResponseShippingContact {
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   @javax.annotation.Nullable

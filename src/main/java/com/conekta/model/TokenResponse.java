@@ -38,7 +38,7 @@ import com.conekta.JSON;
   TokenResponse.JSON_PROPERTY_USED
 })
 @JsonTypeName("token_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class TokenResponse {
   public static final String JSON_PROPERTY_CHECKOUT = "checkout";
   @Deprecated

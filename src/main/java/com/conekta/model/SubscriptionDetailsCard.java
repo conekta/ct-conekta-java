@@ -44,7 +44,7 @@ import com.conekta.JSON;
   SubscriptionDetailsCard.JSON_PROPERTY_CUSTOMER_CUSTOM_REFERENCE
 })
 @JsonTypeName("subscription_details_card")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class SubscriptionDetailsCard {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable
