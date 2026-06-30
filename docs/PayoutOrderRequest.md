@@ -13,7 +13,7 @@ a payout order
 |**currency** | **String** | The currency in which the payout order is made. |  |
 |**customerInfo** | [**PayoutOrderRequestCustomerInfo**](PayoutOrderRequestCustomerInfo.md) |  |  |
 |**expiresAt** | **Long** | The expiration time of the payout order in Unix timestamp. |  |
-|**metadata** |  | The metadata of the payout order. |  [optional] |
+|**metadata** | **Map&lt;String, Object&gt;** | The metadata of the payout order. |  [optional] |
 |**payout** | [**Payout**](Payout.md) |  |  |
 |**reason** | **String** | The reason for the payout order. |  |
 

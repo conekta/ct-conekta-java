@@ -15,7 +15,7 @@ a order
 |**discountLines** | [**List&lt;OrderDiscountLinesRequest&gt;**](OrderDiscountLinesRequest.md) | List of [discounts](https://developers.conekta.com/v2.2.0/reference/orderscreatediscountline) that are applied to the order. |  [optional] |
 |**fiscalEntity** | [**OrderFiscalEntityRequest**](OrderFiscalEntityRequest.md) |  |  [optional] |
 |**lineItems** | [**List&lt;Product&gt;**](Product.md) | List of [products](https://developers.conekta.com/v2.2.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product. |  |
-|**metadata** |  | Metadata associated with the order |  [optional] |
+|**metadata** | **Map&lt;String, Object&gt;** | Metadata associated with the order |  [optional] |
 |**needsShippingContact** | **Boolean** | Allows you to fill out the shipping information at checkout |  [optional] |
 |**preAuthorize** | **Boolean** | Indicates whether the order charges must be preauthorized |  [optional] |
 |**processingMode** | **String** | Indicates the processing mode for the order, either ecommerce, recurrent or validation. |  [optional] |

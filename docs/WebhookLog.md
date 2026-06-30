@@ -12,7 +12,7 @@
 |**lastAttemptedAt** | **Integer** |  |  [optional] |
 |**lastHttpResponseStatus** | **Integer** |  |  [optional] |
 |**_object** | **String** |  |  [optional] |
-|**responseData** |  |  |  [optional] |
+|**responseData** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**url** | **URI** |  |  [optional] |
 
 

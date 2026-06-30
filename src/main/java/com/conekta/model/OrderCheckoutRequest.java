@@ -38,6 +38,7 @@ import com.conekta.JSON;
   OrderCheckoutRequest.JSON_PROPERTY_PLAN_IDS,
   OrderCheckoutRequest.JSON_PROPERTY_EXPIRES_AT,
   OrderCheckoutRequest.JSON_PROPERTY_FAILURE_URL,
+  OrderCheckoutRequest.JSON_PROPERTY_FORCE_SAVE_CARD,
   OrderCheckoutRequest.JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED,
   OrderCheckoutRequest.JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS,
   OrderCheckoutRequest.JSON_PROPERTY_MAX_FAILED_RETRIES,
@@ -48,23 +49,27 @@ import com.conekta.JSON;
   OrderCheckoutRequest.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("order_checkout_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class OrderCheckoutRequest {
   /**
    * Gets or Sets allowedPaymentMethods
    */
   public enum AllowedPaymentMethodsEnum {
-    CASH("cash"),
+    CASH(String.valueOf("cash")),
     
-    CARD("card"),
+    CARD(String.valueOf("card")),
     
-    BANK_TRANSFER("bank_transfer"),
+    BANK_TRANSFER(String.valueOf("bank_transfer")),
     
-    BNPL("bnpl"),
+    BNPL(String.valueOf("bnpl")),
     
-    PAY_BY_BANK("pay_by_bank"),
+    PAY_BY_BANK(String.valueOf("pay_by_bank")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    GOOGLE(String.valueOf("google")),
+    
+    APPLE(String.valueOf("apple")),
+    
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -94,19 +99,20 @@ public class OrderCheckoutRequest {
   }
 
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
+  @javax.annotation.Nonnull
   private List<AllowedPaymentMethodsEnum> allowedPaymentMethods = new ArrayList<>();
 
   /**
    * Gets or Sets excludeCardNetworks
    */
   public enum ExcludeCardNetworksEnum {
-    VISA("visa"),
+    VISA(String.valueOf("visa")),
     
-    MASTERCARD("mastercard"),
+    MASTERCARD(String.valueOf("mastercard")),
     
-    AMEX("amex"),
+    AMEX(String.valueOf("amex")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -136,47 +142,62 @@ public class OrderCheckoutRequest {
   }
 
   public static final String JSON_PROPERTY_EXCLUDE_CARD_NETWORKS = "exclude_card_networks";
+  @javax.annotation.Nullable
   private List<ExcludeCardNetworksEnum> excludeCardNetworks = new ArrayList<>();
 
   public static final String JSON_PROPERTY_PLAN_IDS = "plan_ids";
+  @javax.annotation.Nullable
   private List<String> planIds = new ArrayList<>();
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nullable
   private Long expiresAt;
 
   public static final String JSON_PROPERTY_FAILURE_URL = "failure_url";
+  @javax.annotation.Nullable
   private URI failureUrl;
 
+  public static final String JSON_PROPERTY_FORCE_SAVE_CARD = "force_save_card";
+  @javax.annotation.Nullable
+  private Boolean forceSaveCard;
+
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED = "monthly_installments_enabled";
+  @javax.annotation.Nullable
   private Boolean monthlyInstallmentsEnabled;
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS = "monthly_installments_options";
+  @javax.annotation.Nullable
   private List<Integer> monthlyInstallmentsOptions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_MAX_FAILED_RETRIES = "max_failed_retries";
+  @javax.annotation.Nullable
   private Integer maxFailedRetries;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @javax.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_ON_DEMAND_ENABLED = "on_demand_enabled";
+  @javax.annotation.Nullable
   private Boolean onDemandEnabled;
 
   public static final String JSON_PROPERTY_REDIRECTION_TIME = "redirection_time";
+  @javax.annotation.Nullable
   private Integer redirectionTime;
 
   public static final String JSON_PROPERTY_SUCCESS_URL = "success_url";
+  @javax.annotation.Nullable
   private URI successUrl;
 
   /**
    * Required. This field represents the type of checkout, which determines the user experience during the payment process. &#39;HostedPayment&#39; will redirect the customer to a Conekta-hosted page to complete the payment, while &#39;Integration&#39; allows the payment process to be handled entirely on your site using Conekta&#39;s APIs and SDKs.
    */
   public enum TypeEnum {
-    INTEGRATION("Integration"),
+    INTEGRATION(String.valueOf("Integration")),
     
-    HOSTEDPAYMENT("HostedPayment"),
+    HOSTED_PAYMENT(String.valueOf("HostedPayment")),
     
-    UNKNOWN_DEFAULT_OPEN_API("unknown_default_open_api");
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
     private String value;
 
@@ -206,12 +227,13 @@ public class OrderCheckoutRequest {
   }
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nullable
   private TypeEnum type;
 
   public OrderCheckoutRequest() { 
   }
 
-  public OrderCheckoutRequest allowedPaymentMethods(List<AllowedPaymentMethodsEnum> allowedPaymentMethods) {
+  public OrderCheckoutRequest allowedPaymentMethods(@javax.annotation.Nonnull List<AllowedPaymentMethodsEnum> allowedPaymentMethods) {
     this.allowedPaymentMethods = allowedPaymentMethods;
     return this;
   }
@@ -224,12 +246,12 @@ public class OrderCheckoutRequest {
     return this;
   }
 
-   /**
+  /**
    * Are the payment methods available for this link. For subscriptions, only &#39;card&#39; is allowed due to the recurring nature of the payments.
    * @return allowedPaymentMethods
-  **/
+   */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ALLOWED_PAYMENT_METHODS)
+  @JsonProperty(value = JSON_PROPERTY_ALLOWED_PAYMENT_METHODS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<AllowedPaymentMethodsEnum> getAllowedPaymentMethods() {
@@ -237,14 +259,14 @@ public class OrderCheckoutRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ALLOWED_PAYMENT_METHODS)
+  @JsonProperty(value = JSON_PROPERTY_ALLOWED_PAYMENT_METHODS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAllowedPaymentMethods(List<AllowedPaymentMethodsEnum> allowedPaymentMethods) {
+  public void setAllowedPaymentMethods(@javax.annotation.Nonnull List<AllowedPaymentMethodsEnum> allowedPaymentMethods) {
     this.allowedPaymentMethods = allowedPaymentMethods;
   }
 
 
-  public OrderCheckoutRequest excludeCardNetworks(List<ExcludeCardNetworksEnum> excludeCardNetworks) {
+  public OrderCheckoutRequest excludeCardNetworks(@javax.annotation.Nullable List<ExcludeCardNetworksEnum> excludeCardNetworks) {
     this.excludeCardNetworks = excludeCardNetworks;
     return this;
   }
@@ -257,12 +279,12 @@ public class OrderCheckoutRequest {
     return this;
   }
 
-   /**
+  /**
    * List of card networks to exclude from the checkout. This field is only applicable for card payments.
    * @return excludeCardNetworks
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXCLUDE_CARD_NETWORKS)
+  @JsonProperty(value = JSON_PROPERTY_EXCLUDE_CARD_NETWORKS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<ExcludeCardNetworksEnum> getExcludeCardNetworks() {
@@ -270,14 +292,14 @@ public class OrderCheckoutRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXCLUDE_CARD_NETWORKS)
+  @JsonProperty(value = JSON_PROPERTY_EXCLUDE_CARD_NETWORKS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExcludeCardNetworks(List<ExcludeCardNetworksEnum> excludeCardNetworks) {
+  public void setExcludeCardNetworks(@javax.annotation.Nullable List<ExcludeCardNetworksEnum> excludeCardNetworks) {
     this.excludeCardNetworks = excludeCardNetworks;
   }
 
 
-  public OrderCheckoutRequest planIds(List<String> planIds) {
+  public OrderCheckoutRequest planIds(@javax.annotation.Nullable List<String> planIds) {
     this.planIds = planIds;
     return this;
   }
@@ -290,12 +312,12 @@ public class OrderCheckoutRequest {
     return this;
   }
 
-   /**
+  /**
    * List of plan IDs that will be available for subscription. This field is required for subscription payments.
    * @return planIds
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PLAN_IDS)
+  @JsonProperty(value = JSON_PROPERTY_PLAN_IDS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getPlanIds() {
@@ -303,25 +325,25 @@ public class OrderCheckoutRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PLAN_IDS)
+  @JsonProperty(value = JSON_PROPERTY_PLAN_IDS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPlanIds(List<String> planIds) {
+  public void setPlanIds(@javax.annotation.Nullable List<String> planIds) {
     this.planIds = planIds;
   }
 
 
-  public OrderCheckoutRequest expiresAt(Long expiresAt) {
+  public OrderCheckoutRequest expiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
-   /**
+  /**
    * It is the time when the link will expire.  It is expressed in seconds since the Unix epoch. The valid range is from 5 minutes to 365 days from the creation date. 
    * minimum: 1
    * @return expiresAt
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Long getExpiresAt() {
@@ -329,24 +351,24 @@ public class OrderCheckoutRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(Long expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public OrderCheckoutRequest failureUrl(URI failureUrl) {
+  public OrderCheckoutRequest failureUrl(@javax.annotation.Nullable URI failureUrl) {
     this.failureUrl = failureUrl;
     return this;
   }
 
-   /**
+  /**
    * Redirection url back to the site in case of failed payment, applies only to HostedPayment.
    * @return failureUrl
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FAILURE_URL)
+  @JsonProperty(value = JSON_PROPERTY_FAILURE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public URI getFailureUrl() {
@@ -354,24 +376,49 @@ public class OrderCheckoutRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FAILURE_URL)
+  @JsonProperty(value = JSON_PROPERTY_FAILURE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFailureUrl(URI failureUrl) {
+  public void setFailureUrl(@javax.annotation.Nullable URI failureUrl) {
     this.failureUrl = failureUrl;
   }
 
 
-  public OrderCheckoutRequest monthlyInstallmentsEnabled(Boolean monthlyInstallmentsEnabled) {
+  public OrderCheckoutRequest forceSaveCard(@javax.annotation.Nullable Boolean forceSaveCard) {
+    this.forceSaveCard = forceSaveCard;
+    return this;
+  }
+
+  /**
+   * Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments.
+   * @return forceSaveCard
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_FORCE_SAVE_CARD, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getForceSaveCard() {
+    return forceSaveCard;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_FORCE_SAVE_CARD, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setForceSaveCard(@javax.annotation.Nullable Boolean forceSaveCard) {
+    this.forceSaveCard = forceSaveCard;
+  }
+
+
+  public OrderCheckoutRequest monthlyInstallmentsEnabled(@javax.annotation.Nullable Boolean monthlyInstallmentsEnabled) {
     this.monthlyInstallmentsEnabled = monthlyInstallmentsEnabled;
     return this;
   }
 
-   /**
+  /**
    * Get monthlyInstallmentsEnabled
    * @return monthlyInstallmentsEnabled
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED)
+  @JsonProperty(value = JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getMonthlyInstallmentsEnabled() {
@@ -379,14 +426,14 @@ public class OrderCheckoutRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED)
+  @JsonProperty(value = JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMonthlyInstallmentsEnabled(Boolean monthlyInstallmentsEnabled) {
+  public void setMonthlyInstallmentsEnabled(@javax.annotation.Nullable Boolean monthlyInstallmentsEnabled) {
     this.monthlyInstallmentsEnabled = monthlyInstallmentsEnabled;
   }
 
 
-  public OrderCheckoutRequest monthlyInstallmentsOptions(List<Integer> monthlyInstallmentsOptions) {
+  public OrderCheckoutRequest monthlyInstallmentsOptions(@javax.annotation.Nullable List<Integer> monthlyInstallmentsOptions) {
     this.monthlyInstallmentsOptions = monthlyInstallmentsOptions;
     return this;
   }
@@ -399,12 +446,12 @@ public class OrderCheckoutRequest {
     return this;
   }
 
-   /**
+  /**
    * Get monthlyInstallmentsOptions
    * @return monthlyInstallmentsOptions
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS)
+  @JsonProperty(value = JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<Integer> getMonthlyInstallmentsOptions() {
@@ -412,24 +459,24 @@ public class OrderCheckoutRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS)
+  @JsonProperty(value = JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMonthlyInstallmentsOptions(List<Integer> monthlyInstallmentsOptions) {
+  public void setMonthlyInstallmentsOptions(@javax.annotation.Nullable List<Integer> monthlyInstallmentsOptions) {
     this.monthlyInstallmentsOptions = monthlyInstallmentsOptions;
   }
 
 
-  public OrderCheckoutRequest maxFailedRetries(Integer maxFailedRetries) {
+  public OrderCheckoutRequest maxFailedRetries(@javax.annotation.Nullable Integer maxFailedRetries) {
     this.maxFailedRetries = maxFailedRetries;
     return this;
   }
 
-   /**
+  /**
    * Number of retries allowed before the checkout is marked as failed
    * @return maxFailedRetries
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MAX_FAILED_RETRIES)
+  @JsonProperty(value = JSON_PROPERTY_MAX_FAILED_RETRIES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getMaxFailedRetries() {
@@ -437,24 +484,24 @@ public class OrderCheckoutRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MAX_FAILED_RETRIES)
+  @JsonProperty(value = JSON_PROPERTY_MAX_FAILED_RETRIES, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMaxFailedRetries(Integer maxFailedRetries) {
+  public void setMaxFailedRetries(@javax.annotation.Nullable Integer maxFailedRetries) {
     this.maxFailedRetries = maxFailedRetries;
   }
 
 
-  public OrderCheckoutRequest name(String name) {
+  public OrderCheckoutRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Reason for payment
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
@@ -462,24 +509,24 @@ public class OrderCheckoutRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public OrderCheckoutRequest onDemandEnabled(Boolean onDemandEnabled) {
+  public OrderCheckoutRequest onDemandEnabled(@javax.annotation.Nullable Boolean onDemandEnabled) {
     this.onDemandEnabled = onDemandEnabled;
     return this;
   }
 
-   /**
+  /**
    * Get onDemandEnabled
    * @return onDemandEnabled
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ON_DEMAND_ENABLED)
+  @JsonProperty(value = JSON_PROPERTY_ON_DEMAND_ENABLED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getOnDemandEnabled() {
@@ -487,24 +534,24 @@ public class OrderCheckoutRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ON_DEMAND_ENABLED)
+  @JsonProperty(value = JSON_PROPERTY_ON_DEMAND_ENABLED, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setOnDemandEnabled(Boolean onDemandEnabled) {
+  public void setOnDemandEnabled(@javax.annotation.Nullable Boolean onDemandEnabled) {
     this.onDemandEnabled = onDemandEnabled;
   }
 
 
-  public OrderCheckoutRequest redirectionTime(Integer redirectionTime) {
+  public OrderCheckoutRequest redirectionTime(@javax.annotation.Nullable Integer redirectionTime) {
     this.redirectionTime = redirectionTime;
     return this;
   }
 
-   /**
+  /**
    * number of seconds to wait before redirecting to the success_url
    * @return redirectionTime
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REDIRECTION_TIME)
+  @JsonProperty(value = JSON_PROPERTY_REDIRECTION_TIME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getRedirectionTime() {
@@ -512,24 +559,24 @@ public class OrderCheckoutRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REDIRECTION_TIME)
+  @JsonProperty(value = JSON_PROPERTY_REDIRECTION_TIME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRedirectionTime(Integer redirectionTime) {
+  public void setRedirectionTime(@javax.annotation.Nullable Integer redirectionTime) {
     this.redirectionTime = redirectionTime;
   }
 
 
-  public OrderCheckoutRequest successUrl(URI successUrl) {
+  public OrderCheckoutRequest successUrl(@javax.annotation.Nullable URI successUrl) {
     this.successUrl = successUrl;
     return this;
   }
 
-   /**
+  /**
    * Redirection url back to the site in case of successful payment, applies only to HostedPayment
    * @return successUrl
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SUCCESS_URL)
+  @JsonProperty(value = JSON_PROPERTY_SUCCESS_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public URI getSuccessUrl() {
@@ -537,24 +584,24 @@ public class OrderCheckoutRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SUCCESS_URL)
+  @JsonProperty(value = JSON_PROPERTY_SUCCESS_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSuccessUrl(URI successUrl) {
+  public void setSuccessUrl(@javax.annotation.Nullable URI successUrl) {
     this.successUrl = successUrl;
   }
 
 
-  public OrderCheckoutRequest type(TypeEnum type) {
+  public OrderCheckoutRequest type(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Required. This field represents the type of checkout, which determines the user experience during the payment process. &#39;HostedPayment&#39; will redirect the customer to a Conekta-hosted page to complete the payment, while &#39;Integration&#39; allows the payment process to be handled entirely on your site using Conekta&#39;s APIs and SDKs.
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public TypeEnum getType() {
@@ -562,9 +609,9 @@ public class OrderCheckoutRequest {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
@@ -586,6 +633,7 @@ public class OrderCheckoutRequest {
         Objects.equals(this.planIds, orderCheckoutRequest.planIds) &&
         Objects.equals(this.expiresAt, orderCheckoutRequest.expiresAt) &&
         Objects.equals(this.failureUrl, orderCheckoutRequest.failureUrl) &&
+        Objects.equals(this.forceSaveCard, orderCheckoutRequest.forceSaveCard) &&
         Objects.equals(this.monthlyInstallmentsEnabled, orderCheckoutRequest.monthlyInstallmentsEnabled) &&
         Objects.equals(this.monthlyInstallmentsOptions, orderCheckoutRequest.monthlyInstallmentsOptions) &&
         Objects.equals(this.maxFailedRetries, orderCheckoutRequest.maxFailedRetries) &&
@@ -598,7 +646,7 @@ public class OrderCheckoutRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowedPaymentMethods, excludeCardNetworks, planIds, expiresAt, failureUrl, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, maxFailedRetries, name, onDemandEnabled, redirectionTime, successUrl, type);
+    return Objects.hash(allowedPaymentMethods, excludeCardNetworks, planIds, expiresAt, failureUrl, forceSaveCard, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, maxFailedRetries, name, onDemandEnabled, redirectionTime, successUrl, type);
   }
 
   @Override
@@ -610,6 +658,7 @@ public class OrderCheckoutRequest {
     sb.append("    planIds: ").append(toIndentedString(planIds)).append("\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("    failureUrl: ").append(toIndentedString(failureUrl)).append("\n");
+    sb.append("    forceSaveCard: ").append(toIndentedString(forceSaveCard)).append("\n");
     sb.append("    monthlyInstallmentsEnabled: ").append(toIndentedString(monthlyInstallmentsEnabled)).append("\n");
     sb.append("    monthlyInstallmentsOptions: ").append(toIndentedString(monthlyInstallmentsOptions)).append("\n");
     sb.append("    maxFailedRetries: ").append(toIndentedString(maxFailedRetries)).append("\n");
@@ -627,10 +676,7 @@ public class OrderCheckoutRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 }

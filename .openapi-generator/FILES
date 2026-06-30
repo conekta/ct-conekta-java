@@ -32,7 +32,6 @@ docs/ChargesDataResponse.md
 docs/ChargesOrderResponse.md
 docs/Checkout.md
 docs/CheckoutOrderTemplate.md
-docs/CheckoutOrderTemplateCustomerInfo.md
 docs/CheckoutResponse.md
 docs/CheckoutsResponse.md
 docs/CompaniesApi.md
@@ -243,6 +242,8 @@ src/main/java/com/conekta/PayoutOrdersApi.java
 src/main/java/com/conekta/PlansApi.java
 src/main/java/com/conekta/ProductsApi.java
 src/main/java/com/conekta/RFC3339DateFormat.java
+src/main/java/com/conekta/RFC3339InstantDeserializer.java
+src/main/java/com/conekta/RFC3339JavaTimeModule.java
 src/main/java/com/conekta/ServerConfiguration.java
 src/main/java/com/conekta/ServerVariable.java
 src/main/java/com/conekta/ShippingContactsApi.java
@@ -285,7 +286,6 @@ src/main/java/com/conekta/model/ChargesDataResponse.java
 src/main/java/com/conekta/model/ChargesOrderResponse.java
 src/main/java/com/conekta/model/Checkout.java
 src/main/java/com/conekta/model/CheckoutOrderTemplate.java
-src/main/java/com/conekta/model/CheckoutOrderTemplateCustomerInfo.java
 src/main/java/com/conekta/model/CheckoutResponse.java
 src/main/java/com/conekta/model/CheckoutsResponse.java
 src/main/java/com/conekta/model/CompanyDocumentRequest.java

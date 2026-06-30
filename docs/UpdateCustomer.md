@@ -19,7 +19,7 @@ update customer
 |**corporate** | **Boolean** | It is a value that allows identifying if the email is corporate or not. |  [optional] |
 |**customReference** | **String** | It is an undefined value. |  [optional] |
 |**fiscalEntities** | [**List&lt;FiscalEntityRequest&gt;**](FiscalEntityRequest.md) |  |  [optional] |
-|**metadata** |  |  |  [optional] |
+|**metadata** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**nationalId** | **String** | It is a parameter that allows to identify the national identification number of the client. |  [optional] |
 |**paymentSources** | [**List&lt;CustomerPaymentMethodsRequest&gt;**](CustomerPaymentMethodsRequest.md) | Contains details of the payment methods that the customer has active or has used in Conekta |  [optional] |
 |**shippingContacts** | [**List&lt;CustomerShippingContactsRequest&gt;**](CustomerShippingContactsRequest.md) | Contains the detail of the shipping addresses that the client has active or has used in Conekta |  [optional] |

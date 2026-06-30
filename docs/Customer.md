@@ -16,7 +16,7 @@ a customer
 |**defaultPaymentSourceId** | **String** | It is a parameter that allows to identify in the response, the Conekta ID of a payment method (payment_id) |  [optional] |
 |**defaultShippingContactId** | **String** | It is a parameter that allows to identify in the response, the Conekta ID of the shipping address (shipping_contact) |  [optional] |
 |**fiscalEntities** | [**List&lt;FiscalEntityRequest&gt;**](FiscalEntityRequest.md) |  |  [optional] |
-|**metadata** |  |  |  [optional] |
+|**metadata** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**name** | **String** | Client&#39;s name |  |
 |**nationalId** | **String** | It is a parameter that allows to identify the national identification number of the client. |  [optional] |
 |**paymentSources** | [**List&lt;CustomerPaymentMethodsRequest&gt;**](CustomerPaymentMethodsRequest.md) | Contains details of the payment methods that the customer has active or has used in Conekta |  [optional] |

@@ -14,11 +14,12 @@
 |**expiresAt** | **Long** |  |  [optional] |
 |**failureUrl** | **String** |  |  [optional] |
 |**force3dsFlow** | **Boolean** |  |  [optional] |
+|**forceSaveCard** | **Boolean** | Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments. |  [optional] |
 |**id** | **String** |  |  |
 |**isRedirectOnFailure** | **Boolean** |  |  [optional] |
 |**livemode** | **Boolean** |  |  [optional] |
 |**maxFailedRetries** | **Integer** | Number of retries allowed before the checkout is marked as failed |  [optional] |
-|**metadata** |  |  |  [optional] |
+|**metadata** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**monthlyInstallmentsEnabled** | **Boolean** |  |  [optional] |
 |**monthlyInstallmentsOptions** | **List&lt;Integer&gt;** |  |  [optional] |
 |**name** | **String** |  |  |

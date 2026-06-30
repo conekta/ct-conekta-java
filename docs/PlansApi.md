@@ -241,7 +241,7 @@ public class Example {
 
 ## getPlans
 
-> GetPlansResponse getPlans(acceptLanguage, xChildCompanyId, limit, search, next, previous)
+> GetPlansResponse getPlans(acceptLanguage, xChildCompanyId, limit, search, next, previous, currency, frequency)
 
 Get A List of Plans
 
@@ -272,8 +272,10 @@ public class Example {
         String search = "search_example"; // String | General order search, e.g. by mail, reference etc.
         String next = "next_example"; // String | next page
         String previous = "previous_example"; // String | previous page
+        String currency = "MXN"; // String | currency of the object to be retrieved
+        Integer frequency = 1; // Integer | frequency of the object to be retrieved
         try {
-            GetPlansResponse result = apiInstance.getPlans(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+            GetPlansResponse result = apiInstance.getPlans(acceptLanguage, xChildCompanyId, limit, search, next, previous, currency, frequency);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PlansApi#getPlans");
@@ -297,6 +299,8 @@ public class Example {
 | **search** | **String**| General order search, e.g. by mail, reference etc. | [optional] |
 | **next** | **String**| next page | [optional] |
 | **previous** | **String**| previous page | [optional] |
+| **currency** | **String**| currency of the object to be retrieved | [optional] |
+| **frequency** | **Integer**| frequency of the object to be retrieved | [optional] |
 
 ### Return type
 
