@@ -41,6 +41,7 @@ import com.conekta.JSON;
   OrderResponseCheckout.JSON_PROPERTY_EXPIRES_AT,
   OrderResponseCheckout.JSON_PROPERTY_FAILURE_URL,
   OrderResponseCheckout.JSON_PROPERTY_FORCE3DS_FLOW,
+  OrderResponseCheckout.JSON_PROPERTY_FORCE_SAVE_CARD,
   OrderResponseCheckout.JSON_PROPERTY_ID,
   OrderResponseCheckout.JSON_PROPERTY_IS_REDIRECT_ON_FAILURE,
   OrderResponseCheckout.JSON_PROPERTY_LIVEMODE,
@@ -132,6 +133,10 @@ public class OrderResponseCheckout {
   public static final String JSON_PROPERTY_FORCE3DS_FLOW = "force_3ds_flow";
   @javax.annotation.Nullable
   private Boolean force3dsFlow;
+
+  public static final String JSON_PROPERTY_FORCE_SAVE_CARD = "force_save_card";
+  @javax.annotation.Nullable
+  private Boolean forceSaveCard;
 
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -408,6 +413,31 @@ public class OrderResponseCheckout {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setForce3dsFlow(@javax.annotation.Nullable Boolean force3dsFlow) {
     this.force3dsFlow = force3dsFlow;
+  }
+
+
+  public OrderResponseCheckout forceSaveCard(@javax.annotation.Nullable Boolean forceSaveCard) {
+    this.forceSaveCard = forceSaveCard;
+    return this;
+  }
+
+  /**
+   * Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments.
+   * @return forceSaveCard
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_FORCE_SAVE_CARD, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getForceSaveCard() {
+    return forceSaveCard;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_FORCE_SAVE_CARD, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setForceSaveCard(@javax.annotation.Nullable Boolean forceSaveCard) {
+    this.forceSaveCard = forceSaveCard;
   }
 
 
@@ -971,6 +1001,7 @@ public class OrderResponseCheckout {
         Objects.equals(this.expiresAt, orderResponseCheckout.expiresAt) &&
         Objects.equals(this.failureUrl, orderResponseCheckout.failureUrl) &&
         Objects.equals(this.force3dsFlow, orderResponseCheckout.force3dsFlow) &&
+        Objects.equals(this.forceSaveCard, orderResponseCheckout.forceSaveCard) &&
         Objects.equals(this.id, orderResponseCheckout.id) &&
         Objects.equals(this.isRedirectOnFailure, orderResponseCheckout.isRedirectOnFailure) &&
         Objects.equals(this.livemode, orderResponseCheckout.livemode) &&
@@ -996,7 +1027,7 @@ public class OrderResponseCheckout {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowedPaymentMethods, canNotExpire, emailsSent, excludeCardNetworks, expiresAt, failureUrl, force3dsFlow, id, isRedirectOnFailure, livemode, maxFailedRetries, metadata, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, name, needsShippingContact, _object, onDemandEnabled, paidPaymentsCount, recurrent, redirectionTime, slug, smsSent, successUrl, startsAt, status, type, url);
+    return Objects.hash(allowedPaymentMethods, canNotExpire, emailsSent, excludeCardNetworks, expiresAt, failureUrl, force3dsFlow, forceSaveCard, id, isRedirectOnFailure, livemode, maxFailedRetries, metadata, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, name, needsShippingContact, _object, onDemandEnabled, paidPaymentsCount, recurrent, redirectionTime, slug, smsSent, successUrl, startsAt, status, type, url);
   }
 
   @Override
@@ -1010,6 +1041,7 @@ public class OrderResponseCheckout {
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("    failureUrl: ").append(toIndentedString(failureUrl)).append("\n");
     sb.append("    force3dsFlow: ").append(toIndentedString(force3dsFlow)).append("\n");
+    sb.append("    forceSaveCard: ").append(toIndentedString(forceSaveCard)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    isRedirectOnFailure: ").append(toIndentedString(isRedirectOnFailure)).append("\n");
     sb.append("    livemode: ").append(toIndentedString(livemode)).append("\n");

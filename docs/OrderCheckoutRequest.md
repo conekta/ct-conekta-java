@@ -13,6 +13,7 @@
 |**planIds** | **List&lt;String&gt;** | List of plan IDs that will be available for subscription. This field is required for subscription payments. |  [optional] |
 |**expiresAt** | **Long** | It is the time when the link will expire.  It is expressed in seconds since the Unix epoch. The valid range is from 5 minutes to 365 days from the creation date.  |  [optional] |
 |**failureUrl** | **URI** | Redirection url back to the site in case of failed payment, applies only to HostedPayment. |  [optional] |
+|**forceSaveCard** | **Boolean** | Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments. |  [optional] |
 |**monthlyInstallmentsEnabled** | **Boolean** |  |  [optional] |
 |**monthlyInstallmentsOptions** | **List&lt;Integer&gt;** |  |  [optional] |
 |**maxFailedRetries** | **Integer** | Number of retries allowed before the checkout is marked as failed |  [optional] |
@@ -33,6 +34,8 @@
 | BANK_TRANSFER | &quot;bank_transfer&quot; |
 | BNPL | &quot;bnpl&quot; |
 | PAY_BY_BANK | &quot;pay_by_bank&quot; |
+| GOOGLE | &quot;google&quot; |
+| APPLE | &quot;apple&quot; |
 | UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 

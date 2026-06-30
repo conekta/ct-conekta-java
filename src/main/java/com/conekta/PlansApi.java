@@ -255,6 +255,8 @@ public class PlansApi {
    * @param search General order search, e.g. by mail, reference etc. (optional)
    * @param next next page (optional)
    * @param previous previous page (optional)
+   * @param currency currency of the object to be retrieved (optional)
+   * @param frequency frequency of the object to be retrieved (optional)
    * @return GetPlansResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -267,8 +269,8 @@ public class PlansApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public GetPlansResponse getPlans(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
-    return getPlansWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous).getData();
+  public GetPlansResponse getPlans(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous, @javax.annotation.Nullable String currency, @javax.annotation.Nullable Integer frequency) throws ApiException {
+    return getPlansWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous, currency, frequency).getData();
   }
 
   /**
@@ -280,6 +282,8 @@ public class PlansApi {
    * @param search General order search, e.g. by mail, reference etc. (optional)
    * @param next next page (optional)
    * @param previous previous page (optional)
+   * @param currency currency of the object to be retrieved (optional)
+   * @param frequency frequency of the object to be retrieved (optional)
    * @return ApiResponse&lt;GetPlansResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -292,7 +296,7 @@ public class PlansApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<GetPlansResponse> getPlansWithHttpInfo(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
+  public ApiResponse<GetPlansResponse> getPlansWithHttpInfo(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous, @javax.annotation.Nullable String currency, @javax.annotation.Nullable Integer frequency) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "limit", limit)
@@ -300,6 +304,8 @@ public class PlansApi {
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "search", search));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "next", next));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "previous", previous));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "currency", currency));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "frequency", frequency));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

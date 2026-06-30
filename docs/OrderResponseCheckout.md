@@ -14,6 +14,7 @@
 |**expiresAt** | **Long** |  |  [optional] |
 |**failureUrl** | **String** |  |  [optional] |
 |**force3dsFlow** | **Boolean** |  |  [optional] |
+|**forceSaveCard** | **Boolean** | Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments. |  [optional] |
 |**id** | **String** |  |  |
 |**isRedirectOnFailure** | **Boolean** |  |  [optional] |
 |**livemode** | **Boolean** |  |  [optional] |

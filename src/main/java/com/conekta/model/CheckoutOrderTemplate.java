@@ -16,8 +16,8 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.CheckoutOrderTemplateCustomerInfo;
 import com.conekta.model.OrderDiscountLinesRequest;
+import com.conekta.model.OrderRequestCustomerInfo;
 import com.conekta.model.OrderTaxRequest;
 import com.conekta.model.Product;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -54,7 +54,7 @@ public class CheckoutOrderTemplate {
 
   public static final String JSON_PROPERTY_CUSTOMER_INFO = "customer_info";
   @javax.annotation.Nullable
-  private CheckoutOrderTemplateCustomerInfo customerInfo;
+  private OrderRequestCustomerInfo customerInfo;
 
   public static final String JSON_PROPERTY_LINE_ITEMS = "line_items";
   @javax.annotation.Nonnull
@@ -100,7 +100,7 @@ public class CheckoutOrderTemplate {
   }
 
 
-  public CheckoutOrderTemplate customerInfo(@javax.annotation.Nullable CheckoutOrderTemplateCustomerInfo customerInfo) {
+  public CheckoutOrderTemplate customerInfo(@javax.annotation.Nullable OrderRequestCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
     return this;
   }
@@ -113,14 +113,14 @@ public class CheckoutOrderTemplate {
   @JsonProperty(value = JSON_PROPERTY_CUSTOMER_INFO, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public CheckoutOrderTemplateCustomerInfo getCustomerInfo() {
+  public OrderRequestCustomerInfo getCustomerInfo() {
     return customerInfo;
   }
 
 
   @JsonProperty(value = JSON_PROPERTY_CUSTOMER_INFO, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCustomerInfo(@javax.annotation.Nullable CheckoutOrderTemplateCustomerInfo customerInfo) {
+  public void setCustomerInfo(@javax.annotation.Nullable OrderRequestCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
   }
 

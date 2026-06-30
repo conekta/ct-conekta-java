@@ -38,6 +38,7 @@ import com.conekta.JSON;
   OrderCheckoutRequest.JSON_PROPERTY_PLAN_IDS,
   OrderCheckoutRequest.JSON_PROPERTY_EXPIRES_AT,
   OrderCheckoutRequest.JSON_PROPERTY_FAILURE_URL,
+  OrderCheckoutRequest.JSON_PROPERTY_FORCE_SAVE_CARD,
   OrderCheckoutRequest.JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED,
   OrderCheckoutRequest.JSON_PROPERTY_MONTHLY_INSTALLMENTS_OPTIONS,
   OrderCheckoutRequest.JSON_PROPERTY_MAX_FAILED_RETRIES,
@@ -63,6 +64,10 @@ public class OrderCheckoutRequest {
     BNPL(String.valueOf("bnpl")),
     
     PAY_BY_BANK(String.valueOf("pay_by_bank")),
+    
+    GOOGLE(String.valueOf("google")),
+    
+    APPLE(String.valueOf("apple")),
     
     UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
 
@@ -151,6 +156,10 @@ public class OrderCheckoutRequest {
   public static final String JSON_PROPERTY_FAILURE_URL = "failure_url";
   @javax.annotation.Nullable
   private URI failureUrl;
+
+  public static final String JSON_PROPERTY_FORCE_SAVE_CARD = "force_save_card";
+  @javax.annotation.Nullable
+  private Boolean forceSaveCard;
 
   public static final String JSON_PROPERTY_MONTHLY_INSTALLMENTS_ENABLED = "monthly_installments_enabled";
   @javax.annotation.Nullable
@@ -371,6 +380,31 @@ public class OrderCheckoutRequest {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setFailureUrl(@javax.annotation.Nullable URI failureUrl) {
     this.failureUrl = failureUrl;
+  }
+
+
+  public OrderCheckoutRequest forceSaveCard(@javax.annotation.Nullable Boolean forceSaveCard) {
+    this.forceSaveCard = forceSaveCard;
+    return this;
+  }
+
+  /**
+   * Indicates whether the card used for the payment should be saved for future purchases. This field is only applicable for card payments.
+   * @return forceSaveCard
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_FORCE_SAVE_CARD, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getForceSaveCard() {
+    return forceSaveCard;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_FORCE_SAVE_CARD, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setForceSaveCard(@javax.annotation.Nullable Boolean forceSaveCard) {
+    this.forceSaveCard = forceSaveCard;
   }
 
 
@@ -599,6 +633,7 @@ public class OrderCheckoutRequest {
         Objects.equals(this.planIds, orderCheckoutRequest.planIds) &&
         Objects.equals(this.expiresAt, orderCheckoutRequest.expiresAt) &&
         Objects.equals(this.failureUrl, orderCheckoutRequest.failureUrl) &&
+        Objects.equals(this.forceSaveCard, orderCheckoutRequest.forceSaveCard) &&
         Objects.equals(this.monthlyInstallmentsEnabled, orderCheckoutRequest.monthlyInstallmentsEnabled) &&
         Objects.equals(this.monthlyInstallmentsOptions, orderCheckoutRequest.monthlyInstallmentsOptions) &&
         Objects.equals(this.maxFailedRetries, orderCheckoutRequest.maxFailedRetries) &&
@@ -611,7 +646,7 @@ public class OrderCheckoutRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowedPaymentMethods, excludeCardNetworks, planIds, expiresAt, failureUrl, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, maxFailedRetries, name, onDemandEnabled, redirectionTime, successUrl, type);
+    return Objects.hash(allowedPaymentMethods, excludeCardNetworks, planIds, expiresAt, failureUrl, forceSaveCard, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, maxFailedRetries, name, onDemandEnabled, redirectionTime, successUrl, type);
   }
 
   @Override
@@ -623,6 +658,7 @@ public class OrderCheckoutRequest {
     sb.append("    planIds: ").append(toIndentedString(planIds)).append("\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("    failureUrl: ").append(toIndentedString(failureUrl)).append("\n");
+    sb.append("    forceSaveCard: ").append(toIndentedString(forceSaveCard)).append("\n");
     sb.append("    monthlyInstallmentsEnabled: ").append(toIndentedString(monthlyInstallmentsEnabled)).append("\n");
     sb.append("    monthlyInstallmentsOptions: ").append(toIndentedString(monthlyInstallmentsOptions)).append("\n");
     sb.append("    maxFailedRetries: ").append(toIndentedString(maxFailedRetries)).append("\n");

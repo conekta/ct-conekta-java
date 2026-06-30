@@ -284,7 +284,6 @@ Class | Method | HTTP request | Description
  - [ChargesOrderResponse](docs/ChargesOrderResponse.md)
  - [Checkout](docs/Checkout.md)
  - [CheckoutOrderTemplate](docs/CheckoutOrderTemplate.md)
- - [CheckoutOrderTemplateCustomerInfo](docs/CheckoutOrderTemplateCustomerInfo.md)
  - [CheckoutResponse](docs/CheckoutResponse.md)
  - [CheckoutsResponse](docs/CheckoutsResponse.md)
  - [CompanyDocumentRequest](docs/CompanyDocumentRequest.md)

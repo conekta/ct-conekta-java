@@ -191,12 +191,12 @@ paths:
       operationId: DeleteRuleWhitelist
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -440,12 +440,12 @@ paths:
       operationId: DeleteRuleBlacklist
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -779,12 +779,12 @@ paths:
       operationId: deleteApiKey
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -883,12 +883,12 @@ paths:
       operationId: getApiKey
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -997,12 +997,12 @@ paths:
       operationId: updateApiKey
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -1343,12 +1343,12 @@ paths:
       operationId: updateCharge
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -1488,12 +1488,12 @@ paths:
       operationId: ordersCreateCharge
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -1633,12 +1633,12 @@ paths:
       operationId: ordersCreateCharges
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -2000,12 +2000,12 @@ paths:
       operationId: getCompany
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -2629,6 +2629,7 @@ paths:
           content:
             application/vnd.conekta-v2.2.0+json:
               schema:
+                default: null
                 items:
                   $ref: "#/components/schemas/CompanyDocumentResponse"
                 type: array
@@ -3020,12 +3021,12 @@ paths:
       operationId: deleteCustomerById
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -3135,12 +3136,12 @@ paths:
       operationId: getCustomerById
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -3235,12 +3236,12 @@ paths:
       operationId: updateCustomer
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -3358,12 +3359,12 @@ paths:
       operationId: CreateCustomerFiscalEntities
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -3482,21 +3483,21 @@ paths:
       operationId: UpdateCustomerFiscalEntities
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: identifier
-        example: fis_ent_2tQ8HkkfbauaKP9Ho
         explode: false
         in: path
         name: fiscal_entities_id
         required: true
         schema:
+          example: fis_ent_2tQ8HkkfbauaKP9Ho
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -3615,12 +3616,12 @@ paths:
       operationId: ordersGetDiscountLines
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -3736,12 +3737,12 @@ paths:
       operationId: ordersCreateDiscountLine
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -3845,21 +3846,21 @@ paths:
       operationId: ordersDeleteDiscountLines
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: discount line id identifier
-        example: dis_lin_2tQ974hSHcsdeSZHG
         explode: false
         in: path
         name: discount_lines_id
         required: true
         schema:
+          example: dis_lin_2tQ974hSHcsdeSZHG
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -3969,21 +3970,21 @@ paths:
       operationId: ordersGetDiscountLine
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: discount line id identifier
-        example: dis_lin_2tQ974hSHcsdeSZHG
         explode: false
         in: path
         name: discount_lines_id
         required: true
         schema:
+          example: dis_lin_2tQ974hSHcsdeSZHG
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -4093,21 +4094,21 @@ paths:
       operationId: ordersUpdateDiscountLines
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: discount line id identifier
-        example: dis_lin_2tQ974hSHcsdeSZHG
         explode: false
         in: path
         name: discount_lines_id
         required: true
         schema:
+          example: dis_lin_2tQ974hSHcsdeSZHG
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -4402,12 +4403,12 @@ paths:
           type: string
         style: simple
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       responses:
@@ -4509,12 +4510,12 @@ paths:
       operationId: resendEvent
       parameters:
       - description: event identifier
-        example: 6463d6e35a4c3e001819e760
         explode: false
         in: path
         name: event_id
         required: true
         schema:
+          example: 6463d6e35a4c3e001819e760
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -4756,12 +4757,12 @@ paths:
       operationId: getLogById
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -4922,70 +4923,91 @@ paths:
           type: string
         style: form
       - description: Filters by order status
+        examples:
+          payment_status:
+            summary: Filters by order status
+            value: paid
         explode: true
         in: query
         name: payment_status
         required: false
         schema:
-          example: paid
           type: string
         style: form
       - description: Filters by last payment info status
+        examples:
+          last_payment_info.status:
+            summary: Filters by last payment info status
+            value: pending_payment
         explode: true
         in: query
         name: last_payment_info.status
         required: false
         schema:
-          example: pending_payment
           type: string
         style: form
       - description: created equal to
+        examples:
+          created_at:
+            summary: created equal to
+            value: 1612137600
         explode: true
         in: query
         name: created_at
         required: false
         schema:
-          example: 1612137600
           format: int64
           type: integer
         style: form
       - description: created at greater than or equal to
+        examples:
+          created_at.gte:
+            summary: created at greater than or equal to
+            value: 1612137600
         explode: true
         in: query
         name: created_at.gte
         required: false
         schema:
-          example: 1612137600
           format: int64
           type: integer
         style: form
       - description: created at less than or equal to
+        examples:
+          created_at.lte:
+            summary: created at less than or equal to
+            value: 1612137600
         explode: true
         in: query
         name: created_at.lte
         required: false
         schema:
-          example: 1612137600
           format: int64
           type: integer
         style: form
       - description: updated at greater than or equal to
+        examples:
+          updated_at.gte:
+            summary: updated at greater than or equal to
+            value: 1612137600
         explode: true
         in: query
         name: updated_at.gte
         required: false
         schema:
-          example: 1612137600
           format: int64
           type: integer
         style: form
       - description: updated at less than or equal to
+        examples:
+          updated_at.lte:
+            summary: updated at less than or equal to
+            value: 1612137600
         explode: true
         in: query
         name: updated_at.lte
         required: false
         schema:
-          example: 1612137600
           format: int64
           type: integer
         style: form
@@ -5279,6 +5301,27 @@ paths:
                       additionalProp1: {}
                       additionalProp2: {}
                       additionalProp3: {}
+              order_with_checkout_and_force_save_card:
+                summary: Create an order with checkout and force save card
+                value:
+                  checkout:
+                    allowed_payment_methods:
+                    - card
+                    force_save_card: true
+                    name: Compra
+                    type: Integration
+                  currency: MXN
+                  customer_info:
+                    customer_id: cus_2n9g6x7q1w5k8v3a
+                  line_items:
+                    description: string
+                    sku: string
+                    name: Box of Cohiba S1s
+                    unit_price: 20000
+                    quantity: 1
+                    tags:
+                    - string
+                    brand: string
               order_with_subscription:
                 summary: Create an order with subscription plans
                 value:
@@ -5903,12 +5946,12 @@ paths:
       operationId: getOrderById
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -6003,12 +6046,12 @@ paths:
       operationId: updateOrder
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -6117,12 +6160,12 @@ paths:
       operationId: CancelOrder
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -6248,12 +6291,12 @@ paths:
       operationId: ordersCreateCapture
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -6372,12 +6415,12 @@ paths:
       operationId: ordersCreateProduct
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -6481,21 +6524,21 @@ paths:
       operationId: ordersDeleteProduct
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: identifier
-        example: line_item_2tQ8HkkfbauaKP9Ho
         explode: false
         in: path
         name: line_item_id
         required: true
         schema:
+          example: line_item_2tQ8HkkfbauaKP9Ho
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -6605,21 +6648,21 @@ paths:
       operationId: ordersUpdateProduct
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: identifier
-        example: line_item_2tQ8HkkfbauaKP9Ho
         explode: false
         in: path
         name: line_item_id
         required: true
         schema:
+          example: line_item_2tQ8HkkfbauaKP9Ho
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -6739,12 +6782,12 @@ paths:
       operationId: orderRefund
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -6878,21 +6921,21 @@ paths:
       operationId: orderCancelRefund
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: refund identifier
-        example: 6407b5bee1329a000175ba11
         explode: false
         in: path
         name: refund_id
         required: true
         schema:
+          example: 6407b5bee1329a000175ba11
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -7239,12 +7282,12 @@ paths:
       operationId: getPayoutOrderById
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -7331,12 +7374,12 @@ paths:
       operationId: cancelPayoutOrderById
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -7803,12 +7846,12 @@ paths:
           type: string
         style: simple
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       responses:
@@ -7967,12 +8010,12 @@ paths:
           type: string
         style: simple
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       responses:
@@ -8131,12 +8174,12 @@ paths:
           type: string
         style: simple
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       requestBody:
@@ -8303,12 +8346,12 @@ paths:
           type: string
         style: simple
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       requestBody:
@@ -8447,12 +8490,12 @@ paths:
       operationId: GetCustomerPaymentMethods
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -8652,12 +8695,12 @@ paths:
       operationId: CreateCustomerPaymentMethods
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -8785,21 +8828,21 @@ paths:
       operationId: DeleteCustomerPaymentMethods
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Identifier of the payment method
-        example: src_2tQ974hSHcsdeSZHG
         explode: false
         in: path
         name: payment_method_id
         required: true
         schema:
+          example: src_2tQ974hSHcsdeSZHG
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -8909,21 +8952,21 @@ paths:
       operationId: UpdateCustomerPaymentMethods
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Identifier of the payment method
-        example: src_2tQ974hSHcsdeSZHG
         explode: false
         in: path
         name: payment_method_id
         required: true
         schema:
+          example: src_2tQ974hSHcsdeSZHG
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -9104,6 +9147,30 @@ paths:
         required: false
         schema:
           type: string
+        style: form
+      - description: currency of the object to be retrieved
+        examples:
+          currency:
+            summary: currency of the object to be retrieved
+            value: MXN
+        explode: true
+        in: query
+        name: currency
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: frequency of the object to be retrieved
+        examples:
+          frequency:
+            summary: Frequency of the object to be retrieved
+            value: 1
+        explode: true
+        in: query
+        name: frequency
+        required: false
+        schema:
+          type: integer
         style: form
       responses:
         "200":
@@ -9337,12 +9404,12 @@ paths:
       operationId: deletePlan
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -9476,12 +9543,12 @@ paths:
       operationId: getPlan
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -9625,12 +9692,12 @@ paths:
       operationId: updatePlan
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -9784,12 +9851,12 @@ paths:
       operationId: ordersCreateShipping
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -9904,21 +9971,21 @@ paths:
       operationId: ordersDeleteShipping
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: identifier
-        example: ship_lin_2tQ974hSHcsdeSZHG
         explode: false
         in: path
         name: shipping_id
         required: true
         schema:
+          example: ship_lin_2tQ974hSHcsdeSZHG
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -10044,21 +10111,21 @@ paths:
       operationId: ordersUpdateShipping
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: identifier
-        example: ship_lin_2tQ974hSHcsdeSZHG
         explode: false
         in: path
         name: shipping_id
         required: true
         schema:
+          example: ship_lin_2tQ974hSHcsdeSZHG
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -10177,12 +10244,12 @@ paths:
       operationId: CreateCustomerShippingContacts
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -10301,21 +10368,21 @@ paths:
       operationId: DeleteCustomerShippingContacts
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: identifier
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: shipping_contacts_id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -10425,21 +10492,21 @@ paths:
       operationId: UpdateCustomerShippingContacts
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: identifier
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: shipping_contacts_id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -12233,12 +12300,12 @@ paths:
       operationId: getSubscription
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -12360,12 +12427,12 @@ paths:
       operationId: createSubscription
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -12520,12 +12587,12 @@ paths:
       operationId: updateSubscription
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -12680,12 +12747,12 @@ paths:
       operationId: cancelSubscription
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -12819,12 +12886,12 @@ paths:
       operationId: getSubscriptionEvents
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -12985,12 +13052,12 @@ paths:
       operationId: pauseSubscription
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -13136,12 +13203,12 @@ paths:
       operationId: resumeSubscription
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -13301,12 +13368,12 @@ paths:
       operationId: ordersCreateTaxes
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -13410,21 +13477,21 @@ paths:
       operationId: ordersDeleteTaxes
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: identifier
-        example: tax_lin_2tQ974hSHcsdeSZHG
         explode: false
         in: path
         name: tax_id
         required: true
         schema:
+          example: tax_lin_2tQ974hSHcsdeSZHG
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -13534,21 +13601,21 @@ paths:
       operationId: ordersUpdateTaxes
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: identifier
-        example: tax_lin_2tQ974hSHcsdeSZHG
         explode: false
         in: path
         name: tax_id
         required: true
         schema:
+          example: tax_lin_2tQ974hSHcsdeSZHG
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -13850,39 +13917,51 @@ paths:
           type: string
         style: form
       - description: id of the object to be retrieved
+        examples:
+          id:
+            summary: id of the object to be retrieved
+            value: 65412a893cd69a0001c25892
         explode: true
         in: query
         name: id
         required: false
         schema:
-          example: 65412a893cd69a0001c25892
           type: string
         style: form
       - description: id of the charge used for filtering
+        examples:
+          charge_id:
+            summary: id of the charge used for filtering
+            value: 65412a893cd69a0001c25892
         explode: true
         in: query
         name: charge_id
         required: false
         schema:
-          example: 65412a893cd69a0001c25892
           type: string
         style: form
       - description: type of the object to be retrieved
+        examples:
+          type:
+            summary: type of the object to be retrieved
+            value: capture
         explode: true
         in: query
         name: type
         required: false
         schema:
-          example: capture
           type: string
         style: form
       - description: currency of the object to be retrieved
+        examples:
+          currency:
+            summary: currency of the object to be retrieved
+            value: MXN
         explode: true
         in: query
         name: currency
         required: false
         schema:
-          example: MXN
           type: string
         style: form
       responses:
@@ -13998,12 +14077,12 @@ paths:
           type: string
         style: simple
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       responses:
@@ -14280,12 +14359,12 @@ paths:
           type: string
         style: simple
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       responses:
@@ -14604,12 +14683,12 @@ paths:
       operationId: deleteWebhookKey
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -14728,12 +14807,12 @@ paths:
       operationId: getWebhookKey
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -14863,12 +14942,12 @@ paths:
       operationId: updateWebhookKey
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -15194,12 +15273,12 @@ paths:
       operationId: deleteWebhook
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -15318,12 +15397,12 @@ paths:
       operationId: getWebhook
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -15482,12 +15561,12 @@ paths:
           type: string
         style: simple
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       requestBody:
@@ -15562,12 +15641,12 @@ paths:
       operationId: testWebhook
       parameters:
       - description: Identifier of the resource
-        example: 6307a60c41de27127515a575
         explode: false
         in: path
         name: id
         required: true
         schema:
+          example: 6307a60c41de27127515a575
           type: string
         style: simple
       - description: Use for knowing which language to use
@@ -17254,10 +17333,10 @@ components:
     CompanyDocumentRequest:
       description: Request body for uploading a company document.
       example:
-        content_type: application/pdf
-        file_name: example_document.pdf
         file_classification: id_legal_representative
+        content_type: application/pdf
         international: false
+        file_name: example_document.pdf
         file_data: VGhpcyBpcyBhIHRlc3QgZmlsZSBkYXRhIGluIGJhc2UgNjQu
       properties:
         file_classification:
@@ -19075,6 +19154,8 @@ components:
           - bank_transfer
           - bnpl
           - pay_by_bank
+          - apple
+          - google
           items:
             type: string
           type: array
@@ -19106,6 +19187,12 @@ components:
         force_3ds_flow:
           example: false
           type: boolean
+        force_save_card:
+          description: Indicates whether the card used for the payment should be saved
+            for future purchases. This field is only applicable for card payments.
+          example: false
+          type: boolean
+          nullable: true
         id:
           example: 6fca054a-8519-4c43-971e-cea35cc519bb
           type: string
@@ -19906,6 +19993,8 @@ components:
           - bank_transfer
           - bnpl
           - pay_by_bank
+          - google
+          - apple
           items:
             enum:
             - cash
@@ -19913,6 +20002,8 @@ components:
             - bank_transfer
             - bnpl
             - pay_by_bank
+            - google
+            - apple
             type: string
           type: array
         exclude_card_networks:
@@ -19951,6 +20042,11 @@ components:
           example: https://www.mysite.com/failure
           format: uri
           type: string
+        force_save_card:
+          description: Indicates whether the card used for the payment should be saved
+            for future purchases. This field is only applicable for card payments.
+          example: false
+          type: boolean
         monthly_installments_enabled:
           example: false
           type: boolean
@@ -20305,6 +20401,7 @@ components:
       oneOf:
       - $ref: "#/components/schemas/customer_info"
       - $ref: "#/components/schemas/customer_info_customer_id"
+      title: order_update_customer_info
     order_update_fiscal_entity_request:
       description: "Fiscal entity of the order, Currently it is a purely informative\
         \ field"
@@ -20947,12 +21044,6 @@ components:
               $ref: "#/components/schemas/checkout_response"
             type: array
       title: checkouts_response
-    checkout_order_template_customer_info:
-      description: It is the information of the customer who will be created when
-        receiving a new payment.
-      oneOf:
-      - $ref: "#/components/schemas/customer_info"
-      - $ref: "#/components/schemas/customer_info_customer_id"
     checkout_order_template:
       description: It maintains the attributes with which the order will be created
         when receiving a new payment.
@@ -20964,7 +21055,7 @@ components:
           maxLength: 3
           type: string
         customer_info:
-          $ref: "#/components/schemas/checkout_order_template_customer_info"
+          $ref: "#/components/schemas/order_request_customer_info"
         line_items:
           description: They are the products to buy. Each contains the "unit price"
             and "quantity" parameters that are used to calculate the total amount
