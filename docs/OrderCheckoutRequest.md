@@ -2,13 +2,14 @@
 
 # OrderCheckoutRequest
 
-[Checkout](https://developers.conekta.com/v2.2.0/reference/payment-link) details 
+[Checkout](https://developers.conekta.com/v2.3.0/reference/payment-link) details 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**allowedPaymentMethods** | [**List&lt;AllowedPaymentMethodsEnum&gt;**](#List&lt;AllowedPaymentMethodsEnum&gt;) | Are the payment methods available for this link. For subscriptions, only &#39;card&#39; is allowed due to the recurring nature of the payments. |  |
+|**allowedPaymentMethods** | [**List&lt;AllowedPaymentMethodsEnum&gt;**](#List&lt;AllowedPaymentMethodsEnum&gt;) | Are the payment methods available for this link. For subscriptions, only &#39;card&#39; is allowed due to the recurring nature of the payments. This field is mutually exclusive with excluded_payment_methods. |  [optional] |
+|**excludedPaymentMethods** | [**List&lt;ExcludedPaymentMethodsEnum&gt;**](#List&lt;ExcludedPaymentMethodsEnum&gt;) | Payment methods to be excluded from the checkout. This field is mutually exclusive with allowed_payment_methods. |  [optional] |
 |**excludeCardNetworks** | [**List&lt;ExcludeCardNetworksEnum&gt;**](#List&lt;ExcludeCardNetworksEnum&gt;) | List of card networks to exclude from the checkout. This field is only applicable for card payments. |  [optional] |
 |**planIds** | **List&lt;String&gt;** | List of plan IDs that will be available for subscription. This field is required for subscription payments. |  [optional] |
 |**expiresAt** | **Long** | It is the time when the link will expire.  It is expressed in seconds since the Unix epoch. The valid range is from 5 minutes to 365 days from the creation date.  |  [optional] |
@@ -34,8 +35,21 @@
 | BANK_TRANSFER | &quot;bank_transfer&quot; |
 | BNPL | &quot;bnpl&quot; |
 | PAY_BY_BANK | &quot;pay_by_bank&quot; |
-| GOOGLE | &quot;google&quot; |
 | APPLE | &quot;apple&quot; |
+| GOOGLE | &quot;google&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
+
+
+
+## Enum: List&lt;ExcludedPaymentMethodsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CASH | &quot;cash&quot; |
+| CARD | &quot;card&quot; |
+| BANK_TRANSFER | &quot;bank_transfer&quot; |
+| BNPL | &quot;bnpl&quot; |
+| PAY_BY_BANK | &quot;pay_by_bank&quot; |
 | UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
