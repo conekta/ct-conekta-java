@@ -101,7 +101,7 @@ public class OrdersApiTest {
 
     @Test
     public void getOrderByIdTest() throws ApiException {
-        OrderResponse response = api.getOrderById("ord_2tUyGSk9TNWUcyvjn", "es", null);
+        OrderResponse response = api.getOrderById("ord_2tUyGSk9TNWUcyvjn", "es",null, null);
         Assertions.assertAll("order by id",
                 () -> Assertions.assertNotNull(response),
                 () -> Assertions.assertNotNull(response.getId()),
