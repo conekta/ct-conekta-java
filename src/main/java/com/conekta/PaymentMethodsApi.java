@@ -21,7 +21,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class PaymentMethodsApi {
   private ApiClient apiClient;
 
@@ -117,7 +117,7 @@ public class PaymentMethodsApi {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<CreateCustomerPaymentMethodsResponse> localVarReturnType = new GenericType<CreateCustomerPaymentMethodsResponse>() {};
@@ -192,7 +192,7 @@ public class PaymentMethodsApi {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<UpdateCustomerPaymentMethodsResponse> localVarReturnType = new GenericType<UpdateCustomerPaymentMethodsResponse>() {};
@@ -275,7 +275,7 @@ public class PaymentMethodsApi {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<GetPaymentMethodResponse> localVarReturnType = new GenericType<GetPaymentMethodResponse>() {};
@@ -355,7 +355,7 @@ public class PaymentMethodsApi {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<UpdateCustomerPaymentMethodsResponse> localVarReturnType = new GenericType<UpdateCustomerPaymentMethodsResponse>() {};

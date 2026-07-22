@@ -22,7 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class AntifraudApi {
   private ApiClient apiClient;
 
@@ -100,7 +100,7 @@ public class AntifraudApi {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<BlacklistRuleResponse> localVarReturnType = new GenericType<BlacklistRuleResponse>() {};
@@ -153,7 +153,7 @@ public class AntifraudApi {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<WhitelistlistRuleResponse> localVarReturnType = new GenericType<WhitelistlistRuleResponse>() {};
@@ -220,7 +220,7 @@ public class AntifraudApi {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<DeletedBlacklistRuleResponse> localVarReturnType = new GenericType<DeletedBlacklistRuleResponse>() {};
@@ -289,7 +289,7 @@ public class AntifraudApi {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<DeletedWhitelistRuleResponse> localVarReturnType = new GenericType<DeletedWhitelistRuleResponse>() {};
@@ -338,7 +338,7 @@ public class AntifraudApi {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<RiskRulesList> localVarReturnType = new GenericType<RiskRulesList>() {};
@@ -389,7 +389,7 @@ public class AntifraudApi {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<RiskRulesList> localVarReturnType = new GenericType<RiskRulesList>() {};

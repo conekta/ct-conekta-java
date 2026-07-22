@@ -20,7 +20,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class WebhooksApi {
   private ApiClient apiClient;
 
@@ -98,7 +98,7 @@ public class WebhooksApi {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<WebhookResponse> localVarReturnType = new GenericType<WebhookResponse>() {};
@@ -160,7 +160,7 @@ public class WebhooksApi {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<WebhookResponse> localVarReturnType = new GenericType<WebhookResponse>() {};
@@ -227,7 +227,7 @@ public class WebhooksApi {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<WebhookResponse> localVarReturnType = new GenericType<WebhookResponse>() {};
@@ -300,7 +300,7 @@ public class WebhooksApi {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<GetWebhooksResponse> localVarReturnType = new GenericType<GetWebhooksResponse>() {};
@@ -362,7 +362,7 @@ public class WebhooksApi {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<WebhookResponse> localVarReturnType = new GenericType<WebhookResponse>() {};
@@ -434,7 +434,7 @@ public class WebhooksApi {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<WebhookResponse> localVarReturnType = new GenericType<WebhookResponse>() {};

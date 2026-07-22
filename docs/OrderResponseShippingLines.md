@@ -1,8 +1,8 @@
 
 
-# OrderDiscountLinesResponse
+# OrderResponseShippingLines
 
-List of discounts that are applied to the order
+List of shipping costs applied to the order
 
 ## Properties
 
@@ -12,7 +12,7 @@ List of discounts that are applied to the order
 |**_object** | **String** | Object type, in this case is list |  |
 |**nextPageUrl** | **String** | URL of the next page. |  [optional] |
 |**previousPageUrl** | **String** | Url of the previous page. |  [optional] |
-|**data** | [**List&lt;DiscountLinesDataResponse&gt;**](DiscountLinesDataResponse.md) |  |  [optional] |
+|**data** | [**List&lt;ShippingLinesDataResponse&gt;**](ShippingLinesDataResponse.md) |  |  [optional] |
 
 
 

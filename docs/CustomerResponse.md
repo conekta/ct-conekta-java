@@ -27,7 +27,7 @@ customer response
 |**paymentSources** | [**CustomerPaymentMethodsResponse**](CustomerPaymentMethodsResponse.md) |  |  [optional] |
 |**phone** | **String** | Customer&#39;s phone number |  [optional] |
 |**shippingContacts** | [**CustomerResponseShippingContacts**](CustomerResponseShippingContacts.md) |  |  [optional] |
-|**subscription** | [**CustomerSubscriptionResponse**](CustomerSubscriptionResponse.md) |  |  [optional] |
+|**subscription** | [**SubscriptionResponse**](SubscriptionResponse.md) |  |  [optional] |
 
 
 

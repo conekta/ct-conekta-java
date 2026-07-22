@@ -6,7 +6,7 @@
     "developerOrganization": "Conekta, Inc.",
     "developerOrganizationUrl": "https://www.conekta.io",
     "artifactUrl": "https://developers.conekta.com/",
-    "artifactVersion": "8.0.0",
+    "artifactVersion": "9.0.0",
     "modelPackage": "com.conekta.model",
     "licenseName": "MIT License",
     "invokerPackage": "com.conekta",
@@ -29,6 +29,9 @@
             "destinationFilename": "VERSION"
         }
     },
+    "modelNameMappings": {
+     "subscription_response_1": "SubscriptionResponse"
+    },
     "javaMinVersion": 11,
     "swagger1AnnotationLibrary": false,
     "javaxPackage": "javax",
@@ -36,7 +39,7 @@
     "disallowAdditionalPropertiesIfNotPresent": true,
     "useOneOfDiscriminatorLookup": true,
     "serializationLibrary": "jackson",
-    "httpUserAgent": "Conekta/v2 JavaBindings/8.0.0",
+    "httpUserAgent": "Conekta/v2 JavaBindings/9.0.0",
     "openApiNullable" : false,
     "enumUnknownDefaultCase": true
 }

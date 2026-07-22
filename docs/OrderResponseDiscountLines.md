@@ -1,8 +1,8 @@
 
 
-# OrderTaxLinesResponse
+# OrderResponseDiscountLines
 
-List of taxes that are applied to the order
+List of discounts that are applied to the order
 
 ## Properties
 
@@ -12,7 +12,7 @@ List of taxes that are applied to the order
 |**_object** | **String** | Object type, in this case is list |  |
 |**nextPageUrl** | **String** | URL of the next page. |  [optional] |
 |**previousPageUrl** | **String** | Url of the previous page. |  [optional] |
-|**data** | [**List&lt;TaxLinesDataResponse&gt;**](TaxLinesDataResponse.md) |  |  [optional] |
+|**data** | [**List&lt;DiscountLinesDataResponse&gt;**](DiscountLinesDataResponse.md) |  |  [optional] |
 
 
 

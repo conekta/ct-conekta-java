@@ -81,7 +81,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.2.0+json
+- **Accept**: application/vnd.conekta-v2.3.0+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -160,7 +160,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.2.0+json
+- **Accept**: application/vnd.conekta-v2.3.0+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -174,7 +174,7 @@ public class Example {
 
 ## getOrderById
 
-> OrderResponse getOrderById(id, acceptLanguage, xChildCompanyId)
+> OrderResponse getOrderById(id, acceptLanguage, xChildCompanyId, client)
 
 Get Order
 
@@ -204,8 +204,9 @@ public class Example {
         String id = "6307a60c41de27127515a575"; // String | Identifier of the resource
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
+        String client = "checkout"; // String | client of the object to be retrieved
         try {
-            OrderResponse result = apiInstance.getOrderById(id, acceptLanguage, xChildCompanyId);
+            OrderResponse result = apiInstance.getOrderById(id, acceptLanguage, xChildCompanyId, client);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OrdersApi#getOrderById");
@@ -226,6 +227,7 @@ public class Example {
 | **id** | **String**| Identifier of the resource | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
+| **client** | **String**| client of the object to be retrieved | [optional] |
 
 ### Return type
 
@@ -238,7 +240,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.2.0+json
+- **Accept**: application/vnd.conekta-v2.3.0+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -335,7 +337,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.2.0+json
+- **Accept**: application/vnd.conekta-v2.3.0+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -413,7 +415,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/vnd.conekta-v2.2.0+json
+- **Accept**: application/vnd.conekta-v2.3.0+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -494,7 +496,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.2.0+json
+- **Accept**: application/vnd.conekta-v2.3.0+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -575,7 +577,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.2.0+json
+- **Accept**: application/vnd.conekta-v2.3.0+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -653,7 +655,7 @@ public class Example {
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.2.0+json
+- **Accept**: application/vnd.conekta-v2.3.0+json
 
 ### HTTP response details
 | Status code | Description | Response headers |

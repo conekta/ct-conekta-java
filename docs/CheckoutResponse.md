@@ -9,6 +9,7 @@ checkout response
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**allowedPaymentMethods** | **List&lt;String&gt;** | Are the payment methods available for this link |  [optional] |
+|**excludedPaymentMethods** | [**List&lt;ExcludedPaymentMethodsEnum&gt;**](#List&lt;ExcludedPaymentMethodsEnum&gt;) | Payment methods excluded from the checkout. This field is only returned when excluded_payment_methods is provided in the request. |  [optional] |
 |**planIds** | **List&lt;String&gt;** | List of plan IDs that are available for subscription |  [optional] |
 |**canNotExpire** | **Boolean** |  |  [optional] |
 |**emailsSent** | **Integer** |  |  [optional] |
@@ -34,6 +35,19 @@ checkout response
 |**successUrl** | **String** | The URL to redirect to after a successful payment. |  [optional] |
 |**type** | **String** |  |  [optional] |
 |**url** | **URI** |  |  [optional] |
+
+
+
+## Enum: List&lt;ExcludedPaymentMethodsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CASH | &quot;cash&quot; |
+| CARD | &quot;card&quot; |
+| BANK_TRANSFER | &quot;bank_transfer&quot; |
+| BNPL | &quot;bnpl&quot; |
+| PAY_BY_BANK | &quot;pay_by_bank&quot; |
+| UNKNOWN_DEFAULT_OPEN_API | &quot;unknown_default_open_api&quot; |
 
 
 

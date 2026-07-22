@@ -2,7 +2,7 @@
 
 Conekta API
 
-- API version: 2.2.0
+- API version: 2.3.0
 
 Conekta sdk
 
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.conekta</groupId>
   <artifactId>ct-conekta-java</artifactId>
-  <version>8.0.0</version>
+  <version>9.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "io.conekta:ct-conekta-java:8.0.0"
+     implementation "io.conekta:ct-conekta-java:9.0.0"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/ct-conekta-java-8.0.0.jar`
+- `target/ct-conekta-java-9.0.0.jar`
 - `target/lib/*.jar`
 
 ## Usage
@@ -284,6 +284,7 @@ Class | Method | HTTP request | Description
  - [ChargesOrderResponse](docs/ChargesOrderResponse.md)
  - [Checkout](docs/Checkout.md)
  - [CheckoutOrderTemplate](docs/CheckoutOrderTemplate.md)
+ - [CheckoutOrderTemplateCustomerInfo](docs/CheckoutOrderTemplateCustomerInfo.md)
  - [CheckoutResponse](docs/CheckoutResponse.md)
  - [CheckoutsResponse](docs/CheckoutsResponse.md)
  - [CompanyDocumentRequest](docs/CompanyDocumentRequest.md)
@@ -316,7 +317,6 @@ Class | Method | HTTP request | Description
  - [CustomerShippingContactsRequest](docs/CustomerShippingContactsRequest.md)
  - [CustomerShippingContactsRequestAddress](docs/CustomerShippingContactsRequestAddress.md)
  - [CustomerShippingContactsResponse](docs/CustomerShippingContactsResponse.md)
- - [CustomerSubscriptionResponse](docs/CustomerSubscriptionResponse.md)
  - [CustomerUpdateShippingContactsRequest](docs/CustomerUpdateShippingContactsRequest.md)
  - [CustomersResponse](docs/CustomersResponse.md)
  - [DeleteApiKeysResponse](docs/DeleteApiKeysResponse.md)
@@ -354,7 +354,6 @@ Class | Method | HTTP request | Description
  - [OrderChargesResponse](docs/OrderChargesResponse.md)
  - [OrderCheckoutRequest](docs/OrderCheckoutRequest.md)
  - [OrderDiscountLinesRequest](docs/OrderDiscountLinesRequest.md)
- - [OrderDiscountLinesResponse](docs/OrderDiscountLinesResponse.md)
  - [OrderFiscalEntityAddressResponse](docs/OrderFiscalEntityAddressResponse.md)
  - [OrderFiscalEntityRequest](docs/OrderFiscalEntityRequest.md)
  - [OrderFiscalEntityResponse](docs/OrderFiscalEntityResponse.md)
@@ -366,10 +365,11 @@ Class | Method | HTTP request | Description
  - [OrderResponse](docs/OrderResponse.md)
  - [OrderResponseCheckout](docs/OrderResponseCheckout.md)
  - [OrderResponseCustomerInfo](docs/OrderResponseCustomerInfo.md)
+ - [OrderResponseDiscountLines](docs/OrderResponseDiscountLines.md)
  - [OrderResponseProducts](docs/OrderResponseProducts.md)
  - [OrderResponseShippingContact](docs/OrderResponseShippingContact.md)
- - [OrderShippingLinesResponse](docs/OrderShippingLinesResponse.md)
- - [OrderTaxLinesResponse](docs/OrderTaxLinesResponse.md)
+ - [OrderResponseShippingLines](docs/OrderResponseShippingLines.md)
+ - [OrderResponseTaxLines](docs/OrderResponseTaxLines.md)
  - [OrderTaxRequest](docs/OrderTaxRequest.md)
  - [OrderTaxResponse](docs/OrderTaxResponse.md)
  - [OrderUpdate](docs/OrderUpdate.md)

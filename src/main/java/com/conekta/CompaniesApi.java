@@ -21,7 +21,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class CompaniesApi {
   private ApiClient apiClient;
 
@@ -91,7 +91,7 @@ public class CompaniesApi {
       throw new ApiException(400, "Missing the required parameter 'createCompanyRequest' when calling createCompany");
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<CompanyResponse> localVarReturnType = new GenericType<CompanyResponse>() {};
@@ -156,7 +156,7 @@ public class CompaniesApi {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<GetCompaniesResponse> localVarReturnType = new GenericType<GetCompaniesResponse>() {};
@@ -218,7 +218,7 @@ public class CompaniesApi {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<CompanyResponse> localVarReturnType = new GenericType<CompanyResponse>() {};
@@ -280,7 +280,7 @@ public class CompaniesApi {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<List<CompanyDocumentResponse>> localVarReturnType = new GenericType<List<CompanyDocumentResponse>>() {};
@@ -329,7 +329,7 @@ public class CompaniesApi {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<CompanyResponse> localVarReturnType = new GenericType<CompanyResponse>() {};
@@ -396,7 +396,7 @@ public class CompaniesApi {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<CompanyDocumentResponse> localVarReturnType = new GenericType<CompanyDocumentResponse>() {};
@@ -463,7 +463,7 @@ public class CompaniesApi {
       localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
     }
 
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.2.0+json");
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<CompanyDocumentResponse> localVarReturnType = new GenericType<CompanyDocumentResponse>() {};

@@ -55,37 +55,37 @@ import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.conekta.JSON;
 
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
-@JsonDeserialize(using = OrderRequestCustomerInfo.OrderRequestCustomerInfoDeserializer.class)
-@JsonSerialize(using = OrderRequestCustomerInfo.OrderRequestCustomerInfoSerializer.class)
-public class OrderRequestCustomerInfo extends AbstractOpenApiSchema {
-    private static final Logger log = Logger.getLogger(OrderRequestCustomerInfo.class.getName());
+@JsonDeserialize(using = CheckoutOrderTemplateCustomerInfo.CheckoutOrderTemplateCustomerInfoDeserializer.class)
+@JsonSerialize(using = CheckoutOrderTemplateCustomerInfo.CheckoutOrderTemplateCustomerInfoSerializer.class)
+public class CheckoutOrderTemplateCustomerInfo extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(CheckoutOrderTemplateCustomerInfo.class.getName());
 
-    public static class OrderRequestCustomerInfoSerializer extends StdSerializer<OrderRequestCustomerInfo> {
-        public OrderRequestCustomerInfoSerializer(Class<OrderRequestCustomerInfo> t) {
+    public static class CheckoutOrderTemplateCustomerInfoSerializer extends StdSerializer<CheckoutOrderTemplateCustomerInfo> {
+        public CheckoutOrderTemplateCustomerInfoSerializer(Class<CheckoutOrderTemplateCustomerInfo> t) {
             super(t);
         }
 
-        public OrderRequestCustomerInfoSerializer() {
+        public CheckoutOrderTemplateCustomerInfoSerializer() {
             this(null);
         }
 
         @Override
-        public void serialize(OrderRequestCustomerInfo value, JsonGenerator jgen, SerializerProvider provider) throws IOException, JsonProcessingException {
+        public void serialize(CheckoutOrderTemplateCustomerInfo value, JsonGenerator jgen, SerializerProvider provider) throws IOException, JsonProcessingException {
             jgen.writeObject(value.getActualInstance());
         }
     }
 
-    public static class OrderRequestCustomerInfoDeserializer extends StdDeserializer<OrderRequestCustomerInfo> {
-        public OrderRequestCustomerInfoDeserializer() {
-            this(OrderRequestCustomerInfo.class);
+    public static class CheckoutOrderTemplateCustomerInfoDeserializer extends StdDeserializer<CheckoutOrderTemplateCustomerInfo> {
+        public CheckoutOrderTemplateCustomerInfoDeserializer() {
+            this(CheckoutOrderTemplateCustomerInfo.class);
         }
 
-        public OrderRequestCustomerInfoDeserializer(Class<?> vc) {
+        public CheckoutOrderTemplateCustomerInfoDeserializer(Class<?> vc) {
             super(vc);
         }
 
         @Override
-        public OrderRequestCustomerInfo deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+        public CheckoutOrderTemplateCustomerInfo deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
             JsonNode tree = ctxt.readTree(jp);
             Object deserialized = null;
             boolean typeCoercion = ctxt.isEnabled(MapperFeature.ALLOW_COERCION_OF_SCALARS);
@@ -124,35 +124,35 @@ public class OrderRequestCustomerInfo extends AbstractOpenApiSchema {
             }
 
             if (match == 1) {
-                OrderRequestCustomerInfo ret = new OrderRequestCustomerInfo();
+                CheckoutOrderTemplateCustomerInfo ret = new CheckoutOrderTemplateCustomerInfo();
                 ret.setActualInstance(deserialized);
                 return ret;
             }
-            throw new IOException(String.format(java.util.Locale.ROOT, "Failed deserialization for OrderRequestCustomerInfo: %d classes match result, expected 1", match));
+            throw new IOException(String.format(java.util.Locale.ROOT, "Failed deserialization for CheckoutOrderTemplateCustomerInfo: %d classes match result, expected 1", match));
         }
 
         /**
          * Handle deserialization of the 'null' value.
          */
         @Override
-        public OrderRequestCustomerInfo getNullValue(DeserializationContext ctxt) throws JsonMappingException {
-            throw new JsonMappingException(ctxt.getParser(), "OrderRequestCustomerInfo cannot be null");
+        public CheckoutOrderTemplateCustomerInfo getNullValue(DeserializationContext ctxt) throws JsonMappingException {
+            throw new JsonMappingException(ctxt.getParser(), "CheckoutOrderTemplateCustomerInfo cannot be null");
         }
     }
 
     // store a list of schema names defined in oneOf
     public static final Map<String, GenericType<?>> schemas = new HashMap<>();
 
-    public OrderRequestCustomerInfo() {
+    public CheckoutOrderTemplateCustomerInfo() {
         super("oneOf", Boolean.FALSE);
     }
 
-    public OrderRequestCustomerInfo(CustomerInfo o) {
+    public CheckoutOrderTemplateCustomerInfo(CustomerInfo o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
 
-    public OrderRequestCustomerInfo(CustomerInfoCustomerId o) {
+    public CheckoutOrderTemplateCustomerInfo(CustomerInfoCustomerId o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
@@ -162,12 +162,12 @@ public class OrderRequestCustomerInfo extends AbstractOpenApiSchema {
         });
         schemas.put("CustomerInfoCustomerId", new GenericType<CustomerInfoCustomerId>() {
         });
-        JSON.registerDescendants(OrderRequestCustomerInfo.class, Collections.unmodifiableMap(schemas));
+        JSON.registerDescendants(CheckoutOrderTemplateCustomerInfo.class, Collections.unmodifiableMap(schemas));
     }
 
     @Override
     public Map<String, GenericType<?>> getSchemas() {
-        return OrderRequestCustomerInfo.schemas;
+        return CheckoutOrderTemplateCustomerInfo.schemas;
     }
 
     /**
