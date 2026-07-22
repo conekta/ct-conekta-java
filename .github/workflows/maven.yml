@@ -21,7 +21,7 @@ jobs:
       matrix:
         java: [ '11', '17', '21', '25' ]
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: Set up JDK
       uses: actions/setup-java@v5
       with:
@@ -31,8 +31,7 @@ jobs:
     - name: Run Mockoon CLI
       uses: mockoon/cli-action@v3
       with:
-        version: 'latest'
-        data-file: 'https://raw.githubusercontent.com/conekta/openapi/main/mocks/conekta_api.json'
+        data-file: 'https://raw.githubusercontent.com/conekta/openapi/refs/heads/release/v2.3.0/mocks/conekta_api.json'
         port: 3000
     - name: Build with Maven
       run: mvn -B package --no-transfer-progress --file pom.xml
