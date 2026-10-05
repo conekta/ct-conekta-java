@@ -34,7 +34,7 @@ import com.conekta.JSON;
   PaymentMethodTokenRequest.JSON_PROPERTY_TOKEN_ID
 })
 @JsonTypeName("payment_method_token_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class PaymentMethodTokenRequest {
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nonnull

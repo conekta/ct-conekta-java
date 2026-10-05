@@ -35,16 +35,16 @@ import com.conekta.JSON;
   ResendEventRequest.JSON_PROPERTY_WEBHOOKS_IDS
 })
 @JsonTypeName("resendEvent_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class ResendEventRequest {
   public static final String JSON_PROPERTY_WEBHOOKS_IDS = "webhooks_ids";
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private List<String> webhooksIds = new ArrayList<>();
 
   public ResendEventRequest() { 
   }
 
-  public ResendEventRequest webhooksIds(@javax.annotation.Nonnull List<String> webhooksIds) {
+  public ResendEventRequest webhooksIds(@javax.annotation.Nullable List<String> webhooksIds) {
     this.webhooksIds = webhooksIds;
     return this;
   }
@@ -61,18 +61,18 @@ public class ResendEventRequest {
    * webhooks ids to resend event
    * @return webhooksIds
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_WEBHOOKS_IDS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_WEBHOOKS_IDS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<String> getWebhooksIds() {
     return webhooksIds;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_WEBHOOKS_IDS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setWebhooksIds(@javax.annotation.Nonnull List<String> webhooksIds) {
+  @JsonProperty(value = JSON_PROPERTY_WEBHOOKS_IDS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setWebhooksIds(@javax.annotation.Nullable List<String> webhooksIds) {
     this.webhooksIds = webhooksIds;
   }
 

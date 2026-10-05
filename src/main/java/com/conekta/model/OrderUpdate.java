@@ -21,6 +21,7 @@ import com.conekta.model.CustomerShippingContactsRequest;
 import com.conekta.model.OrderCheckoutRequest;
 import com.conekta.model.OrderDiscountLinesRequest;
 import com.conekta.model.OrderTaxRequest;
+import com.conekta.model.OrderTaxRequestMetadataValue;
 import com.conekta.model.OrderUpdateCustomerInfo;
 import com.conekta.model.OrderUpdateFiscalEntityRequest;
 import com.conekta.model.Product;
@@ -57,7 +58,7 @@ import com.conekta.JSON;
   OrderUpdate.JSON_PROPERTY_TAX_LINES
 })
 @JsonTypeName("order_update")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class OrderUpdate {
   public static final String JSON_PROPERTY_CHARGES = "charges";
   @javax.annotation.Nullable
@@ -89,7 +90,7 @@ public class OrderUpdate {
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
   @javax.annotation.Nullable
-  private Map<String, String> metadata;
+  private Map<String, OrderTaxRequestMetadataValue> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_PRE_AUTHORIZE = "pre_authorize";
   @javax.annotation.Nullable
@@ -309,8 +310,16 @@ public class OrderUpdate {
   }
 
 
-  public OrderUpdate metadata(@javax.annotation.Nullable Map<String, String> metadata) {
+  public OrderUpdate metadata(@javax.annotation.Nullable Map<String, OrderTaxRequestMetadataValue> metadata) {
     this.metadata = metadata;
+    return this;
+  }
+
+  public OrderUpdate putMetadataItem(String key, OrderTaxRequestMetadataValue metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<>();
+    }
+    this.metadata.put(key, metadataItem);
     return this;
   }
 
@@ -322,14 +331,14 @@ public class OrderUpdate {
   @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Map<String, String> getMetadata() {
+  public Map<String, OrderTaxRequestMetadataValue> getMetadata() {
     return metadata;
   }
 
 
   @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(@javax.annotation.Nullable Map<String, String> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, OrderTaxRequestMetadataValue> metadata) {
     this.metadata = metadata;
   }
 

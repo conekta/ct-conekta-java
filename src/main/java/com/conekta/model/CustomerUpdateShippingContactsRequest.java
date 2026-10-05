@@ -16,7 +16,7 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.conekta.model.CustomerShippingContactsRequestAddress;
+import com.conekta.model.ShippingContactAddress;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -40,7 +40,7 @@ import com.conekta.JSON;
   CustomerUpdateShippingContactsRequest.JSON_PROPERTY_DELETED
 })
 @JsonTypeName("customer_update_shipping_contacts_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class CustomerUpdateShippingContactsRequest {
   public static final String JSON_PROPERTY_PHONE = "phone";
   @javax.annotation.Nullable
@@ -56,7 +56,7 @@ public class CustomerUpdateShippingContactsRequest {
 
   public static final String JSON_PROPERTY_ADDRESS = "address";
   @javax.annotation.Nullable
-  private CustomerShippingContactsRequestAddress address;
+  private ShippingContactAddress address;
 
   public static final String JSON_PROPERTY_PARENT_ID = "parent_id";
   @javax.annotation.Nullable
@@ -129,7 +129,7 @@ public class CustomerUpdateShippingContactsRequest {
   }
 
   /**
-   * The street names between which the order will be delivered.
+   * The street names between which the order will be delivered. Must contain at least two consecutive ASCII letters.
    * @return betweenStreets
    */
   @javax.annotation.Nullable
@@ -148,7 +148,7 @@ public class CustomerUpdateShippingContactsRequest {
   }
 
 
-  public CustomerUpdateShippingContactsRequest address(@javax.annotation.Nullable CustomerShippingContactsRequestAddress address) {
+  public CustomerUpdateShippingContactsRequest address(@javax.annotation.Nullable ShippingContactAddress address) {
     this.address = address;
     return this;
   }
@@ -161,14 +161,14 @@ public class CustomerUpdateShippingContactsRequest {
   @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public CustomerShippingContactsRequestAddress getAddress() {
+  public ShippingContactAddress getAddress() {
     return address;
   }
 
 
   @JsonProperty(value = JSON_PROPERTY_ADDRESS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAddress(@javax.annotation.Nullable CustomerShippingContactsRequestAddress address) {
+  public void setAddress(@javax.annotation.Nullable ShippingContactAddress address) {
     this.address = address;
   }
 

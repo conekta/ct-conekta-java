@@ -67,7 +67,7 @@ import com.conekta.JSON;
   OrderResponseCheckout.JSON_PROPERTY_URL
 })
 @JsonTypeName("order_response_checkout")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class OrderResponseCheckout {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
   @javax.annotation.Nullable

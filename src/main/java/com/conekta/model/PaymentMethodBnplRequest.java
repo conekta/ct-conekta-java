@@ -32,25 +32,25 @@ import com.conekta.JSON;
 @JsonPropertyOrder({
   PaymentMethodBnplRequest.JSON_PROPERTY_TYPE,
   PaymentMethodBnplRequest.JSON_PROPERTY_CANCEL_URL,
-  PaymentMethodBnplRequest.JSON_PROPERTY_CAN_NOT_EXPIRE,
+  PaymentMethodBnplRequest.JSON_PROPERTY_EXPIRES_AT,
   PaymentMethodBnplRequest.JSON_PROPERTY_FAILURE_URL,
   PaymentMethodBnplRequest.JSON_PROPERTY_PRODUCT_TYPE,
   PaymentMethodBnplRequest.JSON_PROPERTY_SUCCESS_URL
 })
 @JsonTypeName("payment_method_bnpl_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class PaymentMethodBnplRequest {
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nonnull
   private String type;
 
   public static final String JSON_PROPERTY_CANCEL_URL = "cancel_url";
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String cancelUrl;
 
-  public static final String JSON_PROPERTY_CAN_NOT_EXPIRE = "can_not_expire";
-  @javax.annotation.Nonnull
-  private Boolean canNotExpire;
+  public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
+  @javax.annotation.Nullable
+  private Long expiresAt;
 
   public static final String JSON_PROPERTY_FAILURE_URL = "failure_url";
   @javax.annotation.Nonnull
@@ -133,53 +133,53 @@ public class PaymentMethodBnplRequest {
   }
 
 
-  public PaymentMethodBnplRequest cancelUrl(@javax.annotation.Nonnull String cancelUrl) {
+  public PaymentMethodBnplRequest cancelUrl(@javax.annotation.Nullable String cancelUrl) {
     this.cancelUrl = cancelUrl;
     return this;
   }
 
   /**
-   * URL to redirect the customer after a canceled payment
+   * Optional URL to redirect the customer after a canceled payment
    * @return cancelUrl
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_CANCEL_URL, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_CANCEL_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getCancelUrl() {
     return cancelUrl;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_CANCEL_URL, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCancelUrl(@javax.annotation.Nonnull String cancelUrl) {
+  @JsonProperty(value = JSON_PROPERTY_CANCEL_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCancelUrl(@javax.annotation.Nullable String cancelUrl) {
     this.cancelUrl = cancelUrl;
   }
 
 
-  public PaymentMethodBnplRequest canNotExpire(@javax.annotation.Nonnull Boolean canNotExpire) {
-    this.canNotExpire = canNotExpire;
+  public PaymentMethodBnplRequest expiresAt(@javax.annotation.Nullable Long expiresAt) {
+    this.expiresAt = expiresAt;
     return this;
   }
 
   /**
-   * Indicates if the payment method can not expire
-   * @return canNotExpire
+   * Optional expiry for the BNPL order, expressed in seconds since the Unix epoch. Defaults to one month from creation when omitted.
+   * @return expiresAt
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_CAN_NOT_EXPIRE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Boolean getCanNotExpire() {
-    return canNotExpire;
+  public Long getExpiresAt() {
+    return expiresAt;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_CAN_NOT_EXPIRE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCanNotExpire(@javax.annotation.Nonnull Boolean canNotExpire) {
-    this.canNotExpire = canNotExpire;
+  @JsonProperty(value = JSON_PROPERTY_EXPIRES_AT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setExpiresAt(@javax.annotation.Nullable Long expiresAt) {
+    this.expiresAt = expiresAt;
   }
 
 
@@ -272,7 +272,7 @@ public class PaymentMethodBnplRequest {
     PaymentMethodBnplRequest paymentMethodBnplRequest = (PaymentMethodBnplRequest) o;
     return Objects.equals(this.type, paymentMethodBnplRequest.type) &&
         Objects.equals(this.cancelUrl, paymentMethodBnplRequest.cancelUrl) &&
-        Objects.equals(this.canNotExpire, paymentMethodBnplRequest.canNotExpire) &&
+        Objects.equals(this.expiresAt, paymentMethodBnplRequest.expiresAt) &&
         Objects.equals(this.failureUrl, paymentMethodBnplRequest.failureUrl) &&
         Objects.equals(this.productType, paymentMethodBnplRequest.productType) &&
         Objects.equals(this.successUrl, paymentMethodBnplRequest.successUrl);
@@ -280,7 +280,7 @@ public class PaymentMethodBnplRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, cancelUrl, canNotExpire, failureUrl, productType, successUrl);
+    return Objects.hash(type, cancelUrl, expiresAt, failureUrl, productType, successUrl);
   }
 
   @Override
@@ -289,7 +289,7 @@ public class PaymentMethodBnplRequest {
     sb.append("class PaymentMethodBnplRequest {\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    cancelUrl: ").append(toIndentedString(cancelUrl)).append("\n");
-    sb.append("    canNotExpire: ").append(toIndentedString(canNotExpire)).append("\n");
+    sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("    failureUrl: ").append(toIndentedString(failureUrl)).append("\n");
     sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
     sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");

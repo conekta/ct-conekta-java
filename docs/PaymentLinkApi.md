@@ -9,7 +9,6 @@ All URIs are relative to *https://api.conekta.io*
 | [**emailCheckout**](PaymentLinkApi.md#emailCheckout) | **POST** /checkouts/{id}/email | Send an email |
 | [**getCheckout**](PaymentLinkApi.md#getCheckout) | **GET** /checkouts/{id} | Get a payment link by ID |
 | [**getCheckouts**](PaymentLinkApi.md#getCheckouts) | **GET** /checkouts | Get a list of payment links |
-| [**smsCheckout**](PaymentLinkApi.md#smsCheckout) | **POST** /checkouts/{id}/sms | Send an sms |
 
 
 
@@ -92,7 +91,7 @@ public class Example {
 
 ## createCheckout
 
-> CheckoutResponse createCheckout(checkout, acceptLanguage, xChildCompanyId)
+> CheckoutResponse createCheckout(checkout, acceptLanguage, xChildCompanyId, idempotencyKey)
 
 Create Unique Payment Link
 
@@ -120,8 +119,9 @@ public class Example {
         Checkout checkout = new Checkout(); // Checkout | requested field for checkout
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
+        String idempotencyKey = "a1b2c3d4-e5f6-7890-abcd-ef1234567890"; // String | Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again.
         try {
-            CheckoutResponse result = apiInstance.createCheckout(checkout, acceptLanguage, xChildCompanyId);
+            CheckoutResponse result = apiInstance.createCheckout(checkout, acceptLanguage, xChildCompanyId, idempotencyKey);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PaymentLinkApi#createCheckout");
@@ -142,6 +142,7 @@ public class Example {
 | **checkout** | [**Checkout**](Checkout.md)| requested field for checkout | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
+| **idempotencyKey** | **String**| Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again. | [optional] |
 
 ### Return type
 
@@ -402,85 +403,6 @@ public class Example {
 | **200** | successful operation |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
 | **401** | authentication error |  -  |
 | **402** | payment required error |  -  |
-| **422** | parameter validation error |  -  |
-| **500** | internal server error |  -  |
-
-
-## smsCheckout
-
-> CheckoutResponse smsCheckout(id, smsCheckoutRequest, acceptLanguage, xChildCompanyId)
-
-Send an sms
-
-### Example
-
-```java
-// Import classes:
-import com.conekta.ApiClient;
-import com.conekta.ApiException;
-import com.conekta.Configuration;
-import com.conekta.auth.*;
-import com.conekta.model.*;
-import com.conekta.PaymentLinkApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.conekta.io");
-        
-        // Configure HTTP bearer authorization: bearerAuth
-        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
-        bearerAuth.setBearerToken("BEARER TOKEN");
-
-        PaymentLinkApi apiInstance = new PaymentLinkApi(defaultClient);
-        String id = "6307a60c41de27127515a575"; // String | Identifier of the resource
-        SmsCheckoutRequest smsCheckoutRequest = new SmsCheckoutRequest(); // SmsCheckoutRequest | requested field for sms checkout
-        String acceptLanguage = "es"; // String | Use for knowing which language to use
-        String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
-        try {
-            CheckoutResponse result = apiInstance.smsCheckout(id, smsCheckoutRequest, acceptLanguage, xChildCompanyId);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentLinkApi#smsCheckout");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **id** | **String**| Identifier of the resource | |
-| **smsCheckoutRequest** | [**SmsCheckoutRequest**](SmsCheckoutRequest.md)| requested field for sms checkout | |
-| **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
-| **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
-
-### Return type
-
-[**CheckoutResponse**](CheckoutResponse.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/vnd.conekta-v2.3.0+json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | successful operation |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
-| **401** | authentication error |  -  |
-| **402** | payment required error |  -  |
-| **404** | not found entity |  -  |
 | **422** | parameter validation error |  -  |
 | **500** | internal server error |  -  |
 

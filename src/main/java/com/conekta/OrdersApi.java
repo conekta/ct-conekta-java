@@ -22,7 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class OrdersApi {
   private ApiClient apiClient;
 
@@ -129,6 +129,7 @@ public class OrdersApi {
    * @param orderRequest requested field for order (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
+   * @param idempotencyKey Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again. (optional)
    * @return OrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -142,8 +143,8 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public OrderResponse createOrder(@javax.annotation.Nonnull OrderRequest orderRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
-    return createOrderWithHttpInfo(orderRequest, acceptLanguage, xChildCompanyId).getData();
+  public OrderResponse createOrder(@javax.annotation.Nonnull OrderRequest orderRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
+    return createOrderWithHttpInfo(orderRequest, acceptLanguage, xChildCompanyId, idempotencyKey).getData();
   }
 
   /**
@@ -152,6 +153,7 @@ public class OrdersApi {
    * @param orderRequest requested field for order (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
+   * @param idempotencyKey Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again. (optional)
    * @return ApiResponse&lt;OrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -165,7 +167,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<OrderResponse> createOrderWithHttpInfo(@javax.annotation.Nonnull OrderRequest orderRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
+  public ApiResponse<OrderResponse> createOrderWithHttpInfo(@javax.annotation.Nonnull OrderRequest orderRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
     // Check required parameters
     if (orderRequest == null) {
       throw new ApiException(400, "Missing the required parameter 'orderRequest' when calling createOrder");
@@ -178,6 +180,9 @@ public class OrdersApi {
     }
     if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
+    if (idempotencyKey != null) {
+      localVarHeaderParams.put("Idempotency-Key", apiClient.parameterToString(idempotencyKey));
     }
 
     String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
@@ -278,6 +283,7 @@ public class OrdersApi {
    * @param createdAtLte created at less than or equal to (optional)
    * @param updatedAtGte updated at greater than or equal to (optional)
    * @param updatedAtLte updated at less than or equal to (optional)
+   * @param amount Filters by amount equal to the given value, in cents (optional)
    * @return GetOrdersResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -289,8 +295,8 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public GetOrdersResponse getOrders(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous, @javax.annotation.Nullable String paymentStatus, @javax.annotation.Nullable String lastPaymentInfoStatus, @javax.annotation.Nullable Long createdAt, @javax.annotation.Nullable Long createdAtGte, @javax.annotation.Nullable Long createdAtLte, @javax.annotation.Nullable Long updatedAtGte, @javax.annotation.Nullable Long updatedAtLte) throws ApiException {
-    return getOrdersWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte).getData();
+  public GetOrdersResponse getOrders(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous, @javax.annotation.Nullable String paymentStatus, @javax.annotation.Nullable String lastPaymentInfoStatus, @javax.annotation.Nullable Long createdAt, @javax.annotation.Nullable Long createdAtGte, @javax.annotation.Nullable Long createdAtLte, @javax.annotation.Nullable Long updatedAtGte, @javax.annotation.Nullable Long updatedAtLte, @javax.annotation.Nullable Integer amount) throws ApiException {
+    return getOrdersWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte, amount).getData();
   }
 
   /**
@@ -309,6 +315,7 @@ public class OrdersApi {
    * @param createdAtLte created at less than or equal to (optional)
    * @param updatedAtGte updated at greater than or equal to (optional)
    * @param updatedAtLte updated at less than or equal to (optional)
+   * @param amount Filters by amount equal to the given value, in cents (optional)
    * @return ApiResponse&lt;GetOrdersResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -320,7 +327,7 @@ public class OrdersApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<GetOrdersResponse> getOrdersWithHttpInfo(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous, @javax.annotation.Nullable String paymentStatus, @javax.annotation.Nullable String lastPaymentInfoStatus, @javax.annotation.Nullable Long createdAt, @javax.annotation.Nullable Long createdAtGte, @javax.annotation.Nullable Long createdAtLte, @javax.annotation.Nullable Long updatedAtGte, @javax.annotation.Nullable Long updatedAtLte) throws ApiException {
+  public ApiResponse<GetOrdersResponse> getOrdersWithHttpInfo(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous, @javax.annotation.Nullable String paymentStatus, @javax.annotation.Nullable String lastPaymentInfoStatus, @javax.annotation.Nullable Long createdAt, @javax.annotation.Nullable Long createdAtGte, @javax.annotation.Nullable Long createdAtLte, @javax.annotation.Nullable Long updatedAtGte, @javax.annotation.Nullable Long updatedAtLte, @javax.annotation.Nullable Integer amount) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "limit", limit)
@@ -335,6 +342,7 @@ public class OrdersApi {
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "created_at.lte", createdAtLte));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "updated_at.gte", updatedAtGte));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "updated_at.lte", updatedAtLte));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "amount", amount));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

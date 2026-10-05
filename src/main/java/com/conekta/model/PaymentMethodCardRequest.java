@@ -36,10 +36,11 @@ import com.conekta.JSON;
   PaymentMethodCardRequest.JSON_PROPERTY_EXP_YEAR,
   PaymentMethodCardRequest.JSON_PROPERTY_NAME,
   PaymentMethodCardRequest.JSON_PROPERTY_NUMBER,
+  PaymentMethodCardRequest.JSON_PROPERTY_CONTRACT_ID,
   PaymentMethodCardRequest.JSON_PROPERTY_CUSTOMER_IP_ADDRESS
 })
 @JsonTypeName("payment_method_card_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class PaymentMethodCardRequest {
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nonnull
@@ -64,6 +65,10 @@ public class PaymentMethodCardRequest {
   public static final String JSON_PROPERTY_NUMBER = "number";
   @javax.annotation.Nonnull
   private String number;
+
+  public static final String JSON_PROPERTY_CONTRACT_ID = "contract_id";
+  @javax.annotation.Nullable
+  private String contractId;
 
   public static final String JSON_PROPERTY_CUSTOMER_IP_ADDRESS = "customer_ip_address";
   @javax.annotation.Nullable
@@ -178,7 +183,7 @@ public class PaymentMethodCardRequest {
   }
 
   /**
-   * Cardholder name
+   * Cardholder name. Must include first and last name separated by a space; single-word names are rejected. Letters (including accented Latin characters), spaces, and the characters , . &#39; - are accepted; digits and other symbols are rejected.
    * @return name
    */
   @javax.annotation.Nonnull
@@ -219,6 +224,31 @@ public class PaymentMethodCardRequest {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setNumber(@javax.annotation.Nonnull String number) {
     this.number = number;
+  }
+
+
+  public PaymentMethodCardRequest contractId(@javax.annotation.Nullable String contractId) {
+    this.contractId = contractId;
+    return this;
+  }
+
+  /**
+   * Optional merchant-supplied identifier (exactly 10 characters) that links a card transaction to a recurring/subscription contract at the acquiring bank. Forwarded to the bank gateway and stored on the resulting charge. Accepted on creation only; ignored on update. Do not place sensitive bank data here — the value is returned in charge responses.
+   * @return contractId
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_CONTRACT_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getContractId() {
+    return contractId;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_CONTRACT_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setContractId(@javax.annotation.Nullable String contractId) {
+    this.contractId = contractId;
   }
 
 
@@ -265,12 +295,13 @@ public class PaymentMethodCardRequest {
         Objects.equals(this.expYear, paymentMethodCardRequest.expYear) &&
         Objects.equals(this.name, paymentMethodCardRequest.name) &&
         Objects.equals(this.number, paymentMethodCardRequest.number) &&
+        Objects.equals(this.contractId, paymentMethodCardRequest.contractId) &&
         Objects.equals(this.customerIpAddress, paymentMethodCardRequest.customerIpAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, cvc, expMonth, expYear, name, number, customerIpAddress);
+    return Objects.hash(type, cvc, expMonth, expYear, name, number, contractId, customerIpAddress);
   }
 
   @Override
@@ -283,6 +314,7 @@ public class PaymentMethodCardRequest {
     sb.append("    expYear: ").append(toIndentedString(expYear)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
     sb.append("    customerIpAddress: ").append(toIndentedString(customerIpAddress)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -93,7 +93,7 @@ public class Example {
 
 ## ordersCreateCharge
 
-> ChargeOrderResponse ordersCreateCharge(id, chargeRequest, acceptLanguage, xChildCompanyId)
+> ChargeOrderResponse ordersCreateCharge(id, chargeRequest, acceptLanguage, xChildCompanyId, idempotencyKey)
 
 Create charge
 
@@ -124,8 +124,9 @@ public class Example {
         ChargeRequest chargeRequest = new ChargeRequest(); // ChargeRequest | requested field for a charge
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
+        String idempotencyKey = "a1b2c3d4-e5f6-7890-abcd-ef1234567890"; // String | Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again.
         try {
-            ChargeOrderResponse result = apiInstance.ordersCreateCharge(id, chargeRequest, acceptLanguage, xChildCompanyId);
+            ChargeOrderResponse result = apiInstance.ordersCreateCharge(id, chargeRequest, acceptLanguage, xChildCompanyId, idempotencyKey);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ChargesApi#ordersCreateCharge");
@@ -147,6 +148,7 @@ public class Example {
 | **chargeRequest** | [**ChargeRequest**](ChargeRequest.md)| requested field for a charge | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
+| **idempotencyKey** | **String**| Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again. | [optional] |
 
 ### Return type
 
@@ -173,7 +175,7 @@ public class Example {
 
 ## ordersCreateCharges
 
-> ChargesOrderResponse ordersCreateCharges(id, chargeRequest, acceptLanguage, xChildCompanyId)
+> ChargesOrderResponse ordersCreateCharges(id, chargeRequest, acceptLanguage, xChildCompanyId, idempotencyKey)
 
 Create charges
 
@@ -204,8 +206,9 @@ public class Example {
         ChargeRequest chargeRequest = new ChargeRequest(); // ChargeRequest | requested field for a charge
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
+        String idempotencyKey = "a1b2c3d4-e5f6-7890-abcd-ef1234567890"; // String | Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again.
         try {
-            ChargesOrderResponse result = apiInstance.ordersCreateCharges(id, chargeRequest, acceptLanguage, xChildCompanyId);
+            ChargesOrderResponse result = apiInstance.ordersCreateCharges(id, chargeRequest, acceptLanguage, xChildCompanyId, idempotencyKey);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ChargesApi#ordersCreateCharges");
@@ -227,6 +230,7 @@ public class Example {
 | **chargeRequest** | [**ChargeRequest**](ChargeRequest.md)| requested field for a charge | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
+| **idempotencyKey** | **String**| Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again. | [optional] |
 
 ### Return type
 

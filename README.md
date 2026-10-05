@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.conekta</groupId>
   <artifactId>ct-conekta-java</artifactId>
-  <version>9.0.0</version>
+  <version>9.0.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "io.conekta:ct-conekta-java:9.0.0"
+     implementation "io.conekta:ct-conekta-java:9.0.1"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/ct-conekta-java-9.0.0.jar`
+- `target/ct-conekta-java-9.0.1.jar`
 - `target/lib/*.jar`
 
 ## Usage
@@ -154,7 +154,12 @@ Class | Method | HTTP request | Description
 *ApiKeysApi* | [**getApiKey**](docs/ApiKeysApi.md#getApiKey) | **GET** /api_keys/{id} | Get Api Key
 *ApiKeysApi* | [**getApiKeys**](docs/ApiKeysApi.md#getApiKeys) | **GET** /api_keys | Get list of Api Keys
 *ApiKeysApi* | [**updateApiKey**](docs/ApiKeysApi.md#updateApiKey) | **PUT** /api_keys/{id} | Update Api Key
+*ApplePayApi* | [**createApplePaySession**](docs/ApplePayApi.md#createApplePaySession) | **POST** /apple_pay/session | Create Apple Pay Session
 *BalancesApi* | [**getBalance**](docs/BalancesApi.md#getBalance) | **GET** /balance | Get a company&#39;s balance
+*ChargebacksApi* | [**getChargebackEvidenceTypes**](docs/ChargebacksApi.md#getChargebackEvidenceTypes) | **GET** /charges/{charge_id}/chargebacks/{chargeback_id}/evidence-types | Get Chargeback Evidence Types
+*ChargebacksApi* | [**getChargebackFile**](docs/ChargebacksApi.md#getChargebackFile) | **GET** /charges/{charge_id}/chargebacks/{chargeback_id}/files/{file_id} | Get Chargeback File
+*ChargebacksApi* | [**getChargebackFiles**](docs/ChargebacksApi.md#getChargebackFiles) | **GET** /charges/{charge_id}/chargebacks/{chargeback_id}/files | Get Chargeback Files
+*ChargebacksApi* | [**uploadChargebackFilesBatch**](docs/ChargebacksApi.md#uploadChargebackFilesBatch) | **POST** /charges/{charge_id}/chargebacks/{chargeback_id}/files/batch | Upload Chargeback Evidence Files (Batch)
 *ChargesApi* | [**getCharges**](docs/ChargesApi.md#getCharges) | **GET** /charges | Get A List of Charges
 *ChargesApi* | [**ordersCreateCharge**](docs/ChargesApi.md#ordersCreateCharge) | **POST** /orders/{id}/charges | Create charge
 *ChargesApi* | [**ordersCreateCharges**](docs/ChargesApi.md#ordersCreateCharges) | **POST** /orders/{id}/add_charges | Create charges
@@ -183,6 +188,7 @@ Class | Method | HTTP request | Description
 *EventsApi* | [**resendEvent**](docs/EventsApi.md#resendEvent) | **POST** /events/{event_id}/resend | Resend Event
 *LogsApi* | [**getLogById**](docs/LogsApi.md#getLogById) | **GET** /logs/{id} | Get Log
 *LogsApi* | [**getLogs**](docs/LogsApi.md#getLogs) | **GET** /logs | Get List Of Logs
+*MonthlyInstallmentsApi* | [**validateMonthlyInstallments**](docs/MonthlyInstallmentsApi.md#validateMonthlyInstallments) | **POST** /monthly_installments/validate | Validate Monthly Installments
 *OrdersApi* | [**cancelOrder**](docs/OrdersApi.md#cancelOrder) | **POST** /orders/{id}/cancel | Cancel Order
 *OrdersApi* | [**createOrder**](docs/OrdersApi.md#createOrder) | **POST** /orders | Create order
 *OrdersApi* | [**getOrderById**](docs/OrdersApi.md#getOrderById) | **GET** /orders/{id} | Get Order
@@ -196,7 +202,6 @@ Class | Method | HTTP request | Description
 *PaymentLinkApi* | [**emailCheckout**](docs/PaymentLinkApi.md#emailCheckout) | **POST** /checkouts/{id}/email | Send an email
 *PaymentLinkApi* | [**getCheckout**](docs/PaymentLinkApi.md#getCheckout) | **GET** /checkouts/{id} | Get a payment link by ID
 *PaymentLinkApi* | [**getCheckouts**](docs/PaymentLinkApi.md#getCheckouts) | **GET** /checkouts | Get a list of payment links
-*PaymentLinkApi* | [**smsCheckout**](docs/PaymentLinkApi.md#smsCheckout) | **POST** /checkouts/{id}/sms | Send an sms
 *PaymentMethodsApi* | [**createCustomerPaymentMethods**](docs/PaymentMethodsApi.md#createCustomerPaymentMethods) | **POST** /customers/{id}/payment_sources | Create Payment Method
 *PaymentMethodsApi* | [**deleteCustomerPaymentMethods**](docs/PaymentMethodsApi.md#deleteCustomerPaymentMethods) | **DELETE** /customers/{id}/payment_sources/{payment_method_id} | Delete Payment Method
 *PaymentMethodsApi* | [**getCustomerPaymentMethods**](docs/PaymentMethodsApi.md#getCustomerPaymentMethods) | **GET** /customers/{id}/payment_sources | Get Payment Methods
@@ -264,6 +269,8 @@ Class | Method | HTTP request | Description
  - [ApiKeyRequest](docs/ApiKeyRequest.md)
  - [ApiKeyResponse](docs/ApiKeyResponse.md)
  - [ApiKeyUpdateRequest](docs/ApiKeyUpdateRequest.md)
+ - [ApplePaySessionRequest](docs/ApplePaySessionRequest.md)
+ - [ApplePaySessionResponse](docs/ApplePaySessionResponse.md)
  - [BalanceCommonFielsResponse](docs/BalanceCommonFielsResponse.md)
  - [BalanceResponse](docs/BalanceResponse.md)
  - [BlacklistRuleResponse](docs/BlacklistRuleResponse.md)
@@ -278,7 +285,10 @@ Class | Method | HTTP request | Description
  - [ChargeResponseRefunds](docs/ChargeResponseRefunds.md)
  - [ChargeResponseRefundsData](docs/ChargeResponseRefundsData.md)
  - [ChargeUpdateRequest](docs/ChargeUpdateRequest.md)
+ - [ChargebackEvidenceFileResponse](docs/ChargebackEvidenceFileResponse.md)
+ - [ChargebackEvidenceTypeResponse](docs/ChargebackEvidenceTypeResponse.md)
  - [ChargebackFileResponse](docs/ChargebackFileResponse.md)
+ - [ChargebackFilesBatchResponse](docs/ChargebackFilesBatchResponse.md)
  - [ChargebackResponse](docs/ChargebackResponse.md)
  - [ChargesDataResponse](docs/ChargesDataResponse.md)
  - [ChargesOrderResponse](docs/ChargesOrderResponse.md)
@@ -349,6 +359,10 @@ Class | Method | HTTP request | Description
  - [LogResponseForRequest](docs/LogResponseForRequest.md)
  - [LogsResponseData](docs/LogsResponseData.md)
  - [LogsResponseForRequest](docs/LogsResponseForRequest.md)
+ - [MonthlyInstallmentsValidateRequest](docs/MonthlyInstallmentsValidateRequest.md)
+ - [MonthlyInstallmentsValidateResponse](docs/MonthlyInstallmentsValidateResponse.md)
+ - [MonthlyInstallmentsValidateResponseAvailableInstallments](docs/MonthlyInstallmentsValidateResponseAvailableInstallments.md)
+ - [MonthlyInstallmentsValidateResponseBinInfo](docs/MonthlyInstallmentsValidateResponseBinInfo.md)
  - [OrderCaptureRequest](docs/OrderCaptureRequest.md)
  - [OrderChannelResponse](docs/OrderChannelResponse.md)
  - [OrderChargesResponse](docs/OrderChargesResponse.md)
@@ -371,6 +385,7 @@ Class | Method | HTTP request | Description
  - [OrderResponseShippingLines](docs/OrderResponseShippingLines.md)
  - [OrderResponseTaxLines](docs/OrderResponseTaxLines.md)
  - [OrderTaxRequest](docs/OrderTaxRequest.md)
+ - [OrderTaxRequestMetadataValue](docs/OrderTaxRequestMetadataValue.md)
  - [OrderTaxResponse](docs/OrderTaxResponse.md)
  - [OrderUpdate](docs/OrderUpdate.md)
  - [OrderUpdateCustomerInfo](docs/OrderUpdateCustomerInfo.md)
@@ -408,10 +423,10 @@ Class | Method | HTTP request | Description
  - [ResendEventRequest](docs/ResendEventRequest.md)
  - [RiskRulesData](docs/RiskRulesData.md)
  - [RiskRulesList](docs/RiskRulesList.md)
+ - [ShippingContactAddress](docs/ShippingContactAddress.md)
  - [ShippingLinesDataResponse](docs/ShippingLinesDataResponse.md)
  - [ShippingOrderResponse](docs/ShippingOrderResponse.md)
  - [ShippingRequest](docs/ShippingRequest.md)
- - [SmsCheckoutRequest](docs/SmsCheckoutRequest.md)
  - [SubscriptionDetails](docs/SubscriptionDetails.md)
  - [SubscriptionDetailsCard](docs/SubscriptionDetailsCard.md)
  - [SubscriptionDetailsPlan](docs/SubscriptionDetailsPlan.md)

@@ -7,10 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**amount** | **Integer** |  |  |
+|**amount** | **Integer** |  |  [optional] |
 |**channel** | [**ChargeResponseChannel**](ChargeResponseChannel.md) |  |  [optional] |
-|**createdAt** | **Long** |  |  |
-|**currency** | **String** |  |  |
+|**conektaAccountId** | **String** | Conekta account ID of the charge, if the charge was paid through a Conekta account. |  [optional] |
+|**createdAt** | **Long** | Charge creation date, in seconds since the Unix epoch |  |
+|**currency** | **String** | Currency of the charge, in ISO 4217 format |  |
 |**customerId** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**deviceFingerprint** | **String** |  |  [optional] |

@@ -68,10 +68,10 @@ import com.conekta.JSON;
   OrderResponse.JSON_PROPERTY_UPDATED_AT
 })
 @JsonTypeName("order_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class OrderResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private Integer amount;
 
   public static final String JSON_PROPERTY_AMOUNT_REFUNDED = "amount_refunded";
@@ -91,11 +91,11 @@ public class OrderResponse {
   private OrderResponseCheckout checkout;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public static final String JSON_PROPERTY_CURRENCY = "currency";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String currency;
 
   public static final String JSON_PROPERTY_CUSTOMER_INFO = "customer_info";
@@ -119,7 +119,7 @@ public class OrderResponse {
   private OrderFiscalEntityResponse fiscalEntity;
 
   public static final String JSON_PROPERTY_ID = "id";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String JSON_PROPERTY_IS_REFUNDABLE = "is_refundable";
@@ -131,7 +131,7 @@ public class OrderResponse {
   private OrderResponseProducts lineItems;
 
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private Boolean livemode;
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
@@ -143,7 +143,7 @@ public class OrderResponse {
   private OrderNextActionResponse nextAction;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String _object;
 
   public static final String JSON_PROPERTY_PAYMENT_STATUS = "payment_status";
@@ -165,7 +165,7 @@ public class OrderResponse {
   public OrderResponse() { 
   }
 
-  public OrderResponse amount(@javax.annotation.Nullable Integer amount) {
+  public OrderResponse amount(@javax.annotation.Nonnull Integer amount) {
     this.amount = amount;
     return this;
   }
@@ -174,18 +174,18 @@ public class OrderResponse {
    * The total amount to be collected in cents
    * @return amount
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getAmount() {
     return amount;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAmount(@javax.annotation.Nullable Integer amount) {
+  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setAmount(@javax.annotation.Nonnull Integer amount) {
     this.amount = amount;
   }
 
@@ -290,7 +290,7 @@ public class OrderResponse {
   }
 
 
-  public OrderResponse createdAt(@javax.annotation.Nullable Long createdAt) {
+  public OrderResponse createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -299,23 +299,23 @@ public class OrderResponse {
    * The time at which the object was created in seconds since the Unix epoch
    * @return createdAt
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Long getCreatedAt() {
     return createdAt;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCreatedAt(@javax.annotation.Nullable Long createdAt) {
+  @JsonProperty(value = JSON_PROPERTY_CREATED_AT, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public OrderResponse currency(@javax.annotation.Nullable String currency) {
+  public OrderResponse currency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
     return this;
   }
@@ -324,18 +324,18 @@ public class OrderResponse {
    * The three-letter ISO 4217 currency code. The currency of the order.
    * @return currency
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_CURRENCY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_CURRENCY, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCurrency() {
     return currency;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_CURRENCY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCurrency(@javax.annotation.Nullable String currency) {
+  @JsonProperty(value = JSON_PROPERTY_CURRENCY, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCurrency(@javax.annotation.Nonnull String currency) {
     this.currency = currency;
   }
 
@@ -465,7 +465,7 @@ public class OrderResponse {
   }
 
 
-  public OrderResponse id(@javax.annotation.Nullable String id) {
+  public OrderResponse id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -474,18 +474,18 @@ public class OrderResponse {
    * Get id
    * @return id
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
     return id;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_ID, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setId(@javax.annotation.Nullable String id) {
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
@@ -540,7 +540,7 @@ public class OrderResponse {
   }
 
 
-  public OrderResponse livemode(@javax.annotation.Nullable Boolean livemode) {
+  public OrderResponse livemode(@javax.annotation.Nonnull Boolean livemode) {
     this.livemode = livemode;
     return this;
   }
@@ -549,18 +549,18 @@ public class OrderResponse {
    * Whether the object exists in live mode or test mode
    * @return livemode
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getLivemode() {
     return livemode;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLivemode(@javax.annotation.Nullable Boolean livemode) {
+  @JsonProperty(value = JSON_PROPERTY_LIVEMODE, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setLivemode(@javax.annotation.Nonnull Boolean livemode) {
     this.livemode = livemode;
   }
 
@@ -623,7 +623,7 @@ public class OrderResponse {
   }
 
 
-  public OrderResponse _object(@javax.annotation.Nullable String _object) {
+  public OrderResponse _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
   }
@@ -632,18 +632,18 @@ public class OrderResponse {
    * String representing the object’s type. Objects of the same type share the same value.
    * @return _object
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getObject() {
     return _object;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setObject(@javax.annotation.Nullable String _object) {
+  @JsonProperty(value = JSON_PROPERTY_OBJECT, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setObject(@javax.annotation.Nonnull String _object) {
     this._object = _object;
   }
 

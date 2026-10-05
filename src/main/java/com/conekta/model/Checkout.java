@@ -46,12 +46,13 @@ import com.conekta.JSON;
   Checkout.JSON_PROPERTY_PLAN_IDS,
   Checkout.JSON_PROPERTY_ORDER_TEMPLATE,
   Checkout.JSON_PROPERTY_PAYMENTS_LIMIT_COUNT,
+  Checkout.JSON_PROPERTY_REDIRECTION_TIME,
   Checkout.JSON_PROPERTY_SUCCESS_URL,
   Checkout.JSON_PROPERTY_RECURRENT,
   Checkout.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("checkout")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class Checkout {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
   @javax.annotation.Nullable
@@ -108,9 +109,7 @@ public class Checkout {
    * Gets or Sets excludeCardNetworks
    */
   public enum ExcludeCardNetworksEnum {
-    VISA(String.valueOf("visa")),
-    
-    MASTERCARD(String.valueOf("mastercard")),
+    VISA_MASTER_CARD(String.valueOf("visa_master_card")),
     
     AMEX(String.valueOf("amex")),
     
@@ -159,9 +158,48 @@ public class Checkout {
   @javax.annotation.Nullable
   private List<Integer> monthlyInstallmentsOptions = new ArrayList<>();
 
+  /**
+   * Indicates the 3DS2 mode: &#39;strict&#39;, &#39;not_strict&#39; or &#39;smart&#39;. To defer to the company-level 3DS configuration, omit the field (an explicit null is rejected on creation).
+   */
+  public enum ThreeDsModeEnum {
+    STRICT(String.valueOf("strict")),
+    
+    NOT_STRICT(String.valueOf("not_strict")),
+    
+    SMART(String.valueOf("smart")),
+    
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
+
+    private String value;
+
+    ThreeDsModeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static ThreeDsModeEnum fromValue(String value) {
+      for (ThreeDsModeEnum b : ThreeDsModeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return UNKNOWN_DEFAULT_OPEN_API;
+    }
+  }
+
   public static final String JSON_PROPERTY_THREE_DS_MODE = "three_ds_mode";
   @javax.annotation.Nullable
-  private String threeDsMode;
+  private ThreeDsModeEnum threeDsMode;
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -186,6 +224,10 @@ public class Checkout {
   public static final String JSON_PROPERTY_PAYMENTS_LIMIT_COUNT = "payments_limit_count";
   @javax.annotation.Nullable
   private Integer paymentsLimitCount;
+
+  public static final String JSON_PROPERTY_REDIRECTION_TIME = "redirection_time";
+  @javax.annotation.Nullable
+  private Integer redirectionTime;
 
   public static final String JSON_PROPERTY_SUCCESS_URL = "success_url";
   @javax.annotation.Nullable
@@ -282,7 +324,7 @@ public class Checkout {
   }
 
   /**
-   * List of card networks to exclude from the checkout. This field is only applicable for card payments.
+   * List of card networks to exclude from the checkout. This field is only applicable for card payments. Accepted values: &#39;visa_master_card&#39; (a single token excluding both Visa and Mastercard) and &#39;amex&#39;.
    * @return excludeCardNetworks
    */
   @javax.annotation.Nullable
@@ -385,27 +427,27 @@ public class Checkout {
   }
 
 
-  public Checkout threeDsMode(@javax.annotation.Nullable String threeDsMode) {
+  public Checkout threeDsMode(@javax.annotation.Nullable ThreeDsModeEnum threeDsMode) {
     this.threeDsMode = threeDsMode;
     return this;
   }
 
   /**
-   * Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null.
+   * Indicates the 3DS2 mode: &#39;strict&#39;, &#39;not_strict&#39; or &#39;smart&#39;. To defer to the company-level 3DS configuration, omit the field (an explicit null is rejected on creation).
    * @return threeDsMode
    */
   @javax.annotation.Nullable
   @JsonProperty(value = JSON_PROPERTY_THREE_DS_MODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getThreeDsMode() {
+  public ThreeDsModeEnum getThreeDsMode() {
     return threeDsMode;
   }
 
 
   @JsonProperty(value = JSON_PROPERTY_THREE_DS_MODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setThreeDsMode(@javax.annotation.Nullable String threeDsMode) {
+  public void setThreeDsMode(@javax.annotation.Nullable ThreeDsModeEnum threeDsMode) {
     this.threeDsMode = threeDsMode;
   }
 
@@ -569,6 +611,32 @@ public class Checkout {
   }
 
 
+  public Checkout redirectionTime(@javax.annotation.Nullable Integer redirectionTime) {
+    this.redirectionTime = redirectionTime;
+    return this;
+  }
+
+  /**
+   * It is the time in seconds that the checkout will wait before redirecting to the success_url. It must be greater than 0.
+   * minimum: 1
+   * @return redirectionTime
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_REDIRECTION_TIME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getRedirectionTime() {
+    return redirectionTime;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_REDIRECTION_TIME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRedirectionTime(@javax.annotation.Nullable Integer redirectionTime) {
+    this.redirectionTime = redirectionTime;
+  }
+
+
   public Checkout successUrl(@javax.annotation.Nullable String successUrl) {
     this.successUrl = successUrl;
     return this;
@@ -669,6 +737,7 @@ public class Checkout {
         Objects.equals(this.planIds, checkout.planIds) &&
         Objects.equals(this.orderTemplate, checkout.orderTemplate) &&
         Objects.equals(this.paymentsLimitCount, checkout.paymentsLimitCount) &&
+        Objects.equals(this.redirectionTime, checkout.redirectionTime) &&
         Objects.equals(this.successUrl, checkout.successUrl) &&
         Objects.equals(this.recurrent, checkout.recurrent) &&
         Objects.equals(this.type, checkout.type);
@@ -676,7 +745,7 @@ public class Checkout {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowedPaymentMethods, excludedPaymentMethods, excludeCardNetworks, expiresAt, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, threeDsMode, name, needsShippingContact, onDemandEnabled, planIds, orderTemplate, paymentsLimitCount, successUrl, recurrent, type);
+    return Objects.hash(allowedPaymentMethods, excludedPaymentMethods, excludeCardNetworks, expiresAt, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, threeDsMode, name, needsShippingContact, onDemandEnabled, planIds, orderTemplate, paymentsLimitCount, redirectionTime, successUrl, recurrent, type);
   }
 
   @Override
@@ -696,6 +765,7 @@ public class Checkout {
     sb.append("    planIds: ").append(toIndentedString(planIds)).append("\n");
     sb.append("    orderTemplate: ").append(toIndentedString(orderTemplate)).append("\n");
     sb.append("    paymentsLimitCount: ").append(toIndentedString(paymentsLimitCount)).append("\n");
+    sb.append("    redirectionTime: ").append(toIndentedString(redirectionTime)).append("\n");
     sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");
     sb.append("    recurrent: ").append(toIndentedString(recurrent)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");

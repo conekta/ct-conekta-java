@@ -28,8 +28,8 @@ checkout response
 |**paidPaymentsCount** | **Integer** |  |  [optional] |
 |**paymentsLimitCount** | **Integer** |  |  [optional] |
 |**recurrent** | **Boolean** |  |  [optional] |
+|**redirectionTime** | **Integer** | It is the time in seconds that the checkout will wait before redirecting to the success_url. |  [optional] |
 |**slug** | **String** |  |  [optional] |
-|**smsSent** | **Integer** |  |  [optional] |
 |**startsAt** | **Integer** |  |  [optional] |
 |**status** | **String** |  |  [optional] |
 |**successUrl** | **String** | The URL to redirect to after a successful payment. |  [optional] |

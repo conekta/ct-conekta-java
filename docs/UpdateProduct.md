@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**antifraudInfo** |  |  |  [optional] |
+|**antifraudInfo** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**sku** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
@@ -15,7 +15,7 @@
 |**quantity** | **Integer** |  |  [optional] |
 |**tags** | **List&lt;String&gt;** |  |  [optional] |
 |**brand** | **String** |  |  [optional] |
-|**metadata** |  |  |  [optional] |
+|**metadata** | [**Map&lt;String, OrderTaxRequestMetadataValue&gt;**](OrderTaxRequestMetadataValue.md) |  |  [optional] |
 
 
 

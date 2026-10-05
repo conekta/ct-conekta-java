@@ -13,7 +13,6 @@ import com.conekta.model.CheckoutResponse;
 import com.conekta.model.CheckoutsResponse;
 import com.conekta.model.EmailCheckoutRequest;
 import com.conekta.model.Error;
-import com.conekta.model.SmsCheckoutRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,7 +20,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class PaymentLinkApi {
   private ApiClient apiClient;
 
@@ -128,6 +127,7 @@ public class PaymentLinkApi {
    * @param checkout requested field for checkout (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
+   * @param idempotencyKey Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again. (optional)
    * @return CheckoutResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -141,8 +141,8 @@ public class PaymentLinkApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public CheckoutResponse createCheckout(@javax.annotation.Nonnull Checkout checkout, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
-    return createCheckoutWithHttpInfo(checkout, acceptLanguage, xChildCompanyId).getData();
+  public CheckoutResponse createCheckout(@javax.annotation.Nonnull Checkout checkout, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
+    return createCheckoutWithHttpInfo(checkout, acceptLanguage, xChildCompanyId, idempotencyKey).getData();
   }
 
   /**
@@ -151,6 +151,7 @@ public class PaymentLinkApi {
    * @param checkout requested field for checkout (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
+   * @param idempotencyKey Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again. (optional)
    * @return ApiResponse&lt;CheckoutResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -164,7 +165,7 @@ public class PaymentLinkApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<CheckoutResponse> createCheckoutWithHttpInfo(@javax.annotation.Nonnull Checkout checkout, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
+  public ApiResponse<CheckoutResponse> createCheckoutWithHttpInfo(@javax.annotation.Nonnull Checkout checkout, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
     // Check required parameters
     if (checkout == null) {
       throw new ApiException(400, "Missing the required parameter 'checkout' when calling createCheckout");
@@ -177,6 +178,9 @@ public class PaymentLinkApi {
     }
     if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
+    if (idempotencyKey != null) {
+      localVarHeaderParams.put("Idempotency-Key", apiClient.parameterToString(idempotencyKey));
     }
 
     String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
@@ -405,82 +409,6 @@ public class PaymentLinkApi {
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<CheckoutsResponse> localVarReturnType = new GenericType<CheckoutsResponse>() {};
     return apiClient.invokeAPI("PaymentLinkApi.getCheckouts", "/checkouts", "GET", localVarQueryParams, null,
-                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
-                               localVarAuthNames, localVarReturnType, false);
-  }
-  /**
-   * Send an sms
-   * 
-   * @param id Identifier of the resource (required)
-   * @param smsCheckoutRequest requested field for sms checkout (required)
-   * @param acceptLanguage Use for knowing which language to use (optional, default to es)
-   * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
-   * @return CheckoutResponse
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
-       <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
-       <tr><td> 402 </td><td> payment required error </td><td>  -  </td></tr>
-       <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
-       <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
-       <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
-     </table>
-   */
-  public CheckoutResponse smsCheckout(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull SmsCheckoutRequest smsCheckoutRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
-    return smsCheckoutWithHttpInfo(id, smsCheckoutRequest, acceptLanguage, xChildCompanyId).getData();
-  }
-
-  /**
-   * Send an sms
-   * 
-   * @param id Identifier of the resource (required)
-   * @param smsCheckoutRequest requested field for sms checkout (required)
-   * @param acceptLanguage Use for knowing which language to use (optional, default to es)
-   * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
-   * @return ApiResponse&lt;CheckoutResponse&gt;
-   * @throws ApiException if fails to make API call
-   * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-       <tr><td> 200 </td><td> successful operation </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
-       <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
-       <tr><td> 402 </td><td> payment required error </td><td>  -  </td></tr>
-       <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
-       <tr><td> 422 </td><td> parameter validation error </td><td>  -  </td></tr>
-       <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
-     </table>
-   */
-  public ApiResponse<CheckoutResponse> smsCheckoutWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull SmsCheckoutRequest smsCheckoutRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
-    // Check required parameters
-    if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling smsCheckout");
-    }
-    if (smsCheckoutRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'smsCheckoutRequest' when calling smsCheckout");
-    }
-
-    // Path parameters
-    String localVarPath = "/checkouts/{id}/sms"
-            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
-
-    // Header parameters
-    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
-    if (acceptLanguage != null) {
-      localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-    }
-    if (xChildCompanyId != null) {
-      localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
-    }
-
-    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
-    String localVarContentType = apiClient.selectHeaderContentType("application/json");
-    String[] localVarAuthNames = new String[] {"bearerAuth"};
-    GenericType<CheckoutResponse> localVarReturnType = new GenericType<CheckoutResponse>() {};
-    return apiClient.invokeAPI("PaymentLinkApi.smsCheckout", localVarPath, "POST", new ArrayList<>(), smsCheckoutRequest,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

@@ -15,7 +15,7 @@ a order
 |**discountLines** | [**List&lt;OrderDiscountLinesRequest&gt;**](OrderDiscountLinesRequest.md) | List of [discounts](https://developers.conekta.com/v2.3.0/reference/orderscreatediscountline) that are applied to the order. |  [optional] |
 |**fiscalEntity** | [**OrderUpdateFiscalEntityRequest**](OrderUpdateFiscalEntityRequest.md) |  |  [optional] |
 |**lineItems** | [**List&lt;Product&gt;**](Product.md) | List of [products](https://developers.conekta.com/v2.3.0/reference/orderscreateproduct) that are sold in the order. You must have at least one product. |  [optional] |
-|**metadata** |  |  |  [optional] |
+|**metadata** | [**Map&lt;String, OrderTaxRequestMetadataValue&gt;**](OrderTaxRequestMetadataValue.md) |  |  [optional] |
 |**preAuthorize** | **Boolean** | Indicates whether the order charges must be preauthorized |  [optional] |
 |**shippingContact** | [**CustomerShippingContactsRequest**](CustomerShippingContactsRequest.md) |  |  [optional] |
 |**shippingLines** | [**List&lt;ShippingRequest&gt;**](ShippingRequest.md) | List of [shipping costs](https://developers.conekta.com/v2.3.0/reference/orderscreateshipping). If the online store offers digital products. |  [optional] |
