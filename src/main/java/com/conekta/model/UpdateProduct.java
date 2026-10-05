@@ -16,6 +16,7 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
+import com.conekta.model.OrderTaxRequestMetadataValue;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -45,11 +46,11 @@ import com.conekta.JSON;
   UpdateProduct.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("update_product")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class UpdateProduct {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
   @javax.annotation.Nullable
-  private Map<String, Object> antifraudInfo;
+  private Map<String, Object> antifraudInfo = new HashMap<>();
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   @javax.annotation.Nullable
@@ -81,13 +82,21 @@ public class UpdateProduct {
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
   @javax.annotation.Nullable
-  private Map<String, String> metadata;
+  private Map<String, OrderTaxRequestMetadataValue> metadata = new HashMap<>();
 
   public UpdateProduct() { 
   }
 
   public UpdateProduct antifraudInfo(@javax.annotation.Nullable Map<String, Object> antifraudInfo) {
     this.antifraudInfo = antifraudInfo;
+    return this;
+  }
+
+  public UpdateProduct putAntifraudInfoItem(String key, Object antifraudInfoItem) {
+    if (this.antifraudInfo == null) {
+      this.antifraudInfo = new HashMap<>();
+    }
+    this.antifraudInfo.put(key, antifraudInfoItem);
     return this;
   }
 
@@ -296,8 +305,16 @@ public class UpdateProduct {
   }
 
 
-  public UpdateProduct metadata(@javax.annotation.Nullable Map<String, String> metadata) {
+  public UpdateProduct metadata(@javax.annotation.Nullable Map<String, OrderTaxRequestMetadataValue> metadata) {
     this.metadata = metadata;
+    return this;
+  }
+
+  public UpdateProduct putMetadataItem(String key, OrderTaxRequestMetadataValue metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<>();
+    }
+    this.metadata.put(key, metadataItem);
     return this;
   }
 
@@ -309,14 +326,14 @@ public class UpdateProduct {
   @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Map<String, String> getMetadata() {
+  public Map<String, OrderTaxRequestMetadataValue> getMetadata() {
     return metadata;
   }
 
 
   @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(@javax.annotation.Nullable Map<String, String> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, OrderTaxRequestMetadataValue> metadata) {
     this.metadata = metadata;
   }
 

@@ -22,7 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class ChargesApi {
   private ApiClient apiClient;
 
@@ -129,6 +129,7 @@ public class ChargesApi {
    * @param chargeRequest requested field for a charge (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
+   * @param idempotencyKey Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again. (optional)
    * @return ChargeOrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -142,8 +143,8 @@ public class ChargesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ChargeOrderResponse ordersCreateCharge(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull ChargeRequest chargeRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
-    return ordersCreateChargeWithHttpInfo(id, chargeRequest, acceptLanguage, xChildCompanyId).getData();
+  public ChargeOrderResponse ordersCreateCharge(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull ChargeRequest chargeRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
+    return ordersCreateChargeWithHttpInfo(id, chargeRequest, acceptLanguage, xChildCompanyId, idempotencyKey).getData();
   }
 
   /**
@@ -153,6 +154,7 @@ public class ChargesApi {
    * @param chargeRequest requested field for a charge (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
+   * @param idempotencyKey Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again. (optional)
    * @return ApiResponse&lt;ChargeOrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -166,7 +168,7 @@ public class ChargesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<ChargeOrderResponse> ordersCreateChargeWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull ChargeRequest chargeRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
+  public ApiResponse<ChargeOrderResponse> ordersCreateChargeWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull ChargeRequest chargeRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersCreateCharge");
@@ -187,6 +189,9 @@ public class ChargesApi {
     if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
     }
+    if (idempotencyKey != null) {
+      localVarHeaderParams.put("Idempotency-Key", apiClient.parameterToString(idempotencyKey));
+    }
 
     String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
     String localVarContentType = apiClient.selectHeaderContentType("application/json");
@@ -203,6 +208,7 @@ public class ChargesApi {
    * @param chargeRequest requested field for a charge (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
+   * @param idempotencyKey Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again. (optional)
    * @return ChargesOrderResponse
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -216,8 +222,8 @@ public class ChargesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ChargesOrderResponse ordersCreateCharges(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull ChargeRequest chargeRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
-    return ordersCreateChargesWithHttpInfo(id, chargeRequest, acceptLanguage, xChildCompanyId).getData();
+  public ChargesOrderResponse ordersCreateCharges(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull ChargeRequest chargeRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
+    return ordersCreateChargesWithHttpInfo(id, chargeRequest, acceptLanguage, xChildCompanyId, idempotencyKey).getData();
   }
 
   /**
@@ -227,6 +233,7 @@ public class ChargesApi {
    * @param chargeRequest requested field for a charge (required)
    * @param acceptLanguage Use for knowing which language to use (optional, default to es)
    * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
+   * @param idempotencyKey Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again. (optional)
    * @return ApiResponse&lt;ChargesOrderResponse&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -240,7 +247,7 @@ public class ChargesApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<ChargesOrderResponse> ordersCreateChargesWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull ChargeRequest chargeRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
+  public ApiResponse<ChargesOrderResponse> ordersCreateChargesWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull ChargeRequest chargeRequest, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
     // Check required parameters
     if (id == null) {
       throw new ApiException(400, "Missing the required parameter 'id' when calling ordersCreateCharges");
@@ -260,6 +267,9 @@ public class ChargesApi {
     }
     if (xChildCompanyId != null) {
       localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
+    if (idempotencyKey != null) {
+      localVarHeaderParams.put("Idempotency-Key", apiClient.parameterToString(idempotencyKey));
     }
 
     String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");

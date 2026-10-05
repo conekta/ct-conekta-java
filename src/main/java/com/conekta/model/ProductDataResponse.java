@@ -16,6 +16,7 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
+import com.conekta.model.OrderTaxRequestMetadataValue;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -48,7 +49,7 @@ import com.conekta.JSON;
   ProductDataResponse.JSON_PROPERTY_PARENT_ID
 })
 @JsonTypeName("product_data_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class ProductDataResponse {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
   @javax.annotation.Nullable
@@ -64,7 +65,7 @@ public class ProductDataResponse {
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
   @javax.annotation.Nullable
-  private Map<String, Object> metadata = new HashMap<>();
+  private Map<String, OrderTaxRequestMetadataValue> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull
@@ -184,12 +185,12 @@ public class ProductDataResponse {
   }
 
 
-  public ProductDataResponse metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
+  public ProductDataResponse metadata(@javax.annotation.Nullable Map<String, OrderTaxRequestMetadataValue> metadata) {
     this.metadata = metadata;
     return this;
   }
 
-  public ProductDataResponse putMetadataItem(String key, Object metadataItem) {
+  public ProductDataResponse putMetadataItem(String key, OrderTaxRequestMetadataValue metadataItem) {
     if (this.metadata == null) {
       this.metadata = new HashMap<>();
     }
@@ -198,21 +199,21 @@ public class ProductDataResponse {
   }
 
   /**
-   * It is a key/value hash that can hold custom fields. Maximum 100 elements and allows special characters.
+   * It is a key/value hash that can hold custom fields. Maximum 100 elements. Values must be scalar (string of at most 249 characters, integer, number or boolean); nested objects and arrays are not supported.
    * @return metadata
    */
   @javax.annotation.Nullable
   @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Map<String, Object> getMetadata() {
+  public Map<String, OrderTaxRequestMetadataValue> getMetadata() {
     return metadata;
   }
 
 
   @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMetadata(@javax.annotation.Nullable Map<String, OrderTaxRequestMetadataValue> metadata) {
     this.metadata = metadata;
   }
 

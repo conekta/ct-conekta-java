@@ -24,7 +24,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.conekta.JSON;
 
@@ -37,10 +39,11 @@ import com.conekta.JSON;
   CreateCompanyRequest.JSON_PROPERTY_TYPE_COMPANY,
   CreateCompanyRequest.JSON_PROPERTY_COMERCIAL_INFO,
   CreateCompanyRequest.JSON_PROPERTY_FISCAL_INFO,
-  CreateCompanyRequest.JSON_PROPERTY_BANK_ACCOUNT_INFO
+  CreateCompanyRequest.JSON_PROPERTY_BANK_ACCOUNT_INFO,
+  CreateCompanyRequest.JSON_PROPERTY_USERS
 })
 @JsonTypeName("Create_Company_Request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class CreateCompanyRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable
@@ -61,6 +64,10 @@ public class CreateCompanyRequest {
   public static final String JSON_PROPERTY_BANK_ACCOUNT_INFO = "bank_account_info";
   @javax.annotation.Nullable
   private CreateCompanyRequestBankAccountInfo bankAccountInfo;
+
+  public static final String JSON_PROPERTY_USERS = "users";
+  @javax.annotation.Nullable
+  private List<String> users = new ArrayList<>();
 
   public CreateCompanyRequest() { 
   }
@@ -190,6 +197,39 @@ public class CreateCompanyRequest {
   }
 
 
+  public CreateCompanyRequest users(@javax.annotation.Nullable List<String> users) {
+    this.users = users;
+    return this;
+  }
+
+  public CreateCompanyRequest addUsersItem(String usersItem) {
+    if (this.users == null) {
+      this.users = new ArrayList<>();
+    }
+    this.users.add(usersItem);
+    return this;
+  }
+
+  /**
+   * User emails for the company
+   * @return users
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_USERS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<String> getUsers() {
+    return users;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_USERS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUsers(@javax.annotation.Nullable List<String> users) {
+    this.users = users;
+  }
+
+
   /**
    * Return true if this Create_Company_Request object is equal to o.
    */
@@ -206,12 +246,13 @@ public class CreateCompanyRequest {
         Objects.equals(this.typeCompany, createCompanyRequest.typeCompany) &&
         Objects.equals(this.comercialInfo, createCompanyRequest.comercialInfo) &&
         Objects.equals(this.fiscalInfo, createCompanyRequest.fiscalInfo) &&
-        Objects.equals(this.bankAccountInfo, createCompanyRequest.bankAccountInfo);
+        Objects.equals(this.bankAccountInfo, createCompanyRequest.bankAccountInfo) &&
+        Objects.equals(this.users, createCompanyRequest.users);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, typeCompany, comercialInfo, fiscalInfo, bankAccountInfo);
+    return Objects.hash(name, typeCompany, comercialInfo, fiscalInfo, bankAccountInfo, users);
   }
 
   @Override
@@ -223,6 +264,7 @@ public class CreateCompanyRequest {
     sb.append("    comercialInfo: ").append(toIndentedString(comercialInfo)).append("\n");
     sb.append("    fiscalInfo: ").append(toIndentedString(fiscalInfo)).append("\n");
     sb.append("    bankAccountInfo: ").append(toIndentedString(bankAccountInfo)).append("\n");
+    sb.append("    users: ").append(toIndentedString(users)).append("\n");
     sb.append("}");
     return sb.toString();
   }

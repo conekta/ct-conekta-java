@@ -36,6 +36,7 @@ import com.conekta.JSON;
 @JsonPropertyOrder({
   ChargesDataResponse.JSON_PROPERTY_AMOUNT,
   ChargesDataResponse.JSON_PROPERTY_CHANNEL,
+  ChargesDataResponse.JSON_PROPERTY_CONEKTA_ACCOUNT_ID,
   ChargesDataResponse.JSON_PROPERTY_CREATED_AT,
   ChargesDataResponse.JSON_PROPERTY_CURRENCY,
   ChargesDataResponse.JSON_PROPERTY_CUSTOMER_ID,
@@ -55,15 +56,19 @@ import com.conekta.JSON;
   ChargesDataResponse.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("charges_data_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class ChargesDataResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Integer amount;
 
   public static final String JSON_PROPERTY_CHANNEL = "channel";
   @javax.annotation.Nullable
   private ChargeResponseChannel channel;
+
+  public static final String JSON_PROPERTY_CONEKTA_ACCOUNT_ID = "conekta_account_id";
+  @javax.annotation.Nullable
+  private String conektaAccountId;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   @javax.annotation.Nonnull
@@ -136,7 +141,7 @@ public class ChargesDataResponse {
   public ChargesDataResponse() { 
   }
 
-  public ChargesDataResponse amount(@javax.annotation.Nonnull Integer amount) {
+  public ChargesDataResponse amount(@javax.annotation.Nullable Integer amount) {
     this.amount = amount;
     return this;
   }
@@ -145,18 +150,18 @@ public class ChargesDataResponse {
    * Get amount
    * @return amount
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getAmount() {
     return amount;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAmount(@javax.annotation.Nonnull Integer amount) {
+  @JsonProperty(value = JSON_PROPERTY_AMOUNT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAmount(@javax.annotation.Nullable Integer amount) {
     this.amount = amount;
   }
 
@@ -186,13 +191,38 @@ public class ChargesDataResponse {
   }
 
 
+  public ChargesDataResponse conektaAccountId(@javax.annotation.Nullable String conektaAccountId) {
+    this.conektaAccountId = conektaAccountId;
+    return this;
+  }
+
+  /**
+   * Conekta account ID of the charge, if the charge was paid through a Conekta account.
+   * @return conektaAccountId
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_CONEKTA_ACCOUNT_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getConektaAccountId() {
+    return conektaAccountId;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_CONEKTA_ACCOUNT_ID, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setConektaAccountId(@javax.annotation.Nullable String conektaAccountId) {
+    this.conektaAccountId = conektaAccountId;
+  }
+
+
   public ChargesDataResponse createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
   /**
-   * Get createdAt
+   * Charge creation date, in seconds since the Unix epoch
    * @return createdAt
    */
   @javax.annotation.Nonnull
@@ -217,7 +247,7 @@ public class ChargesDataResponse {
   }
 
   /**
-   * Get currency
+   * Currency of the charge, in ISO 4217 format
    * @return currency
    */
   @javax.annotation.Nonnull
@@ -625,6 +655,7 @@ public class ChargesDataResponse {
     ChargesDataResponse chargesDataResponse = (ChargesDataResponse) o;
     return Objects.equals(this.amount, chargesDataResponse.amount) &&
         Objects.equals(this.channel, chargesDataResponse.channel) &&
+        Objects.equals(this.conektaAccountId, chargesDataResponse.conektaAccountId) &&
         Objects.equals(this.createdAt, chargesDataResponse.createdAt) &&
         Objects.equals(this.currency, chargesDataResponse.currency) &&
         Objects.equals(this.customerId, chargesDataResponse.customerId) &&
@@ -646,7 +677,7 @@ public class ChargesDataResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, channel, createdAt, currency, customerId, description, deviceFingerprint, failureCode, failureMessage, id, livemode, _object, orderId, paidAt, paymentMethod, referenceId, refunds, chargeback, status);
+    return Objects.hash(amount, channel, conektaAccountId, createdAt, currency, customerId, description, deviceFingerprint, failureCode, failureMessage, id, livemode, _object, orderId, paidAt, paymentMethod, referenceId, refunds, chargeback, status);
   }
 
   @Override
@@ -655,6 +686,7 @@ public class ChargesDataResponse {
     sb.append("class ChargesDataResponse {\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
+    sb.append("    conektaAccountId: ").append(toIndentedString(conektaAccountId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");

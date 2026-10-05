@@ -23,6 +23,7 @@ import com.conekta.model.OrderDiscountLinesRequest;
 import com.conekta.model.OrderFiscalEntityRequest;
 import com.conekta.model.OrderRequestCustomerInfo;
 import com.conekta.model.OrderTaxRequest;
+import com.conekta.model.OrderTaxRequestMetadataValue;
 import com.conekta.model.Product;
 import com.conekta.model.ShippingRequest;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -56,13 +57,15 @@ import com.conekta.JSON;
   OrderRequest.JSON_PROPERTY_PRE_AUTHORIZE,
   OrderRequest.JSON_PROPERTY_PROCESSING_MODE,
   OrderRequest.JSON_PROPERTY_RETURN_URL,
+  OrderRequest.JSON_PROPERTY_REUSE_CUSTOMER_CASH_REFERENCE,
+  OrderRequest.JSON_PROPERTY_REUSE_CUSTOMER_CLABE,
   OrderRequest.JSON_PROPERTY_SHIPPING_CONTACT,
   OrderRequest.JSON_PROPERTY_SHIPPING_LINES,
   OrderRequest.JSON_PROPERTY_TAX_LINES,
   OrderRequest.JSON_PROPERTY_THREE_DS_MODE
 })
 @JsonTypeName("order_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class OrderRequest {
   public static final String JSON_PROPERTY_CHARGES = "charges";
   @javax.annotation.Nullable
@@ -94,7 +97,7 @@ public class OrderRequest {
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
   @javax.annotation.Nullable
-  private Map<String, Object> metadata = new HashMap<>();
+  private Map<String, OrderTaxRequestMetadataValue> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_NEEDS_SHIPPING_CONTACT = "needs_shipping_contact";
   @javax.annotation.Nullable
@@ -112,6 +115,14 @@ public class OrderRequest {
   @javax.annotation.Nullable
   private URI returnUrl;
 
+  public static final String JSON_PROPERTY_REUSE_CUSTOMER_CASH_REFERENCE = "reuse_customer_cash_reference";
+  @javax.annotation.Nullable
+  private Boolean reuseCustomerCashReference;
+
+  public static final String JSON_PROPERTY_REUSE_CUSTOMER_CLABE = "reuse_customer_clabe";
+  @javax.annotation.Nullable
+  private Boolean reuseCustomerClabe;
+
   public static final String JSON_PROPERTY_SHIPPING_CONTACT = "shipping_contact";
   @javax.annotation.Nullable
   private CustomerShippingContactsRequest shippingContact;
@@ -124,9 +135,48 @@ public class OrderRequest {
   @javax.annotation.Nullable
   private List<OrderTaxRequest> taxLines = new ArrayList<>();
 
+  /**
+   * Indicates the 3DS2 mode: &#39;strict&#39;, &#39;not_strict&#39; or &#39;smart&#39;. The value is validated against the allowed set on creation; sending an explicit null is rejected. Omit the field to create the order without requesting 3DS through the API (company-level 3DS applies only to orders paid through Checkout or when antifraud forces 3DS).
+   */
+  public enum ThreeDsModeEnum {
+    STRICT(String.valueOf("strict")),
+    
+    NOT_STRICT(String.valueOf("not_strict")),
+    
+    SMART(String.valueOf("smart")),
+    
+    UNKNOWN_DEFAULT_OPEN_API(String.valueOf("unknown_default_open_api"));
+
+    private String value;
+
+    ThreeDsModeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static ThreeDsModeEnum fromValue(String value) {
+      for (ThreeDsModeEnum b : ThreeDsModeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return UNKNOWN_DEFAULT_OPEN_API;
+    }
+  }
+
   public static final String JSON_PROPERTY_THREE_DS_MODE = "three_ds_mode";
   @javax.annotation.Nullable
-  private String threeDsMode;
+  private ThreeDsModeEnum threeDsMode;
 
   public OrderRequest() { 
   }
@@ -330,12 +380,12 @@ public class OrderRequest {
   }
 
 
-  public OrderRequest metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
+  public OrderRequest metadata(@javax.annotation.Nullable Map<String, OrderTaxRequestMetadataValue> metadata) {
     this.metadata = metadata;
     return this;
   }
 
-  public OrderRequest putMetadataItem(String key, Object metadataItem) {
+  public OrderRequest putMetadataItem(String key, OrderTaxRequestMetadataValue metadataItem) {
     if (this.metadata == null) {
       this.metadata = new HashMap<>();
     }
@@ -344,21 +394,21 @@ public class OrderRequest {
   }
 
   /**
-   * Metadata associated with the order
+   * Metadata associated with the order. Values must be scalar (string of at most 249 characters, integer, number or boolean); nested objects and arrays are not supported.
    * @return metadata
    */
   @javax.annotation.Nullable
   @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Map<String, Object> getMetadata() {
+  public Map<String, OrderTaxRequestMetadataValue> getMetadata() {
     return metadata;
   }
 
 
   @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMetadata(@javax.annotation.Nullable Map<String, OrderTaxRequestMetadataValue> metadata) {
     this.metadata = metadata;
   }
 
@@ -463,6 +513,56 @@ public class OrderRequest {
   }
 
 
+  public OrderRequest reuseCustomerCashReference(@javax.annotation.Nullable Boolean reuseCustomerCashReference) {
+    this.reuseCustomerCashReference = reuseCustomerCashReference;
+    return this;
+  }
+
+  /**
+   * Reuses the customer&#39;s recurrent cash reference (&#x60;cash_recurrent&#x60; payment source) in the order&#39;s cash charges instead of generating a new reference. Requires &#x60;customer_info.customer_id&#x60;.
+   * @return reuseCustomerCashReference
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_REUSE_CUSTOMER_CASH_REFERENCE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getReuseCustomerCashReference() {
+    return reuseCustomerCashReference;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_REUSE_CUSTOMER_CASH_REFERENCE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setReuseCustomerCashReference(@javax.annotation.Nullable Boolean reuseCustomerCashReference) {
+    this.reuseCustomerCashReference = reuseCustomerCashReference;
+  }
+
+
+  public OrderRequest reuseCustomerClabe(@javax.annotation.Nullable Boolean reuseCustomerClabe) {
+    this.reuseCustomerClabe = reuseCustomerClabe;
+    return this;
+  }
+
+  /**
+   * Reuses the customer&#39;s recurrent SPEI CLABE (&#x60;spei_recurrent&#x60; payment source) in the order&#39;s SPEI charges instead of generating a new CLABE. Requires &#x60;customer_info.customer_id&#x60;.
+   * @return reuseCustomerClabe
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_REUSE_CUSTOMER_CLABE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getReuseCustomerClabe() {
+    return reuseCustomerClabe;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_REUSE_CUSTOMER_CLABE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setReuseCustomerClabe(@javax.annotation.Nullable Boolean reuseCustomerClabe) {
+    this.reuseCustomerClabe = reuseCustomerClabe;
+  }
+
+
   public OrderRequest shippingContact(@javax.annotation.Nullable CustomerShippingContactsRequest shippingContact) {
     this.shippingContact = shippingContact;
     return this;
@@ -554,27 +654,27 @@ public class OrderRequest {
   }
 
 
-  public OrderRequest threeDsMode(@javax.annotation.Nullable String threeDsMode) {
+  public OrderRequest threeDsMode(@javax.annotation.Nullable ThreeDsModeEnum threeDsMode) {
     this.threeDsMode = threeDsMode;
     return this;
   }
 
   /**
-   * Indicates the 3DS2 mode for the order, either smart or strict. This property is only applicable when 3DS is enabled. When 3DS is disabled, this field should be null.
+   * Indicates the 3DS2 mode: &#39;strict&#39;, &#39;not_strict&#39; or &#39;smart&#39;. The value is validated against the allowed set on creation; sending an explicit null is rejected. Omit the field to create the order without requesting 3DS through the API (company-level 3DS applies only to orders paid through Checkout or when antifraud forces 3DS).
    * @return threeDsMode
    */
   @javax.annotation.Nullable
   @JsonProperty(value = JSON_PROPERTY_THREE_DS_MODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getThreeDsMode() {
+  public ThreeDsModeEnum getThreeDsMode() {
     return threeDsMode;
   }
 
 
   @JsonProperty(value = JSON_PROPERTY_THREE_DS_MODE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setThreeDsMode(@javax.annotation.Nullable String threeDsMode) {
+  public void setThreeDsMode(@javax.annotation.Nullable ThreeDsModeEnum threeDsMode) {
     this.threeDsMode = threeDsMode;
   }
 
@@ -603,6 +703,8 @@ public class OrderRequest {
         Objects.equals(this.preAuthorize, orderRequest.preAuthorize) &&
         Objects.equals(this.processingMode, orderRequest.processingMode) &&
         Objects.equals(this.returnUrl, orderRequest.returnUrl) &&
+        Objects.equals(this.reuseCustomerCashReference, orderRequest.reuseCustomerCashReference) &&
+        Objects.equals(this.reuseCustomerClabe, orderRequest.reuseCustomerClabe) &&
         Objects.equals(this.shippingContact, orderRequest.shippingContact) &&
         Objects.equals(this.shippingLines, orderRequest.shippingLines) &&
         Objects.equals(this.taxLines, orderRequest.taxLines) &&
@@ -611,7 +713,7 @@ public class OrderRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(charges, checkout, currency, customerInfo, discountLines, fiscalEntity, lineItems, metadata, needsShippingContact, preAuthorize, processingMode, returnUrl, shippingContact, shippingLines, taxLines, threeDsMode);
+    return Objects.hash(charges, checkout, currency, customerInfo, discountLines, fiscalEntity, lineItems, metadata, needsShippingContact, preAuthorize, processingMode, returnUrl, reuseCustomerCashReference, reuseCustomerClabe, shippingContact, shippingLines, taxLines, threeDsMode);
   }
 
   @Override
@@ -630,6 +732,8 @@ public class OrderRequest {
     sb.append("    preAuthorize: ").append(toIndentedString(preAuthorize)).append("\n");
     sb.append("    processingMode: ").append(toIndentedString(processingMode)).append("\n");
     sb.append("    returnUrl: ").append(toIndentedString(returnUrl)).append("\n");
+    sb.append("    reuseCustomerCashReference: ").append(toIndentedString(reuseCustomerCashReference)).append("\n");
+    sb.append("    reuseCustomerClabe: ").append(toIndentedString(reuseCustomerClabe)).append("\n");
     sb.append("    shippingContact: ").append(toIndentedString(shippingContact)).append("\n");
     sb.append("    shippingLines: ").append(toIndentedString(shippingLines)).append("\n");
     sb.append("    taxLines: ").append(toIndentedString(taxLines)).append("\n");

@@ -43,7 +43,7 @@ import com.conekta.JSON;
   CustomerShippingContactsRequest.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("customer_shipping_contacts_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class CustomerShippingContactsRequest {
   public static final String JSON_PROPERTY_PHONE = "phone";
   @javax.annotation.Nullable
@@ -136,7 +136,7 @@ public class CustomerShippingContactsRequest {
   }
 
   /**
-   * The street names between which the order will be delivered.
+   * The street names between which the order will be delivered. Must contain at least two consecutive ASCII letters.
    * @return betweenStreets
    */
   @javax.annotation.Nullable

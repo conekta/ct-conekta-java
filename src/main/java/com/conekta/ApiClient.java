@@ -85,7 +85,7 @@ import com.conekta.auth.ApiKeyAuth;
 /**
  * <p>ApiClient class.</p>
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class ApiClient extends JavaTimeFormatter {
   protected static final Pattern JSON_MIME_PATTERN = Pattern.compile("(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$");
 
@@ -99,7 +99,7 @@ public class ApiClient extends JavaTimeFormatter {
 
   private JSONObject getConektaUserAgent()  {
     JSONObject userAgent = new JSONObject();
-    userAgent.put("bindings_version", "9.0.0");
+    userAgent.put("bindings_version", "9.0.1");
     userAgent.put("lang", "java");
     userAgent.put("lang_version", System.getProperty("java.version"));
     userAgent.put("publisher", "conekta");
@@ -151,7 +151,7 @@ public class ApiClient extends JavaTimeFormatter {
     this.dateFormat = new RFC3339DateFormat();
 
     // Set default User-Agent.
-    setUserAgent("Conekta/v2 JavaBindings/9.0.0");
+    setUserAgent("Conekta/v2 JavaBindings/9.0.1");
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<>();

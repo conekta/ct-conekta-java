@@ -10,6 +10,9 @@ docs/ApiKeyRequest.md
 docs/ApiKeyResponse.md
 docs/ApiKeyUpdateRequest.md
 docs/ApiKeysApi.md
+docs/ApplePayApi.md
+docs/ApplePaySessionRequest.md
+docs/ApplePaySessionResponse.md
 docs/BalanceCommonFielsResponse.md
 docs/BalanceResponse.md
 docs/BalancesApi.md
@@ -25,8 +28,12 @@ docs/ChargeResponsePaymentMethod.md
 docs/ChargeResponseRefunds.md
 docs/ChargeResponseRefundsData.md
 docs/ChargeUpdateRequest.md
+docs/ChargebackEvidenceFileResponse.md
+docs/ChargebackEvidenceTypeResponse.md
 docs/ChargebackFileResponse.md
+docs/ChargebackFilesBatchResponse.md
 docs/ChargebackResponse.md
+docs/ChargebacksApi.md
 docs/ChargesApi.md
 docs/ChargesDataResponse.md
 docs/ChargesOrderResponse.md
@@ -102,6 +109,11 @@ docs/LogResponseForRequest.md
 docs/LogsApi.md
 docs/LogsResponseData.md
 docs/LogsResponseForRequest.md
+docs/MonthlyInstallmentsApi.md
+docs/MonthlyInstallmentsValidateRequest.md
+docs/MonthlyInstallmentsValidateResponse.md
+docs/MonthlyInstallmentsValidateResponseAvailableInstallments.md
+docs/MonthlyInstallmentsValidateResponseBinInfo.md
 docs/OrderCaptureRequest.md
 docs/OrderChannelResponse.md
 docs/OrderChargesResponse.md
@@ -124,6 +136,7 @@ docs/OrderResponseShippingContact.md
 docs/OrderResponseShippingLines.md
 docs/OrderResponseTaxLines.md
 docs/OrderTaxRequest.md
+docs/OrderTaxRequestMetadataValue.md
 docs/OrderTaxResponse.md
 docs/OrderUpdate.md
 docs/OrderUpdateCustomerInfo.md
@@ -167,12 +180,12 @@ docs/ProductsApi.md
 docs/ResendEventRequest.md
 docs/RiskRulesData.md
 docs/RiskRulesList.md
+docs/ShippingContactAddress.md
 docs/ShippingContactsApi.md
 docs/ShippingLinesDataResponse.md
 docs/ShippingOrderResponse.md
 docs/ShippingRequest.md
 docs/ShippingsApi.md
-docs/SmsCheckoutRequest.md
 docs/SubscriptionDetails.md
 docs/SubscriptionDetailsCard.md
 docs/SubscriptionDetailsPlan.md
@@ -224,7 +237,9 @@ src/main/java/com/conekta/ApiClient.java
 src/main/java/com/conekta/ApiException.java
 src/main/java/com/conekta/ApiKeysApi.java
 src/main/java/com/conekta/ApiResponse.java
+src/main/java/com/conekta/ApplePayApi.java
 src/main/java/com/conekta/BalancesApi.java
+src/main/java/com/conekta/ChargebacksApi.java
 src/main/java/com/conekta/ChargesApi.java
 src/main/java/com/conekta/CompaniesApi.java
 src/main/java/com/conekta/Configuration.java
@@ -234,6 +249,7 @@ src/main/java/com/conekta/EventsApi.java
 src/main/java/com/conekta/JSON.java
 src/main/java/com/conekta/JavaTimeFormatter.java
 src/main/java/com/conekta/LogsApi.java
+src/main/java/com/conekta/MonthlyInstallmentsApi.java
 src/main/java/com/conekta/OrdersApi.java
 src/main/java/com/conekta/Pair.java
 src/main/java/com/conekta/PaymentLinkApi.java
@@ -266,6 +282,8 @@ src/main/java/com/conekta/model/ApiKeyCreateResponse.java
 src/main/java/com/conekta/model/ApiKeyRequest.java
 src/main/java/com/conekta/model/ApiKeyResponse.java
 src/main/java/com/conekta/model/ApiKeyUpdateRequest.java
+src/main/java/com/conekta/model/ApplePaySessionRequest.java
+src/main/java/com/conekta/model/ApplePaySessionResponse.java
 src/main/java/com/conekta/model/BalanceCommonFielsResponse.java
 src/main/java/com/conekta/model/BalanceResponse.java
 src/main/java/com/conekta/model/BlacklistRuleResponse.java
@@ -280,7 +298,10 @@ src/main/java/com/conekta/model/ChargeResponsePaymentMethod.java
 src/main/java/com/conekta/model/ChargeResponseRefunds.java
 src/main/java/com/conekta/model/ChargeResponseRefundsData.java
 src/main/java/com/conekta/model/ChargeUpdateRequest.java
+src/main/java/com/conekta/model/ChargebackEvidenceFileResponse.java
+src/main/java/com/conekta/model/ChargebackEvidenceTypeResponse.java
 src/main/java/com/conekta/model/ChargebackFileResponse.java
+src/main/java/com/conekta/model/ChargebackFilesBatchResponse.java
 src/main/java/com/conekta/model/ChargebackResponse.java
 src/main/java/com/conekta/model/ChargesDataResponse.java
 src/main/java/com/conekta/model/ChargesOrderResponse.java
@@ -351,6 +372,10 @@ src/main/java/com/conekta/model/GetWebhooksResponse.java
 src/main/java/com/conekta/model/LogResponseForRequest.java
 src/main/java/com/conekta/model/LogsResponseData.java
 src/main/java/com/conekta/model/LogsResponseForRequest.java
+src/main/java/com/conekta/model/MonthlyInstallmentsValidateRequest.java
+src/main/java/com/conekta/model/MonthlyInstallmentsValidateResponse.java
+src/main/java/com/conekta/model/MonthlyInstallmentsValidateResponseAvailableInstallments.java
+src/main/java/com/conekta/model/MonthlyInstallmentsValidateResponseBinInfo.java
 src/main/java/com/conekta/model/OrderCaptureRequest.java
 src/main/java/com/conekta/model/OrderChannelResponse.java
 src/main/java/com/conekta/model/OrderChargesResponse.java
@@ -373,6 +398,7 @@ src/main/java/com/conekta/model/OrderResponseShippingContact.java
 src/main/java/com/conekta/model/OrderResponseShippingLines.java
 src/main/java/com/conekta/model/OrderResponseTaxLines.java
 src/main/java/com/conekta/model/OrderTaxRequest.java
+src/main/java/com/conekta/model/OrderTaxRequestMetadataValue.java
 src/main/java/com/conekta/model/OrderTaxResponse.java
 src/main/java/com/conekta/model/OrderUpdate.java
 src/main/java/com/conekta/model/OrderUpdateCustomerInfo.java
@@ -410,10 +436,10 @@ src/main/java/com/conekta/model/ProductOrderResponse.java
 src/main/java/com/conekta/model/ResendEventRequest.java
 src/main/java/com/conekta/model/RiskRulesData.java
 src/main/java/com/conekta/model/RiskRulesList.java
+src/main/java/com/conekta/model/ShippingContactAddress.java
 src/main/java/com/conekta/model/ShippingLinesDataResponse.java
 src/main/java/com/conekta/model/ShippingOrderResponse.java
 src/main/java/com/conekta/model/ShippingRequest.java
-src/main/java/com/conekta/model/SmsCheckoutRequest.java
 src/main/java/com/conekta/model/SubscriptionDetails.java
 src/main/java/com/conekta/model/SubscriptionDetailsCard.java
 src/main/java/com/conekta/model/SubscriptionDetailsPlan.java

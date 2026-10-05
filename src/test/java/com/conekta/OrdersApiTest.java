@@ -73,21 +73,21 @@ public class OrdersApiTest {
 
         OrderRequest orderRequest = new OrderRequest()
                 .currency("MXN")
-                .threeDsMode("smart")
+                .threeDsMode(OrderRequest.ThreeDsModeEnum.STRICT)
                 .customerInfo(customerInfo)
                 .addChargesItem(new ChargeRequest().amount(1000L).paymentMethod(paymentMethod))
                 .addLineItemsItem(new Product().name("test").quantity(1).unitPrice(1000));
-        OrderResponse response = api.createOrder(orderRequest, "es", null);
+        OrderResponse response = api.createOrder(orderRequest, "es", null, null);
         Assertions.assertAll("created order",
                 () -> Assertions.assertNotNull(response),
                 () -> Assertions.assertNotNull(response.getId()),
                 () -> Assertions.assertEquals("order", response.getObject()),
                 () -> Assertions.assertEquals("MXN", response.getCurrency()),
                 () -> Assertions.assertEquals("paid", response.getPaymentStatus()),
-                () -> Assertions.assertEquals(2100, response.getAmount()),
+                () -> Assertions.assertEquals(10000, response.getAmount()),
                 () -> Assertions.assertEquals(0, response.getAmountRefunded()),
                 () -> Assertions.assertTrue(response.getIsRefundable()),
-                () -> Assertions.assertTrue(response.getLivemode()),
+                () -> Assertions.assertFalse(response.getLivemode()),
                 () -> Assertions.assertNull(response.getTaxLines()),
                 () -> Assertions.assertNull(response.getDiscountLines()),
                 () -> Assertions.assertNotNull(response.getShippingLines()),
@@ -130,7 +130,7 @@ public class OrdersApiTest {
     @Test
     public void getOrdersTest() throws ApiException {
         GetOrdersResponse response = api.getOrders(
-                "es", null, 20, null, null, null, null, null, null, null, null, null, null);
+                "es", null, 20, null, null, null, null, null, null, null, null, null, null, null);
         Assertions.assertAll("orders list",
                 () -> Assertions.assertNotNull(response),
                 () -> Assertions.assertEquals("list", response.getObject()),

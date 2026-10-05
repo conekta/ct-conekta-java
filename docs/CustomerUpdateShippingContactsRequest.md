@@ -10,8 +10,8 @@
 |------------ | ------------- | ------------- | -------------|
 |**phone** | **String** | Phone contact |  [optional] |
 |**receiver** | **String** | Name of the person who will receive the order |  [optional] |
-|**betweenStreets** | **String** | The street names between which the order will be delivered. |  [optional] |
-|**address** | [**CustomerShippingContactsRequestAddress**](CustomerShippingContactsRequestAddress.md) |  |  [optional] |
+|**betweenStreets** | **String** | The street names between which the order will be delivered. Must contain at least two consecutive ASCII letters. |  [optional] |
+|**address** | [**ShippingContactAddress**](ShippingContactAddress.md) |  |  [optional] |
 |**parentId** | **String** |  |  [optional] |
 |**_default** | **Boolean** |  |  [optional] |
 |**deleted** | **Boolean** |  |  [optional] |

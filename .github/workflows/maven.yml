@@ -31,7 +31,7 @@ jobs:
     - name: Run Mockoon CLI
       uses: mockoon/cli-action@v3
       with:
-        data-file: 'https://raw.githubusercontent.com/conekta/openapi/refs/heads/release/v2.3.0/mocks/conekta_api.json'
+        data-file: 'https://raw.githubusercontent.com/conekta/openapi/refs/heads/main/mocks/conekta_api.json'
         port: 3000
     - name: Build with Maven
       run: mvn -B package --no-transfer-progress --file pom.xml

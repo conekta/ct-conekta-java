@@ -50,7 +50,7 @@ import com.conekta.JSON;
   OrderCheckoutRequest.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("order_checkout_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class OrderCheckoutRequest {
   /**
    * Gets or Sets allowedPaymentMethods
@@ -154,9 +154,7 @@ public class OrderCheckoutRequest {
    * Gets or Sets excludeCardNetworks
    */
   public enum ExcludeCardNetworksEnum {
-    VISA(String.valueOf("visa")),
-    
-    MASTERCARD(String.valueOf("mastercard")),
+    VISA_MASTER_CARD(String.valueOf("visa_master_card")),
     
     AMEX(String.valueOf("amex")),
     
@@ -361,7 +359,7 @@ public class OrderCheckoutRequest {
   }
 
   /**
-   * List of card networks to exclude from the checkout. This field is only applicable for card payments.
+   * List of card networks to exclude from the checkout. This field is only applicable for card payments. Accepted values: &#39;visa_master_card&#39; (a single token excluding both Visa and Mastercard) and &#39;amex&#39;.
    * @return excludeCardNetworks
    */
   @javax.annotation.Nullable

@@ -46,7 +46,7 @@ import com.conekta.JSON;
   CustomerFiscalEntitiesDataResponse.JSON_PROPERTY_DEFAULT
 })
 @JsonTypeName("customer_fiscal_entities_data_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class CustomerFiscalEntitiesDataResponse {
   public static final String JSON_PROPERTY_ADDRESS = "address";
   @javax.annotation.Nonnull
@@ -66,7 +66,7 @@ public class CustomerFiscalEntitiesDataResponse {
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
   @javax.annotation.Nullable
-  private Map<String, Object> metadata;
+  private Map<String, Object> metadata = new HashMap<>();
 
   public static final String JSON_PROPERTY_COMPANY_NAME = "company_name";
   @javax.annotation.Nullable
@@ -197,6 +197,14 @@ public class CustomerFiscalEntitiesDataResponse {
 
   public CustomerFiscalEntitiesDataResponse metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
+    return this;
+  }
+
+  public CustomerFiscalEntitiesDataResponse putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<>();
+    }
+    this.metadata.put(key, metadataItem);
     return this;
   }
 

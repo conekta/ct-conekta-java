@@ -18,9 +18,9 @@
 |**queryString** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**related** | **String** |  |  [optional] |
 |**requestBody** | **Object** |  |  [optional] |
-|**requestHeaders** |  |  |  [optional] |
+|**requestHeaders** | **Map&lt;String, String&gt;** |  |  [optional] |
 |**responseBody** | **Object** |  |  [optional] |
-|**responseHeaders** |  |  |  [optional] |
+|**responseHeaders** | **Map&lt;String, String&gt;** |  |  [optional] |
 |**searchableTags** | **List&lt;String&gt;** |  |  [optional] |
 |**status** | **String** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |

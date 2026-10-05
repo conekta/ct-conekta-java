@@ -55,8 +55,8 @@ import com.conekta.JSON;
   CheckoutResponse.JSON_PROPERTY_PAID_PAYMENTS_COUNT,
   CheckoutResponse.JSON_PROPERTY_PAYMENTS_LIMIT_COUNT,
   CheckoutResponse.JSON_PROPERTY_RECURRENT,
+  CheckoutResponse.JSON_PROPERTY_REDIRECTION_TIME,
   CheckoutResponse.JSON_PROPERTY_SLUG,
-  CheckoutResponse.JSON_PROPERTY_SMS_SENT,
   CheckoutResponse.JSON_PROPERTY_STARTS_AT,
   CheckoutResponse.JSON_PROPERTY_STATUS,
   CheckoutResponse.JSON_PROPERTY_SUCCESS_URL,
@@ -64,7 +64,7 @@ import com.conekta.JSON;
   CheckoutResponse.JSON_PROPERTY_URL
 })
 @JsonTypeName("checkout_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class CheckoutResponse {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
   @javax.annotation.Nullable
@@ -228,13 +228,13 @@ public class CheckoutResponse {
   @javax.annotation.Nullable
   private Boolean recurrent;
 
+  public static final String JSON_PROPERTY_REDIRECTION_TIME = "redirection_time";
+  @javax.annotation.Nullable
+  private Integer redirectionTime;
+
   public static final String JSON_PROPERTY_SLUG = "slug";
   @javax.annotation.Nullable
   private String slug;
-
-  public static final String JSON_PROPERTY_SMS_SENT = "sms_sent";
-  @javax.annotation.Nullable
-  private Integer smsSent;
 
   public static final String JSON_PROPERTY_STARTS_AT = "starts_at";
   @javax.annotation.Nullable
@@ -807,6 +807,31 @@ public class CheckoutResponse {
   }
 
 
+  public CheckoutResponse redirectionTime(@javax.annotation.Nullable Integer redirectionTime) {
+    this.redirectionTime = redirectionTime;
+    return this;
+  }
+
+  /**
+   * It is the time in seconds that the checkout will wait before redirecting to the success_url.
+   * @return redirectionTime
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_REDIRECTION_TIME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getRedirectionTime() {
+    return redirectionTime;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_REDIRECTION_TIME, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRedirectionTime(@javax.annotation.Nullable Integer redirectionTime) {
+    this.redirectionTime = redirectionTime;
+  }
+
+
   public CheckoutResponse slug(@javax.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
@@ -829,31 +854,6 @@ public class CheckoutResponse {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSlug(@javax.annotation.Nullable String slug) {
     this.slug = slug;
-  }
-
-
-  public CheckoutResponse smsSent(@javax.annotation.Nullable Integer smsSent) {
-    this.smsSent = smsSent;
-    return this;
-  }
-
-  /**
-   * Get smsSent
-   * @return smsSent
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_SMS_SENT, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Integer getSmsSent() {
-    return smsSent;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_SMS_SENT, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSmsSent(@javax.annotation.Nullable Integer smsSent) {
-    this.smsSent = smsSent;
   }
 
 
@@ -1014,8 +1014,8 @@ public class CheckoutResponse {
         Objects.equals(this.paidPaymentsCount, checkoutResponse.paidPaymentsCount) &&
         Objects.equals(this.paymentsLimitCount, checkoutResponse.paymentsLimitCount) &&
         Objects.equals(this.recurrent, checkoutResponse.recurrent) &&
+        Objects.equals(this.redirectionTime, checkoutResponse.redirectionTime) &&
         Objects.equals(this.slug, checkoutResponse.slug) &&
-        Objects.equals(this.smsSent, checkoutResponse.smsSent) &&
         Objects.equals(this.startsAt, checkoutResponse.startsAt) &&
         Objects.equals(this.status, checkoutResponse.status) &&
         Objects.equals(this.successUrl, checkoutResponse.successUrl) &&
@@ -1025,7 +1025,7 @@ public class CheckoutResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowedPaymentMethods, excludedPaymentMethods, planIds, canNotExpire, emailsSent, excludeCardNetworks, expiresAt, failureUrl, force3dsFlow, id, livemode, metadata, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, name, needsShippingContact, _object, paidPaymentsCount, paymentsLimitCount, recurrent, slug, smsSent, startsAt, status, successUrl, type, url);
+    return Objects.hash(allowedPaymentMethods, excludedPaymentMethods, planIds, canNotExpire, emailsSent, excludeCardNetworks, expiresAt, failureUrl, force3dsFlow, id, livemode, metadata, monthlyInstallmentsEnabled, monthlyInstallmentsOptions, name, needsShippingContact, _object, paidPaymentsCount, paymentsLimitCount, recurrent, redirectionTime, slug, startsAt, status, successUrl, type, url);
   }
 
   @Override
@@ -1052,8 +1052,8 @@ public class CheckoutResponse {
     sb.append("    paidPaymentsCount: ").append(toIndentedString(paidPaymentsCount)).append("\n");
     sb.append("    paymentsLimitCount: ").append(toIndentedString(paymentsLimitCount)).append("\n");
     sb.append("    recurrent: ").append(toIndentedString(recurrent)).append("\n");
+    sb.append("    redirectionTime: ").append(toIndentedString(redirectionTime)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
-    sb.append("    smsSent: ").append(toIndentedString(smsSent)).append("\n");
     sb.append("    startsAt: ").append(toIndentedString(startsAt)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");

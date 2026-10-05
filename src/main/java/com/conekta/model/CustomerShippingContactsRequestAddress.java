@@ -27,7 +27,7 @@ import com.conekta.JSON;
 
 
 /**
- * Address of the person who will receive the order
+ * CustomerShippingContactsRequestAddress
  */
 @JsonPropertyOrder({
   CustomerShippingContactsRequestAddress.JSON_PROPERTY_STREET1,
@@ -39,10 +39,10 @@ import com.conekta.JSON;
   CustomerShippingContactsRequestAddress.JSON_PROPERTY_RESIDENTIAL
 })
 @JsonTypeName("customer_shipping_contacts_request_address")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class CustomerShippingContactsRequestAddress {
   public static final String JSON_PROPERTY_STREET1 = "street1";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String street1;
 
   public static final String JSON_PROPERTY_STREET2 = "street2";
@@ -50,7 +50,7 @@ public class CustomerShippingContactsRequestAddress {
   private String street2;
 
   public static final String JSON_PROPERTY_POSTAL_CODE = "postal_code";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String postalCode;
 
   public static final String JSON_PROPERTY_CITY = "city";
@@ -62,37 +62,37 @@ public class CustomerShippingContactsRequestAddress {
   private String state;
 
   public static final String JSON_PROPERTY_COUNTRY = "country";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String country;
 
   public static final String JSON_PROPERTY_RESIDENTIAL = "residential";
   @javax.annotation.Nullable
-  private Boolean residential;
+  private Boolean residential = true;
 
   public CustomerShippingContactsRequestAddress() { 
   }
 
-  public CustomerShippingContactsRequestAddress street1(@javax.annotation.Nullable String street1) {
+  public CustomerShippingContactsRequestAddress street1(@javax.annotation.Nonnull String street1) {
     this.street1 = street1;
     return this;
   }
 
   /**
-   * Get street1
+   * Street and number of the delivery address.
    * @return street1
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_STREET1, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_STREET1, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getStreet1() {
     return street1;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_STREET1, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStreet1(@javax.annotation.Nullable String street1) {
+  @JsonProperty(value = JSON_PROPERTY_STREET1, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setStreet1(@javax.annotation.Nonnull String street1) {
     this.street1 = street1;
   }
 
@@ -103,7 +103,7 @@ public class CustomerShippingContactsRequestAddress {
   }
 
   /**
-   * Get street2
+   * Apartment, suite or interior reference for the delivery address.
    * @return street2
    */
   @javax.annotation.Nullable
@@ -122,27 +122,27 @@ public class CustomerShippingContactsRequestAddress {
   }
 
 
-  public CustomerShippingContactsRequestAddress postalCode(@javax.annotation.Nullable String postalCode) {
+  public CustomerShippingContactsRequestAddress postalCode(@javax.annotation.Nonnull String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
 
   /**
-   * Get postalCode
+   * Postal code of the delivery address. For Mexican addresses (country MX) it must be a 5-digit postal code.
    * @return postalCode
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getPostalCode() {
     return postalCode;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPostalCode(@javax.annotation.Nullable String postalCode) {
+  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setPostalCode(@javax.annotation.Nonnull String postalCode) {
     this.postalCode = postalCode;
   }
 
@@ -153,7 +153,7 @@ public class CustomerShippingContactsRequestAddress {
   }
 
   /**
-   * Get city
+   * City of the delivery address. Must contain at least two consecutive ASCII letters.
    * @return city
    */
   @javax.annotation.Nullable
@@ -178,7 +178,7 @@ public class CustomerShippingContactsRequestAddress {
   }
 
   /**
-   * Get state
+   * State of the delivery address.
    * @return state
    */
   @javax.annotation.Nullable
@@ -197,27 +197,27 @@ public class CustomerShippingContactsRequestAddress {
   }
 
 
-  public CustomerShippingContactsRequestAddress country(@javax.annotation.Nullable String country) {
+  public CustomerShippingContactsRequestAddress country(@javax.annotation.Nonnull String country) {
     this.country = country;
     return this;
   }
 
   /**
-   * this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+   * Country of the delivery address. This field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
    * @return country
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCountry() {
     return country;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCountry(@javax.annotation.Nullable String country) {
+  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCountry(@javax.annotation.Nonnull String country) {
     this.country = country;
   }
 
@@ -228,7 +228,7 @@ public class CustomerShippingContactsRequestAddress {
   }
 
   /**
-   * Get residential
+   * Indicates whether the delivery address is residential.
    * @return residential
    */
   @javax.annotation.Nullable

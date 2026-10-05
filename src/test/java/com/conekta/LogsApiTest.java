@@ -33,7 +33,7 @@ public class LogsApiTest {
 
     @Test
     public void getLogsTest() throws ApiException {
-        LogsResponseForRequest response = api.getLogs("es", null, 20, null, null, null);
+        LogsResponseForRequest response = api.getLogs("es", null, 20, null, null, null, null);
         Assertions.assertNotNull(response);
     }
 

@@ -50,7 +50,7 @@ import com.conekta.JSON;
   SubscriptionResponse.JSON_PROPERTY_TRIAL_END
 })
 @JsonTypeName("subscription_response_1")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class SubscriptionResponse {
   public static final String JSON_PROPERTY_BILLING_CYCLE_START = "billing_cycle_start";
   @javax.annotation.Nullable

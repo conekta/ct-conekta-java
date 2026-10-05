@@ -96,7 +96,7 @@ public class Example {
 
 ## createOrder
 
-> OrderResponse createOrder(orderRequest, acceptLanguage, xChildCompanyId)
+> OrderResponse createOrder(orderRequest, acceptLanguage, xChildCompanyId, idempotencyKey)
 
 Create order
 
@@ -126,8 +126,9 @@ public class Example {
         OrderRequest orderRequest = new OrderRequest(); // OrderRequest | requested field for order
         String acceptLanguage = "es"; // String | Use for knowing which language to use
         String xChildCompanyId = "6441b6376b60c3a638da80af"; // String | In the case of a holding company, the company id of the child company to which will process the request.
+        String idempotencyKey = "a1b2c3d4-e5f6-7890-abcd-ef1234567890"; // String | Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again.
         try {
-            OrderResponse result = apiInstance.createOrder(orderRequest, acceptLanguage, xChildCompanyId);
+            OrderResponse result = apiInstance.createOrder(orderRequest, acceptLanguage, xChildCompanyId, idempotencyKey);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OrdersApi#createOrder");
@@ -148,6 +149,7 @@ public class Example {
 | **orderRequest** | [**OrderRequest**](OrderRequest.md)| requested field for order | |
 | **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
 | **xChildCompanyId** | **String**| In the case of a holding company, the company id of the child company to which will process the request. | [optional] |
+| **idempotencyKey** | **String**| Unique key to make the request idempotent. Retrying a request with the same key returns the original response instead of performing the operation again. | [optional] |
 
 ### Return type
 
@@ -253,7 +255,7 @@ public class Example {
 
 ## getOrders
 
-> GetOrdersResponse getOrders(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte)
+> GetOrdersResponse getOrders(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte, amount)
 
 Get a list of Orders
 
@@ -293,8 +295,9 @@ public class Example {
         Long createdAtLte = 1612137600L; // Long | created at less than or equal to
         Long updatedAtGte = 1612137600L; // Long | updated at greater than or equal to
         Long updatedAtLte = 1612137600L; // Long | updated at less than or equal to
+        Integer amount = 10000; // Integer | Filters by amount equal to the given value, in cents
         try {
-            GetOrdersResponse result = apiInstance.getOrders(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte);
+            GetOrdersResponse result = apiInstance.getOrders(acceptLanguage, xChildCompanyId, limit, search, next, previous, paymentStatus, lastPaymentInfoStatus, createdAt, createdAtGte, createdAtLte, updatedAtGte, updatedAtLte, amount);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling OrdersApi#getOrders");
@@ -325,6 +328,7 @@ public class Example {
 | **createdAtLte** | **Long**| created at less than or equal to | [optional] |
 | **updatedAtGte** | **Long**| updated at greater than or equal to | [optional] |
 | **updatedAtLte** | **Long**| updated at less than or equal to | [optional] |
+| **amount** | **Integer**| Filters by amount equal to the given value, in cents | [optional] |
 
 ### Return type
 

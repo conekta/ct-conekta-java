@@ -88,7 +88,7 @@ public class Example {
 
 ## getLogs
 
-> LogsResponseForRequest getLogs(acceptLanguage, xChildCompanyId, limit, search, next, previous)
+> LogsResponseForRequest getLogs(acceptLanguage, xChildCompanyId, limit, search, next, previous, methodIn)
 
 Get List Of Logs
 
@@ -121,8 +121,9 @@ public class Example {
         String search = "search_example"; // String | General order search, e.g. by mail, reference etc.
         String next = "next_example"; // String | next page
         String previous = "previous_example"; // String | previous page
+        List<String> methodIn = Arrays.asList(); // List<String> | Filters logs by HTTP method. The parameter can be sent multiple times to filter by more than one method, e.g. `method.in[]=POST&method.in[]=PUT`
         try {
-            LogsResponseForRequest result = apiInstance.getLogs(acceptLanguage, xChildCompanyId, limit, search, next, previous);
+            LogsResponseForRequest result = apiInstance.getLogs(acceptLanguage, xChildCompanyId, limit, search, next, previous, methodIn);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling LogsApi#getLogs");
@@ -146,6 +147,7 @@ public class Example {
 | **search** | **String**| General order search, e.g. by mail, reference etc. | [optional] |
 | **next** | **String**| next page | [optional] |
 | **previous** | **String**| previous page | [optional] |
+| **methodIn** | **List&lt;String&gt;**| Filters logs by HTTP method. The parameter can be sent multiple times to filter by more than one method, e.g. &#x60;method.in[]&#x3D;POST&amp;method.in[]&#x3D;PUT&#x60; | [optional] |
 
 ### Return type
 

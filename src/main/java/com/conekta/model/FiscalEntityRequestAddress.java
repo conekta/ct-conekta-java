@@ -36,11 +36,10 @@ import com.conekta.JSON;
   FiscalEntityRequestAddress.JSON_PROPERTY_CITY,
   FiscalEntityRequestAddress.JSON_PROPERTY_STATE,
   FiscalEntityRequestAddress.JSON_PROPERTY_COUNTRY,
-  FiscalEntityRequestAddress.JSON_PROPERTY_RESIDENTIAL,
   FiscalEntityRequestAddress.JSON_PROPERTY_EXTERNAL_NUMBER
 })
 @JsonTypeName("fiscal_entity_request_address")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class FiscalEntityRequestAddress {
   public static final String JSON_PROPERTY_STREET1 = "street1";
   @javax.annotation.Nonnull
@@ -65,10 +64,6 @@ public class FiscalEntityRequestAddress {
   public static final String JSON_PROPERTY_COUNTRY = "country";
   @javax.annotation.Nullable
   private String country;
-
-  public static final String JSON_PROPERTY_RESIDENTIAL = "residential";
-  @javax.annotation.Nullable
-  private Boolean residential = false;
 
   public static final String JSON_PROPERTY_EXTERNAL_NUMBER = "external_number";
   @javax.annotation.Nullable
@@ -227,31 +222,6 @@ public class FiscalEntityRequestAddress {
   }
 
 
-  public FiscalEntityRequestAddress residential(@javax.annotation.Nullable Boolean residential) {
-    this.residential = residential;
-    return this;
-  }
-
-  /**
-   * Get residential
-   * @return residential
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_RESIDENTIAL, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getResidential() {
-    return residential;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_RESIDENTIAL, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setResidential(@javax.annotation.Nullable Boolean residential) {
-    this.residential = residential;
-  }
-
-
   public FiscalEntityRequestAddress externalNumber(@javax.annotation.Nullable String externalNumber) {
     this.externalNumber = externalNumber;
     return this;
@@ -295,13 +265,12 @@ public class FiscalEntityRequestAddress {
         Objects.equals(this.city, fiscalEntityRequestAddress.city) &&
         Objects.equals(this.state, fiscalEntityRequestAddress.state) &&
         Objects.equals(this.country, fiscalEntityRequestAddress.country) &&
-        Objects.equals(this.residential, fiscalEntityRequestAddress.residential) &&
         Objects.equals(this.externalNumber, fiscalEntityRequestAddress.externalNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(street1, street2, postalCode, city, state, country, residential, externalNumber);
+    return Objects.hash(street1, street2, postalCode, city, state, country, externalNumber);
   }
 
   @Override
@@ -314,7 +283,6 @@ public class FiscalEntityRequestAddress {
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    residential: ").append(toIndentedString(residential)).append("\n");
     sb.append("    externalNumber: ").append(toIndentedString(externalNumber)).append("\n");
     sb.append("}");
     return sb.toString();

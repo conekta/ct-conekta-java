@@ -10,7 +10,7 @@ create new taxes for an existing order
 |------------ | ------------- | ------------- | -------------|
 |**amount** | **Long** | The amount to be collected for tax in cents |  [optional] |
 |**description** | **String** | description or tax&#39;s name |  [optional] |
-|**metadata** |  |  |  [optional] |
+|**metadata** | [**Map&lt;String, OrderTaxRequestMetadataValue&gt;**](OrderTaxRequestMetadataValue.md) |  |  [optional] |
 
 
 

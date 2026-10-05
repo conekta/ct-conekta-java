@@ -16,6 +16,7 @@ package com.conekta.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
+import com.conekta.model.OrderTaxRequestMetadataValue;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -39,7 +40,7 @@ import com.conekta.JSON;
   ShippingRequest.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("shipping_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class ShippingRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   @javax.annotation.Nonnull
@@ -59,7 +60,7 @@ public class ShippingRequest {
 
   public static final String JSON_PROPERTY_METADATA = "metadata";
   @javax.annotation.Nullable
-  private Map<String, Object> metadata = new HashMap<>();
+  private Map<String, OrderTaxRequestMetadataValue> metadata = new HashMap<>();
 
   public ShippingRequest() { 
   }
@@ -165,12 +166,12 @@ public class ShippingRequest {
   }
 
 
-  public ShippingRequest metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
+  public ShippingRequest metadata(@javax.annotation.Nullable Map<String, OrderTaxRequestMetadataValue> metadata) {
     this.metadata = metadata;
     return this;
   }
 
-  public ShippingRequest putMetadataItem(String key, Object metadataItem) {
+  public ShippingRequest putMetadataItem(String key, OrderTaxRequestMetadataValue metadataItem) {
     if (this.metadata == null) {
       this.metadata = new HashMap<>();
     }
@@ -179,21 +180,21 @@ public class ShippingRequest {
   }
 
   /**
-   * Hash where the user can send additional information for each &#39;shipping&#39;.
+   * Hash where the user can send additional information for each &#39;shipping&#39;. Values must be scalar (string of at most 249 characters, integer, number or boolean); nested objects and arrays are not supported.
    * @return metadata
    */
   @javax.annotation.Nullable
   @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Map<String, Object> getMetadata() {
+  public Map<String, OrderTaxRequestMetadataValue> getMetadata() {
     return metadata;
   }
 
 
   @JsonProperty(value = JSON_PROPERTY_METADATA, required = false)
-  @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMetadata(@javax.annotation.Nullable Map<String, OrderTaxRequestMetadataValue> metadata) {
     this.metadata = metadata;
   }
 

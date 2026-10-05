@@ -57,7 +57,7 @@ import com.conekta.JSON;
   UpdateCustomer.JSON_PROPERTY_SUBSCRIPTION
 })
 @JsonTypeName("update_customer")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class UpdateCustomer {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
   @javax.annotation.Nullable

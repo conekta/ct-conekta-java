@@ -12,6 +12,7 @@
 |**comercialInfo** | [**CreateCompanyRequestComercialInfo**](CreateCompanyRequestComercialInfo.md) |  |  [optional] |
 |**fiscalInfo** | [**CreateCompanyRequestFiscalInfo**](CreateCompanyRequestFiscalInfo.md) |  |  [optional] |
 |**bankAccountInfo** | [**CreateCompanyRequestBankAccountInfo**](CreateCompanyRequestBankAccountInfo.md) |  |  [optional] |
+|**users** | **List&lt;String&gt;** | User emails for the company |  [optional] |
 
 
 

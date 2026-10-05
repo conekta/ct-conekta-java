@@ -18,7 +18,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class LogsApi {
   private ApiClient apiClient;
 
@@ -124,6 +124,7 @@ public class LogsApi {
    * @param search General order search, e.g. by mail, reference etc. (optional)
    * @param next next page (optional)
    * @param previous previous page (optional)
+   * @param methodIn Filters logs by HTTP method. The parameter can be sent multiple times to filter by more than one method, e.g. &#x60;method.in[]&#x3D;POST&amp;method.in[]&#x3D;PUT&#x60; (optional)
    * @return LogsResponseForRequest
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -135,8 +136,8 @@ public class LogsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public LogsResponseForRequest getLogs(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
-    return getLogsWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous).getData();
+  public LogsResponseForRequest getLogs(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous, @javax.annotation.Nullable List<String> methodIn) throws ApiException {
+    return getLogsWithHttpInfo(acceptLanguage, xChildCompanyId, limit, search, next, previous, methodIn).getData();
   }
 
   /**
@@ -148,6 +149,7 @@ public class LogsApi {
    * @param search General order search, e.g. by mail, reference etc. (optional)
    * @param next next page (optional)
    * @param previous previous page (optional)
+   * @param methodIn Filters logs by HTTP method. The parameter can be sent multiple times to filter by more than one method, e.g. &#x60;method.in[]&#x3D;POST&amp;method.in[]&#x3D;PUT&#x60; (optional)
    * @return ApiResponse&lt;LogsResponseForRequest&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -159,7 +161,7 @@ public class LogsApi {
        <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<LogsResponseForRequest> getLogsWithHttpInfo(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous) throws ApiException {
+  public ApiResponse<LogsResponseForRequest> getLogsWithHttpInfo(@javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String search, @javax.annotation.Nullable String next, @javax.annotation.Nullable String previous, @javax.annotation.Nullable List<String> methodIn) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "limit", limit)
@@ -167,6 +169,7 @@ public class LogsApi {
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "search", search));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "next", next));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "previous", previous));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "method.in[]", methodIn));
 
     // Header parameters
     Map<String, String> localVarHeaderParams = new LinkedHashMap<>();

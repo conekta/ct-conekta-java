@@ -43,10 +43,11 @@ import com.conekta.JSON;
   CompanyResponse.JSON_PROPERTY_CREATED_AT,
   CompanyResponse.JSON_PROPERTY_OBJECT,
   CompanyResponse.JSON_PROPERTY_THREE_DS_ENABLED,
-  CompanyResponse.JSON_PROPERTY_THREE_DS_MODE
+  CompanyResponse.JSON_PROPERTY_THREE_DS_MODE,
+  CompanyResponse.JSON_PROPERTY_ONBOARDING_URL
 })
 @JsonTypeName("company_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class CompanyResponse {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -128,6 +129,10 @@ public class CompanyResponse {
   public static final String JSON_PROPERTY_THREE_DS_MODE = "three_ds_mode";
   @javax.annotation.Nullable
   private ThreeDsModeEnum threeDsMode;
+
+  public static final String JSON_PROPERTY_ONBOARDING_URL = "onboarding_url";
+  @javax.annotation.Nullable
+  private String onboardingUrl;
 
   public CompanyResponse() { 
   }
@@ -415,6 +420,31 @@ public class CompanyResponse {
   }
 
 
+  public CompanyResponse onboardingUrl(@javax.annotation.Nullable String onboardingUrl) {
+    this.onboardingUrl = onboardingUrl;
+    return this;
+  }
+
+  /**
+   * The URL to resume onboarding
+   * @return onboardingUrl
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_ONBOARDING_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getOnboardingUrl() {
+    return onboardingUrl;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_ONBOARDING_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOnboardingUrl(@javax.annotation.Nullable String onboardingUrl) {
+    this.onboardingUrl = onboardingUrl;
+  }
+
+
   /**
    * Return true if this company_response object is equal to o.
    */
@@ -437,12 +467,13 @@ public class CompanyResponse {
         Objects.equals(this.createdAt, companyResponse.createdAt) &&
         Objects.equals(this._object, companyResponse._object) &&
         Objects.equals(this.threeDsEnabled, companyResponse.threeDsEnabled) &&
-        Objects.equals(this.threeDsMode, companyResponse.threeDsMode);
+        Objects.equals(this.threeDsMode, companyResponse.threeDsMode) &&
+        Objects.equals(this.onboardingUrl, companyResponse.onboardingUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, active, accountStatus, parentCompanyId, onboardingStatus, documents, createdAt, _object, threeDsEnabled, threeDsMode);
+    return Objects.hash(id, name, active, accountStatus, parentCompanyId, onboardingStatus, documents, createdAt, _object, threeDsEnabled, threeDsMode, onboardingUrl);
   }
 
   @Override
@@ -460,6 +491,7 @@ public class CompanyResponse {
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    threeDsEnabled: ").append(toIndentedString(threeDsEnabled)).append("\n");
     sb.append("    threeDsMode: ").append(toIndentedString(threeDsMode)).append("\n");
+    sb.append("    onboardingUrl: ").append(toIndentedString(onboardingUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

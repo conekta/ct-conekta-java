@@ -16,6 +16,8 @@ servers:
 security:
 - bearerAuth: []
 tags:
+- description: Apple Pay endpoints used during the Apple Pay checkout flow
+  name: Apple Pay
 - description: "All subscription-related endpoints including creation, management,\
     \ and events"
   name: Subscriptions
@@ -1088,6 +1090,118 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/vnd.conekta-v2.3.0+json
+  /apple_pay/session:
+    post:
+      description: |
+        Validate an Apple Pay merchant session using Conekta's Apple Pay certificates. Call this
+        endpoint from your backend with the `validationURL` received in the `onvalidatemerchant`
+        event and return the response to the browser to complete the merchant validation.
+
+        This endpoint does not require authentication, it is meant to be called during the Apple Pay
+        checkout flow.
+      operationId: createApplePaySession
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/apple_pay_session_request"
+        description: requested fields for creating an Apple Pay session
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/apple_pay_session_response"
+          description: The validated Apple Pay merchant session.
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                example: "Thu, 18 Sep 2025 19:04:08 GMT"
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                example: "4996"
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                example: keep-alive
+                type: string
+              style: simple
+        "422":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: parameter validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: "#/components/schemas/error"
+          description: internal server error
+      security: []
+      summary: Create Apple Pay Session
+      tags:
+      - Apple Pay
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+      - application/vnd.conekta-v2.3.0+json
   /balance:
     get:
       description: Get a company's balance
@@ -1482,6 +1596,672 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/vnd.conekta-v2.3.0+json
+  /charges/{charge_id}/chargebacks/{chargeback_id}/files:
+    get:
+      description: Retrieve the list of evidence files uploaded for a chargeback.
+      operationId: getChargebackFiles
+      parameters:
+      - description: Identifier of the charge resource
+        explode: false
+        in: path
+        name: charge_id
+        required: true
+        schema:
+          example: 6966a06c044243000156c24d
+          type: string
+        style: simple
+      - description: Identifier of the chargeback resource
+        explode: false
+        in: path
+        name: chargeback_id
+        required: true
+        schema:
+          example: chbk_2zPxWFUnGNLySoumn
+          type: string
+        style: simple
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        explode: false
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/chargeback_evidence_file_response"
+                type: array
+                nullable: true
+                default: null
+          description: A list of evidence files for the chargeback.
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              explode: false
+              schema:
+                type: string
+              style: simple
+        "400":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The chargeback status does not allow this operation.
+                  code: conekta.errors.business.chargebacks.cannot_process
+                  debug_message: chargeback status is won
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: bad request
+        "401":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: "#/components/schemas/error"
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Chargeback Files
+      tags:
+      - Chargebacks
+      x-accepts:
+      - application/vnd.conekta-v2.3.0+json
+  /charges/{charge_id}/chargebacks/{chargeback_id}/files/{file_id}:
+    get:
+      description: Retrieve the metadata and a presigned download URL for a single
+        chargeback evidence file.
+      operationId: getChargebackFile
+      parameters:
+      - description: Identifier of the charge resource
+        explode: false
+        in: path
+        name: charge_id
+        required: true
+        schema:
+          example: 6966a06c044243000156c24d
+          type: string
+        style: simple
+      - description: Identifier of the chargeback resource
+        explode: false
+        in: path
+        name: chargeback_id
+        required: true
+        schema:
+          example: chbk_2zPxWFUnGNLySoumn
+          type: string
+        style: simple
+      - description: Identifier of the chargeback evidence file
+        explode: false
+        in: path
+        name: file_id
+        required: true
+        schema:
+          example: chbkf_2zPxWFUnGNLySoums
+          type: string
+        style: simple
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        explode: false
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              schema:
+                $ref: "#/components/schemas/chargeback_evidence_file_response"
+          description: The requested evidence file.
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              explode: false
+              schema:
+                type: string
+              style: simple
+        "400":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The chargeback status does not allow this operation.
+                  code: conekta.errors.business.chargebacks.cannot_process
+                  debug_message: chargeback status is won
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: bad request
+        "401":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: "#/components/schemas/error"
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Chargeback File
+      tags:
+      - Chargebacks
+      x-accepts:
+      - application/vnd.conekta-v2.3.0+json
+  /charges/{charge_id}/chargebacks/{chargeback_id}/files/batch:
+    post:
+      description: "Uploads multiple evidence files for a chargeback in a single request.\
+        \ Each part of the multipart body must be keyed by an evidence type (see the\
+        \ evidence-types endpoint for the valid values for this chargeback), with\
+        \ exactly one file per evidence type. Limits: at most 10 files per request,\
+        \ at most 2MB per file, and only application/pdf, image/jpeg or image/png\
+        \ content is accepted. The chargeback must be in the `action_required` status,\
+        \ and none of the submitted evidence types may already exist on the chargeback.\
+        \ On success the chargeback transitions to `pending_review`."
+      operationId: uploadChargebackFilesBatch
+      parameters:
+      - description: Identifier of the charge resource
+        explode: false
+        in: path
+        name: charge_id
+        required: true
+        schema:
+          example: 6966a06c044243000156c24d
+          type: string
+        style: simple
+      - description: Identifier of the chargeback resource
+        explode: false
+        in: path
+        name: chargeback_id
+        required: true
+        schema:
+          example: chbk_2zPxWFUnGNLySoumn
+          type: string
+        style: simple
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        explode: false
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/chargeback_files_batch_request"
+        description: Multipart form where each field name is an evidence type and
+          its value is the file to upload for that evidence type. Include only the
+          fields being uploaded (at most 10 per request); every field is optional.
+        required: true
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              schema:
+                $ref: "#/components/schemas/chargeback_files_batch_response"
+          description: Files uploaded successfully.
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              explode: false
+              schema:
+                type: string
+              style: simple
+        "400":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The chargeback status does not allow this operation.
+                  code: conekta.errors.business.chargebacks.cannot_process
+                  debug_message: chargeback status is won
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: bad request
+        "401":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: not found entity
+        "422":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: parameter validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: "#/components/schemas/error"
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Upload Chargeback Evidence Files (Batch)
+      tags:
+      - Chargebacks
+      x-content-type: multipart/form-data
+      x-accepts:
+      - application/vnd.conekta-v2.3.0+json
+  /charges/{charge_id}/chargebacks/{chargeback_id}/evidence-types:
+    get:
+      description: "Retrieve the catalog of evidence types accepted for a chargeback,\
+        \ including which are mandatory and their allowed file formats."
+      operationId: getChargebackEvidenceTypes
+      parameters:
+      - description: Identifier of the charge resource
+        explode: false
+        in: path
+        name: charge_id
+        required: true
+        schema:
+          example: 6966a06c044243000156c24d
+          type: string
+        style: simple
+      - description: Identifier of the chargeback resource
+        explode: false
+        in: path
+        name: chargeback_id
+        required: true
+        schema:
+          example: chbk_2zPxWFUnGNLySoumn
+          type: string
+        style: simple
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        explode: false
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/chargeback_evidence_type_response"
+                type: array
+                default: null
+          description: The list of evidence types accepted for the chargeback.
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              explode: false
+              schema:
+                type: string
+              style: simple
+        "400":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The chargeback status does not allow this operation.
+                  code: conekta.errors.business.chargebacks.cannot_process
+                  debug_message: chargeback status is won
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: bad request
+        "401":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: authentication error
+        "404":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: not found entity
+        "500":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: "#/components/schemas/error"
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Chargeback Evidence Types
+      tags:
+      - Chargebacks
+      x-accepts:
+      - application/vnd.conekta-v2.3.0+json
   /orders/{id}/charges:
     post:
       description: Create charge for an existing orden
@@ -1525,6 +2305,17 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Unique key to make the request idempotent. Retrying a request
+          with the same key returns the original response instead of performing the
+          operation again.
+        example: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+        explode: false
+        in: header
+        name: Idempotency-Key
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -1532,7 +2323,6 @@ paths:
               bnpl:
                 value:
                   payment_method:
-                    can_not_expire: true
                     cancel_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
                     failure_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
                     product_type: aplazo_bnpl
@@ -1670,6 +2460,17 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Unique key to make the request idempotent. Retrying a request
+          with the same key returns the original response instead of performing the
+          operation again.
+        example: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+        explode: false
+        in: header
+        name: Idempotency-Key
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -1677,7 +2478,6 @@ paths:
               bnpl:
                 value:
                   payment_method:
-                    can_not_expire: true
                     cancel_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
                     failure_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
                     product_type: aplazo_bnpl
@@ -2629,10 +3429,10 @@ paths:
           content:
             application/vnd.conekta-v2.3.0+json:
               schema:
-                default: null
                 items:
                   $ref: "#/components/schemas/CompanyDocumentResponse"
                 type: array
+                default: null
           description: A list of documents for the company.
           headers:
             Date:
@@ -4673,6 +5473,25 @@ paths:
         schema:
           type: string
         style: form
+      - description: "Filters logs by HTTP method. The parameter can be sent multiple\
+          \ times to filter by more than one method, e.g. `method.in[]=POST&method.in[]=PUT`"
+        examples:
+          method.in[]:
+            summary: Filters logs by one or more HTTP methods
+            value:
+            - POST
+            - PUT
+        explode: true
+        in: query
+        name: "method.in[]"
+        required: false
+        schema:
+          items:
+            example: POST
+            type: string
+          type: array
+          default: null
+        style: form
       responses:
         "200":
           content:
@@ -4852,6 +5671,132 @@ paths:
       - Logs
       x-accepts:
       - application/vnd.conekta-v2.3.0+json
+  /monthly_installments/validate:
+    post:
+      description: |
+        Returns the interest-free monthly installment plans available for a card BIN and an amount, so a checkout can offer only the plans a later charge will accept. Requires monthly installments to be enabled on the company.
+      operationId: validateMonthlyInstallments
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/monthly_installments_validate_request"
+        description: requested field for monthly installments validate
+        required: true
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              schema:
+                $ref: "#/components/schemas/monthly_installments_validate_response"
+          description: successful operation
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                example: "245"
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                example: keep-alive
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              explode: false
+              schema:
+                example: conekta-v2.3.0; format=application/json
+                type: string
+              style: simple
+        "401":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: authentication error
+        "422":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The token does not exist.
+                  param: payment_method.token_id
+                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
+                  debug_message: The token does not exist.
+                log_id: 641b6d813cd9a50001515017
+                object: error
+                type: parameter_validation_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: parameter validation error
+        "500":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: "#/components/schemas/error"
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Validate Monthly Installments
+      tags:
+      - Monthly Installments
+      x-content-type: application/json
+      x-accepts:
+      - application/vnd.conekta-v2.3.0+json
   /orders:
     get:
       description: Get order details in the form of a list
@@ -5011,6 +5956,18 @@ paths:
           format: int64
           type: integer
         style: form
+      - description: "Filters by amount equal to the given value, in cents"
+        examples:
+          amount:
+            summary: amount equal to
+            value: 10000
+        explode: true
+        in: query
+        name: amount
+        required: false
+        schema:
+          type: integer
+        style: form
       responses:
         "200":
           content:
@@ -5087,6 +6044,17 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Unique key to make the request idempotent. Retrying a request
+          with the same key returns the original response instead of performing the
+          operation again.
+        example: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+        explode: false
+        in: header
+        name: Idempotency-Key
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -5096,13 +6064,12 @@ paths:
                 value:
                   charges:
                   - amount: 40000
-                    expires_at: 1677196303
-                    monthly_installments: 0
                     payment_method:
                       type: card
                       token_id: tok_2897348234
                       payment_source_id: src_2tLkkyfMPh6v7pFry
                       customer_ip_address: 0.0.0.0
+                      monthly_installments: 3
                     reference_id: string
                   currency: MXN
                   customer_info:
@@ -5193,7 +6160,6 @@ paths:
                     checkout_request_type: PaymentLink
                   charges:
                   - payment_method:
-                      can_not_expire: true
                       cancel_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/cancel
                       failure_url: https://pay.conekta.io/payment-status/fdcb06d6-c9e1-44ee-921f-17723b63852f/failure
                       product_type: aplazo_bnpl
@@ -7680,6 +8646,17 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Unique key to make the request idempotent. Retrying a request
+          with the same key returns the original response instead of performing the
+          operation again.
+        example: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+        explode: false
+        in: header
+        name: Idempotency-Key
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -8319,178 +9296,6 @@ paths:
       security:
       - bearerAuth: []
       summary: Send an email
-      tags:
-      - Payment Link
-      x-content-type: application/json
-      x-accepts:
-      - application/vnd.conekta-v2.3.0+json
-  /checkouts/{id}/sms:
-    post:
-      operationId: smsCheckout
-      parameters:
-      - description: Use for knowing which language to use
-        examples:
-          es:
-            summary: for spanish request/response
-            value: es
-          en:
-            summary: for english request/response
-            value: en
-        explode: false
-        in: header
-        name: Accept-Language
-        required: false
-        schema:
-          default: es
-          enum:
-          - es
-          - en
-          type: string
-        style: simple
-      - description: "In the case of a holding company, the company id of the child\
-          \ company to which will process the request."
-        example: 6441b6376b60c3a638da80af
-        explode: false
-        in: header
-        name: X-Child-Company-Id
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: Identifier of the resource
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          example: 6307a60c41de27127515a575
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/smsCheckout_request"
-        description: requested field for sms checkout
-        required: true
-      responses:
-        "200":
-          content:
-            application/vnd.conekta-v2.3.0+json:
-              schema:
-                $ref: "#/components/schemas/checkout_response"
-          description: successful operation
-          headers:
-            Date:
-              description: The date and time that the response was sent
-              explode: false
-              schema:
-                example: "Fri, 03 Feb 2023 16:57:48 GMT"
-                type: string
-              style: simple
-            Content-Type:
-              description: The format of the response body
-              explode: false
-              schema:
-                example: application/json; charset=utf-8
-                type: string
-              style: simple
-            Content-Length:
-              description: The length of the response body in bytes
-              explode: false
-              schema:
-                example: "2737"
-                type: string
-              style: simple
-            Connection:
-              description: The type of connection used to transfer the response
-              explode: false
-              schema:
-                example: keep-alive
-                type: string
-              style: simple
-            Conekta-Media-Type:
-              explode: false
-              schema:
-                example: conekta-v2.3.0; format=application/json
-                type: string
-              style: simple
-        "401":
-          content:
-            application/vnd.conekta-v2.3.0+json:
-              example:
-                details:
-                - message: Please include your access key in your request.
-                  code: conekta.errors.authentication.missing_key
-                log_id: 507f1f77bcf86cd799439011
-                object: error
-                type: authentication_error
-              schema:
-                $ref: "#/components/schemas/error"
-          description: authentication error
-        "402":
-          content:
-            application/vnd.conekta-v2.3.0+json:
-              example:
-                details:
-                - message: The card could not be processed.
-                  code: conekta.errors.processing.tokenization.used
-                  debug_message: The token has already been used.
-                log_id: 641b6d073cd9a50001515007
-                object: error
-                type: processing_error
-              schema:
-                $ref: "#/components/schemas/error"
-          description: payment required error
-        "404":
-          content:
-            application/vnd.conekta-v2.3.0+json:
-              example:
-                details:
-                - message: The resource was not found.
-                  code: conekta.errors.resource_not_found.entity
-                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
-                    not be found.
-                log_id: 641b6c253cd9a50001514fae
-                object: error
-                type: resource_not_found_error
-              schema:
-                $ref: "#/components/schemas/error"
-          description: not found entity
-        "422":
-          content:
-            application/vnd.conekta-v2.3.0+json:
-              example:
-                details:
-                - message: The token does not exist.
-                  param: payment_method.token_id
-                  code: conekta.errors.parameter_validation.payment_method.token_id.nonexistent_token
-                  debug_message: The token does not exist.
-                log_id: 641b6d813cd9a50001515017
-                object: error
-                type: parameter_validation_error
-              schema:
-                $ref: "#/components/schemas/error"
-          description: parameter validation error
-        "500":
-          content:
-            application/vnd.conekta-v2.3.0+json:
-              example:
-                details:
-                - debug_message: There was a runtime error and Conekta engineers have
-                    been notified.
-                  message: There was a runtime error and Conekta engineers have been
-                    notified.
-                  code: conekta.errors.api.system.general_failure
-                object: error
-                type: api_error
-                log_id: 641b6f2b3cd9a50001515098
-              schema:
-                $ref: "#/components/schemas/error"
-          description: internal server error
-      security:
-      - bearerAuth: []
-      summary: Send an sms
       tags:
       - Payment Link
       x-content-type: application/json
@@ -16173,6 +16978,120 @@ components:
             example: true
             type: boolean
       title: delete_api_keys_response
+    apple_pay_session_request:
+      description: Data required to validate an Apple Pay merchant session
+      properties:
+        validationURL:
+          description: |
+            Validation URL provided by Apple in the `onvalidatemerchant` event. Only Apple Pay gateway
+            hosts are accepted: `https://apple-pay-gateway.apple.com` and
+            `https://apple-pay-gateway-cert.apple.com`.
+          example: https://apple-pay-gateway.apple.com/paymentservices/startSession
+          format: uri
+          type: string
+        domain:
+          description: |
+            Fully qualified domain where the Apple Pay button is displayed, sent to Apple as the
+            initiative context. It must be a domain previously registered with Conekta. When omitted,
+            the domain configured for the account is used.
+          example: pay.conekta.io
+          type: string
+        source:
+          default: internal
+          description: |
+            Origin of the Apple Pay integration requesting the session. `external` uses the integrator
+            credentials, any other value uses the merchant credentials.
+          enum:
+          - internal
+          - external
+          example: external
+          title: apple_pay_source
+          type: string
+        companyId:
+          description: |
+            Apple Pay merchant identifier to validate the session with. When omitted, the merchant
+            identifier configured for the account is used.
+          example: merchant.io.conekta
+          type: string
+      required:
+      - validationURL
+      title: apple_pay_session_request
+    apple_pay_session_response:
+      description: |
+        Apple Pay merchant session returned by Apple. Pass this object as-is to
+        `session.completeMerchantValidation` in the browser.
+      example:
+        epochTimestamp: 1758222248547
+        expiresAt: 1758225848547
+        merchantSessionIdentifier: SSHC1DDFEB554674D38992774400AE24AB1_916523AAED1343F5BC5815E12BEE9250AFFDC1A17C46B0DE5A943F0F94927C24
+        nonce: b94448de
+        merchantIdentifier: 9358DF186D848FFCE03D9D5230EC85E0E3EA4175C0402A14D32A67504F2C6EBD
+        domainName: pay.conekta.io
+        displayName: Conekta
+        signature: 308006092a864886f70d010702a0803080020101310d300b06096086480165030402013080...
+        operationalAnalyticsIdentifier: Conekta:9358DF186D848FFCE03D9D5230EC85E0E3EA4175C0402A14D32A67504F2C6EBD
+        retries: 0
+        pspId: 9358DF186D848FFCE03D9D5230EC85E0E3EA4175C0402A14D32A67504F2C6EBD
+      properties:
+        epochTimestamp:
+          description: "Date and time, in milliseconds since epoch, when the session\
+            \ was created."
+          example: 1758222248547
+          format: int64
+          type: integer
+        expiresAt:
+          description: "Date and time, in milliseconds since epoch, when the session\
+            \ expires."
+          example: 1758225848547
+          format: int64
+          type: integer
+        merchantSessionIdentifier:
+          description: Unique identifier of the merchant session generated by Apple.
+          example: SSHC1DDFEB554674D38992774400AE24AB1_916523AAED1343F5BC5815E12BEE9250AFFDC1A17C46B0DE5A943F0F94927C24
+          type: string
+        nonce:
+          description: Single-use value used by Apple to verify the session.
+          example: b94448de
+          type: string
+        merchantIdentifier:
+          description: Hashed Apple Pay merchant identifier the session was validated
+            with.
+          example: 9358DF186D848FFCE03D9D5230EC85E0E3EA4175C0402A14D32A67504F2C6EBD
+          type: string
+        domainName:
+          description: Domain the session was validated for.
+          example: pay.conekta.io
+          type: string
+        displayName:
+          description: Merchant name shown in the Apple Pay sheet.
+          example: Conekta
+          type: string
+        signature:
+          description: "Apple signature of the session, in hexadecimal format."
+          example: 308006092a864886f70d010702a0803080020101310d300b06096086480165030402013080...
+          type: string
+        operationalAnalyticsIdentifier:
+          description: Identifier used by Apple for analytics purposes.
+          example: Conekta:9358DF186D848FFCE03D9D5230EC85E0E3EA4175C0402A14D32A67504F2C6EBD
+          type: string
+        retries:
+          description: Number of times the session validation has been retried.
+          example: 0
+          type: integer
+        pspId:
+          description: Payment service provider identifier assigned by Apple.
+          example: 9358DF186D848FFCE03D9D5230EC85E0E3EA4175C0402A14D32A67504F2C6EBD
+          type: string
+      required:
+      - displayName
+      - domainName
+      - epochTimestamp
+      - expiresAt
+      - merchantIdentifier
+      - merchantSessionIdentifier
+      - nonce
+      - signature
+      title: apple_pay_session_response
     balance_common_fiels_response:
       description: balance common fields model
       properties:
@@ -16733,11 +17652,19 @@ components:
           type: integer
         channel:
           $ref: "#/components/schemas/charge_response_channel"
+        conekta_account_id:
+          description: "Conekta account ID of the charge, if the charge was paid through\
+            \ a Conekta account."
+          example: 019ff731-2448-7a6b-b95b-5d4a36035da9
+          type: string
+          nullable: true
         created_at:
+          description: "Charge creation date, in seconds since the Unix epoch"
           example: 1676386026
           format: int64
           type: integer
         currency:
+          description: "Currency of the charge, in ISO 4217 format"
           example: MXN
           type: string
         customer_id:
@@ -16792,7 +17719,6 @@ components:
           example: pending_payment
           type: string
       required:
-      - amount
       - created_at
       - currency
       - id
@@ -16845,6 +17771,147 @@ components:
           example: "278482642"
           type: string
       title: charge_update_request
+    chargeback_evidence_file_response:
+      description: A file uploaded as evidence for a chargeback
+      properties:
+        id:
+          example: chbkf_2zPxWFUnGNLySoums
+          type: string
+        name:
+          example: 20251221500000000000201.pdf
+          type: string
+        created_at:
+          example: 2025-12-21T15:00:00.000+00:00
+          format: date-time
+          type: string
+        evidence_type:
+          description: The evidence type used for a chargeback file upload
+          enum:
+          - charge_information
+          - contract
+          - other_evidence
+          - receipt_of_shipment
+          - identification
+          - order_details
+          - terms_and_conditions
+          - cardholder_information
+          - proof_invalidate_claim
+          - internal_validations
+          - proof_of_cancellation
+          - recurring_contract
+          - proof_of_return
+          - exhibit_8
+          - duplicate_analysis
+          - full_evidence
+          example: contract
+          title: chargeback_evidence_type
+          type: string
+        url:
+          description: Presigned download URL for the file. Only present when fetching
+            a single file.
+          example: https://conekta-files.s3.amazonaws.com/chbkf_2zPxWFUnGNLySoums?signature=...
+          type: string
+          nullable: true
+      title: chargeback_evidence_file_response
+    chargeback_files_batch_request:
+      properties:
+        charge_information:
+          format: binary
+          type: string
+        contract:
+          format: binary
+          type: string
+        other_evidence:
+          format: binary
+          type: string
+        receipt_of_shipment:
+          format: binary
+          type: string
+        identification:
+          format: binary
+          type: string
+        order_details:
+          format: binary
+          type: string
+        terms_and_conditions:
+          format: binary
+          type: string
+        cardholder_information:
+          format: binary
+          type: string
+        proof_invalidate_claim:
+          format: binary
+          type: string
+        internal_validations:
+          format: binary
+          type: string
+        proof_of_cancellation:
+          format: binary
+          type: string
+        recurring_contract:
+          format: binary
+          type: string
+        proof_of_return:
+          format: binary
+          type: string
+        exhibit_8:
+          format: binary
+          type: string
+        duplicate_analysis:
+          format: binary
+          type: string
+        full_evidence:
+          format: binary
+          type: string
+      title: chargeback_files_batch_request
+    chargeback_files_batch_response:
+      description: Result of a batch evidence file upload
+      properties:
+        files:
+          items:
+            $ref: "#/components/schemas/chargeback_evidence_file_response"
+          type: array
+          default: null
+      title: chargeback_files_batch_response
+    chargeback_evidence_type_response:
+      description: "An evidence type accepted for a chargeback, and the constraints\
+        \ for uploading it"
+      properties:
+        type:
+          description: The evidence type used for a chargeback file upload
+          enum:
+          - charge_information
+          - contract
+          - other_evidence
+          - receipt_of_shipment
+          - identification
+          - order_details
+          - terms_and_conditions
+          - cardholder_information
+          - proof_invalidate_claim
+          - internal_validations
+          - proof_of_cancellation
+          - recurring_contract
+          - proof_of_return
+          - exhibit_8
+          - duplicate_analysis
+          - full_evidence
+          example: contract
+          title: chargeback_evidence_type
+          type: string
+        permit_formats:
+          example:
+          - application/pdf
+          - image/jpeg
+          - image/png
+          items:
+            type: string
+          type: array
+          default: null
+        required:
+          example: true
+          type: boolean
+      title: chargeback_evidence_type_response
     payment_method_pbb_request:
       allOf:
       - description: Contains details of the payment methods that the customer has
@@ -16894,13 +17961,15 @@ components:
         title: customer_payment_method_request
       - properties:
           cancel_url:
-            description: URL to redirect the customer after a canceled payment
+            description: Optional URL to redirect the customer after a canceled payment
             example: https://example.com/cancel
             type: string
-          can_not_expire:
-            description: Indicates if the payment method can not expire
-            example: true
-            type: boolean
+          expires_at:
+            description: "Optional expiry for the BNPL order, expressed in seconds\
+              \ since the Unix epoch. Defaults to one month from creation when omitted."
+            example: 1680397724
+            format: int64
+            type: integer
           failure_url:
             description: URL to redirect the customer after a failed payment
             example: https://example.com/failure
@@ -16924,8 +17993,6 @@ components:
             example: bnpl
             type: string
         required:
-        - can_not_expire
-        - cancel_url
         - failure_url
         - product_type
         - success_url
@@ -16963,12 +18030,26 @@ components:
             minLength: 4
             type: string
           name:
-            description: Cardholder name
+            description: "Cardholder name. Must include first and last name separated\
+              \ by a space; single-word names are rejected. Letters (including accented\
+              \ Latin characters), spaces, and the characters , . ' - are accepted;\
+              \ digits and other symbols are rejected."
             example: John Doe
+            maxLength: 249
             type: string
           number:
             description: Card number
             example: "4242424242424242"
+            type: string
+          contract_id:
+            description: Optional merchant-supplied identifier (exactly 10 characters)
+              that links a card transaction to a recurring/subscription contract at
+              the acquiring bank. Forwarded to the bank gateway and stored on the
+              resulting charge. Accepted on creation only; ignored on update. Do not
+              place sensitive bank data here — the value is returned in charge responses.
+            example: "3456788363"
+            maxLength: 10
+            minLength: 10
             type: string
           customer_ip_address:
             description: Optional field used to capture the customer's IP address
@@ -17260,6 +18341,10 @@ components:
           example: strict
           type: string
           nullable: true
+        onboarding_url:
+          description: The URL to resume onboarding
+          example: https://onboarding.conekta.com/resume/6827305a1ec60400015eb116
+          type: string
       required:
       - account_status
       - active
@@ -17361,6 +18446,12 @@ components:
           $ref: "#/components/schemas/Create_Company_Request_fiscal_info"
         bank_account_info:
           $ref: "#/components/schemas/Create_Company_Request_bank_account_info"
+        users:
+          description: User emails for the company
+          items:
+            type: string
+          type: array
+          default: null
       title: Create Company Request
     CompanyDocumentRequest:
       description: Request body for uploading a company document.
@@ -17505,10 +18596,6 @@ components:
             description: "this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)"
             example: MX
             type: string
-          residential:
-            default: false
-            example: true
-            type: boolean
           external_number:
             type: string
         required:
@@ -17527,7 +18614,9 @@ components:
           phone:
             type: string
           metadata:
-            additionalProperties: {}
+            additionalProperties:
+              type: object
+            type: object
           company_name:
             example: conekta
             type: string
@@ -17839,31 +18928,57 @@ components:
         title: customerPaymentMethods
       title: customer_payment_methods_response
     customer_shipping_contacts_request_address:
-      description: Address of the person who will receive the order
-      properties:
-        street1:
-          example: Nuevo Leon 254
-          type: string
-        street2:
-          example: Departamento 404
-          type: string
-        postal_code:
-          example: "06100"
-          type: string
-        city:
-          example: Ciudad de Mexico
-          type: string
-        state:
-          example: Ciudad de Mexico
-          type: string
-        country:
-          description: "this field follows the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)"
-          example: MX
-          type: string
-        residential:
-          example: true
-          type: boolean
-          nullable: true
+      allOf:
+      - description: Address of the person who will receive the order
+        properties:
+          street1:
+            description: Street and number of the delivery address.
+            example: Nuevo Leon 254
+            maxLength: 249
+            minLength: 2
+            type: string
+          street2:
+            description: "Apartment, suite or interior reference for the delivery\
+              \ address."
+            example: Departamento 404
+            maxLength: 249
+            type: string
+          postal_code:
+            description: Postal code of the delivery address. For Mexican addresses
+              (country MX) it must be a 5-digit postal code.
+            example: "06100"
+            maxLength: 250
+            type: string
+          city:
+            description: City of the delivery address. Must contain at least two consecutive
+              ASCII letters.
+            example: Ciudad de Mexico
+            maxLength: 249
+            pattern: "[A-Za-z]{2}"
+            type: string
+          state:
+            description: State of the delivery address.
+            example: Ciudad de Mexico
+            maxLength: 249
+            type: string
+          country:
+            description: "Country of the delivery address. This field follows the\
+              \ [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)."
+            example: MX
+            maxLength: 249
+            minLength: 2
+            type: string
+          residential:
+            default: true
+            description: Indicates whether the delivery address is residential.
+            example: true
+            type: boolean
+            nullable: true
+        title: shipping_contact_address
+      required:
+      - country
+      - postal_code
+      - street1
     customer_shipping_contacts_data_response:
       allOf:
       - description: |-
@@ -17880,7 +18995,10 @@ components:
             type: string
           between_streets:
             description: The street names between which the order will be delivered.
+              Must contain at least two consecutive ASCII letters.
             example: Ackerman Crescent
+            maxLength: 249
+            pattern: "[A-Za-z]{2}"
             type: string
           address:
             $ref: "#/components/schemas/customer_shipping_contacts_request_address"
@@ -18153,7 +19271,9 @@ components:
         phone:
           type: string
         metadata:
-          additionalProperties: {}
+          additionalProperties:
+            type: object
+          type: object
         company_name:
           example: conekta
           type: string
@@ -18239,7 +19359,10 @@ components:
           type: string
         between_streets:
           description: The street names between which the order will be delivered.
+            Must contain at least two consecutive ASCII letters.
           example: Ackerman Crescent
+          maxLength: 249
+          pattern: "[A-Za-z]{2}"
           type: string
         address:
           $ref: "#/components/schemas/customer_shipping_contacts_request_address"
@@ -18460,7 +19583,9 @@ components:
           phone:
             type: string
           metadata:
-            additionalProperties: {}
+            additionalProperties:
+              type: object
+            type: object
           company_name:
             example: conekta
             type: string
@@ -18499,7 +19624,9 @@ components:
         phone:
           type: string
         metadata:
-          additionalProperties: {}
+          additionalProperties:
+            type: object
+          type: object
         company_name:
           example: conekta
           type: string
@@ -18516,7 +19643,9 @@ components:
           phone:
             type: string
           metadata:
-            additionalProperties: {}
+            additionalProperties:
+              type: object
+            type: object
           company_name:
             example: conekta
             type: string
@@ -18775,8 +19904,6 @@ components:
             type: string
           type: array
           default: null
-      required:
-      - webhooks_ids
     events_resend_response:
       description: event model
       properties:
@@ -18862,17 +19989,20 @@ components:
             testMode: false
           type: object
         request_headers:
-          additionalProperties: {}
+          additionalProperties:
+            type: string
           example:
             Accept: application/vnd.conekta-v2.3.0+json
             Accept-Encoding: "gzip, deflate, br"
             Accept-Language: "es-419, es; q=0.9, en; q=0.8"
             Activitypermission: orders:read
             Apiversion: 2.3.0
+          type: object
         response_body:
           type: object
         response_headers:
-          additionalProperties: {}
+          additionalProperties:
+            type: string
           example:
             Access-Control-Allow-Headers: "Content-Type, Depth, User-Agent, X-File-Size,\
               \ X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control, X-Prototype-Version,\
@@ -18895,6 +20025,7 @@ components:
             X-Frame-Options: SAMEORIGIN
             X-Permitted-Cross-Domain-Policies: none
             X-XSS-Protection: 1; mode=block
+          type: object
         searchable_tags:
           example:
           - 6307a60c41de27127515a575
@@ -19006,17 +20137,20 @@ components:
             testMode: false
           type: object
         request_headers:
-          additionalProperties: {}
+          additionalProperties:
+            type: string
           example:
             Accept: application/vnd.conekta-v2.3.0+json
             Accept-Encoding: "gzip, deflate, br"
             Accept-Language: "es-419, es; q=0.9, en; q=0.8"
             Activitypermission: orders:read
             Apiversion: 2.3.0
+          type: object
         response_body:
           type: object
         response_headers:
-          additionalProperties: {}
+          additionalProperties:
+            type: string
           example:
             Access-Control-Allow-Headers: "Content-Type, Depth, User-Agent, X-File-Size,\
               \ X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control, X-Prototype-Version,\
@@ -19039,6 +20173,7 @@ components:
             X-Frame-Options: SAMEORIGIN
             X-Permitted-Cross-Domain-Policies: none
             X-XSS-Protection: 1; mode=block
+          type: object
         searchable_tags:
           example:
           - 6307a60c41de27127515a575
@@ -19067,6 +20202,80 @@ components:
       - id
       - livemode
       title: log_response_for_request
+    monthly_installments_validate_request:
+      description: BIN and amount to evaluate for interest-free monthly installments
+      properties:
+        bin:
+          description: First 6 or 8 digits of the card number (Bank Identification
+            Number). An 8 digit BIN that yields no match is retried with its first
+            6 digits.
+          example: "411111"
+          maxLength: 8
+          minLength: 6
+          pattern: "^[0-9]{6}(?:[0-9]{2})?$"
+          type: string
+        amount:
+          description: Amount to charge in the smallest currency unit (cents for MXN).
+            Used to compute the monthly fee of each available plan.
+          example: 350000
+          type: integer
+      required:
+      - amount
+      - bin
+      title: monthly installments validate request
+    monthly_installments_validate_response_available_installments:
+      properties:
+        months:
+          description: "Number of monthly installments of the plan. One of 3, 6, 9,\
+            \ 12, 18 or 24."
+          example: 3
+          type: integer
+        amount:
+          description: "Amount of each monthly installment in the smallest currency\
+            \ unit, rounded up."
+          example: 116667
+          type: integer
+      required:
+      - amount
+      - months
+      title: monthly_installments_validate_response_available_installments
+    monthly_installments_validate_response_bin_info:
+      properties:
+        country:
+          description: "Country that issued the card. Monthly installments only apply\
+            \ to mx, with the exception of American Express."
+          example: mx
+          type: string
+        scheme:
+          description: Card scheme. Monthly installments only apply to credit.
+          example: credit
+          type: string
+        issuer:
+          description: Bank that issued the card.
+          example: banamex
+          type: string
+      required:
+      - country
+      - issuer
+      - scheme
+    monthly_installments_validate_response:
+      description: monthly installments validate response
+      properties:
+        available_installments:
+          description: "Interest-free monthly installment plans available for this\
+            \ card and amount. Empty when the card does not qualify for monthly installments,\
+            \ for example a debit card or a credit card not issued in Mexico. An empty\
+            \ array is not an error."
+          items:
+            $ref: "#/components/schemas/monthly_installments_validate_response_available_installments"
+          type: array
+          default: null
+        bin_info:
+          $ref: "#/components/schemas/monthly_installments_validate_response_bin_info"
+      required:
+      - available_installments
+      - bin_info
+      title: monthly_installments_validate_response
     order_channel_response:
       properties:
         segment:
@@ -19090,11 +20299,19 @@ components:
             type: integer
           channel:
             $ref: "#/components/schemas/charge_response_channel"
+          conekta_account_id:
+            description: "Conekta account ID of the charge, if the charge was paid\
+              \ through a Conekta account."
+            example: 019ff731-2448-7a6b-b95b-5d4a36035da9
+            type: string
+            nullable: true
           created_at:
+            description: "Charge creation date, in seconds since the Unix epoch"
             example: 1676386026
             format: int64
             type: integer
           currency:
+            description: "Currency of the charge, in ISO 4217 format"
             example: MXN
             type: string
           customer_id:
@@ -19149,7 +20366,6 @@ components:
             example: pending_payment
             type: string
         required:
-        - amount
         - created_at
         - currency
         - id
@@ -19472,6 +20688,13 @@ components:
             default: null
       description: List of discounts that are applied to the order
       nullable: true
+    order_tax_request_metadata_value:
+      anyOf:
+      - maxLength: 249
+        type: string
+      - type: integer
+      - type: number
+      - type: boolean
     tax_lines_data_response:
       allOf:
       - allOf:
@@ -19486,10 +20709,11 @@ components:
             description:
               description: description or tax's name
               example: testing
-              minLength: 2
+              minLength: 3
               type: string
             metadata:
-              additionalProperties: true
+              additionalProperties:
+                $ref: "#/components/schemas/order_tax_request_metadata_value"
               example:
                 key: value
               maxProperties: 100
@@ -19563,19 +20787,27 @@ components:
             carrier:
               description: Carrier name for the shipment
               example: FEDEX
+              maxLength: 249
+              minLength: 3
               type: string
             tracking_number:
               description: Tracking number can be used to track the shipment
               example: TRACK123
+              maxLength: 249
+              minLength: 3
               type: string
             method:
               description: Method of shipment
               example: Same day
+              maxLength: 249
+              minLength: 3
               type: string
             metadata:
-              additionalProperties: true
-              description: Hash where the user can send additional information for
-                each 'shipping'.
+              additionalProperties:
+                $ref: "#/components/schemas/order_tax_request_metadata_value"
+              description: "Hash where the user can send additional information for\
+                \ each 'shipping'. Values must be scalar (string of at most 249 characters,\
+                \ integer, number or boolean); nested objects and arrays are not supported."
               example:
                 key: value
               maxProperties: 100
@@ -19737,17 +20969,22 @@ components:
           brand:
             description: The brand of the item.
             example: Cohiba
+            maxLength: 249
+            minLength: 2
             type: string
           description:
             description: Short description of the item
             example: Imported From Mex.
-            maxLength: 250
+            maxLength: 249
+            minLength: 3
             type: string
           metadata:
-            additionalProperties: true
+            additionalProperties:
+              $ref: "#/components/schemas/order_tax_request_metadata_value"
             default: {}
-            description: It is a key/value hash that can hold custom fields. Maximum
-              100 elements and allows special characters.
+            description: "It is a key/value hash that can hold custom fields. Maximum\
+              \ 100 elements. Values must be scalar (string of at most 249 characters,\
+              \ integer, number or boolean); nested objects and arrays are not supported."
             example:
               key: value
             maxProperties: 100
@@ -19755,6 +20992,8 @@ components:
           name:
             description: The name of the item. It will be displayed in the order.
             example: Box of Cohiba S1s
+            maxLength: 249
+            minLength: 3
             type: string
           quantity:
             description: The quantity of the item in the order.
@@ -19766,6 +21005,8 @@ components:
             description: The stock keeping unit for the item. It is used to identify
               the item in the order.
             example: XYZ12345
+            maxLength: 249
+            minLength: 1
             type: string
           tags:
             description: List of tags for the item. It is used to identify the item
@@ -19774,7 +21015,10 @@ components:
             - food
             - mexican food
             items:
+              maxLength: 249
+              minLength: 2
               type: string
+            minItems: 1
             type: array
             default: null
           unit_price:
@@ -20017,6 +21261,13 @@ components:
           example: 1676328434
           format: int64
           type: integer
+      required:
+      - amount
+      - created_at
+      - currency
+      - id
+      - livemode
+      - object
       title: order_response
     get_orders_response:
       allOf:
@@ -20103,15 +21354,14 @@ components:
           type: array
           default: null
         exclude_card_networks:
-          description: List of card networks to exclude from the checkout. This field
-            is only applicable for card payments.
+          description: "List of card networks to exclude from the checkout. This field\
+            \ is only applicable for card payments. Accepted values: 'visa_master_card'\
+            \ (a single token excluding both Visa and Mastercard) and 'amex'."
           example:
-          - visa
-          - amex
+          - visa_master_card
           items:
             enum:
-            - visa
-            - mastercard
+            - visa_master_card
             - amex
             type: string
           title: checkout_request_exclude_card_networks
@@ -20308,17 +21558,22 @@ components:
         brand:
           description: The brand of the item.
           example: Cohiba
+          maxLength: 249
+          minLength: 2
           type: string
         description:
           description: Short description of the item
           example: Imported From Mex.
-          maxLength: 250
+          maxLength: 249
+          minLength: 3
           type: string
         metadata:
-          additionalProperties: true
+          additionalProperties:
+            $ref: "#/components/schemas/order_tax_request_metadata_value"
           default: {}
-          description: It is a key/value hash that can hold custom fields. Maximum
-            100 elements and allows special characters.
+          description: "It is a key/value hash that can hold custom fields. Maximum\
+            \ 100 elements. Values must be scalar (string of at most 249 characters,\
+            \ integer, number or boolean); nested objects and arrays are not supported."
           example:
             key: value
           maxProperties: 100
@@ -20326,6 +21581,8 @@ components:
         name:
           description: The name of the item. It will be displayed in the order.
           example: Box of Cohiba S1s
+          maxLength: 249
+          minLength: 3
           type: string
         quantity:
           description: The quantity of the item in the order.
@@ -20337,6 +21594,8 @@ components:
           description: The stock keeping unit for the item. It is used to identify
             the item in the order.
           example: XYZ12345
+          maxLength: 249
+          minLength: 1
           type: string
         tags:
           description: List of tags for the item. It is used to identify the item
@@ -20345,7 +21604,10 @@ components:
           - food
           - mexican food
           items:
+            maxLength: 249
+            minLength: 2
             type: string
+          minItems: 1
           type: array
           default: null
         unit_price:
@@ -20370,19 +21632,27 @@ components:
         carrier:
           description: Carrier name for the shipment
           example: FEDEX
+          maxLength: 249
+          minLength: 3
           type: string
         tracking_number:
           description: Tracking number can be used to track the shipment
           example: TRACK123
+          maxLength: 249
+          minLength: 3
           type: string
         method:
           description: Method of shipment
           example: Same day
+          maxLength: 249
+          minLength: 3
           type: string
         metadata:
-          additionalProperties: true
-          description: Hash where the user can send additional information for each
-            'shipping'.
+          additionalProperties:
+            $ref: "#/components/schemas/order_tax_request_metadata_value"
+          description: "Hash where the user can send additional information for each\
+            \ 'shipping'. Values must be scalar (string of at most 249 characters,\
+            \ integer, number or boolean); nested objects and arrays are not supported."
           example:
             key: value
           maxProperties: 100
@@ -20402,10 +21672,11 @@ components:
         description:
           description: description or tax's name
           example: testing
-          minLength: 2
+          minLength: 3
           type: string
         metadata:
-          additionalProperties: true
+          additionalProperties:
+            $ref: "#/components/schemas/order_tax_request_metadata_value"
           example:
             key: value
           maxProperties: 100
@@ -20451,8 +21722,11 @@ components:
           type: array
           default: null
         metadata:
-          additionalProperties: true
-          description: Metadata associated with the order
+          additionalProperties:
+            $ref: "#/components/schemas/order_tax_request_metadata_value"
+          description: "Metadata associated with the order. Values must be scalar\
+            \ (string of at most 249 characters, integer, number or boolean); nested\
+            \ objects and arrays are not supported."
           maxProperties: 100
           type: object
         needs_shipping_contact:
@@ -20473,6 +21747,18 @@ components:
           example: https://my-website.com
           format: uri
           type: string
+        reuse_customer_cash_reference:
+          description: Reuses the customer's recurrent cash reference (`cash_recurrent`
+            payment source) in the order's cash charges instead of generating a new
+            reference. Requires `customer_info.customer_id`.
+          example: true
+          type: boolean
+        reuse_customer_clabe:
+          description: Reuses the customer's recurrent SPEI CLABE (`spei_recurrent`
+            payment source) in the order's SPEI charges instead of generating a new
+            CLABE. Requires `customer_info.customer_id`.
+          example: true
+          type: boolean
         shipping_contact:
           $ref: "#/components/schemas/customer_shipping_contacts_request"
         shipping_lines:
@@ -20490,11 +21776,16 @@ components:
           type: array
           default: null
         three_ds_mode:
-          description: "Indicates the 3DS2 mode for the order, either smart or strict.\
-            \ This property is only applicable when 3DS is enabled. When 3DS is disabled,\
-            \ this field should be null."
+          description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'.\
+            \ The value is validated against the allowed set on creation; sending\
+            \ an explicit null is rejected. Omit the field to create the order without\
+            \ requesting 3DS through the API (company-level 3DS applies only to orders\
+            \ paid through Checkout or when antifraud forces 3DS)."
+          enum:
+          - strict
+          - not_strict
+          - smart
           type: string
-          nullable: true
       required:
       - currency
       - customer_info
@@ -20572,7 +21863,10 @@ components:
           type: array
           default: null
         metadata:
-          additionalProperties: {}
+          additionalProperties:
+            $ref: "#/components/schemas/order_tax_request_metadata_value"
+          maxProperties: 100
+          type: object
         pre_authorize:
           description: Indicates whether the order charges must be preauthorized
           type: boolean
@@ -20613,17 +21907,22 @@ components:
           brand:
             description: The brand of the item.
             example: Cohiba
+            maxLength: 249
+            minLength: 2
             type: string
           description:
             description: Short description of the item
             example: Imported From Mex.
-            maxLength: 250
+            maxLength: 249
+            minLength: 3
             type: string
           metadata:
-            additionalProperties: true
+            additionalProperties:
+              $ref: "#/components/schemas/order_tax_request_metadata_value"
             default: {}
-            description: It is a key/value hash that can hold custom fields. Maximum
-              100 elements and allows special characters.
+            description: "It is a key/value hash that can hold custom fields. Maximum\
+              \ 100 elements. Values must be scalar (string of at most 249 characters,\
+              \ integer, number or boolean); nested objects and arrays are not supported."
             example:
               key: value
             maxProperties: 100
@@ -20631,6 +21930,8 @@ components:
           name:
             description: The name of the item. It will be displayed in the order.
             example: Box of Cohiba S1s
+            maxLength: 249
+            minLength: 3
             type: string
           quantity:
             description: The quantity of the item in the order.
@@ -20642,6 +21943,8 @@ components:
             description: The stock keeping unit for the item. It is used to identify
               the item in the order.
             example: XYZ12345
+            maxLength: 249
+            minLength: 1
             type: string
           tags:
             description: List of tags for the item. It is used to identify the item
@@ -20650,7 +21953,10 @@ components:
             - food
             - mexican food
             items:
+              maxLength: 249
+              minLength: 2
               type: string
+            minItems: 1
             type: array
             default: null
           unit_price:
@@ -20675,14 +21981,21 @@ components:
     update_product:
       properties:
         antifraud_info:
-          additionalProperties: {}
+          additionalProperties:
+            type: object
+          type: object
         description:
-          maxLength: 250
+          maxLength: 249
+          minLength: 3
           type: string
         sku:
+          maxLength: 249
+          minLength: 1
           type: string
         name:
           example: Box of Cohiba S1s
+          maxLength: 249
+          minLength: 3
           type: string
         unit_price:
           example: 20000
@@ -20696,13 +22009,21 @@ components:
           type: integer
         tags:
           items:
+            maxLength: 249
+            minLength: 2
             type: string
+          minItems: 1
           type: array
           default: null
         brand:
+          maxLength: 249
+          minLength: 2
           type: string
         metadata:
-          additionalProperties: {}
+          additionalProperties:
+            $ref: "#/components/schemas/order_tax_request_metadata_value"
+          maxProperties: 100
+          type: object
       title: update_product
     orderRefund_request:
       properties:
@@ -21114,12 +22435,16 @@ components:
         recurrent:
           example: false
           type: boolean
+        redirection_time:
+          description: It is the time in seconds that the checkout will wait before
+            redirecting to the success_url.
+          example: 30
+          format: int8
+          type: integer
+          nullable: true
         slug:
           example: b0bf16c418b9445eba2401604f329dbf
           type: string
-        sms_sent:
-          example: 0
-          type: integer
         starts_at:
           example: 1677650400
           type: integer
@@ -21266,15 +22591,14 @@ components:
           type: array
           default: null
         exclude_card_networks:
-          description: List of card networks to exclude from the checkout. This field
-            is only applicable for card payments.
+          description: "List of card networks to exclude from the checkout. This field\
+            \ is only applicable for card payments. Accepted values: 'visa_master_card'\
+            \ (a single token excluding both Visa and Mastercard) and 'amex'."
           example:
-          - visa
-          - amex
+          - visa_master_card
           items:
             enum:
-            - visa
-            - mastercard
+            - visa_master_card
             - amex
             type: string
           title: checkout_exclude_card_networks
@@ -21306,11 +22630,14 @@ components:
           type: array
           default: null
         three_ds_mode:
-          description: "Indicates the 3DS2 mode for the order, either smart or strict.\
-            \ This property is only applicable when 3DS is enabled. When 3DS is disabled,\
-            \ this field should be null."
+          description: "Indicates the 3DS2 mode: 'strict', 'not_strict' or 'smart'.\
+            \ To defer to the company-level 3DS configuration, omit the field (an\
+            \ explicit null is rejected on creation)."
+          enum:
+          - strict
+          - not_strict
+          - smart
           type: string
-          nullable: true
         name:
           description: Reason for charge
           example: Payment Link Name 1594138857
@@ -21342,6 +22669,13 @@ components:
           format: int8
           minimum: 1
           type: integer
+        redirection_time:
+          description: It is the time in seconds that the checkout will wait before
+            redirecting to the success_url. It must be greater than 0.
+          example: 30
+          format: int8
+          minimum: 1
+          type: integer
         success_url:
           description: The URL to redirect to after a successful payment.
           example: https://www.conekta.com/success
@@ -21370,13 +22704,6 @@ components:
           type: string
       required:
       - email
-    smsCheckout_request:
-      properties:
-        phonenumber:
-          example: "5566982090"
-          type: string
-      required:
-      - phonenumber
     get_customer_payment_method_data_response:
       discriminator:
         mapping:
@@ -21658,19 +22985,27 @@ components:
           carrier:
             description: Carrier name for the shipment
             example: FEDEX
+            maxLength: 249
+            minLength: 3
             type: string
           tracking_number:
             description: Tracking number can be used to track the shipment
             example: TRACK123
+            maxLength: 249
+            minLength: 3
             type: string
           method:
             description: Method of shipment
             example: Same day
+            maxLength: 249
+            minLength: 3
             type: string
           metadata:
-            additionalProperties: true
-            description: Hash where the user can send additional information for each
-              'shipping'.
+            additionalProperties:
+              $ref: "#/components/schemas/order_tax_request_metadata_value"
+            description: "Hash where the user can send additional information for\
+              \ each 'shipping'. Values must be scalar (string of at most 249 characters,\
+              \ integer, number or boolean); nested objects and arrays are not supported."
             example:
               key: value
             maxProperties: 100
@@ -21726,6 +23061,52 @@ components:
           example: false
           type: boolean
       title: customer_shipping_contacts_response
+    shipping_contact_address:
+      description: Address of the person who will receive the order
+      properties:
+        street1:
+          description: Street and number of the delivery address.
+          example: Nuevo Leon 254
+          maxLength: 249
+          minLength: 2
+          type: string
+        street2:
+          description: "Apartment, suite or interior reference for the delivery address."
+          example: Departamento 404
+          maxLength: 249
+          type: string
+        postal_code:
+          description: Postal code of the delivery address. For Mexican addresses
+            (country MX) it must be a 5-digit postal code.
+          example: "06100"
+          maxLength: 250
+          type: string
+        city:
+          description: City of the delivery address. Must contain at least two consecutive
+            ASCII letters.
+          example: Ciudad de Mexico
+          maxLength: 249
+          pattern: "[A-Za-z]{2}"
+          type: string
+        state:
+          description: State of the delivery address.
+          example: Ciudad de Mexico
+          maxLength: 249
+          type: string
+        country:
+          description: "Country of the delivery address. This field follows the [ISO\
+            \ 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)."
+          example: MX
+          maxLength: 249
+          minLength: 2
+          type: string
+        residential:
+          default: true
+          description: Indicates whether the delivery address is residential.
+          example: true
+          type: boolean
+          nullable: true
+      title: shipping_contact_address
     customer_update_shipping_contacts_request:
       description: |-
         [Shipping](https://developers.conekta.com/v2.3.0/reference/createcustomershippingcontacts)
@@ -21741,10 +23122,13 @@ components:
           type: string
         between_streets:
           description: The street names between which the order will be delivered.
+            Must contain at least two consecutive ASCII letters.
           example: Ackerman Crescent
+          maxLength: 249
+          pattern: "[A-Za-z]{2}"
           type: string
         address:
-          $ref: "#/components/schemas/customer_shipping_contacts_request_address"
+          $ref: "#/components/schemas/shipping_contact_address"
         parent_id:
           type: string
         default:
@@ -22070,10 +23454,11 @@ components:
           description:
             description: description or tax's name
             example: testing
-            minLength: 2
+            minLength: 3
             type: string
           metadata:
-            additionalProperties: true
+            additionalProperties:
+              $ref: "#/components/schemas/order_tax_request_metadata_value"
             example:
               key: value
             maxProperties: 100
@@ -22108,11 +23493,13 @@ components:
         description:
           description: description or tax's name
           example: testing
-          minLength: 2
+          minLength: 3
           type: string
         metadata:
-          additionalProperties: {}
+          additionalProperties:
+            $ref: "#/components/schemas/order_tax_request_metadata_value"
           maxProperties: 100
+          type: object
     token_request_card:
       properties:
         cvc:

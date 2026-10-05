@@ -56,7 +56,7 @@ import com.conekta.JSON;
   LogResponseForRequest.JSON_PROPERTY_VERSION
 })
 @JsonTypeName("log_response_for_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
 public class LogResponseForRequest {
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   @javax.annotation.Nonnull
@@ -104,7 +104,7 @@ public class LogResponseForRequest {
 
   public static final String JSON_PROPERTY_REQUEST_HEADERS = "request_headers";
   @javax.annotation.Nullable
-  private Map<String, String> requestHeaders;
+  private Map<String, String> requestHeaders = new HashMap<>();
 
   public static final String JSON_PROPERTY_RESPONSE_BODY = "response_body";
   @javax.annotation.Nullable
@@ -112,7 +112,7 @@ public class LogResponseForRequest {
 
   public static final String JSON_PROPERTY_RESPONSE_HEADERS = "response_headers";
   @javax.annotation.Nullable
-  private Map<String, String> responseHeaders;
+  private Map<String, String> responseHeaders = new HashMap<>();
 
   public static final String JSON_PROPERTY_SEARCHABLE_TAGS = "searchable_tags";
   @javax.annotation.Nullable
@@ -429,6 +429,14 @@ public class LogResponseForRequest {
     return this;
   }
 
+  public LogResponseForRequest putRequestHeadersItem(String key, String requestHeadersItem) {
+    if (this.requestHeaders == null) {
+      this.requestHeaders = new HashMap<>();
+    }
+    this.requestHeaders.put(key, requestHeadersItem);
+    return this;
+  }
+
   /**
    * Get requestHeaders
    * @return requestHeaders
@@ -476,6 +484,14 @@ public class LogResponseForRequest {
 
   public LogResponseForRequest responseHeaders(@javax.annotation.Nullable Map<String, String> responseHeaders) {
     this.responseHeaders = responseHeaders;
+    return this;
+  }
+
+  public LogResponseForRequest putResponseHeadersItem(String key, String responseHeadersItem) {
+    if (this.responseHeaders == null) {
+      this.responseHeaders = new HashMap<>();
+    }
+    this.responseHeaders.put(key, responseHeadersItem);
     return this;
   }
 
