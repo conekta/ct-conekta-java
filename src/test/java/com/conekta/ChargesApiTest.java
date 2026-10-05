@@ -58,6 +58,7 @@ public class ChargesApiTest {
                 "ord_2tVKxbhNzfUnGjnXG",
                 buildCashChargeRequest(),
                 "es",
+                null,
                 null);
         Assertions.assertAll("charge on order",
                 () -> Assertions.assertNotNull(response),
@@ -73,6 +74,7 @@ public class ChargesApiTest {
                 "ord_2wrW9arie9fUG4MfD",
                 buildCashChargeRequest(),
                 "es",
+                null,
                 null);
         Assertions.assertAll("charges list on order",
                 () -> Assertions.assertNotNull(response),

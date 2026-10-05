@@ -16,7 +16,6 @@ import com.conekta.model.Checkout;
 import com.conekta.model.CheckoutResponse;
 import com.conekta.model.CheckoutsResponse;
 import com.conekta.model.EmailCheckoutRequest;
-import com.conekta.model.SmsCheckoutRequest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -40,7 +39,7 @@ public class PaymentLinkApiTest {
                 .name("Test Checkout")
                 .type("PaymentLink")
                 .recurrent(false);
-        CheckoutResponse response = api.createCheckout(checkout, "es", null);
+        CheckoutResponse response = api.createCheckout(checkout, "es", null, null);
         Assertions.assertNotNull(response);
     }
 
@@ -64,12 +63,5 @@ public class PaymentLinkApiTest {
         Assertions.assertNotNull(response);
     }
 
-    @Test
-    public void smsCheckoutTest() throws ApiException {
-        SmsCheckoutRequest smsCheckoutRequest = new SmsCheckoutRequest().phonenumber("+5215555555555");
-        CheckoutResponse response = api.smsCheckout(
-                "ce1076bb-5ee6-4d08-a0e2-ec0bfbc49883", smsCheckoutRequest, "es", null);
-        Assertions.assertNotNull(response);
-    }
 
 }
