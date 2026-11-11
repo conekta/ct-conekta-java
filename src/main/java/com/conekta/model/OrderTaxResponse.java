@@ -41,7 +41,7 @@ import com.conekta.JSON;
   OrderTaxResponse.JSON_PROPERTY_PARENT_ID
 })
 @JsonTypeName("order_tax_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class OrderTaxResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   @javax.annotation.Nonnull

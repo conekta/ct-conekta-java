@@ -36,7 +36,7 @@ import com.conekta.JSON;
   ChargebackFilesBatchResponse.JSON_PROPERTY_FILES
 })
 @JsonTypeName("chargeback_files_batch_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class ChargebackFilesBatchResponse {
   public static final String JSON_PROPERTY_FILES = "files";
   @javax.annotation.Nullable

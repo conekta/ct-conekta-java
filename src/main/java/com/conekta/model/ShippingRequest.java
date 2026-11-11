@@ -40,7 +40,7 @@ import com.conekta.JSON;
   ShippingRequest.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("shipping_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class ShippingRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   @javax.annotation.Nonnull

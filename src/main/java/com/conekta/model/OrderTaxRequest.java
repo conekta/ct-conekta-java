@@ -38,7 +38,7 @@ import com.conekta.JSON;
   OrderTaxRequest.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("order_tax_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class OrderTaxRequest {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   @javax.annotation.Nonnull
