@@ -9,6 +9,7 @@ All URIs are relative to *https://api.conekta.io*
 | [**getCompany**](CompaniesApi.md#getCompany) | **GET** /companies/{id} | Get Company |
 | [**getCompanyDocuments**](CompaniesApi.md#getCompanyDocuments) | **GET** /companies/{company_id}/documents | Get Company Documents |
 | [**getCurrentCompany**](CompaniesApi.md#getCurrentCompany) | **GET** /companies/current | Get Current Company |
+| [**getPaymentMethodSettings**](CompaniesApi.md#getPaymentMethodSettings) | **GET** /settings/payment-methods | Get Payment Method Settings |
 | [**updateCompanyDocument**](CompaniesApi.md#updateCompanyDocument) | **PATCH** /companies/{company_id}/document | Update Company Document |
 | [**uploadCompanyDocument**](CompaniesApi.md#uploadCompanyDocument) | **POST** /companies/{company_id}/document | Upload Company Document |
 
@@ -368,6 +369,78 @@ public class Example {
 ### Return type
 
 [**CompanyResponse**](CompanyResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.conekta-v2.3.0+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | successful |  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  |
+| **401** | authentication error |  -  |
+| **500** | internal server error |  -  |
+
+
+## getPaymentMethodSettings
+
+> PaymentMethodSettingsResponse getPaymentMethodSettings(acceptLanguage)
+
+Get Payment Method Settings
+
+Retrieves the enablement status of each payment method for the currently authenticated company. For every payment method the response indicates whether it is enabled by Conekta (`admin`), enabled by the merchant (`merchant`), and the resulting state (`effective`).
+
+### Example
+
+```java
+// Import classes:
+import com.conekta.ApiClient;
+import com.conekta.ApiException;
+import com.conekta.Configuration;
+import com.conekta.auth.*;
+import com.conekta.model.*;
+import com.conekta.CompaniesApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.conekta.io");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        CompaniesApi apiInstance = new CompaniesApi(defaultClient);
+        String acceptLanguage = "es"; // String | Use for knowing which language to use
+        try {
+            PaymentMethodSettingsResponse result = apiInstance.getPaymentMethodSettings(acceptLanguage);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CompaniesApi#getPaymentMethodSettings");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **acceptLanguage** | **String**| Use for knowing which language to use | [optional] [default to es] [enum: es, en] |
+
+### Return type
+
+[**PaymentMethodSettingsResponse**](PaymentMethodSettingsResponse.md)
 
 ### Authorization
 

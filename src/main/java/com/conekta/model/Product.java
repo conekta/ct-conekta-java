@@ -46,7 +46,7 @@ import com.conekta.JSON;
   Product.JSON_PROPERTY_UNIT_PRICE
 })
 @JsonTypeName("product")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class Product {
   public static final String JSON_PROPERTY_ANTIFRAUD_INFO = "antifraud_info";
   @javax.annotation.Nullable

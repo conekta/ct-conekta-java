@@ -37,7 +37,7 @@ import com.conekta.JSON;
   ChargebackEvidenceTypeResponse.JSON_PROPERTY_REQUIRED
 })
 @JsonTypeName("chargeback_evidence_type_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class ChargebackEvidenceTypeResponse {
   /**
    * The evidence type used for a chargeback file upload

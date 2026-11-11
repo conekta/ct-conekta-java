@@ -43,7 +43,7 @@ import com.conekta.JSON;
   ShippingLinesDataResponse.JSON_PROPERTY_PARENT_ID
 })
 @JsonTypeName("shipping_lines_data_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class ShippingLinesDataResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   @javax.annotation.Nonnull

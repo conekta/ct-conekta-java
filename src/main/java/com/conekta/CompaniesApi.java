@@ -14,6 +14,7 @@ import com.conekta.model.CompanyResponse;
 import com.conekta.model.CreateCompanyRequest;
 import com.conekta.model.Error;
 import com.conekta.model.GetCompaniesResponse;
+import com.conekta.model.PaymentMethodSettingsResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,7 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class CompaniesApi {
   private ApiClient apiClient;
 
@@ -334,6 +335,55 @@ public class CompaniesApi {
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<CompanyResponse> localVarReturnType = new GenericType<CompanyResponse>() {};
     return apiClient.invokeAPI("CompaniesApi.getCurrentCompany", "/companies/current", "GET", new ArrayList<>(), null,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+  /**
+   * Get Payment Method Settings
+   * Retrieves the enablement status of each payment method for the currently authenticated company. For every payment method the response indicates whether it is enabled by Conekta (&#x60;admin&#x60;), enabled by the merchant (&#x60;merchant&#x60;), and the resulting state (&#x60;effective&#x60;).
+   * @param acceptLanguage Use for knowing which language to use (optional, default to es)
+   * @return PaymentMethodSettingsResponse
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
+       <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
+       <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
+     </table>
+   */
+  public PaymentMethodSettingsResponse getPaymentMethodSettings(@javax.annotation.Nullable String acceptLanguage) throws ApiException {
+    return getPaymentMethodSettingsWithHttpInfo(acceptLanguage).getData();
+  }
+
+  /**
+   * Get Payment Method Settings
+   * Retrieves the enablement status of each payment method for the currently authenticated company. For every payment method the response indicates whether it is enabled by Conekta (&#x60;admin&#x60;), enabled by the merchant (&#x60;merchant&#x60;), and the resulting state (&#x60;effective&#x60;).
+   * @param acceptLanguage Use for knowing which language to use (optional, default to es)
+   * @return ApiResponse&lt;PaymentMethodSettingsResponse&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> successful </td><td>  * Date - The date and time that the response was sent <br>  * Content-Type - The format of the response body <br>  * Content-Length - The length of the response body in bytes <br>  * Connection - The type of connection used to transfer the response <br>  * Conekta-Media-Type -  <br>  </td></tr>
+       <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
+       <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<PaymentMethodSettingsResponse> getPaymentMethodSettingsWithHttpInfo(@javax.annotation.Nullable String acceptLanguage) throws ApiException {
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
+      localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+    }
+
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
+    GenericType<PaymentMethodSettingsResponse> localVarReturnType = new GenericType<PaymentMethodSettingsResponse>() {};
+    return apiClient.invokeAPI("CompaniesApi.getPaymentMethodSettings", "/settings/payment-methods", "GET", new ArrayList<>(), null,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

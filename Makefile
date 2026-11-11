@@ -3,7 +3,7 @@ java:
 	rm -rf docs && \
 	rm -rf src/main/java/com/conekta/model && \
 	docker run --rm \
-    	-v ${PWD}:/local openapitools/openapi-generator-cli:v7.25.0 generate \
+    	-v ${PWD}:/local openapitools/openapi-generator-cli:v7.27.0 generate \
 		-i https://raw.githubusercontent.com/conekta/openapi/refs/heads/main/_build/api.yaml \
 		-g java \
 		-o /local \

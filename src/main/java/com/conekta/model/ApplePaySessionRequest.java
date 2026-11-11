@@ -37,7 +37,7 @@ import com.conekta.JSON;
   ApplePaySessionRequest.JSON_PROPERTY_COMPANY_ID
 })
 @JsonTypeName("apple_pay_session_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class ApplePaySessionRequest {
   public static final String JSON_PROPERTY_VALIDATION_U_R_L = "validationURL";
   @javax.annotation.Nonnull

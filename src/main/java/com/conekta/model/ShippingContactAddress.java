@@ -39,7 +39,7 @@ import com.conekta.JSON;
   ShippingContactAddress.JSON_PROPERTY_RESIDENTIAL
 })
 @JsonTypeName("shipping_contact_address")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class ShippingContactAddress {
   public static final String JSON_PROPERTY_STREET1 = "street1";
   @javax.annotation.Nullable

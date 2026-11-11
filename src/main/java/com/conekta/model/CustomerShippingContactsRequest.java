@@ -43,7 +43,7 @@ import com.conekta.JSON;
   CustomerShippingContactsRequest.JSON_PROPERTY_METADATA
 })
 @JsonTypeName("customer_shipping_contacts_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class CustomerShippingContactsRequest {
   public static final String JSON_PROPERTY_PHONE = "phone";
   @javax.annotation.Nullable

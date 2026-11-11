@@ -37,6 +37,7 @@ import com.conekta.JSON;
   CompanyResponse.JSON_PROPERTY_NAME,
   CompanyResponse.JSON_PROPERTY_ACTIVE,
   CompanyResponse.JSON_PROPERTY_ACCOUNT_STATUS,
+  CompanyResponse.JSON_PROPERTY_CARD_PAYMENTS_ENABLED,
   CompanyResponse.JSON_PROPERTY_PARENT_COMPANY_ID,
   CompanyResponse.JSON_PROPERTY_ONBOARDING_STATUS,
   CompanyResponse.JSON_PROPERTY_DOCUMENTS,
@@ -47,7 +48,7 @@ import com.conekta.JSON;
   CompanyResponse.JSON_PROPERTY_ONBOARDING_URL
 })
 @JsonTypeName("company_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class CompanyResponse {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nonnull
@@ -64,6 +65,10 @@ public class CompanyResponse {
   public static final String JSON_PROPERTY_ACCOUNT_STATUS = "account_status";
   @javax.annotation.Nonnull
   private String accountStatus;
+
+  public static final String JSON_PROPERTY_CARD_PAYMENTS_ENABLED = "card_payments_enabled";
+  @javax.annotation.Nullable
+  private Boolean cardPaymentsEnabled;
 
   public static final String JSON_PROPERTY_PARENT_COMPANY_ID = "parent_company_id";
   @javax.annotation.Nullable
@@ -234,6 +239,31 @@ public class CompanyResponse {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setAccountStatus(@javax.annotation.Nonnull String accountStatus) {
     this.accountStatus = accountStatus;
+  }
+
+
+  public CompanyResponse cardPaymentsEnabled(@javax.annotation.Nullable Boolean cardPaymentsEnabled) {
+    this.cardPaymentsEnabled = cardPaymentsEnabled;
+    return this;
+  }
+
+  /**
+   * Indicates if card payments are enabled for the company.
+   * @return cardPaymentsEnabled
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_CARD_PAYMENTS_ENABLED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getCardPaymentsEnabled() {
+    return cardPaymentsEnabled;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_CARD_PAYMENTS_ENABLED, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCardPaymentsEnabled(@javax.annotation.Nullable Boolean cardPaymentsEnabled) {
+    this.cardPaymentsEnabled = cardPaymentsEnabled;
   }
 
 
@@ -461,6 +491,7 @@ public class CompanyResponse {
         Objects.equals(this.name, companyResponse.name) &&
         Objects.equals(this.active, companyResponse.active) &&
         Objects.equals(this.accountStatus, companyResponse.accountStatus) &&
+        Objects.equals(this.cardPaymentsEnabled, companyResponse.cardPaymentsEnabled) &&
         Objects.equals(this.parentCompanyId, companyResponse.parentCompanyId) &&
         Objects.equals(this.onboardingStatus, companyResponse.onboardingStatus) &&
         Objects.equals(this.documents, companyResponse.documents) &&
@@ -473,7 +504,7 @@ public class CompanyResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, active, accountStatus, parentCompanyId, onboardingStatus, documents, createdAt, _object, threeDsEnabled, threeDsMode, onboardingUrl);
+    return Objects.hash(id, name, active, accountStatus, cardPaymentsEnabled, parentCompanyId, onboardingStatus, documents, createdAt, _object, threeDsEnabled, threeDsMode, onboardingUrl);
   }
 
   @Override
@@ -484,6 +515,7 @@ public class CompanyResponse {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    accountStatus: ").append(toIndentedString(accountStatus)).append("\n");
+    sb.append("    cardPaymentsEnabled: ").append(toIndentedString(cardPaymentsEnabled)).append("\n");
     sb.append("    parentCompanyId: ").append(toIndentedString(parentCompanyId)).append("\n");
     sb.append("    onboardingStatus: ").append(toIndentedString(onboardingStatus)).append("\n");
     sb.append("    documents: ").append(toIndentedString(documents)).append("\n");

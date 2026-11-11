@@ -38,7 +38,7 @@ import com.conekta.JSON;
   MonthlyInstallmentsValidateResponse.JSON_PROPERTY_BIN_INFO
 })
 @JsonTypeName("monthly_installments_validate_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class MonthlyInstallmentsValidateResponse {
   public static final String JSON_PROPERTY_AVAILABLE_INSTALLMENTS = "available_installments";
   @javax.annotation.Nonnull

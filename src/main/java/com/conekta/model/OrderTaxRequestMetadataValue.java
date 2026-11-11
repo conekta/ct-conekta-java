@@ -45,7 +45,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.conekta.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 @JsonDeserialize(using=OrderTaxRequestMetadataValue.OrderTaxRequestMetadataValueDeserializer.class)
 @JsonSerialize(using = OrderTaxRequestMetadataValue.OrderTaxRequestMetadataValueSerializer.class)
 public class OrderTaxRequestMetadataValue extends AbstractOpenApiSchema {
