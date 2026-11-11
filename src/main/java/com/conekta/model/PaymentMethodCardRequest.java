@@ -40,7 +40,7 @@ import com.conekta.JSON;
   PaymentMethodCardRequest.JSON_PROPERTY_CUSTOMER_IP_ADDRESS
 })
 @JsonTypeName("payment_method_card_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class PaymentMethodCardRequest {
   public static final String JSON_PROPERTY_TYPE = "type";
   @javax.annotation.Nonnull

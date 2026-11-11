@@ -56,7 +56,7 @@ import com.conekta.JSON;
   LogResponseForRequest.JSON_PROPERTY_VERSION
 })
 @JsonTypeName("log_response_for_request")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class LogResponseForRequest {
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   @javax.annotation.Nonnull

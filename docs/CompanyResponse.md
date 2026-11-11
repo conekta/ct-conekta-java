@@ -11,6 +11,7 @@
 |**name** | **String** | The name of the company. |  |
 |**active** | **Boolean** | Indicates if the company is active. |  |
 |**accountStatus** | **String** | The current status of the company&#39;s account. |  |
+|**cardPaymentsEnabled** | **Boolean** | Indicates if card payments are enabled for the company. |  [optional] |
 |**parentCompanyId** | **String** | The identifier of the parent company, if any. |  [optional] |
 |**onboardingStatus** | **String** | The current status of the company&#39;s onboarding process. |  |
 |**documents** | [**List&lt;CompanyDocumentResponse&gt;**](CompanyDocumentResponse.md) | A list of documents related to the company. |  |

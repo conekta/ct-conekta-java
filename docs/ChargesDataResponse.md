@@ -19,6 +19,7 @@
 |**failureMessage** | **String** |  |  [optional] |
 |**id** | **String** | Charge ID |  |
 |**livemode** | **Boolean** | Whether the charge was made in live mode or not |  |
+|**nextAction** | [**OrderNextActionResponse**](OrderNextActionResponse.md) |  |  [optional] |
 |**_object** | **String** |  |  |
 |**orderId** | **String** | Order ID |  |
 |**paidAt** | **Long** | charge Payment date |  [optional] |

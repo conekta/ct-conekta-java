@@ -38,7 +38,7 @@ import com.conekta.JSON;
   ChargebackEvidenceFileResponse.JSON_PROPERTY_URL
 })
 @JsonTypeName("chargeback_evidence_file_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class ChargebackEvidenceFileResponse {
   public static final String JSON_PROPERTY_ID = "id";
   @javax.annotation.Nullable

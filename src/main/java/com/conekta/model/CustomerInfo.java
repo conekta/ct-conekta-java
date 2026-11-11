@@ -37,7 +37,7 @@ import com.conekta.JSON;
   CustomerInfo.JSON_PROPERTY_OBJECT
 })
 @JsonTypeName("customer_info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class CustomerInfo {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nonnull

@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.conekta</groupId>
   <artifactId>ct-conekta-java</artifactId>
-  <version>9.0.1</version>
+  <version>9.0.2</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "io.conekta:ct-conekta-java:9.0.1"
+     implementation "io.conekta:ct-conekta-java:9.0.2"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/ct-conekta-java-9.0.1.jar`
+- `target/ct-conekta-java-9.0.2.jar`
 - `target/lib/*.jar`
 
 ## Usage
@@ -169,6 +169,7 @@ Class | Method | HTTP request | Description
 *CompaniesApi* | [**getCompany**](docs/CompaniesApi.md#getCompany) | **GET** /companies/{id} | Get Company
 *CompaniesApi* | [**getCompanyDocuments**](docs/CompaniesApi.md#getCompanyDocuments) | **GET** /companies/{company_id}/documents | Get Company Documents
 *CompaniesApi* | [**getCurrentCompany**](docs/CompaniesApi.md#getCurrentCompany) | **GET** /companies/current | Get Current Company
+*CompaniesApi* | [**getPaymentMethodSettings**](docs/CompaniesApi.md#getPaymentMethodSettings) | **GET** /settings/payment-methods | Get Payment Method Settings
 *CompaniesApi* | [**updateCompanyDocument**](docs/CompaniesApi.md#updateCompanyDocument) | **PATCH** /companies/{company_id}/document | Update Company Document
 *CompaniesApi* | [**uploadCompanyDocument**](docs/CompaniesApi.md#uploadCompanyDocument) | **POST** /companies/{company_id}/document | Upload Company Document
 *CustomersApi* | [**createCustomer**](docs/CustomersApi.md#createCustomer) | **POST** /customers | Create customer
@@ -197,6 +198,7 @@ Class | Method | HTTP request | Description
 *OrdersApi* | [**orderRefund**](docs/OrdersApi.md#orderRefund) | **POST** /orders/{id}/refunds | Refund Order
 *OrdersApi* | [**ordersCreateCapture**](docs/OrdersApi.md#ordersCreateCapture) | **POST** /orders/{id}/capture | Capture Order
 *OrdersApi* | [**updateOrder**](docs/OrdersApi.md#updateOrder) | **PUT** /orders/{id} | Update Order
+*OrdersApi* | [**voidOrder**](docs/OrdersApi.md#voidOrder) | **POST** /orders/{id}/void | Void Order
 *PaymentLinkApi* | [**cancelCheckout**](docs/PaymentLinkApi.md#cancelCheckout) | **PUT** /checkouts/{id}/cancel | Cancel Payment Link
 *PaymentLinkApi* | [**createCheckout**](docs/PaymentLinkApi.md#createCheckout) | **POST** /checkouts | Create Unique Payment Link
 *PaymentLinkApi* | [**emailCheckout**](docs/PaymentLinkApi.md#emailCheckout) | **POST** /checkouts/{id}/email | Send an email
@@ -404,6 +406,8 @@ Class | Method | HTTP request | Description
  - [PaymentMethodGeneralRequest](docs/PaymentMethodGeneralRequest.md)
  - [PaymentMethodPbbPayment](docs/PaymentMethodPbbPayment.md)
  - [PaymentMethodPbbRequest](docs/PaymentMethodPbbRequest.md)
+ - [PaymentMethodSetting](docs/PaymentMethodSetting.md)
+ - [PaymentMethodSettingsResponse](docs/PaymentMethodSettingsResponse.md)
  - [PaymentMethodSpeiRecurrentResponse](docs/PaymentMethodSpeiRecurrentResponse.md)
  - [PaymentMethodSpeiRequest](docs/PaymentMethodSpeiRequest.md)
  - [PaymentMethodTokenRequest](docs/PaymentMethodTokenRequest.md)

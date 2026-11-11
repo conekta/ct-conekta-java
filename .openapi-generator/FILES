@@ -157,6 +157,8 @@ docs/PaymentMethodCashResponse.md
 docs/PaymentMethodGeneralRequest.md
 docs/PaymentMethodPbbPayment.md
 docs/PaymentMethodPbbRequest.md
+docs/PaymentMethodSetting.md
+docs/PaymentMethodSettingsResponse.md
 docs/PaymentMethodSpeiRecurrentResponse.md
 docs/PaymentMethodSpeiRequest.md
 docs/PaymentMethodTokenRequest.md
@@ -417,6 +419,8 @@ src/main/java/com/conekta/model/PaymentMethodCashResponse.java
 src/main/java/com/conekta/model/PaymentMethodGeneralRequest.java
 src/main/java/com/conekta/model/PaymentMethodPbbPayment.java
 src/main/java/com/conekta/model/PaymentMethodPbbRequest.java
+src/main/java/com/conekta/model/PaymentMethodSetting.java
+src/main/java/com/conekta/model/PaymentMethodSettingsResponse.java
 src/main/java/com/conekta/model/PaymentMethodSpeiRecurrentResponse.java
 src/main/java/com/conekta/model/PaymentMethodSpeiRequest.java
 src/main/java/com/conekta/model/PaymentMethodTokenRequest.java

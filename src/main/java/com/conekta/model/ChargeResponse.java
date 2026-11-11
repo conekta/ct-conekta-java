@@ -20,6 +20,7 @@ import com.conekta.model.ChargeResponseChannel;
 import com.conekta.model.ChargeResponsePaymentMethod;
 import com.conekta.model.ChargeResponseRefunds;
 import com.conekta.model.ChargebackResponse;
+import com.conekta.model.OrderNextActionResponse;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -46,6 +47,7 @@ import com.conekta.JSON;
   ChargeResponse.JSON_PROPERTY_FAILURE_MESSAGE,
   ChargeResponse.JSON_PROPERTY_ID,
   ChargeResponse.JSON_PROPERTY_LIVEMODE,
+  ChargeResponse.JSON_PROPERTY_NEXT_ACTION,
   ChargeResponse.JSON_PROPERTY_OBJECT,
   ChargeResponse.JSON_PROPERTY_ORDER_ID,
   ChargeResponse.JSON_PROPERTY_PAID_AT,
@@ -56,7 +58,7 @@ import com.conekta.JSON;
   ChargeResponse.JSON_PROPERTY_STATUS
 })
 @JsonTypeName("charge_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class ChargeResponse {
   public static final String JSON_PROPERTY_AMOUNT = "amount";
   @javax.annotation.Nullable
@@ -105,6 +107,10 @@ public class ChargeResponse {
   public static final String JSON_PROPERTY_LIVEMODE = "livemode";
   @javax.annotation.Nonnull
   private Boolean livemode;
+
+  public static final String JSON_PROPERTY_NEXT_ACTION = "next_action";
+  @javax.annotation.Nullable
+  private OrderNextActionResponse nextAction;
 
   public static final String JSON_PROPERTY_OBJECT = "object";
   @javax.annotation.Nonnull
@@ -441,6 +447,31 @@ public class ChargeResponse {
   }
 
 
+  public ChargeResponse nextAction(@javax.annotation.Nullable OrderNextActionResponse nextAction) {
+    this.nextAction = nextAction;
+    return this;
+  }
+
+  /**
+   * Get nextAction
+   * @return nextAction
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_NEXT_ACTION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public OrderNextActionResponse getNextAction() {
+    return nextAction;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_NEXT_ACTION, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setNextAction(@javax.annotation.Nullable OrderNextActionResponse nextAction) {
+    this.nextAction = nextAction;
+  }
+
+
   public ChargeResponse _object(@javax.annotation.Nonnull String _object) {
     this._object = _object;
     return this;
@@ -665,6 +696,7 @@ public class ChargeResponse {
         Objects.equals(this.failureMessage, chargeResponse.failureMessage) &&
         Objects.equals(this.id, chargeResponse.id) &&
         Objects.equals(this.livemode, chargeResponse.livemode) &&
+        Objects.equals(this.nextAction, chargeResponse.nextAction) &&
         Objects.equals(this._object, chargeResponse._object) &&
         Objects.equals(this.orderId, chargeResponse.orderId) &&
         Objects.equals(this.paidAt, chargeResponse.paidAt) &&
@@ -677,7 +709,7 @@ public class ChargeResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, channel, conektaAccountId, createdAt, currency, customerId, description, deviceFingerprint, failureCode, failureMessage, id, livemode, _object, orderId, paidAt, paymentMethod, referenceId, refunds, chargeback, status);
+    return Objects.hash(amount, channel, conektaAccountId, createdAt, currency, customerId, description, deviceFingerprint, failureCode, failureMessage, id, livemode, nextAction, _object, orderId, paidAt, paymentMethod, referenceId, refunds, chargeback, status);
   }
 
   @Override
@@ -696,6 +728,7 @@ public class ChargeResponse {
     sb.append("    failureMessage: ").append(toIndentedString(failureMessage)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    livemode: ").append(toIndentedString(livemode)).append("\n");
+    sb.append("    nextAction: ").append(toIndentedString(nextAction)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
     sb.append("    paidAt: ").append(toIndentedString(paidAt)).append("\n");

@@ -52,7 +52,7 @@ import com.conekta.JSON;
   Checkout.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("checkout")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class Checkout {
   public static final String JSON_PROPERTY_ALLOWED_PAYMENT_METHODS = "allowed_payment_methods";
   @javax.annotation.Nullable

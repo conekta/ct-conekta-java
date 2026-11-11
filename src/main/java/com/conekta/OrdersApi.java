@@ -22,7 +22,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.25.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.27.0")
 public class OrdersApi {
   private ApiClient apiClient;
 
@@ -651,6 +651,77 @@ public class OrdersApi {
     String[] localVarAuthNames = new String[] {"bearerAuth"};
     GenericType<OrderResponse> localVarReturnType = new GenericType<OrderResponse>() {};
     return apiClient.invokeAPI("OrdersApi.updateOrder", localVarPath, "PUT", new ArrayList<>(), orderUpdate,
+                               localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+  /**
+   * Void Order
+   * Void an order that has been previously authorized and not yet captured. The order and its charges are moved to the voided status.
+   * @param id Identifier of the resource (required)
+   * @param acceptLanguage Use for knowing which language to use (optional, default to es)
+   * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
+   * @return OrderResponse
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
+       <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
+       <tr><td> 402 </td><td> payment required error </td><td>  -  </td></tr>
+       <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
+       <tr><td> 428 </td><td> Precondition Required </td><td>  -  </td></tr>
+       <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
+     </table>
+   */
+  public OrderResponse voidOrder(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
+    return voidOrderWithHttpInfo(id, acceptLanguage, xChildCompanyId).getData();
+  }
+
+  /**
+   * Void Order
+   * Void an order that has been previously authorized and not yet captured. The order and its charges are moved to the voided status.
+   * @param id Identifier of the resource (required)
+   * @param acceptLanguage Use for knowing which language to use (optional, default to es)
+   * @param xChildCompanyId In the case of a holding company, the company id of the child company to which will process the request. (optional)
+   * @return ApiResponse&lt;OrderResponse&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> successful </td><td>  -  </td></tr>
+       <tr><td> 401 </td><td> authentication error </td><td>  -  </td></tr>
+       <tr><td> 402 </td><td> payment required error </td><td>  -  </td></tr>
+       <tr><td> 404 </td><td> not found entity </td><td>  -  </td></tr>
+       <tr><td> 428 </td><td> Precondition Required </td><td>  -  </td></tr>
+       <tr><td> 500 </td><td> internal server error </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<OrderResponse> voidOrderWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String acceptLanguage, @javax.annotation.Nullable String xChildCompanyId) throws ApiException {
+    // Check required parameters
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling voidOrder");
+    }
+
+    // Path parameters
+    String localVarPath = "/orders/{id}/void"
+            .replaceAll("\\{id}", apiClient.escapeString(id.toString()));
+
+    // Header parameters
+    Map<String, String> localVarHeaderParams = new LinkedHashMap<>();
+    if (acceptLanguage != null) {
+      localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+    }
+    if (xChildCompanyId != null) {
+      localVarHeaderParams.put("X-Child-Company-Id", apiClient.parameterToString(xChildCompanyId));
+    }
+
+    String localVarAccept = apiClient.selectHeaderAccept("application/vnd.conekta-v2.3.0+json");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
+    GenericType<OrderResponse> localVarReturnType = new GenericType<OrderResponse>() {};
+    return apiClient.invokeAPI("OrdersApi.voidOrder", localVarPath, "POST", new ArrayList<>(), null,
                                localVarHeaderParams, new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
   }

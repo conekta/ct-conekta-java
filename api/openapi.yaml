@@ -3515,6 +3515,142 @@ paths:
       - Companies
       x-accepts:
       - application/vnd.conekta-v2.3.0+json
+  /settings/payment-methods:
+    get:
+      description: "Retrieves the enablement status of each payment method for the\
+        \ currently authenticated company. For every payment method the response indicates\
+        \ whether it is enabled by Conekta (`admin`), enabled by the merchant (`merchant`),\
+        \ and the resulting state (`effective`)."
+      operationId: getPaymentMethodSettings
+      parameters:
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                card_payment:
+                  admin: true
+                  merchant: true
+                  effective: true
+                apple_payment:
+                  admin: true
+                  merchant: true
+                  effective: true
+                google_payment:
+                  admin: true
+                  merchant: true
+                  effective: true
+                cash_payment:
+                  admin: true
+                  merchant: true
+                  effective: true
+                bank_transfer_payment:
+                  admin: true
+                  merchant: true
+                  effective: true
+                bnpl_payment:
+                  admin: true
+                  merchant: false
+                  effective: false
+                pay_by_bank_payment:
+                  admin: false
+                  merchant: true
+                  effective: false
+              schema:
+                $ref: "#/components/schemas/payment_method_settings_response"
+          description: successful
+          headers:
+            Date:
+              description: The date and time that the response was sent
+              explode: false
+              schema:
+                example: "Fri, 03 Feb 2023 16:57:48 GMT"
+                type: string
+              style: simple
+            Content-Type:
+              description: The format of the response body
+              explode: false
+              schema:
+                example: application/json; charset=utf-8
+                type: string
+              style: simple
+            Content-Length:
+              description: The length of the response body in bytes
+              explode: false
+              schema:
+                example: "512"
+                type: string
+              style: simple
+            Connection:
+              description: The type of connection used to transfer the response
+              explode: false
+              schema:
+                example: keep-alive
+                type: string
+              style: simple
+            Conekta-Media-Type:
+              description: The version of the API used to process the request and
+                the format of the response body
+              explode: false
+              schema:
+                example: conekta-v2.3.0; format=application/json
+                type: string
+              style: simple
+        "401":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: authentication error
+        "500":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: "#/components/schemas/error"
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Get Payment Method Settings
+      tags:
+      - Companies
+      x-accepts:
+      - application/vnd.conekta-v2.3.0+json
   /customers:
     get:
       description: "The purpose of business is to create and maintain a client, you\
@@ -7385,6 +7521,232 @@ paths:
       tags:
       - Orders
       x-content-type: application/json
+      x-accepts:
+      - application/vnd.conekta-v2.3.0+json
+  /orders/{id}/void:
+    post:
+      description: Void an order that has been previously authorized and not yet captured.
+        The order and its charges are moved to the voided status.
+      operationId: VoidOrder
+      parameters:
+      - description: Identifier of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 6307a60c41de27127515a575
+          type: string
+        style: simple
+      - description: Use for knowing which language to use
+        examples:
+          es:
+            summary: for spanish request/response
+            value: es
+          en:
+            summary: for english request/response
+            value: en
+        explode: false
+        in: header
+        name: Accept-Language
+        required: false
+        schema:
+          default: es
+          enum:
+          - es
+          - en
+          type: string
+        style: simple
+      - description: "In the case of a holding company, the company id of the child\
+          \ company to which will process the request."
+        example: 6441b6376b60c3a638da80af
+        explode: false
+        in: header
+        name: X-Child-Company-Id
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              examples:
+                card:
+                  value:
+                    livemode: false
+                    amount: 100000
+                    currency: MXN
+                    payment_status: voided
+                    amount_refunded: 0
+                    customer_info:
+                      email: andres@conekta.com
+                      name: Canary Bot
+                      corporate: false
+                      customer_id: cus_31xVJsegWYCYAQKqp
+                      object: customer_info
+                    shipping_contact:
+                      receiver: fran carero
+                      phone: "+573143159054"
+                      address:
+                        street1: av viva
+                        street2: ava
+                        city: cdmx
+                        state: cdmx
+                        country: mx
+                        residential: true
+                        object: shipping_address
+                        postal_code: "01000"
+                      id: ship_cont_31yUZoy1hmFioz8r3
+                      object: shipping_contact
+                      created_at: 1793033695
+                    object: order
+                    id: ord_31yUZoy1hmFioz8r4
+                    metadata:
+                      test: "false"
+                    is_refundable: false
+                    created_at: 1793033695
+                    updated_at: 1793033769
+                    line_items:
+                      object: list
+                      has_more: false
+                      total: 1
+                      data:
+                      - name: APOYO URGENTE REFERENCIA
+                        unit_price: 100000
+                        quantity: 1
+                        sku: COL094
+                        brand: CHEDRAUI
+                        object: line_item
+                        id: line_item_31yUZoy1hmFioz8qz
+                        parent_id: ord_31yUZoy1hmFioz8r4
+                        metadata: {}
+                        antifraud_info: {}
+                    shipping_lines:
+                      object: list
+                      has_more: false
+                      total: 1
+                      data:
+                      - amount: 0
+                        carrier: fedex
+                        tracking_number: "4234234"
+                        object: shipping_line
+                        id: ship_lin_31yUZoy1hmFioz8r1
+                        parent_id: ord_31yUZoy1hmFioz8r4
+                    charges:
+                      object: list
+                      has_more: false
+                      total: 1
+                      data:
+                      - id: 6adf85dfd549e40001584705
+                        livemode: false
+                        created_at: 1793033695
+                        currency: MXN
+                        payment_method:
+                          name: ñeyueyute nene
+                          exp_month: "08"
+                          exp_year: "27"
+                          auth_code: "668467"
+                          object: card_payment
+                          type: credit
+                          last4: "4242"
+                          brand: visa
+                          issuer: BANAMEX
+                          account_type: Credit
+                          country: MX
+                          fraud_indicators: []
+                          token_id: tok_31yUZioH4NKBS6VR1
+                          antifraud_is_self_service_rules: false
+                          three_ds_flow_required: false
+                        object: charge
+                        description: Payment from order
+                        is_refundable: false
+                        status: voided
+                        amount: 100000
+                        customer_id: cus_31xVJsegWYCYAQKqp
+                        order_id: ord_31yUZoy1hmFioz8r4
+              schema:
+                $ref: "#/components/schemas/order_response"
+          description: successful
+        "401":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: Please include your access key in your request.
+                  code: conekta.errors.authentication.missing_key
+                log_id: 507f1f77bcf86cd799439011
+                object: error
+                type: authentication_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: authentication error
+        "402":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The card could not be processed.
+                  code: conekta.errors.processing.tokenization.used
+                  debug_message: The token has already been used.
+                log_id: 641b6d073cd9a50001515007
+                object: error
+                type: processing_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: payment required error
+        "404":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - message: The resource was not found.
+                  code: conekta.errors.resource_not_found.entity
+                  debug_message: The object Webhook "641b1d5662d7e00001eaa46b" could
+                    not be found.
+                log_id: 641b6c253cd9a50001514fae
+                object: error
+                type: resource_not_found_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: not found entity
+        "428":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - debug_message: The order cannot be modified because it has already
+                    a charge which is pending payment.
+                  message: The order cannot be modified because it has already a charge
+                    which is pending payment.
+                  code: conekta.errors.precondition_required.combo.order.cannot_be_updated_because_has_charge
+                log_id: 641b6e233cd9a50001515039
+                object: error
+                type: precondition_required_error
+              schema:
+                $ref: "#/components/schemas/error"
+          description: Precondition Required
+        "500":
+          content:
+            application/vnd.conekta-v2.3.0+json:
+              example:
+                details:
+                - debug_message: There was a runtime error and Conekta engineers have
+                    been notified.
+                  message: There was a runtime error and Conekta engineers have been
+                    notified.
+                  code: conekta.errors.api.system.general_failure
+                object: error
+                type: api_error
+                log_id: 641b6f2b3cd9a50001515098
+              schema:
+                $ref: "#/components/schemas/error"
+          description: internal server error
+      security:
+      - bearerAuth: []
+      summary: Void Order
+      tags:
+      - Orders
       x-accepts:
       - application/vnd.conekta-v2.3.0+json
   /orders/{id}/line_items:
@@ -17180,6 +17542,33 @@ components:
         id:
           example: channel_2tNDzhA4Akmzj11AU
           type: string
+    order_next_action_response_redirect_to_url:
+      description: contains the following attributes that will guide to continue the
+        flow
+      properties:
+        url:
+          description: "pay.conekta.com/{id} Indicates the url of the Conekta component\
+            \ to authenticate the flow through 3DS2."
+          example: https://pay.conekta.com/6fca054a85194c43971ecea35cc519bb
+          format: uri
+          type: string
+        return_url:
+          description: "Indicates the url to which the 3DS2 flow returns at the end,\
+            \ when the integration is redirected."
+          example: https://my-website.com"
+          format: uri
+          type: string
+    order_next_action_response:
+      description: contains the following attributes that will guide to continue the
+        flow
+      properties:
+        redirect_to_url:
+          $ref: "#/components/schemas/order_next_action_response_redirect_to_url"
+        type:
+          description: Indicates the type of action to be taken
+          example: redirect_to_url
+          type: string
+      title: order_next_action_response
     payment_method_cash:
       allOf:
       - properties:
@@ -17690,6 +18079,8 @@ components:
           description: Whether the charge was made in live mode or not
           example: false
           type: boolean
+        next_action:
+          $ref: "#/components/schemas/order_next_action_response"
         object:
           example: charge
           type: string
@@ -18303,6 +18694,10 @@ components:
           description: The current status of the company's account.
           example: signed_up
           type: string
+        card_payments_enabled:
+          description: Indicates if card payments are enabled for the company.
+          example: true
+          type: boolean
         parent_company_id:
           description: "The identifier of the parent company, if any."
           example: 680bf1da38716d00013543bc
@@ -18563,6 +18958,55 @@ components:
       - file_name
       - status
       title: CompanyDocumentResponse
+    payment_method_setting:
+      description: Enablement flags for a single payment method.
+      properties:
+        admin:
+          description: Indicates if the payment method is enabled by Conekta for the
+            company.
+          example: true
+          type: boolean
+        merchant:
+          description: Indicates if the payment method is enabled by the merchant
+            in its own settings.
+          example: true
+          type: boolean
+        effective:
+          description: Final state of the payment method. It is only true when both
+            `admin` and `merchant` are enabled.
+          example: true
+          type: boolean
+      required:
+      - admin
+      - effective
+      - merchant
+      title: payment_method_setting
+    payment_method_settings_response:
+      description: Enablement status of each payment method available for the company.
+      properties:
+        card_payment:
+          $ref: "#/components/schemas/payment_method_setting"
+        apple_payment:
+          $ref: "#/components/schemas/payment_method_setting"
+        google_payment:
+          $ref: "#/components/schemas/payment_method_setting"
+        cash_payment:
+          $ref: "#/components/schemas/payment_method_setting"
+        bank_transfer_payment:
+          $ref: "#/components/schemas/payment_method_setting"
+        bnpl_payment:
+          $ref: "#/components/schemas/payment_method_setting"
+        pay_by_bank_payment:
+          $ref: "#/components/schemas/payment_method_setting"
+      required:
+      - apple_payment
+      - bank_transfer_payment
+      - bnpl_payment
+      - card_payment
+      - cash_payment
+      - google_payment
+      - pay_by_bank_payment
+      title: payment_method_settings_response
     customer_antifraud_info_response:
       properties:
         first_paid_at:
@@ -20337,6 +20781,8 @@ components:
             description: Whether the charge was made in live mode or not
             example: false
             type: boolean
+          next_action:
+            $ref: "#/components/schemas/order_next_action_response"
           object:
             example: charge
             type: string
@@ -21076,33 +21522,6 @@ components:
             type: array
             default: null
       title: order_response_products
-    order_next_action_response_redirect_to_url:
-      description: contains the following attributes that will guide to continue the
-        flow
-      properties:
-        url:
-          description: "pay.conekta.com/{id} Indicates the url of the Conekta component\
-            \ to authenticate the flow through 3DS2."
-          example: https://pay.conekta.com/6fca054a85194c43971ecea35cc519bb
-          format: uri
-          type: string
-        return_url:
-          description: "Indicates the url to which the 3DS2 flow returns at the end,\
-            \ when the integration is redirected."
-          example: https://my-website.com"
-          format: uri
-          type: string
-    order_next_action_response:
-      description: contains the following attributes that will guide to continue the
-        flow
-      properties:
-        redirect_to_url:
-          $ref: "#/components/schemas/order_next_action_response_redirect_to_url"
-        type:
-          description: Indicates the type of action to be taken
-          example: redirect_to_url
-          type: string
-      title: order_next_action_response
     customer_shipping_contacts_address:
       properties:
         object:
